@@ -1,0 +1,2 @@
+[console_scripts]
+wtq-translate = wtq_translator.cli:main

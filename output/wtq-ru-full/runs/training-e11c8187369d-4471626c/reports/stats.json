@@ -1,0 +1,11 @@
+{
+  "run_id": "training-e11c8187369d-4471626c",
+  "total": 1,
+  "processed_this_invocation": 1,
+  "skipped_this_invocation": 0,
+  "failed_this_invocation": 0,
+  "statuses": {
+    "accepted": 1
+  },
+  "output_questions_tsv": "C:\\Users\\PC\\Documents\\GitHub\\wtq-translator-v8\\output\\wtq-ru-full\\runs\\training-e11c8187369d-4471626c\\dataset\\training.tsv"
+}

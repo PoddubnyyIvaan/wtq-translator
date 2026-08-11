@@ -1,0 +1,157 @@
+from __future__ import annotations
+
+import argparse
+import asyncio
+import json
+import uuid
+
+from .audit import audit_dataset_mentions
+from .config import load_config
+from .dataset import read_question_tsv, read_table_tsv, resolve_context_path
+from .mentions import find_table_mentions
+from .runner import get_run_report, make_run_id, run_dataset_from_tsv, run_one_from_tsv
+
+
+def _parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser(prog="wtq-translate")
+    sub = p.add_subparsers(dest="command", required=True)
+
+    v = sub.add_parser("validate-config")
+    v.add_argument("config")
+
+    i = sub.add_parser("inspect")
+    i.add_argument("config")
+    i.add_argument("questions_tsv")
+    i.add_argument("question_id")
+
+    r = sub.add_parser("run-one")
+    r.add_argument("config")
+    r.add_argument("questions_tsv")
+    r.add_argument("question_id")
+
+    run = sub.add_parser("run")
+    run.add_argument("config")
+    run.add_argument("questions_tsv")
+    run.add_argument("--run-id", default=None)
+    run.add_argument("--fresh", action="store_true", help="Do not resume existing state; use a new run id unless --run-id is set")
+
+    resume = sub.add_parser("resume")
+    resume.add_argument("config")
+    resume.add_argument("questions_tsv")
+    resume.add_argument("--run-id", default=None)
+
+    rep = sub.add_parser("report")
+    rep.add_argument("config")
+    rep.add_argument("questions_tsv")
+    rep.add_argument("--run-id", default=None)
+
+    audit = sub.add_parser("audit", help="Audit exact table-mention coverage without LLM calls")
+    audit.add_argument("config")
+    audit.add_argument("questions_tsv")
+    audit.add_argument("--output", default=None, help="Optional JSON path for the audit report")
+    audit.add_argument("--max-examples", type=int, default=20)
+
+    return p
+
+
+def main() -> None:
+    args = _parser().parse_args()
+    config = load_config(args.config)
+
+    if args.command == "validate-config":
+        print(config.model_dump_json(indent=2))
+        return
+
+    if args.command == "inspect":
+        records = read_question_tsv(args.questions_tsv)
+        q = next((x for x in records if x.id == args.question_id), None)
+        if q is None:
+            raise SystemExit(f"Question not found: {args.question_id}")
+        table_path = resolve_context_path(config.project.input_root, q.context)
+        table = read_table_tsv(table_path)
+        search = find_table_mentions(q.utterance, table, config.mentions)
+        print(json.dumps({
+            "question": q.utterance,
+            "table": str(table_path),
+            "mentions": [
+                {
+                    "mask": m.mask,
+                    "question_text": m.question_text,
+                    "normalized_text": m.normalized_text,
+                    "start": m.start,
+                    "end": m.end,
+                    "source_type": m.source_type.value,
+                    "coordinates": [{"row": c.row, "column": c.column} for c in m.coordinates],
+                    "table_source_text": m.table_source_text,
+                    "match_type": m.match_type,
+                }
+                for m in search.mentions
+            ],
+            "ambiguous": [
+                {
+                    "question_text": a.question_text,
+                    "normalized_text": a.normalized_text,
+                    "start": a.start,
+                    "end": a.end,
+                    "coordinates": [{"row": c.row, "column": c.column} for c in a.coordinates],
+                    "candidates": list(a.candidates),
+                }
+                for a in search.ambiguous
+            ],
+        }, ensure_ascii=False, indent=2))
+        return
+
+    if args.command == "run-one":
+        result = asyncio.run(run_one_from_tsv(config, args.questions_tsv, args.question_id))
+        print(json.dumps({
+            "question_id": result.question.id,
+            "status": result.quality.status.value,
+            "translated_question": result.translated_question,
+            "translated_target_value": result.translated_target_value,
+            "cosine_similarity": result.quality.question_cosine_similarity,
+            "warnings": result.quality.warnings,
+        }, ensure_ascii=False, indent=2))
+        return
+
+    if args.command in {"run", "resume"}:
+        resume_mode = args.command == "resume" or not getattr(args, "fresh", False)
+        run_id = args.run_id
+        if args.command == "run" and getattr(args, "fresh", False) and run_id is None:
+            run_id = f"{make_run_id(config, args.questions_tsv)}-{uuid.uuid4().hex[:8]}"
+        summary = asyncio.run(run_dataset_from_tsv(
+            config,
+            args.questions_tsv,
+            run_id=run_id,
+            resume=resume_mode,
+        ))
+        print(json.dumps({
+            "run_id": summary.run_id,
+            "total": summary.total,
+            "processed": summary.processed,
+            "skipped": summary.skipped,
+            "failed": summary.failed,
+            "statuses": summary.statuses,
+            "output_questions_tsv": str(summary.output_questions_tsv),
+            "run_dir": str(summary.run_dir),
+        }, ensure_ascii=False, indent=2))
+        return
+
+    if args.command == "report":
+        print(json.dumps(get_run_report(config, args.questions_tsv, run_id=args.run_id), ensure_ascii=False, indent=2))
+        return
+
+    if args.command == "audit":
+        if args.max_examples < 0:
+            raise SystemExit("--max-examples must be >= 0")
+        report = audit_dataset_mentions(
+            config,
+            args.questions_tsv,
+            max_examples=args.max_examples,
+            output_path=args.output,
+        )
+        print(json.dumps(report, ensure_ascii=False, indent=2))
+        return
+
+
+if __name__ == "__main__":
+    main()

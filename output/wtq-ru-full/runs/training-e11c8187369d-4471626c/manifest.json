@@ -1,0 +1,120 @@
+{
+  "run_id": "training-e11c8187369d-4471626c",
+  "created_at": "2026-08-11T18:39:29.860672+00:00",
+  "seed": 42,
+  "provider": "openai_compatible",
+  "model": "qwen2.5:3b",
+  "base_url": "http://localhost:11434/v1",
+  "prompt_version": "2026-08-12-v6",
+  "prompts": {
+    "shell_translation": {
+      "sha256": "6f95f52de11de27ecca40fc935596ab8c3e6f0277d80c64c4861ce28928ee345",
+      "text": "You are a precise translation engine for WikiTableQuestions. Translate the natural-language text, never answer the question. Tokens matching <TABLE_REF_0000> are immutable placeholders: preserve every placeholder exactly, with the same spelling and multiplicity. Do not add, remove, duplicate, translate, or rename them. Return exactly ONE JSON object with exactly this data shape: {\"translated_text\":\"translated text here\"}. Return DATA, not a JSON Schema. Never return keys such as type, properties, required, title, or $defs. Do not use Markdown or code fences."
+    },
+    "table_translation": {
+      "sha256": "1deb4754565667fe723d3ceedf6a18aef72b1ac80d35ef3e8e330f67eb6b148c",
+      "text": "You are a precise translation engine for textual values extracted from a WikiTableQuestions table. You are NOT responsible for table structure or coordinates. Python will rebuild the table. The request contains only unique textual values that were intentionally selected for translation; protected/immutable values and values from unselected columns are omitted. Translate every supplied value into the requested target language. Do not skip an item merely because it looks like a proper name, competition, organization, label, or abbreviation; preserve only those parts that should conventionally remain unchanged in the target language. Preserve meaning exactly and do not calculate, normalize, summarize, infer, answer questions, or add information. Return exactly ONE JSON DATA object with exactly this shape: {\"translations\":[{\"id\":\"u0000\",\"translation\":\"...\"},{\"id\":\"u0001\",\"translation\":\"...\"}]}. Return exactly one entry for every input id, preserve every id character-for-character, and do not add, remove, rename, reorder semantically, or duplicate ids. Do not return source texts, coordinates, rows, columns, Markdown, code fences, explanations, comments, or extra keys. Return DATA, not a JSON Schema."
+    },
+    "answer_translation": {
+      "sha256": "38a44e8508d3dfa1ebf521364dda182beb824283ca1edce60c492bd8e83c2456",
+      "text": "Translate the supplied WikiTableQuestions answer text only. Do not explain. Return exactly one JSON DATA object: {\"translated_text\":\"...\"}. Do not return JSON Schema, Markdown, or any additional keys."
+    }
+  },
+  "generation": {
+    "temperature": 0.0,
+    "max_output_tokens": 4096,
+    "retries": 3
+  },
+  "config": {
+    "project": {
+      "input_root": "data\\wtq",
+      "output_root": "output\\wtq-ru-full",
+      "source_language": "en",
+      "target_language": "ru",
+      "seed": 42
+    },
+    "translation": {
+      "mode": "full",
+      "answer_language_mode": "table"
+    },
+    "mentions": {
+      "normalization": {
+        "unicode": "NFKC",
+        "casefold": true,
+        "collapse_whitespace": true,
+        "strip_outer_punctuation": true
+      },
+      "longest_match_first": true,
+      "include_headers": true,
+      "include_numeric_mentions": true,
+      "allow_lemma_match": false,
+      "allow_fuzzy_match": false,
+      "allow_semantic_match": false,
+      "on_ambiguity": "needs_review"
+    },
+    "model": {
+      "provider": "openai_compatible",
+      "base_url": "http://localhost:11434/v1",
+      "api_key": "***REDACTED***",
+      "model_name": "qwen2.5:3b",
+      "temperature": 0.0,
+      "max_output_tokens": 4096,
+      "timeout_seconds": 180.0,
+      "retries": 3
+    },
+    "embeddings": {
+      "enabled": true,
+      "provider": "openai_compatible",
+      "base_url": "http://localhost:11434/v1",
+      "api_key": "***REDACTED***",
+      "model_name": "nomic-embed-text",
+      "timeout_seconds": 180.0
+    },
+    "table": {
+      "rows_per_chunk": 20
+    },
+    "back_translation": {
+      "enabled": true
+    },
+    "validation": {
+      "question_cosine_threshold": null,
+      "strict_masks": true,
+      "strict_table_shape": true,
+      "strict_immutable_values": true
+    },
+    "state": {
+      "sqlite_path": "output\\wtq-ru-full\\state.sqlite"
+    },
+    "cache": {
+      "enabled": true,
+      "cache_embeddings": true
+    },
+    "logging": {
+      "level": "INFO",
+      "llm_io_enabled": true,
+      "llm_io_path": "output\\wtq-ru-full\\logs\\llm_io.jsonl"
+    },
+    "runner": {
+      "checkpoint_every": 25,
+      "continue_on_error": true,
+      "retry_failed_on_resume": false,
+      "rerun_needs_review": false
+    }
+  },
+  "git_commit": null,
+  "python": "3.13.14",
+  "libraries": {
+    "pydantic": "2.13.4",
+    "PyYAML": "6.0.3",
+    "httpx": "0.28.1"
+  },
+  "questions_tsv": "C:\\Users\\PC\\Documents\\GitHub\\wtq-translator-v8\\data\\wtq\\training.tsv",
+  "output_questions_tsv": "C:\\Users\\PC\\Documents\\GitHub\\wtq-translator-v8\\output\\wtq-ru-full\\runs\\training-e11c8187369d-4471626c\\dataset\\training.tsv",
+  "config_hash": "1889f175c230a0ab88c495ffa4a8f4f4ca7fa5c138fab8fd387e2588beef7954",
+  "recovered_processing_records": 0,
+  "seeded_local_backends": {
+    "python": true,
+    "numpy": false,
+    "torch": false
+  }
+}
