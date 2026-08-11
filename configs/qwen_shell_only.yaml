@@ -1,0 +1,66 @@
+project:
+  input_root: data/wtq
+  output_root: output/wtq-ru-shell-only
+  source_language: en
+  target_language: ru
+  seed: 42
+
+translation:
+  mode: shell_only
+  answer_language_mode: table
+
+mentions:
+  normalization:
+    unicode: NFKC
+    casefold: true
+    collapse_whitespace: true
+    strip_outer_punctuation: true
+  longest_match_first: true
+  include_headers: true
+  include_numeric_mentions: true
+  allow_lemma_match: false
+  allow_fuzzy_match: false
+  allow_semantic_match: false
+  on_ambiguity: needs_review
+
+model:
+  provider: openai_compatible
+  base_url: http://localhost:11434/v1
+  api_key: ollama
+  model_name: qwen2.5:3b
+  temperature: 0.0
+  max_output_tokens: 4096
+  timeout_seconds: 180
+  retries: 3
+
+embeddings:
+  enabled: false
+  provider: openai_compatible
+  model_name: null
+
+back_translation:
+  enabled: true
+
+table:
+  rows_per_chunk: 20
+
+validation:
+  question_cosine_threshold: null
+  strict_masks: true
+  strict_table_shape: true
+  strict_immutable_values: true
+
+cache:
+  enabled: true
+  cache_embeddings: true
+
+runner:
+  checkpoint_every: 25
+  continue_on_error: true
+  retry_failed_on_resume: false
+  rerun_needs_review: false
+
+logging:
+  level: INFO
+  llm_io_enabled: true
+  llm_io_path: null

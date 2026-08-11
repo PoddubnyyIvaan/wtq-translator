@@ -1,0 +1,11 @@
+{
+  "run_id": "training-9fcba3699284-65b1f1de",
+  "total": 1,
+  "processed_this_invocation": 1,
+  "skipped_this_invocation": 0,
+  "failed_this_invocation": 0,
+  "statuses": {
+    "accepted_with_warnings": 1
+  },
+  "output_questions_tsv": "C:\\Users\\PC\\Documents\\GitHub\\wtq-translator-v8\\output\\wtq-ru-shell-only\\runs\\training-9fcba3699284-65b1f1de\\dataset\\training.tsv"
+}

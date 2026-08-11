@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: wtq-translator
+Version: 0.8.0
+Summary: Controlled WikiTableQuestions translation pipeline
+Requires-Python: >=3.11
+Requires-Dist: pydantic>=2.7
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: httpx>=0.27
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23; extra == "dev"

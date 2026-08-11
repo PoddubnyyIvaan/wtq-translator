@@ -1,0 +1,2 @@
+{"timestamp": "2026-08-11T18:39:29.949586+00:00", "run_id": "training-e11c8187369d-4471626c", "question_id": "nt-0", "stage": "question", "level": "info", "code": "START", "message": "Processing question 1/1", "extra": {}}
+{"timestamp": "2026-08-11T18:39:43.900724+00:00", "run_id": "training-e11c8187369d-4471626c", "question_id": "nt-0", "stage": "question", "level": "info", "code": "DONE", "message": "Finished with status accepted", "extra": {}}
