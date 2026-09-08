@@ -22,12 +22,24 @@ mentions:
   allow_fuzzy_match: false
   allow_semantic_match: false
   on_ambiguity: needs_review
+  spacy_model: en_core_web_trf
+  stop_pos:
+    - AUX
+    - CCONJ
+    - INTJ
+    - PUNCT
+    - SCONJ
+    - DET
+    - ADP
+    - PART
+  exclude_numbers: true
+  exclude_dates: false
 
 model:
   provider: openai_compatible
-  base_url: http://localhost:11434/v1
+  base_url: http://192.168.55.242:7869/v1
   api_key: ollama
-  model_name: qwen2.5:3b
+  model_name: qwen3.8:latest
   temperature: 0.0
   max_output_tokens: 4096
   timeout_seconds: 180

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 from collections.abc import Mapping, Sequence
 
 from ..models import MentionMap, TableMention
@@ -40,3 +42,23 @@ def restore_from_table(masked_question: str, mention_map: MentionMap, table) -> 
     translated repeated source values inconsistently.
     """
     return restore_masks(masked_question, {m.mask: mention_map.table_value(m.mask, table) for m in mention_map.mentions})
+
+
+def mask_question_tagged(question: str, mentions: Sequence[TableMention]) -> str:
+    """Wrap each mention fragment in an opening/closing tag without inner spaces."""
+    value = question
+    for m in sorted(mentions, key=lambda x: x.start, reverse=True):
+        if question[m.start:m.end] != m.question_text:
+            raise ValueError(f"Mention span mismatch for {m.mask}")
+        value = value[:m.start] + m.mask + m.question_text + closing_mask(m.mask) + value[m.end:]
+    return value
+
+
+def strip_tags(text: str) -> str:
+    """Remove all opening and closing <TABLE_REF_XXXX> tags."""
+    return re.sub(r"</?TABLE_REF_\d{4}>", "", text)
+
+
+def closing_mask(mask: str) -> str:
+    """Convert '<TABLE_REF_0000>' into '</TABLE_REF_0000>'."""
+    return mask[:1] + "/" + mask[1:]

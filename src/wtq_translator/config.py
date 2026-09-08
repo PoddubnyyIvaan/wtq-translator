@@ -38,6 +38,10 @@ class MentionsConfig(BaseModel):
     allow_fuzzy_match: bool = False
     allow_semantic_match: bool = False
     on_ambiguity: Literal["needs_review", "failed"] = "needs_review"
+    spacy_model: str = "en_core_web_trf"
+    stop_pos: list[str] = Field(default_factory=lambda: ["DET", "ADP", "PART"])
+    exclude_numbers: bool = True
+    exclude_dates: bool = True
 
     @model_validator(mode="after")
     def deterministic_mvp(self) -> "MentionsConfig":

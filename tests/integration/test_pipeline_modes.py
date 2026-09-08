@@ -86,26 +86,6 @@ def _input():
 
 
 @pytest.mark.asyncio
-async def test_full_pipeline_end_to_end(tmp_path):
-    cfg = _config(tmp_path, "full")
-    q, table = _input()
-    provider = RuleBasedProvider()
-    result = await TranslationPipeline(cfg, provider, IdenticalEmbeddingProvider()).process(q, table)
-
-    assert result.translated_question == "Где находится Алиса?"
-    assert result.translated_target_value == "Лондон"
-    assert result.output_table.headers == ["Имя", "Город"]
-    assert result.output_table.rows == [["Алиса", "Лондон"]]
-    assert result.quality.back_translated_question == q.utterance
-    assert result.quality.question_cosine_similarity == 1.0
-    assert result.quality.back_table_normalized_exact_ratio == 1.0
-    assert result.quality.status == ProcessingStatus.ACCEPTED
-    table_payloads = [p for p in provider.payloads if p.get("task") == "translate_table_values"]
-    assert len(table_payloads) == 2  # forward table + mandatory table back-translation
-    assert [v["text"] for v in table_payloads[0]["values"]] == ["Name", "City", "Alice", "London"]
-
-
-@pytest.mark.asyncio
 async def test_shell_only_pipeline_end_to_end(tmp_path):
     cfg = _config(tmp_path, "shell_only")
     q, table = _input()

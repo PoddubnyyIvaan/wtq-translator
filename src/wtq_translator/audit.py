@@ -7,7 +7,10 @@ from typing import Any
 
 from .config import AppConfig
 from .dataset import read_question_tsv_document, read_table_tsv, resolve_context_path
+from .enums import TranslationMode
 from .mentions import find_table_mentions
+from .mentions.candidates import load_spacy_model
+from .mentions.finder_full import find_table_mentions_full
 from .models import TableData
 
 
@@ -46,11 +49,15 @@ def audit_dataset_mentions(
     """Audit deterministic table-mention coverage without any LLM calls.
 
     This should be run before an expensive translation job. It measures how much of
-    the dataset can be linked to tables using the exact-normalized matcher currently
-    approved by the project requirements.
+    the dataset can be linked to tables. The matcher is selected by
+    ``config.translation.mode``: ``full`` uses the lemma matcher (requires spaCy),
+    while ``shell_only``/``mentions_only`` use the exact-normalized matcher.
     """
     qpath = Path(questions_tsv)
     document = read_question_tsv_document(qpath)
+
+    use_full_matcher = config.translation.mode == TranslationMode.FULL
+    nlp = load_spacy_model(config.mentions.spacy_model) if use_full_matcher else None
 
     # Many WTQ questions share a source table. Cache parsed tables by resolved path to
     # avoid re-reading the same TSV hundreds of times during an audit.
@@ -79,7 +86,12 @@ def audit_dataset_mentions(
             if table is None:
                 table = read_table_tsv(table_path)
                 table_cache[table_path] = table
-            search = find_table_mentions(q.utterance, table, config.mentions)
+            if use_full_matcher:
+                search, _ = find_table_mentions_full(
+                    q.utterance, table, config.mentions, nlp, config.project.target_language
+                )
+            else:
+                search = find_table_mentions(q.utterance, table, config.mentions)
         except Exception as exc:
             table_error_count += 1
             if len(table_errors) < max_examples:
@@ -133,6 +145,8 @@ def audit_dataset_mentions(
     successfully_audited = len(document.records) - table_error_count
     summary: dict[str, Any] = {
         "questions_tsv": str(qpath.resolve()),
+        "mode": config.translation.mode.value,
+        "matcher": "lemma" if use_full_matcher else "exact_normalized",
         "total_questions": len(document.records),
         "successfully_audited": successfully_audited,
         "table_errors": table_error_count,

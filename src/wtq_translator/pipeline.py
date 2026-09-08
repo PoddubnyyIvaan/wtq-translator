@@ -2,14 +2,19 @@ from __future__ import annotations
 
 from dataclasses import asdict
 
-from .backtranslation import back_translate_shell, back_translate_table
+from .backtranslation import back_translate_shell, back_translate_table, back_translate_table_candidates
 from .config import AppConfig
 from .enums import AnswerLanguageMode, ProcessingStatus, TranslationMode
 from .llm.base import EmbeddingProvider, LLMProvider
 from .llm.tracing import llm_trace_context
 from .mentions import build_mention_map, find_table_mentions, mask_question, restore_from_table, restore_original
+from .mentions.candidates import load_spacy_model
+from .mentions.finder_full import find_table_mentions_full
+from .mentions.masking import mask_question_tagged, strip_tags
 from .models import MentionMap, QualityReport, QuestionRecord, TableData, TranslationResult
+from .persistence.cache import SQLiteCache
 from .translation import build_target_value, translate_shell, translate_table
+from .translation.table_candidates import reconstruct_table, translate_table_candidates, validate_untranslated
 from .validation import (
     compare_back_translated_table,
     cosine_similarity,
@@ -19,13 +24,15 @@ from .validation import (
     validate_table_shape,
     validate_untranslated_columns,
 )
+from .validation.masks import extract_open_tags, validate_tags
 
 
 class TranslationPipeline:
-    def __init__(self, config: AppConfig, llm: LLMProvider, embeddings: EmbeddingProvider | None = None) -> None:
+    def __init__(self, config: AppConfig, llm: LLMProvider, embeddings: EmbeddingProvider | None = None, cache: SQLiteCache | None = None) -> None:
         self.config = config
         self.llm = llm
         self.embeddings = embeddings
+        self.cache = cache
 
     async def process(self, question: QuestionRecord, table: TableData) -> TranslationResult:
         # All nested model calls inherit the WTQ question id in their LLM I/O log.
@@ -34,6 +41,9 @@ class TranslationPipeline:
 
     async def _process(self, question: QuestionRecord, table: TableData) -> TranslationResult:
         mode = self.config.translation.mode
+        if mode == TranslationMode.FULL:
+            return await self._process_full(question, table)
+
         search = find_table_mentions(question.utterance, table, self.config.mentions)
         mention_map = build_mention_map(search)
         report = QualityReport(
@@ -55,9 +65,7 @@ class TranslationPipeline:
 
         masked_source = mask_question(question.utterance, mention_map.mentions)
 
-        if mode == TranslationMode.FULL:
-            result = await self._full(question, table, mention_map, masked_source, report)
-        elif mode == TranslationMode.SHELL_ONLY:
+        if mode == TranslationMode.SHELL_ONLY:
             result = await self._shell_only(question, table, mention_map, masked_source, report)
         elif mode == TranslationMode.MENTIONS_ONLY:
             result = await self._mentions_only(question, table, mention_map, masked_source, report)
@@ -67,6 +75,100 @@ class TranslationPipeline:
         if search.ambiguous and result.quality.status in {ProcessingStatus.ACCEPTED, ProcessingStatus.ACCEPTED_WITH_WARNINGS}:
             result.quality.status = ProcessingStatus.NEEDS_REVIEW
         return result
+
+    async def _process_full(self, question: QuestionRecord, table: TableData) -> TranslationResult:
+        cfg = self.config
+        nlp = load_spacy_model(cfg.mentions.spacy_model)
+        search, candidate_set = find_table_mentions_full(
+            question.utterance, table, cfg.mentions, nlp, cfg.project.target_language
+        )
+        mention_map = build_mention_map(search)
+        report = QualityReport(
+            question_id=question.id,
+            mode=TranslationMode.FULL,
+            table_mentions_found=bool(mention_map.mentions),
+            source_question=question.utterance,
+            original_masks=mention_map.masks(),          # открывающие теги
+            ambiguous_mentions=[],                        # всегда пусто для full
+            status=ProcessingStatus.PROCESSING,
+        )
+        if not mention_map.mentions:
+            report.warnings.append("No table mentions found in question.")
+
+        # 1) Перевод таблицы (кандидаты) — ДО shell
+        await translate_table_candidates(
+            self.llm, candidate_set.candidates,
+            config=cfg, source_language=cfg.project.source_language,
+            target_language=cfg.project.target_language, cache=self.cache,
+        )
+        lemma_translations = {c.lemma_key: c.translation for c in candidate_set.candidates}
+        untranslated = validate_untranslated(candidate_set, lemma_translations)
+        if untranslated:
+            report.errors.append(f"Untranslated table runs: {untranslated[:5]}")
+            report.status = ProcessingStatus.FAILED
+            raise ValueError(report.errors[-1])
+        translated_table = reconstruct_table(table, candidate_set, lemma_translations)
+
+        # 2) Теговая маска
+        masked_source = mask_question_tagged(question.utterance, mention_map.mentions)
+
+        # 3) Shell с глоссарием
+        id_to_translation = {c.id: c.translation for c in candidate_set.candidates}
+        tag_glossary = {m.candidate_key: id_to_translation[m.candidate_key] for m in mention_map.mentions}
+        masked_ru = await translate_shell(
+            self.llm, masked_source,
+            source_language=cfg.project.source_language,
+            target_language=cfg.project.target_language,
+            model=cfg.model, seed=cfg.project.seed,
+            tag_glossary=tag_glossary,
+        )
+        self._apply_tag_report(masked_source, masked_ru, report, forward=True)
+        final_question = strip_tags(masked_ru)
+
+        # 4) Ответ
+        answer, warnings = await build_target_value(
+            self.llm, source_target_value=question.target_value,
+            source_table=table, output_table=translated_table, config=cfg,
+            desired_language=cfg.project.target_language,
+            source_language=cfg.project.source_language,
+            table_language_is_desired=True,
+        )
+        report.warnings.extend(warnings)
+        if any("translated directly" in w or "multiple translated values" in w for w in warnings):
+            report.status = ProcessingStatus.NEEDS_REVIEW
+
+        # 5) Back-shell (RU→EN) с обратным глоссарием
+        back_glossary = {m.candidate_key: m.question_text for m in mention_map.mentions}
+        back_masked = await back_translate_shell(
+            self.llm, masked_ru, config=cfg,
+            source_language=cfg.project.source_language,
+            translated_language=cfg.project.target_language,
+            tag_glossary=back_glossary,
+        )
+        self._apply_tag_report(masked_source, back_masked, report, forward=False)
+        back_question = strip_tags(back_masked)
+
+        # 6) Back-таблица (кандидаты, RU→EN)
+        back_table = await back_translate_table_candidates(
+            self.llm, translated_table, config=cfg,
+            source_language=cfg.project.source_language,
+            translated_language=cfg.project.target_language,
+            nlp=nlp, cache=self.cache,
+        )
+        validate_table_shape(table, back_table)
+        self._apply_back_table_quality(table, back_table, report)
+        immutable_back_errors = validate_immutable_values(table, back_table)
+        if cfg.validation.strict_immutable_values and immutable_back_errors:
+            report.errors.append(f"Back-translated table changed immutable values: {immutable_back_errors[:5]}")
+            report.status = ProcessingStatus.FAILED
+            raise ValueError(report.errors[-1])
+
+        report.translated_question = final_question
+        report.back_translated_question = back_question
+        await self._score_question(question.utterance, back_question, report)
+        if report.status == ProcessingStatus.PROCESSING:
+            report.status = ProcessingStatus.ACCEPTED_WITH_WARNINGS if report.warnings else ProcessingStatus.ACCEPTED
+        return TranslationResult(question, table, translated_table, final_question, answer, report, mention_map)
 
     async def _score_question(self, source: str, back: str, report: QualityReport) -> None:
         if self.embeddings is None:
@@ -117,50 +219,23 @@ class TranslationPipeline:
             report.status = ProcessingStatus.FAILED
             raise ValueError(report.errors[-1])
 
-    async def _full(self, question: QuestionRecord, table: TableData, mentions: MentionMap, masked_source: str, report: QualityReport) -> TranslationResult:
-        cfg = self.config
-        masked_ru = await translate_shell(self.llm, masked_source, source_language=cfg.project.source_language, target_language=cfg.project.target_language, model=cfg.model, seed=cfg.project.seed)
-        self._apply_mask_report(masked_source, masked_ru, report, True)
-
-        translated_table = await translate_table(self.llm, table, config=cfg, source_language=cfg.project.source_language, target_language=cfg.project.target_language)
-        final_question = restore_from_table(masked_ru, mentions, translated_table)
-
-        answer, warnings = await build_target_value(
-            self.llm,
-            source_target_value=question.target_value,
-            source_table=table,
-            output_table=translated_table,
-            config=cfg,
-            desired_language=cfg.project.target_language,
-            source_language=cfg.project.source_language,
-            table_language_is_desired=True,
-        )
-        report.warnings.extend(warnings)
-        if any("translated directly" in w or "multiple translated values" in w for w in warnings):
-            report.status = ProcessingStatus.NEEDS_REVIEW
-
-        back_masked = await back_translate_shell(self.llm, masked_ru, config=cfg, source_language=cfg.project.source_language, translated_language=cfg.project.target_language)
-        self._apply_mask_report(masked_source, back_masked, report, False)
-        back_question = restore_original(back_masked, mentions)
-
-        back_table = await back_translate_table(
-            self.llm, translated_table, config=cfg,
-            source_language=cfg.project.source_language, translated_language=cfg.project.target_language,
-        )
-        validate_table_shape(table, back_table)
-        self._apply_back_table_quality(table, back_table, report)
-        immutable_back_errors = validate_immutable_values(table, back_table)
-        if cfg.validation.strict_immutable_values and immutable_back_errors:
-            report.errors.append(f"Back-translated table changed immutable values: {immutable_back_errors[:5]}")
+    def _apply_tag_report(self, expected: str, actual: str, report: QualityReport, forward: bool) -> None:
+        mv = validate_tags(expected, actual)
+        actual_tags = extract_open_tags(actual)
+        missing = [k for k, n in mv.missing.items() for _ in range(n)]
+        added = [k for k, n in mv.added.items() for _ in range(n)]
+        if forward:
+            report.forward_masks = actual_tags
+            report.missing_forward_masks = missing
+            report.added_forward_masks = added
+        else:
+            report.backward_masks = actual_tags
+            report.missing_backward_masks = missing
+            report.added_backward_masks = added
+        if not mv.ok:
+            report.errors.append(f"Tag validation failed: missing={mv.missing}, added={mv.added}")
             report.status = ProcessingStatus.FAILED
             raise ValueError(report.errors[-1])
-
-        report.translated_question = final_question
-        report.back_translated_question = back_question
-        await self._score_question(question.utterance, back_question, report)
-        if report.status == ProcessingStatus.PROCESSING:
-            report.status = ProcessingStatus.ACCEPTED_WITH_WARNINGS if report.warnings else ProcessingStatus.ACCEPTED
-        return TranslationResult(question, table, translated_table, final_question, answer, report, mentions)
 
     async def _shell_only(self, question: QuestionRecord, table: TableData, mentions: MentionMap, masked_source: str, report: QualityReport) -> TranslationResult:
         cfg = self.config

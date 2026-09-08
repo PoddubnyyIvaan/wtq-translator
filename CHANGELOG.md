@@ -1,5 +1,25 @@
 # Changelog
 
+## Unreleased — candidate-based `full` translation pipeline
+
+Режим `full` переведён на candidate-based пайплайн (план `.kilo/plans/1788603643092-full-translate-candidate-pipeline.md`). Режимы `shell_only`/`mentions_only` и их тесты не изменились.
+
+- **Audit** (`audit.py`): команда `audit` выбирает матчер по `translation.mode` — `full` → лемма-матчер `find_table_mentions_full` (через spaCy), `shell_only`/`mentions_only` → точный нормализованный матчер `find_table_mentions`; в отчёт добавлены поля `mode` и `matcher`.
+
+- **spaCy** (`pyproject.toml`, `README.md`): зависимость `spacy>=3.7`, загрузка модели `python -m spacy download en_core_web_trf`; имя модели — `mentions.spacy_model` (по умолчанию `en_core_web_trf`), ленивая загрузка с кэшем на процесс.
+- **Конфиг** (`config.py`): в `MentionsConfig` добавлены `spacy_model`, `stop_pos` (`DET`/`ADP`/`PART`), `exclude_numbers`, `exclude_dates` (дефолты сохраняют старые режимы).
+- **Модели** (`models.py`): `TableMention.candidate_key`; новые датаклассы `QuestionCandidate`, `TableCandidate`, `ContentRun`, `CandidateSet`.
+- **Кандидаты** (`mentions/candidates.py`): `load_spacy_model`, классификация токенов (word/number/date/punct), лемма-ключи (word — нормализованная лемма, number/date — поверхностная форма, Unicode-корректно), `extract_question_candidates` / `extract_table_candidates` (дедуп по лемма-ключу с объединением координат, in-memory кэш таблиц).
+- **Матчер** (`mentions/finder_full.py`): `find_table_mentions_full` — match по лемма-ключу, longest non-overlap; `ambiguous` всегда пуст для `full`.
+- **Теги** (`mentions/masking.py`, `validation/masks.py`): `mask_question_tagged` (`<TABLE_REF_XXXX>…</TABLE_REF_XXXX>` без внутренних пробелов), `strip_tags`, `closing_mask`; `extract_open_tags`/`extract_close_tags`/`validate_tags`.
+- **Промпты** (`prompts.py`): `SHELL_TRANSLATION_TAGGED_SYSTEM`, `CANDIDATE_TRANSLATION_SYSTEM`, `PROMPT_SET_VERSION` → `2026-08-13-v9`.
+- **Перевод таблицы** (`translation/table_candidates.py`): `translate_table_candidates` (ярусы длины с глоссарием более коротких подпоследовательностей, кэш in-memory + `SQLiteCache.candidate_translations`), `reconstruct_table` (замена content-run'ов, ведущая/хвостовая пунктуация и числа/даты verbatim), `validate_untranslated`.
+- **Shell** (`translation/shell.py`, `backtranslation/shell.py`): `translate_shell(..., tag_glossary=None)` — при переданном глоссарии используется `SHELL_TRANSLATION_TAGGED_SYSTEM` и валидация через `validate_tags`.
+- **Back-перевод** (`backtranslation/table.py`): `back_translate_table_candidates` — кандидаты из переведённой таблицы, перевод src/dst наоборот, реконструкция.
+- **Кэш** (`persistence/cache.py`): таблица `candidate_translations` + `get_candidate_translation`/`put_candidate_translation`.
+- **Пайплайн** (`pipeline.py`, `api.py`): `_process_full` (таблица ДО shell) с ранней веткой `if mode == FULL` в `_process`; кэш прокидывается в `TranslationPipeline`.
+- **Тесты**: новые unit-тесты кандидатов, full-матчера, тегов, кандидатного перевода и обратного перевода; новый интеграционный тест `full`-режима (`tests/integration/test_pipeline_full_new.py`); старый `test_full_pipeline_end_to_end` заменён.
+
 ## 0.8.0 — unique-value dictionary translation
 
 - Модель больше не получает таблицу, строки, координаты, `protected_cells` или невыбранные столбцы. Python полностью владеет структурой таблицы.

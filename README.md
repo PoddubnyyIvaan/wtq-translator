@@ -46,6 +46,14 @@ python -m venv .venv
 pip install -e .
 ```
 
+For the `full` (candidate-based) translation mode, a spaCy model is used for lemmatization:
+
+```bash
+python -m spacy download en_core_web_trf
+```
+
+The model name is configured via `mentions.spacy_model` (default `en_core_web_trf`).
+
 For tests:
 
 ```bash

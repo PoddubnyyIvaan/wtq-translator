@@ -78,6 +78,7 @@ class TableMention:
     coordinates: tuple[TableCoordinate, ...]
     table_source_text: str
     match_type: str = "exact_normalized"
+    candidate_key: str = ""
 
     def __post_init__(self) -> None:
         if not self.coordinates:
@@ -92,6 +93,40 @@ class TableMention:
         their translated values must remain consistent before reinsertion.
         """
         return self.coordinates[0]
+
+
+@dataclass(frozen=True)
+class QuestionCandidate:
+    lemma_key: str
+    source_text: str
+    start: int
+    end: int
+    length: int
+
+
+@dataclass
+class TableCandidate:
+    id: str
+    lemma_key: str
+    source_text: str
+    coordinates: list["TableCoordinate"]
+    length: int
+    translation: str = ""
+
+
+@dataclass(frozen=True)
+class ContentRun:
+    """Максимальный непрерывный content-run внутри одной ячейки/заголовка, с span'ом в исходной строке."""
+    lemma_key: str
+    start: int
+    end: int
+
+
+@dataclass
+class CandidateSet:
+    """Дедуплицированный набор табличных кандидатов + per-координата максимальные content-run'ы для реконструкции."""
+    candidates: list["TableCandidate"] = field(default_factory=list)
+    runs: dict["TableCoordinate", list["ContentRun"]] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)

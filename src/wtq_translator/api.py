@@ -16,6 +16,7 @@ class Translator:
         llm = create_llm_provider(config)
         embeddings = create_embedding_provider(config)
 
+        cache = None
         if config.cache.enabled:
             cache = SQLiteCache(config.state.sqlite_path)
             llm = CachedLLMProvider(
@@ -55,7 +56,7 @@ class Translator:
 
         self.llm = llm
         self.embeddings = embeddings
-        self.pipeline = TranslationPipeline(config, self.llm, self.embeddings)
+        self.pipeline = TranslationPipeline(config, self.llm, self.embeddings, cache=cache)
 
     async def process(self, question: QuestionRecord, table: TableData) -> TranslationResult:
         return await self.pipeline.process(question, table)

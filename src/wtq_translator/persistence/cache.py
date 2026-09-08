@@ -40,6 +40,15 @@ class SQLiteCache:
                     created_at TEXT NOT NULL
                 )
             """)
+            db.execute("""
+                CREATE TABLE IF NOT EXISTS candidate_translations (
+                    candidate_id TEXT PRIMARY KEY,
+                    source_text TEXT NOT NULL,
+                    target_lang TEXT NOT NULL,
+                    translation TEXT NOT NULL,
+                    created_at TEXT NOT NULL
+                )
+            """)
 
     def get_text(self, key: str) -> str | None:
         with self.connect() as db:
@@ -65,6 +74,21 @@ class SQLiteCache:
             db.execute(
                 "INSERT OR REPLACE INTO embedding_cache(request_hash,response_json,created_at) VALUES(?,?,?)",
                 (key, json.dumps(vectors, separators=(",", ":")), now),
+            )
+
+    def get_candidate_translation(self, candidate_id: str) -> str | None:
+        with self.connect() as db:
+            row = db.execute(
+                "SELECT translation FROM candidate_translations WHERE candidate_id=?", (candidate_id,)
+            ).fetchone()
+        return row[0] if row else None
+
+    def put_candidate_translation(self, candidate_id: str, source_text: str, target_lang: str, translation: str) -> None:
+        now = datetime.now(timezone.utc).isoformat()
+        with self.connect() as db:
+            db.execute(
+                "INSERT OR REPLACE INTO candidate_translations(candidate_id,source_text,target_lang,translation,created_at) VALUES(?,?,?,?,?)",
+                (candidate_id, source_text, target_lang, translation, now),
             )
 
 
