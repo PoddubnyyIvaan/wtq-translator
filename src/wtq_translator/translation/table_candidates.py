@@ -1,4 +1,5 @@
-"""Перевод табличных кандидатов-подпоследовательностей по ярусам длины + реконструкция таблицы."""
+"""Перевод табличных кандидатов-подпоследовательностей по ярусам убывающей длины
+(глоссарий: самые длинные вмещающие последовательности) + реконструкция таблицы."""
 from __future__ import annotations
 
 import asyncio
@@ -9,7 +10,7 @@ from ..llm.base import LLMProvider
 from ..llm.tracing import llm_trace_context
 from ..models import CandidateSet, TableCandidate, TableCoordinate, TableData
 from ..persistence.cache import SQLiteCache
-from ..prompts import CANDIDATE_TRANSLATION_SYSTEM
+from ..prompts import candidate_system_prompt
 from .table import TableTranslationResponse, _parse_json
 
 # In-memory кэш переводов кандидатов на процесс (ключ — candidate.id).
@@ -18,7 +19,8 @@ _MEMORY_CACHE: dict[str, str] = {}
 # Требования, общие для всех запросов перевода кандидатов внутри яруса.
 _CANDIDATE_REQUIREMENTS = [
     "Translate every supplied value into the target language.",
-    "Use the glossary translations to keep longer subsequences consistent with shorter ones.",
+    "Use each item's glossary to keep shorter subsequences consistent with the longer ones they are part of.",
+    "The `column` field is context only and must not be translated or returned.",
     "Return exactly one translation for every supplied id.",
     "Preserve every id exactly; do not add, remove, rename, or duplicate ids.",
     "Preserve numbers, dates, and punctuation inside the source text exactly.",
@@ -63,27 +65,28 @@ async def _translate_chunk(
     provider: LLMProvider,
     chunk: list[TableCandidate],
     *,
-    glossary: list[dict[str, str]],
+    items: list[dict[str, object]],
     length: int,
     chunk_idx: int,
     config: AppConfig,
     source_language: str,
     target_language: str,
     trace_stage_prefix: str,
+    domain: str = "",
 ) -> dict[str, str]:
     """Переводит один chunk кандидатов яруса со своим retry-циклом.
 
-    Возвращает {candidate.id: translation} для кандидатов chunk. Глоссарий для всех
-    chunk'ов яруса одинаковый (строится от всех более коротких кандидатов). При
-    исчерпании ретраев бросает RuntimeError — изоляция ошибок теперь пер-chunk,
+    Возвращает {candidate.id: translation} для кандидатов chunk. items — готовые
+    payload-записи `{"id","text","column","glossary"}` для этого chunk'а (glossary
+    каждого item'а — его собственные самые длинные вмещающие последовательности).
+    При исчерпании ретраев бросает RuntimeError — изоляция ошибок теперь пер-chunk,
     неудача одного chunk не отменяет запросы остальных.
     """
     payload = {
         "task": "translate_candidates",
         "source_language": source_language,
         "target_language": target_language,
-        "values": [{"id": c.id, "text": c.source_text} for c in chunk],
-        "glossary": glossary,
+        "items": items,
         "requirements": _CANDIDATE_REQUIREMENTS,
     }
 
@@ -109,7 +112,7 @@ async def _translate_chunk(
                 unique_values=len(chunk),
             ):
                 raw = await provider.generate(
-                    system=CANDIDATE_TRANSLATION_SYSTEM,
+                    system=candidate_system_prompt(domain),
                     user=json.dumps(request_payload, ensure_ascii=False),
                     temperature=config.model.temperature,
                     max_output_tokens=config.model.max_output_tokens,
@@ -127,59 +130,48 @@ async def _translate_chunk(
     return translations
 
 
-def _relevant_glossary(
-    values: list[TableCandidate],
-    shorter: list[TableCandidate],
-) -> list[dict[str, str]]:
-    """Возвращает записи глоссария для кандидатов values.
+def _is_contiguous_window(window: list[str], full: list[str]) -> bool:
+    """True, если window — непрерывное подокно full (порядок токенов идёт подряд)."""
+    n, m = len(window), len(full)
+    if n > m:
+        return False
+    return any(full[i : i + n] == window for i in range(m - n + 1))
 
-    Для каждой фразы из values выбираются непересекающиеся по токен-позициям окна
-    (lemma_key окна — непрерывное подокно токенов фразы, присутствующее в shorter):
-    из пересекающихся окон остаётся самое длинное, при равенстве длины — самое левое;
-    вложенные в выбранные окна удаляются. Выбранные lemma_key объединяются по всем
-    values, порядок результата сохраняется по порядку `shorter`.
+
+def _nested_longest_glossary(
+    value: TableCandidate, longer: list[TableCandidate]
+) -> list[dict[str, str]]:
+    """Возвращает глоссарий для value: переводы самых длинных уже переведённых
+    более длинных последовательностей, в которые value вложено как непрерывное
+    подокно токенов lemma_key. При нескольких одинаково длинных — включаются все,
+    с дедупом по (source_text, translation) и сохранением порядка `longer`.
+
+    Пустой глоссарий возвращается, когда value не вложено ни в одну более длинную
+    переведённую последовательность (в т.ч. для самого длинного яруса).
     """
-    if not values or not shorter:
+    if not longer:
         return []
-    by_lemma = {c.lemma_key: c for c in shorter}
-    chosen: set[str] = set()
-    for value in values:
-        tokens = value.lemma_key.split(" ")
-        n = len(tokens)
-        # Окна фразы, присутствующие среди более коротких кандидатов.
-        windows: list[tuple[int, int, str]] = []  # (start, end, lemma_key)
-        for i in range(n):
-            window = tokens[i]
-            for j in range(i, n):
-                if j > i:
-                    window = window + " " + tokens[j]
-                if window in by_lemma:
-                    windows.append((i, j + 1, window))
-        if not windows:
+    tokens = value.lemma_key.split(" ")
+    matches: list[TableCandidate] = []
+    for c in longer:
+        if c.length <= value.length or not c.translation:
             continue
-        # Самые длинные первыми; при равенстве длины — левое окно (первое во фразе).
-        windows.sort(key=lambda w: (-(w[1] - w[0]), w[0]))
-        kept: list[tuple[int, int]] = []  # отсортированы по start, без пересечений
-        for start, end, key in windows:
-            # Бинарный поиск позиции вставки по start среди выбранных окон.
-            lo, hi = 0, len(kept)
-            while lo < hi:
-                mid = (lo + hi) // 2
-                if kept[mid][0] < start:
-                    lo = mid + 1
-                else:
-                    hi = mid
-            if lo > 0 and kept[lo - 1][1] > start:
-                continue  # пересечение с левым соседом
-            if lo < len(kept) and kept[lo][0] < end:
-                continue  # пересечение с правым соседом
-            kept.insert(lo, (start, end))
-            chosen.add(key)
-    return [
-        {"key": c.source_text, "translation": c.translation}
-        for c in shorter
-        if c.lemma_key in chosen
-    ]
+        if _is_contiguous_window(tokens, c.lemma_key.split(" ")):
+            matches.append(c)
+    if not matches:
+        return []
+    max_len = max(c.length for c in matches)
+    longest = [c for c in matches if c.length == max_len]
+
+    seen: set[tuple[str, str]] = set()
+    result: list[dict[str, str]] = []
+    for c in longest:
+        key = (c.source_text, c.translation)
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append({"key": c.source_text, "translation": c.translation})
+    return result
 
 
 async def translate_table_candidates(
@@ -191,14 +183,20 @@ async def translate_table_candidates(
     target_language: str,
     cache: SQLiteCache | None = None,
     trace_stage_prefix: str = "translate_table_candidates",
+    domain: str = "",
+    headers: list[str] | None = None,
 ) -> dict[str, str]:
-    """Переводит кандидатов по ярусам возрастающей длины, заполняя candidate.translation.
+    """Переводит кандидатов по ярусам убывающей длины, заполняя candidate.translation.
 
-    Возвращает {candidate.id: translation}. Для согласованности каждый следующий ярус
-    получает глоссарий переводов всех более коротких кандидатов. Внутри яруса pending
-    может быть разбит на chunk'и (translation.candidates.max_candidates_per_request),
-    которые запрашиваются параллельно с ограничением
-    translation.candidates.request_concurrency. Дефолты (None/1) дают один
+    Возвращает {candidate.id: translation}. Ярусы обрабатываются от большего к меньшему:
+    для согласованности каждый следующий (меньший) ярус получает per-item глоссарий —
+    переводы самых длинных уже переведённых более длинных последовательностей, в которые
+    переводимая подпоследовательность вложена. `column` каждого item — полный заголовок
+    колонки первой координаты кандидата (из `headers`), только как контекст.
+
+    Внутри яруса pending может быть разбит на chunk'и
+    (translation.candidates.max_candidates_per_request), которые запрашиваются параллельно
+    с ограничением translation.candidates.request_concurrency. Дефолты (None/1) дают один
     последовательный запрос на ярус — как раньше.
     """
     if not candidates:
@@ -208,7 +206,7 @@ async def translate_table_candidates(
     for c in candidates:
         by_length.setdefault(c.length, []).append(c)
 
-    for length in sorted(by_length):
+    for length in sorted(by_length, reverse=True):
         tier = by_length[length]
 
         pending: list[TableCandidate] = []
@@ -228,7 +226,23 @@ async def translate_table_candidates(
         if not pending:
             continue
 
-        shorter = [c for c in candidates if c.length < length and c.translation]
+        # Контекст для глоссария: все уже переведённые более длинные кандидаты.
+        longer = [c for c in candidates if c.length > length and c.translation]
+
+        # Готовые payload-записи, выровненные по порядку `pending`.
+        items: list[dict[str, object]] = []
+        for c in pending:
+            column = ""
+            if headers and c.coordinates and 0 <= c.coordinates[0].column < len(headers):
+                column = headers[c.coordinates[0].column]
+            items.append(
+                {
+                    "id": c.id,
+                    "text": c.source_text,
+                    "column": column,
+                    "glossary": _nested_longest_glossary(c, longer),
+                }
+            )
 
         limit = config.translation.candidates.max_candidates_per_request
         if limit is None or len(pending) <= limit:
@@ -236,6 +250,12 @@ async def translate_table_candidates(
         else:
             # Упорядоченные непересекающиеся подсписки размера limit, полное покрытие.
             chunks = [pending[i : i + limit] for i in range(0, len(pending), limit)]
+
+        chunk_items: list[list[dict[str, object]]] = []
+        pos = 0
+        for chunk in chunks:
+            chunk_items.append(items[pos : pos + len(chunk)])
+            pos += len(chunk)
 
         sem = asyncio.Semaphore(config.translation.candidates.request_concurrency)
 
@@ -246,13 +266,14 @@ async def translate_table_candidates(
                 return await _translate_chunk(
                     provider,
                     chunk,
-                    glossary=_relevant_glossary(chunk, shorter),
+                    items=chunk_items[chunk_idx],
                     length=length,
                     chunk_idx=chunk_idx,
                     config=config,
                     source_language=source_language,
                     target_language=target_language,
                     trace_stage_prefix=trace_stage_prefix,
+                    domain=domain,
                 )
 
         # return_exceptions=True: результат успешного chunk — dict[id, перевод],

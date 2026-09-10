@@ -63,6 +63,7 @@ class RuleBasedProvider:
 
     def __init__(self):
         self.payloads = []
+        self.systems = []
 
     @property
     def capabilities(self):
@@ -70,9 +71,14 @@ class RuleBasedProvider:
             seed = True
         return Caps()
 
+    async def count_tokens(self, text: str) -> int:
+        # Детерминированный подсчёт токенов (по словам).
+        return len(text.split())
+
     async def generate(self, *, system, user, temperature, max_output_tokens, seed=None):
         payload = json.loads(user)
         self.payloads.append(payload)
+        self.systems.append(system)
         src = payload.get("source_language")
         dst = payload.get("target_language")
         task = payload.get("task")
@@ -80,13 +86,16 @@ class RuleBasedProvider:
         en_ru = {"Name": "Имя", "City": "Город", "Alice": "Алиса", "London": "Лондон"}
         ru_en = {v: k for k, v in en_ru.items()}
 
+        if task == "detect_domain":
+            return json.dumps({"domain": "geography"}, ensure_ascii=False)
+
         if task == "translate_candidates":
             mapping = en_ru if (src, dst) == ("en", "ru") else ru_en
             return json.dumps(
                 {
                     "translations": [
                         {"id": item["id"], "translation": mapping.get(item["text"], item["text"])}
-                        for item in payload["values"]
+                        for item in payload["items"]
                     ]
                 },
                 ensure_ascii=False,
@@ -157,5 +166,16 @@ async def test_full_pipeline_end_to_end(tmp_path, monkeypatch):
     assert result.quality.status == ProcessingStatus.ACCEPTED
     assert result.quality.original_masks == ["<TABLE_REF_0000>"]
 
-    candidate_payloads = [p for p in provider.payloads if p.get("task") == "translate_candidates"]
+    paired = [
+        (system, p)
+        for system, p in zip(provider.systems, provider.payloads)
+        if p.get("task") == "translate_candidates"
+    ]
+    candidate_payloads = [p for _, p in paired]
+    candidate_systems = [system for system, _ in paired]
     assert len(candidate_payloads) >= 2  # прямой + обратный перевод кандидатов таблицы
+    # Домен указывается один раз в системном промпте кандидатных запросов...
+    assert any("geography" in system for system in candidate_systems)
+    # ...и больше не передаётся в user-JSON.
+    assert all("domain" not in p for p in candidate_payloads)
+    assert result.quality.domain == "geography"

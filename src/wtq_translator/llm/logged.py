@@ -87,3 +87,28 @@ class LoggedLLMProvider:
         event["response"] = response
         await self._append(event)
         return response
+
+    async def count_tokens(self, text: str) -> int:
+        started = datetime.now(timezone.utc).isoformat()
+        context = current_llm_trace_context()
+        base_event: dict[str, Any] = {
+            "timestamp": started,
+            "kind": "llm_tokenize",
+            "identity": self.identity,
+            "context": context,
+            "request": {"text": text},
+        }
+        try:
+            count = await self.wrapped.count_tokens(text)
+        except Exception as exc:
+            event = dict(base_event)
+            event["status"] = "error"
+            event["error"] = f"{type(exc).__name__}: {exc}"
+            await self._append(event)
+            raise
+
+        event = dict(base_event)
+        event["status"] = "ok"
+        event["count"] = count
+        await self._append(event)
+        return count

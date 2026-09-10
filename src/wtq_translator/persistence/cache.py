@@ -103,10 +103,22 @@ class CachedLLMProvider:
         self.wrapped = wrapped
         self.cache = cache
         self.identity = identity
+        # Кэш подсчёта токенов в памяти процесса: повторные вызовы с тем же текстом
+        # не ходят в сеть. В отличие от generate/embed результат не кладётся в
+        # SQLiteCache — token-счёт зависит от конкретного провайдера/модели.
+        self._token_counts: dict[str, int] = {}
 
     @property
     def capabilities(self) -> ProviderCapabilities:
         return self.wrapped.capabilities
+
+    async def count_tokens(self, text: str) -> int:
+        cached = self._token_counts.get(text)
+        if cached is not None:
+            return cached
+        count = await self.wrapped.count_tokens(text)
+        self._token_counts[text] = count
+        return count
 
     async def generate(self, *, system: str, user: str, temperature: float, max_output_tokens: int, seed: int | None = None) -> str:
         payload = {

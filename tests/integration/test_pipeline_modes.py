@@ -20,6 +20,10 @@ class RuleBasedProvider:
             seed = True
         return Caps()
 
+    async def count_tokens(self, text: str) -> int:
+        # Детерминированный подсчёт токенов (по словам).
+        return len(text.split())
+
     async def generate(self, *, system, user, temperature, max_output_tokens, seed=None):
         payload = json.loads(user)
         self.payloads.append(payload)
@@ -30,6 +34,9 @@ class RuleBasedProvider:
         en_ru = {"Name": "Имя", "City": "Город", "Alice": "Алиса", "London": "Лондон"}
         ru_en = {v: k for k, v in en_ru.items()}
         mapping = en_ru if (src, dst) == ("en", "ru") else ru_en
+
+        if task == "detect_domain":
+            return json.dumps({"domain": "geography"}, ensure_ascii=False)
 
         if task == "translate_table_values":
             return json.dumps(

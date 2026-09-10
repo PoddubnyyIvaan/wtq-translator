@@ -107,6 +107,7 @@ def _write_trace(run_dir: Path, split: str, result: TranslationResult, source_co
             for m in result.mention_map.mentions
         ],
         "quality": result.quality.to_dict(),
+        "domain": result.quality.domain,
     }
     tmp = trace_path.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(trace, ensure_ascii=False, indent=2, default=str), encoding="utf-8")

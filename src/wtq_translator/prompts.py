@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import hashlib
 
-PROMPT_SET_VERSION = "2026-09-09-v10"
+PROMPT_SET_VERSION = "2026-09-10-v12"
 
 
 SHELL_TRANSLATION_SYSTEM = (
@@ -129,11 +129,14 @@ CANDIDATE_TRANSLATION_SYSTEM = (
     "You are NOT responsible for the table structure, coordinates, rows, columns, duplicate detection, "
     "or reconstruction of the table. Python handles all of those tasks. "
 
-    "The request contains textual subsequences to translate and a glossary of shorter subsequences "
-    "that were already translated. "
-    "Each value has an immutable id and a source text. "
-    "Each glossary item has a key and its translation; use the glossary translations to keep the "
-    "longer subsequences consistent with the shorter ones. "
+    "The request contains a list of items. Each item has an immutable id, a source text, and a column "
+    "header for context only. Each item also has its own glossary of longer subsequences that were "
+    "already translated and that contain its text as a nested subsequence. "
+    "Each glossary item has a key and its translation; use the glossary translations so that the "
+    "shorter subsequence stays consistent with the longer sequences it is part of. "
+
+    "The `column` field is the full original column header. Use it only as context; do not translate "
+    "it and do not return it. "
 
     "Translate EVERY supplied source text into the requested target language. "
     "Do not skip an item merely because it looks like a proper name, competition, organization, "
@@ -163,6 +166,24 @@ CANDIDATE_TRANSLATION_SYSTEM = (
 )
 
 
+CANDIDATE_TRANSLATION_DOMAIN_SUFFIX = "\nDomain of the table: {domain}. Keep the domain terminology consistent.\n"
+
+
+def candidate_system_prompt(domain: str) -> str:
+    """Возвращает системный промпт перевода кандидатов; при непустом domain
+    дописывает строку домена (один раз на запрос)."""
+    if domain:
+        return CANDIDATE_TRANSLATION_SYSTEM + CANDIDATE_TRANSLATION_DOMAIN_SUFFIX.format(domain=domain)
+    return CANDIDATE_TRANSLATION_SYSTEM
+
+
+DOMAIN_DETECTION_SYSTEM = (
+    "Определи доменную область (предметную область) таблицы по её фрагменту в формате TAPEX. "
+    "Верни ровно один JSON-объект вида {\"domain\":\"...\"} без пояснений и без код-фенсов. "
+    "Домен должен быть на языке, указанном в запросе."
+)
+
+
 def prompt_snapshot() -> dict[str, dict[str, str]]:
     prompts = {
         "shell_translation": SHELL_TRANSLATION_SYSTEM,
@@ -170,6 +191,7 @@ def prompt_snapshot() -> dict[str, dict[str, str]]:
         "answer_translation": ANSWER_TRANSLATION_SYSTEM,
         "shell_translation_tagged": SHELL_TRANSLATION_TAGGED_SYSTEM,
         "candidate_translation": CANDIDATE_TRANSLATION_SYSTEM,
+        "domain_detection": DOMAIN_DETECTION_SYSTEM,
     }
 
     return {

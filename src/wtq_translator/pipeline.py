@@ -4,6 +4,7 @@ from dataclasses import asdict
 
 from .backtranslation import back_translate_shell, back_translate_table, back_translate_table_candidates
 from .config import AppConfig
+from .domain import detect_domain
 from .enums import AnswerLanguageMode, ProcessingStatus, TranslationMode
 from .llm.base import EmbeddingProvider, LLMProvider
 from .llm.tracing import llm_trace_context
@@ -95,11 +96,18 @@ class TranslationPipeline:
         if not mention_map.mentions:
             report.warnings.append("No table mentions found in question.")
 
-        # 1) Перевод таблицы (кандидаты) — ДО shell
+        # 1) Определение домена таблицы
+        domain, warn = await detect_domain(self.llm, cfg, table)
+        report.domain = domain
+        if warn:
+            report.warnings.append(warn)
+
+        # 2) Перевод таблицы (кандидаты) — ДО shell
         await translate_table_candidates(
             self.llm, candidate_set.candidates,
             config=cfg, source_language=cfg.project.source_language,
             target_language=cfg.project.target_language, cache=self.cache,
+            domain=domain, headers=table.headers,
         )
         lemma_translations = {c.lemma_key: c.translation for c in candidate_set.candidates}
         untranslated = validate_untranslated(candidate_set, lemma_translations)
@@ -109,10 +117,10 @@ class TranslationPipeline:
             raise ValueError(report.errors[-1])
         translated_table = reconstruct_table(table, candidate_set, lemma_translations)
 
-        # 2) Теговая маска
+        # 3) Теговая маска
         masked_source = mask_question_tagged(question.utterance, mention_map.mentions)
 
-        # 3) Shell с глоссарием
+        # 4) Shell с глоссарием
         id_to_translation = {c.id: c.translation for c in candidate_set.candidates}
         tag_glossary = {m.mask: id_to_translation[m.candidate_key] for m in mention_map.mentions}
         masked_ru = await translate_shell(
@@ -125,7 +133,7 @@ class TranslationPipeline:
         self._apply_tag_report(masked_source, masked_ru, report, forward=True)
         final_question = strip_tags(masked_ru)
 
-        # 4) Ответ
+        # 5) Ответ
         answer, warnings = await build_target_value(
             self.llm, source_target_value=question.target_value,
             source_table=table, output_table=translated_table, config=cfg,
@@ -137,7 +145,7 @@ class TranslationPipeline:
         if any("translated directly" in w or "multiple translated values" in w for w in warnings):
             report.status = ProcessingStatus.NEEDS_REVIEW
 
-        # 5) Back-shell (RU→EN) с обратным глоссарием
+        # 6) Back-shell (RU→EN) с обратным глоссарием
         back_glossary = {m.mask: m.question_text for m in mention_map.mentions}
         back_masked = await back_translate_shell(
             self.llm, masked_ru, config=cfg,
@@ -148,12 +156,12 @@ class TranslationPipeline:
         self._apply_tag_report(masked_source, back_masked, report, forward=False)
         back_question = strip_tags(back_masked)
 
-        # 6) Back-таблица (кандидаты, RU→EN)
+        # 7) Back-таблица (кандидаты, RU→EN)
         back_table = await back_translate_table_candidates(
             self.llm, translated_table, config=cfg,
             source_language=cfg.project.source_language,
             translated_language=cfg.project.target_language,
-            nlp=nlp, cache=self.cache,
+            domain=domain, nlp=nlp, cache=self.cache,
         )
         validate_table_shape(table, back_table)
         self._apply_back_table_quality(table, back_table, report)

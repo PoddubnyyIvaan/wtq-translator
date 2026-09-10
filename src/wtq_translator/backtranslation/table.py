@@ -35,6 +35,7 @@ async def back_translate_table_candidates(
     config: AppConfig,
     source_language: str,
     translated_language: str,
+    domain: str = "",
     nlp,
     cache=None,
 ) -> TableData:
@@ -48,7 +49,9 @@ async def back_translate_table_candidates(
         config=config,
         source_language=translated_language,
         target_language=source_language,
+        domain=domain,
         cache=cache,
+        headers=table.headers,
         trace_stage_prefix="back_translate_table_candidates",
     )
     return reconstruct_table(

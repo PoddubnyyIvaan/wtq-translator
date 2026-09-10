@@ -35,6 +35,9 @@ class _FakeLLMProvider:
             raise RuntimeError(f"error for {kwargs['user']}")
         return f"response:{kwargs['user']}"
 
+    async def count_tokens(self, text: str) -> int:
+        return len(text.split())
+
 
 @pytest.mark.asyncio
 async def test_openai_provider_allows_at_most_max_concurrent_requests_in_flight():

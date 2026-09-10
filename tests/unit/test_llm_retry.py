@@ -10,6 +10,9 @@ class SchemaThenDataProvider:
     def __init__(self):
         self.calls = []
 
+    async def count_tokens(self, text: str) -> int:
+        return len(text.split())
+
     async def generate(self, **kwargs):
         self.calls.append(kwargs)
         if len(self.calls) == 1:

@@ -224,6 +224,7 @@ class QualityReport:
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
     status: ProcessingStatus = ProcessingStatus.PENDING
+    domain: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         value = asdict(self)

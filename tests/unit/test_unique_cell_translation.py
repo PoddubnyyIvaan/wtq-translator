@@ -17,6 +17,9 @@ class CountingProvider:
             seed = True
         return Caps()
 
+    async def count_tokens(self, text: str) -> int:
+        return len(text.split())
+
     async def generate(self, **kwargs):
         payload = json.loads(kwargs["user"])
         self.tasks.append(payload)
@@ -90,6 +93,9 @@ async def test_selected_columns_only_are_sent_to_model(tmp_path):
                 seed = True
             return Caps()
 
+        async def count_tokens(self, text: str) -> int:
+            return len(text.split())
+
         async def generate(self, **kwargs):
             payload = json.loads(kwargs["user"])
             self.tasks.append(payload)
@@ -148,6 +154,9 @@ async def test_missing_or_extra_ids_are_rejected(tmp_path):
             class Caps:
                 seed = True
             return Caps()
+
+        async def count_tokens(self, text: str) -> int:
+            return len(text.split())
 
         async def generate(self, **kwargs):
             return json.dumps({"translations": [{"id": "wrong", "translation": "x"}]})

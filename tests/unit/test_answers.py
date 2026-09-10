@@ -13,6 +13,9 @@ class NeverCallProvider:
     async def generate(self, **kwargs):
         raise AssertionError("LLM should not be called")
 
+    async def count_tokens(self, text: str) -> int:
+        return len(text.split())
+
 
 @pytest.mark.asyncio
 async def test_table_language_answer_uses_output_coordinate_in_mixed_table(tmp_path):

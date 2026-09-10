@@ -98,3 +98,8 @@ logging:
   level: INFO
   llm_io_enabled: true
   llm_io_path: null
+
+domain_detection:
+  enabled: true
+  max_tokens: 1500
+  language: null

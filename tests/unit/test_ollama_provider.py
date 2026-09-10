@@ -188,3 +188,34 @@ def test_factory_returns_openai_compatible_provider_by_default(tmp_path):
     provider = create_llm_provider(cfg)
     assert isinstance(provider, OpenAICompatibleProvider)
     assert provider.model == cfg.model.model_name
+
+
+@pytest.mark.asyncio
+async def test_count_tokens_posts_to_api_tokenize():
+    """count_tokens уходит на POST {base_url}/api/tokenize с телом
+    {"model", "prompt"} и возвращает len(data["tokens"])."""
+    captured: dict = {}
+
+    async def handler(request: httpx.Request) -> httpx.Response:
+        captured["url"] = str(request.url)
+        captured["method"] = request.method
+        captured["body"] = json.loads(request.content)
+        return httpx.Response(200, json={"tokens": ["a", "b", "c"]})
+
+    transport = httpx.MockTransport(handler)
+    client = httpx.AsyncClient(transport=transport)
+    provider = OllamaProvider(
+        base_url="http://ollama.local:11434",
+        api_key="",
+        model="qwen",
+        client=client,
+    )
+    try:
+        result = await provider.count_tokens("some text here")
+    finally:
+        await client.aclose()
+
+    assert result == 3
+    assert captured["method"] == "POST"
+    assert captured["url"] == "http://ollama.local:11434/api/tokenize"
+    assert captured["body"] == {"model": "qwen", "prompt": "some text here"}

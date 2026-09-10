@@ -94,6 +94,7 @@ class ModelConfig(BaseModel):
     timeout_seconds: float = 180.0
     retries: int = 3
     max_concurrent_requests: int = 1
+    tokenize_path: str = "/tokenize"  # для openai_compatible
     ollama: OllamaConfig = Field(default_factory=OllamaConfig)
 
     @model_validator(mode="after")
@@ -142,6 +143,20 @@ class LoggingConfig(BaseModel):
     llm_io_path: Path | None = None
 
 
+class DomainDetectionConfig(BaseModel):
+    """Настройки определения домена (скоупа таблицы) для вопроса."""
+
+    enabled: bool = True
+    max_tokens: int = 1500  # бюджет токенов для линеаризованной таблицы
+    language: str | None = None  # None => project.source_language
+
+    @model_validator(mode="after")
+    def _positive(self) -> "DomainDetectionConfig":
+        if self.max_tokens <= 0:
+            raise ValueError("domain_detection.max_tokens must be > 0")
+        return self
+
+
 class RunnerConfig(BaseModel):
     checkpoint_every: int = 25
     continue_on_error: bool = True
@@ -169,6 +184,7 @@ class AppConfig(BaseModel):
     cache: CacheConfig = Field(default_factory=CacheConfig)
     logging: LoggingConfig = Field(default_factory=LoggingConfig)
     runner: RunnerConfig = Field(default_factory=RunnerConfig)
+    domain_detection: DomainDetectionConfig = Field(default_factory=DomainDetectionConfig)
 
     @model_validator(mode="after")
     def resolve_and_validate(self) -> "AppConfig":

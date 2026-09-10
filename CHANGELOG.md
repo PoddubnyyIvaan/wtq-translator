@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — descending candidate tiers: per-item glossary + column context
+
+- **Порядок ярусов** (`translation/table_candidates.py`): кандидаты переводятся от большего яруса к меньшему (`sorted(by_length, reverse=True)`); глоссарий меньшего яруса — переводы самых длинных уже переведённых последовательностей, в которые переводимая подпоследовательность вложена как непрерывное подокно токенов `lemma_key`, с дедупом по `(source_text, translation)`.
+- **Структурированный ввод** (`translation/table_candidates.py`, `prompts.py`): user-JSON теперь `items: [{"id","text","column","glossary"}]` — каждый кандидат со своим глоссарием и полным оригинальным заголовком столбца (`column`, только контекст, первая координата кандидата). Формат ответа `{"translations":[{"id","translation"}]}` и downstream (валидация по id, кэш, реконструкция, трассировка) не изменились.
+- **Домен** (`prompts.py`): домен указывается один раз в системном промпте (`candidate_system_prompt(domain)`, `CANDIDATE_TRANSLATION_DOMAIN_SUFFIX`), из user-JSON ключ `domain` удалён. `PROMPT_SET_VERSION` → `2026-09-10-v12`.
+- **Call sites** (`pipeline.py`, `backtranslation/table.py`): передают `headers=table.headers`; обратный перевод таблицы наследует новую логику (языки меняются местами).
+
 ## Unreleased — tagged shell: movable tags + glossary-anchored content
 
 - **Промпт** (`prompts.py`): `SHELL_TRANSLATION_TAGGED_SYSTEM` переформулирован — теги описаны как перемещаемые скобки, а не разметка: пара тегов едет вместе со своим контентом по правилам порядка слов целевого языка (позиция и взаимный порядок пар не фиксированы), но не может быть удалена/развёрнута/продублирована/слита. Контент внутри пары обязан быть словом из `tag_glossary`, согласованным (инфлексия рода/числа/падежа/лица/времени, при необходимости порядок слов внутри фразы); «hint for consistency» и запрет самостоятельного перевода содержимого тега ужесточены. `PROMPT_SET_VERSION` → `2026-09-09-v10`.

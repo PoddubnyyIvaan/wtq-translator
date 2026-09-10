@@ -16,6 +16,9 @@ class CaptureProvider:
         self.calls.append(kwargs)
         return json.dumps({"translated_text": self.translated_text}, ensure_ascii=False)
 
+    async def count_tokens(self, text: str) -> int:
+        return len(text.split())
+
 
 @pytest.mark.asyncio
 async def test_tag_glossary_uses_tagged_system_and_payload():

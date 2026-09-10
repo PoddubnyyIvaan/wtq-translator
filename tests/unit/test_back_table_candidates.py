@@ -41,6 +41,9 @@ class MockProvider:
             seed = True
         return Caps()
 
+    async def count_tokens(self, text: str) -> int:
+        return len(text.split())
+
     async def generate(self, **kwargs):
         payload = json.loads(kwargs["user"])
         self.calls.append(payload)
@@ -49,7 +52,7 @@ class MockProvider:
             {
                 "translations": [
                     {"id": item["id"], "translation": self.mapping[item["text"]]}
-                    for item in payload["values"]
+                    for item in payload["items"]
                 ]
             },
             ensure_ascii=False,

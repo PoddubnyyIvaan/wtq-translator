@@ -17,11 +17,13 @@ class OpenAICompatibleProvider:
         timeout_seconds: float = 180,
         supports_seed: bool = True,
         max_concurrent_requests: int = 1,
+        tokenize_path: str = "/tokenize",
         client: httpx.AsyncClient | None = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
         self.model = model
+        self.tokenize_path = tokenize_path
         self.timeout_seconds = timeout_seconds
         self._capabilities = ProviderCapabilities(seed=supports_seed)
         # Единый HTTP-клиент на весь процесс: keep-alive вместо установки соединения
@@ -69,6 +71,30 @@ class OpenAICompatibleProvider:
             r.raise_for_status()
             data = r.json()
         return data["choices"][0]["message"]["content"]
+
+    async def count_tokens(self, text: str) -> int:
+        """Посчитать токены через токенизатор (тот же клиент/заголовки, что generate)."""
+        payload = {"model": self.model, "prompt": text}
+        headers = {"Authorization": f"Bearer {self.api_key}"} if self.api_key else {}
+        # Токенизатор (vLLM/SGLang-стиль) живёт в корне сервера, а не под /v1:
+        # суффикс /v1 в base_url нужен только для /v1/chat/completions.
+        tokenize_url = (
+            f"{self.base_url[:-3]}{self.tokenize_path}"
+            if self.base_url.endswith("/v1")
+            else f"{self.base_url}{self.tokenize_path}"
+        )
+        async with self._sem:
+            r = await self._client.post(
+                tokenize_url, json=payload, headers=headers
+            )
+            r.raise_for_status()
+            data = r.json()
+        count = data.get("count")
+        if count is not None:
+            return int(count)
+        if "tokens" in data:
+            return len(data["tokens"])
+        return len(data.get("input_ids", []))
 
 
 class OpenAICompatibleEmbeddingProvider:

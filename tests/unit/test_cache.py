@@ -15,6 +15,7 @@ from wtq_translator.config import AppConfig, ModelConfig, OllamaConfig, ProjectC
 class FakeLLM:
     def __init__(self):
         self.calls = 0
+        self.token_calls = 0
         self._capabilities = ProviderCapabilities(seed=True)
 
     @property
@@ -24,6 +25,10 @@ class FakeLLM:
     async def generate(self, **kwargs):
         self.calls += 1
         return f"response-{self.calls}"
+
+    async def count_tokens(self, text):
+        self.token_calls += 1
+        return len(text)
 
 
 class FakeEmbeddings:
@@ -54,6 +59,27 @@ async def test_embedding_cache(tmp_path):
     b = await cached.embed(["abc", "x"])
     assert a == b
     assert base.calls == 1
+
+
+@pytest.mark.asyncio
+async def test_count_tokens_proxies_to_wrapped(tmp_path):
+    base = FakeLLM()
+    cached = CachedLLMProvider(base, SQLiteCache(tmp_path / "state.sqlite"), {"model": "fake"})
+    count = await cached.count_tokens("hello world")
+    assert count == len("hello world")
+    assert base.token_calls == 1
+
+
+@pytest.mark.asyncio
+async def test_count_tokens_memoizes_repeated_text(tmp_path):
+    base = FakeLLM()
+    cached = CachedLLMProvider(base, SQLiteCache(tmp_path / "state.sqlite"), {"model": "fake"})
+    text = "повторяющийся текст"
+    first = await cached.count_tokens(text)
+    second = await cached.count_tokens(text)
+    assert first == len(text)
+    assert second == first
+    assert base.token_calls == 1
 
 
 # --- Задача 3c: identity кэша/логов для ollama-параметров (api.Translator) ---
