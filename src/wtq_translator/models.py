@@ -209,10 +209,10 @@ class QualityReport:
     translated_question: str = ""
     back_translated_question: str | None = None
     question_cosine_similarity: float | None = None
-    back_table_values_compared: int = 0
-    back_table_normalized_exact_matches: int = 0
-    back_table_normalized_exact_ratio: float | None = None
-    back_table_mismatch_examples: list[dict[str, Any]] = field(default_factory=list)
+    back_table_groups_compared: int = 0
+    back_table_min_similarity: float | None = None
+    back_table_mean_similarity: float | None = None
+    back_table_similarity_examples: list[dict[str, Any]] = field(default_factory=list)
     original_masks: list[str] = field(default_factory=list)
     forward_masks: list[str] = field(default_factory=list)
     backward_masks: list[str] = field(default_factory=list)

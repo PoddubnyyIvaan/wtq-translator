@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — back-table semantic similarity
+
+- замена exact-match reverse-перевода таблицы на семантическую близость той же embedding-моделью (без новых зависимостей);
+- новая настройка `validation.back_table_similarity_mode` — гранулярность `context` (дефолт) / `row` / `cell`;
+- новые поля отчёта `back_table_groups_compared`, `back_table_min_similarity`, `back_table_mean_similarity`, `back_table_similarity_examples` (старые normalized-exact поля удалены);
+- опциональный порог `back_table_similarity_threshold` — warning + `NEEDS_REVIEW` при `min` ниже порога, null = только диагностика;
+- `back_table_similarity_max_chunk_tokens` — бюджет токенов для чанков в `context`-режиме.
+
 ## Unreleased — descending candidate tiers: per-item glossary + column context
 
 - **Порядок ярусов** (`translation/table_candidates.py`): кандидаты переводятся от большего яруса к меньшему (`sorted(by_length, reverse=True)`); глоссарий меньшего яруса — переводы самых длинных уже переведённых последовательностей, в которые переводимая подпоследовательность вложена как непрерывное подокно токенов `lemma_key`, с дедупом по `(source_text, translation)`.

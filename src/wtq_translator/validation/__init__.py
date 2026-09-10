@@ -7,7 +7,7 @@ from .invariants import (
     validate_nonempty_preservation,
 )
 from .similarity import cosine_similarity
-from .table_quality import compare_back_translated_table
+from .table_quality import score_back_translated_table
 
 __all__ = [
     "extract_masks",
@@ -18,5 +18,5 @@ __all__ = [
     "validate_untranslated_columns",
     "validate_nonempty_preservation",
     "cosine_similarity",
-    "compare_back_translated_table",
+    "score_back_translated_table",
 ]

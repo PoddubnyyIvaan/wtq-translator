@@ -18,7 +18,7 @@ Controlled translation pipeline for WikiTableQuestions with deterministic table 
 - exact duplicate source values are translated once and propagated by Python to all stored coordinates;
 - one-request unique-value translation with strict response-ID / immutable-value / non-empty-value checks;
 - mandatory back translation of every component changed in the forward pass;
-- normalized-exact diagnostics for the back-translated table;
+- embedding-based (semantic) similarity for the back-translated table (context/row/cell modes);
 - optional question cosine similarity through a separate embedding provider;
 - answer matching and coordinate-based recovery;
 - OpenAI-compatible chat and embedding providers;
@@ -142,7 +142,7 @@ The `context` field in the output question TSV remains relative to that run's `d
 
 The system performs hard deterministic checks for masks and table structure. Back-translated question cosine similarity is supported, but the numeric threshold is intentionally not fixed yet; it must be calibrated on a manually reviewed WTQ sample. If embeddings are disabled, the run records a warning instead of pretending the cosine check happened.
 
-The table back translation additionally records a normalized-exact recovery ratio and mismatch examples. This is a diagnostic metric, not a hard semantic acceptance criterion.
+The back-translated table is scored with the same embedding model used for the question cosine similarity. Granularity is set by `validation.back_table_similarity_mode`: `context` (header plus greedy chunked rows), `row` (header and rows compared separately) or `cell` (per-cell). The report records `min`/`mean` similarity across the comparison units. An optional `back_table_similarity_threshold` is intentionally not fixed and must be calibrated for the chosen mode; when set and `min` falls below it, a warning plus `NEEDS_REVIEW` is recorded. If embeddings are disabled, a warning is recorded instead.
 
 ## Изменения v0.8: словарь уникальных значений
 

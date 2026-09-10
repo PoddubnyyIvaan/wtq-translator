@@ -162,7 +162,9 @@ async def test_full_pipeline_end_to_end(tmp_path, monkeypatch):
     assert result.output_table.rows == [["Алиса", "Лондон"]]
     assert result.quality.back_translated_question == "Where is Alice?"
     assert result.quality.question_cosine_similarity == 1.0
-    assert result.quality.back_table_normalized_exact_ratio == 1.0
+    assert result.quality.back_table_min_similarity == 1.0
+    assert result.quality.back_table_mean_similarity == 1.0
+    assert result.quality.back_table_groups_compared >= 1
     assert result.quality.status == ProcessingStatus.ACCEPTED
     assert result.quality.original_masks == ["<TABLE_REF_0000>"]
 

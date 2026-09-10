@@ -126,6 +126,19 @@ class ValidationConfig(BaseModel):
     strict_masks: bool = True
     strict_table_shape: bool = True
     strict_immutable_values: bool = True
+    back_table_similarity_enabled: bool = True
+    back_table_similarity_mode: Literal["context", "row", "cell"] = "context"
+    back_table_similarity_threshold: float | None = None
+    back_table_similarity_max_chunk_tokens: int = 512  # используется только в mode="context"
+
+    @model_validator(mode="after")
+    def _back_table_similarity(self) -> "ValidationConfig":
+        if self.back_table_similarity_max_chunk_tokens <= 0:
+            raise ValueError("validation.back_table_similarity_max_chunk_tokens must be > 0")
+        threshold = self.back_table_similarity_threshold
+        if threshold is not None and not (0.0 <= threshold <= 1.0):
+            raise ValueError("validation.back_table_similarity_threshold must be in [0, 1]")
+        return self
 
 
 class StateConfig(BaseModel):

@@ -34,6 +34,10 @@ strict_masks — жёсткая проверка плейсхолдеров.
 strict_table_shape — проверка неизменности формы таблицы.
 strict_immutable_values — запрет изменения immutable-значений.
 question_cosine_threshold — порог косинусной близости обратного перевода (в qwen_full.yaml — null, т.е. не задан, только диагностика).
+back_table_similarity_enabled — включает/выключает семантическую проверку обратного перевода таблицы.
+back_table_similarity_mode — гранулярность сравнения: context (заголовок + жадные чанки строк, дефолт), row (заголовок и каждая строка отдельно), cell (каждая ячейка отдельно).
+back_table_similarity_threshold — опциональный порог схожести: если задан и min ниже → warning + NEEDS_REVIEW (по умолчанию null — только диагностика).
+back_table_similarity_max_chunk_tokens — бюджет токенов для чанков в режиме context (используется только там).
 embeddings — enabled, model_name и т.д. для косинусной близости.
 cache — SQLite-кэш chat/embedding запросов.
 runner — checkpoint_every, continue_on_error, retry_failed_on_resume, rerun_needs_review (управление прогоном датасета).

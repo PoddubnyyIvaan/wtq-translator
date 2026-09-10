@@ -17,7 +17,7 @@ from .persistence.cache import SQLiteCache
 from .translation import build_target_value, translate_shell, translate_table
 from .translation.table_candidates import reconstruct_table, translate_table_candidates, validate_untranslated
 from .validation import (
-    compare_back_translated_table,
+    score_back_translated_table,
     cosine_similarity,
     extract_masks,
     validate_immutable_values,
@@ -164,7 +164,7 @@ class TranslationPipeline:
             domain=domain, nlp=nlp, cache=self.cache,
         )
         validate_table_shape(table, back_table)
-        self._apply_back_table_quality(table, back_table, report)
+        await self._apply_back_table_quality(table, back_table, report)
         immutable_back_errors = validate_immutable_values(table, back_table)
         if cfg.validation.strict_immutable_values and immutable_back_errors:
             report.errors.append(f"Back-translated table changed immutable values: {immutable_back_errors[:5]}")
@@ -190,7 +190,7 @@ class TranslationPipeline:
             report.warnings.append(f"Question cosine similarity {score:.4f} is below threshold {threshold:.4f}.")
             report.status = ProcessingStatus.NEEDS_REVIEW
 
-    def _apply_back_table_quality(
+    async def _apply_back_table_quality(
         self,
         source: TableData,
         back_translated: TableData,
@@ -198,16 +198,30 @@ class TranslationPipeline:
         *,
         columns: set[int] | None = None,
     ) -> None:
-        metrics = compare_back_translated_table(
+        vc = self.config.validation
+        if not vc.back_table_similarity_enabled:
+            return
+        if self.embeddings is None:
+            report.warnings.append("Embedding provider disabled; back-table similarity was not computed.")
+            return
+        metrics = await score_back_translated_table(
             source,
             back_translated,
+            embeddings=self.embeddings,
             normalization=self.config.mentions.normalization,
+            mode=vc.back_table_similarity_mode,
+            max_chunk_tokens=vc.back_table_similarity_max_chunk_tokens,
             columns=columns,
         )
-        report.back_table_values_compared = metrics["compared"]
-        report.back_table_normalized_exact_matches = metrics["normalized_exact_matches"]
-        report.back_table_normalized_exact_ratio = metrics["normalized_exact_ratio"]
-        report.back_table_mismatch_examples = metrics["mismatch_examples"]
+        report.back_table_groups_compared = metrics["groups_compared"]
+        report.back_table_min_similarity = metrics["min_similarity"]
+        report.back_table_mean_similarity = metrics["mean_similarity"]
+        report.back_table_similarity_examples = metrics["similarity_examples"]
+        threshold = vc.back_table_similarity_threshold
+        score = metrics["min_similarity"]
+        if threshold is not None and score is not None and score < threshold:
+            report.warnings.append(f"Back-table similarity {score:.4f} is below threshold {threshold:.4f}.")
+            report.status = ProcessingStatus.NEEDS_REVIEW
 
     def _apply_mask_report(self, expected: str, actual: str, report: QualityReport, forward: bool) -> None:
         mv = validate_masks(expected, actual)
@@ -320,7 +334,7 @@ class TranslationPipeline:
         if translated_columns:
             back_table = await back_translate_table(self.llm, output_table, config=cfg, source_language=cfg.project.source_language, translated_language=cfg.project.target_language, columns=translated_columns)
             validate_table_shape(table, back_table)
-            self._apply_back_table_quality(table, back_table, report, columns=translated_columns)
+            await self._apply_back_table_quality(table, back_table, report, columns=translated_columns)
             changed_back_unselected = validate_untranslated_columns(output_table, back_table, translated_columns)
             if changed_back_unselected:
                 report.errors.append(f"Back translation changed unselected columns: {changed_back_unselected[:5]}")
