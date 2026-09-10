@@ -4,19 +4,13 @@ from pathlib import Path
 
 
 def resolve_context_path(dataset_root: str | Path, context: str) -> Path:
-    """Resolve WTQ context relative path without assuming CSV semantics.
+    """Resolve a WTQ context relative path to the table TSV path.
 
-    If the exact path is absent and context ends with .csv, also try .tsv.
-    This keeps compatibility with older WTQ metadata while the table storage is TSV.
+    The table storage is TSV, so whatever suffix is stored in the context,
+    the resulting path always points to a file with the .tsv suffix.
     """
     root = Path(dataset_root)
-    rel = Path(context)
-    candidates = [root / rel]
-    if rel.suffix.lower() == ".csv":
-        candidates.append(root / rel.with_suffix(".tsv"))
-    elif rel.suffix.lower() != ".tsv":
-        candidates.append(root / rel.with_suffix(".tsv"))
-    for p in candidates:
-        if p.exists():
-            return p
-    raise FileNotFoundError(f"Table referenced by context not found: {context}; tried {candidates}")
+    table = root / Path(context).with_suffix(".tsv")
+    if not table.exists():
+        raise FileNotFoundError(f"Table referenced by context not found: {context}; expected {table}")
+    return table

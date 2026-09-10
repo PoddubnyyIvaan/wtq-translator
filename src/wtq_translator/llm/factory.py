@@ -1,10 +1,20 @@
 from __future__ import annotations
 
 from ..config import AppConfig
+from .ollama import OllamaProvider
 from .openai_compatible import OpenAICompatibleEmbeddingProvider, OpenAICompatibleProvider
 
 
 def create_llm_provider(config: AppConfig):
+    if config.model.provider == "ollama":
+        return OllamaProvider(
+            base_url=config.model.base_url,
+            api_key=config.model.api_key,
+            model=config.model.model_name,
+            timeout_seconds=config.model.timeout_seconds,
+            max_concurrent_requests=config.model.max_concurrent_requests,
+            ollama=config.model.ollama,
+        )
     if config.model.provider != "openai_compatible":
         raise ValueError(f"Unsupported provider: {config.model.provider}")
     return OpenAICompatibleProvider(
@@ -12,6 +22,7 @@ def create_llm_provider(config: AppConfig):
         api_key=config.model.api_key,
         model=config.model.model_name,
         timeout_seconds=config.model.timeout_seconds,
+        max_concurrent_requests=config.model.max_concurrent_requests,
     )
 
 

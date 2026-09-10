@@ -34,6 +34,30 @@ def _extract_json(text: str) -> dict:
         raise ValueError(f"Invalid shell JSON: {first_error}. Raw preview: {preview}") from first_error
 
 
+def _tagged_worked_example(source_language: str, target_language: str) -> dict[str, str] | None:
+    """Returns a direction-matched worked example for the tagged shell prompt.
+
+    The example demonstrates the two rules that models most often violate:
+    1) a tag pair is NOT dropped or unwrapped - it stays glued around its content;
+    2) the pair may travel together with its content to follow the target-language
+    word order, and the content is the tag_glossary word inflected to agree with
+    the sentence (en: "<the team>'s captain" -> ru: "капитан <команды>").
+    """
+    if source_language == "en" and target_language == "ru":
+        return {
+            "input": "who was <TABLE_REF_0000>the team</TABLE_REF_0000>'s captain in 2001?",
+            "glossary": {"<TABLE_REF_0000>": "команда"},
+            "output": "кем был капитан <TABLE_REF_0000>команды</TABLE_REF_0000> в 2001 году?",
+        }
+    if source_language == "ru" and target_language == "en":
+        return {
+            "input": "кем был капитан <TABLE_REF_0000>команды</TABLE_REF_0000> в 2001 году?",
+            "glossary": {"<TABLE_REF_0000>": "the team"},
+            "output": "who was <TABLE_REF_0000>the team</TABLE_REF_0000>'s captain in 2001?",
+        }
+    return None
+
+
 async def translate_shell(
     provider: LLMProvider,
     text: str,
@@ -55,6 +79,9 @@ async def translate_shell(
     }
     if tagged:
         base_payload["tag_glossary"] = tag_glossary
+        example = _tagged_worked_example(source_language, target_language)
+        if example is not None:
+            base_payload["worked_example"] = example
 
     last_error: Exception | None = None
     for attempt in range(model.retries + 1):
@@ -63,7 +90,10 @@ async def translate_shell(
             if tagged:
                 payload["retry_instruction"] = (
                     "The previous response was invalid. Return the translated data object itself, not a schema, "
-                    "and preserve every opening and closing TABLE_REF tag exactly."
+                    "and preserve every opening and closing TABLE_REF tag exactly. "
+                    "Do not drop or unwrap tags: a tag pair moves together with its content to fit the "
+                    "target-language word order, and the content inside the pair must be the matching "
+                    "tag_glossary word inflected to agree with the sentence."
                 )
             else:
                 payload["retry_instruction"] = (

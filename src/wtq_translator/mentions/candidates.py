@@ -33,33 +33,48 @@ def load_spacy_model(model_name: str) -> Any:
     try:
         import spacy
         from spacy.language import Language
-        from spacy.matcher import Matcher
         # нет верхнеуровневого импорта: модуль импортируется и без spaCy
 
     except ImportError as exc:
         raise ImportError("spaCy не установлен. Установите: `pip install 'spacy>=3.7'`.") from exc
     try:
         nlp = spacy.load(model_name)
-        matcher = Matcher(nlp.vocab)
-        # IS_ALPHA означает, что токен состоит только из букв (не цифры, не знак)
-        pattern = [{"IS_ALPHA": True}, {"TEXT": "-"}, {"IS_ALPHA": True}]
-        matcher.add("HYPHENATED_WORD", [pattern])
 
         @Language.component("merge_hyphens")
         def merge_hyphens(doc):
-            # Находим все совпадения
-            matches = matcher(doc)
-
-            # Собираем спаны (фрагменты текста), которые нужно склеить
-            spans = [doc[start:end] for _, start, end in matches]
-
-            # ИСПРАВЛЕННАЯ СТРОКА: используем doc.retokenize()
+            # Склеиваем максимальные непрерывные дефисные цепочки "слово(-слово)+".
+            # Склейка разрешена только при плотном примыкании без пробелов вокруг дефиса:
+            # позиция дефиса должна совпадать с концом предыдущего слова, а следующее
+            # слово должно начинаться сразу после дефиса. "a - b" (с пробелами) не
+            # склеивается, "a-b-c" — склеивается целиком в один токен.
+            n = len(doc)
+            spans: list[tuple[int, int]] = []
+            i = 0
+            while i < n:
+                if not doc[i].is_alpha:
+                    i += 1
+                    continue
+                j = i
+                while (
+                    j + 2 < n
+                    and doc[j + 1].text == "-"                 # следующий токен — дефис
+                    and doc[j + 2].is_alpha                    # за ним — слово
+                    and doc[j + 1].idx == doc[j].idx + len(doc[j].text)   # "слово-" плотно
+                    and doc[j + 2].idx == doc[j + 1].idx + 1              # "-слово" плотно
+                ):
+                    j += 2
+                if j > i:
+                    spans.append((i, j + 1))
+                    i = j + 1
+                else:
+                    i += 1
+            if not spans:
+                return doc
             with doc.retokenize() as retokenizer:
-                for span in spans:
+                for start, end in spans:
                     # Склеиваем токены. spaCy сам корректно определит атрибуты (POS, LEMMA)
                     # на основе головного слова (root) спана.
-                    retokenizer.merge(span)
-
+                    retokenizer.merge(doc[start:end])
             return doc
 
         if "merge_hyphens" not in nlp.pipe_names:

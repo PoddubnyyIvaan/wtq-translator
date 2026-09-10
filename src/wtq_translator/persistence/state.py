@@ -29,7 +29,9 @@ class StateStore:
         self._init()
 
     def connect(self):
-        db = sqlite3.connect(self.path)
+        # timeout=30 задаёт busy timeout каждого нового соединения (30 с),
+        # чтобы конкурентные записи не падали с "database is locked".
+        db = sqlite3.connect(self.path, timeout=30)
         db.row_factory = sqlite3.Row
         return db
 
@@ -74,6 +76,10 @@ class StateStore:
                     PRIMARY KEY (run_id, question_id)
                 )
             """)
+            # WAL — persistent режим журнала файла БД (нужен для конкурентных читателей/писателей),
+            # busy_timeout — страховка для init-соединения; остальные соединения получают 30 с через timeout.
+            db.execute("PRAGMA journal_mode=WAL").fetchone()
+            db.execute("PRAGMA busy_timeout=30000")
 
     def start_run(self, *, run_id: str, questions_tsv: str, output_questions_tsv: str, config_hash: str) -> None:
         """Create or resume a run without allowing identity drift.

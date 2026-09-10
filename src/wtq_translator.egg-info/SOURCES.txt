@@ -28,10 +28,13 @@ src/wtq_translator/llm/base.py
 src/wtq_translator/llm/capabilities.py
 src/wtq_translator/llm/factory.py
 src/wtq_translator/llm/logged.py
+src/wtq_translator/llm/ollama.py
 src/wtq_translator/llm/openai_compatible.py
 src/wtq_translator/llm/tracing.py
 src/wtq_translator/mentions/__init__.py
+src/wtq_translator/mentions/candidates.py
 src/wtq_translator/mentions/finder.py
+src/wtq_translator/mentions/finder_full.py
 src/wtq_translator/mentions/masking.py
 src/wtq_translator/mentions/normalize.py
 src/wtq_translator/mentions/resolver.py
@@ -48,6 +51,7 @@ src/wtq_translator/translation/answers.py
 src/wtq_translator/translation/chunks.py
 src/wtq_translator/translation/shell.py
 src/wtq_translator/translation/table.py
+src/wtq_translator/translation/table_candidates.py
 src/wtq_translator/utils/__init__.py
 src/wtq_translator/utils/reproducibility.py
 src/wtq_translator/validation/__init__.py

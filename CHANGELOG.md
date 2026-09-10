@@ -1,5 +1,31 @@
 # Changelog
 
+## Unreleased — tagged shell: movable tags + glossary-anchored content
+
+- **Промпт** (`prompts.py`): `SHELL_TRANSLATION_TAGGED_SYSTEM` переформулирован — теги описаны как перемещаемые скобки, а не разметка: пара тегов едет вместе со своим контентом по правилам порядка слов целевого языка (позиция и взаимный порядок пар не фиксированы), но не может быть удалена/развёрнута/продублирована/слита. Контент внутри пары обязан быть словом из `tag_glossary`, согласованным (инфлексия рода/числа/падежа/лица/времени, при необходимости порядок слов внутри фразы); «hint for consistency» и запрет самостоятельного перевода содержимого тега ужесточены. `PROMPT_SET_VERSION` → `2026-09-09-v10`.
+- **Shell** (`translation/shell.py`): для tagged-ветки в user-payload добавляется направленный `worked_example` (en→ru и ru→en) — пример переноса пары тегов вместе со словом и согласования словарной формы; для неизвестных языковых пар пример не добавляется. `retry_instruction` при потере тегов повторяет правила перемещения/словаря вместо абстрактного запрета.
+
+## Unreleased — non-overlapping glossary windows
+
+- **Сжатие глоссария кандидатов** (`translation/table_candidates.py`): в пределах одной фразы-значения в глоссарий chunk'а попадают только непересекающиеся по токен-позициям окна — из пересекающихся остаётся самое длинное (при равенстве — первое/левое), вложенные удаляются; результаты по значениям запроса объединяются. Порядок записей сохранён по порядку более коротких кандидатов.
+
+## Unreleased — relevant candidate glossary
+
+- **Глоссарий кандидатов** (`translation/table_candidates.py`): в промпт chunk'а яруса передаётся только релевантный глоссарий — переводы более коротких кандидатов, чей lemma_key является непрерывным подокном lemma_key хотя бы одного кандидата этого же chunk-запроса, а не весь глоссарий всех более коротких кандидатов яруса.
+
+## Unreleased — concurrency + progress + native Ollama
+
+Конкурентная обработка датасета с прогресс-баром и нативный Ollama-провайдер (план `.kilo/plans/1788851084786-optimize-run-time-concurrency.md`).
+
+- **Конфиг** (`config.py`): новые поля `runner.concurrency`, `model.max_concurrent_requests`, `translation.candidates.{max_candidates_per_request, request_concurrency}`; дефолты сохраняют прежнее последовательное поведение.
+- **Runner** (`runner.py`): ограниченный пул воркеров (top-up), checkpoint/вывод сохраняют порядок исходного TSV.
+- **Прогресс** (`cli.py`, `pyproject.toml`): tqdm-бар в `run`/`resume` (stderr, `--no-progress`), stdout остаётся чистым для финального JSON.
+- **Надёжность при параллелизме** (`persistence/state.py`, `persistence/cache.py`, `llm/`): SQLite WAL + `busy_timeout`, keep-alive `httpx.AsyncClient`, семафор в LLM-провайдере, потокобезопасная запись `llm_io.jsonl`.
+- **Известное следствие**: порядок строк в append-only jsonl (`events`, `quality`, `failures`, `llm_io`) — порядок завершения, а не исходного файла; `output_questions.tsv` сохраняет порядок исходного файла.
+- **Нативный Ollama** (`llm/ollama.py`, `llm/factory.py`): `model.provider: ollama` → `POST {base_url}/api/chat` (base_url без `/v1`); `model.ollama.{think, stream, options}` (stream только `false`), options по умолчанию `{temperature, num_predict=max_output_tokens, seed}` перекрываются конфигом.
+- **Кэш/логи** (`api.py`): при `provider: ollama` `think`/`options` входят в identity кэша и логов.
+- **Конфиг**: изменение значений меняет `_config_hash` → новый `run_id` (старые прогоны не резюмируются).
+
 ## Unreleased — candidate-based `full` translation pipeline
 
 Режим `full` переведён на candidate-based пайплайн (план `.kilo/plans/1788603643092-full-translate-candidate-pipeline.md`). Режимы `shell_only`/`mentions_only` и их тесты не изменились.

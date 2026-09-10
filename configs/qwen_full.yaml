@@ -8,6 +8,10 @@ project:
 translation:
   mode: full
   answer_language_mode: table
+  # Батчинг перевода кандидатов; цифры зависят от num_parallel на Ollama-сервере.
+  candidates:
+    max_candidates_per_request: 64
+    request_concurrency: 32
 
 mentions:
   normalization:
@@ -36,14 +40,27 @@ mentions:
   exclude_dates: false
 
 model:
+  #provider: ollama
+  #base_url: http://192.168.19.127:9886/v1
+  base_url: http://localhost:9124/v1
   provider: openai_compatible
-  base_url: http://192.168.55.242:7869/v1
+  #base_url: http://192.168.55.242:7869/v1
   api_key: ollama
-  model_name: qwen3.8:latest
-  temperature: 0.0
-  max_output_tokens: 4096
+  model_name: Qwen/Qwen3-30B-A3B-Instruct-2507-FP8
+  #model_name: qwen3.8:latest
+  temperature: 0.5
+  max_output_tokens: 2500
   timeout_seconds: 180
   retries: 3
+  # Глобальный лимит одновременных LLM-запросов; цифры зависят от num_parallel на Ollama-сервере.
+  max_concurrent_requests: 64
+  # Вариант: нативный Ollama-провайдер (POST /api/chat). base_url — корень сервера БЕЗ /v1.
+  # provider: ollama
+  # base_url: http://192.168.55.242:7869
+  #ollama:
+   # think: false
+    #stream: false
+  #  options: {}
 
 embeddings:
   enabled: true
@@ -70,6 +87,8 @@ cache:
   cache_embeddings: true
 
 runner:
+  # Число одновременно обрабатываемых вопросов; цифры зависят от num_parallel на Ollama-сервере.
+  concurrency: 32
   checkpoint_every: 25
   continue_on_error: true
   retry_failed_on_resume: false

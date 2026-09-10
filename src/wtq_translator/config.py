@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
 import yaml
 from pydantic import BaseModel, Field, model_validator
@@ -17,9 +17,25 @@ class ProjectConfig(BaseModel):
     seed: int = 42
 
 
+class CandidateTranslationConfig(BaseModel):
+    """Настройки батчинга переводов табличных кандидатов внутри одного яруса."""
+
+    max_candidates_per_request: int | None = None
+    request_concurrency: int = 1
+
+    @model_validator(mode="after")
+    def validate_values(self) -> "CandidateTranslationConfig":
+        if self.max_candidates_per_request is not None and self.max_candidates_per_request <= 0:
+            raise ValueError("translation.candidates.max_candidates_per_request must be > 0 when set")
+        if self.request_concurrency < 1:
+            raise ValueError("translation.candidates.request_concurrency must be >= 1")
+        return self
+
+
 class TranslationConfig(BaseModel):
     mode: TranslationMode = TranslationMode.FULL
     answer_language_mode: AnswerLanguageMode = AnswerLanguageMode.TABLE
+    candidates: CandidateTranslationConfig = Field(default_factory=CandidateTranslationConfig)
 
 
 class MentionNormalizationConfig(BaseModel):
@@ -50,8 +66,26 @@ class MentionsConfig(BaseModel):
         return self
 
 
+class OllamaConfig(BaseModel):
+    """Параметры нативного Ollama-провайдера, «зеркалит» тело запроса POST /api/chat."""
+
+    think: bool = False
+    stream: bool = False
+    options: dict[str, Any] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def validate_ollama_params(self) -> "OllamaConfig":
+        if self.stream:
+            raise ValueError("ollama.stream must be False: streaming (SSE) is not supported")
+        num_predict = self.options.get("num_predict")
+        if num_predict is not None:
+            if not isinstance(num_predict, int) or isinstance(num_predict, bool) or num_predict <= 0:
+                raise ValueError("ollama.options.num_predict must be an int > 0 when set")
+        return self
+
+
 class ModelConfig(BaseModel):
-    provider: str = "openai_compatible"
+    provider: Literal["openai_compatible", "ollama"] = "openai_compatible"
     base_url: str = "http://localhost:11434/v1"
     api_key: str = "ollama"
     model_name: str = "qwen2.5:3b"
@@ -59,6 +93,14 @@ class ModelConfig(BaseModel):
     max_output_tokens: int = 4096
     timeout_seconds: float = 180.0
     retries: int = 3
+    max_concurrent_requests: int = 1
+    ollama: OllamaConfig = Field(default_factory=OllamaConfig)
+
+    @model_validator(mode="after")
+    def validate_limits(self) -> "ModelConfig":
+        if self.max_concurrent_requests < 1:
+            raise ValueError("model.max_concurrent_requests must be >= 1")
+        return self
 
 
 class EmbeddingConfig(BaseModel):
@@ -105,6 +147,13 @@ class RunnerConfig(BaseModel):
     continue_on_error: bool = True
     retry_failed_on_resume: bool = False
     rerun_needs_review: bool = False
+    concurrency: int = 1
+
+    @model_validator(mode="after")
+    def validate_concurrency(self) -> "RunnerConfig":
+        if self.concurrency <= 0:
+            raise ValueError("runner.concurrency must be > 0")
+        return self
 
 
 class AppConfig(BaseModel):

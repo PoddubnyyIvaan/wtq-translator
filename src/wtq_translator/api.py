@@ -16,17 +16,25 @@ class Translator:
         llm = create_llm_provider(config)
         embeddings = create_embedding_provider(config)
 
+        # Identity обёрток кэша/логов для LLM (embeddings — отдельно, ниже).
+        # Для нативного ollama-провайдера ответ модели зависит от think/options:
+        # включаем их в identity, чтобы смена параметров не давала ложных
+        # cache-hit'ов от предыдущих настроек и корректно отражалась в логе llm_io.
+        llm_identity: dict[str, object] = {
+            "provider": config.model.provider,
+            "base_url": config.model.base_url,
+            "model": config.model.model_name,
+        }
+        if config.model.provider == "ollama":
+            llm_identity["ollama"] = config.model.ollama.model_dump(mode="json")
+
         cache = None
         if config.cache.enabled:
             cache = SQLiteCache(config.state.sqlite_path)
             llm = CachedLLMProvider(
                 llm,
                 cache,
-                identity={
-                    "provider": config.model.provider,
-                    "base_url": config.model.base_url,
-                    "model": config.model.model_name,
-                },
+                identity=dict(llm_identity),
             )
             if embeddings is not None and config.cache.cache_embeddings:
                 e = config.embeddings
@@ -47,11 +55,7 @@ class Translator:
             llm = LoggedLLMProvider(
                 llm,
                 path,
-                identity={
-                    "provider": config.model.provider,
-                    "base_url": config.model.base_url,
-                    "model": config.model.model_name,
-                },
+                identity=dict(llm_identity),
             )
 
         self.llm = llm

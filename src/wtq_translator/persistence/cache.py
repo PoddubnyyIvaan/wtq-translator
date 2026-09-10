@@ -22,7 +22,9 @@ class SQLiteCache:
         self._init()
 
     def connect(self):
-        return sqlite3.connect(self.path)
+        # timeout=30 задаёт busy timeout каждого нового соединения (30 с),
+        # чтобы конкурентные записи из воркеров не падали с "database is locked".
+        return sqlite3.connect(self.path, timeout=30)
 
     def _init(self) -> None:
         with self.connect() as db:
@@ -49,6 +51,10 @@ class SQLiteCache:
                     created_at TEXT NOT NULL
                 )
             """)
+            # WAL — persistent режим журнала файла БД (нужен для конкурентных читателей/писателей),
+            # busy_timeout — страховка для init-соединения; остальные соединения получают 30 с через timeout.
+            db.execute("PRAGMA journal_mode=WAL").fetchone()
+            db.execute("PRAGMA busy_timeout=30000")
 
     def get_text(self, key: str) -> str | None:
         with self.connect() as db:

@@ -3,13 +3,27 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import sys
 import uuid
+from typing import Any
 
 from .audit import audit_dataset_mentions
 from .config import load_config
 from .dataset import read_question_tsv, read_table_tsv, resolve_context_path
 from .mentions import find_table_mentions
 from .runner import get_run_report, make_run_id, run_dataset_from_tsv, run_one_from_tsv
+
+
+def _make_progress_bar(total: int, *, disabled: bool) -> Any:
+    """Создаёт прогресс-бар tqdm для run/resume.
+
+    Ленивый импорт: окружение без установленного tqdm (например, тесты) не падает,
+    пока ветка run/resume реально не исполняется. Вывод бара идёт в stderr — stdout
+    остаётся чистым для финального JSON.
+    """
+    from tqdm import tqdm
+
+    return tqdm(desc="questions", unit="q", total=total, disable=disabled)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -34,11 +48,13 @@ def _parser() -> argparse.ArgumentParser:
     run.add_argument("questions_tsv")
     run.add_argument("--run-id", default=None)
     run.add_argument("--fresh", action="store_true", help="Do not resume existing state; use a new run id unless --run-id is set")
+    run.add_argument("--no-progress", action="store_true", help="Do not show the tqdm progress bar")
 
     resume = sub.add_parser("resume")
     resume.add_argument("config")
     resume.add_argument("questions_tsv")
     resume.add_argument("--run-id", default=None)
+    resume.add_argument("--no-progress", action="store_true", help="Do not show the tqdm progress bar")
 
     rep = sub.add_parser("report")
     rep.add_argument("config")
@@ -118,12 +134,22 @@ def main() -> None:
         run_id = args.run_id
         if args.command == "run" and getattr(args, "fresh", False) and run_id is None:
             run_id = f"{make_run_id(config, args.questions_tsv)}-{uuid.uuid4().hex[:8]}"
-        summary = asyncio.run(run_dataset_from_tsv(
-            config,
-            args.questions_tsv,
-            run_id=run_id,
-            resume=resume_mode,
-        ))
+        # Прогресс-бар: total = число вопросов, disable = --no-progress или не tty.
+        # Бар пишет в stderr и закрывается в finally ДО печати JSON в stdout.
+        bar = _make_progress_bar(
+            total=len(read_question_tsv(args.questions_tsv)),
+            disabled=args.no_progress or not sys.stderr.isatty(),
+        )
+        try:
+            summary = asyncio.run(run_dataset_from_tsv(
+                config,
+                args.questions_tsv,
+                run_id=run_id,
+                resume=resume_mode,
+                progress=bar,
+            ))
+        finally:
+            bar.close()
         print(json.dumps({
             "run_id": summary.run_id,
             "total": summary.total,

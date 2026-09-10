@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import json
 import os
@@ -8,7 +9,7 @@ import traceback
 from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
-from typing import Callable
+from typing import Any, Callable
 
 from .api import Translator
 from .config import AppConfig
@@ -145,6 +146,22 @@ def _should_skip(state, config: AppConfig, resume: bool) -> bool:
     return False
 
 
+async def _process_question(
+    config: AppConfig,
+    translator: Translator,
+    question: QuestionRecord,
+) -> TranslationResult:
+    """Читает исходную таблицу вопроса и выполняет перевод.
+
+    Вспомогательная функция воркера пула: не выполняет никаких side-эффектов записи
+    (state/таблицы/traces/jsonl/события) — результат или ошибка всплывают в главную
+    корутину, где обрабатываются единственным обработчиком.
+    """
+    source_table_path = resolve_context_path(config.project.input_root, question.context)
+    source_table = read_table_tsv(source_table_path)
+    return await translator.process(question, source_table)
+
+
 async def run_one_from_tsv(
     config: AppConfig,
     questions_tsv: str | Path,
@@ -179,6 +196,7 @@ async def run_dataset_from_tsv(
     run_id: str | None = None,
     resume: bool = True,
     translator_factory: Callable[[AppConfig], Translator] = Translator,
+    progress: Any | None = None,
 ) -> RunSummary:
     """Translate one WTQ question TSV end-to-end.
 
@@ -241,29 +259,63 @@ async def run_dataset_from_tsv(
         if ordered:
             write_question_tsv(ordered, output_questions, fieldnames=document.fieldnames)
 
+    # Pre-scan: восстановленные из state записи уже в output_by_id (см. выше).
+    # Здесь применяем _should_skip и собираем todo = [(ordinal_index, question)] —
+    # записи, которые ещё нужно обработать. ordinal_index — позиция в исходном
+    # документе, нужна для сообщения START «Processing question N/M».
+    todo: list[tuple[int, QuestionRecord]] = []
     for index, question in enumerate(document.records):
         existing = state.get_question(run_id, question.id)
         if _should_skip(existing, config, resume):
             output_by_id[question.id] = _record_from_state(existing.output_record)
             skipped += 1
+            # Инвариант: каждая запись document.records даёт ровно один update —
+            # либо здесь (пропущена pre-scan'ом), либо в обработчике завершённой задачи.
+            if progress is not None:
+                progress.update(1)
             continue
+        todo.append((index, question))
 
+    # Пул воркеров по схеме «top-up + единственный обработчик»: воркеры только читают
+    # таблицу и вызывают translator.process; все записи в БД/jsonl/файлы делает главная
+    # корутина (поэтому блокировки не нужны).
+    running: set[asyncio.Task[TranslationResult]] = set()
+    done: asyncio.Queue[asyncio.Task[TranslationResult]] = asyncio.Queue()
+    task_question: dict[asyncio.Task[TranslationResult], QuestionRecord] = {}
+
+    while todo or running:
+        # Top-up: заполняем пул, пока есть место и необработанные вопросы. Статус
+        # PROCESSING и событие START пишутся в главной корутине до запуска задачи.
+        while len(running) < config.runner.concurrency and todo:
+            index, question = todo.pop(0)
+            state.set_question(run_id, question.id, ProcessingStatus.PROCESSING, config.translation.mode.value)
+            append_event(
+                events_path,
+                run_id=run_id,
+                question_id=question.id,
+                stage="question",
+                level="info",
+                code="START",
+                message=f"Processing question {index + 1}/{len(document.records)}",
+            )
+            task = asyncio.create_task(_process_question(config, translator, question))
+            running.add(task)
+            task_question[task] = question
+            task.add_done_callback(lambda t, q=done: q.put_nowait(t))
+
+        # Ждём одну завершённую задачу и обрабатываем её результат в главной корутине.
+        task = await done.get()
+        running.discard(task)
+        question = task_question.pop(task)
         table_rel, table_out = _table_paths(config, questions_path, question.id, run_id)
-        state.set_question(run_id, question.id, ProcessingStatus.PROCESSING, config.translation.mode.value)
-        append_event(
-            events_path,
-            run_id=run_id,
-            question_id=question.id,
-            stage="question",
-            level="info",
-            code="START",
-            message=f"Processing question {index + 1}/{len(document.records)}",
-        )
-
+        # Прогресс: одна завершённая задача == одна обработанная запись.
+        # update вызывается до try/except, чтобы учесть и падающую запись даже при
+        # continue_on_error=False (перед raise). Восстановленные из state записи здесь
+        # не проходят — их учитывает pre-scan, двойных update нет.
+        if progress is not None:
+            progress.update(1)
         try:
-            source_table_path = resolve_context_path(config.project.input_root, question.context)
-            source_table = read_table_tsv(source_table_path)
-            result = await translator.process(question, source_table)
+            result = task.result()
             write_table_tsv(result.output_table, table_out)
             output_record = question.with_translation(
                 utterance=result.translated_question,
@@ -342,10 +394,18 @@ async def run_dataset_from_tsv(
                 message=error_text,
             )
             if not config.runner.continue_on_error:
+                # continue_on_error=False: отменяем оставшиеся in-flight-задачи,
+                # завершаем run со статусом failed и пробрасываем исходную ошибку.
+                for pending in running:
+                    pending.cancel()
+                await asyncio.gather(*running, return_exceptions=True)
+                running.clear()
                 checkpoint()
                 state.finish_run(run_id, "failed")
                 raise
 
+        if progress is not None:
+            progress.set_postfix({"failed": failed})
         if (processed + failed) % config.runner.checkpoint_every == 0:
             checkpoint()
 

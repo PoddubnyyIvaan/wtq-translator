@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -29,14 +30,18 @@ class LoggedLLMProvider:
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.identity = identity or {}
+        # Защищает llm_io.jsonl от «склейки» строк при параллельной записи из
+        # нескольких корутин (порядок строк = порядок завершения запросов).
+        self._lock = asyncio.Lock()
 
     @property
     def capabilities(self) -> ProviderCapabilities:
         return self.wrapped.capabilities
 
-    def _append(self, event: dict[str, Any]) -> None:
-        with self.path.open("a", encoding="utf-8") as f:
-            f.write(json.dumps(event, ensure_ascii=False, default=str) + "\n")
+    async def _append(self, event: dict[str, Any]) -> None:
+        async with self._lock:
+            with self.path.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(event, ensure_ascii=False, default=str) + "\n")
 
     async def generate(
         self,
@@ -74,11 +79,11 @@ class LoggedLLMProvider:
             event = dict(base_event)
             event["status"] = "error"
             event["error"] = f"{type(exc).__name__}: {exc}"
-            self._append(event)
+            await self._append(event)
             raise
 
         event = dict(base_event)
         event["status"] = "ok"
         event["response"] = response
-        self._append(event)
+        await self._append(event)
         return response

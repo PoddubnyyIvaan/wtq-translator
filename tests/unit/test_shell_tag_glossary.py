@@ -79,3 +79,61 @@ async def test_lost_tag_raises_after_retries_with_tagged_retry_instruction():
     retry_payload = json.loads(provider.calls[1]["user"])
     instruction = retry_payload["retry_instruction"]
     assert "opening" in instruction and "closing" in instruction
+
+
+@pytest.mark.asyncio
+async def test_tag_glossary_payload_has_worked_example_for_en_ru():
+    provider = CaptureProvider("кем был капитан <TABLE_REF_0000>команды</TABLE_REF_0000> в 2001 году?")
+
+    await translate_shell(
+        provider,
+        "who was <TABLE_REF_0000>the team</TABLE_REF_0000>'s captain in 2001?",
+        source_language="en",
+        target_language="ru",
+        model=ModelConfig(retries=0),
+        seed=42,
+        tag_glossary={"<TABLE_REF_0000>": "команда"},
+    )
+
+    payload = json.loads(provider.calls[0]["user"])
+    example = payload["worked_example"]
+    # Теги в примере сохранены, словарное слово «команда» согласовано → «команды»,
+    # пара тегов переехала вместе со словом (после «капитан») по правилам РУ-порядка слов.
+    assert example["output"] == "кем был капитан <TABLE_REF_0000>команды</TABLE_REF_0000> в 2001 году?"
+
+
+@pytest.mark.asyncio
+async def test_tag_glossary_payload_has_worked_example_for_ru_en():
+    provider = CaptureProvider("who was <TABLE_REF_0000>the team</TABLE_REF_0000>'s captain in 2001?")
+
+    await translate_shell(
+        provider,
+        "кем был капитан <TABLE_REF_0000>команды</TABLE_REF_0000> в 2001 году?",
+        source_language="ru",
+        target_language="en",
+        model=ModelConfig(retries=0),
+        seed=42,
+        tag_glossary={"<TABLE_REF_0000>": "the team"},
+    )
+
+    payload = json.loads(provider.calls[0]["user"])
+    example = payload["worked_example"]
+    assert example["output"] == "who was <TABLE_REF_0000>the team</TABLE_REF_0000>'s captain in 2001?"
+
+
+@pytest.mark.asyncio
+async def test_tag_glossary_no_worked_example_for_unknown_language_pair():
+    provider = CaptureProvider("<TABLE_REF_0000>Berlin</TABLE_REF_0000> liegt in Deutschland?")
+
+    await translate_shell(
+        provider,
+        "where is <TABLE_REF_0000>Berlin</TABLE_REF_0000>?",
+        source_language="en",
+        target_language="de",
+        model=ModelConfig(retries=0),
+        seed=42,
+        tag_glossary={"<TABLE_REF_0000>": "Berlin"},
+    )
+
+    payload = json.loads(provider.calls[0]["user"])
+    assert "worked_example" not in payload

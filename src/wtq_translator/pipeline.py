@@ -114,7 +114,7 @@ class TranslationPipeline:
 
         # 3) Shell с глоссарием
         id_to_translation = {c.id: c.translation for c in candidate_set.candidates}
-        tag_glossary = {m.candidate_key: id_to_translation[m.candidate_key] for m in mention_map.mentions}
+        tag_glossary = {m.mask: id_to_translation[m.candidate_key] for m in mention_map.mentions}
         masked_ru = await translate_shell(
             self.llm, masked_source,
             source_language=cfg.project.source_language,
@@ -138,7 +138,7 @@ class TranslationPipeline:
             report.status = ProcessingStatus.NEEDS_REVIEW
 
         # 5) Back-shell (RU→EN) с обратным глоссарием
-        back_glossary = {m.candidate_key: m.question_text for m in mention_map.mentions}
+        back_glossary = {m.mask: m.question_text for m in mention_map.mentions}
         back_masked = await back_translate_shell(
             self.llm, masked_ru, config=cfg,
             source_language=cfg.project.source_language,
