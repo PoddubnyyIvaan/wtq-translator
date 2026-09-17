@@ -1,0 +1,17 @@
+# `wtq-translate filter <this-config> <run_dir>`
+# Keeps only questions whose quality status is in status_include and whose metric
+# values are >= the given thresholds, then writes the translated rows (ascending
+# by best rank) to <run_dir>/filtered/*-sorted-<params>.tsv plus a -stats.json.
+#
+# - status_include: accepted ProcessingStatus values. Omit/empty => accept all.
+# - metrics: quality-metric field name => lower bound (inclusive >=). `null` means
+#   "no lower bound": the metric is still reported in avg/min but filters nothing.
+#   Unknown field names are rejected (typo guard).
+status_include:
+  - accepted
+
+metrics:
+  question_cosine_similarity: null   # has objective upper bound -> use explicit min
+  question_bert_f1: 0.60
+  back_table_bert_mean_f1: 0.75
+  back_table_mean_similarity: null
