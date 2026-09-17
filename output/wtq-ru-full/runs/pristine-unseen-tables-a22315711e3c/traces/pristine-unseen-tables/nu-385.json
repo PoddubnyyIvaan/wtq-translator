@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-385",
+  "source_context": "csv/204-csv/505.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-385.tsv",
+  "source_question": "who is the top ranking player?",
+  "translated_question": "кто является лучшим Рангом Игроком?",
+  "source_target_value": "Francis Forde",
+  "translated_target_value": "Фрэнсис Форд",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "ranking",
+      "normalized_text": "rank",
+      "start": 15,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Rank",
+      "match_type": "lemma",
+      "candidate_key": "69a8ef122d9a72b6",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "player",
+      "normalized_text": "player",
+      "start": 23,
+      "end": 29,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Player",
+      "match_type": "lemma",
+      "candidate_key": "3787324f2d113d99",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-385",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is the top ranking player?",
+    "translated_question": "кто является лучшим Рангом Игроком?",
+    "back_translated_question": "who is the best ranking player?",
+    "question_cosine_similarity": 0.9399496185240164,
+    "question_bert_precision": 0.9481838345527649,
+    "question_bert_recall": 0.9481909871101379,
+    "question_bert_f1": 0.9482659101486206,
+    "back_table_groups_compared": 90,
+    "back_table_min_similarity": 0.6312913709526201,
+    "back_table_mean_similarity": 0.9727064731356517,
+    "back_table_bert_groups_compared": 90,
+    "back_table_bert_min_f1": 0.08549529314041138,
+    "back_table_bert_mean_f1": 0.9571838662028312,
+    "back_table_bert_min_precision": 0.08089201152324677,
+    "back_table_bert_mean_precision": 0.9567328082190619,
+    "back_table_bert_min_recall": 0.08733388036489487,
+    "back_table_bert_mean_recall": 0.9576356009476714,
+    "back_table_similarity_examples": [
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.6312913709526201,
+        "source": "John Leahy",
+        "back_translated": "John Liddy"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.6783433644455988,
+        "source": "Gary Kirby",
+        "back_translated": "Gary Kibby"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.6783433644455988,
+        "source": "Gary Kirby",
+        "back_translated": "Gary Kibby"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.6783433644455988,
+        "source": "Gary Kirby",
+        "back_translated": "Gary Kibby"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6962208981451725,
+        "source": "Tally",
+        "back_translated": "score"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

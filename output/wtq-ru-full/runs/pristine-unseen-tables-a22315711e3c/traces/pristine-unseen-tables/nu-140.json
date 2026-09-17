@@ -1,0 +1,85 @@
+{
+  "question_id": "nu-140",
+  "source_context": "csv/204-csv/462.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-140.tsv",
+  "source_question": "which country had the most competitors?",
+  "translated_question": "какая страна имела наибольшее количество участников?",
+  "source_target_value": "Italy",
+  "translated_target_value": "Италия",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-140",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "which country had the most competitors?",
+    "translated_question": "какая страна имела наибольшее количество участников?",
+    "back_translated_question": "which country had the greatest number of participants?",
+    "question_cosine_similarity": 0.8174120156328935,
+    "question_bert_precision": 0.8441032767295837,
+    "question_bert_recall": 0.7418107986450195,
+    "question_bert_f1": 0.7922263145446777,
+    "back_table_groups_compared": 288,
+    "back_table_min_similarity": 0.3167384364046645,
+    "back_table_mean_similarity": 0.9603229964897451,
+    "back_table_bert_groups_compared": 288,
+    "back_table_bert_min_f1": -0.11147134751081467,
+    "back_table_bert_mean_f1": 0.9400553092515717,
+    "back_table_bert_min_precision": -0.09854577481746674,
+    "back_table_bert_mean_precision": 0.9424674862788783,
+    "back_table_bert_min_recall": -0.12750373780727386,
+    "back_table_bert_mean_recall": 0.9376752494459247,
+    "back_table_similarity_examples": [
+      {
+        "row": 13,
+        "column": 5,
+        "score": 0.3167384364046645,
+        "source": "Throttle",
+        "back_translated": "Drossel"
+      },
+      {
+        "row": 26,
+        "column": 0,
+        "score": 0.43146239050951835,
+        "source": "DNQ",
+        "back_translated": "Did not qualify"
+      },
+      {
+        "row": 27,
+        "column": 0,
+        "score": 0.43146239050951835,
+        "source": "DNQ",
+        "back_translated": "Did not qualify"
+      },
+      {
+        "row": 28,
+        "column": 0,
+        "score": 0.43146239050951835,
+        "source": "DNQ",
+        "back_translated": "Did not qualify"
+      },
+      {
+        "row": 29,
+        "column": 0,
+        "score": 0.43146239050951835,
+        "source": "DNQ",
+        "back_translated": "Did not qualify"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question.",
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "Formula 1 race results"
+  },
+  "domain": "Formula 1 race results"
+}

@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-165",
+  "source_context": "csv/203-csv/733.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-165.tsv",
+  "source_question": "who was the first cyclist to finish?",
+  "translated_question": "кто был первым велосипедистом на финише?",
+  "source_target_value": "Alejandro Valverde",
+  "translated_target_value": "Александре Вальверде",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "cyclist",
+      "normalized_text": "cyclist",
+      "start": 18,
+      "end": 25,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Cyclist",
+      "match_type": "lemma",
+      "candidate_key": "2dedb81285ee7220",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-165",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who was the first cyclist to finish?",
+    "translated_question": "кто был первым велосипедистом на финише?",
+    "back_translated_question": "who was the first cyclist to cross the finish line?",
+    "question_cosine_similarity": 0.9430725192421411,
+    "question_bert_precision": 0.8784956932067871,
+    "question_bert_recall": 0.7859602570533752,
+    "question_bert_f1": 0.831640362739563,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.707064510549656,
+    "back_table_mean_similarity": 0.9728186220461812,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.07670333981513977,
+    "back_table_bert_mean_f1": 0.8508837361227383,
+    "back_table_bert_min_precision": 0.17260916531085968,
+    "back_table_bert_mean_precision": 0.8518731967969374,
+    "back_table_bert_min_recall": -0.012452899478375912,
+    "back_table_bert_mean_recall": 0.8501056669957259,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.707064510549656,
+        "source": "Stéphane Goubert (FRA)",
+        "back_translated": "stefan guber (France)"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.8117907521780633,
+        "source": "Haimar Zubeldia (ESP)",
+        "back_translated": "aimar zubeldia (Spain)"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.8327866369063602,
+        "source": "Franco Pellizotti (ITA)",
+        "back_translated": "franco pellicotti (Italy)"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.8482277466995852,
+        "source": "Alejandro Valverde (ESP)",
+        "back_translated": "alexandro valverde (Spain)"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.8665633473467325,
+        "source": "UCI ProTour\\nPoints",
+        "back_translated": "UCI ProTour points"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "cycling race results"
+  },
+  "domain": "cycling race results"
+}

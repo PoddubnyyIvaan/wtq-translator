@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-872",
+  "source_context": "csv/203-csv/434.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-872.tsv",
+  "source_question": "which team has the longest consecutive win streak in the championship game?",
+  "translated_question": "какая команда имеет самую длинную серию подряд идущих побед в чемпионском матче?",
+  "source_target_value": "Buffalo Bills",
+  "translated_target_value": "буффало биллс",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "team",
+      "normalized_text": "team",
+      "start": 6,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "win",
+      "normalized_text": "win",
+      "start": 39,
+      "end": 42,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Winning",
+      "match_type": "lemma",
+      "candidate_key": "1883fb303f8c3989",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-872",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which team has the longest consecutive win streak in the championship game?",
+    "translated_question": "какая команда имеет самую длинную серию подряд идущих побед в чемпионском матче?",
+    "back_translated_question": "which team has the longest streak of consecutive wins in the championship game?",
+    "question_cosine_similarity": 0.9891333425888588,
+    "question_bert_precision": 0.9416279792785645,
+    "question_bert_recall": 0.9046210646629333,
+    "question_bert_f1": 0.9231103658676147,
+    "back_table_groups_compared": 315,
+    "back_table_min_similarity": 0.5708394315805569,
+    "back_table_mean_similarity": 0.9894679320613392,
+    "back_table_bert_groups_compared": 315,
+    "back_table_bert_min_f1": 0.19653497636318207,
+    "back_table_bert_mean_f1": 0.9712329265144136,
+    "back_table_bert_min_precision": 0.2765619158744812,
+    "back_table_bert_mean_precision": 0.9745040338190775,
+    "back_table_bert_min_recall": 0.12044928967952728,
+    "back_table_bert_mean_recall": 0.9682091190228387,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 6,
+        "score": 0.5708394315805569,
+        "source": "Mile High Stadium",
+        "back_translated": "Milwaukee County Stadium"
+      },
+      {
+        "row": 17,
+        "column": 6,
+        "score": 0.5708394315805569,
+        "source": "Mile High Stadium",
+        "back_translated": "Milwaukee County Stadium"
+      },
+      {
+        "row": 19,
+        "column": 6,
+        "score": 0.5708394315805569,
+        "source": "Mile High Stadium",
+        "back_translated": "Milwaukee County Stadium"
+      },
+      {
+        "row": 28,
+        "column": 6,
+        "score": 0.5708394315805569,
+        "source": "Mile High Stadium",
+        "back_translated": "Milwaukee County Stadium"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "American football"
+  },
+  "domain": "American football"
+}

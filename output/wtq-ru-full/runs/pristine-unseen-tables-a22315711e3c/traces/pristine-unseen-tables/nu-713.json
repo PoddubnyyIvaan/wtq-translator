@@ -1,0 +1,142 @@
+{
+  "question_id": "nu-713",
+  "source_context": "csv/201-csv/30.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-713.tsv",
+  "source_question": "how many singles from the chart were played overall?",
+  "translated_question": "сколько синглов из чартов было сыграно в общей сложности?",
+  "source_target_value": "6",
+  "translated_target_value": "6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "chart",
+      "normalized_text": "chart",
+      "start": 26,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": null,
+          "column": 5
+        },
+        {
+          "row": null,
+          "column": 6
+        },
+        {
+          "row": null,
+          "column": 7
+        },
+        {
+          "row": null,
+          "column": 8
+        },
+        {
+          "row": null,
+          "column": 9
+        },
+        {
+          "row": null,
+          "column": 10
+        }
+      ],
+      "table_source_text": "Chart",
+      "match_type": "lemma",
+      "candidate_key": "874be8844c935388",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-713",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many singles from the chart were played overall?",
+    "translated_question": "сколько синглов из чартов было сыграно в общей сложности?",
+    "back_translated_question": "how many singles from charts were played in total?",
+    "question_cosine_similarity": 0.9654572665191876,
+    "question_bert_precision": 0.7681014537811279,
+    "question_bert_recall": 0.765246570110321,
+    "question_bert_f1": 0.7670266032218933,
+    "back_table_groups_compared": 77,
+    "back_table_min_similarity": 0.6245013415811751,
+    "back_table_mean_similarity": 0.9793615893832796,
+    "back_table_bert_groups_compared": 77,
+    "back_table_bert_min_f1": 0.20354847609996796,
+    "back_table_bert_mean_f1": 0.9255100958920145,
+    "back_table_bert_min_precision": 0.15227669477462769,
+    "back_table_bert_mean_precision": 0.9280389206750053,
+    "back_table_bert_min_recall": 0.25514400005340576,
+    "back_table_bert_mean_recall": 0.922953641259825,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.8400360602089856,
+        "source": "Head Over Feet",
+        "back_translated": "head over heels"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.8426567350108503,
+        "source": "You Oughta Know A",
+        "back_translated": "you should know"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.8435473564990941,
+        "source": "Chart positions\\nAU",
+        "back_translated": "chart positions\\naustralia"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.8445054412660057,
+        "source": "Chart positions\\nNL",
+        "back_translated": "chart positions\\nnetherlands"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music charts"
+  },
+  "domain": "music charts"
+}

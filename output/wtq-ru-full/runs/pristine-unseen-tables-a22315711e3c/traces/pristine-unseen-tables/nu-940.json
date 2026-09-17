@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-940",
+  "source_context": "csv/203-csv/468.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-940.tsv",
+  "source_question": "in what competition did kipkurui misoi come in first?",
+  "translated_question": "в каком соревновании кипкурой мисой пришёл первым?",
+  "source_target_value": "All-Africa Games",
+  "translated_target_value": "Игры всех Африки",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "competition",
+      "normalized_text": "competition",
+      "start": 8,
+      "end": 19,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Competition",
+      "match_type": "lemma",
+      "candidate_key": "0509839ddc683373",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-940",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "in what competition did kipkurui misoi come in first?",
+    "translated_question": "в каком соревновании кипкурой мисой пришёл первым?",
+    "back_translated_question": "in which competition did Kipkuray Miso come in first?",
+    "question_cosine_similarity": 0.9505310790871178,
+    "question_bert_precision": 0.6773126721382141,
+    "question_bert_recall": 0.6773572564125061,
+    "question_bert_f1": 0.6778238415718079,
+    "back_table_groups_compared": 45,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9312912337346221,
+    "back_table_bert_groups_compared": 45,
+    "back_table_bert_min_f1": 0.32704877853393555,
+    "back_table_bert_mean_f1": 0.8730476028389401,
+    "back_table_bert_min_precision": 0.3453633189201355,
+    "back_table_bert_mean_precision": 0.8762265344460806,
+    "back_table_bert_min_recall": 0.3070555329322815,
+    "back_table_bert_mean_recall": 0.8695456604162852,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.675990669499084,
+        "source": "3000 m st.",
+        "back_translated": "3000 m hurdles."
+      },
+      {
+        "row": 2,
+        "column": 4,
+        "score": 0.675990669499084,
+        "source": "3000 m st.",
+        "back_translated": "3000 m hurdles."
+      },
+      {
+        "row": 3,
+        "column": 4,
+        "score": 0.675990669499084,
+        "source": "3000 m st.",
+        "back_translated": "3000 m hurdles."
+      },
+      {
+        "row": 4,
+        "column": 4,
+        "score": 0.675990669499084,
+        "source": "3000 m st.",
+        "back_translated": "3000 m hurdles."
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

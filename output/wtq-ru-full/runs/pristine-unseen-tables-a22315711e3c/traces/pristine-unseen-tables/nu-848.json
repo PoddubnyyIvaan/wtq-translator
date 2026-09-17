@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-848",
+  "source_context": "csv/202-csv/223.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-848.tsv",
+  "source_question": "what is the average population of banat bulgarians in romania from 1880 to 1910?",
+  "translated_question": "какова средняя численность населения банатских болгар в Румынии с 1880 по 1910 год?",
+  "source_target_value": "17,259",
+  "translated_target_value": "17,259",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "banat",
+      "normalized_text": "banat",
+      "start": 34,
+      "end": 39,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 4
+        },
+        {
+          "row": 7,
+          "column": 4
+        },
+        {
+          "row": 8,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 11,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Banat",
+      "match_type": "lemma",
+      "candidate_key": "688ab405d0d96493",
+      "coordinate": {
+        "row": 5,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "romania",
+      "normalized_text": "romania",
+      "start": 54,
+      "end": 61,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 10,
+          "column": 4
+        },
+        {
+          "row": 12,
+          "column": 4
+        },
+        {
+          "row": 13,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Romania",
+      "match_type": "lemma",
+      "candidate_key": "495e6f789c887144",
+      "coordinate": {
+        "row": 10,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-848",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the average population of banat bulgarians in romania from 1880 to 1910?",
+    "translated_question": "какова средняя численность населения банатских болгар в Румынии с 1880 по 1910 год?",
+    "back_translated_question": "what was the average population of banat Bulgarians in romania from 1880 to 1910?",
+    "question_cosine_similarity": 0.996170943310338,
+    "question_bert_precision": 0.9105980396270752,
+    "question_bert_recall": 0.9301491379737854,
+    "question_bert_f1": 0.9204586744308472,
+    "back_table_groups_compared": 80,
+    "back_table_min_similarity": 0.5427905284302306,
+    "back_table_mean_similarity": 0.9782779587319441,
+    "back_table_bert_groups_compared": 80,
+    "back_table_bert_min_f1": 0.381719172000885,
+    "back_table_bert_mean_f1": 0.9335258446633816,
+    "back_table_bert_min_precision": 0.37622058391571045,
+    "back_table_bert_mean_precision": 0.9314344473183155,
+    "back_table_bert_min_recall": 0.3540472388267517,
+    "back_table_bert_mean_recall": 0.9357106555253267,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 4,
+        "score": 0.5427905284302306,
+        "source": "sometimes including the Krashovani",
+        "back_translated": "sometimes including Crispi"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7147845298941681,
+        "source": "Source",
+        "back_translated": "Source code"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.7267255130112736,
+        "source": "up to 4,500",
+        "back_translated": "up to 4500"
+      },
+      {
+        "row": 8,
+        "column": 0,
+        "score": 0.8517245976112128,
+        "source": "Karol Telbizov",
+        "back_translated": "Karol Telbišov"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.8569180917635486,
+        "source": "Jozu Rill",
+        "back_translated": "Josu Rill"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "demographics"
+  },
+  "domain": "demographics"
+}

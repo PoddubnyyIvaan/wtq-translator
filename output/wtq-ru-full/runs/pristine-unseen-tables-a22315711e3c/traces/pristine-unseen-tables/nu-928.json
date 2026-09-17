@@ -1,0 +1,114 @@
+{
+  "question_id": "nu-928",
+  "source_context": "csv/203-csv/477.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-928.tsv",
+  "source_question": "the total number of distributors that supply ppc",
+  "translated_question": "общее количество дистрибьюторов, поставляющих ppc",
+  "source_target_value": "13",
+  "translated_target_value": "13",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "ppc",
+      "normalized_text": "ppc",
+      "start": 45,
+      "end": 48,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": 34,
+          "column": 4
+        }
+      ],
+      "table_source_text": "ppc",
+      "match_type": "lemma",
+      "candidate_key": "cd7acc395f300f52",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-928",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "the total number of distributors that supply ppc",
+    "translated_question": "общее количество дистрибьюторов, поставляющих ppc",
+    "back_translated_question": "total number of distributors supplying ppc",
+    "question_cosine_similarity": 0.9749451212507998,
+    "question_bert_precision": 0.7793513536453247,
+    "question_bert_recall": 0.7961148023605347,
+    "question_bert_f1": 0.7880273461341858,
+    "back_table_groups_compared": 576,
+    "back_table_min_similarity": 0.5762212723766694,
+    "back_table_mean_similarity": 0.9843416451931356,
+    "back_table_bert_groups_compared": 576,
+    "back_table_bert_min_f1": 0.39199668169021606,
+    "back_table_bert_mean_f1": 0.9676366987017294,
+    "back_table_bert_min_precision": 0.3005973696708679,
+    "back_table_bert_mean_precision": 0.9615620454359386,
+    "back_table_bert_min_recall": 0.4900210201740265,
+    "back_table_bert_mean_recall": 0.974164602243238,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 8,
+        "score": 0.5762212723766694,
+        "source": "Yes\\nUnofficial",
+        "back_translated": "Yes\nUnofficial"
+      },
+      {
+        "row": 22,
+        "column": 12,
+        "score": 0.5999038524704491,
+        "source": "Discontinued\\n3-4",
+        "back_translated": "Ended\n3-4"
+      },
+      {
+        "row": 25,
+        "column": 3,
+        "score": 0.5999038524704491,
+        "source": "Discontinued\\n3-4",
+        "back_translated": "Ended\n3-4"
+      },
+      {
+        "row": 7,
+        "column": 12,
+        "score": 0.6426409757420145,
+        "source": "Discontinued\\n3.0-7",
+        "back_translated": "Ended\n3.0-7"
+      },
+      {
+        "row": 27,
+        "column": 6,
+        "score": 0.6471461164105928,
+        "source": "Discontinued\\n?",
+        "back_translated": "Ended\n?"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Linux distributions and architecture support"
+  },
+  "domain": "Linux distributions and architecture support"
+}

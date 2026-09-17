@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-343",
+  "source_context": "csv/203-csv/776.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-343.tsv",
+  "source_question": "what was the last season played?",
+  "translated_question": "какой был последний Регулярный сезон?",
+  "source_target_value": "2012-13",
+  "translated_target_value": "2012-13",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "season",
+      "normalized_text": "season",
+      "start": 18,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Season",
+      "match_type": "lemma",
+      "candidate_key": "9de63b1527596c01",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-343",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the last season played?",
+    "translated_question": "какой был последний Регулярный сезон?",
+    "back_translated_question": "what was the last season?",
+    "question_cosine_similarity": 0.9324347379227387,
+    "question_bert_precision": 0.8220866918563843,
+    "question_bert_recall": 0.8803673386573792,
+    "question_bert_f1": 0.8511245250701904,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 0.366034602777472,
+    "back_table_mean_similarity": 0.9658195929405176,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 0.3565885126590729,
+    "back_table_bert_mean_f1": 0.9210604815965607,
+    "back_table_bert_min_precision": 0.2971190810203552,
+    "back_table_bert_mean_precision": 0.9224392246632349,
+    "back_table_bert_min_recall": 0.3494926393032074,
+    "back_table_bert_mean_recall": 0.9197419839245933,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.366034602777472,
+        "source": "Humenné",
+        "back_translated": "Gomel"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.6007587269980259,
+        "source": "2R",
+        "back_translated": "2-round"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.6354410551221547,
+        "source": "Wismut Aue",
+        "back_translated": "VfB Aue"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.8391408737386633,
+        "source": "FK Partizan Beograd",
+        "back_translated": "FK «Partizan Belgrade» Belgrade"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

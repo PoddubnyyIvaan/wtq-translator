@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-301",
+  "source_context": "csv/202-csv/248.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-301.tsv",
+  "source_question": "when did the movie \"eagle in a cage,\" starring georgina hale, get released in the usa?",
+  "translated_question": "когда был выпущен фильм \"Орёл в клетке\", в котором снималась Джорджина Хейл, в США?",
+  "source_target_value": "1972",
+  "translated_target_value": "1972",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "eagle in a cage",
+      "normalized_text": "eagle in a cage",
+      "start": 20,
+      "end": 35,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Eagle in a Cage",
+      "match_type": "lemma",
+      "candidate_key": "7eb61019f3cf571a",
+      "coordinate": {
+        "row": 2,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "in the",
+      "normalized_text": "in the",
+      "start": 75,
+      "end": 81,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 11,
+          "column": 1
+        }
+      ],
+      "table_source_text": "in the",
+      "match_type": "lemma",
+      "candidate_key": "92ff929bf8fbbe15",
+      "coordinate": {
+        "row": 11,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-301",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "when did the movie \"eagle in a cage,\" starring georgina hale, get released in the usa?",
+    "translated_question": "когда был выпущен фильм \"Орёл в клетке\", в котором снималась Джорджина Хейл, в США?",
+    "back_translated_question": "when was the film \"eagle in a cage\" released, in which Georgina Hale starred, in the United States?",
+    "question_cosine_similarity": 0.9812259695129782,
+    "question_bert_precision": 0.5102875828742981,
+    "question_bert_recall": 0.48621925711631775,
+    "question_bert_f1": 0.49894702434539795,
+    "back_table_groups_compared": 88,
+    "back_table_min_similarity": 0.4646285527062973,
+    "back_table_mean_similarity": 0.9178005657903211,
+    "back_table_bert_groups_compared": 88,
+    "back_table_bert_min_f1": 0.06990218907594681,
+    "back_table_bert_mean_f1": 0.8601771434769034,
+    "back_table_bert_min_precision": 0.09720011055469513,
+    "back_table_bert_mean_precision": 0.8582769390195608,
+    "back_table_bert_min_recall": 0.040683455765247345,
+    "back_table_bert_mean_recall": 0.8619495678523724,
+    "back_table_similarity_examples": [
+      {
+        "row": 13,
+        "column": 1,
+        "score": 0.4646285527062973,
+        "source": "Castaway",
+        "back_translated": "The Victim"
+      },
+      {
+        "row": 17,
+        "column": 1,
+        "score": 0.486751367703128,
+        "source": "AKA",
+        "back_translated": "i.e.."
+      },
+      {
+        "row": 6,
+        "column": 3,
+        "score": 0.55000125870888,
+        "source": "Uncredited Appearance",
+        "back_translated": "Not listed in credits"
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.55000125870888,
+        "source": "Uncredited Appearance",
+        "back_translated": "Not listed in credits"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.5551966638022019,
+        "source": "Phillippe",
+        "back_translated": "Filippo"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "filmography"
+  },
+  "domain": "filmography"
+}

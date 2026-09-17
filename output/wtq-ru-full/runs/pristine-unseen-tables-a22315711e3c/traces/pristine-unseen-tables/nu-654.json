@@ -1,0 +1,106 @@
+{
+  "question_id": "nu-654",
+  "source_context": "csv/204-csv/76.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-654.tsv",
+  "source_question": "which country won one silver medal but no bronze medals?",
+  "translated_question": "какая страна выиграла одну серебряную медаль, но не выиграла ни одной бронзовой медали?",
+  "source_target_value": "Guyana",
+  "translated_target_value": "Гайана",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "silver",
+      "normalized_text": "silver",
+      "start": 22,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Silver",
+      "match_type": "lemma",
+      "candidate_key": "37a28f2fa0b66241",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "bronze",
+      "normalized_text": "bronze",
+      "start": 42,
+      "end": 48,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Bronze",
+      "match_type": "lemma",
+      "candidate_key": "9d2f89fe9536354c",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-654",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which country won one silver medal but no bronze medals?",
+    "translated_question": "какая страна выиграла одну серебряную медаль, но не выиграла ни одной бронзовой медали?",
+    "back_translated_question": "which country won one silver medal but did not win any bronze medals?",
+    "question_cosine_similarity": 0.9873038799636275,
+    "question_bert_precision": 0.8852303624153137,
+    "question_bert_recall": 0.7958080172538757,
+    "question_bert_f1": 0.8399770259857178,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 0.6369013406040179,
+    "back_table_mean_similarity": 0.9956773969119526,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 0.2834388315677643,
+    "back_table_bert_mean_f1": 0.9914695098996162,
+    "back_table_bert_min_precision": 0.28230196237564087,
+    "back_table_bert_mean_precision": 0.9914559757425672,
+    "back_table_bert_min_recall": 0.28240111470222473,
+    "back_table_bert_mean_recall": 0.9914571561274075,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.6369013406040179,
+        "source": "Colombia",
+        "back_translated": "Columbia"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports competitions"
+  },
+  "domain": "sports competitions"
+}

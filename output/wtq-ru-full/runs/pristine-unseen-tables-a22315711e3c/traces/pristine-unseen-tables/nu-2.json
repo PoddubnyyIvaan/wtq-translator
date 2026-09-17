@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-2",
+  "source_context": "csv/203-csv/435.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-2.tsv",
+  "source_question": "how long did it take for the new york americans to win the national cup after 1936?",
+  "translated_question": "сколько времени потребовалось новому йорк американс для победы в Национальном кубке после 1936 года?",
+  "source_target_value": "17 years",
+  "translated_target_value": "17 лет",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "national cup",
+      "normalized_text": "national cup",
+      "start": 59,
+      "end": 71,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "National Cup",
+      "match_type": "lemma",
+      "candidate_key": "c075e446b8a022ce",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-2",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how long did it take for the new york americans to win the national cup after 1936?",
+    "translated_question": "сколько времени потребовалось новому йорк американс для победы в Национальном кубке после 1936 года?",
+    "back_translated_question": "how much time did the New York Americans need to win the national cup after 1936?",
+    "question_cosine_similarity": 0.9783452294784094,
+    "question_bert_precision": 0.5551350116729736,
+    "question_bert_recall": 0.6859850883483887,
+    "question_bert_f1": 0.6193130016326904,
+    "back_table_groups_compared": 168,
+    "back_table_min_similarity": 0.6979926926421275,
+    "back_table_mean_similarity": 0.9842438655173298,
+    "back_table_bert_groups_compared": 168,
+    "back_table_bert_min_f1": 0.3873014748096466,
+    "back_table_bert_mean_f1": 0.9579851983913353,
+    "back_table_bert_min_precision": 0.4193717837333679,
+    "back_table_bert_mean_precision": 0.9591789823912439,
+    "back_table_bert_min_recall": 0.3543825149536133,
+    "back_table_bert_mean_recall": 0.9567133019722643,
+    "back_table_similarity_examples": [
+      {
+        "row": 19,
+        "column": 3,
+        "score": 0.6979926926421275,
+        "source": "1st(t)",
+        "back_translated": "1-e (t)"
+      },
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.7991081973998279,
+        "source": "1st Round",
+        "back_translated": "1-round"
+      },
+      {
+        "row": 8,
+        "column": 4,
+        "score": 0.7991081973998279,
+        "source": "1st Round",
+        "back_translated": "1-round"
+      },
+      {
+        "row": 19,
+        "column": 4,
+        "score": 0.8192782320373926,
+        "source": "Finals",
+        "back_translated": "Final"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.8603248662869994,
+        "source": "Reg. Season",
+        "back_translated": "Reg.. Regular season"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

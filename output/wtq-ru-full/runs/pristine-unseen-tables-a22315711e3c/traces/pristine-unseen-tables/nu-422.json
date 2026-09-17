@@ -1,0 +1,118 @@
+{
+  "question_id": "nu-422",
+  "source_context": "csv/203-csv/427.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-422.tsv",
+  "source_question": "first gk awarded?",
+  "translated_question": "первый ВР получивший награду?",
+  "source_target_value": "Moeneeb Josephs",
+  "translated_target_value": "Моенеб Джозефс",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "gk",
+      "normalized_text": "gk",
+      "start": 6,
+      "end": 8,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 10,
+          "column": 3
+        }
+      ],
+      "table_source_text": "GK",
+      "match_type": "lemma",
+      "candidate_key": "f9a1d519aac5bdf5",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-422",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "first gk awarded?",
+    "translated_question": "первый ВР получивший награду?",
+    "back_translated_question": "first gk to receive an award?",
+    "question_cosine_similarity": 0.9220162290162547,
+    "question_bert_precision": 0.7155905365943909,
+    "question_bert_recall": 0.5521990060806274,
+    "question_bert_f1": 0.6316080093383789,
+    "back_table_groups_compared": 90,
+    "back_table_min_similarity": 0.37518454334814977,
+    "back_table_mean_similarity": 0.9199117763868558,
+    "back_table_bert_groups_compared": 90,
+    "back_table_bert_min_f1": 0.26527833938598633,
+    "back_table_bert_mean_f1": 0.9133155475060145,
+    "back_table_bert_min_precision": 0.253734290599823,
+    "back_table_bert_mean_precision": 0.9139102035098605,
+    "back_table_bert_min_recall": 0.27470123767852783,
+    "back_table_bert_mean_recall": 0.9125065988964505,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      },
+      {
+        "row": 13,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

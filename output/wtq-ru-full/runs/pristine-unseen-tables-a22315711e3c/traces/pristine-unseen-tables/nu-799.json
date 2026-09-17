@@ -1,0 +1,176 @@
+{
+  "question_id": "nu-799",
+  "source_context": "csv/204-csv/989.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-799.tsv",
+  "source_question": "what was the only school to score higher than 800 in 2008?",
+  "translated_question": "какая единственная школа набрала выше 800 в 2008 году?",
+  "source_target_value": "Francisco Bravo Medical Magnet High School",
+  "translated_target_value": "средняя школа-магнит по медицине Франсиско Браво",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "school",
+      "normalized_text": "school",
+      "start": 18,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 0
+        }
+      ],
+      "table_source_text": "School",
+      "match_type": "lemma",
+      "candidate_key": "799089b7e6944813",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "higher",
+      "normalized_text": "high",
+      "start": 34,
+      "end": 40,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 0
+        }
+      ],
+      "table_source_text": "High",
+      "match_type": "lemma",
+      "candidate_key": "228e1a1ffc90c225",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-799",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the only school to score higher than 800 in 2008?",
+    "translated_question": "какая единственная школа набрала выше 800 в 2008 году?",
+    "back_translated_question": "which single school scored higher than 800 in 2008?",
+    "question_cosine_similarity": 0.9715673500412928,
+    "question_bert_precision": 0.5960484147071838,
+    "question_bert_recall": 0.7135298848152161,
+    "question_bert_f1": 0.6538650989532471,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.8007306055263215,
+    "back_table_mean_similarity": 0.993568445534041,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.029292285442352295,
+    "back_table_bert_mean_f1": 0.9711837788422902,
+    "back_table_bert_min_precision": 0.03454162925481796,
+    "back_table_bert_mean_precision": 0.970984494065245,
+    "back_table_bert_min_recall": 0.021150685846805573,
+    "back_table_bert_mean_recall": 0.9713326221952836,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 0,
+        "score": 0.8007306055263215,
+        "source": "Santee Education Complex",
+        "back_translated": "santi educational complex"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.897092715774477,
+        "source": "Marc and Eva Stern Math and Science School",
+        "back_translated": "Mark and Eva Stern School of Mathematics and Natural Sciences"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.9162834107416578,
+        "source": "James A. Garfield High School",
+        "back_translated": "james a high school. Garfield"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "education"
+  },
+  "domain": "education"
+}

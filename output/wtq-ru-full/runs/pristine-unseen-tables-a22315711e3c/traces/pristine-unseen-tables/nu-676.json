@@ -1,0 +1,530 @@
+{
+  "question_id": "nu-676",
+  "source_context": "csv/204-csv/580.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-676.tsv",
+  "source_question": "who was the representative from the first district?",
+  "translated_question": "кем был Представитель из первого Округа?",
+  "source_target_value": "Charles R. Blasdel",
+  "translated_target_value": "Чарльз Р. Бласдел",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "representative",
+      "normalized_text": "representative",
+      "start": 12,
+      "end": 26,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Representative",
+      "match_type": "lemma",
+      "candidate_key": "bc3c33bd67bd19fb",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "district",
+      "normalized_text": "district",
+      "start": 42,
+      "end": 50,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 0
+        },
+        {
+          "row": 8,
+          "column": 0
+        },
+        {
+          "row": 9,
+          "column": 0
+        },
+        {
+          "row": 10,
+          "column": 0
+        },
+        {
+          "row": 11,
+          "column": 0
+        },
+        {
+          "row": 12,
+          "column": 0
+        },
+        {
+          "row": 13,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 0
+        },
+        {
+          "row": 15,
+          "column": 0
+        },
+        {
+          "row": 16,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 0
+        },
+        {
+          "row": 18,
+          "column": 0
+        },
+        {
+          "row": 19,
+          "column": 0
+        },
+        {
+          "row": 20,
+          "column": 0
+        },
+        {
+          "row": 21,
+          "column": 0
+        },
+        {
+          "row": 22,
+          "column": 0
+        },
+        {
+          "row": 23,
+          "column": 0
+        },
+        {
+          "row": 24,
+          "column": 0
+        },
+        {
+          "row": 25,
+          "column": 0
+        },
+        {
+          "row": 26,
+          "column": 0
+        },
+        {
+          "row": 27,
+          "column": 0
+        },
+        {
+          "row": 28,
+          "column": 0
+        },
+        {
+          "row": 29,
+          "column": 0
+        },
+        {
+          "row": 30,
+          "column": 0
+        },
+        {
+          "row": 31,
+          "column": 0
+        },
+        {
+          "row": 32,
+          "column": 0
+        },
+        {
+          "row": 33,
+          "column": 0
+        },
+        {
+          "row": 34,
+          "column": 0
+        },
+        {
+          "row": 35,
+          "column": 0
+        },
+        {
+          "row": 36,
+          "column": 0
+        },
+        {
+          "row": 37,
+          "column": 0
+        },
+        {
+          "row": 38,
+          "column": 0
+        },
+        {
+          "row": 39,
+          "column": 0
+        },
+        {
+          "row": 40,
+          "column": 0
+        },
+        {
+          "row": 41,
+          "column": 0
+        },
+        {
+          "row": 42,
+          "column": 0
+        },
+        {
+          "row": 43,
+          "column": 0
+        },
+        {
+          "row": 44,
+          "column": 0
+        },
+        {
+          "row": 45,
+          "column": 0
+        },
+        {
+          "row": 46,
+          "column": 0
+        },
+        {
+          "row": 47,
+          "column": 0
+        },
+        {
+          "row": 48,
+          "column": 0
+        },
+        {
+          "row": 49,
+          "column": 0
+        },
+        {
+          "row": 50,
+          "column": 0
+        },
+        {
+          "row": 51,
+          "column": 0
+        },
+        {
+          "row": 52,
+          "column": 0
+        },
+        {
+          "row": 53,
+          "column": 0
+        },
+        {
+          "row": 54,
+          "column": 0
+        },
+        {
+          "row": 55,
+          "column": 0
+        },
+        {
+          "row": 56,
+          "column": 0
+        },
+        {
+          "row": 57,
+          "column": 0
+        },
+        {
+          "row": 58,
+          "column": 0
+        },
+        {
+          "row": 59,
+          "column": 0
+        },
+        {
+          "row": 60,
+          "column": 0
+        },
+        {
+          "row": 61,
+          "column": 0
+        },
+        {
+          "row": 62,
+          "column": 0
+        },
+        {
+          "row": 63,
+          "column": 0
+        },
+        {
+          "row": 64,
+          "column": 0
+        },
+        {
+          "row": 65,
+          "column": 0
+        },
+        {
+          "row": 66,
+          "column": 0
+        },
+        {
+          "row": 67,
+          "column": 0
+        },
+        {
+          "row": 68,
+          "column": 0
+        },
+        {
+          "row": 69,
+          "column": 0
+        },
+        {
+          "row": 70,
+          "column": 0
+        },
+        {
+          "row": 71,
+          "column": 0
+        },
+        {
+          "row": 72,
+          "column": 0
+        },
+        {
+          "row": 73,
+          "column": 0
+        },
+        {
+          "row": 74,
+          "column": 0
+        },
+        {
+          "row": 75,
+          "column": 0
+        },
+        {
+          "row": 76,
+          "column": 0
+        },
+        {
+          "row": 77,
+          "column": 0
+        },
+        {
+          "row": 78,
+          "column": 0
+        },
+        {
+          "row": 79,
+          "column": 0
+        },
+        {
+          "row": 80,
+          "column": 0
+        },
+        {
+          "row": 81,
+          "column": 0
+        },
+        {
+          "row": 82,
+          "column": 0
+        },
+        {
+          "row": 83,
+          "column": 0
+        },
+        {
+          "row": 84,
+          "column": 0
+        },
+        {
+          "row": 85,
+          "column": 0
+        },
+        {
+          "row": 86,
+          "column": 0
+        },
+        {
+          "row": 87,
+          "column": 0
+        },
+        {
+          "row": 88,
+          "column": 0
+        },
+        {
+          "row": 89,
+          "column": 0
+        },
+        {
+          "row": 90,
+          "column": 0
+        },
+        {
+          "row": 91,
+          "column": 0
+        },
+        {
+          "row": 92,
+          "column": 0
+        },
+        {
+          "row": 93,
+          "column": 0
+        },
+        {
+          "row": 94,
+          "column": 0
+        },
+        {
+          "row": 95,
+          "column": 0
+        },
+        {
+          "row": 96,
+          "column": 0
+        },
+        {
+          "row": 97,
+          "column": 0
+        },
+        {
+          "row": 98,
+          "column": 0
+        }
+      ],
+      "table_source_text": "District",
+      "match_type": "lemma",
+      "candidate_key": "edf0e3322fcf348b",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-676",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who was the representative from the first district?",
+    "translated_question": "кем был Представитель из первого Округа?",
+    "back_translated_question": "Who was the representative from the first district?",
+    "question_cosine_similarity": 0.9999999999999998,
+    "question_bert_precision": 0.8735159039497375,
+    "question_bert_recall": 0.8735333681106567,
+    "question_bert_f1": 0.8737162351608276,
+    "back_table_groups_compared": 500,
+    "back_table_min_similarity": 0.5242696807757099,
+    "back_table_mean_similarity": 0.9382332994664495,
+    "back_table_bert_groups_compared": 500,
+    "back_table_bert_min_f1": -0.08049312978982925,
+    "back_table_bert_mean_f1": 0.8107275472432375,
+    "back_table_bert_min_precision": -0.05710894614458084,
+    "back_table_bert_mean_precision": 0.8183657858967781,
+    "back_table_bert_min_recall": -0.1064058467745781,
+    "back_table_bert_mean_recall": 0.8031294602118433,
+    "back_table_similarity_examples": [
+      {
+        "row": 32,
+        "column": 1,
+        "score": 0.5242696807757099,
+        "source": "Tyrone K. Yates",
+        "back_translated": "tyron k. yeats"
+      },
+      {
+        "row": 62,
+        "column": 3,
+        "score": 0.5571463165922245,
+        "source": "Leroy, Geauga",
+        "back_translated": "Grumman, jiaga"
+      },
+      {
+        "row": 74,
+        "column": 1,
+        "score": 0.6124133529015826,
+        "source": "James M. Hoops",
+        "back_translated": "james m. hups"
+      },
+      {
+        "row": 36,
+        "column": 1,
+        "score": 0.6167109240514952,
+        "source": "Jon A. Husted",
+        "back_translated": "john a. hasted"
+      },
+      {
+        "row": 22,
+        "column": 1,
+        "score": 0.6171823368028339,
+        "source": "Larry Wolpert",
+        "back_translated": "larry volpert"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "politics"
+  },
+  "domain": "politics"
+}

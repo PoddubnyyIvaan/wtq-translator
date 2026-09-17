@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-143",
+  "source_context": "csv/203-csv/605.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-143.tsv",
+  "source_question": "how many number of conferences had 2 bids?",
+  "translated_question": "сколько конференц-рекордов имели 2 количества заявок?",
+  "source_target_value": "9",
+  "translated_target_value": "9",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "conferences",
+      "normalized_text": "conference",
+      "start": 19,
+      "end": 30,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Conference",
+      "match_type": "lemma",
+      "candidate_key": "4b7ce3636f9a8376",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "bids",
+      "normalized_text": "bid",
+      "start": 37,
+      "end": 41,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Bids",
+      "match_type": "lemma",
+      "candidate_key": "042db69f99978178",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-143",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many number of conferences had 2 bids?",
+    "translated_question": "сколько конференц-рекордов имели 2 количества заявок?",
+    "back_translated_question": "how many conferences had 2 bids?",
+    "question_cosine_similarity": 0.9866740718770258,
+    "question_bert_precision": 0.8575661182403564,
+    "question_bert_recall": 0.9367335438728333,
+    "question_bert_f1": 0.896710216999054,
+    "back_table_groups_compared": 171,
+    "back_table_min_similarity": 0.4717490623825184,
+    "back_table_mean_similarity": 0.9852742132469317,
+    "back_table_bert_groups_compared": 171,
+    "back_table_bert_min_f1": 0.15772421658039093,
+    "back_table_bert_mean_f1": 0.9700104178566682,
+    "back_table_bert_min_precision": 0.017250727862119675,
+    "back_table_bert_mean_precision": 0.9655326574343687,
+    "back_table_bert_min_recall": 0.3198801577091217,
+    "back_table_bert_mean_recall": 0.9752135346507469,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.4717490623825184,
+        "source": "Sweet\\nSixteen",
+        "back_translated": "Holy Sixteenth"
+      },
+      {
+        "row": 13,
+        "column": 0,
+        "score": 0.6322458801293747,
+        "source": "Great Midwest",
+        "back_translated": "Great West"
+      },
+      {
+        "row": null,
+        "column": 7,
+        "score": 0.6501846849548644,
+        "source": "Final\\nFour",
+        "back_translated": "Final Four"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.6542663156986945,
+        "source": "# of Bids",
+        "back_translated": "# number of applications"
+      },
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.7247130573671036,
+        "source": "Elite\\nEight",
+        "back_translated": "Elite Eight"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports tournament performance"
+  },
+  "domain": "sports tournament performance"
+}

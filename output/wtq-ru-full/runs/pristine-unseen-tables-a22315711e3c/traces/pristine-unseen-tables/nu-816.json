@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-816",
+  "source_context": "csv/203-csv/96.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-816.tsv",
+  "source_question": "how many coins are valued at more than 10 seniti?",
+  "translated_question": "сколько монет стоимостью более 10 сенити?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "valued",
+      "normalized_text": "value",
+      "start": 19,
+      "end": 25,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Value",
+      "match_type": "lemma",
+      "candidate_key": "64bba74e3f741fd9",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "10 seniti",
+      "normalized_text": "10 seniti",
+      "start": 39,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 0
+        }
+      ],
+      "table_source_text": "10 seniti",
+      "match_type": "lemma",
+      "candidate_key": "36ba85d02341f944",
+      "coordinate": {
+        "row": 3,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-816",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many coins are valued at more than 10 seniti?",
+    "translated_question": "сколько монет стоимостью более 10 сенити?",
+    "back_translated_question": "how many coins valued more than 10 seniti?",
+    "question_cosine_similarity": 0.9932318226615675,
+    "question_bert_precision": 0.8537355065345764,
+    "question_bert_recall": 0.9383084177970886,
+    "question_bert_f1": 0.8954992890357971,
+    "back_table_groups_compared": 49,
+    "back_table_min_similarity": 0.4446984851192199,
+    "back_table_mean_similarity": 0.867394509443446,
+    "back_table_bert_groups_compared": 49,
+    "back_table_bert_min_f1": 0.24777431786060333,
+    "back_table_bert_mean_f1": 0.7706145054223587,
+    "back_table_bert_min_precision": 0.2870399057865143,
+    "back_table_bert_mean_precision": 0.7693109007514253,
+    "back_table_bert_min_recall": 0.20783193409442902,
+    "back_table_bert_mean_recall": 0.7719462577785764,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.4446984851192199,
+        "source": "Marrows",
+        "back_translated": "Tarot"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.5253381846598799,
+        "source": "Cupronickel",
+        "back_translated": "Copper-nickel alloy"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.5253381846598799,
+        "source": "Cupronickel",
+        "back_translated": "Copper-nickel alloy"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.5253381846598799,
+        "source": "Cupronickel",
+        "back_translated": "Copper-nickel alloy"
+      },
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.5253381846598799,
+        "source": "Cupronickel",
+        "back_translated": "Copper-nickel alloy"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "currency"
+  },
+  "domain": "currency"
+}

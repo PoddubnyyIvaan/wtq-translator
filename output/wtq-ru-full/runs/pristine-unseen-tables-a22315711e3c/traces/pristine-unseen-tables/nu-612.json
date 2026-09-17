@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-612",
+  "source_context": "csv/203-csv/21.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-612.tsv",
+  "source_question": "who did the cardinals play after dallas cowboys in november 15, 1998?",
+  "translated_question": "с кем играли кардиналс после Далласа ковбоев в 15 ноября 1998 года?",
+  "source_target_value": "at Washington Redskins",
+  "translated_target_value": "в вашингтон редскинс",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "dallas",
+      "normalized_text": "dallas",
+      "start": 33,
+      "end": 39,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 10,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Dallas",
+      "match_type": "lemma",
+      "candidate_key": "209762c271eb4542",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "november 15",
+      "normalized_text": "november 15",
+      "start": 51,
+      "end": 62,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 10,
+          "column": 1
+        }
+      ],
+      "table_source_text": "November 15",
+      "match_type": "lemma",
+      "candidate_key": "7aae4263515f1d0a",
+      "coordinate": {
+        "row": 10,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-612",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who did the cardinals play after dallas cowboys in november 15, 1998?",
+    "translated_question": "с кем играли кардиналс после Далласа ковбоев в 15 ноября 1998 года?",
+    "back_translated_question": "who did the Cardinals play after the dallas cowboys on november 15 1998?",
+    "question_cosine_similarity": 0.9950442390334062,
+    "question_bert_precision": 0.7736897468566895,
+    "question_bert_recall": 0.816299319267273,
+    "question_bert_f1": 0.7951264381408691,
+    "back_table_groups_compared": 108,
+    "back_table_min_similarity": 0.5700890072389357,
+    "back_table_mean_similarity": 0.9721939777284887,
+    "back_table_bert_groups_compared": 108,
+    "back_table_bert_min_f1": 0.3947136700153351,
+    "back_table_bert_mean_f1": 0.9555935694111718,
+    "back_table_bert_min_precision": 0.39375320076942444,
+    "back_table_bert_mean_precision": 0.956461685123267,
+    "back_table_bert_min_recall": 0.39383694529533386,
+    "back_table_bert_mean_recall": 0.9546670259700881,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 4,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 16,
+        "column": 4,
+        "score": 0.7933688554637772,
+        "source": "W 16–13",
+        "back_translated": "В 16–13"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

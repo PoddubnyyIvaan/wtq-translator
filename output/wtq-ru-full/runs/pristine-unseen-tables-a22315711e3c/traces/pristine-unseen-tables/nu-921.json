@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-921",
+  "source_context": "csv/204-csv/65.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-921.tsv",
+  "source_question": "how many swimmers qualified?",
+  "translated_question": "сколько пловцов прошли квалификацию?",
+  "source_target_value": "4",
+  "translated_target_value": "4",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-921",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "how many swimmers qualified?",
+    "translated_question": "сколько пловцов прошли квалификацию?",
+    "back_translated_question": "how many swimmers qualified?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.47394627463206,
+    "back_table_mean_similarity": 0.945864068271274,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.08488037437200546,
+    "back_table_bert_mean_f1": 0.8920617402979621,
+    "back_table_bert_min_precision": 0.109639011323452,
+    "back_table_bert_mean_precision": 0.8906658185576951,
+    "back_table_bert_min_recall": 0.05808939412236214,
+    "back_table_bert_mean_recall": 0.8932619948216058,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.47394627463206,
+        "source": "Lane",
+        "back_translated": "distance"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.6252594774770648,
+        "source": "Q",
+        "back_translated": "qualification"
+      },
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.6252594774770648,
+        "source": "Q",
+        "back_translated": "qualification"
+      },
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.6252594774770648,
+        "source": "Q",
+        "back_translated": "qualification"
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.6252594774770648,
+        "source": "Q",
+        "back_translated": "qualification"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

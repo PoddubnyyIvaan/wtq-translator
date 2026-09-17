@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-279",
+  "source_context": "csv/204-csv/677.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-279.tsv",
+  "source_question": "progressive republican is his party association.",
+  "translated_question": "Прогрессивный республиканец — его Партия ассоциация.",
+  "source_target_value": "William Kent",
+  "translated_target_value": "Уильям Кент",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "progressive republican",
+      "normalized_text": "progressive republican",
+      "start": 0,
+      "end": 22,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 115,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Progressive Republican",
+      "match_type": "lemma",
+      "candidate_key": "165174b00e3225d5",
+      "coordinate": {
+        "row": 115,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "party",
+      "normalized_text": "party",
+      "start": 30,
+      "end": 35,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Party",
+      "match_type": "lemma",
+      "candidate_key": "17b2b3c71f1d2afb",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-279",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "progressive republican is his party association.",
+    "translated_question": "Прогрессивный республиканец — его Партия ассоциация.",
+    "back_translated_question": "progressive republican — his party association.",
+    "question_cosine_similarity": 0.979581240172005,
+    "question_bert_precision": 0.6595444083213806,
+    "question_bert_recall": 0.6595914363861084,
+    "question_bert_f1": 0.660083532333374,
+    "back_table_groups_compared": 1665,
+    "back_table_min_similarity": 0.3846378173243638,
+    "back_table_mean_similarity": 0.9777533947865096,
+    "back_table_bert_groups_compared": 1665,
+    "back_table_bert_min_f1": 0.024444902315735817,
+    "back_table_bert_mean_f1": 0.9529036035285787,
+    "back_table_bert_min_precision": 0.04299066215753555,
+    "back_table_bert_mean_precision": 0.9546384952000312,
+    "back_table_bert_min_recall": -0.027396896854043007,
+    "back_table_bert_mean_recall": 0.951250541690379,
+    "back_table_similarity_examples": [
+      {
+        "row": 189,
+        "column": 3,
+        "score": 0.3846378173243638,
+        "source": "Free Soiler",
+        "back_translated": "Liberty Party"
+      },
+      {
+        "row": 68,
+        "column": 3,
+        "score": 0.42808376345394333,
+        "source": "Progressive",
+        "back_translated": "cumulative total"
+      },
+      {
+        "row": 166,
+        "column": 0,
+        "score": 0.5393064430600563,
+        "source": "John Kincaid",
+        "back_translated": "john kinkaid"
+      },
+      {
+        "row": 278,
+        "column": 0,
+        "score": 0.5777820249936203,
+        "source": "Jim Kolbe",
+        "back_translated": "jim colbey"
+      },
+      {
+        "row": 283,
+        "column": 0,
+        "score": 0.5868359602027341,
+        "source": "William Henry Koontz",
+        "back_translated": "William Henry Kuntz"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "U.S. Congress members"
+  },
+  "domain": "U.S. Congress members"
+}

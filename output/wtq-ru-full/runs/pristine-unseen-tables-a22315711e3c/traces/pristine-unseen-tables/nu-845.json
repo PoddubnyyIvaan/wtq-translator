@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-845",
+  "source_context": "csv/203-csv/448.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-845.tsv",
+  "source_question": "which county made the most in box office revenue?",
+  "translated_question": "какой округ получил наибольшие кассовые сборы?",
+  "source_target_value": "Canada/United States",
+  "translated_target_value": "Канада/Соединённые Штаты",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "box office",
+      "normalized_text": "box office",
+      "start": 30,
+      "end": 40,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Box Office",
+      "match_type": "lemma",
+      "candidate_key": "8fb47e731b4d476c",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-845",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which county made the most in box office revenue?",
+    "translated_question": "какой округ получил наибольшие кассовые сборы?",
+    "back_translated_question": "which district received the highest box office?",
+    "question_cosine_similarity": 0.7858106878690355,
+    "question_bert_precision": 0.6878893375396729,
+    "question_bert_recall": 0.7608824372291565,
+    "question_bert_f1": 0.7242620587348938,
+    "back_table_groups_compared": 70,
+    "back_table_min_similarity": 0.7932653488955509,
+    "back_table_mean_similarity": 0.965073152351786,
+    "back_table_bert_groups_compared": 70,
+    "back_table_bert_min_f1": 0.5578353404998779,
+    "back_table_bert_mean_f1": 0.9274181008338929,
+    "back_table_bert_min_precision": 0.5751339197158813,
+    "back_table_bert_mean_precision": 0.9326303967407772,
+    "back_table_bert_min_recall": 0.539478063583374,
+    "back_table_bert_mean_recall": 0.9220969898360116,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.7932653488955509,
+        "source": "$1.2 billion",
+        "back_translated": "1.2 billion US dollars"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.7932653488955509,
+        "source": "$1.2 billion",
+        "back_translated": "1.2 billion US dollars"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.7985368537679951,
+        "source": "$1.3 billion",
+        "back_translated": "1.3 billion US dollars"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.8028516416944987,
+        "source": "World",
+        "back_translated": "Worldwide"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.8067108323746376,
+        "source": "$1.7 billion",
+        "back_translated": "1.7 billion US dollars"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "film industry and box office revenues"
+  },
+  "domain": "film industry and box office revenues"
+}

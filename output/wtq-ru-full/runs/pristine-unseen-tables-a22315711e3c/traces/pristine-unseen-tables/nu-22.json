@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-22",
+  "source_context": "csv/204-csv/417.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-22.tsv",
+  "source_question": "total wins by belgian riders",
+  "translated_question": "всего побед у бельгийских гонщиков",
+  "source_target_value": "7",
+  "translated_target_value": "7",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "wins",
+      "normalized_text": "win",
+      "start": 6,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Wins",
+      "match_type": "lemma",
+      "candidate_key": "594737866911f251",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "riders",
+      "normalized_text": "rider",
+      "start": 22,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Rider",
+      "match_type": "lemma",
+      "candidate_key": "cfd36378859046d1",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-22",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "total wins by belgian riders",
+    "translated_question": "всего побед у бельгийских гонщиков",
+    "back_translated_question": "total wins by Belgian riders",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 0.7572512030601501,
+    "question_bert_recall": 0.826146125793457,
+    "question_bert_f1": 0.7915449142456055,
+    "back_table_groups_compared": 126,
+    "back_table_min_similarity": 0.6146473040958443,
+    "back_table_mean_similarity": 0.9662222598021387,
+    "back_table_bert_groups_compared": 126,
+    "back_table_bert_min_f1": 0.17381061613559723,
+    "back_table_bert_mean_f1": 0.950612185375085,
+    "back_table_bert_min_precision": 0.36071744561195374,
+    "back_table_bert_mean_precision": 0.9515781149504676,
+    "back_table_bert_min_recall": 0.015675777569413185,
+    "back_table_bert_mean_recall": 0.9498010927752133,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.6146473040958443,
+        "source": "Pierre Karsmakers",
+        "back_translated": "Pierre Carsmackers"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.6306575620175611,
+        "source": "Brad Lackey",
+        "back_translated": "Brad Lacey"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6799598120984767,
+        "source": "Points",
+        "back_translated": "uci protour points"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.7023424544479595,
+        "source": "Maico",
+        "back_translated": "Maike"
+      },
+      {
+        "row": 6,
+        "column": 3,
+        "score": 0.7023424544479595,
+        "source": "Maico",
+        "back_translated": "Maike"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motorcycle racing"
+  },
+  "domain": "motorcycle racing"
+}

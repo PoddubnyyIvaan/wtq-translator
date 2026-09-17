@@ -1,0 +1,394 @@
+{
+  "question_id": "nu-941",
+  "source_context": "csv/204-csv/818.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-941.tsv",
+  "source_question": "how many times does san juan, puerto rico appear on this chart?",
+  "translated_question": "сколько раз Сан-Хуан, Пуэрто-Рико появляются на этой диаграмме?",
+  "source_target_value": "8",
+  "translated_target_value": "8",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "san juan",
+      "normalized_text": "san juan",
+      "start": 20,
+      "end": 28,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 12,
+          "column": 3
+        },
+        {
+          "row": 14,
+          "column": 3
+        },
+        {
+          "row": 22,
+          "column": 3
+        },
+        {
+          "row": 23,
+          "column": 3
+        },
+        {
+          "row": 24,
+          "column": 3
+        }
+      ],
+      "table_source_text": "San Juan",
+      "match_type": "lemma",
+      "candidate_key": "923e0c7efaf79109",
+      "coordinate": {
+        "row": 1,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "puerto rico",
+      "normalized_text": "puerto rico",
+      "start": 30,
+      "end": 41,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 9,
+          "column": 3
+        },
+        {
+          "row": 10,
+          "column": 3
+        },
+        {
+          "row": 11,
+          "column": 3
+        },
+        {
+          "row": 12,
+          "column": 3
+        },
+        {
+          "row": 13,
+          "column": 3
+        },
+        {
+          "row": 14,
+          "column": 3
+        },
+        {
+          "row": 15,
+          "column": 3
+        },
+        {
+          "row": 16,
+          "column": 3
+        },
+        {
+          "row": 17,
+          "column": 3
+        },
+        {
+          "row": 18,
+          "column": 3
+        },
+        {
+          "row": 19,
+          "column": 3
+        },
+        {
+          "row": 20,
+          "column": 3
+        },
+        {
+          "row": 21,
+          "column": 3
+        },
+        {
+          "row": 22,
+          "column": 3
+        },
+        {
+          "row": 23,
+          "column": 3
+        },
+        {
+          "row": 24,
+          "column": 3
+        },
+        {
+          "row": 32,
+          "column": 3
+        },
+        {
+          "row": 33,
+          "column": 3
+        },
+        {
+          "row": 34,
+          "column": 3
+        },
+        {
+          "row": 35,
+          "column": 3
+        },
+        {
+          "row": 36,
+          "column": 3
+        },
+        {
+          "row": 37,
+          "column": 3
+        },
+        {
+          "row": 38,
+          "column": 3
+        },
+        {
+          "row": 39,
+          "column": 3
+        },
+        {
+          "row": 40,
+          "column": 3
+        },
+        {
+          "row": 41,
+          "column": 3
+        },
+        {
+          "row": 42,
+          "column": 3
+        },
+        {
+          "row": 43,
+          "column": 3
+        },
+        {
+          "row": 44,
+          "column": 3
+        },
+        {
+          "row": 45,
+          "column": 3
+        },
+        {
+          "row": 46,
+          "column": 3
+        },
+        {
+          "row": 47,
+          "column": 3
+        },
+        {
+          "row": 48,
+          "column": 3
+        },
+        {
+          "row": 49,
+          "column": 3
+        },
+        {
+          "row": 50,
+          "column": 3
+        },
+        {
+          "row": 51,
+          "column": 3
+        },
+        {
+          "row": 52,
+          "column": 3
+        },
+        {
+          "row": 53,
+          "column": 3
+        },
+        {
+          "row": 54,
+          "column": 3
+        },
+        {
+          "row": 55,
+          "column": 3
+        },
+        {
+          "row": 56,
+          "column": 3
+        },
+        {
+          "row": 57,
+          "column": 3
+        },
+        {
+          "row": 58,
+          "column": 3
+        },
+        {
+          "row": 59,
+          "column": 3
+        },
+        {
+          "row": 60,
+          "column": 3
+        },
+        {
+          "row": 61,
+          "column": 3
+        },
+        {
+          "row": 62,
+          "column": 3
+        },
+        {
+          "row": 63,
+          "column": 3
+        },
+        {
+          "row": 64,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Puerto Rico",
+      "match_type": "lemma",
+      "candidate_key": "cf2efa9fd9bf8f1a",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-941",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many times does san juan, puerto rico appear on this chart?",
+    "translated_question": "сколько раз Сан-Хуан, Пуэрто-Рико появляются на этой диаграмме?",
+    "back_translated_question": "how many times does san juan appear on this diagram, puerto rico?",
+    "question_cosine_similarity": 0.8988968451402746,
+    "question_bert_precision": 0.8313397169113159,
+    "question_bert_recall": 0.8313630223274231,
+    "question_bert_f1": 0.8316070437431335,
+    "back_table_groups_compared": 335,
+    "back_table_min_similarity": 0.5945765520844211,
+    "back_table_mean_similarity": 0.9765851595567056,
+    "back_table_bert_groups_compared": 335,
+    "back_table_bert_min_f1": 0.039130669087171555,
+    "back_table_bert_mean_f1": 0.931171586542432,
+    "back_table_bert_min_precision": 0.04087844491004944,
+    "back_table_bert_mean_precision": 0.9312265707930523,
+    "back_table_bert_min_recall": 0.02875550091266632,
+    "back_table_bert_mean_recall": 0.9310339458842776,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.5945765520844211,
+        "source": "Jason The Terrible",
+        "back_translated": "Jason Terrblow"
+      },
+      {
+        "row": 10,
+        "column": 0,
+        "score": 0.5945765520844211,
+        "source": "Jason The Terrible",
+        "back_translated": "Jason Terrblow"
+      },
+      {
+        "row": 44,
+        "column": 0,
+        "score": 0.6357689969653127,
+        "source": "Alex Porteau",
+        "back_translated": "alex porto"
+      },
+      {
+        "row": 27,
+        "column": 0,
+        "score": 0.6893340779707203,
+        "source": "Sean Morley",
+        "back_translated": "sian morley"
+      },
+      {
+        "row": 36,
+        "column": 0,
+        "score": 0.6893340779707203,
+        "source": "Sean Morley",
+        "back_translated": "sian morley"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "professional wrestling"
+  },
+  "domain": "professional wrestling"
+}

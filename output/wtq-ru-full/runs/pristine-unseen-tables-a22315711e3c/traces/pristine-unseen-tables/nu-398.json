@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-398",
+  "source_context": "csv/204-csv/201.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-398.tsv",
+  "source_question": "what country is at the top?",
+  "translated_question": "какая страна находится на первом месте?",
+  "source_target_value": "United States",
+  "translated_target_value": "Соединённые Штаты",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "country",
+      "normalized_text": "country",
+      "start": 5,
+      "end": 12,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Country",
+      "match_type": "lemma",
+      "candidate_key": "54dbd10f2924b4b9",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-398",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what country is at the top?",
+    "translated_question": "какая страна находится на первом месте?",
+    "back_translated_question": "which country is in first place?",
+    "question_cosine_similarity": 0.8788718140635949,
+    "question_bert_precision": 0.7277272939682007,
+    "question_bert_recall": 0.7281270623207092,
+    "question_bert_f1": 0.7283392548561096,
+    "back_table_groups_compared": 252,
+    "back_table_min_similarity": 0.5847612852385623,
+    "back_table_mean_similarity": 0.9861667049118218,
+    "back_table_bert_groups_compared": 252,
+    "back_table_bert_min_f1": 0.4902285039424896,
+    "back_table_bert_mean_f1": 0.9796680012156093,
+    "back_table_bert_min_precision": 0.44290199875831604,
+    "back_table_bert_mean_precision": 0.9797551801043843,
+    "back_table_bert_min_recall": 0.40780022740364075,
+    "back_table_bert_mean_recall": 0.9795861804769153,
+    "back_table_similarity_examples": [
+      {
+        "row": 22,
+        "column": 2,
+        "score": 0.5847612852385623,
+        "source": "Even Wetten",
+        "back_translated": "Even Vettum"
+      },
+      {
+        "row": 23,
+        "column": 2,
+        "score": 0.6397868898461214,
+        "source": "Mun Jun",
+        "back_translated": "Moon Jung"
+      },
+      {
+        "row": 15,
+        "column": 2,
+        "score": 0.7098548015774466,
+        "source": "François-Olivier Roberge",
+        "back_translated": "Francois-Olivier Robillard"
+      },
+      {
+        "row": 10,
+        "column": 2,
+        "score": 0.7167059226582764,
+        "source": "Jeremy Wotherspoon",
+        "back_translated": "Jeremy Vospoun"
+      },
+      {
+        "row": 25,
+        "column": 2,
+        "score": 0.7315071743643471,
+        "source": "Mika Poutala",
+        "back_translated": "Mika Putala"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

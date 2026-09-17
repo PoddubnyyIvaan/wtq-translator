@@ -1,0 +1,96 @@
+{
+  "question_id": "nu-646",
+  "source_context": "csv/204-csv/989.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-646.tsv",
+  "source_question": "what was the difference between james a. garfield high school's 2007 score and its 2011 score?",
+  "translated_question": "какова была разница между результатом старшей школы джеймса а. гарфилда в 2007 году и её результатом в 2011 году?",
+  "source_target_value": "152",
+  "translated_target_value": "152",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "james a. garfield high school",
+      "normalized_text": "james a garfield high school",
+      "start": 32,
+      "end": 61,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 0
+        }
+      ],
+      "table_source_text": "James A. Garfield High School",
+      "match_type": "lemma",
+      "candidate_key": "f07f5df0625c505b",
+      "coordinate": {
+        "row": 3,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-646",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the difference between james a. garfield high school's 2007 score and its 2011 score?",
+    "translated_question": "какова была разница между результатом старшей школы джеймса а. гарфилда в 2007 году и её результатом в 2011 году?",
+    "back_translated_question": "what was the difference between the result of james a. garfield high school in 2007 and its result in 2011?",
+    "question_cosine_similarity": 0.931835826953418,
+    "question_bert_precision": 0.75993412733078,
+    "question_bert_recall": 0.7375531196594238,
+    "question_bert_f1": 0.7490724921226501,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.8007306055263215,
+    "back_table_mean_similarity": 0.993568445534041,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.029292285442352295,
+    "back_table_bert_mean_f1": 0.9711837788422902,
+    "back_table_bert_min_precision": 0.03454162925481796,
+    "back_table_bert_mean_precision": 0.970984494065245,
+    "back_table_bert_min_recall": 0.021150685846805573,
+    "back_table_bert_mean_recall": 0.9713326221952836,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 0,
+        "score": 0.8007306055263215,
+        "source": "Santee Education Complex",
+        "back_translated": "santi educational complex"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.897092715774477,
+        "source": "Marc and Eva Stern Math and Science School",
+        "back_translated": "Mark and Eva Stern School of Mathematics and Natural Sciences"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.9162834107416578,
+        "source": "James A. Garfield High School",
+        "back_translated": "james a high school. Garfield"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "education"
+  },
+  "domain": "education"
+}

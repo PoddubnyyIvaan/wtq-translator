@@ -1,0 +1,146 @@
+{
+  "question_id": "nu-725",
+  "source_context": "csv/204-csv/458.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-725.tsv",
+  "source_question": "who is the next winning driver(t a2)listed after tuck thomas?",
+  "translated_question": "кто следующий победитель гонки, указанный после Так Томас?",
+  "source_target_value": "Monte Sheldon",
+  "translated_target_value": "Монте Шелдон",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "winning",
+      "normalized_text": "win",
+      "start": 16,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": null,
+          "column": 5
+        },
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Winning",
+      "match_type": "lemma",
+      "candidate_key": "1883fb303f8c3989",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "tuck thomas",
+      "normalized_text": "tuck thomas",
+      "start": 49,
+      "end": 60,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Tuck Thomas",
+      "match_type": "lemma",
+      "candidate_key": "0e34a7fb822b413d",
+      "coordinate": {
+        "row": 2,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-725",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is the next winning driver(t a2)listed after tuck thomas?",
+    "translated_question": "кто следующий победитель гонки, указанный после Так Томас?",
+    "back_translated_question": "who is the next winner of the race listed after tuck thomas?",
+    "question_cosine_similarity": 0.9063713055568763,
+    "question_bert_precision": 0.5997118949890137,
+    "question_bert_recall": 0.784785807132721,
+    "question_bert_f1": 0.6891751289367676,
+    "back_table_groups_compared": 77,
+    "back_table_min_similarity": 0.6152196583684665,
+    "back_table_mean_similarity": 0.9646507941642637,
+    "back_table_bert_groups_compared": 77,
+    "back_table_bert_min_f1": 0.17280299961566925,
+    "back_table_bert_mean_f1": 0.9302231532025647,
+    "back_table_bert_min_precision": 0.13644567131996155,
+    "back_table_bert_mean_precision": 0.9288733094543605,
+    "back_table_bert_min_recall": 0.20799502730369568,
+    "back_table_bert_mean_recall": 0.9315444680003376,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.6152196583684665,
+        "source": "Nick Engels",
+        "back_translated": "Nick Angels"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.6209189663855695,
+        "source": "Gene Bothello",
+        "back_translated": "Gene Botelho"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.7164645761438871,
+        "source": "Monte Sheldon",
+        "back_translated": "Monte Shelton"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.7194848005087966,
+        "source": "Ludwig Heimrath",
+        "back_translated": "Ludwig Haymrat"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.7194848005087966,
+        "source": "Ludwig Heimrath",
+        "back_translated": "Ludwig Haymrat"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

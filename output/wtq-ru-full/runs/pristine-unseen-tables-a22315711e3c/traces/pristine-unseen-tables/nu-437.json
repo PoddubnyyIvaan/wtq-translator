@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-437",
+  "source_context": "csv/204-csv/410.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-437.tsv",
+  "source_question": "how many goals did earnie stewart score?",
+  "translated_question": "сколько голов забил Эрни Стюарт?",
+  "source_target_value": "17",
+  "translated_target_value": "17",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "goals",
+      "normalized_text": "goal",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Goals",
+      "match_type": "lemma",
+      "candidate_key": "676680f2cc5ff1a0",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "earnie stewart",
+      "normalized_text": "earnie stewart",
+      "start": 19,
+      "end": 33,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Earnie Stewart",
+      "match_type": "lemma",
+      "candidate_key": "e8eb793d1aa1961b",
+      "coordinate": {
+        "row": 8,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-437",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many goals did earnie stewart score?",
+    "translated_question": "сколько голов забил Эрни Стюарт?",
+    "back_translated_question": "how many goals did earnie stewart score?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.3281071947045327,
+    "back_table_mean_similarity": 0.9529646781337463,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": -0.2755655348300934,
+    "back_table_bert_mean_f1": 0.9064419138160619,
+    "back_table_bert_min_precision": -0.26209455728530884,
+    "back_table_bert_mean_precision": 0.9096916808323426,
+    "back_table_bert_min_recall": -0.2925789952278137,
+    "back_table_bert_mean_recall": 0.903381464638832,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.3281071947045327,
+        "source": "Jozy Altidore",
+        "back_translated": "DaMarcus Beasley"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.4444421702709053,
+        "source": "Caps",
+        "back_translated": "Appearances"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.5083632927413855,
+        "source": "Eric Wynalda",
+        "back_translated": "Eric Lichaj"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.6888194638505507,
+        "source": "Earnie Stewart",
+        "back_translated": "Ernie Stewart"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.8906272641118749,
+        "source": "2007–present",
+        "back_translated": "2007–present time"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

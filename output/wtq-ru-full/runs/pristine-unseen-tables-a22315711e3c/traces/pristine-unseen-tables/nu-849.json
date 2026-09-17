@@ -1,0 +1,96 @@
+{
+  "question_id": "nu-849",
+  "source_context": "csv/204-csv/241.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-849.tsv",
+  "source_question": "who had the highest number of total goals?",
+  "translated_question": "кто имел наибольшее количество всего голов?",
+  "source_target_value": "Aloisi",
+  "translated_target_value": "Алоизи",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "total goals",
+      "normalized_text": "total goal",
+      "start": 30,
+      "end": 41,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Total Goals",
+      "match_type": "lemma",
+      "candidate_key": "48188ee17c9c38cb",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-849",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who had the highest number of total goals?",
+    "translated_question": "кто имел наибольшее количество всего голов?",
+    "back_translated_question": "who had the highest number of total goals?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 75,
+    "back_table_min_similarity": 0.6939910560112545,
+    "back_table_mean_similarity": 0.9910797496177253,
+    "back_table_bert_groups_compared": 75,
+    "back_table_bert_min_f1": 0.3310686945915222,
+    "back_table_bert_mean_f1": 0.9817429518699646,
+    "back_table_bert_min_precision": 0.330007404088974,
+    "back_table_bert_mean_precision": 0.9810164789358775,
+    "back_table_bert_min_recall": 0.3300999701023102,
+    "back_table_bert_mean_recall": 0.9824472280343374,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 0,
+        "score": 0.6939910560112545,
+        "source": "Culina",
+        "back_translated": "Kulina"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.7637918560830277,
+        "source": "Friendlies",
+        "back_translated": "friendly matches"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.8731983092351108,
+        "source": "FIFA World Cup Qual.",
+        "back_translated": "FIFA World Cup qualification."
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

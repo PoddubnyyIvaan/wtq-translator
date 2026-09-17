@@ -1,0 +1,136 @@
+{
+  "question_id": "nu-966",
+  "source_context": "csv/204-csv/412.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-966.tsv",
+  "source_question": "was the score at kentucky higher than florida?",
+  "translated_question": "был ли счёт в игре кентукки выше, чем у Флориды?",
+  "source_target_value": "No",
+  "translated_target_value": "Нет",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "kentucky",
+      "normalized_text": "kentucky",
+      "start": 17,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Kentucky",
+      "match_type": "lemma",
+      "candidate_key": "8ce25252385ccf82",
+      "coordinate": {
+        "row": 6,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "florida",
+      "normalized_text": "florida",
+      "start": 38,
+      "end": 45,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Florida",
+      "match_type": "lemma",
+      "candidate_key": "805e3609879f8193",
+      "coordinate": {
+        "row": 7,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-966",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "was the score at kentucky higher than florida?",
+    "translated_question": "был ли счёт в игре кентукки выше, чем у Флориды?",
+    "back_translated_question": "was the score in the game kentucky higher than that of florida?",
+    "question_cosine_similarity": 0.967201875709214,
+    "question_bert_precision": 0.8072606921195984,
+    "question_bert_recall": 0.666135847568512,
+    "question_bert_f1": 0.7350655198097229,
+    "back_table_groups_compared": 44,
+    "back_table_min_similarity": 0.4214457687614226,
+    "back_table_mean_similarity": 0.9257189617658234,
+    "back_table_bert_groups_compared": 44,
+    "back_table_bert_min_f1": 0.30110523104667664,
+    "back_table_bert_mean_f1": 0.8939883607355031,
+    "back_table_bert_min_precision": 0.4107586443424225,
+    "back_table_bert_mean_precision": 0.897553332827308,
+    "back_table_bert_min_recall": 0.20030178129673004,
+    "back_table_bert_mean_recall": 0.8904118988324295,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.4214457687614226,
+        "source": "Sewanee",
+        "back_translated": "Swinney"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.6295686309337598,
+        "source": "Site",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.7045428953700054,
+        "source": "Rose Bowl • Pasadena, CA (Rose Bowl)",
+        "back_translated": "Pink Cup • Pasadena, KA (Pink Cup)"
+      },
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.7661959133480246,
+        "source": "vs. Stanford*",
+        "back_translated": "vs ottawa rough riders Stanford*"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.7792363828611393,
+        "source": "W 19–7",
+        "back_translated": "P 19–7"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "college football game schedule"
+  },
+  "domain": "college football game schedule"
+}

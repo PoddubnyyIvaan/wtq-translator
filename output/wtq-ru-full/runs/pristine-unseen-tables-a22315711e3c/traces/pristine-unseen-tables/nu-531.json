@@ -1,0 +1,74 @@
+{
+  "question_id": "nu-531",
+  "source_context": "csv/203-csv/493.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-531.tsv",
+  "source_question": "how many years was castroneves racing in the indianapolis 500?",
+  "translated_question": "сколько лет Кастроневес участвовал в Indianapolis 500?",
+  "source_target_value": "13",
+  "translated_target_value": "13",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "years",
+      "normalized_text": "year",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-531",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many years was castroneves racing in the indianapolis 500?",
+    "translated_question": "сколько лет Кастроневес участвовал в Indianapolis 500?",
+    "back_translated_question": "how many years did Castroneves participate in the Indianapolis 500?",
+    "question_cosine_similarity": 0.9843725959305542,
+    "question_bert_precision": 0.48187556862831116,
+    "question_bert_recall": 0.5704408884048462,
+    "question_bert_f1": 0.5260076522827148,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 1.0,
+    "back_table_mean_similarity": 1.0,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 1.0,
+    "back_table_bert_mean_f1": 1.0,
+    "back_table_bert_min_precision": 1.0,
+    "back_table_bert_mean_precision": 1.0,
+    "back_table_bert_min_recall": 1.0,
+    "back_table_bert_mean_recall": 1.0,
+    "back_table_similarity_examples": [],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-381",
+  "source_context": "csv/203-csv/432.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-381.tsv",
+  "source_question": "how many incumbents are on the table",
+  "translated_question": "сколько инкумбентов находится на столе",
+  "source_target_value": "7",
+  "translated_target_value": "7",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "incumbents",
+      "normalized_text": "incumbent",
+      "start": 9,
+      "end": 19,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Incumbent",
+      "match_type": "lemma",
+      "candidate_key": "9dd4bb619caf020f",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-381",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many incumbents are on the table",
+    "translated_question": "сколько инкумбентов находится на столе",
+    "back_translated_question": "how many incumbents are on the table",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 40,
+    "back_table_min_similarity": 0.4370181622564675,
+    "back_table_mean_similarity": 0.9478549087041653,
+    "back_table_bert_groups_compared": 40,
+    "back_table_bert_min_f1": 0.23647788166999817,
+    "back_table_bert_mean_f1": 0.9213378436863422,
+    "back_table_bert_min_precision": 0.2629377245903015,
+    "back_table_bert_mean_precision": 0.9258965604007244,
+    "back_table_bert_min_recall": 0.15251675248146057,
+    "back_table_bert_mean_recall": 0.9168294720351696,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.4370181622564675,
+        "source": "Open",
+        "back_translated": "Cup"
+      },
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.4370181622564675,
+        "source": "Open",
+        "back_translated": "Cup"
+      },
+      {
+        "row": 1,
+        "column": 4,
+        "score": 0.6850038493120206,
+        "source": "Scott Starin",
+        "back_translated": "Scott Tarrant"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7146540677337262,
+        "source": "George Lilly",
+        "back_translated": "George Lillie"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.8286432839123461,
+        "source": "Hal Bidlack",
+        "back_translated": "Holly Bidlack"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "U.S. Congressional Elections in Colorado"
+  },
+  "domain": "U.S. Congressional Elections in Colorado"
+}

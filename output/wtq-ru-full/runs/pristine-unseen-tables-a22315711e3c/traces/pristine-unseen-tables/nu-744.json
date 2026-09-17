@@ -1,0 +1,152 @@
+{
+  "question_id": "nu-744",
+  "source_context": "csv/204-csv/326.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-744.tsv",
+  "source_question": "name the only format with a decimal 128 value above 10,000.",
+  "translated_question": "назовите единственный формат с десятичным 128 значением выше 10 000.",
+  "source_target_value": "Exponent range",
+  "translated_target_value": "Диапазон показателя",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "format",
+      "normalized_text": "format",
+      "start": 14,
+      "end": 20,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Format",
+      "match_type": "lemma",
+      "candidate_key": "3f58861b822f6089",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "decimal",
+      "normalized_text": "decimal",
+      "start": 28,
+      "end": 35,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 4
+        }
+      ],
+      "table_source_text": "decimal",
+      "match_type": "lemma",
+      "candidate_key": "be3d7c9170643bf9",
+      "coordinate": {
+        "row": 5,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "value",
+      "normalized_text": "value",
+      "start": 40,
+      "end": 45,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 4
+        },
+        {
+          "row": 8,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 4
+        }
+      ],
+      "table_source_text": "value",
+      "match_type": "lemma",
+      "candidate_key": "d290ed17fd228684",
+      "coordinate": {
+        "row": 7,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-744",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "name the only format with a decimal 128 value above 10,000.",
+    "translated_question": "назовите единственный формат с десятичным 128 значением выше 10 000.",
+    "back_translated_question": "name the only format with a decimal 128 value greater than 10,000.",
+    "question_cosine_similarity": 0.9922853680660793,
+    "question_bert_precision": 0.955502986907959,
+    "question_bert_recall": 0.9270856380462646,
+    "question_bert_f1": 0.9413064122200012,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.9071129729029375,
+    "back_table_mean_similarity": 0.9972254129740991,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.7865176796913147,
+    "back_table_bert_mean_f1": 0.9905386989766901,
+    "back_table_bert_min_precision": 0.7674094438552856,
+    "back_table_bert_mean_precision": 0.989961366219954,
+    "back_table_bert_min_recall": 0.8052612543106079,
+    "back_table_bert_mean_recall": 0.9910957282239741,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 4,
+        "score": 0.9071129729029375,
+        "source": "Largest value is 9.99...×10Emax",
+        "back_translated": "Maximum value — 9.99...×10Emax"
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.9496671201856954,
+        "source": "Smallest non-zero value is 1×10Etiny",
+        "back_translated": "Smallest nonzero value — 1×10Etiny"
+      },
+      {
+        "row": 8,
+        "column": 4,
+        "score": 0.9906176204868165,
+        "source": "Smallest normalized value is 1.00...×10Emin",
+        "back_translated": "Smallest normalized value — 1.00...×10Emin"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "data representation in decimal floating-point formats"
+  },
+  "domain": "data representation in decimal floating-point formats"
+}

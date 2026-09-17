@@ -1,0 +1,104 @@
+{
+  "question_id": "nu-496",
+  "source_context": "csv/203-csv/463.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-496.tsv",
+  "source_question": "how many total films have they already appeared in?",
+  "translated_question": "сколько всего фильмов они уже снялись?",
+  "source_target_value": "17",
+  "translated_target_value": "17",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "films",
+      "normalized_text": "film",
+      "start": 15,
+      "end": 20,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 1,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Film",
+      "match_type": "lemma",
+      "candidate_key": "faafc841817dd09e",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-496",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many total films have they already appeared in?",
+    "translated_question": "сколько всего фильмов они уже снялись?",
+    "back_translated_question": "how many films have they already made?",
+    "question_cosine_similarity": 0.9322906639321275,
+    "question_bert_precision": 0.7442564964294434,
+    "question_bert_recall": 0.8340857625007629,
+    "question_bert_f1": 0.7886906266212463,
+    "back_table_groups_compared": 90,
+    "back_table_min_similarity": 0.8463582803033256,
+    "back_table_mean_similarity": 0.9979817780200413,
+    "back_table_bert_groups_compared": 90,
+    "back_table_bert_min_f1": 0.5381108522415161,
+    "back_table_bert_mean_f1": 0.9905119723743863,
+    "back_table_bert_min_precision": 0.4781215488910675,
+    "back_table_bert_mean_precision": 0.9888317071729236,
+    "back_table_bert_min_recall": 0.5999763011932373,
+    "back_table_bert_mean_recall": 0.992260938220554,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 4,
+        "score": 0.8463582803033256,
+        "source": "Filmfare Award for Best Actress - Kannada\\nUdaya Award for Best Actress",
+        "back_translated": "Filmfare Award for Best Actress - udaya award for best actress"
+      },
+      {
+        "row": 1,
+        "column": 4,
+        "score": 0.978789053402869,
+        "source": "Innovative Film Award for Best Actress",
+        "back_translated": "award for innovative film for best actress"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.9932126880975245,
+        "source": "Filmfare Award for Best Actress - Kannada\\nKarnataka State Film Award for Best Actress",
+        "back_translated": "Filmfare Award for Best Actress - Kannada\\nKarnataka State Award for Best Actress"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "cinema"
+  },
+  "domain": "cinema"
+}

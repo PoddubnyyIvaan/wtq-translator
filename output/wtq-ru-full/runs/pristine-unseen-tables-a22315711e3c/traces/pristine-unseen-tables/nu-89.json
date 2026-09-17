@@ -1,0 +1,182 @@
+{
+  "question_id": "nu-89",
+  "source_context": "csv/203-csv/351.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-89.tsv",
+  "source_question": "how many gold medals did australia and switzerland total?",
+  "translated_question": "сколько золотых медалей завоевали Австралия и Швейцария всего?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "gold",
+      "normalized_text": "gold",
+      "start": 9,
+      "end": 13,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Gold",
+      "match_type": "lemma",
+      "candidate_key": "a0cd6acd826af7e6",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "australia",
+      "normalized_text": "australia",
+      "start": 25,
+      "end": 34,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Australia",
+      "match_type": "lemma",
+      "candidate_key": "a8c61d6fb57343ad",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "switzerland",
+      "normalized_text": "switzerland",
+      "start": 39,
+      "end": 50,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Switzerland",
+      "match_type": "lemma",
+      "candidate_key": "7fb640f7666d2eae",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "total",
+      "normalized_text": "total",
+      "start": 51,
+      "end": 56,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Total",
+      "match_type": "lemma",
+      "candidate_key": "6dd782d1ee29a548",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-89",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many gold medals did australia and switzerland total?",
+    "translated_question": "сколько золотых медалей завоевали Австралия и Швейцария всего?",
+    "back_translated_question": "how many gold medals did australia and switzerland win in total?",
+    "question_cosine_similarity": 0.9871656022191374,
+    "question_bert_precision": 0.8892574906349182,
+    "question_bert_recall": 0.806824266910553,
+    "question_bert_f1": 0.8476067781448364,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.7282726502356988,
+    "back_table_mean_similarity": 0.9825639901528116,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.3207365572452545,
+    "back_table_bert_mean_f1": 0.9407838825826291,
+    "back_table_bert_min_precision": 0.3038482367992401,
+    "back_table_bert_mean_precision": 0.9345054389150055,
+    "back_table_bert_min_recall": 0.32972097396850586,
+    "back_table_bert_mean_recall": 0.9474102645008652,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7282726502356988,
+        "source": "Great Britain (GBR)",
+        "back_translated": "United Kingdom (United Kingdom)"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.8276286562948326,
+        "source": "Italy (ITA)",
+        "back_translated": "Italy (Italy)"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.855405281689868,
+        "source": "Germany (EUA)",
+        "back_translated": "Germany (European Union)"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.8696455336190573,
+        "source": "France (FRA)",
+        "back_translated": "France (France)"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.8772261242130788,
+        "source": "Soviet Union (URS)",
+        "back_translated": "Soviet Union (USSR)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Olympic Games medal standings"
+  },
+  "domain": "Olympic Games medal standings"
+}

@@ -1,0 +1,98 @@
+{
+  "question_id": "nu-195",
+  "source_context": "csv/203-csv/585.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-195.tsv",
+  "source_question": "which nation earned more medals than austria?",
+  "translated_question": "какая нация завоевала больше медалей, чем Австрия?",
+  "source_target_value": "Soviet Union",
+  "translated_target_value": "Советский Союз",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "nation",
+      "normalized_text": "nation",
+      "start": 6,
+      "end": 12,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Nation",
+      "match_type": "lemma",
+      "candidate_key": "3f26327f2264060f",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "austria",
+      "normalized_text": "austria",
+      "start": 37,
+      "end": 44,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Austria",
+      "match_type": "lemma",
+      "candidate_key": "cb0c433feed5d6fb",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-195",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which nation earned more medals than austria?",
+    "translated_question": "какая нация завоевала больше медалей, чем Австрия?",
+    "back_translated_question": "which nation won more medals than austria?",
+    "question_cosine_similarity": 0.9924233409337853,
+    "question_bert_precision": 0.9720760583877563,
+    "question_bert_recall": 0.9720799326896667,
+    "question_bert_f1": 0.9721203446388245,
+    "back_table_groups_compared": 66,
+    "back_table_min_similarity": 1.0,
+    "back_table_mean_similarity": 1.0,
+    "back_table_bert_groups_compared": 66,
+    "back_table_bert_min_f1": 1.0,
+    "back_table_bert_mean_f1": 1.0,
+    "back_table_bert_min_precision": 1.0,
+    "back_table_bert_mean_precision": 1.0,
+    "back_table_bert_min_recall": 1.0,
+    "back_table_bert_mean_recall": 1.0,
+    "back_table_similarity_examples": [],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Olympic Games medal standings"
+  },
+  "domain": "Olympic Games medal standings"
+}

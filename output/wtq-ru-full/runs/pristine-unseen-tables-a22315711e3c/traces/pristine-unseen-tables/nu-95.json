@@ -1,0 +1,121 @@
+{
+  "question_id": "nu-95",
+  "source_context": "csv/204-csv/369.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-95.tsv",
+  "source_question": "what is the total number of wins listed for the united states?",
+  "translated_question": "сколько всего побед указано для Соединённых Штатов?",
+  "source_target_value": "22",
+  "translated_target_value": "22",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "wins",
+      "normalized_text": "win",
+      "start": 28,
+      "end": 32,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Wins",
+      "match_type": "lemma",
+      "candidate_key": "594737866911f251",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "united states",
+      "normalized_text": "united states",
+      "start": 48,
+      "end": 61,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 5,
+          "column": 1
+        }
+      ],
+      "table_source_text": "United States",
+      "match_type": "lemma",
+      "candidate_key": "f34072dfe9b85b2f",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-95",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the total number of wins listed for the united states?",
+    "translated_question": "сколько всего побед указано для Соединённых Штатов?",
+    "back_translated_question": "how many total wins are listed for United States?",
+    "question_cosine_similarity": 0.974532839788412,
+    "question_bert_precision": 0.543573260307312,
+    "question_bert_recall": 0.6036486029624939,
+    "question_bert_f1": 0.573866605758667,
+    "back_table_groups_compared": 56,
+    "back_table_min_similarity": 0.6202210601671833,
+    "back_table_mean_similarity": 0.9900987379283581,
+    "back_table_bert_groups_compared": 56,
+    "back_table_bert_min_f1": 0.21555978059768677,
+    "back_table_bert_mean_f1": 0.9838550090789795,
+    "back_table_bert_min_precision": 0.1545214205980301,
+    "back_table_bert_mean_precision": 0.9827616472861597,
+    "back_table_bert_min_recall": 0.27815425395965576,
+    "back_table_bert_mean_recall": 0.9849696723478181,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6202210601671833,
+        "source": "Invitational",
+        "back_translated": "invited"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.8253082638208742,
+        "source": "Geoff Ogilvy",
+        "back_translated": "Jeff Ogilvy"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "golf"
+  },
+  "domain": "golf"
+}

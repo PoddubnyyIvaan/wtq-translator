@@ -1,0 +1,166 @@
+{
+  "question_id": "nu-743",
+  "source_context": "csv/203-csv/579.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-743.tsv",
+  "source_question": "what was the first album toni gonzaga participated in that was below platinum status?",
+  "translated_question": "какой был первый Альбом, в котором участвовала Тони Гонзага, и который был ниже Платины уровня?",
+  "source_target_value": "H.O.P.E. (Healing Of Pain and Enlightenment)",
+  "translated_target_value": "H.O.P.E. (Исцеление боли и просветление)",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "was the",
+      "normalized_text": "be the",
+      "start": 5,
+      "end": 12,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 10,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Are The",
+      "match_type": "lemma",
+      "candidate_key": "8a09a1da13d14ffb",
+      "coordinate": {
+        "row": 10,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "album",
+      "normalized_text": "album",
+      "start": 19,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Album",
+      "match_type": "lemma",
+      "candidate_key": "8ed22b709f11d3c3",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "platinum",
+      "normalized_text": "platinum",
+      "start": 69,
+      "end": 77,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 1,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Platinum",
+      "match_type": "lemma",
+      "candidate_key": "54adc5421dcf7005",
+      "coordinate": {
+        "row": 0,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-743",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the first album toni gonzaga participated in that was below platinum status?",
+    "translated_question": "какой был первый Альбом, в котором участвовала Тони Гонзага, и который был ниже Платины уровня?",
+    "back_translated_question": "what was the first album featuring Tony Gonzaga that was below platinum level?",
+    "question_cosine_similarity": 0.9340697854501767,
+    "question_bert_precision": 0.5073207020759583,
+    "question_bert_recall": 0.6357881426811218,
+    "question_bert_f1": 0.5704099535942078,
+    "back_table_groups_compared": 75,
+    "back_table_min_similarity": 0.32522149357375296,
+    "back_table_mean_similarity": 0.9391767914810436,
+    "back_table_bert_groups_compared": 75,
+    "back_table_bert_min_f1": -0.20967115461826324,
+    "back_table_bert_mean_f1": 0.8485473546385766,
+    "back_table_bert_min_precision": -0.2397543489933014,
+    "back_table_bert_mean_precision": 0.8453634946544966,
+    "back_table_bert_min_recall": -0.18216891586780548,
+    "back_table_bert_mean_recall": 0.8520423821608225,
+    "back_table_similarity_examples": [
+      {
+        "row": 13,
+        "column": 3,
+        "score": 0.32522149357375296,
+        "source": "Kahit Na",
+        "back_translated": "even if"
+      },
+      {
+        "row": 11,
+        "column": 3,
+        "score": 0.37125207940947036,
+        "source": "Mahalin Ka Ng Totoo",
+        "back_translated": "Love Me for Real"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.6989798869858745,
+        "source": "Da Best ang Pasko ng Pilipino",
+        "back_translated": "Best Christmas album by filipinos"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.7153934874794472,
+        "source": "60 Taon ng Musika at Soap Opera",
+        "back_translated": "60 Years of Music and Soap Operas"
+      },
+      {
+        "row": 6,
+        "column": 3,
+        "score": 0.7178512120645875,
+        "source": "Ganyan ang Pasko, \"Ngayong Pasko Magniningning ang Pilipino\" (Solo) & with Gary Valenciano",
+        "back_translated": "This Christmas, \"Philippino Shines This Christmas\" (Solo) & with Gary Valenciano"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music industry"
+  },
+  "domain": "music industry"
+}

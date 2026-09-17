@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-257",
+  "source_context": "csv/203-csv/170.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-257.tsv",
+  "source_question": "how many total seasons are listed?",
+  "translated_question": "сколько всего Регулярных сезонов указано?",
+  "source_target_value": "10",
+  "translated_target_value": "10",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "seasons",
+      "normalized_text": "season",
+      "start": 15,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Season",
+      "match_type": "lemma",
+      "candidate_key": "9de63b1527596c01",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-257",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many total seasons are listed?",
+    "translated_question": "сколько всего Регулярных сезонов указано?",
+    "back_translated_question": "how many total seasons are listed?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 88,
+    "back_table_min_similarity": 0.5370093131138749,
+    "back_table_mean_similarity": 0.9808868821284826,
+    "back_table_bert_groups_compared": 88,
+    "back_table_bert_min_f1": -0.0021093576215207577,
+    "back_table_bert_mean_f1": 0.9492696095945906,
+    "back_table_bert_min_precision": -0.16491582989692688,
+    "back_table_bert_mean_precision": 0.9433620788834312,
+    "back_table_bert_min_recall": 0.19498106837272644,
+    "back_table_bert_mean_recall": 0.9558472672308033,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6485644783784463,
+        "source": "Giant\\nSlalom",
+        "back_translated": "giant slalom"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.9046172839338483,
+        "source": "Injured, did not compete",
+        "back_translated": "injured, did not participate"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.9046172839338483,
+        "source": "Injured, did not compete",
+        "back_translated": "injured, did not participate"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

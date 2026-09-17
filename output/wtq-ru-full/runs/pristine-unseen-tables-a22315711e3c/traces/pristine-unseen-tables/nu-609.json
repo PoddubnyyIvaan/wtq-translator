@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-609",
+  "source_context": "csv/204-csv/995.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-609.tsv",
+  "source_question": "how many laps total are listed?",
+  "translated_question": "сколько кругов всего указано?",
+  "source_target_value": "2061",
+  "translated_target_value": "2061",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "laps",
+      "normalized_text": "lap",
+      "start": 9,
+      "end": 13,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Laps",
+      "match_type": "lemma",
+      "candidate_key": "fe5e187f063d5f6e",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-609",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many laps total are listed?",
+    "translated_question": "сколько кругов всего указано?",
+    "back_translated_question": "how many laps are indicated in total?",
+    "question_cosine_similarity": 0.963045322643676,
+    "question_bert_precision": 0.8244937658309937,
+    "question_bert_recall": 0.7681419253349304,
+    "question_bert_f1": 0.7963088750839233,
+    "back_table_groups_compared": 100,
+    "back_table_min_similarity": 0.5860290230262887,
+    "back_table_mean_similarity": 0.9808962826439366,
+    "back_table_bert_groups_compared": 100,
+    "back_table_bert_min_f1": 0.07165394723415375,
+    "back_table_bert_mean_f1": 0.8912105445563793,
+    "back_table_bert_min_precision": 0.10863660275936127,
+    "back_table_bert_mean_precision": 0.8951312908530236,
+    "back_table_bert_min_recall": 0.03344517946243286,
+    "back_table_bert_mean_recall": 0.8871464115381241,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.5860290230262887,
+        "source": "G",
+        "back_translated": "superg"
+      },
+      {
+        "row": 2,
+        "column": 6,
+        "score": 0.7613267486328185,
+        "source": "Alain Serpaggi",
+        "back_translated": "alen serpaghi"
+      },
+      {
+        "row": 1,
+        "column": 6,
+        "score": 0.7696879425821614,
+        "source": "Guy Ligier",
+        "back_translated": "guy lijeu"
+      },
+      {
+        "row": 0,
+        "column": 6,
+        "score": 0.7850725855187289,
+        "source": "Pierre Maublanc",
+        "back_translated": "pierre moublan"
+      },
+      {
+        "row": null,
+        "column": 9,
+        "score": 0.8214852413961654,
+        "source": "Class\\nPos.",
+        "back_translated": "Class\\nPosition."
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "automotive racing"
+  },
+  "domain": "automotive racing"
+}

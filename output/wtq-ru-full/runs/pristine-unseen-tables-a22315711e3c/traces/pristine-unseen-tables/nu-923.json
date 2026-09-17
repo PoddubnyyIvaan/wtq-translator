@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-923",
+  "source_context": "csv/203-csv/86.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-923.tsv",
+  "source_question": "how many titles has jansher khan won?",
+  "translated_question": "сколько титулов выиграл Джансер Хан?",
+  "source_target_value": "8",
+  "translated_target_value": "8",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "titles",
+      "normalized_text": "title",
+      "start": 9,
+      "end": 15,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Titles",
+      "match_type": "lemma",
+      "candidate_key": "628652919ca5d379",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "jansher khan",
+      "normalized_text": "jansher khan",
+      "start": 20,
+      "end": 32,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Jansher Khan",
+      "match_type": "lemma",
+      "candidate_key": "ac7666a07544eaad",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-923",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many titles has jansher khan won?",
+    "translated_question": "сколько титулов выиграл Джансер Хан?",
+    "back_translated_question": "how many titles did jansher khan win?",
+    "question_cosine_similarity": 0.9882685785683588,
+    "question_bert_precision": 0.9128442406654358,
+    "question_bert_recall": 0.9128562808036804,
+    "question_bert_f1": 0.9129822850227356,
+    "back_table_groups_compared": 135,
+    "back_table_min_similarity": 0.5702993097289736,
+    "back_table_mean_similarity": 0.98355693883726,
+    "back_table_bert_groups_compared": 135,
+    "back_table_bert_min_f1": 0.1965755671262741,
+    "back_table_bert_mean_f1": 0.9644350114795897,
+    "back_table_bert_min_precision": 0.17932391166687012,
+    "back_table_bert_mean_precision": 0.9629148915961937,
+    "back_table_bert_min_recall": 0.21165814995765686,
+    "back_table_bert_mean_recall": 0.9660685239014802,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.5702993097289736,
+        "source": "Geoff Hunt",
+        "back_translated": "Jiff Hunt"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.697986515288696,
+        "source": "Grégory Gaultier",
+        "back_translated": "Gregory Goffey"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.7424490229242846,
+        "source": "Jonathon Power",
+        "back_translated": "Jonathan Power"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 15,
+        "column": 1,
+        "score": 0.7602745169520565,
+        "source": "Qamar Zaman",
+        "back_translated": "Kamal Zaman"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

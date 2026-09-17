@@ -1,0 +1,106 @@
+{
+  "question_id": "nu-313",
+  "source_context": "csv/201-csv/8.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-313.tsv",
+  "source_question": "how many species of birds are there in guatemala?",
+  "translated_question": "сколько видов Птиц существует в Гватемале?",
+  "source_target_value": "684",
+  "translated_target_value": "684",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "birds",
+      "normalized_text": "bird",
+      "start": 20,
+      "end": 25,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Birds",
+      "match_type": "lemma",
+      "candidate_key": "06e36553060a3d38",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "guatemala",
+      "normalized_text": "guatemala",
+      "start": 39,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Guatemala",
+      "match_type": "lemma",
+      "candidate_key": "25a06578ff619dbf",
+      "coordinate": {
+        "row": 3,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-313",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many species of birds are there in guatemala?",
+    "translated_question": "сколько видов Птиц существует в Гватемале?",
+    "back_translated_question": "how many species of birds exist in Guatemala?",
+    "question_cosine_similarity": 0.9906304135508415,
+    "question_bert_precision": 0.6360028386116028,
+    "question_bert_recall": 0.7578284740447998,
+    "question_bert_f1": 0.6958457231521606,
+    "back_table_groups_compared": 64,
+    "back_table_min_similarity": 0.8881738387261797,
+    "back_table_mean_similarity": 0.9982527162300966,
+    "back_table_bert_groups_compared": 64,
+    "back_table_bert_min_f1": 0.5213281512260437,
+    "back_table_bert_mean_f1": 0.9925207523629069,
+    "back_table_bert_min_precision": 0.5480303168296814,
+    "back_table_bert_mean_precision": 0.9929379737004638,
+    "back_table_bert_min_recall": 0.4938352704048157,
+    "back_table_bert_mean_recall": 0.9920911761000752,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.8881738387261797,
+        "source": "Reptile",
+        "back_translated": "Reptiles"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "biodiversity and species distribution"
+  },
+  "domain": "biodiversity and species distribution"
+}

@@ -1,0 +1,137 @@
+{
+  "question_id": "nu-386",
+  "source_context": "csv/204-csv/369.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-386.tsv",
+  "source_question": "whats the difference in win amounts between geoff ogilvy and ernie els?",
+  "translated_question": "в чем разница в победах между Джеффом Огливом и Эрни Эльсом?",
+  "source_target_value": "1",
+  "translated_target_value": "1",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "win",
+      "normalized_text": "win",
+      "start": 24,
+      "end": 27,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Wins",
+      "match_type": "lemma",
+      "candidate_key": "594737866911f251",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "geoff ogilvy",
+      "normalized_text": "geoff ogilvy",
+      "start": 44,
+      "end": 56,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Geoff Ogilvy",
+      "match_type": "lemma",
+      "candidate_key": "02538496089c8860",
+      "coordinate": {
+        "row": 1,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "ernie els",
+      "normalized_text": "ernie els",
+      "start": 61,
+      "end": 70,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Ernie Els",
+      "match_type": "lemma",
+      "candidate_key": "09ef7cb490d63465",
+      "coordinate": {
+        "row": 3,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-386",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "whats the difference in win amounts between geoff ogilvy and ernie els?",
+    "translated_question": "в чем разница в победах между Джеффом Огливом и Эрни Эльсом?",
+    "back_translated_question": "what is the difference in wins between Geoff Ogilvy and Ernie Els?",
+    "question_cosine_similarity": 0.9848309522238888,
+    "question_bert_precision": 0.3709924519062042,
+    "question_bert_recall": 0.44239115715026855,
+    "question_bert_f1": 0.406995564699173,
+    "back_table_groups_compared": 56,
+    "back_table_min_similarity": 0.6202210601671833,
+    "back_table_mean_similarity": 0.9900987379283581,
+    "back_table_bert_groups_compared": 56,
+    "back_table_bert_min_f1": 0.21555978059768677,
+    "back_table_bert_mean_f1": 0.9838550090789795,
+    "back_table_bert_min_precision": 0.1545214205980301,
+    "back_table_bert_mean_precision": 0.9827616472861597,
+    "back_table_bert_min_recall": 0.27815425395965576,
+    "back_table_bert_mean_recall": 0.9849696723478181,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6202210601671833,
+        "source": "Invitational",
+        "back_translated": "invited"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.8253082638208742,
+        "source": "Geoff Ogilvy",
+        "back_translated": "Jeff Ogilvy"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "golf"
+  },
+  "domain": "golf"
+}

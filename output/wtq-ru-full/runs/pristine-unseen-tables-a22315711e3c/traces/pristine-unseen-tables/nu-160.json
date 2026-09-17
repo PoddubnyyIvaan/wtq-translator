@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-160",
+  "source_context": "csv/203-csv/181.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-160.tsv",
+  "source_question": "how many races took place after august?",
+  "translated_question": "сколько гонок прошли на месте после Августа?",
+  "source_target_value": "6",
+  "translated_target_value": "6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "races",
+      "normalized_text": "race",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Race",
+      "match_type": "lemma",
+      "candidate_key": "e4af25f9f4fb820f",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "place",
+      "normalized_text": "place",
+      "start": 20,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Place",
+      "match_type": "lemma",
+      "candidate_key": "db84324c39382d0b",
+      "coordinate": {
+        "row": 8,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "august",
+      "normalized_text": "august",
+      "start": 32,
+      "end": 38,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 1
+        },
+        {
+          "row": 10,
+          "column": 1
+        }
+      ],
+      "table_source_text": "August",
+      "match_type": "lemma",
+      "candidate_key": "53d8e9ea95ab46b8",
+      "coordinate": {
+        "row": 9,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-160",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many races took place after august?",
+    "translated_question": "сколько гонок прошли на месте после Августа?",
+    "back_translated_question": "how many races took place at the place after August?",
+    "question_cosine_similarity": 0.9351272690845407,
+    "question_bert_precision": 0.7908351421356201,
+    "question_bert_recall": 0.636669933795929,
+    "question_bert_f1": 0.7117394804954529,
+    "back_table_groups_compared": 162,
+    "back_table_min_similarity": 0.6426405485464411,
+    "back_table_mean_similarity": 0.976226688063964,
+    "back_table_bert_groups_compared": 162,
+    "back_table_bert_min_f1": 0.16585887968540192,
+    "back_table_bert_mean_f1": 0.9443291045817328,
+    "back_table_bert_min_precision": 0.15246768295764923,
+    "back_table_bert_mean_precision": 0.9452223189083147,
+    "back_table_bert_min_recall": 0.11267796903848648,
+    "back_table_bert_mean_recall": 0.9435070569592493,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.6426405485464411,
+        "source": "Meadowlands Sports Complex",
+        "back_translated": "mid-ohio sports car complex"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6509402192874287,
+        "source": "Pole position",
+        "back_translated": "Starting position"
+      },
+      {
+        "row": 12,
+        "column": 2,
+        "score": 0.6583778975060175,
+        "source": "Red Roof Inns 200",
+        "back_translated": "Red Roar Ins 200"
+      },
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.6629666196638009,
+        "source": "Budweiser/G.I.Joe's 200",
+        "back_translated": "Badger/grand prix gi-jo 200"
+      },
+      {
+        "row": 14,
+        "column": 0,
+        "score": 0.6648055693829742,
+        "source": "NC",
+        "back_translated": "NS"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

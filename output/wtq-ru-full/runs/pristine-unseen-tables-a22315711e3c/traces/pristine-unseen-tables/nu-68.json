@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-68",
+  "source_context": "csv/204-csv/578.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-68.tsv",
+  "source_question": "how many drivers have no laps led?",
+  "translated_question": "сколько гонщиков не имеют кругов, лидированных?",
+  "source_target_value": "18",
+  "translated_target_value": "18",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "drivers",
+      "normalized_text": "driver",
+      "start": 9,
+      "end": 16,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Driver",
+      "match_type": "lemma",
+      "candidate_key": "c23f14e130c93c60",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "laps led",
+      "normalized_text": "lap lead",
+      "start": 25,
+      "end": 33,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Laps Led",
+      "match_type": "lemma",
+      "candidate_key": "ee1ea79a95de90f7",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-68",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many drivers have no laps led?",
+    "translated_question": "сколько гонщиков не имеют кругов, лидированных?",
+    "back_translated_question": "how many drivers have not led any laps led?",
+    "question_cosine_similarity": 0.9625821757893053,
+    "question_bert_precision": 0.8600888252258301,
+    "question_bert_recall": 0.8059431314468384,
+    "question_bert_f1": 0.8329798579216003,
+    "back_table_groups_compared": 198,
+    "back_table_min_similarity": 0.446014709941833,
+    "back_table_mean_similarity": 0.9810048933825168,
+    "back_table_bert_groups_compared": 198,
+    "back_table_bert_min_f1": 0.17381028831005096,
+    "back_table_bert_mean_f1": 0.9665518084710295,
+    "back_table_bert_min_precision": 0.24930833280086517,
+    "back_table_bert_mean_precision": 0.9672760827222255,
+    "back_table_bert_min_recall": 0.01567545346915722,
+    "back_table_bert_mean_recall": 0.9659568184911452,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.446014709941833,
+        "source": "Grid",
+        "back_translated": "starting position"
+      },
+      {
+        "row": 11,
+        "column": 2,
+        "score": 0.4903149493362505,
+        "source": "Hélio Castroneves",
+        "back_translated": "Elio de Angelis"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6516287106830229,
+        "source": "Time/Retired",
+        "back_translated": "time/Withdrew"
+      },
+      {
+        "row": null,
+        "column": 8,
+        "score": 0.6799598120984767,
+        "source": "Points",
+        "back_translated": "uci protour points"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.6886628171484165,
+        "source": "Penske Racing",
+        "back_translated": "Peninsula Racing"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

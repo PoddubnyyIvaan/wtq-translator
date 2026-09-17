@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-133",
+  "source_context": "csv/204-csv/224.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-133.tsv",
+  "source_question": "besides seattle what other american city was a venue?",
+  "translated_question": "помимо Сиэтла какое ещё американское город было местом проведения?",
+  "source_target_value": "Los Angeles",
+  "translated_target_value": "Лос-Анджелес",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "seattle",
+      "normalized_text": "seattle",
+      "start": 8,
+      "end": 15,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Seattle",
+      "match_type": "lemma",
+      "candidate_key": "c4a735fc36bf6cc1",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "venue",
+      "normalized_text": "venue",
+      "start": 47,
+      "end": 52,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Venue",
+      "match_type": "lemma",
+      "candidate_key": "03d8c1b0e6363561",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-133",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "besides seattle what other american city was a venue?",
+    "translated_question": "помимо Сиэтла какое ещё американское город было местом проведения?",
+    "back_translated_question": "apart from Seattle, which other American city was a venue?",
+    "question_cosine_similarity": 0.990598920717412,
+    "question_bert_precision": 0.5986868143081665,
+    "question_bert_recall": 0.6320476531982422,
+    "question_bert_f1": 0.6158324480056763,
+    "back_table_groups_compared": 66,
+    "back_table_min_similarity": 0.7165648031438839,
+    "back_table_mean_similarity": 0.956039714443599,
+    "back_table_bert_groups_compared": 66,
+    "back_table_bert_min_f1": 0.0848815068602562,
+    "back_table_bert_mean_f1": 0.8612329863914938,
+    "back_table_bert_min_precision": 0.10964047163724899,
+    "back_table_bert_mean_precision": 0.8643991679630496,
+    "back_table_bert_min_recall": 0.05809004232287407,
+    "back_table_bert_mean_recall": 0.857776757160371,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.775663162655141,
+        "source": "Mexico",
+        "back_translated": "New Mexico"
+      },
+      {
+        "row": 7,
+        "column": 5,
+        "score": 0.8318425068333462,
+        "source": "Qu Bo 58'",
+        "back_translated": "zhu bo 58'"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

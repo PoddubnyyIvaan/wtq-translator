@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-575",
+  "source_context": "csv/204-csv/454.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-575.tsv",
+  "source_question": "what is the number of the population 2011 for the city of ploiesti?",
+  "translated_question": "сколько составляет население 2011 года для города Плоешти?",
+  "source_target_value": "209,945",
+  "translated_target_value": "209,945",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "population",
+      "normalized_text": "population",
+      "start": 26,
+      "end": 36,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Population",
+      "match_type": "lemma",
+      "candidate_key": "64a8cf7043dd76c5",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "city",
+      "normalized_text": "city",
+      "start": 50,
+      "end": 54,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "City",
+      "match_type": "lemma",
+      "candidate_key": "219822e955e410cd",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-575",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of the population 2011 for the city of ploiesti?",
+    "translated_question": "сколько составляет население 2011 года для города Плоешти?",
+    "back_translated_question": "what was the population in 2011 for the city of Ploiești?",
+    "question_cosine_similarity": 0.9720662317896148,
+    "question_bert_precision": 0.6734331250190735,
+    "question_bert_recall": 0.6839296817779541,
+    "question_bert_f1": 0.6791571974754333,
+    "back_table_groups_compared": 1920,
+    "back_table_min_similarity": 0.352731966028093,
+    "back_table_mean_similarity": 0.9857071780611034,
+    "back_table_bert_groups_compared": 1920,
+    "back_table_bert_min_f1": 0.1779981106519699,
+    "back_table_bert_mean_f1": 0.9613072206731885,
+    "back_table_bert_min_precision": 0.11334718018770218,
+    "back_table_bert_mean_precision": 0.9601056568829033,
+    "back_table_bert_min_recall": 0.14545291662216187,
+    "back_table_bert_mean_recall": 0.962569413962774,
+    "back_table_similarity_examples": [
+      {
+        "row": 130,
+        "column": 0,
+        "score": 0.352731966028093,
+        "source": "Chitila",
+        "back_translated": "Cătălina"
+      },
+      {
+        "row": 279,
+        "column": 0,
+        "score": 0.40979394392397567,
+        "source": "Ciacova",
+        "back_translated": "Țițești"
+      },
+      {
+        "row": 92,
+        "column": 0,
+        "score": 0.4155581874493747,
+        "source": "Carei",
+        "back_translated": "Cary"
+      },
+      {
+        "row": 138,
+        "column": 0,
+        "score": 0.4613665978312087,
+        "source": "Țăndărei",
+        "back_translated": "Candreni"
+      },
+      {
+        "row": 113,
+        "column": 0,
+        "score": 0.46975731545617416,
+        "source": "Breaza",
+        "back_translated": "Brașov"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "geography"
+  },
+  "domain": "geography"
+}

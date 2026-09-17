@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-894",
+  "source_context": "csv/204-csv/391.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-894.tsv",
+  "source_question": "ali hanteh is the head coach, but for what team?",
+  "translated_question": "Али Хантех — главный тренер, но в какой команде?",
+  "source_target_value": "Aboomoslem",
+  "translated_target_value": "Абумослем",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "ali hanteh",
+      "normalized_text": "ali hanteh",
+      "start": 0,
+      "end": 10,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Ali Hanteh",
+      "match_type": "lemma",
+      "candidate_key": "e29094af846c023c",
+      "coordinate": {
+        "row": 0,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "head coach",
+      "normalized_text": "head coach",
+      "start": 18,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Head Coach",
+      "match_type": "lemma",
+      "candidate_key": "f2938f42fa3c2d43",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "team",
+      "normalized_text": "team",
+      "start": 43,
+      "end": 47,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-894",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "ali hanteh is the head coach, but for what team?",
+    "translated_question": "Али Хантех — главный тренер, но в какой команде?",
+    "back_translated_question": "Ali Hanteh — head coach, but in which team?",
+    "question_cosine_similarity": 0.9705351137383732,
+    "question_bert_precision": 0.6407486200332642,
+    "question_bert_recall": 0.6467130184173584,
+    "question_bert_f1": 0.6442672610282898,
+    "back_table_groups_compared": 133,
+    "back_table_min_similarity": 0.2952116443196799,
+    "back_table_mean_similarity": 0.9268370932527178,
+    "back_table_bert_groups_compared": 133,
+    "back_table_bert_min_f1": 0.2960668206214905,
+    "back_table_bert_mean_f1": 0.8955864216151991,
+    "back_table_bert_min_precision": 0.26560118794441223,
+    "back_table_bert_mean_precision": 0.8898358524293828,
+    "back_table_bert_min_recall": 0.3043869137763977,
+    "back_table_bert_mean_recall": 0.9012671258664668,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.2952116443196799,
+        "source": "Ahvaz",
+        "back_translated": "Tahiti"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.2952116443196799,
+        "source": "Ahvaz",
+        "back_translated": "Tahiti"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.40586751863918236,
+        "source": "Est. Ahvaz",
+        "back_translated": "East. Tahiti"
+      },
+      {
+        "row": 11,
+        "column": 0,
+        "score": 0.4287016219108419,
+        "source": "Payam",
+        "back_translated": "Pajam"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.4392500959026107,
+        "source": "Saeed Khani",
+        "back_translated": "Said Han"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

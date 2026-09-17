@@ -1,0 +1,154 @@
+{
+  "question_id": "nu-224",
+  "source_context": "csv/204-csv/233.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-224.tsv",
+  "source_question": "who directed the series directly before john reardon?",
+  "translated_question": "кто режиссировал сериал непосредственно до Джона Риардона?",
+  "source_target_value": "Gerry Poulson",
+  "translated_target_value": "Джерри Пулсон",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "directed",
+      "normalized_text": "direct",
+      "start": 4,
+      "end": 12,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Directed",
+      "match_type": "lemma",
+      "candidate_key": "5b97943c3573cfb5",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "john reardon",
+      "normalized_text": "john reardon",
+      "start": 40,
+      "end": 52,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 5,
+          "column": 1
+        },
+        {
+          "row": 9,
+          "column": 1
+        },
+        {
+          "row": 10,
+          "column": 1
+        },
+        {
+          "row": 12,
+          "column": 1
+        },
+        {
+          "row": 17,
+          "column": 1
+        }
+      ],
+      "table_source_text": "John Reardon",
+      "match_type": "lemma",
+      "candidate_key": "5c2cebc909c7bce8",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-224",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who directed the series directly before john reardon?",
+    "translated_question": "кто режиссировал сериал непосредственно до Джона Риардона?",
+    "back_translated_question": "who directed the series immediately before john reardon?",
+    "question_cosine_similarity": 0.9935569620718643,
+    "question_bert_precision": 0.9351544380187988,
+    "question_bert_recall": 0.9351634383201599,
+    "question_bert_f1": 0.9352571964263916,
+    "back_table_groups_compared": 76,
+    "back_table_min_similarity": 0.48242423596608436,
+    "back_table_mean_similarity": 0.9275841415920594,
+    "back_table_bert_groups_compared": 76,
+    "back_table_bert_min_f1": 0.24929754436016083,
+    "back_table_bert_mean_f1": 0.9021942127299937,
+    "back_table_bert_min_precision": 0.22834166884422302,
+    "back_table_bert_mean_precision": 0.9084671045604505,
+    "back_table_bert_min_recall": 0.26837825775146484,
+    "back_table_bert_mean_recall": 0.895989659193315,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.48242423596608436,
+        "source": "Gerry Poulson",
+        "back_translated": "Jerry Pulson"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.48242423596608436,
+        "source": "Gerry Poulson",
+        "back_translated": "Jerry Pulson"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.5184020078302045,
+        "source": "John Reardon",
+        "back_translated": "John Riardon"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.5184020078302045,
+        "source": "John Reardon",
+        "back_translated": "John Riardon"
+      },
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.5184020078302045,
+        "source": "John Reardon",
+        "back_translated": "John Riardon"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "television series episode information"
+  },
+  "domain": "television series episode information"
+}

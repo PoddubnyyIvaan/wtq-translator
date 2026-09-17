@@ -1,0 +1,144 @@
+{
+  "question_id": "nu-116",
+  "source_context": "csv/204-csv/818.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-116.tsv",
+  "source_question": "are the dates in a consecutive order?",
+  "translated_question": "являются ли даты в последовательном порядке?",
+  "source_target_value": "yes",
+  "translated_target_value": "да",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "dates",
+      "normalized_text": "date",
+      "start": 8,
+      "end": 13,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Date",
+      "match_type": "lemma",
+      "candidate_key": "58930d017d1af3c4",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "in a",
+      "normalized_text": "in a",
+      "start": 14,
+      "end": 18,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 13,
+          "column": 4
+        },
+        {
+          "row": 24,
+          "column": 4
+        }
+      ],
+      "table_source_text": "in a",
+      "match_type": "lemma",
+      "candidate_key": "6ce3a532e5fb798f",
+      "coordinate": {
+        "row": 0,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-116",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "are the dates in a consecutive order?",
+    "translated_question": "являются ли даты в последовательном порядке?",
+    "back_translated_question": "are the dates in a sequential order?",
+    "question_cosine_similarity": 0.9213860035352628,
+    "question_bert_precision": 0.8467540740966797,
+    "question_bert_recall": 0.7214800119400024,
+    "question_bert_f1": 0.7828731536865234,
+    "back_table_groups_compared": 335,
+    "back_table_min_similarity": 0.5945765520844211,
+    "back_table_mean_similarity": 0.9765851595567056,
+    "back_table_bert_groups_compared": 335,
+    "back_table_bert_min_f1": 0.039130669087171555,
+    "back_table_bert_mean_f1": 0.931171586542432,
+    "back_table_bert_min_precision": 0.04087844491004944,
+    "back_table_bert_mean_precision": 0.9312265707930523,
+    "back_table_bert_min_recall": 0.02875550091266632,
+    "back_table_bert_mean_recall": 0.9310339458842776,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.5945765520844211,
+        "source": "Jason The Terrible",
+        "back_translated": "Jason Terrblow"
+      },
+      {
+        "row": 10,
+        "column": 0,
+        "score": 0.5945765520844211,
+        "source": "Jason The Terrible",
+        "back_translated": "Jason Terrblow"
+      },
+      {
+        "row": 44,
+        "column": 0,
+        "score": 0.6357689969653127,
+        "source": "Alex Porteau",
+        "back_translated": "alex porto"
+      },
+      {
+        "row": 27,
+        "column": 0,
+        "score": 0.6893340779707203,
+        "source": "Sean Morley",
+        "back_translated": "sian morley"
+      },
+      {
+        "row": 36,
+        "column": 0,
+        "score": 0.6893340779707203,
+        "source": "Sean Morley",
+        "back_translated": "sian morley"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "professional wrestling"
+  },
+  "domain": "professional wrestling"
+}

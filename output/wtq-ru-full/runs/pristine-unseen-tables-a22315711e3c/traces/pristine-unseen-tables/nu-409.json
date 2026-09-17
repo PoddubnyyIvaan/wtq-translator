@@ -1,0 +1,160 @@
+{
+  "question_id": "nu-409",
+  "source_context": "csv/204-csv/810.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-409.tsv",
+  "source_question": "what was the last season of zoom",
+  "translated_question": "каким был последний Регулярный сезон ЗУМ",
+  "source_target_value": "SEASON 7",
+  "translated_target_value": "СЕЗОН 7",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "season",
+      "normalized_text": "season",
+      "start": 18,
+      "end": 24,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Season",
+      "match_type": "lemma",
+      "candidate_key": "9de63b1527596c01",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "zoom",
+      "normalized_text": "zoom",
+      "start": 28,
+      "end": 32,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "ZOOM",
+      "match_type": "lemma",
+      "candidate_key": "8bbc735f5a7944b9",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-409",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the last season of zoom",
+    "translated_question": "каким был последний Регулярный сезон ЗУМ",
+    "back_translated_question": "what was the last season of zoom?",
+    "question_cosine_similarity": 0.9944137208403461,
+    "question_bert_precision": 0.8038538098335266,
+    "question_bert_recall": 0.7510840892791748,
+    "question_bert_f1": 0.7775253653526306,
+    "back_table_groups_compared": 64,
+    "back_table_min_similarity": 0.44058596692501517,
+    "back_table_mean_similarity": 0.8727684623412777,
+    "back_table_bert_groups_compared": 64,
+    "back_table_bert_min_f1": 0.2754024863243103,
+    "back_table_bert_mean_f1": 0.8400306599214673,
+    "back_table_bert_min_precision": 0.25290343165397644,
+    "back_table_bert_mean_precision": 0.8347107945010066,
+    "back_table_bert_min_recall": 0.2961672842502594,
+    "back_table_bert_mean_recall": 0.8453142112120986,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 6,
+        "score": 0.44058596692501517,
+        "source": "Kortney Sumner",
+        "back_translated": "Courtney Summers"
+      },
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.44058596692501517,
+        "source": "Kortney Sumner",
+        "back_translated": "Courtney Summers"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.44630428326689253,
+        "source": "ZOOM",
+        "back_translated": "ZUM"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.5926708751153045,
+        "source": "Cara Harvey",
+        "back_translated": "Kiera Harvey"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.6172279329515941,
+        "source": "Alisa Besher",
+        "back_translated": "Alice Besser"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "television series cast information"
+  },
+  "domain": "television series cast information"
+}

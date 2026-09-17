@@ -1,0 +1,182 @@
+{
+  "question_id": "nu-641",
+  "source_context": "csv/203-csv/659.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-641.tsv",
+  "source_question": "how many teams completed 87 laps?",
+  "translated_question": "сколько команд завершили 87 кругов?",
+  "source_target_value": "8",
+  "translated_target_value": "8",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "teams",
+      "normalized_text": "team",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 11,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "laps",
+      "normalized_text": "lap",
+      "start": 28,
+      "end": 32,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": 8,
+          "column": 5
+        },
+        {
+          "row": 9,
+          "column": 5
+        },
+        {
+          "row": 10,
+          "column": 5
+        },
+        {
+          "row": 11,
+          "column": 5
+        },
+        {
+          "row": 12,
+          "column": 5
+        },
+        {
+          "row": 13,
+          "column": 5
+        },
+        {
+          "row": 14,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Laps",
+      "match_type": "lemma",
+      "candidate_key": "fe5e187f063d5f6e",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-641",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many teams completed 87 laps?",
+    "translated_question": "сколько команд завершили 87 кругов?",
+    "back_translated_question": "how many teams completed 87 laps?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 160,
+    "back_table_min_similarity": 0.446014709941833,
+    "back_table_mean_similarity": 0.9728707966198445,
+    "back_table_bert_groups_compared": 160,
+    "back_table_bert_min_f1": 0.17381061613559723,
+    "back_table_bert_mean_f1": 0.9488019459880889,
+    "back_table_bert_min_precision": 0.2493084967136383,
+    "back_table_bert_mean_precision": 0.9510033503174782,
+    "back_table_bert_min_recall": 0.015675777569413185,
+    "back_table_bert_mean_recall": 0.9467375129112042,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.446014709941833,
+        "source": "Grid",
+        "back_translated": "starting position"
+      },
+      {
+        "row": 10,
+        "column": 2,
+        "score": 0.5282411235755793,
+        "source": "Bryan Herta",
+        "back_translated": "Brian Herda"
+      },
+      {
+        "row": 15,
+        "column": 2,
+        "score": 0.5763144934138226,
+        "source": "Geoff Boss",
+        "back_translated": "Jiff Boss"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6516287106830229,
+        "source": "Time/Retired",
+        "back_translated": "time/Withdrew"
+      },
+      {
+        "row": null,
+        "column": 7,
+        "score": 0.6799598120984767,
+        "source": "Points",
+        "back_translated": "uci protour points"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

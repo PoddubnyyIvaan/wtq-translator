@@ -1,0 +1,186 @@
+{
+  "question_id": "nu-773",
+  "source_context": "csv/202-csv/175.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-773.tsv",
+  "source_question": "what parish had more than one church built.",
+  "translated_question": "какой приход имел более одной Церкви с годом постройки.",
+  "source_target_value": "Levanger",
+  "translated_target_value": "Левангер",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "parish",
+      "normalized_text": "parish",
+      "start": 5,
+      "end": 11,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Parish",
+      "match_type": "lemma",
+      "candidate_key": "599d443e096dd727",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "church",
+      "normalized_text": "church",
+      "start": 30,
+      "end": 36,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 3,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 6,
+          "column": 1
+        },
+        {
+          "row": 7,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Church",
+      "match_type": "lemma",
+      "candidate_key": "bb39e3821da00920",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "built",
+      "normalized_text": "build",
+      "start": 37,
+      "end": 42,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "built",
+      "match_type": "lemma",
+      "candidate_key": "70f8b86f93dc5916",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-773",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what parish had more than one church built.",
+    "translated_question": "какой приход имел более одной Церкви с годом постройки.",
+    "back_translated_question": "which parish had more than one church with built year?",
+    "question_cosine_similarity": 0.915032016294849,
+    "question_bert_precision": 0.7337009310722351,
+    "question_bert_recall": 0.6205806732177734,
+    "question_bert_f1": 0.6762910485267639,
+    "back_table_groups_compared": 36,
+    "back_table_min_similarity": 0.5447883079981254,
+    "back_table_mean_similarity": 0.9429756200304187,
+    "back_table_bert_groups_compared": 36,
+    "back_table_bert_min_f1": 0.5309640765190125,
+    "back_table_bert_mean_f1": 0.9046115395095613,
+    "back_table_bert_min_precision": 0.5302199125289917,
+    "back_table_bert_mean_precision": 0.9060839729176627,
+    "back_table_bert_min_recall": 0.5302848219871521,
+    "back_table_bert_mean_recall": 0.9028863145245446,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.5447883079981254,
+        "source": "Ekne",
+        "back_translated": "Egne"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.5447883079981254,
+        "source": "Ekne",
+        "back_translated": "Egne"
+      },
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.7005943509957349,
+        "source": "Ytterøy",
+        "back_translated": "Jotterø"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.7095910332084964,
+        "source": "Ekne Church",
+        "back_translated": "Egne Church"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7924718854474643,
+        "source": "Ytterøy Church",
+        "back_translated": "Jotterø Church"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "churches and religious buildings"
+  },
+  "domain": "churches and religious buildings"
+}

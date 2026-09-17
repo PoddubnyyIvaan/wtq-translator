@@ -1,0 +1,154 @@
+{
+  "question_id": "nu-24",
+  "source_context": "csv/204-csv/896.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-24.tsv",
+  "source_question": "what match comes after gl-b-5?",
+  "translated_question": "какой матч следует за ГЛ-b-5?",
+  "source_target_value": "GL-B-6",
+  "translated_target_value": "ГЛ-B-6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "match",
+      "normalized_text": "match",
+      "start": 5,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Match",
+      "match_type": "lemma",
+      "candidate_key": "880d876ec932c082",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "gl",
+      "normalized_text": "gl",
+      "start": 23,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        }
+      ],
+      "table_source_text": "GL",
+      "match_type": "lemma",
+      "candidate_key": "021ed403b0f9c1df",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-24",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what match comes after gl-b-5?",
+    "translated_question": "какой матч следует за ГЛ-b-5?",
+    "back_translated_question": "which match follows GL-b-5?",
+    "question_cosine_similarity": 0.9424977725907135,
+    "question_bert_precision": 0.6047329902648926,
+    "question_bert_recall": 0.6649942994117737,
+    "question_bert_f1": 0.6350342035293579,
+    "back_table_groups_compared": 45,
+    "back_table_min_similarity": 0.9330923782914742,
+    "back_table_mean_similarity": 0.9948417154728936,
+    "back_table_bert_groups_compared": 45,
+    "back_table_bert_min_f1": 0.8369837999343872,
+    "back_table_bert_mean_f1": 0.9832367049323187,
+    "back_table_bert_min_precision": 0.8367251753807068,
+    "back_table_bert_mean_precision": 0.98321010933982,
+    "back_table_bert_min_recall": 0.8367477059364319,
+    "back_table_bert_mean_recall": 0.983212427298228,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.9330923782914742,
+        "source": "Quarterfinals-1",
+        "back_translated": "Quarterfinal-1"
+      },
+      {
+        "row": 7,
+        "column": 0,
+        "score": 0.9340828688632936,
+        "source": "Quarterfinals-2",
+        "back_translated": "Quarterfinal-2"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.965237948123846,
+        "source": "GL-B-1",
+        "back_translated": "GL-Б-1"
+      },
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.9676724600436982,
+        "source": "GL-B-3",
+        "back_translated": "GL-Б-3"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.9677915409578984,
+        "source": "GL-B-5",
+        "back_translated": "GL-Б-5"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

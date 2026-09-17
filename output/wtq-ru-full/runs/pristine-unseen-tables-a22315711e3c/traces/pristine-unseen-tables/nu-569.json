@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-569",
+  "source_context": "csv/203-csv/194.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-569.tsv",
+  "source_question": "how many years has there been a lieutenant governor of indiana?",
+  "translated_question": "сколько лет прошло с тех пор, как в индиане был губернатор?",
+  "source_target_value": "198",
+  "translated_target_value": "198",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "governor",
+      "normalized_text": "governor",
+      "start": 43,
+      "end": 51,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Governor",
+      "match_type": "lemma",
+      "candidate_key": "daf64c83af8d62a0",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-569",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many years has there been a lieutenant governor of indiana?",
+    "translated_question": "сколько лет прошло с тех пор, как в индиане был губернатор?",
+    "back_translated_question": "how many years have passed since the governor was in Indiana?",
+    "question_cosine_similarity": 0.8817012536820555,
+    "question_bert_precision": 0.4379359483718872,
+    "question_bert_recall": 0.46744421124458313,
+    "question_bert_f1": 0.4534206688404083,
+    "back_table_groups_compared": 399,
+    "back_table_min_similarity": 0.5609955372471397,
+    "back_table_mean_similarity": 0.9856163488981671,
+    "back_table_bert_groups_compared": 399,
+    "back_table_bert_min_f1": 0.37541601061820984,
+    "back_table_bert_mean_f1": 0.9832991234640729,
+    "back_table_bert_min_precision": 0.3969614505767822,
+    "back_table_bert_mean_precision": 0.9832707284237807,
+    "back_table_bert_min_recall": 0.3524537682533264,
+    "back_table_bert_mean_recall": 0.9833170881396845,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.5609955372471397,
+        "source": "Paris C. Dunning",
+        "back_translated": "Paris S. Dandrin"
+      },
+      {
+        "row": 15,
+        "column": 1,
+        "score": 0.5609955372471397,
+        "source": "Paris C. Dunning",
+        "back_translated": "Paris S. Dandrin"
+      },
+      {
+        "row": 40,
+        "column": 1,
+        "score": 0.5968982058703106,
+        "source": "Charles M. Dawson",
+        "back_translated": "Charles M. Dowey"
+      },
+      {
+        "row": 48,
+        "column": 1,
+        "score": 0.6645321161683763,
+        "source": "Richard E. Folz",
+        "back_translated": "Richard E. Faust"
+      },
+      {
+        "row": 17,
+        "column": 1,
+        "score": 0.6949200359823895,
+        "source": "William Cumback",
+        "back_translated": "William Cambek"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "politics"
+  },
+  "domain": "politics"
+}

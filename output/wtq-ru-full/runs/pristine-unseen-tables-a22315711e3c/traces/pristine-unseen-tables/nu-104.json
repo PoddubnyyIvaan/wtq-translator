@@ -1,0 +1,184 @@
+{
+  "question_id": "nu-104",
+  "source_context": "csv/204-csv/46.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-104.tsv",
+  "source_question": "how long does the swiss open series run for?",
+  "translated_question": "на сколько дней продлится Швейцарский открытый чемпионат Серия?",
+  "source_target_value": "6 days",
+  "translated_target_value": "6 дней",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "swiss open",
+      "normalized_text": "swiss open",
+      "start": 18,
+      "end": 28,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Swiss Open",
+      "match_type": "lemma",
+      "candidate_key": "2155d9938140b2b3",
+      "coordinate": {
+        "row": 3,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "series",
+      "normalized_text": "series",
+      "start": 29,
+      "end": 35,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 3,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 5,
+          "column": 1
+        },
+        {
+          "row": 6,
+          "column": 1
+        },
+        {
+          "row": 7,
+          "column": 1
+        },
+        {
+          "row": 8,
+          "column": 1
+        },
+        {
+          "row": 9,
+          "column": 1
+        },
+        {
+          "row": 10,
+          "column": 1
+        },
+        {
+          "row": 11,
+          "column": 1
+        },
+        {
+          "row": 12,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Series",
+      "match_type": "lemma",
+      "candidate_key": "1130e468d307c81b",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-104",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how long does the swiss open series run for?",
+    "translated_question": "на сколько дней продлится Швейцарский открытый чемпионат Серия?",
+    "back_translated_question": "how many days will the Swiss Open series last?",
+    "question_cosine_similarity": 0.9356094562320872,
+    "question_bert_precision": 0.3540360629558563,
+    "question_bert_recall": 0.4296813905239105,
+    "question_bert_f1": 0.3921069800853729,
+    "back_table_groups_compared": 112,
+    "back_table_min_similarity": 0.4001668310247715,
+    "back_table_mean_similarity": 0.9811195522441729,
+    "back_table_bert_groups_compared": 112,
+    "back_table_bert_min_f1": 0.06143597140908241,
+    "back_table_bert_mean_f1": 0.9442124763570193,
+    "back_table_bert_min_precision": 0.13762561976909637,
+    "back_table_bert_mean_precision": 0.9454421709690776,
+    "back_table_bert_min_recall": -0.07873943448066711,
+    "back_table_bert_mean_recall": 0.9432029266442571,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.4001668310247715,
+        "source": "Tour",
+        "back_translated": "round"
+      },
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.6775520376065792,
+        "source": "Arena Fyn",
+        "back_translated": "Fin Arena"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.796222704094332,
+        "source": "Official title",
+        "back_translated": "Official name"
+      },
+      {
+        "row": 11,
+        "column": 2,
+        "score": 0.79965754903822,
+        "source": "Ma On Shan Sports Centre\\nQueen Elizabeth Stadium",
+        "back_translated": "Ma On Centre-queen elizabeth stadium"
+      },
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.8214775865698283,
+        "source": "Bung Karno Stadium",
+        "back_translated": "bundaran stadium"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "badminton tournaments"
+  },
+  "domain": "badminton tournaments"
+}

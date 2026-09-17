@@ -1,0 +1,158 @@
+{
+  "question_id": "nu-662",
+  "source_context": "csv/203-csv/360.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-662.tsv",
+  "source_question": "what is the fastest rowing time in the world for a lm2x lightweight double scull boat?",
+  "translated_question": "какое самое быстрое время в мире для легких двойных гребцов легких двойных гребцов лодки?",
+  "source_target_value": "6:10.02",
+  "translated_target_value": "6:10.02",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "time",
+      "normalized_text": "time",
+      "start": 27,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Time",
+      "match_type": "lemma",
+      "candidate_key": "cb9a5f6e298a60f7",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "double scull",
+      "normalized_text": "double scull",
+      "start": 68,
+      "end": 80,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 10,
+          "column": 0
+        }
+      ],
+      "table_source_text": "double sculls",
+      "match_type": "lemma",
+      "candidate_key": "a2b16a8edb0ce002",
+      "coordinate": {
+        "row": 10,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "boat",
+      "normalized_text": "boat",
+      "start": 81,
+      "end": 85,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Boat",
+      "match_type": "lemma",
+      "candidate_key": "b2641ac161b4ac40",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-662",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the fastest rowing time in the world for a lm2x lightweight double scull boat?",
+    "translated_question": "какое самое быстрое время в мире для легких двойных гребцов легких двойных гребцов лодки?",
+    "back_translated_question": "what is the fastest time in the world for double sculls boats?",
+    "question_cosine_similarity": 0.8847492454565506,
+    "question_bert_precision": 0.6061586737632751,
+    "question_bert_recall": 0.8700657486915588,
+    "question_bert_f1": 0.731440544128418,
+    "back_table_groups_compared": 105,
+    "back_table_min_similarity": 0.5576315898531953,
+    "back_table_mean_similarity": 0.9649711005909524,
+    "back_table_bert_groups_compared": 105,
+    "back_table_bert_min_f1": 0.08095521479845047,
+    "back_table_bert_mean_f1": 0.8847117135212534,
+    "back_table_bert_min_precision": 0.06729437410831451,
+    "back_table_bert_mean_precision": 0.890106422986303,
+    "back_table_bert_min_recall": 0.08370202779769897,
+    "back_table_bert_mean_recall": 0.8794248035975865,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.5576315898531953,
+        "source": "Meet",
+        "back_translated": "Competition"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.5810197775540159,
+        "source": "Mahé Drysdale",
+        "back_translated": "Maih Driestyl"
+      },
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.6576080324822866,
+        "source": "M2+\\nCoxed pairs",
+        "back_translated": "M2+\\nPairs with coxswain"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.7185387683943465,
+        "source": "M4+\\nCoxed four",
+        "back_translated": "M4+\\nFours with coxswain"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.7397910078351653,
+        "source": "Great Britain",
+        "back_translated": "United Kingdom"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "rowing competitions"
+  },
+  "domain": "rowing competitions"
+}

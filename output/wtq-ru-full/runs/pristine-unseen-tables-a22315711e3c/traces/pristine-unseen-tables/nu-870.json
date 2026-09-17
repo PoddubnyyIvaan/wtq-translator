@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-870",
+  "source_context": "csv/204-csv/116.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-870.tsv",
+  "source_question": "which polling firm is listed the most?",
+  "translated_question": "какое опросное агентство указано чаще всего?",
+  "source_target_value": "Prime Consulting Ltd",
+  "translated_target_value": "Prime Consulting Ltd",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "polling firm",
+      "normalized_text": "polling firm",
+      "start": 6,
+      "end": 18,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Polling Firm",
+      "match_type": "lemma",
+      "candidate_key": "4097965be2be89a7",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-870",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which polling firm is listed the most?",
+    "translated_question": "какое опросное агентство указано чаще всего?",
+    "back_translated_question": "which polling firm is mentioned most frequently?",
+    "question_cosine_similarity": 0.9519926893775494,
+    "question_bert_precision": 0.7535322308540344,
+    "question_bert_recall": 0.7315657138824463,
+    "question_bert_f1": 0.7428893446922302,
+    "back_table_groups_compared": 168,
+    "back_table_min_similarity": 0.5881086342464271,
+    "back_table_mean_similarity": 0.9732217453548625,
+    "back_table_bert_groups_compared": 168,
+    "back_table_bert_min_f1": 0.38171932101249695,
+    "back_table_bert_mean_f1": 0.9134113458650452,
+    "back_table_bert_min_precision": 0.35645994544029236,
+    "back_table_bert_mean_precision": 0.9206462935322807,
+    "back_table_bert_min_recall": 0.35404741764068604,
+    "back_table_bert_mean_recall": 0.9063607550093106,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      },
+      {
+        "row": 9,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      },
+      {
+        "row": 13,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      },
+      {
+        "row": 17,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "political polling"
+  },
+  "domain": "political polling"
+}

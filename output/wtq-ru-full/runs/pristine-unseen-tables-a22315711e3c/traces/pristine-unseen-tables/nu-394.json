@@ -1,0 +1,151 @@
+{
+  "question_id": "nu-394",
+  "source_context": "csv/203-csv/66.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-394.tsv",
+  "source_question": "how many injuries were reported in the year that toy safety funding was reported at its lowest?",
+  "translated_question": "сколько травм было зафиксировано в году, когда безопасность игрушек была на минимальном уровне?",
+  "source_target_value": "202 (estimate)",
+  "translated_target_value": "202 (оценка)",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "injuries",
+      "normalized_text": "injury",
+      "start": 9,
+      "end": 17,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Injuries",
+      "match_type": "lemma",
+      "candidate_key": "aac4dc22ba23e2c8",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 39,
+      "end": 43,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "toy safety",
+      "normalized_text": "toy safety",
+      "start": 49,
+      "end": 59,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "toy safety",
+      "match_type": "lemma",
+      "candidate_key": "9c3338a546c73c93",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-394",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many injuries were reported in the year that toy safety funding was reported at its lowest?",
+    "translated_question": "сколько травм было зафиксировано в году, когда безопасность игрушек была на минимальном уровне?",
+    "back_translated_question": "how many injuries were recorded in year when toy safety was at its lowest level?",
+    "question_cosine_similarity": 0.9454151911340688,
+    "question_bert_precision": 0.7432144284248352,
+    "question_bert_recall": 0.7699819207191467,
+    "question_bert_f1": 0.7568957805633545,
+    "back_table_groups_compared": 85,
+    "back_table_min_similarity": 0.8403085143856975,
+    "back_table_mean_similarity": 0.9968293586229733,
+    "back_table_bert_groups_compared": 85,
+    "back_table_bert_min_f1": 0.3711338937282562,
+    "back_table_bert_mean_f1": 0.9809145250741174,
+    "back_table_bert_min_precision": 0.3553064167499542,
+    "back_table_bert_mean_precision": 0.9795616504024057,
+    "back_table_bert_min_recall": 0.38526418805122375,
+    "back_table_bert_mean_recall": 0.9822630703449249,
+    "back_table_similarity_examples": [
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.8403085143856975,
+        "source": "202 (estimate)",
+        "back_translated": "202 (assessment)"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.926424789909759,
+        "source": "no data†",
+        "back_translated": "no data"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.9763764502593661,
+        "source": "Toy sales\\n(US $ Billions)",
+        "back_translated": "toy sales (billions of us dollars)"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.9873857283979075,
+        "source": "CPSC toy safety funding\\n(US$ Millions)",
+        "back_translated": "CPSC toy safety funding (millions of US dollars))"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "toy safety and child injury statistics"
+  },
+  "domain": "toy safety and child injury statistics"
+}

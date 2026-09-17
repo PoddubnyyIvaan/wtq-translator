@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-479",
+  "source_context": "csv/204-csv/754.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-479.tsv",
+  "source_question": "which operator runs a higher number of routes?",
+  "translated_question": "какой оператор осуществляет большее количество маршрутов?",
+  "source_target_value": "GNR",
+  "translated_target_value": "GNR",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "operator",
+      "normalized_text": "operator",
+      "start": 6,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Operator",
+      "match_type": "lemma",
+      "candidate_key": "a7a1325a525f2f08",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-479",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which operator runs a higher number of routes?",
+    "translated_question": "какой оператор осуществляет большее количество маршрутов?",
+    "back_translated_question": "which operator operates a greater number of routes?",
+    "question_cosine_similarity": 0.9595594155737508,
+    "question_bert_precision": 0.9455773830413818,
+    "question_bert_recall": 0.9455848932266235,
+    "question_bert_f1": 0.945663571357727,
+    "back_table_groups_compared": 150,
+    "back_table_min_similarity": 0.4295405503032389,
+    "back_table_mean_similarity": 0.9558616849764054,
+    "back_table_bert_groups_compared": 150,
+    "back_table_bert_min_f1": 0.28222402930259705,
+    "back_table_bert_mean_f1": 0.9489279359579086,
+    "back_table_bert_min_precision": 0.2547428607940674,
+    "back_table_bert_mean_precision": 0.9524336417516073,
+    "back_table_bert_min_recall": 0.22358091175556183,
+    "back_table_bert_mean_recall": 0.9458822957674662,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.4295405503032389,
+        "source": "Bourne",
+        "back_translated": "Burn"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.4295405503032389,
+        "source": "Bourne",
+        "back_translated": "Burn"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.4295405503032389,
+        "source": "Bourne",
+        "back_translated": "Burn"
+      },
+      {
+        "row": 19,
+        "column": 1,
+        "score": 0.4295405503032389,
+        "source": "Bourne",
+        "back_translated": "Burn"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.5329453745639263,
+        "source": "Going to",
+        "back_translated": "Direction"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "railway schedules"
+  },
+  "domain": "railway schedules"
+}

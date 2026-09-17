@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-701",
+  "source_context": "csv/203-csv/831.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-701.tsv",
+  "source_question": "who is the party leader of lucien bouchard and benoit bouchard?",
+  "translated_question": "кто является лидером партии Люсиен Бушар и Бушар?",
+  "source_target_value": "Brian Mulroney",
+  "translated_target_value": "Брайан Мулрони",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "party leader",
+      "normalized_text": "party leader",
+      "start": 11,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Party leader",
+      "match_type": "lemma",
+      "candidate_key": "a1de2fc3fb1bc783",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "lucien bouchard",
+      "normalized_text": "lucien bouchard",
+      "start": 27,
+      "end": 42,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Lucien Bouchard",
+      "match_type": "lemma",
+      "candidate_key": "fc910b3bc61f0d4d",
+      "coordinate": {
+        "row": 4,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "bouchard",
+      "normalized_text": "bouchard",
+      "start": 54,
+      "end": 62,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Bouchard",
+      "match_type": "lemma",
+      "candidate_key": "007f79dac47530c8",
+      "coordinate": {
+        "row": 4,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-701",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is the party leader of lucien bouchard and benoit bouchard?",
+    "translated_question": "кто является лидером партии Люсиен Бушар и Бушар?",
+    "back_translated_question": "who is the party leader of Lucien Bouchard and Bouchard?",
+    "question_cosine_similarity": 0.9801707081449035,
+    "question_bert_precision": 0.5252739787101746,
+    "question_bert_recall": 0.6964295506477356,
+    "question_bert_f1": 0.6083086729049683,
+    "back_table_groups_compared": 45,
+    "back_table_min_similarity": 0.6588392626022133,
+    "back_table_mean_similarity": 0.9375294308045353,
+    "back_table_bert_groups_compared": 45,
+    "back_table_bert_min_f1": 0.2990495562553406,
+    "back_table_bert_mean_f1": 0.8878106872240702,
+    "back_table_bert_min_precision": 0.31301116943359375,
+    "back_table_bert_mean_precision": 0.8847340325514476,
+    "back_table_bert_min_recall": 0.28318506479263306,
+    "back_table_bert_mean_recall": 0.8907638099458483,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 0,
+        "score": 0.6588392626022133,
+        "source": "André Bachand",
+        "back_translated": "André Boucher"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7199116338472722,
+        "source": "Political lieutenant",
+        "back_translated": "Political Deputy"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.7814761769049448,
+        "source": "none",
+        "back_translated": "no"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7831232739487778,
+        "source": "Georges-Henri Héon",
+        "back_translated": "Georges-Henri On"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.8149401210476629,
+        "source": "Lucien Bouchard",
+        "back_translated": "Lucien Boucher"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "politics"
+  },
+  "domain": "politics"
+}

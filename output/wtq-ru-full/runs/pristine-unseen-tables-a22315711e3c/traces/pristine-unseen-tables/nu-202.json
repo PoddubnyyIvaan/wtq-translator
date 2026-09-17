@@ -1,0 +1,286 @@
+{
+  "question_id": "nu-202",
+  "source_context": "csv/201-csv/20.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-202.tsv",
+  "source_question": "which state has a full membership and also has a membership status under sovereign state with only 7 members?",
+  "translated_question": "какое государство имеет полное членство и также имеет статус членства в качестве суверенного государства с лишь 7 членами?",
+  "source_target_value": "Iceland",
+  "translated_target_value": "Исландия",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "state",
+      "normalized_text": "state",
+      "start": 6,
+      "end": 11,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        }
+      ],
+      "table_source_text": "State",
+      "match_type": "lemma",
+      "candidate_key": "e7257900114b9801",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "full",
+      "normalized_text": "full",
+      "start": 18,
+      "end": 22,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 3,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Full",
+      "match_type": "lemma",
+      "candidate_key": "dc15bfeb5fc4fc62",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "membership",
+      "normalized_text": "membership",
+      "start": 23,
+      "end": 33,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Membership",
+      "match_type": "lemma",
+      "candidate_key": "6f22d0839dc528a1",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "membership status",
+      "normalized_text": "membership status",
+      "start": 49,
+      "end": 66,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Membership status",
+      "match_type": "lemma",
+      "candidate_key": "713fa505ee59a61d",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0004>",
+      "question_text": "sovereign state",
+      "normalized_text": "sovereign state",
+      "start": 73,
+      "end": 88,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Sovereign state",
+      "match_type": "lemma",
+      "candidate_key": "496f66463b7e03ea",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0005>",
+      "question_text": "members",
+      "normalized_text": "member",
+      "start": 101,
+      "end": 108,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Members",
+      "match_type": "lemma",
+      "candidate_key": "53fad84027a263f4",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-202",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which state has a full membership and also has a membership status under sovereign state with only 7 members?",
+    "translated_question": "какое государство имеет полное членство и также имеет статус членства в качестве суверенного государства с лишь 7 членами?",
+    "back_translated_question": "which state has full membership and also has membership status as a sovereign state with only 7 members?",
+    "question_cosine_similarity": 0.9940811231390011,
+    "question_bert_precision": 0.8547589778900146,
+    "question_bert_recall": 0.8681930303573608,
+    "question_bert_f1": 0.8616688847541809,
+    "back_table_groups_compared": 72,
+    "back_table_min_similarity": 0.5915775427334157,
+    "back_table_mean_similarity": 0.9764389915308619,
+    "back_table_bert_groups_compared": 72,
+    "back_table_bert_min_f1": 0.26810142397880554,
+    "back_table_bert_mean_f1": 0.944553318950865,
+    "back_table_bert_min_precision": 0.25556400418281555,
+    "back_table_bert_mean_precision": 0.9427363417214818,
+    "back_table_bert_min_recall": 0.27854785323143005,
+    "back_table_bert_mean_recall": 0.946237982561191,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.5915775427334157,
+        "source": "The Riksdag",
+        "back_translated": "Rigsdag"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.6741331378735952,
+        "source": "Alþingi",
+        "back_translated": "Althingi"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.7394998154813628,
+        "source": "Associate",
+        "back_translated": "associated"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7394998154813628,
+        "source": "Associate",
+        "back_translated": "associated"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.7394998154813628,
+        "source": "Associate",
+        "back_translated": "associated"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>",
+      "<TABLE_REF_0005>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>",
+      "<TABLE_REF_0005>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>",
+      "<TABLE_REF_0005>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "international organizations and parliamentary memberships"
+  },
+  "domain": "international organizations and parliamentary memberships"
+}

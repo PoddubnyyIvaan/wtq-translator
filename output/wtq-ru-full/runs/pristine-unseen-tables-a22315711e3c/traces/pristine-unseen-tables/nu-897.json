@@ -1,0 +1,166 @@
+{
+  "question_id": "nu-897",
+  "source_context": "csv/203-csv/122.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-897.tsv",
+  "source_question": "what was the only year that allen bestwick a pit reporter?",
+  "translated_question": "в каком году Аллен Бествик был репортером с пит-стопа?",
+  "source_target_value": "2007",
+  "translated_target_value": "2007",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 18,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "allen bestwick",
+      "normalized_text": "allen bestwick",
+      "start": 28,
+      "end": 42,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Allen Bestwick",
+      "match_type": "lemma",
+      "candidate_key": "ec8063408b20e664",
+      "coordinate": {
+        "row": 4,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "pit reporter",
+      "normalized_text": "pit reporter",
+      "start": 45,
+      "end": 57,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Pit reporters",
+      "match_type": "lemma",
+      "candidate_key": "1436b96b3130f6f3",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-897",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the only year that allen bestwick a pit reporter?",
+    "translated_question": "в каком году Аллен Бествик был репортером с пит-стопа?",
+    "back_translated_question": "in what year was Allen Bestwick a pit reporter?",
+    "question_cosine_similarity": 0.975438019399738,
+    "question_bert_precision": 0.41738981008529663,
+    "question_bert_recall": 0.4914219081401825,
+    "question_bert_f1": 0.4546063542366028,
+    "back_table_groups_compared": 72,
+    "back_table_min_similarity": 0.44049567327318434,
+    "back_table_mean_similarity": 0.9319850938033135,
+    "back_table_bert_groups_compared": 72,
+    "back_table_bert_min_f1": -0.1401626318693161,
+    "back_table_bert_mean_f1": 0.6862407684222691,
+    "back_table_bert_min_precision": -0.20052531361579895,
+    "back_table_bert_mean_precision": 0.6480246478846917,
+    "back_table_bert_min_recall": -0.08675176650285721,
+    "back_table_bert_mean_recall": 0.7334195901122358,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.44049567327318434,
+        "source": "Marty Reid",
+        "back_translated": "marti rid"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6066746381860701,
+        "source": "Lap-by-lap",
+        "back_translated": "paw by paw"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7594823876305267,
+        "source": "NASCAR\\nCountdown",
+        "back_translated": "NASCAR\nCounter"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7680239670904495,
+        "source": "Rusty Wallace\\nAndy Petree",
+        "back_translated": "rusty wallace\nandy petti"
+      },
+      {
+        "row": 1,
+        "column": 4,
+        "score": 0.8046495748058677,
+        "source": "Dale Jarrett\\nAndy Petree",
+        "back_translated": "dale jarrett\nandy petti"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports broadcasting"
+  },
+  "domain": "sports broadcasting"
+}

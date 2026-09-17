@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-859",
+  "source_context": "csv/203-csv/849.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-859.tsv",
+  "source_question": "how many contestants are 1.80 meters tall or more?",
+  "translated_question": "сколько конкурсантов имеют рост 1,80 метра и более?",
+  "source_target_value": "9",
+  "translated_target_value": "9",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "contestants",
+      "normalized_text": "contestant",
+      "start": 9,
+      "end": 20,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Contestant",
+      "match_type": "lemma",
+      "candidate_key": "08fc30dc37315a5b",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-859",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many contestants are 1.80 meters tall or more?",
+    "translated_question": "сколько конкурсантов имеют рост 1,80 метра и более?",
+    "back_translated_question": "how many contestants are 1.80 meters tall or taller?",
+    "question_cosine_similarity": 0.9843074024563899,
+    "question_bert_precision": 0.9076402187347412,
+    "question_bert_recall": 0.9306219220161438,
+    "question_bert_f1": 0.9192044138908386,
+    "back_table_groups_compared": 95,
+    "back_table_min_similarity": 0.6345146585151533,
+    "back_table_mean_similarity": 0.9705239017387858,
+    "back_table_bert_groups_compared": 95,
+    "back_table_bert_min_f1": -0.0953456461429596,
+    "back_table_bert_mean_f1": 0.8241021263413131,
+    "back_table_bert_min_precision": -0.0509454607963562,
+    "back_table_bert_mean_precision": 0.8313808279602151,
+    "back_table_bert_min_recall": -0.1405787616968155,
+    "back_table_bert_mean_recall": 0.8167325962923075,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.6345146585151533,
+        "source": "Com. Dom. EU",
+        "back_translated": "Com. Dome. ES"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6380477197749216,
+        "source": "Hometown",
+        "back_translated": "Native city"
+      },
+      {
+        "row": 7,
+        "column": 0,
+        "score": 0.7517902543594143,
+        "source": "La Altagracia",
+        "back_translated": "La Alta Gracia"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.7883182100267803,
+        "source": "Paola Saint-Hilaire Arias",
+        "back_translated": "paola san millar arias"
+      },
+      {
+        "row": 14,
+        "column": 0,
+        "score": 0.8208711958343858,
+        "source": "San Cristóbal",
+        "back_translated": "volcano san cristobal pb"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "beauty pageants"
+  },
+  "domain": "beauty pageants"
+}

@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-837",
+  "source_context": "csv/203-csv/86.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-837.tsv",
+  "source_question": "final apprentices did nick matthew have?",
+  "translated_question": "Финал учеников Ник Мэтью был?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "final",
+      "normalized_text": "final",
+      "start": 0,
+      "end": 5,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Final",
+      "match_type": "lemma",
+      "candidate_key": "f618dd92d8fbfff9",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "nick matthew",
+      "normalized_text": "nick matthew",
+      "start": 22,
+      "end": 34,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Nick Matthew",
+      "match_type": "lemma",
+      "candidate_key": "526e2fb4586ba3b5",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-837",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "final apprentices did nick matthew have?",
+    "translated_question": "Финал учеников Ник Мэтью был?",
+    "back_translated_question": "Was the final of the students of Nick Matthew?",
+    "question_cosine_similarity": 0.7962344200595194,
+    "question_bert_precision": 0.10789290070533752,
+    "question_bert_recall": 0.20824511349201202,
+    "question_bert_f1": 0.1580108106136322,
+    "back_table_groups_compared": 135,
+    "back_table_min_similarity": 0.5702993097289736,
+    "back_table_mean_similarity": 0.98355693883726,
+    "back_table_bert_groups_compared": 135,
+    "back_table_bert_min_f1": 0.1965755671262741,
+    "back_table_bert_mean_f1": 0.9644350114795897,
+    "back_table_bert_min_precision": 0.17932391166687012,
+    "back_table_bert_mean_precision": 0.9629148915961937,
+    "back_table_bert_min_recall": 0.21165814995765686,
+    "back_table_bert_mean_recall": 0.9660685239014802,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.5702993097289736,
+        "source": "Geoff Hunt",
+        "back_translated": "Jiff Hunt"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.697986515288696,
+        "source": "Grégory Gaultier",
+        "back_translated": "Gregory Goffey"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.7424490229242846,
+        "source": "Jonathon Power",
+        "back_translated": "Jonathan Power"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 15,
+        "column": 1,
+        "score": 0.7602745169520565,
+        "source": "Qamar Zaman",
+        "back_translated": "Kamal Zaman"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

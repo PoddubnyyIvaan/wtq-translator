@@ -1,0 +1,136 @@
+{
+  "question_id": "nu-59",
+  "source_context": "csv/203-csv/596.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-59.tsv",
+  "source_question": "is the price money for 23 january 1984 more than that of 23 april 1984?",
+  "translated_question": "стоимость призовых за 23 января 1984 больше, чем за 23 апреля 1984?",
+  "source_target_value": "no",
+  "translated_target_value": "нет",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "23 january 1984",
+      "normalized_text": "23 january 1984",
+      "start": 23,
+      "end": 38,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 1
+        }
+      ],
+      "table_source_text": "23 January 1984",
+      "match_type": "lemma",
+      "candidate_key": "98b0a806607e4ec1",
+      "coordinate": {
+        "row": 9,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "23 april 1984",
+      "normalized_text": "23 april 1984",
+      "start": 57,
+      "end": 70,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 13,
+          "column": 1
+        }
+      ],
+      "table_source_text": "23 April 1984",
+      "match_type": "lemma",
+      "candidate_key": "12c89d8f690fe70b",
+      "coordinate": {
+        "row": 13,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-59",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "is the price money for 23 january 1984 more than that of 23 april 1984?",
+    "translated_question": "стоимость призовых за 23 января 1984 больше, чем за 23 апреля 1984?",
+    "back_translated_question": "Was the prize money for 23 January 1984 greater than for 23 April 1984?",
+    "question_cosine_similarity": 0.885695060774171,
+    "question_bert_precision": 0.6018950343132019,
+    "question_bert_recall": 0.6658070087432861,
+    "question_bert_f1": 0.6339750289916992,
+    "back_table_groups_compared": 168,
+    "back_table_min_similarity": 0.7095940624236307,
+    "back_table_mean_similarity": 0.9543131662864648,
+    "back_table_bert_groups_compared": 168,
+    "back_table_bert_min_f1": 0.19657573103904724,
+    "back_table_bert_mean_f1": 0.8062943669834307,
+    "back_table_bert_min_precision": 0.17932407557964325,
+    "back_table_bert_mean_precision": 0.8004778703408582,
+    "back_table_bert_min_recall": 0.14747656881809235,
+    "back_table_bert_mean_recall": 0.812735637472499,
+    "back_table_similarity_examples": [
+      {
+        "row": 19,
+        "column": 3,
+        "score": 0.7095940624236307,
+        "source": "Mahwah, United States",
+        "back_translated": "Mahuey, United States"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 8,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

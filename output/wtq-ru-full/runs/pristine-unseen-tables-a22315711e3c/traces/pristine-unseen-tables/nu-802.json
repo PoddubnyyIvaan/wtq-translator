@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-802",
+  "source_context": "csv/204-csv/825.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-802.tsv",
+  "source_question": "who won after miss world did?",
+  "translated_question": "кто победил после того, как Мисс Мир сделала?",
+  "source_target_value": "Check the Label",
+  "translated_target_value": "Проверьте ярлык",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "won",
+      "normalized_text": "win",
+      "start": 4,
+      "end": 7,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Win",
+      "match_type": "lemma",
+      "candidate_key": "f9c8e1ded1e36c16",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "miss world",
+      "normalized_text": "miss world",
+      "start": 14,
+      "end": 24,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Miss World",
+      "match_type": "lemma",
+      "candidate_key": "fb2e6946a3e63e7a",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-802",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who won after miss world did?",
+    "translated_question": "кто победил после того, как Мисс Мир сделала?",
+    "back_translated_question": "who won after Miss World did?",
+    "question_cosine_similarity": 0.9999999999999998,
+    "question_bert_precision": 0.6849616765975952,
+    "question_bert_recall": 0.6850051879882812,
+    "question_bert_f1": 0.6854606866836548,
+    "back_table_groups_compared": 296,
+    "back_table_min_similarity": 0.45851285329977276,
+    "back_table_mean_similarity": 0.9473132446569281,
+    "back_table_bert_groups_compared": 296,
+    "back_table_bert_min_f1": 0.09432655572891235,
+    "back_table_bert_mean_f1": 0.9046760184841381,
+    "back_table_bert_min_precision": 0.06674230843782425,
+    "back_table_bert_mean_precision": 0.9063894872276766,
+    "back_table_bert_min_recall": 0.11993616819381714,
+    "back_table_bert_mean_recall": 0.9029349704851976,
+    "back_table_similarity_examples": [
+      {
+        "row": 25,
+        "column": 1,
+        "score": 0.45851285329977276,
+        "source": "Topicount",
+        "back_translated": "Topcount"
+      },
+      {
+        "row": 16,
+        "column": 1,
+        "score": 0.46641512070089325,
+        "source": "Auntie Mame",
+        "back_translated": "Anti Maim"
+      },
+      {
+        "row": 30,
+        "column": 1,
+        "score": 0.4804968593304063,
+        "source": "Pretty Sensible",
+        "back_translated": "pleasant sensitive"
+      },
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.5564472966811761,
+        "source": "Wonder Again",
+        "back_translated": "Wonder Egein"
+      },
+      {
+        "row": 6,
+        "column": 2,
+        "score": 0.5671988531490983,
+        "source": "Shaun Bridgmohan",
+        "back_translated": "Shawn BridgeMohun"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "horse racing"
+  },
+  "domain": "horse racing"
+}

@@ -1,0 +1,171 @@
+{
+  "question_id": "nu-948",
+  "source_context": "csv/204-csv/254.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-948.tsv",
+  "source_question": "what was the year of the only gl-a-1 match?",
+  "translated_question": "в каком году состоялся единственный ГЛ-А-1 Матч?",
+  "source_target_value": "2006",
+  "translated_target_value": "2006..",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "gl",
+      "normalized_text": "gl",
+      "start": 30,
+      "end": 32,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        }
+      ],
+      "table_source_text": "GL",
+      "match_type": "lemma",
+      "candidate_key": "021ed403b0f9c1df",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "a-1",
+      "normalized_text": "a1",
+      "start": 33,
+      "end": 36,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        }
+      ],
+      "table_source_text": "A-1",
+      "match_type": "lemma",
+      "candidate_key": "741595a9d3e9817c",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "match",
+      "normalized_text": "match",
+      "start": 37,
+      "end": 42,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Match",
+      "match_type": "lemma",
+      "candidate_key": "880d876ec932c082",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-948",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the year of the only gl-a-1 match?",
+    "translated_question": "в каком году состоялся единственный ГЛ-А-1 Матч?",
+    "back_translated_question": "in what year did the only GL-A-1 match take place?",
+    "question_cosine_similarity": 0.9768981942597458,
+    "question_bert_precision": 0.5594460964202881,
+    "question_bert_recall": 0.5317992568016052,
+    "question_bert_f1": 0.5462253093719482,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.9268342300404564,
+    "back_table_mean_similarity": 0.9949743007467758,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.8215265274047852,
+    "back_table_bert_mean_f1": 0.9884606513110075,
+    "back_table_bert_min_precision": 0.821243405342102,
+    "back_table_bert_mean_precision": 0.9884423440152948,
+    "back_table_bert_min_recall": 0.8212680816650391,
+    "back_table_bert_mean_recall": 0.988443940336054,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 0,
+        "score": 0.9268342300404564,
+        "source": "Semifinals-1",
+        "back_translated": "Semifinal-1"
+      },
+      {
+        "row": 9,
+        "column": 0,
+        "score": 0.9295770638774492,
+        "source": "Semifinals-2",
+        "back_translated": "Semifinal-2"
+      },
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.9330923782914742,
+        "source": "Quarterfinals-1",
+        "back_translated": "Quarterfinal-1"
+      },
+      {
+        "row": 7,
+        "column": 0,
+        "score": 0.9340828688632936,
+        "source": "Quarterfinals-2",
+        "back_translated": "Quarterfinal-2"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports tournament"
+  },
+  "domain": "sports tournament"
+}

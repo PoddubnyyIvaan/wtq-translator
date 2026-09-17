@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-685",
+  "source_context": "csv/204-csv/464.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-685.tsv",
+  "source_question": "which metal composition has the least dimension?",
+  "translated_question": "какой металлический состав имеет наименьшие размеры?",
+  "source_target_value": ".900 silver",
+  "translated_target_value": "серебро .900",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "metal composition",
+      "normalized_text": "metal composition",
+      "start": 6,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Metal composition",
+      "match_type": "lemma",
+      "candidate_key": "73fc21763cdc7486",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "dimension",
+      "normalized_text": "dimension",
+      "start": 38,
+      "end": 47,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Dimensions",
+      "match_type": "lemma",
+      "candidate_key": "e96e86b3eed7ad8f",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-685",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which metal composition has the least dimension?",
+    "translated_question": "какой металлический состав имеет наименьшие размеры?",
+    "back_translated_question": "what metal composition has the smallest dimensions?",
+    "question_cosine_similarity": 0.9395363112955454,
+    "question_bert_precision": 0.8458916544914246,
+    "question_bert_recall": 0.8459129333496094,
+    "question_bert_f1": 0.8461357951164246,
+    "back_table_groups_compared": 45,
+    "back_table_min_similarity": 0.8519076417748379,
+    "back_table_mean_similarity": 0.9589470822501848,
+    "back_table_bert_groups_compared": 45,
+    "back_table_bert_min_f1": 0.40092673897743225,
+    "back_table_bert_mean_f1": 0.7491735054386987,
+    "back_table_bert_min_precision": 0.4290284812450409,
+    "back_table_bert_mean_precision": 0.7498822993702359,
+    "back_table_bert_min_recall": 0.371786504983902,
+    "back_table_bert_mean_recall": 0.7477956891059876,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.8519076417748379,
+        "source": "100 krooni",
+        "back_translated": "100 kroons"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.8519076417748379,
+        "source": "100 krooni",
+        "back_translated": "100 kroons"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.8519076417748379,
+        "source": "100 krooni",
+        "back_translated": "100 kroons"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.8671790792468461,
+        "source": "10 krooni",
+        "back_translated": "10 kroons"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.8671790792468461,
+        "source": "10 krooni",
+        "back_translated": "10 kroons"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "numismatics"
+  },
+  "domain": "numismatics"
+}

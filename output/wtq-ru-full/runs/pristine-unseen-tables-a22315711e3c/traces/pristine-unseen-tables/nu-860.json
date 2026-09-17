@@ -1,0 +1,380 @@
+{
+  "question_id": "nu-860",
+  "source_context": "csv/204-csv/274.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-860.tsv",
+  "source_question": "how much faster was the train lner class a4 no. 4468 mallard than borsig drg series 05 002 (in mph)?",
+  "translated_question": "на сколько быстрее был поезд LNER класс A4 №. 4468 Mallard по сравнению с Borsig DRG series 05 002 (в милях в час)?",
+  "source_target_value": "1 mph",
+  "translated_target_value": "1 миль в час",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "faster",
+      "normalized_text": "fast",
+      "start": 9,
+      "end": 15,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 7
+        }
+      ],
+      "table_source_text": "fastest",
+      "match_type": "lemma",
+      "candidate_key": "bd0a1be06f7c28b5",
+      "coordinate": {
+        "row": 3,
+        "column": 7
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "was the",
+      "normalized_text": "be the",
+      "start": 16,
+      "end": 23,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 7
+        }
+      ],
+      "table_source_text": "be the",
+      "match_type": "lemma",
+      "candidate_key": "b65aebe0db681e1e",
+      "coordinate": {
+        "row": 8,
+        "column": 7
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "train",
+      "normalized_text": "train",
+      "start": 24,
+      "end": 29,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Train",
+      "match_type": "lemma",
+      "candidate_key": "fee06b1b9546111f",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "lner class a4 no",
+      "normalized_text": "lner class a4 no",
+      "start": 30,
+      "end": 46,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        }
+      ],
+      "table_source_text": "LNER Class A4 No",
+      "match_type": "lemma",
+      "candidate_key": "1b4553e406934a78",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0004>",
+      "question_text": "4468 mallard",
+      "normalized_text": "4468 mallard",
+      "start": 48,
+      "end": 60,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        }
+      ],
+      "table_source_text": "4468 Mallard",
+      "match_type": "lemma",
+      "candidate_key": "d26e3340f0b895e9",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0005>",
+      "question_text": "borsig drg series 05 002",
+      "normalized_text": "borsig drg series 05 002",
+      "start": 66,
+      "end": 90,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Borsig DRG series 05 002",
+      "match_type": "lemma",
+      "candidate_key": "10b20cce16fcf0ab",
+      "coordinate": {
+        "row": 1,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0006>",
+      "question_text": "mph",
+      "normalized_text": "mph",
+      "start": 95,
+      "end": 98,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 0,
+          "column": 7
+        },
+        {
+          "row": 0,
+          "column": 7
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 7
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 7
+        },
+        {
+          "row": 4,
+          "column": 7
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 7
+        },
+        {
+          "row": 7,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 7
+        },
+        {
+          "row": 7,
+          "column": 7
+        },
+        {
+          "row": 8,
+          "column": 0
+        },
+        {
+          "row": 8,
+          "column": 7
+        },
+        {
+          "row": 9,
+          "column": 0
+        },
+        {
+          "row": 9,
+          "column": 7
+        },
+        {
+          "row": 10,
+          "column": 0
+        },
+        {
+          "row": 11,
+          "column": 0
+        },
+        {
+          "row": 12,
+          "column": 0
+        },
+        {
+          "row": 12,
+          "column": 7
+        },
+        {
+          "row": 12,
+          "column": 7
+        },
+        {
+          "row": 13,
+          "column": 0
+        },
+        {
+          "row": 13,
+          "column": 7
+        },
+        {
+          "row": 14,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 7
+        },
+        {
+          "row": 15,
+          "column": 0
+        },
+        {
+          "row": 16,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 0
+        }
+      ],
+      "table_source_text": "mph",
+      "match_type": "lemma",
+      "candidate_key": "5e65c83b2a7fad36",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-860",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how much faster was the train lner class a4 no. 4468 mallard than borsig drg series 05 002 (in mph)?",
+    "translated_question": "на сколько быстрее был поезд LNER класс A4 №. 4468 Mallard по сравнению с Borsig DRG series 05 002 (в милях в час)?",
+    "back_translated_question": "by how many faster was the train LNER class A4 no 4468 Mallard compared to Borsig DRG series 05 002 (in mph)?",
+    "question_cosine_similarity": 0.9881736925816481,
+    "question_bert_precision": 0.6068831086158752,
+    "question_bert_recall": 0.5696388483047485,
+    "question_bert_f1": 0.5887326598167419,
+    "back_table_groups_compared": 152,
+    "back_table_min_similarity": 0.42461066698453137,
+    "back_table_mean_similarity": 0.9198302016118453,
+    "back_table_bert_groups_compared": 152,
+    "back_table_bert_min_f1": -0.062155693769454956,
+    "back_table_bert_mean_f1": 0.8142642979265043,
+    "back_table_bert_min_precision": -0.082916758954525,
+    "back_table_bert_mean_precision": 0.8180188489342598,
+    "back_table_bert_min_recall": -0.04417002201080322,
+    "back_table_bert_mean_recall": 0.8105441918106455,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.42461066698453137,
+        "source": "Arr.",
+        "back_translated": "Arrival.."
+      },
+      {
+        "row": 0,
+        "column": 6,
+        "score": 0.48274630143761527,
+        "source": "Unkn.",
+        "back_translated": "Unknown.."
+      },
+      {
+        "row": 1,
+        "column": 6,
+        "score": 0.48274630143761527,
+        "source": "Unkn.",
+        "back_translated": "Unknown.."
+      },
+      {
+        "row": 3,
+        "column": 6,
+        "score": 0.48274630143761527,
+        "source": "Unkn.",
+        "back_translated": "Unknown.."
+      },
+      {
+        "row": 4,
+        "column": 6,
+        "score": 0.48274630143761527,
+        "source": "Unkn.",
+        "back_translated": "Unknown.."
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>",
+      "<TABLE_REF_0005>",
+      "<TABLE_REF_0006>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>",
+      "<TABLE_REF_0005>",
+      "<TABLE_REF_0006>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>",
+      "<TABLE_REF_0005>",
+      "<TABLE_REF_0006>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "rail transport"
+  },
+  "domain": "rail transport"
+}

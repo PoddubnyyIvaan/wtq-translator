@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-146",
+  "source_context": "csv/203-csv/49.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-146.tsv",
+  "source_question": "which track comes after \"like that\"?",
+  "translated_question": "какая композиция следует за «Like That»?",
+  "source_target_value": "Call It What You Want",
+  "translated_target_value": "Назови это как хочешь",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "like that",
+      "normalized_text": "like that",
+      "start": 25,
+      "end": 34,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Like That",
+      "match_type": "lemma",
+      "candidate_key": "2a27991e6f19e644",
+      "coordinate": {
+        "row": 9,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-146",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which track comes after \"like that\"?",
+    "translated_question": "какая композиция следует за «Like That»?",
+    "back_translated_question": "what track comes after «Like That»?",
+    "question_cosine_similarity": 0.9634967443807532,
+    "question_bert_precision": 0.595550000667572,
+    "question_bert_recall": 0.5956058502197266,
+    "question_bert_f1": 0.5961906313896179,
+    "back_table_groups_compared": 108,
+    "back_table_min_similarity": 0.5624956006723907,
+    "back_table_mean_similarity": 0.9809261904471631,
+    "back_table_bert_groups_compared": 108,
+    "back_table_bert_min_f1": 0.06125207617878914,
+    "back_table_bert_mean_f1": 0.9385460975614411,
+    "back_table_bert_min_precision": 0.02308083139359951,
+    "back_table_bert_mean_precision": 0.9378310276574835,
+    "back_table_bert_min_recall": 0.09814829379320145,
+    "back_table_bert_mean_recall": 0.939135574977155,
+    "back_table_similarity_examples": [
+      {
+        "row": 13,
+        "column": 3,
+        "score": 0.5624956006723907,
+        "source": "WC",
+        "back_translated": "CH"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      },
+      {
+        "row": 4,
+        "column": 5,
+        "score": 0.7740092571275791,
+        "source": "*\"Ain't No Half-Steppin'\" by Big Daddy Kane",
+        "back_translated": "*\"not suitable'\" from big daddy kane"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.8312303994536111,
+        "source": "Call It What You Want",
+        "back_translated": "call it whatever you want"
+      },
+      {
+        "row": 15,
+        "column": 5,
+        "score": 0.8445264985214586,
+        "source": "*\"It's Gonna Be Alright\" by Crimies",
+        "back_translated": "*\"It will be good\" from Crimies"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music"
+  },
+  "domain": "music"
+}

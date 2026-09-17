@@ -1,0 +1,114 @@
+{
+  "question_id": "nu-259",
+  "source_context": "csv/203-csv/96.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-259.tsv",
+  "source_question": "which tonga is the only one to feature chicken with chicks?",
+  "translated_question": "какой тонга является единственным, в котором представлено Курица с цыплятами?",
+  "source_target_value": "5 seniti",
+  "translated_target_value": "5 сенити",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "chicken with chicks",
+      "normalized_text": "chicken with chick",
+      "start": 39,
+      "end": 58,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Chicken with chicks",
+      "match_type": "lemma",
+      "candidate_key": "872f39c7dbd3b76e",
+      "coordinate": {
+        "row": 2,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-259",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which tonga is the only one to feature chicken with chicks?",
+    "translated_question": "какой тонга является единственным, в котором представлено Курица с цыплятами?",
+    "back_translated_question": "what is the only chicken with chicks that is represented?",
+    "question_cosine_similarity": 0.8363118109873202,
+    "question_bert_precision": 0.5254753232002258,
+    "question_bert_recall": 0.5872427225112915,
+    "question_bert_f1": 0.5566151738166809,
+    "back_table_groups_compared": 49,
+    "back_table_min_similarity": 0.4446984851192199,
+    "back_table_mean_similarity": 0.867394509443446,
+    "back_table_bert_groups_compared": 49,
+    "back_table_bert_min_f1": 0.24777431786060333,
+    "back_table_bert_mean_f1": 0.7706145054223587,
+    "back_table_bert_min_precision": 0.2870399057865143,
+    "back_table_bert_mean_precision": 0.7693109007514253,
+    "back_table_bert_min_recall": 0.20783193409442902,
+    "back_table_bert_mean_recall": 0.7719462577785764,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.4446984851192199,
+        "source": "Marrows",
+        "back_translated": "Tarot"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.5253381846598799,
+        "source": "Cupronickel",
+        "back_translated": "Copper-nickel alloy"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.5253381846598799,
+        "source": "Cupronickel",
+        "back_translated": "Copper-nickel alloy"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.5253381846598799,
+        "source": "Cupronickel",
+        "back_translated": "Copper-nickel alloy"
+      },
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.5253381846598799,
+        "source": "Cupronickel",
+        "back_translated": "Copper-nickel alloy"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "currency"
+  },
+  "domain": "currency"
+}

@@ -1,0 +1,158 @@
+{
+  "question_id": "nu-178",
+  "source_context": "csv/203-csv/566.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-178.tsv",
+  "source_question": "what is the position of the player above kari kanervo?",
+  "translated_question": "какое место занимает игрок выше Кари Канерво?",
+  "source_target_value": "Left Wing",
+  "translated_target_value": "Левый нападающий",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "position",
+      "normalized_text": "position",
+      "start": 12,
+      "end": 20,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Position",
+      "match_type": "lemma",
+      "candidate_key": "2448e693407c0c7e",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "player",
+      "normalized_text": "player",
+      "start": 28,
+      "end": 34,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Player",
+      "match_type": "lemma",
+      "candidate_key": "3787324f2d113d99",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "kari kanervo",
+      "normalized_text": "kari kanervo",
+      "start": 41,
+      "end": 53,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 12,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Kari Kanervo",
+      "match_type": "lemma",
+      "candidate_key": "eb670ececb7bc527",
+      "coordinate": {
+        "row": 12,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-178",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the position of the player above kari kanervo?",
+    "translated_question": "какое место занимает игрок выше Кари Канерво?",
+    "back_translated_question": "what position does the player hold above kari kanervo?",
+    "question_cosine_similarity": 0.9735285171340863,
+    "question_bert_precision": 0.7562552690505981,
+    "question_bert_recall": 0.7560222148895264,
+    "question_bert_f1": 0.7565082907676697,
+    "back_table_groups_compared": 132,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9506126688388364,
+    "back_table_bert_groups_compared": 132,
+    "back_table_bert_min_f1": -0.05394518002867699,
+    "back_table_bert_mean_f1": 0.824091286511358,
+    "back_table_bert_min_precision": -0.12307741492986679,
+    "back_table_bert_mean_precision": 0.828111028185848,
+    "back_table_bert_min_recall": 0.017937850207090378,
+    "back_table_bert_mean_recall": 0.8197643161948883,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.6834257470523109,
+        "source": "Richard Turmel",
+        "back_translated": "richard tourmel"
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7511936703722781,
+        "source": "Chicoutimi Saguenéens (QMJHL)",
+        "back_translated": "squamish sageneen (CMJHL)"
+      },
+      {
+        "row": 13,
+        "column": 5,
+        "score": 0.7511936703722781,
+        "source": "Chicoutimi Saguenéens (QMJHL)",
+        "back_translated": "squamish sageneen (CMJHL)"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.7871156287335057,
+        "source": "Defence",
+        "back_translated": "Defender"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "ice hockey draft"
+  },
+  "domain": "ice hockey draft"
+}

@@ -1,0 +1,322 @@
+{
+  "question_id": "nu-53",
+  "source_context": "csv/200-csv/24.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-53.tsv",
+  "source_question": "what is the earliest date kodak made 16mm film?",
+  "translated_question": "какая ранняя Дата у kodak была 16-мм Фильм?",
+  "source_target_value": "1935",
+  "translated_target_value": "1935",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "earliest",
+      "normalized_text": "early",
+      "start": 12,
+      "end": 20,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 10,
+          "column": 1
+        }
+      ],
+      "table_source_text": "early",
+      "match_type": "lemma",
+      "candidate_key": "0ce6a19060b77c26",
+      "coordinate": {
+        "row": 10,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "date",
+      "normalized_text": "date",
+      "start": 21,
+      "end": 25,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Date",
+      "match_type": "lemma",
+      "candidate_key": "58930d017d1af3c4",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "kodak",
+      "normalized_text": "kodak",
+      "start": 26,
+      "end": 31,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Kodak",
+      "match_type": "lemma",
+      "candidate_key": "9c87f20f7fc3cb5d",
+      "coordinate": {
+        "row": 6,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "film",
+      "normalized_text": "film",
+      "start": 42,
+      "end": 46,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 1
+        },
+        {
+          "row": 7,
+          "column": 0
+        },
+        {
+          "row": 8,
+          "column": 0
+        },
+        {
+          "row": 9,
+          "column": 0
+        },
+        {
+          "row": 10,
+          "column": 0
+        },
+        {
+          "row": 11,
+          "column": 0
+        },
+        {
+          "row": 12,
+          "column": 0
+        },
+        {
+          "row": 13,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 0
+        },
+        {
+          "row": 15,
+          "column": 0
+        },
+        {
+          "row": 16,
+          "column": 0
+        },
+        {
+          "row": 16,
+          "column": 1
+        },
+        {
+          "row": 17,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 1
+        },
+        {
+          "row": 18,
+          "column": 0
+        },
+        {
+          "row": 18,
+          "column": 1
+        },
+        {
+          "row": 19,
+          "column": 0
+        },
+        {
+          "row": 20,
+          "column": 0
+        },
+        {
+          "row": 20,
+          "column": 1
+        },
+        {
+          "row": 21,
+          "column": 0
+        },
+        {
+          "row": 21,
+          "column": 1
+        },
+        {
+          "row": 22,
+          "column": 0
+        },
+        {
+          "row": 22,
+          "column": 1
+        },
+        {
+          "row": 23,
+          "column": 0
+        },
+        {
+          "row": 23,
+          "column": 1
+        },
+        {
+          "row": 27,
+          "column": 1
+        },
+        {
+          "row": 28,
+          "column": 1
+        },
+        {
+          "row": 29,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Film",
+      "match_type": "lemma",
+      "candidate_key": "faafc841817dd09e",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-53",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the earliest date kodak made 16mm film?",
+    "translated_question": "какая ранняя Дата у kodak была 16-мм Фильм?",
+    "back_translated_question": "what was the earliest earliest date for a 16-mm film by kodak?",
+    "question_cosine_similarity": 0.9715611849103584,
+    "question_bert_precision": 0.7533950209617615,
+    "question_bert_recall": 0.6736274361610413,
+    "question_bert_f1": 0.713288426399231,
+    "back_table_groups_compared": 99,
+    "back_table_min_similarity": 0.8836002632014096,
+    "back_table_mean_similarity": 0.9865763925926774,
+    "back_table_bert_groups_compared": 99,
+    "back_table_bert_min_f1": 0.49557143449783325,
+    "back_table_bert_mean_f1": 0.9270642803172873,
+    "back_table_bert_min_precision": 0.5945392847061157,
+    "back_table_bert_mean_precision": 0.9387609928545325,
+    "back_table_bert_min_recall": 0.3960413634777069,
+    "back_table_bert_mean_recall": 0.9160841387329679,
+    "back_table_similarity_examples": [
+      {
+        "row": 23,
+        "column": 1,
+        "score": 0.8836002632014096,
+        "source": "Movie film, 8 mm, Type A",
+        "back_translated": "sound-on-film motion picture film, 8 mm, and type a"
+      },
+      {
+        "row": 17,
+        "column": 1,
+        "score": 0.8900309751538122,
+        "source": "Movie film, 8 mm, daylight",
+        "back_translated": "sound-on-film motion picture film, 8 mm, daylight"
+      },
+      {
+        "row": 20,
+        "column": 1,
+        "score": 0.8909242034826732,
+        "source": "Movie film, 16 mm, Type A",
+        "back_translated": "sound-on-film motion picture film, 16 mm, and type a"
+      },
+      {
+        "row": 16,
+        "column": 1,
+        "score": 0.8951700203064412,
+        "source": "Movie film, 16 mm, daylight",
+        "back_translated": "sound-on-film motion picture film, 16 mm, daylight"
+      },
+      {
+        "row": 21,
+        "column": 1,
+        "score": 0.9030302046981992,
+        "source": "Movie film, S-8, Type A",
+        "back_translated": "sound-on-film motion picture film, S-8, and type a"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "film and photography"
+  },
+  "domain": "film and photography"
+}

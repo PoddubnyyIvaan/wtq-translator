@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-562",
+  "source_context": "csv/203-csv/49.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-562.tsv",
+  "source_question": "how many tracks are on the album?",
+  "translated_question": "сколько треков на альбоме?",
+  "source_target_value": "17",
+  "translated_target_value": "17",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-562",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "how many tracks are on the album?",
+    "translated_question": "сколько треков на альбоме?",
+    "back_translated_question": "how many tracks are on the album?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 108,
+    "back_table_min_similarity": 0.5624956006723907,
+    "back_table_mean_similarity": 0.9809261904471631,
+    "back_table_bert_groups_compared": 108,
+    "back_table_bert_min_f1": 0.06125207617878914,
+    "back_table_bert_mean_f1": 0.9385460975614411,
+    "back_table_bert_min_precision": 0.02308083139359951,
+    "back_table_bert_mean_precision": 0.9378310276574835,
+    "back_table_bert_min_recall": 0.09814829379320145,
+    "back_table_bert_mean_recall": 0.939135574977155,
+    "back_table_similarity_examples": [
+      {
+        "row": 13,
+        "column": 3,
+        "score": 0.5624956006723907,
+        "source": "WC",
+        "back_translated": "CH"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      },
+      {
+        "row": 4,
+        "column": 5,
+        "score": 0.7740092571275791,
+        "source": "*\"Ain't No Half-Steppin'\" by Big Daddy Kane",
+        "back_translated": "*\"not suitable'\" from big daddy kane"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.8312303994536111,
+        "source": "Call It What You Want",
+        "back_translated": "call it whatever you want"
+      },
+      {
+        "row": 15,
+        "column": 5,
+        "score": 0.8445264985214586,
+        "source": "*\"It's Gonna Be Alright\" by Crimies",
+        "back_translated": "*\"It will be good\" from Crimies"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "music"
+  },
+  "domain": "music"
+}

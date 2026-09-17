@@ -1,0 +1,394 @@
+{
+  "question_id": "nu-245",
+  "source_context": "csv/204-csv/919.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-245.tsv",
+  "source_question": "how many singles are only a single and not apart of an album?",
+  "translated_question": "сколько синглов являются только синглом и не являются частью альбома?",
+  "source_target_value": "18",
+  "translated_target_value": "18",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "singles",
+      "normalized_text": "single",
+      "start": 9,
+      "end": 16,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 12,
+          "column": 4
+        },
+        {
+          "row": 19,
+          "column": 4
+        },
+        {
+          "row": 20,
+          "column": 4
+        },
+        {
+          "row": 21,
+          "column": 4
+        },
+        {
+          "row": 22,
+          "column": 4
+        },
+        {
+          "row": 23,
+          "column": 4
+        },
+        {
+          "row": 28,
+          "column": 4
+        },
+        {
+          "row": 29,
+          "column": 4
+        },
+        {
+          "row": 30,
+          "column": 4
+        },
+        {
+          "row": 31,
+          "column": 4
+        },
+        {
+          "row": 32,
+          "column": 4
+        },
+        {
+          "row": 33,
+          "column": 4
+        },
+        {
+          "row": 34,
+          "column": 4
+        },
+        {
+          "row": 35,
+          "column": 4
+        },
+        {
+          "row": 36,
+          "column": 4
+        },
+        {
+          "row": 37,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Single",
+      "match_type": "lemma",
+      "candidate_key": "b79a0ae765034a53",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "only",
+      "normalized_text": "only",
+      "start": 21,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 12,
+          "column": 4
+        },
+        {
+          "row": 19,
+          "column": 4
+        },
+        {
+          "row": 20,
+          "column": 4
+        },
+        {
+          "row": 21,
+          "column": 4
+        },
+        {
+          "row": 22,
+          "column": 4
+        },
+        {
+          "row": 23,
+          "column": 4
+        },
+        {
+          "row": 28,
+          "column": 4
+        },
+        {
+          "row": 29,
+          "column": 4
+        },
+        {
+          "row": 30,
+          "column": 4
+        },
+        {
+          "row": 31,
+          "column": 4
+        },
+        {
+          "row": 32,
+          "column": 4
+        },
+        {
+          "row": 33,
+          "column": 4
+        },
+        {
+          "row": 34,
+          "column": 4
+        },
+        {
+          "row": 35,
+          "column": 4
+        },
+        {
+          "row": 36,
+          "column": 4
+        },
+        {
+          "row": 37,
+          "column": 4
+        }
+      ],
+      "table_source_text": "only",
+      "match_type": "lemma",
+      "candidate_key": "5e20f1ff81d98325",
+      "coordinate": {
+        "row": 4,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "single",
+      "normalized_text": "single",
+      "start": 28,
+      "end": 34,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 12,
+          "column": 4
+        },
+        {
+          "row": 19,
+          "column": 4
+        },
+        {
+          "row": 20,
+          "column": 4
+        },
+        {
+          "row": 21,
+          "column": 4
+        },
+        {
+          "row": 22,
+          "column": 4
+        },
+        {
+          "row": 23,
+          "column": 4
+        },
+        {
+          "row": 28,
+          "column": 4
+        },
+        {
+          "row": 29,
+          "column": 4
+        },
+        {
+          "row": 30,
+          "column": 4
+        },
+        {
+          "row": 31,
+          "column": 4
+        },
+        {
+          "row": 32,
+          "column": 4
+        },
+        {
+          "row": 33,
+          "column": 4
+        },
+        {
+          "row": 34,
+          "column": 4
+        },
+        {
+          "row": 35,
+          "column": 4
+        },
+        {
+          "row": 36,
+          "column": 4
+        },
+        {
+          "row": 37,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Single",
+      "match_type": "lemma",
+      "candidate_key": "b79a0ae765034a53",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "album",
+      "normalized_text": "album",
+      "start": 55,
+      "end": 60,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Album",
+      "match_type": "lemma",
+      "candidate_key": "8ed22b709f11d3c3",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-245",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many singles are only a single and not apart of an album?",
+    "translated_question": "сколько синглов являются только синглом и не являются частью альбома?",
+    "back_translated_question": "how many singles are only single and not part of an album?",
+    "question_cosine_similarity": 0.9784374138120883,
+    "question_bert_precision": 0.8445298075675964,
+    "question_bert_recall": 0.8742339015007019,
+    "question_bert_f1": 0.8595104813575745,
+    "back_table_groups_compared": 195,
+    "back_table_min_similarity": 0.5998584201932202,
+    "back_table_mean_similarity": 0.9634542469912338,
+    "back_table_bert_groups_compared": 195,
+    "back_table_bert_min_f1": -0.14237307012081146,
+    "back_table_bert_mean_f1": 0.8317271798753586,
+    "back_table_bert_min_precision": -0.1357470005750656,
+    "back_table_bert_mean_precision": 0.8317925872472234,
+    "back_table_bert_min_recall": -0.15237519145011902,
+    "back_table_bert_mean_recall": 0.8312623032010519,
+    "back_table_similarity_examples": [
+      {
+        "row": 29,
+        "column": 1,
+        "score": 0.5998584201932202,
+        "source": "Darlin'",
+        "back_translated": "darling'"
+      },
+      {
+        "row": 33,
+        "column": 1,
+        "score": 0.6744716016484553,
+        "source": "Crown Prince of the Barroom",
+        "back_translated": "prince of the bar scene"
+      },
+      {
+        "row": 18,
+        "column": 4,
+        "score": 0.6817177642609339,
+        "source": "Whole Lotta Livin' in a House",
+        "back_translated": "Much Life' at home"
+      },
+      {
+        "row": 21,
+        "column": 1,
+        "score": 0.7528990126677552,
+        "source": "I'm Gonna Love You Right Out of This World",
+        "back_translated": "I'll love you like this, that you'll leave this world"
+      },
+      {
+        "row": 37,
+        "column": 1,
+        "score": 0.7750007504607764,
+        "source": "I'm a Country Song",
+        "back_translated": "I — song about the country"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music"
+  },
+  "domain": "music"
+}

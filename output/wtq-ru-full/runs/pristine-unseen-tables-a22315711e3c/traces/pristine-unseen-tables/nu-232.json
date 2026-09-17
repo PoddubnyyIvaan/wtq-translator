@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-232",
+  "source_context": "csv/204-csv/857.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-232.tsv",
+  "source_question": "who was this team's first opponent during this season?",
+  "translated_question": "кто был первым соперником этой команды в этом сезоне?",
+  "source_target_value": "Reading",
+  "translated_target_value": "Ридинг",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "opponent",
+      "normalized_text": "opponent",
+      "start": 26,
+      "end": 34,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Opponents",
+      "match_type": "lemma",
+      "candidate_key": "f7e15c96914763fd",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-232",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who was this team's first opponent during this season?",
+    "translated_question": "кто был первым соперником этой команды в этом сезоне?",
+    "back_translated_question": "who was the first opponent of this team in this season?",
+    "question_cosine_similarity": 0.9854232846973172,
+    "question_bert_precision": 0.815222442150116,
+    "question_bert_recall": 0.8203584551811218,
+    "question_bert_f1": 0.8180640935897827,
+    "back_table_groups_compared": 258,
+    "back_table_min_similarity": 0.41283516908763934,
+    "back_table_mean_similarity": 0.9448233962301479,
+    "back_table_bert_groups_compared": 258,
+    "back_table_bert_min_f1": 0.4015502333641052,
+    "back_table_bert_mean_f1": 0.9575146418209224,
+    "back_table_bert_min_precision": 0.356530100107193,
+    "back_table_bert_mean_precision": 0.9565393588570661,
+    "back_table_bert_min_recall": 0.4466613531112671,
+    "back_table_bert_mean_recall": 0.9584469575752583,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 4,
+        "score": 0.41283516908763934,
+        "source": "Wolstenholme",
+        "back_translated": "Walsall"
+      },
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.41283516908763934,
+        "source": "Wolstenholme",
+        "back_translated": "Walsall"
+      },
+      {
+        "row": 13,
+        "column": 4,
+        "score": 0.41283516908763934,
+        "source": "Wolstenholme",
+        "back_translated": "Walsall"
+      },
+      {
+        "row": 17,
+        "column": 4,
+        "score": 0.4400262241603504,
+        "source": "Wright",
+        "back_translated": "Rait"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.5465593376244198,
+        "source": "H",
+        "back_translated": "D"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "football matches"
+  },
+  "domain": "football matches"
+}

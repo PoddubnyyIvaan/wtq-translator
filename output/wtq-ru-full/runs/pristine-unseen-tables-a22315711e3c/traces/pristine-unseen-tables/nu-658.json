@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-658",
+  "source_context": "csv/203-csv/111.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-658.tsv",
+  "source_question": "what was the last year in which there were fewer than one million domestic passengers?",
+  "translated_question": "в каком последнем году было меньше одного миллиона внутренних пассажиров?",
+  "source_target_value": "2004",
+  "translated_target_value": "2004",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 18,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "domestic",
+      "normalized_text": "domestic",
+      "start": 66,
+      "end": 74,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Domestic",
+      "match_type": "lemma",
+      "candidate_key": "c3e9adade9564da7",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-658",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the last year in which there were fewer than one million domestic passengers?",
+    "translated_question": "в каком последнем году было меньше одного миллиона внутренних пассажиров?",
+    "back_translated_question": "in what last year were there fewer than one million domestic passengers?",
+    "question_cosine_similarity": 0.9758633770140921,
+    "question_bert_precision": 0.6386046409606934,
+    "question_bert_recall": 0.7368572950363159,
+    "question_bert_f1": 0.6872064471244812,
+    "back_table_groups_compared": 135,
+    "back_table_min_similarity": 0.5928327183225892,
+    "back_table_mean_similarity": 0.9924847889697194,
+    "back_table_bert_groups_compared": 135,
+    "back_table_bert_min_f1": 0.061590589582920074,
+    "back_table_bert_mean_f1": 0.9729390142140565,
+    "back_table_bert_min_precision": -0.04107251390814781,
+    "back_table_bert_mean_precision": 0.9680023241167267,
+    "back_table_bert_min_recall": 0.17438367009162903,
+    "back_table_bert_mean_recall": 0.9784823567778976,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.5928327183225892,
+        "source": "Total\\npassengers",
+        "back_translated": "Total passengers"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.758174775186532,
+        "source": "Passenger\\nChange",
+        "back_translated": "Passenger change"
+      },
+      {
+        "row": null,
+        "column": 7,
+        "score": 0.8001917053325923,
+        "source": "Aircraft\\nLandings",
+        "back_translated": "Landings of aircraft"
+      },
+      {
+        "row": null,
+        "column": 8,
+        "score": 0.9045230429285106,
+        "source": "Cargo\\n(tonnes)",
+        "back_translated": "Cargo (tons)"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.9501111861739574,
+        "source": "International\\n(total)",
+        "back_translated": "International (Total)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "air transportation statistics"
+  },
+  "domain": "air transportation statistics"
+}

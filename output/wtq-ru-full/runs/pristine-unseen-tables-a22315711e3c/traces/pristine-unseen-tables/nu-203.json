@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-203",
+  "source_context": "csv/204-csv/719.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-203.tsv",
+  "source_question": "how many years were there more than 6 matches?",
+  "translated_question": "сколько лет было более 6 матчей?",
+  "source_target_value": "4",
+  "translated_target_value": "4",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "years",
+      "normalized_text": "year",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "matches",
+      "normalized_text": "match",
+      "start": 38,
+      "end": 45,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Matches",
+      "match_type": "lemma",
+      "candidate_key": "a3b9099ac9a96a56",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-203",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many years were there more than 6 matches?",
+    "translated_question": "сколько лет было более 6 матчей?",
+    "back_translated_question": "how many years had more than 6 matches?",
+    "question_cosine_similarity": 0.9830657818719678,
+    "question_bert_precision": 0.8296143412590027,
+    "question_bert_recall": 0.8810800313949585,
+    "question_bert_f1": 0.8553115129470825,
+    "back_table_groups_compared": 80,
+    "back_table_min_similarity": 0.5329889438400146,
+    "back_table_mean_similarity": 0.957594504244662,
+    "back_table_bert_groups_compared": 80,
+    "back_table_bert_min_f1": 0.4147651791572571,
+    "back_table_bert_mean_f1": 0.9143236104398966,
+    "back_table_bert_min_precision": 0.32540473341941833,
+    "back_table_bert_mean_precision": 0.9128177326172591,
+    "back_table_bert_min_recall": 0.46397173404693604,
+    "back_table_bert_mean_recall": 0.9158243224024772,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 7,
+        "score": 0.5329889438400146,
+        "source": "R. S. Gentle",
+        "back_translated": "R. S. Gentil"
+      },
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.65824770577126,
+        "source": "Waseem Ahmad",
+        "back_translated": "Vasim Ahmad"
+      },
+      {
+        "row": 6,
+        "column": 7,
+        "score": 0.7312204233606332,
+        "source": "Gehard Rach",
+        "back_translated": "Gerhard Rah"
+      },
+      {
+        "row": 2,
+        "column": 6,
+        "score": 0.7611083703633622,
+        "source": "Mohmmad Shaheed",
+        "back_translated": "Mohammad Shahid"
+      },
+      {
+        "row": 7,
+        "column": 4,
+        "score": 0.7693523262040612,
+        "source": "Mohammad Saqlain",
+        "back_translated": "Mohammad Saklain"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

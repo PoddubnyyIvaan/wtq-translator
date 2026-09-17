@@ -1,0 +1,180 @@
+{
+  "question_id": "nu-632",
+  "source_context": "csv/204-csv/285.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-632.tsv",
+  "source_question": "who is the next opponent after winner number 8?",
+  "translated_question": "кто следующий соперник после победителя номер 8?",
+  "source_target_value": "Juan Monaco",
+  "translated_target_value": "Хуан Монако",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "opponent",
+      "normalized_text": "opponent",
+      "start": 16,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Opponent",
+      "match_type": "lemma",
+      "candidate_key": "c7c4b2d7ea2eb3cc",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "winner",
+      "normalized_text": "winner",
+      "start": 31,
+      "end": 37,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 0
+        },
+        {
+          "row": 9,
+          "column": 0
+        },
+        {
+          "row": 11,
+          "column": 0
+        },
+        {
+          "row": 13,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 0
+        },
+        {
+          "row": 15,
+          "column": 0
+        },
+        {
+          "row": 16,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 0
+        },
+        {
+          "row": 18,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Winner",
+      "match_type": "lemma",
+      "candidate_key": "9d04b89a73e3406f",
+      "coordinate": {
+        "row": 1,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-632",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is the next opponent after winner number 8?",
+    "translated_question": "кто следующий соперник после победителя номер 8?",
+    "back_translated_question": "who is the next opponent after the number 8 winner?",
+    "question_cosine_similarity": 0.9887714746818955,
+    "question_bert_precision": 0.8898254632949829,
+    "question_bert_recall": 0.8636125326156616,
+    "question_bert_f1": 0.8768386840820312,
+    "back_table_groups_compared": 140,
+    "back_table_min_similarity": 0.4467434325250675,
+    "back_table_mean_similarity": 0.9532094608406675,
+    "back_table_bert_groups_compared": 140,
+    "back_table_bert_min_f1": 0.11152682453393936,
+    "back_table_bert_mean_f1": 0.8253202692206417,
+    "back_table_bert_min_precision": 0.13496311008930206,
+    "back_table_bert_mean_precision": 0.8330080862556185,
+    "back_table_bert_min_recall": 0.08605512976646423,
+    "back_table_bert_mean_recall": 0.8174125056181635,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.4467434325250675,
+        "source": "Guillermo Coria",
+        "back_translated": "Gustavo Kuerten"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.4724464287932434,
+        "source": "Guillermo Cañas",
+        "back_translated": "Gustavo Kuerten"
+      },
+      {
+        "row": 14,
+        "column": 5,
+        "score": 0.5100661455903901,
+        "source": "Thomaz Bellucci",
+        "back_translated": "Tomáš Berdych"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

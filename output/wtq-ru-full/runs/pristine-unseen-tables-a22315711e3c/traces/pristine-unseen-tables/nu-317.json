@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-317",
+  "source_context": "csv/204-csv/720.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-317.tsv",
+  "source_question": "who was the last administrator of suparco?",
+  "translated_question": "кто был последним администратором suparco?",
+  "source_target_value": "Major General Ahmed Bilal",
+  "translated_target_value": "генерал-майор ахмед билаля",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-317",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "who was the last administrator of suparco?",
+    "translated_question": "кто был последним администратором suparco?",
+    "back_translated_question": "who was the last administrator of suparco?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 70,
+    "back_table_min_similarity": 0.6037964525710244,
+    "back_table_mean_similarity": 0.9640971350539539,
+    "back_table_bert_groups_compared": 70,
+    "back_table_bert_min_f1": 0.10002579540014267,
+    "back_table_bert_mean_f1": 0.8536515339144639,
+    "back_table_bert_min_precision": 0.05648835375905037,
+    "back_table_bert_mean_precision": 0.854265025098409,
+    "back_table_bert_min_recall": 0.1428733915090561,
+    "back_table_bert_mean_recall": 0.8529047063418798,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6037964525710244,
+        "source": "Field(s)",
+        "back_translated": "Direction(s))"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.6663842888168403,
+        "source": "Number",
+        "back_translated": "quantity"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7107957057394062,
+        "source": "Term Ended",
+        "back_translated": "End date"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7194646811448173,
+        "source": "Term Started",
+        "back_translated": "Start date"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.7843927572181422,
+        "source": "Dr Salim Mehmud",
+        "back_translated": "dr. salim mahmud"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "education and academic appointments"
+  },
+  "domain": "education and academic appointments"
+}

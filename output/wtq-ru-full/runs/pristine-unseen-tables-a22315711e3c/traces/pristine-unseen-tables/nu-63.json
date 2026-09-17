@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-63",
+  "source_context": "csv/204-csv/559.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-63.tsv",
+  "source_question": "how many photos total are listed?",
+  "translated_question": "сколько всего фотографий перечислено?",
+  "source_target_value": "18",
+  "translated_target_value": "18",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-63",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "how many photos total are listed?",
+    "translated_question": "сколько всего фотографий перечислено?",
+    "back_translated_question": "how many photos are listed in total?",
+    "question_cosine_similarity": 0.9921953525758838,
+    "question_bert_precision": 0.9082741141319275,
+    "question_bert_recall": 0.8512380123138428,
+    "question_bert_f1": 0.8796234726905823,
+    "back_table_groups_compared": 95,
+    "back_table_min_similarity": 0.49242360463725376,
+    "back_table_mean_similarity": 0.8644918779768881,
+    "back_table_bert_groups_compared": 95,
+    "back_table_bert_min_f1": 0.21801185607910156,
+    "back_table_bert_mean_f1": 0.7781968077546672,
+    "back_table_bert_min_precision": 0.22622378170490265,
+    "back_table_bert_mean_precision": 0.7955773817865472,
+    "back_table_bert_min_recall": 0.12034142017364502,
+    "back_table_bert_mean_recall": 0.7610956723752774,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.49242360463725376,
+        "source": "Active",
+        "back_translated": "Service"
+      },
+      {
+        "row": 6,
+        "column": 2,
+        "score": 0.49242360463725376,
+        "source": "Active",
+        "back_translated": "Service"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.49242360463725376,
+        "source": "Active",
+        "back_translated": "Service"
+      },
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.49242360463725376,
+        "source": "Active",
+        "back_translated": "Service"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.49242360463725376,
+        "source": "Active",
+        "back_translated": "Service"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "naval vessels and ship maintenance"
+  },
+  "domain": "naval vessels and ship maintenance"
+}

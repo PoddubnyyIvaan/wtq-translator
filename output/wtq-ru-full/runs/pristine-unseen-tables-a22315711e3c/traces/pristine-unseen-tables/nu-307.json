@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-307",
+  "source_context": "csv/204-csv/167.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-307.tsv",
+  "source_question": "how many teams are there that are not also opposing teams?",
+  "translated_question": "сколько команд есть, которые также не являются соперничающими командами?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "teams",
+      "normalized_text": "team",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "opposing teams",
+      "normalized_text": "oppose team",
+      "start": 43,
+      "end": 57,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Opposing team",
+      "match_type": "lemma",
+      "candidate_key": "93ed22150c4b2d83",
+      "coordinate": {
+        "row": null,
+        "column": 6
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-307",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many teams are there that are not also opposing teams?",
+    "translated_question": "сколько команд есть, которые также не являются соперничающими командами?",
+    "back_translated_question": "how many teams are there that are also not opposing teams?",
+    "question_cosine_similarity": 0.9952698093113241,
+    "question_bert_precision": 0.9681837558746338,
+    "question_bert_recall": 0.9681882858276367,
+    "question_bert_f1": 0.9682343006134033,
+    "back_table_groups_compared": 117,
+    "back_table_min_similarity": 0.7165648031438839,
+    "back_table_mean_similarity": 0.9783610981784487,
+    "back_table_bert_groups_compared": 117,
+    "back_table_bert_min_f1": 0.45615628361701965,
+    "back_table_bert_mean_f1": 0.9329296021889417,
+    "back_table_bert_min_precision": 0.4776036739349365,
+    "back_table_bert_mean_precision": 0.9389800887841445,
+    "back_table_bert_min_recall": 0.43351036310195923,
+    "back_table_bert_mean_recall": 0.9268826103618002,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 8,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 1,
+        "column": 8,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 3,
+        "column": 8,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 6,
+        "column": 8,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 9,
+        "column": 8,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "cricket statistics"
+  },
+  "domain": "cricket statistics"
+}

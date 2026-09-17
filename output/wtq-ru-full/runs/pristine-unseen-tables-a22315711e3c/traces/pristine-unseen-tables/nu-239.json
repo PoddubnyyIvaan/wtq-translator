@@ -1,0 +1,89 @@
+{
+  "question_id": "nu-239",
+  "source_context": "csv/203-csv/415.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-239.tsv",
+  "source_question": "which player has the most victories?",
+  "translated_question": "какой игрок имеет наибольшее количество побед?",
+  "source_target_value": "Carl Fogarty",
+  "translated_target_value": "Карл Фогарти",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "victories",
+      "normalized_text": "victory",
+      "start": 26,
+      "end": 35,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Victories",
+      "match_type": "lemma",
+      "candidate_key": "be704c6d8ba2217b",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-239",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which player has the most victories?",
+    "translated_question": "какой игрок имеет наибольшее количество побед?",
+    "back_translated_question": "which player has the greatest number of victories?",
+    "question_cosine_similarity": 0.9627325013914142,
+    "question_bert_precision": 0.8907476663589478,
+    "question_bert_recall": 0.7982435822486877,
+    "question_bert_f1": 0.8438939452171326,
+    "back_table_groups_compared": 40,
+    "back_table_min_similarity": 0.7297574688878328,
+    "back_table_mean_similarity": 0.9894399377105139,
+    "back_table_bert_groups_compared": 40,
+    "back_table_bert_min_f1": 0.302811861038208,
+    "back_table_bert_mean_f1": 0.9698226526379585,
+    "back_table_bert_min_precision": 0.29607972502708435,
+    "back_table_bert_mean_precision": 0.9696341246366501,
+    "back_table_bert_min_recall": 0.30745869874954224,
+    "back_table_bert_mean_recall": 0.9699203632771969,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7297574688878328,
+        "source": "Bike",
+        "back_translated": "motorcycle"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.8478400395327218,
+        "source": "Victories",
+        "back_translated": "Wins"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motorcycle racing"
+  },
+  "domain": "motorcycle racing"
+}

@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-852",
+  "source_context": "csv/203-csv/122.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-852.tsv",
+  "source_question": "which year had the most viewers?",
+  "translated_question": "в каком году было больше всего зрителей?",
+  "source_target_value": "2008",
+  "translated_target_value": "2008",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 6,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "viewers",
+      "normalized_text": "viewer",
+      "start": 24,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Viewers",
+      "match_type": "lemma",
+      "candidate_key": "547eef0d79e41383",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-852",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which year had the most viewers?",
+    "translated_question": "в каком году было больше всего зрителей?",
+    "back_translated_question": "in which year were there the most viewers?",
+    "question_cosine_similarity": 0.9788717185577683,
+    "question_bert_precision": 0.8164796829223633,
+    "question_bert_recall": 0.7043114900588989,
+    "question_bert_f1": 0.7594864964485168,
+    "back_table_groups_compared": 72,
+    "back_table_min_similarity": 0.44049567327318434,
+    "back_table_mean_similarity": 0.9319850938033135,
+    "back_table_bert_groups_compared": 72,
+    "back_table_bert_min_f1": -0.1401626318693161,
+    "back_table_bert_mean_f1": 0.6862407684222691,
+    "back_table_bert_min_precision": -0.20052531361579895,
+    "back_table_bert_mean_precision": 0.6480246478846917,
+    "back_table_bert_min_recall": -0.08675176650285721,
+    "back_table_bert_mean_recall": 0.7334195901122358,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.44049567327318434,
+        "source": "Marty Reid",
+        "back_translated": "marti rid"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6066746381860701,
+        "source": "Lap-by-lap",
+        "back_translated": "paw by paw"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7594823876305267,
+        "source": "NASCAR\\nCountdown",
+        "back_translated": "NASCAR\nCounter"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7680239670904495,
+        "source": "Rusty Wallace\\nAndy Petree",
+        "back_translated": "rusty wallace\nandy petti"
+      },
+      {
+        "row": 1,
+        "column": 4,
+        "score": 0.8046495748058677,
+        "source": "Dale Jarrett\\nAndy Petree",
+        "back_translated": "dale jarrett\nandy petti"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports broadcasting"
+  },
+  "domain": "sports broadcasting"
+}

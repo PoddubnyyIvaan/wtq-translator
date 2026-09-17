@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-871",
+  "source_context": "csv/203-csv/369.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-871.tsv",
+  "source_question": "what is the designation of the only ship listed as being torpedoed?",
+  "translated_question": "какое обозначение у единственного корабля, указанного как потопленный торпедой?",
+  "source_target_value": "PE-56",
+  "translated_target_value": "PE-56",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "designation",
+      "normalized_text": "designation",
+      "start": 12,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Designation",
+      "match_type": "lemma",
+      "candidate_key": "6cd9457b7010be51",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-871",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the designation of the only ship listed as being torpedoed?",
+    "translated_question": "какое обозначение у единственного корабля, указанного как потопленный торпедой?",
+    "back_translated_question": "what designation does the single ship listed as torpedoed have?",
+    "question_cosine_similarity": 0.9243870178520138,
+    "question_bert_precision": 0.6673477292060852,
+    "question_bert_recall": 0.649587869644165,
+    "question_bert_f1": 0.6589512228965759,
+    "back_table_groups_compared": 305,
+    "back_table_min_similarity": 0.4669871216392545,
+    "back_table_mean_similarity": 0.9637829676376853,
+    "back_table_bert_groups_compared": 305,
+    "back_table_bert_min_f1": -0.030771033838391304,
+    "back_table_bert_mean_f1": 0.5114292289817431,
+    "back_table_bert_min_precision": 0.05702049657702446,
+    "back_table_bert_mean_precision": 0.5448915694947125,
+    "back_table_bert_min_recall": -0.11309973895549774,
+    "back_table_bert_mean_recall": 0.4780643488540024,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.4669871216392545,
+        "source": "Commissioned",
+        "back_translated": "entered into the chilean navy on february 10, 2010, and renamed to"
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.7631049596842508,
+        "source": "Destroyed 19 August 1937",
+        "back_translated": "scrapped on august 19, 1937"
+      },
+      {
+        "row": 13,
+        "column": 4,
+        "score": 0.7787319214904284,
+        "source": "Expended as target 22 November 1934",
+        "back_translated": "scuttled as a target on november 22, 1934"
+      },
+      {
+        "row": 39,
+        "column": 4,
+        "score": 0.780127006286262,
+        "source": "Expended as target 19 November 1934",
+        "back_translated": "scuttled as a target on november 19, 1934"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.7877626426077843,
+        "source": "Expended as target 30 November 1934",
+        "back_translated": "scuttled as a target on november 30, 1934"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "naval history"
+  },
+  "domain": "naval history"
+}

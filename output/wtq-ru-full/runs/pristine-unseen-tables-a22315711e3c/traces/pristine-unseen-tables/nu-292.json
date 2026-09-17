@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-292",
+  "source_context": "csv/202-csv/201.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-292.tsv",
+  "source_question": "in which show did deborah secco play the character eva?",
+  "translated_question": "в каком шоу Дебора Секко играла персонажа Эву?",
+  "source_target_value": "Homem Objeto",
+  "translated_target_value": "Человек-объект",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "show",
+      "normalized_text": "show",
+      "start": 9,
+      "end": 13,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 28,
+          "column": 3
+        }
+      ],
+      "table_source_text": "show",
+      "match_type": "lemma",
+      "candidate_key": "63f325564883b321",
+      "coordinate": {
+        "row": 28,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "eva",
+      "normalized_text": "eva",
+      "start": 51,
+      "end": 54,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 24,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Eva",
+      "match_type": "lemma",
+      "candidate_key": "357a0a2eea5b6a85",
+      "coordinate": {
+        "row": 24,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-292",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "in which show did deborah secco play the character eva?",
+    "translated_question": "в каком шоу Дебора Секко играла персонажа Эву?",
+    "back_translated_question": "In which show did Deborah Secco play the character Eva?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 0.5129066705703735,
+    "question_bert_recall": 0.6119507551193237,
+    "question_bert_f1": 0.5620222091674805,
+    "back_table_groups_compared": 164,
+    "back_table_min_similarity": 0.3387490237860365,
+    "back_table_mean_similarity": 0.8800767042783946,
+    "back_table_bert_groups_compared": 164,
+    "back_table_bert_min_f1": 0.1623721718788147,
+    "back_table_bert_mean_f1": 0.8100848366937986,
+    "back_table_bert_min_precision": 0.09712883085012436,
+    "back_table_bert_mean_precision": 0.8044372147812349,
+    "back_table_bert_min_recall": 0.1756870448589325,
+    "back_table_bert_mean_recall": 0.8158657651667188,
+    "back_table_similarity_examples": [
+      {
+        "row": 13,
+        "column": 1,
+        "score": 0.3387490237860365,
+        "source": "Suave Veneno",
+        "back_translated": "Soft Poison"
+      },
+      {
+        "row": 37,
+        "column": 1,
+        "score": 0.3709069342263299,
+        "source": "Insensato Coração",
+        "back_translated": "Absurd Heart"
+      },
+      {
+        "row": 38,
+        "column": 1,
+        "score": 0.38694810433604576,
+        "source": "Louco por Elas",
+        "back_translated": "Love for Them"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.38969682829778235,
+        "source": "A Próxima Vítima",
+        "back_translated": "Next Victim"
+      },
+      {
+        "row": 28,
+        "column": 1,
+        "score": 0.39383812960808245,
+        "source": "Dança no Gelo",
+        "back_translated": "Ice Dancing"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "entertainment"
+  },
+  "domain": "entertainment"
+}

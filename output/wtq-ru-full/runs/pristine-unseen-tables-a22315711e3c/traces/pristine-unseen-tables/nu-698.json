@@ -1,0 +1,146 @@
+{
+  "question_id": "nu-698",
+  "source_context": "csv/203-csv/514.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-698.tsv",
+  "source_question": "how many times was zakspeed the winning team?",
+  "translated_question": "сколько раз Закспед была победившей командой?",
+  "source_target_value": "4",
+  "translated_target_value": "4",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "zakspeed",
+      "normalized_text": "zakspeed",
+      "start": 19,
+      "end": 27,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 7
+        },
+        {
+          "row": 5,
+          "column": 7
+        },
+        {
+          "row": 8,
+          "column": 7
+        },
+        {
+          "row": 11,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Zakspeed",
+      "match_type": "lemma",
+      "candidate_key": "3bcdeb9c4ed5b247",
+      "coordinate": {
+        "row": 0,
+        "column": 7
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "winning team",
+      "normalized_text": "win team",
+      "start": 32,
+      "end": 44,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Winning Team",
+      "match_type": "lemma",
+      "candidate_key": "acc32f513fb2c5b0",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-698",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many times was zakspeed the winning team?",
+    "translated_question": "сколько раз Закспед была победившей командой?",
+    "back_translated_question": "how many times was zakspeed the winning team?",
+    "question_cosine_similarity": 0.9999999999999998,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 117,
+    "back_table_min_similarity": 0.5682985599140098,
+    "back_table_mean_similarity": 0.9847184247465175,
+    "back_table_bert_groups_compared": 117,
+    "back_table_bert_min_f1": 0.2565673887729645,
+    "back_table_bert_mean_f1": 0.953334918898395,
+    "back_table_bert_min_precision": 0.22588764131069183,
+    "back_table_bert_mean_precision": 0.9516385954159957,
+    "back_table_bert_min_recall": 0.28589627146720886,
+    "back_table_bert_mean_recall": 0.9551828253982414,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.5682985599140098,
+        "source": "Vallelunga",
+        "back_translated": "Valladolid"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.5682985599140098,
+        "source": "Vallelunga",
+        "back_translated": "Valladolid"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6509402192874287,
+        "source": "Pole Position",
+        "back_translated": "Starting position"
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.9109473990202758,
+        "source": "SC Corinthians",
+        "back_translated": "S.C. Corinthians"
+      },
+      {
+        "row": 4,
+        "column": 5,
+        "score": 0.9260327786711003,
+        "source": "Liverpool F.C.",
+        "back_translated": "Liverpool FC"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports competitions"
+  },
+  "domain": "sports competitions"
+}

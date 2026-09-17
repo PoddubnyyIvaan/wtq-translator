@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-843",
+  "source_context": "csv/203-csv/304.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-843.tsv",
+  "source_question": "what is the number of canadians who have won mvp from 1993 to 2011?",
+  "translated_question": "сколько канадцев выиграло МВП с 1993 по 2011 год?",
+  "source_target_value": "9",
+  "translated_target_value": "9",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "mvp",
+      "normalized_text": "mvp",
+      "start": 45,
+      "end": 48,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "MVP",
+      "match_type": "lemma",
+      "candidate_key": "5839fdacf72d2d7a",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-843",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of canadians who have won mvp from 1993 to 2011?",
+    "translated_question": "сколько канадцев выиграло МВП с 1993 по 2011 год?",
+    "back_translated_question": "how many Canadians won mvp from 1993 to 2011?",
+    "question_cosine_similarity": 0.9779110938138664,
+    "question_bert_precision": 0.5957445502281189,
+    "question_bert_recall": 0.7707598805427551,
+    "question_bert_f1": 0.6805551052093506,
+    "back_table_groups_compared": 100,
+    "back_table_min_similarity": 0.5174606982014032,
+    "back_table_mean_similarity": 0.9347736545055746,
+    "back_table_bert_groups_compared": 100,
+    "back_table_bert_min_f1": 0.3927883505821228,
+    "back_table_bert_mean_f1": 0.8989831238985062,
+    "back_table_bert_min_precision": 0.3592188358306885,
+    "back_table_bert_mean_precision": 0.9096031853556633,
+    "back_table_bert_min_recall": 0.3781232535839081,
+    "back_table_bert_mean_recall": 0.8890172562003136,
+    "back_table_similarity_examples": [
+      {
+        "row": 18,
+        "column": 1,
+        "score": 0.5174606982014032,
+        "source": "Hassoun Camara",
+        "back_translated": "Hassan Kamara"
+      },
+      {
+        "row": 16,
+        "column": 4,
+        "score": 0.5977308826559151,
+        "source": "Stephen deRoux",
+        "back_translated": "Steven de Ru"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.6833552060822626,
+        "source": "Greg Sutton",
+        "back_translated": "Greg Saggaton"
+      },
+      {
+        "row": 11,
+        "column": 2,
+        "score": 0.6833552060822626,
+        "source": "Greg Sutton",
+        "back_translated": "Greg Saggaton"
+      },
+      {
+        "row": 15,
+        "column": 3,
+        "score": 0.6844147396422694,
+        "source": "Joey Gjertsen",
+        "back_translated": "Joey Jerzsen"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports awards"
+  },
+  "domain": "sports awards"
+}

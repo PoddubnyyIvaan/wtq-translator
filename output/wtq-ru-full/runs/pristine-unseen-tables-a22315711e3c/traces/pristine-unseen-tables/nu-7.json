@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-7",
+  "source_context": "csv/204-csv/875.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-7.tsv",
+  "source_question": "what was the number of people attending the toros mexico vs. monterrey flash game?",
+  "translated_question": "сколько человек присутствовало на матче торос мексико против Монтеррей Флэш игры?",
+  "source_target_value": "363",
+  "translated_target_value": "363",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "monterrey flash",
+      "normalized_text": "monterrey flash",
+      "start": 61,
+      "end": 76,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Monterrey Flash",
+      "match_type": "lemma",
+      "candidate_key": "f3b0fc8a26eb295f",
+      "coordinate": {
+        "row": 1,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "game",
+      "normalized_text": "game",
+      "start": 77,
+      "end": 81,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Game",
+      "match_type": "lemma",
+      "candidate_key": "e26127c8f5c97f75",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-7",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the number of people attending the toros mexico vs. monterrey flash game?",
+    "translated_question": "сколько человек присутствовало на матче торос мексико против Монтеррей Флэш игры?",
+    "back_translated_question": "how many people attended the match between Toros Mexico and Monterrey Flash game?",
+    "question_cosine_similarity": 0.9574650029110221,
+    "question_bert_precision": 0.3491346538066864,
+    "question_bert_recall": 0.4559619724750519,
+    "question_bert_f1": 0.40211567282676697,
+    "back_table_groups_compared": 153,
+    "back_table_min_similarity": 0.6622428393842927,
+    "back_table_mean_similarity": 0.9848966560568213,
+    "back_table_bert_groups_compared": 153,
+    "back_table_bert_min_f1": 0.019832361489534378,
+    "back_table_bert_mean_f1": 0.9377078765796291,
+    "back_table_bert_min_precision": -0.008225323632359505,
+    "back_table_bert_mean_precision": 0.9384291214637117,
+    "back_table_bert_min_recall": 0.03925309702754021,
+    "back_table_bert_mean_recall": 0.9368459856247201,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6622428393842927,
+        "source": "Kickoff",
+        "back_translated": "Match start"
+      },
+      {
+        "row": 7,
+        "column": 4,
+        "score": 0.6813826748319253,
+        "source": "at Ontario Fury",
+        "back_translated": "in ontario fiore"
+      },
+      {
+        "row": 4,
+        "column": 7,
+        "score": 0.6918591263800721,
+        "source": "Estadio Azteca Soccer Arena",
+        "back_translated": "Asitaka Soccer Arena Stadium"
+      },
+      {
+        "row": 14,
+        "column": 7,
+        "score": 0.6918591263800721,
+        "source": "Estadio Azteca Soccer Arena",
+        "back_translated": "Asitaka Soccer Arena Stadium"
+      },
+      {
+        "row": 3,
+        "column": 4,
+        "score": 0.7090245218986101,
+        "source": "Ontario Fury",
+        "back_translated": "ontario fiore"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

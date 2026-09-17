@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-449",
+  "source_context": "csv/203-csv/217.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-449.tsv",
+  "source_question": "how long is the publication the far reaching effects of broadband?",
+  "translated_question": "какова продолжительность публикации Дальнейших последствий широкополосного интернета?",
+  "source_target_value": "415 pages",
+  "translated_target_value": "415 страниц",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "the far reaching effects of broadband",
+      "normalized_text": "the far reach effect of broadband",
+      "start": 28,
+      "end": 65,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 0
+        }
+      ],
+      "table_source_text": "The Far Reaching Effects of Broadband",
+      "match_type": "lemma",
+      "candidate_key": "a63911e665c419bb",
+      "coordinate": {
+        "row": 5,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-449",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how long is the publication the far reaching effects of broadband?",
+    "translated_question": "какова продолжительность публикации Дальнейших последствий широкополосного интернета?",
+    "back_translated_question": "what is the duration of publication of the far reaching effects of broadband?",
+    "question_cosine_similarity": 0.9775314631792063,
+    "question_bert_precision": 0.7139216661453247,
+    "question_bert_recall": 0.658866286277771,
+    "question_bert_f1": 0.6865517497062683,
+    "back_table_groups_compared": 40,
+    "back_table_min_similarity": 0.5565413431725879,
+    "back_table_mean_similarity": 0.9340217270119096,
+    "back_table_bert_groups_compared": 40,
+    "back_table_bert_min_f1": 0.35195866227149963,
+    "back_table_bert_mean_f1": 0.8632882289588452,
+    "back_table_bert_min_precision": 0.35093051195144653,
+    "back_table_bert_mean_precision": 0.8582941874861717,
+    "back_table_bert_min_recall": 0.3510201871395111,
+    "back_table_bert_mean_recall": 0.8681477747857571,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.5565413431725879,
+        "source": "David Cleevely",
+        "back_translated": "David Klieli"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.6121271467775566,
+        "source": "D. D. Cleevely",
+        "back_translated": "D. D. Klieli"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.7555421857565235,
+        "source": "Tim Hills, David Cleevely",
+        "back_translated": "Tim Hills, David Klieli"
+      },
+      {
+        "row": 6,
+        "column": 2,
+        "score": 0.8065421406534333,
+        "source": "Tim Hills, David Cleevely, Ross Pow",
+        "back_translated": "Tim Hills, David Klieli, Ross Paw"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "telecommunications"
+  },
+  "domain": "telecommunications"
+}

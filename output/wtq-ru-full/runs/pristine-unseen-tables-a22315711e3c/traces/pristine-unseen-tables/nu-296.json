@@ -1,0 +1,214 @@
+{
+  "question_id": "nu-296",
+  "source_context": "csv/203-csv/315.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-296.tsv",
+  "source_question": "what was the title of the first episode directed by paul wendkos?",
+  "translated_question": "какое название из первого эпизода режиссёр Пол Вендкос?",
+  "source_target_value": "The Time of the Knife",
+  "translated_target_value": "Время ножа",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "title",
+      "normalized_text": "title",
+      "start": 13,
+      "end": 18,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Title",
+      "match_type": "lemma",
+      "candidate_key": "ec15eaba72f5eb5f",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "of the",
+      "normalized_text": "of the",
+      "start": 19,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 2
+        },
+        {
+          "row": 10,
+          "column": 2
+        },
+        {
+          "row": 17,
+          "column": 2
+        }
+      ],
+      "table_source_text": "of the",
+      "match_type": "lemma",
+      "candidate_key": "5f2c13c877b606ae",
+      "coordinate": {
+        "row": 7,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "directed by",
+      "normalized_text": "direct by",
+      "start": 40,
+      "end": 51,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Directed by",
+      "match_type": "lemma",
+      "candidate_key": "ec1266aa6694a15a",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "paul wendkos",
+      "normalized_text": "paul wendkos",
+      "start": 52,
+      "end": 64,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 10,
+          "column": 3
+        },
+        {
+          "row": 11,
+          "column": 3
+        },
+        {
+          "row": 14,
+          "column": 3
+        },
+        {
+          "row": 18,
+          "column": 3
+        },
+        {
+          "row": 21,
+          "column": 3
+        },
+        {
+          "row": 27,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Paul Wendkos",
+      "match_type": "lemma",
+      "candidate_key": "25e5a897670c602e",
+      "coordinate": {
+        "row": 7,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-296",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the title of the first episode directed by paul wendkos?",
+    "translated_question": "какое название из первого эпизода режиссёр Пол Вендкос?",
+    "back_translated_question": "what title of the first episode directed by Paul Wendkos?",
+    "question_cosine_similarity": 0.9948545491567933,
+    "question_bert_precision": 0.5957579612731934,
+    "question_bert_recall": 0.6516106724739075,
+    "question_bert_f1": 0.6239244341850281,
+    "back_table_groups_compared": 203,
+    "back_table_min_similarity": 0.5711310582187346,
+    "back_table_mean_similarity": 0.9638648849367494,
+    "back_table_bert_groups_compared": 203,
+    "back_table_bert_min_f1": -0.08062397688627243,
+    "back_table_bert_mean_f1": 0.9148375043838188,
+    "back_table_bert_min_precision": -0.13578830659389496,
+    "back_table_bert_mean_precision": 0.9140530161265963,
+    "back_table_bert_min_recall": -0.032369375228881836,
+    "back_table_bert_mean_recall": 0.915529094260241,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.5711310582187346,
+        "source": "Robert Lewin",
+        "back_translated": "Robert Levin"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.5711310582187346,
+        "source": "Robert Lewin",
+        "back_translated": "Robert Levin"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      },
+      {
+        "row": 2,
+        "column": 4,
+        "score": 0.6312269944267633,
+        "source": "David Karp",
+        "back_translated": "David Carp"
+      },
+      {
+        "row": 27,
+        "column": 2,
+        "score": 0.6554383524584588,
+        "source": "One Thousand Fine",
+        "back_translated": "A Thousand Beautiful"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "television series"
+  },
+  "domain": "television series"
+}

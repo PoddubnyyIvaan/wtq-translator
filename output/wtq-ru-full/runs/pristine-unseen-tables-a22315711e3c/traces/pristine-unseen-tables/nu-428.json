@@ -1,0 +1,77 @@
+{
+  "question_id": "nu-428",
+  "source_context": "csv/204-csv/744.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-428.tsv",
+  "source_question": "who was the top scorer in this season?",
+  "translated_question": "кто стал лучшим бомбардиром в этом сезоне?",
+  "source_target_value": "Spas Delev",
+  "translated_target_value": "Спас Делев",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-428",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "who was the top scorer in this season?",
+    "translated_question": "кто стал лучшим бомбардиром в этом сезоне?",
+    "back_translated_question": "who became the top scorer this season?",
+    "question_cosine_similarity": 0.9812775573645608,
+    "question_bert_precision": 0.8583252429962158,
+    "question_bert_recall": 0.8924257159233093,
+    "question_bert_f1": 0.875453770160675,
+    "back_table_groups_compared": 95,
+    "back_table_min_similarity": 0.6911055330492873,
+    "back_table_mean_similarity": 0.9911746691380434,
+    "back_table_bert_groups_compared": 95,
+    "back_table_bert_min_f1": 0.3380149304866791,
+    "back_table_bert_mean_f1": 0.9830778884260278,
+    "back_table_bert_min_precision": 0.20742067694664001,
+    "back_table_bert_mean_precision": 0.9823924510102523,
+    "back_table_bert_min_recall": 0.4852710962295532,
+    "back_table_bert_mean_recall": 0.9840120999436629,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.6911055330492873,
+        "source": "Giuseppe Aquaro",
+        "back_translated": "Giuseppe Acquaro"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.7768273543454528,
+        "source": "Cillian Sheridan",
+        "back_translated": "Kilian Sheridan"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.796500719199131,
+        "source": "Europa\\nLeague",
+        "back_translated": "Europa League"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.8971599615202589,
+        "source": "Spas Delev",
+        "back_translated": "Spas Delov"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports statistics"
+  },
+  "domain": "sports statistics"
+}

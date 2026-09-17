@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-915",
+  "source_context": "csv/203-csv/21.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-915.tsv",
+  "source_question": "what are the number of wins the cardinals earned by the end of the 1998 regular season?",
+  "translated_question": "сколько побед одержали кардиналс к концу регулярного сезона 1998 года?",
+  "source_target_value": "9",
+  "translated_target_value": "9",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-915",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "what are the number of wins the cardinals earned by the end of the 1998 regular season?",
+    "translated_question": "сколько побед одержали кардиналс к концу регулярного сезона 1998 года?",
+    "back_translated_question": "how many wins did the Cardinals have by the end of the 1998 regular season?",
+    "question_cosine_similarity": 0.974759332288924,
+    "question_bert_precision": 0.5615458488464355,
+    "question_bert_recall": 0.6399754285812378,
+    "question_bert_f1": 0.6007067561149597,
+    "back_table_groups_compared": 108,
+    "back_table_min_similarity": 0.5700890072389357,
+    "back_table_mean_similarity": 0.9721939777284887,
+    "back_table_bert_groups_compared": 108,
+    "back_table_bert_min_f1": 0.3947136700153351,
+    "back_table_bert_mean_f1": 0.9555935694111718,
+    "back_table_bert_min_precision": 0.39375320076942444,
+    "back_table_bert_mean_precision": 0.956461685123267,
+    "back_table_bert_min_recall": 0.39383694529533386,
+    "back_table_bert_mean_recall": 0.9546670259700881,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 4,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 16,
+        "column": 4,
+        "score": 0.7933688554637772,
+        "source": "W 16–13",
+        "back_translated": "В 16–13"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

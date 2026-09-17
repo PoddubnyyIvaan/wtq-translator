@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-57",
+  "source_context": "csv/204-csv/434.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-57.tsv",
+  "source_question": "what type of plane was encountered the least?",
+  "translated_question": "какой тип судна был встречен наименее часто?",
+  "source_target_value": "Mig-15",
+  "translated_target_value": "Mig-15",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "type",
+      "normalized_text": "type",
+      "start": 5,
+      "end": 9,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Type",
+      "match_type": "lemma",
+      "candidate_key": "7384b9d31f0faff9",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-57",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what type of plane was encountered the least?",
+    "translated_question": "какой тип судна был встречен наименее часто?",
+    "back_translated_question": "which type of vessel was encountered least frequently?",
+    "question_cosine_similarity": 0.7795969491053399,
+    "question_bert_precision": 0.7014898657798767,
+    "question_bert_recall": 0.6820902228355408,
+    "question_bert_f1": 0.6922171711921692,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 0.5060681159088714,
+    "back_table_mean_similarity": 0.9015496605483835,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 0.23597067594528198,
+    "back_table_bert_mean_f1": 0.8477313053749856,
+    "back_table_bert_min_precision": 0.36452117562294006,
+    "back_table_bert_mean_precision": 0.8594794635261808,
+    "back_table_bert_min_recall": 0.12034142017364502,
+    "back_table_bert_mean_recall": 0.8360862338117191,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "military aviation history"
+  },
+  "domain": "military aviation history"
+}

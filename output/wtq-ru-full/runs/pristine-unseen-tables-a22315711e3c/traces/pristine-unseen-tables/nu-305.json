@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-305",
+  "source_context": "csv/204-csv/972.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-305.tsv",
+  "source_question": "when did they get 6th place in the regular season before their 6th place finish in 2009?",
+  "translated_question": "когда они заняли 6-е место в Регулярном сезоне до своего 6-го места в 2009 году?",
+  "source_target_value": "2004",
+  "translated_target_value": "2004",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "regular season",
+      "normalized_text": "regular season",
+      "start": 35,
+      "end": 49,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Regular Season",
+      "match_type": "lemma",
+      "candidate_key": "e559cfe66d12dd9c",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-305",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "when did they get 6th place in the regular season before their 6th place finish in 2009?",
+    "translated_question": "когда они заняли 6-е место в Регулярном сезоне до своего 6-го места в 2009 году?",
+    "back_translated_question": "when did they finish in 6th place in regular season before their 6th place in 2009?",
+    "question_cosine_similarity": 0.9935791655612546,
+    "question_bert_precision": 0.8640559911727905,
+    "question_bert_recall": 0.8682945966720581,
+    "question_bert_f1": 0.8663766980171204,
+    "back_table_groups_compared": 102,
+    "back_table_min_similarity": 0.6157846293897,
+    "back_table_mean_similarity": 0.9455890477950629,
+    "back_table_bert_groups_compared": 102,
+    "back_table_bert_min_f1": 0.38730180263519287,
+    "back_table_bert_mean_f1": 0.9450399022476346,
+    "back_table_bert_min_precision": 0.41937196254730225,
+    "back_table_bert_mean_precision": 0.9464556288485434,
+    "back_table_bert_min_recall": 0.3543826937675476,
+    "back_table_bert_mean_recall": 0.9435362967790342,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.6157846293897,
+        "source": "3rd, Heartland",
+        "back_translated": "3rd, Hartland"
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.6157846293897,
+        "source": "3rd, Heartland",
+        "back_translated": "3rd, Hartland"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.6157846293897,
+        "source": "3rd, Heartland",
+        "back_translated": "3rd, Hartland"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.6406256430492796,
+        "source": "5th, Heartland",
+        "back_translated": "5th, Hartland"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.6406256430492796,
+        "source": "5th, Heartland",
+        "back_translated": "5th, Hartland"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

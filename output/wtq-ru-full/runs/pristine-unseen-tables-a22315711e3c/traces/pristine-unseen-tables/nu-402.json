@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-402",
+  "source_context": "csv/203-csv/351.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-402.tsv",
+  "source_question": "how many total medals did italy win?",
+  "translated_question": "сколько всего медалей выиграла Италия?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "total",
+      "normalized_text": "total",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Total",
+      "match_type": "lemma",
+      "candidate_key": "6dd782d1ee29a548",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "italy",
+      "normalized_text": "italy",
+      "start": 26,
+      "end": 31,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Italy",
+      "match_type": "lemma",
+      "candidate_key": "cf2637f2cb798e67",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-402",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many total medals did italy win?",
+    "translated_question": "сколько всего медалей выиграла Италия?",
+    "back_translated_question": "how many total medals did Italy win?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 0.7194593548774719,
+    "question_bert_recall": 0.7980642914772034,
+    "question_bert_f1": 0.7585078477859497,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.7282726502356988,
+    "back_table_mean_similarity": 0.9825639901528116,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.3207365572452545,
+    "back_table_bert_mean_f1": 0.9407838825826291,
+    "back_table_bert_min_precision": 0.3038482367992401,
+    "back_table_bert_mean_precision": 0.9345054389150055,
+    "back_table_bert_min_recall": 0.32972097396850586,
+    "back_table_bert_mean_recall": 0.9474102645008652,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7282726502356988,
+        "source": "Great Britain (GBR)",
+        "back_translated": "United Kingdom (United Kingdom)"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.8276286562948326,
+        "source": "Italy (ITA)",
+        "back_translated": "Italy (Italy)"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.855405281689868,
+        "source": "Germany (EUA)",
+        "back_translated": "Germany (European Union)"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.8696455336190573,
+        "source": "France (FRA)",
+        "back_translated": "France (France)"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.8772261242130788,
+        "source": "Soviet Union (URS)",
+        "back_translated": "Soviet Union (USSR)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Olympic Games medal standings"
+  },
+  "domain": "Olympic Games medal standings"
+}

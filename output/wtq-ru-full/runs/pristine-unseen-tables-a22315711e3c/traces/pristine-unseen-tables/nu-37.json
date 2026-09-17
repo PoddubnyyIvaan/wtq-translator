@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-37",
+  "source_context": "csv/201-csv/47.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-37.tsv",
+  "source_question": "how many domestic routes out of houston intercontinental have united as a carrier?",
+  "translated_question": "сколько внутренних маршрутов из гавайского интерконтинентального аэропорта имеет united как перевозчика?",
+  "source_target_value": "10",
+  "translated_target_value": "10",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "carrier",
+      "normalized_text": "carrier",
+      "start": 74,
+      "end": 81,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Carriers",
+      "match_type": "lemma",
+      "candidate_key": "541b108064daab5f",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-37",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many domestic routes out of houston intercontinental have united as a carrier?",
+    "translated_question": "сколько внутренних маршрутов из гавайского интерконтинентального аэропорта имеет united как перевозчика?",
+    "back_translated_question": "how many domestic routes from the Hawaiian intercontinental airport does united have as carrier?",
+    "question_cosine_similarity": 0.9096545142999586,
+    "question_bert_precision": 0.5795679688453674,
+    "question_bert_recall": 0.5871926546096802,
+    "question_bert_f1": 0.5840056538581848,
+    "back_table_groups_compared": 44,
+    "back_table_min_similarity": 0.703916386044003,
+    "back_table_mean_similarity": 0.9375101456183258,
+    "back_table_bert_groups_compared": 44,
+    "back_table_bert_min_f1": 0.21811020374298096,
+    "back_table_bert_mean_f1": 0.8274217010899023,
+    "back_table_bert_min_precision": 0.25954964756965637,
+    "back_table_bert_mean_precision": 0.8441342582756822,
+    "back_table_bert_min_recall": 0.1761070340871811,
+    "back_table_bert_mean_recall": 0.8111640770326961,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.703916386044003,
+        "source": "United",
+        "back_translated": "United Kingdom"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.703916386044003,
+        "source": "United",
+        "back_translated": "United Kingdom"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.7049916649175334,
+        "source": "Charlotte, NC",
+        "back_translated": "Jonathan and Charlotte, NS"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.7484440829265175,
+        "source": "American, United",
+        "back_translated": "American, United Kingdom"
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.7860281464662346,
+        "source": "Delta, United",
+        "back_translated": "Delta, United Kingdom"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "air travel and airport passenger statistics"
+  },
+  "domain": "air travel and airport passenger statistics"
+}

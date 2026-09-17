@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-264",
+  "source_context": "csv/204-csv/391.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-264.tsv",
+  "source_question": "how many teams have at least 10000 capacity?",
+  "translated_question": "сколько команд имеют хотя бы 10000 вместимости?",
+  "source_target_value": "15",
+  "translated_target_value": "15",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "teams",
+      "normalized_text": "team",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "capacity",
+      "normalized_text": "capacity",
+      "start": 35,
+      "end": 43,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Capacity",
+      "match_type": "lemma",
+      "candidate_key": "c688958150264979",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-264",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many teams have at least 10000 capacity?",
+    "translated_question": "сколько команд имеют хотя бы 10000 вместимости?",
+    "back_translated_question": "how many teams have at least 10000 capacity?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 133,
+    "back_table_min_similarity": 0.2952116443196799,
+    "back_table_mean_similarity": 0.9268370932527178,
+    "back_table_bert_groups_compared": 133,
+    "back_table_bert_min_f1": 0.2960668206214905,
+    "back_table_bert_mean_f1": 0.8955864216151991,
+    "back_table_bert_min_precision": 0.26560118794441223,
+    "back_table_bert_mean_precision": 0.8898358524293828,
+    "back_table_bert_min_recall": 0.3043869137763977,
+    "back_table_bert_mean_recall": 0.9012671258664668,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.2952116443196799,
+        "source": "Ahvaz",
+        "back_translated": "Tahiti"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.2952116443196799,
+        "source": "Ahvaz",
+        "back_translated": "Tahiti"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.40586751863918236,
+        "source": "Est. Ahvaz",
+        "back_translated": "East. Tahiti"
+      },
+      {
+        "row": 11,
+        "column": 0,
+        "score": 0.4287016219108419,
+        "source": "Payam",
+        "back_translated": "Pajam"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.4392500959026107,
+        "source": "Saeed Khani",
+        "back_translated": "Said Han"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

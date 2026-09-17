@@ -1,0 +1,182 @@
+{
+  "question_id": "nu-209",
+  "source_context": "csv/204-csv/919.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-209.tsv",
+  "source_question": "how many other albums are there besides a world called you?",
+  "translated_question": "сколько других альбомов есть помимо мира, названного тобой?",
+  "source_target_value": "6",
+  "translated_target_value": "6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "albums",
+      "normalized_text": "album",
+      "start": 15,
+      "end": 21,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Album",
+      "match_type": "lemma",
+      "candidate_key": "8ed22b709f11d3c3",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "are there",
+      "normalized_text": "be there",
+      "start": 22,
+      "end": 31,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 26,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Be There",
+      "match_type": "lemma",
+      "candidate_key": "3b3c506ced9e0eba",
+      "coordinate": {
+        "row": 26,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "a world called you",
+      "normalized_text": "a world call you",
+      "start": 40,
+      "end": 58,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 1,
+          "column": 4
+        },
+        {
+          "row": 2,
+          "column": 4
+        },
+        {
+          "row": 3,
+          "column": 4
+        },
+        {
+          "row": 5,
+          "column": 1
+        },
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 4
+        }
+      ],
+      "table_source_text": "A World Called You",
+      "match_type": "lemma",
+      "candidate_key": "7adbcde52c192e77",
+      "coordinate": {
+        "row": 0,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-209",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many other albums are there besides a world called you?",
+    "translated_question": "сколько других альбомов есть помимо мира, названного тобой?",
+    "back_translated_question": "how many other albums are there besides a world called you?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 195,
+    "back_table_min_similarity": 0.5197882513958323,
+    "back_table_mean_similarity": 0.9630436307409909,
+    "back_table_bert_groups_compared": 195,
+    "back_table_bert_min_f1": -0.14237307012081146,
+    "back_table_bert_mean_f1": 0.830607491492843,
+    "back_table_bert_min_precision": -0.1357470005750656,
+    "back_table_bert_mean_precision": 0.8305687026096842,
+    "back_table_bert_min_recall": -0.15237519145011902,
+    "back_table_bert_mean_recall": 0.8302453791865936,
+    "back_table_similarity_examples": [
+      {
+        "row": 29,
+        "column": 1,
+        "score": 0.5197882513958323,
+        "source": "Darlin'",
+        "back_translated": "Dear'"
+      },
+      {
+        "row": 33,
+        "column": 1,
+        "score": 0.6744716016484553,
+        "source": "Crown Prince of the Barroom",
+        "back_translated": "prince of the bar scene"
+      },
+      {
+        "row": 18,
+        "column": 4,
+        "score": 0.6817177642609339,
+        "source": "Whole Lotta Livin' in a House",
+        "back_translated": "Much Life' at home"
+      },
+      {
+        "row": 21,
+        "column": 1,
+        "score": 0.7528990126677552,
+        "source": "I'm Gonna Love You Right Out of This World",
+        "back_translated": "I'll love you like this, that you'll leave this world"
+      },
+      {
+        "row": 37,
+        "column": 1,
+        "score": 0.7750007504607764,
+        "source": "I'm a Country Song",
+        "back_translated": "I — song about the country"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music"
+  },
+  "domain": "music"
+}

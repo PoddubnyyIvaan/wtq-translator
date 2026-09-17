@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-125",
+  "source_context": "csv/203-csv/194.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-125.tsv",
+  "source_question": "which party was in office the most?",
+  "translated_question": "какая партия была в должности дольше всего?",
+  "source_target_value": "Republican",
+  "translated_target_value": "Республиканская",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "party",
+      "normalized_text": "party",
+      "start": 6,
+      "end": 11,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Party",
+      "match_type": "lemma",
+      "candidate_key": "17b2b3c71f1d2afb",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "office",
+      "normalized_text": "office",
+      "start": 19,
+      "end": 25,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "office",
+      "match_type": "lemma",
+      "candidate_key": "de215f93c52dea3d",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-125",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which party was in office the most?",
+    "translated_question": "какая партия была в должности дольше всего?",
+    "back_translated_question": "which party held the office the longest?",
+    "question_cosine_similarity": 0.8899552437115099,
+    "question_bert_precision": 0.751203715801239,
+    "question_bert_recall": 0.7512381076812744,
+    "question_bert_f1": 0.7515978217124939,
+    "back_table_groups_compared": 399,
+    "back_table_min_similarity": 0.5609955372471397,
+    "back_table_mean_similarity": 0.9856163488981671,
+    "back_table_bert_groups_compared": 399,
+    "back_table_bert_min_f1": 0.37541601061820984,
+    "back_table_bert_mean_f1": 0.9832991234640729,
+    "back_table_bert_min_precision": 0.3969614505767822,
+    "back_table_bert_mean_precision": 0.9832707284237807,
+    "back_table_bert_min_recall": 0.3524537682533264,
+    "back_table_bert_mean_recall": 0.9833170881396845,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.5609955372471397,
+        "source": "Paris C. Dunning",
+        "back_translated": "Paris S. Dandrin"
+      },
+      {
+        "row": 15,
+        "column": 1,
+        "score": 0.5609955372471397,
+        "source": "Paris C. Dunning",
+        "back_translated": "Paris S. Dandrin"
+      },
+      {
+        "row": 40,
+        "column": 1,
+        "score": 0.5968982058703106,
+        "source": "Charles M. Dawson",
+        "back_translated": "Charles M. Dowey"
+      },
+      {
+        "row": 48,
+        "column": 1,
+        "score": 0.6645321161683763,
+        "source": "Richard E. Folz",
+        "back_translated": "Richard E. Faust"
+      },
+      {
+        "row": 17,
+        "column": 1,
+        "score": 0.6949200359823895,
+        "source": "William Cumback",
+        "back_translated": "William Cambek"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "politics"
+  },
+  "domain": "politics"
+}

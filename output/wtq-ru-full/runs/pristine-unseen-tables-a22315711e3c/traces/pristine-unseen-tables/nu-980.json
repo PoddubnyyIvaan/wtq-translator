@@ -1,0 +1,141 @@
+{
+  "question_id": "nu-980",
+  "source_context": "csv/203-csv/415.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-980.tsv",
+  "source_question": "who had more total victories troy corser or troy bayless?",
+  "translated_question": "у кого больше всего побед — Трой Корсер или Трой Бейлесс?",
+  "source_target_value": "Troy Corser",
+  "translated_target_value": "Трой Корсер",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "victories",
+      "normalized_text": "victory",
+      "start": 19,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Victories",
+      "match_type": "lemma",
+      "candidate_key": "be704c6d8ba2217b",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "troy corser",
+      "normalized_text": "troy corser",
+      "start": 29,
+      "end": 40,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Troy Corser",
+      "match_type": "lemma",
+      "candidate_key": "81e97b6ac16821c9",
+      "coordinate": {
+        "row": 2,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "troy",
+      "normalized_text": "troy",
+      "start": 44,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 6,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Troy",
+      "match_type": "lemma",
+      "candidate_key": "4cffbc81fb9e8b8e",
+      "coordinate": {
+        "row": 2,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-980",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who had more total victories troy corser or troy bayless?",
+    "translated_question": "у кого больше всего побед — Трой Корсер или Трой Бейлесс?",
+    "back_translated_question": "who has more victories — Troy Corser or Troy Bales?",
+    "question_cosine_similarity": 0.8022177609094971,
+    "question_bert_precision": 0.47155502438545227,
+    "question_bert_recall": 0.4982406795024872,
+    "question_bert_f1": 0.4855988025665283,
+    "back_table_groups_compared": 40,
+    "back_table_min_similarity": 0.7297574688878328,
+    "back_table_mean_similarity": 0.9894399377105139,
+    "back_table_bert_groups_compared": 40,
+    "back_table_bert_min_f1": 0.302811861038208,
+    "back_table_bert_mean_f1": 0.9698226526379585,
+    "back_table_bert_min_precision": 0.29607972502708435,
+    "back_table_bert_mean_precision": 0.9696341246366501,
+    "back_table_bert_min_recall": 0.30745869874954224,
+    "back_table_bert_mean_recall": 0.9699203632771969,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7297574688878328,
+        "source": "Bike",
+        "back_translated": "motorcycle"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.8478400395327218,
+        "source": "Victories",
+        "back_translated": "Wins"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motorcycle racing"
+  },
+  "domain": "motorcycle racing"
+}

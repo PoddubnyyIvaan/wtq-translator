@@ -1,0 +1,170 @@
+{
+  "question_id": "nu-839",
+  "source_context": "csv/203-csv/101.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-839.tsv",
+  "source_question": "what is the number of times electrodyne won?",
+  "translated_question": "сколько раз Электродин был Победителем гонки?",
+  "source_target_value": "5",
+  "translated_target_value": "5",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "electrodyne",
+      "normalized_text": "electrodyne",
+      "start": 28,
+      "end": 39,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 16,
+          "column": 3
+        },
+        {
+          "row": 18,
+          "column": 3
+        },
+        {
+          "row": 24,
+          "column": 3
+        },
+        {
+          "row": 28,
+          "column": 3
+        },
+        {
+          "row": 30,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Electrodyne",
+      "match_type": "lemma",
+      "candidate_key": "f66427ba6837a67f",
+      "coordinate": {
+        "row": 16,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "won",
+      "normalized_text": "win",
+      "start": 40,
+      "end": 43,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Winning",
+      "match_type": "lemma",
+      "candidate_key": "1883fb303f8c3989",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-839",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of times electrodyne won?",
+    "translated_question": "сколько раз Электродин был Победителем гонки?",
+    "back_translated_question": "how many times was electrodyne winner of the race?",
+    "question_cosine_similarity": 0.9259617209619976,
+    "question_bert_precision": 0.49518582224845886,
+    "question_bert_recall": 0.46223685145378113,
+    "question_bert_f1": 0.47937601804733276,
+    "back_table_groups_compared": 210,
+    "back_table_min_similarity": 0.5566422390778077,
+    "back_table_mean_similarity": 0.9683793163154826,
+    "back_table_bert_groups_compared": 210,
+    "back_table_bert_min_f1": -0.01547277346253395,
+    "back_table_bert_mean_f1": 0.8373736097352645,
+    "back_table_bert_min_precision": -0.03453725576400757,
+    "back_table_bert_mean_precision": 0.8329835248401477,
+    "back_table_bert_min_recall": -0.011171555146574974,
+    "back_table_bert_mean_recall": 0.8418376666271971,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.5566422390778077,
+        "source": "Sebring",
+        "back_translated": "Sibrin"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.5566422390778077,
+        "source": "Sebring",
+        "back_translated": "Sibrin"
+      },
+      {
+        "row": 21,
+        "column": 3,
+        "score": 0.7042352020648286,
+        "source": "David Schroeder\\n Tom Hendrickson",
+        "back_translated": "david schreder\ntom hendriks"
+      },
+      {
+        "row": 23,
+        "column": 4,
+        "score": 0.7171288721888128,
+        "source": "Dennis Aase",
+        "back_translated": "Dennis Aye"
+      },
+      {
+        "row": 11,
+        "column": 2,
+        "score": 0.7234843809347478,
+        "source": "Randy Lanier",
+        "back_translated": "Randy Leiner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

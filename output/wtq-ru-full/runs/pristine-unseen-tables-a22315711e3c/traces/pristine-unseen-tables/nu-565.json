@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-565",
+  "source_context": "csv/204-csv/149.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-565.tsv",
+  "source_question": "what's the number of deaths in prisons & camps that happened in 1941/42?",
+  "translated_question": "сколько Смертей в тюрьмах и Лагерей произошло в 1941/42 годах?",
+  "source_target_value": "220,000",
+  "translated_target_value": "220,000",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "deaths in prisons",
+      "normalized_text": "death in prison",
+      "start": 21,
+      "end": 38,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Deaths In Prisons",
+      "match_type": "lemma",
+      "candidate_key": "4fea85159c694b83",
+      "coordinate": {
+        "row": 2,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "camps",
+      "normalized_text": "camp",
+      "start": 41,
+      "end": 46,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Camps",
+      "match_type": "lemma",
+      "candidate_key": "40b2279bc6bc0c7a",
+      "coordinate": {
+        "row": 2,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-565",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what's the number of deaths in prisons & camps that happened in 1941/42?",
+    "translated_question": "сколько Смертей в тюрьмах и Лагерей произошло в 1941/42 годах?",
+    "back_translated_question": "how many deaths in prisons and camps occurred in 1941/42?",
+    "question_cosine_similarity": 0.9804659690242241,
+    "question_bert_precision": 0.6667898297309875,
+    "question_bert_recall": 0.8185218572616577,
+    "question_bert_f1": 0.7407162189483643,
+    "back_table_groups_compared": 64,
+    "back_table_min_similarity": 0.9180892482816199,
+    "back_table_mean_similarity": 0.9967806369001302,
+    "back_table_bert_groups_compared": 64,
+    "back_table_bert_min_f1": 0.39219042658805847,
+    "back_table_bert_mean_f1": 0.9735709489323199,
+    "back_table_bert_min_precision": 0.37105903029441833,
+    "back_table_bert_mean_precision": 0.97342997090891,
+    "back_table_bert_min_recall": 0.4118674397468567,
+    "back_table_bert_mean_recall": 0.973666095174849,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.9180892482816199,
+        "source": "Murdered",
+        "back_translated": "Killed"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.9507760586024755,
+        "source": "Description Losses",
+        "back_translated": "Description of losses"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.956919829657794,
+        "source": "Murdered in Eastern Regions",
+        "back_translated": "Killed in eastern regions"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.9755199981216959,
+        "source": "Deaths other countries",
+        "back_translated": "Deaths in other countries"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.9926556269447484,
+        "source": "Deaths Outside of Prisons & Camps",
+        "back_translated": "Deaths outside prisons & Camps"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "historical war casualties"
+  },
+  "domain": "historical war casualties"
+}

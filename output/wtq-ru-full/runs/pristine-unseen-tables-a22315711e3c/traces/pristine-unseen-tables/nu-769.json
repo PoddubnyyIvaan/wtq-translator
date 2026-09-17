@@ -1,0 +1,158 @@
+{
+  "question_id": "nu-769",
+  "source_context": "csv/203-csv/495.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-769.tsv",
+  "source_question": "how many associations joined in the year 2002?",
+  "translated_question": "сколько ассоциаций вступили в году 2002?",
+  "source_target_value": "9",
+  "translated_target_value": "9",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "associations",
+      "normalized_text": "association",
+      "start": 9,
+      "end": 21,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Association",
+      "match_type": "lemma",
+      "candidate_key": "b7e744a4dbd8ab67",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "joined",
+      "normalized_text": "join",
+      "start": 22,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Joining",
+      "match_type": "lemma",
+      "candidate_key": "661d0e3461ed7cf9",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 36,
+      "end": 40,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "year",
+      "match_type": "lemma",
+      "candidate_key": "f2a5a221549b2a87",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-769",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many associations joined in the year 2002?",
+    "translated_question": "сколько ассоциаций вступили в году 2002?",
+    "back_translated_question": "how many associations joined in year 2002?",
+    "question_cosine_similarity": 0.9983369014975711,
+    "question_bert_precision": 0.9290227293968201,
+    "question_bert_recall": 0.9592394232749939,
+    "question_bert_f1": 0.9441313147544861,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.5977416065930777,
+    "back_table_mean_similarity": 0.959351045518065,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.35078543424606323,
+    "back_table_bert_mean_f1": 0.9049808561801911,
+    "back_table_bert_min_precision": 0.3193930387496948,
+    "back_table_bert_mean_precision": 0.9054871114817533,
+    "back_table_bert_min_recall": 0.3811221420764923,
+    "back_table_bert_mean_recall": 0.9042693631215529,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.5977416065930777,
+        "source": "Campeonato da 1ª Divisão do Futebol",
+        "back_translated": "Football First League Championship"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.7143502769660328,
+        "source": "Korea DPR",
+        "back_translated": "North Korea"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.7143502769660328,
+        "source": "Korea DPR",
+        "back_translated": "North Korea"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.7143502769660328,
+        "source": "Korea DPR",
+        "back_translated": "North Korea"
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.7678374865233286,
+        "source": "Intercity Football League",
+        "back_translated": "intersity football league"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

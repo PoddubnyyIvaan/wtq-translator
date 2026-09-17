@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-950",
+  "source_context": "csv/204-csv/138.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-950.tsv",
+  "source_question": "which contestants are below age 18?",
+  "translated_question": "какие конкурсантки младше возраста 18?",
+  "source_target_value": "Isabelle Raisa|Nataša Marić|Teodora-Mădălina Andreica|Yemisi Rieger|Melisa Popanicić|Gina Zeneb Adamu|Antonia Maria Hausmair",
+  "translated_target_value": "Изабелла Райза|Наташа Марич|Теодора-Мадалина Андреика|Йемиси Риеger|Мелиса Попаничић|Джина Зенеб Адаму|Антония Мария Хаусмайр",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "contestants",
+      "normalized_text": "contestant",
+      "start": 6,
+      "end": 17,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Contestant",
+      "match_type": "lemma",
+      "candidate_key": "08fc30dc37315a5b",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "age",
+      "normalized_text": "age",
+      "start": 28,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Age",
+      "match_type": "lemma",
+      "candidate_key": "8d7614feae2b8ba6",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-950",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which contestants are below age 18?",
+    "translated_question": "какие конкурсантки младше возраста 18?",
+    "back_translated_question": "which contestants are younger than age 18?",
+    "question_cosine_similarity": 0.9816405682613019,
+    "question_bert_precision": 0.9146585464477539,
+    "question_bert_recall": 0.8655785322189331,
+    "question_bert_f1": 0.8900524973869324,
+    "back_table_groups_compared": 85,
+    "back_table_min_similarity": 0.4955947624692719,
+    "back_table_mean_similarity": 0.9501918940403822,
+    "back_table_bert_groups_compared": 85,
+    "back_table_bert_min_f1": 0.2950836420059204,
+    "back_table_bert_mean_f1": 0.7860829465529497,
+    "back_table_bert_min_precision": 0.3493714928627014,
+    "back_table_bert_mean_precision": 0.7824302760993733,
+    "back_table_bert_min_recall": 0.24155618250370026,
+    "back_table_bert_mean_recall": 0.7895631167818519,
+    "back_table_similarity_examples": [
+      {
+        "row": 15,
+        "column": 3,
+        "score": 0.4955947624692719,
+        "source": "Siegendorf",
+        "back_translated": "Zigendorf"
+      },
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.5274505029037283,
+        "source": "Christine Riener",
+        "back_translated": "Christina Rainer"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.6989073874400774,
+        "source": "Isabelle Raisa",
+        "back_translated": "Isabella Rayza"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7522774550070453,
+        "source": "Home City",
+        "back_translated": "Residence city"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.7589121280546491,
+        "source": "Liefering (originally from Serbia)",
+        "back_translated": "Lifering (originally from Serbia)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "beauty pageant"
+  },
+  "domain": "beauty pageant"
+}

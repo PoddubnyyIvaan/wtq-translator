@@ -1,0 +1,164 @@
+{
+  "question_id": "nu-454",
+  "source_context": "csv/203-csv/315.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-454.tsv",
+  "source_question": "did robert lewin write more episodes than arthur dales?",
+  "translated_question": "написал ли Роберт Левин сценарий больше, чем Артур Дейлз?",
+  "source_target_value": "Yes",
+  "translated_target_value": "Да",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "robert lewin",
+      "normalized_text": "robert lewin",
+      "start": 4,
+      "end": 16,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 10,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Robert Lewin",
+      "match_type": "lemma",
+      "candidate_key": "6e0d35ca20090a22",
+      "coordinate": {
+        "row": 9,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "write",
+      "normalized_text": "write",
+      "start": 17,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Written",
+      "match_type": "lemma",
+      "candidate_key": "b336ad61a254e83c",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "arthur dales",
+      "normalized_text": "arthur dales",
+      "start": 42,
+      "end": 54,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Arthur Dales",
+      "match_type": "lemma",
+      "candidate_key": "c089b16b399e1ac3",
+      "coordinate": {
+        "row": 6,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-454",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "did robert lewin write more episodes than arthur dales?",
+    "translated_question": "написал ли Роберт Левин сценарий больше, чем Артур Дейлз?",
+    "back_translated_question": "did Robert Levin write more Arthur Dale?",
+    "question_cosine_similarity": 0.7184823869333881,
+    "question_bert_precision": 0.30946093797683716,
+    "question_bert_recall": 0.49378877878189087,
+    "question_bert_f1": 0.39853936433792114,
+    "back_table_groups_compared": 203,
+    "back_table_min_similarity": 0.5711310582187346,
+    "back_table_mean_similarity": 0.9638648849367494,
+    "back_table_bert_groups_compared": 203,
+    "back_table_bert_min_f1": -0.08062397688627243,
+    "back_table_bert_mean_f1": 0.9148375043838188,
+    "back_table_bert_min_precision": -0.13578830659389496,
+    "back_table_bert_mean_precision": 0.9140530161265963,
+    "back_table_bert_min_recall": -0.032369375228881836,
+    "back_table_bert_mean_recall": 0.915529094260241,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.5711310582187346,
+        "source": "Robert Lewin",
+        "back_translated": "Robert Levin"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.5711310582187346,
+        "source": "Robert Lewin",
+        "back_translated": "Robert Levin"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      },
+      {
+        "row": 2,
+        "column": 4,
+        "score": 0.6312269944267633,
+        "source": "David Karp",
+        "back_translated": "David Carp"
+      },
+      {
+        "row": 27,
+        "column": 2,
+        "score": 0.6554383524584588,
+        "source": "One Thousand Fine",
+        "back_translated": "A Thousand Beautiful"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "television series"
+  },
+  "domain": "television series"
+}

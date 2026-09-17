@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-554",
+  "source_context": "csv/203-csv/389.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-554.tsv",
+  "source_question": "what is the top price for a class 1 toll rate?",
+  "translated_question": "какова максимальная цена для тарифа на проезд для Класса 1?",
+  "source_target_value": "£3.00",
+  "translated_target_value": "£3,00",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "class 1",
+      "normalized_text": "class 1",
+      "start": 28,
+      "end": 35,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Class 1",
+      "match_type": "lemma",
+      "candidate_key": "994d5b212e2e20b4",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-554",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the top price for a class 1 toll rate?",
+    "translated_question": "какова максимальная цена для тарифа на проезд для Класса 1?",
+    "back_translated_question": "what is the maximum price for the toll rate for class 1?",
+    "question_cosine_similarity": 0.9623494161674208,
+    "question_bert_precision": 0.8416019082069397,
+    "question_bert_recall": 0.8234289288520813,
+    "question_bert_f1": 0.8327363133430481,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.7829113387544572,
+    "back_table_mean_similarity": 0.985007022917036,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.38792884349823,
+    "back_table_bert_mean_f1": 0.8773412823677063,
+    "back_table_bert_min_precision": 0.4199264645576477,
+    "back_table_bert_mean_precision": 0.8798753236730893,
+    "back_table_bert_min_recall": 0.35507965087890625,
+    "back_table_bert_mean_recall": 0.8746655071775119,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.7829113387544572,
+        "source": "Class 5 (e.g. HGV)",
+        "back_translated": "Class 5 (for example, heavy truck)"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.8492268277946696,
+        "source": "Date introduced",
+        "back_translated": "date of introduction"
+      },
+      {
+        "row": 8,
+        "column": 0,
+        "score": 0.9343558405214701,
+        "source": "1 March 2012",
+        "back_translated": "March 1, 2012."
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.9485325513292013,
+        "source": "23 July 2004",
+        "back_translated": "July 23, 2004."
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.9495395343820822,
+        "source": "14 June 2005",
+        "back_translated": "June 14, 2005."
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "vehicle taxation rates"
+  },
+  "domain": "vehicle taxation rates"
+}

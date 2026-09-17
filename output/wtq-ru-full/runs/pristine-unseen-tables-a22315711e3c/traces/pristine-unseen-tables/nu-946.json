@@ -1,0 +1,158 @@
+{
+  "question_id": "nu-946",
+  "source_context": "csv/203-csv/483.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-946.tsv",
+  "source_question": "what was the number of apps for spartak nizhy novgorod?",
+  "translated_question": "сколько было игр у спартака нижний новгород в Новгороде?",
+  "source_target_value": "36",
+  "translated_target_value": "36",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "apps",
+      "normalized_text": "app",
+      "start": 23,
+      "end": 27,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Apps",
+      "match_type": "lemma",
+      "candidate_key": "7b1d1e901431a01e",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "spartak",
+      "normalized_text": "spartak",
+      "start": 32,
+      "end": 39,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Spartak",
+      "match_type": "lemma",
+      "candidate_key": "533864bf5843e3bc",
+      "coordinate": {
+        "row": 2,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "novgorod",
+      "normalized_text": "novgorod",
+      "start": 46,
+      "end": 54,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Novgorod",
+      "match_type": "lemma",
+      "candidate_key": "b9f13105d08f4e19",
+      "coordinate": {
+        "row": 2,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-946",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the number of apps for spartak nizhy novgorod?",
+    "translated_question": "сколько было игр у спартака нижний новгород в Новгороде?",
+    "back_translated_question": "how many games did Spartak Nizhny Novgorod play in Novgorod?",
+    "question_cosine_similarity": 0.8270730233040408,
+    "question_bert_precision": 0.10688060522079468,
+    "question_bert_recall": 0.1566333770751953,
+    "question_bert_f1": 0.13274170458316803,
+    "back_table_groups_compared": 78,
+    "back_table_min_similarity": 0.509869170335626,
+    "back_table_mean_similarity": 0.9769820568965656,
+    "back_table_bert_groups_compared": 78,
+    "back_table_bert_min_f1": 0.3965589106082916,
+    "back_table_bert_mean_f1": 0.9376330750110822,
+    "back_table_bert_min_precision": 0.4234525263309479,
+    "back_table_bert_mean_precision": 0.938649187485377,
+    "back_table_bert_min_recall": 0.36855295300483704,
+    "back_table_bert_mean_recall": 0.9364584646163843,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.509869170335626,
+        "source": "Apps",
+        "back_translated": "Games"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.8481872029156383,
+        "source": "Dnipro Dnipropetrovsk",
+        "back_translated": "dynamo dnipropetrovsk"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.8481872029156383,
+        "source": "Dnipro Dnipropetrovsk",
+        "back_translated": "dynamo dnipropetrovsk"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.8481872029156383,
+        "source": "Dnipro Dnipropetrovsk",
+        "back_translated": "dynamo dnipropetrovsk"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

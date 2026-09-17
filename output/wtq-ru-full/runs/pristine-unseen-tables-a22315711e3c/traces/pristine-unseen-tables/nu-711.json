@@ -1,0 +1,114 @@
+{
+  "question_id": "nu-711",
+  "source_context": "csv/202-csv/86.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-711.tsv",
+  "source_question": "how many of the five largest flood on the river trent occurred after 1900?",
+  "translated_question": "сколько из пяти наибольших наводнений на реке уровень на мосту трент\\nм произошло после 1900 года?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "trent",
+      "normalized_text": "trent",
+      "start": 48,
+      "end": 53,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Trent",
+      "match_type": "lemma",
+      "candidate_key": "d3f921e2226807be",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-711",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many of the five largest flood on the river trent occurred after 1900?",
+    "translated_question": "сколько из пяти наибольших наводнений на реке уровень на мосту трент\\nм произошло после 1900 года?",
+    "back_translated_question": "how many of the five largest floods on the river trent at the bridge level occurred after 1900?",
+    "question_cosine_similarity": 0.969242004848584,
+    "question_bert_precision": 0.9403790235519409,
+    "question_bert_recall": 0.8484460115432739,
+    "question_bert_f1": 0.8937614560127258,
+    "back_table_groups_compared": 42,
+    "back_table_min_similarity": 0.8483069519112653,
+    "back_table_mean_similarity": 0.9892264177360917,
+    "back_table_bert_groups_compared": 42,
+    "back_table_bert_min_f1": 0.3425435423851013,
+    "back_table_bert_mean_f1": 0.9555489250591823,
+    "back_table_bert_min_precision": 0.4248921573162079,
+    "back_table_bert_mean_precision": 0.957700422122365,
+    "back_table_bert_min_recall": 0.26445841789245605,
+    "back_table_bert_mean_recall": 0.9538278146868661,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.8483069519112653,
+        "source": "Peak Flow\\ncfs",
+        "back_translated": "peak flow\\ncubic feet/from"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.8724941952371652,
+        "source": "Normal / Avg flow",
+        "back_translated": "Normal / average flow"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.906512547210623,
+        "source": "November 2000",
+        "back_translated": "November 18, 2000"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.9564158509426406,
+        "source": "Level at Trent Bridge\\nm",
+        "back_translated": "Trent Bridge level\\nm"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.9637799996141562,
+        "source": "Level at Trent Bridge\\nft",
+        "back_translated": "Trent Bridge level\\nft"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "hydrology"
+  },
+  "domain": "hydrology"
+}

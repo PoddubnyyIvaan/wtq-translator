@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-627",
+  "source_context": "csv/204-csv/943.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-627.tsv",
+  "source_question": "are there more male or female senators?",
+  "translated_question": "кого больше — мужчин или женщин среди сенаторов?",
+  "source_target_value": "male",
+  "translated_target_value": "мужской",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "senators",
+      "normalized_text": "senator",
+      "start": 30,
+      "end": 38,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 34,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Senator",
+      "match_type": "lemma",
+      "candidate_key": "12c0fe48d3ce75c8",
+      "coordinate": {
+        "row": 34,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-627",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "are there more male or female senators?",
+    "translated_question": "кого больше — мужчин или женщин среди сенаторов?",
+    "back_translated_question": "Who is more numerous — men or women among senators?",
+    "question_cosine_similarity": 0.9151205436940621,
+    "question_bert_precision": 0.5275949835777283,
+    "question_bert_recall": 0.4374682605266571,
+    "question_bert_f1": 0.4823894798755646,
+    "back_table_groups_compared": 252,
+    "back_table_min_similarity": 0.5236479711069931,
+    "back_table_mean_similarity": 0.9731640495370156,
+    "back_table_bert_groups_compared": 252,
+    "back_table_bert_min_f1": 0.18644928932189941,
+    "back_table_bert_mean_f1": 0.9325726474561389,
+    "back_table_bert_min_precision": 0.10989901423454285,
+    "back_table_bert_mean_precision": 0.9346006285576594,
+    "back_table_bert_min_recall": 0.14971531927585602,
+    "back_table_bert_mean_recall": 0.9307443022373176,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.5236479711069931,
+        "source": "Running",
+        "back_translated": "Candidate"
+      },
+      {
+        "row": 34,
+        "column": 3,
+        "score": 0.6902331628535175,
+        "source": "Electoral\\nhistory",
+        "back_translated": "election history"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.7511893356537694,
+        "source": "2018 intent",
+        "back_translated": "intent to run in 2018"
+      },
+      {
+        "row": 33,
+        "column": 5,
+        "score": 0.7511893356537694,
+        "source": "2018 intent",
+        "back_translated": "intent to run in 2018"
+      },
+      {
+        "row": 34,
+        "column": 5,
+        "score": 0.7511893356537694,
+        "source": "2018 intent",
+        "back_translated": "intent to run in 2018"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "U.S. Senate elections and incumbents"
+  },
+  "domain": "U.S. Senate elections and incumbents"
+}

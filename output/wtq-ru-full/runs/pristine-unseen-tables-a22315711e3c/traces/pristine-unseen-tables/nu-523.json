@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-523",
+  "source_context": "csv/203-csv/604.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-523.tsv",
+  "source_question": "how many total defunct callsigns are there?",
+  "translated_question": "сколько всего ликвидированных позывных существует?",
+  "source_target_value": "11",
+  "translated_target_value": "11",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "callsigns",
+      "normalized_text": "callsign",
+      "start": 23,
+      "end": 32,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Callsign",
+      "match_type": "lemma",
+      "candidate_key": "f7a7bd51021de8d3",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-523",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many total defunct callsigns are there?",
+    "translated_question": "сколько всего ликвидированных позывных существует?",
+    "back_translated_question": "how many total callsigns have been liquidated?",
+    "question_cosine_similarity": 0.8889432047092054,
+    "question_bert_precision": 0.69394850730896,
+    "question_bert_recall": 0.6908443570137024,
+    "question_bert_f1": 0.6928613781929016,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 0.45993087049054465,
+    "back_table_mean_similarity": 0.9530104086187047,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 0.3483388423919678,
+    "back_table_bert_mean_f1": 0.9006987160870007,
+    "back_table_bert_min_precision": 0.3150551915168762,
+    "back_table_bert_mean_precision": 0.903028938741911,
+    "back_table_bert_min_recall": 0.3506196439266205,
+    "back_table_bert_mean_recall": 0.8982005239952178,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.45993087049054465,
+        "source": "Purpose",
+        "back_translated": "city goal"
+      },
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.5214503476754508,
+        "source": "silent",
+        "back_translated": "no signal"
+      },
+      {
+        "row": 5,
+        "column": 5,
+        "score": 0.5214503476754508,
+        "source": "silent",
+        "back_translated": "no signal"
+      },
+      {
+        "row": 6,
+        "column": 5,
+        "score": 0.5214503476754508,
+        "source": "silent",
+        "back_translated": "no signal"
+      },
+      {
+        "row": 0,
+        "column": 6,
+        "score": 0.5630983940266833,
+        "source": "Community",
+        "back_translated": "Public"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "radio stations"
+  },
+  "domain": "radio stations"
+}

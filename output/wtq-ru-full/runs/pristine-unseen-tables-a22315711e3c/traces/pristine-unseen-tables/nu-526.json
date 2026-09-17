@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-526",
+  "source_context": "csv/203-csv/624.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-526.tsv",
+  "source_question": "how many games were held before 2005/06?",
+  "translated_question": "сколько игр было проведено до 2005/06?",
+  "source_target_value": "71",
+  "translated_target_value": "71",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "games",
+      "normalized_text": "game",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Games",
+      "match_type": "lemma",
+      "candidate_key": "b4afeeabb51bfe63",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-526",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many games were held before 2005/06?",
+    "translated_question": "сколько игр было проведено до 2005/06?",
+    "back_translated_question": "how many games were played before 2005/06?",
+    "question_cosine_similarity": 0.950998317010823,
+    "question_bert_precision": 0.956367015838623,
+    "question_bert_recall": 0.9563730359077454,
+    "question_bert_f1": 0.9564361572265625,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.466804382878959,
+    "back_table_mean_similarity": 0.9625635595908737,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.2589567303657532,
+    "back_table_bert_mean_f1": 0.9191460450490315,
+    "back_table_bert_min_precision": 0.37674593925476074,
+    "back_table_bert_mean_precision": 0.9327607780694962,
+    "back_table_bert_min_recall": 0.1517208367586136,
+    "back_table_bert_mean_recall": 0.9067628815770149,
+    "back_table_similarity_examples": [
+      {
+        "row": 10,
+        "column": 2,
+        "score": 0.466804382878959,
+        "source": "Totaal",
+        "back_translated": "Total"
+      },
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.5985586335038647,
+        "source": "Soproni Liga",
+        "back_translated": "Sproing League"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.7687084388104604,
+        "source": "RAEC Mons",
+        "back_translated": "R.A.E.C. Mons"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.7687084388104604,
+        "source": "RAEC Mons",
+        "back_translated": "R.A.E.C. Mons"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "football statistics"
+  },
+  "domain": "football statistics"
+}

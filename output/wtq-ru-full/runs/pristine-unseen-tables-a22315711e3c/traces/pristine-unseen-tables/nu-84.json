@@ -1,0 +1,136 @@
+{
+  "question_id": "nu-84",
+  "source_context": "csv/204-csv/440.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-84.tsv",
+  "source_question": "what is the next team listed after widnes vikings?",
+  "translated_question": "какая команда указана следующей после Виднес Викингс?",
+  "source_target_value": "Wigan Warriors",
+  "translated_target_value": "Виган Варриорз",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "team",
+      "normalized_text": "team",
+      "start": 17,
+      "end": 21,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "widnes vikings",
+      "normalized_text": "widnes vikings",
+      "start": 35,
+      "end": 49,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 12,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Widnes Vikings",
+      "match_type": "lemma",
+      "candidate_key": "ad8cd6ab1637ded3",
+      "coordinate": {
+        "row": 12,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-84",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the next team listed after widnes vikings?",
+    "translated_question": "какая команда указана следующей после Виднес Викингс?",
+    "back_translated_question": "which team is listed immediately after Widnes Vikings?",
+    "question_cosine_similarity": 0.9328882191662307,
+    "question_bert_precision": 0.5077816843986511,
+    "question_bert_recall": 0.5449852347373962,
+    "question_bert_f1": 0.5269488096237183,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.6666937196368851,
+    "back_table_mean_similarity": 0.9809204549191788,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.5597819685935974,
+    "back_table_bert_mean_f1": 0.9484931399424871,
+    "back_table_bert_min_precision": 0.4781915247440338,
+    "back_table_bert_mean_precision": 0.9517385020852089,
+    "back_table_bert_min_recall": 0.36567699909210205,
+    "back_table_bert_mean_recall": 0.9461076984802882,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.6666937196368851,
+        "source": "Provident Stadium",
+        "back_translated": "Providence Stadium"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.8106994347952196,
+        "source": "Headingley Carnegie Stadium",
+        "back_translated": "Huddersfield Carnegie Stadium"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.8288207004925543,
+        "source": "Stade Gilbert Brutus",
+        "back_translated": "Gilbert Brutus Stadium"
+      },
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.8557242191769476,
+        "source": "Halliwell Jones Stadium",
+        "back_translated": "Hollinwell Jones Stadium"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.9148821696446159,
+        "source": "St Helens, Merseyside",
+        "back_translated": "St. Helens R.F.C., Merseyside"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

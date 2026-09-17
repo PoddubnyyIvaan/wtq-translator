@@ -1,0 +1,103 @@
+{
+  "question_id": "nu-800",
+  "source_context": "csv/203-csv/511.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-800.tsv",
+  "source_question": "who was the only competitor from south korea?",
+  "translated_question": "кто был единственным участником из Южной Кореи?",
+  "source_target_value": "K. J. Choi",
+  "translated_target_value": "К. Дж. Чой",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "south korea",
+      "normalized_text": "south korea",
+      "start": 33,
+      "end": 44,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 2
+        }
+      ],
+      "table_source_text": "South Korea",
+      "match_type": "lemma",
+      "candidate_key": "377f50176918b707",
+      "coordinate": {
+        "row": 6,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-800",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who was the only competitor from south korea?",
+    "translated_question": "кто был единственным участником из Южной Кореи?",
+    "back_translated_question": "who was the only participant from South Korea?",
+    "question_cosine_similarity": 0.9297718357423628,
+    "question_bert_precision": 0.7171493768692017,
+    "question_bert_recall": 0.7844730615615845,
+    "question_bert_f1": 0.7507331967353821,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.7471585359265884,
+    "back_table_mean_similarity": 0.989751960269171,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.17239251732826233,
+    "back_table_bert_mean_f1": 0.9633191059936177,
+    "back_table_bert_min_precision": 0.17107947170734406,
+    "back_table_bert_mean_precision": 0.9643400471318851,
+    "back_table_bert_min_recall": 0.17119400203227997,
+    "back_table_bert_mean_recall": 0.9622203667055477,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7471585359265884,
+        "source": "Place",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.8233127982466395,
+        "source": "Olin Browne",
+        "back_translated": "Olin Brown"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.8878372947503481,
+        "source": "To par",
+        "back_translated": "on par"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.9780491858808268,
+        "source": "K. J. Choi",
+        "back_translated": "K. J.. choi"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "golf tournament results"
+  },
+  "domain": "golf tournament results"
+}

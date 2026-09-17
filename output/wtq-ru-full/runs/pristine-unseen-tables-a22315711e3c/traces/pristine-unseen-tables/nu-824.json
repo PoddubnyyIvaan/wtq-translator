@@ -1,0 +1,190 @@
+{
+  "question_id": "nu-824",
+  "source_context": "csv/203-csv/840.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-824.tsv",
+  "source_question": "how many total ambassadors were there?",
+  "translated_question": "сколько всего послов чрезвычайных и полномочных было?",
+  "source_target_value": "34",
+  "translated_target_value": "34",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "ambassadors",
+      "normalized_text": "ambassador",
+      "start": 15,
+      "end": 26,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 11,
+          "column": 1
+        },
+        {
+          "row": 12,
+          "column": 1
+        },
+        {
+          "row": 13,
+          "column": 1
+        },
+        {
+          "row": 14,
+          "column": 1
+        },
+        {
+          "row": 15,
+          "column": 1
+        },
+        {
+          "row": 22,
+          "column": 1
+        },
+        {
+          "row": 23,
+          "column": 1
+        },
+        {
+          "row": 24,
+          "column": 1
+        },
+        {
+          "row": 25,
+          "column": 1
+        },
+        {
+          "row": 26,
+          "column": 1
+        },
+        {
+          "row": 27,
+          "column": 1
+        },
+        {
+          "row": 28,
+          "column": 1
+        },
+        {
+          "row": 29,
+          "column": 1
+        },
+        {
+          "row": 30,
+          "column": 1
+        },
+        {
+          "row": 31,
+          "column": 1
+        },
+        {
+          "row": 32,
+          "column": 1
+        },
+        {
+          "row": 33,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Ambassador",
+      "match_type": "lemma",
+      "candidate_key": "163955319065c289",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-824",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many total ambassadors were there?",
+    "translated_question": "сколько всего послов чрезвычайных и полномочных было?",
+    "back_translated_question": "how many ambassadors were there in total?",
+    "question_cosine_similarity": 0.9901364844495433,
+    "question_bert_precision": 0.886557400226593,
+    "question_bert_recall": 0.8173192739486694,
+    "question_bert_f1": 0.8516942858695984,
+    "back_table_groups_compared": 210,
+    "back_table_min_similarity": 0.5372279826849762,
+    "back_table_mean_similarity": 0.9606796822645739,
+    "back_table_bert_groups_compared": 210,
+    "back_table_bert_min_f1": 0.18781127035617828,
+    "back_table_bert_mean_f1": 0.7917128118021147,
+    "back_table_bert_min_precision": 0.1819760501384735,
+    "back_table_bert_mean_precision": 0.8120481571980885,
+    "back_table_bert_min_recall": -0.03570190817117691,
+    "back_table_bert_mean_recall": 0.7745317850439322,
+    "back_table_similarity_examples": [
+      {
+        "row": 18,
+        "column": 1,
+        "score": 0.5372279826849762,
+        "source": "Plenipotentiary",
+        "back_translated": "Full minister"
+      },
+      {
+        "row": 19,
+        "column": 1,
+        "score": 0.5372279826849762,
+        "source": "Plenipotentiary",
+        "back_translated": "Full minister"
+      },
+      {
+        "row": 20,
+        "column": 1,
+        "score": 0.5372279826849762,
+        "source": "Plenipotentiary",
+        "back_translated": "Full minister"
+      },
+      {
+        "row": 21,
+        "column": 1,
+        "score": 0.5372279826849762,
+        "source": "Plenipotentiary",
+        "back_translated": "Full minister"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "diplomatic relations between Russia/Soviet Union and Austria"
+  },
+  "domain": "diplomatic relations between Russia/Soviet Union and Austria"
+}

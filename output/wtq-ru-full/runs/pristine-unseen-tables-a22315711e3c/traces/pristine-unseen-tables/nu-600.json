@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-600",
+  "source_context": "csv/204-csv/203.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-600.tsv",
+  "source_question": "from which country did the last place swimmer come?",
+  "translated_question": "из какой страны пришёл пловец, занявший последнее место?",
+  "source_target_value": "Argentina",
+  "translated_target_value": "Аргентина",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-600",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "from which country did the last place swimmer come?",
+    "translated_question": "из какой страны пришёл пловец, занявший последнее место?",
+    "back_translated_question": "from which country did the swimmer who finished in last place come?",
+    "question_cosine_similarity": 0.9556191950912303,
+    "question_bert_precision": 0.8109287023544312,
+    "question_bert_recall": 0.7037838101387024,
+    "question_bert_f1": 0.7565616369247437,
+    "back_table_groups_compared": 36,
+    "back_table_min_similarity": 0.6369013406040179,
+    "back_table_mean_similarity": 0.9590857409005851,
+    "back_table_bert_groups_compared": 36,
+    "back_table_bert_min_f1": 0.09530165791511536,
+    "back_table_bert_mean_f1": 0.889636293053627,
+    "back_table_bert_min_precision": 0.09386630356311798,
+    "back_table_bert_mean_precision": 0.8898604276279608,
+    "back_table_bert_min_recall": 0.09399149566888809,
+    "back_table_bert_mean_recall": 0.8895431080212196,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.6369013406040179,
+        "source": "Colombia",
+        "back_translated": "Columbia"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.7616883563430578,
+        "source": "Isabel Rojas",
+        "back_translated": "Isabel Rodhás"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.797019956081998,
+        "source": "Edith Arraspide",
+        "back_translated": "Edith Araspide"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.8226394927710596,
+        "source": "Jenny Kurth",
+        "back_translated": "Jenny Kurt"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.8311962157982323,
+        "source": "Carolyn Adel",
+        "back_translated": "Caroline Adel"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

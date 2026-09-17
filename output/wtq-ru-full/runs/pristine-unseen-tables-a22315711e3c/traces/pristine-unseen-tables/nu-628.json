@@ -1,0 +1,298 @@
+{
+  "question_id": "nu-628",
+  "source_context": "csv/204-csv/732.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-628.tsv",
+  "source_question": "what was the first year real zaragoza won?",
+  "translated_question": "в каком году реал зарагоза выиграла впервые?",
+  "source_target_value": "1974",
+  "translated_target_value": "1974",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 19,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "real zaragoza",
+      "normalized_text": "real zaragoza",
+      "start": 24,
+      "end": 37,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 5,
+          "column": 1
+        },
+        {
+          "row": 6,
+          "column": 2
+        },
+        {
+          "row": 7,
+          "column": 1
+        },
+        {
+          "row": 8,
+          "column": 1
+        },
+        {
+          "row": 9,
+          "column": 2
+        },
+        {
+          "row": 10,
+          "column": 1
+        },
+        {
+          "row": 11,
+          "column": 2
+        },
+        {
+          "row": 12,
+          "column": 1
+        },
+        {
+          "row": 13,
+          "column": 3
+        },
+        {
+          "row": 14,
+          "column": 2
+        },
+        {
+          "row": 15,
+          "column": 1
+        },
+        {
+          "row": 16,
+          "column": 1
+        },
+        {
+          "row": 17,
+          "column": 2
+        },
+        {
+          "row": 18,
+          "column": 1
+        },
+        {
+          "row": 19,
+          "column": 2
+        },
+        {
+          "row": 20,
+          "column": 1
+        },
+        {
+          "row": 21,
+          "column": 1
+        },
+        {
+          "row": 22,
+          "column": 2
+        },
+        {
+          "row": 23,
+          "column": 1
+        },
+        {
+          "row": 24,
+          "column": 1
+        },
+        {
+          "row": 25,
+          "column": 1
+        },
+        {
+          "row": 26,
+          "column": 2
+        },
+        {
+          "row": 27,
+          "column": 2
+        },
+        {
+          "row": 28,
+          "column": 1
+        },
+        {
+          "row": 29,
+          "column": 1
+        },
+        {
+          "row": 30,
+          "column": 1
+        },
+        {
+          "row": 31,
+          "column": 1
+        },
+        {
+          "row": 32,
+          "column": 1
+        },
+        {
+          "row": 33,
+          "column": 2
+        },
+        {
+          "row": 34,
+          "column": 1
+        },
+        {
+          "row": 35,
+          "column": 1
+        },
+        {
+          "row": 36,
+          "column": 1
+        },
+        {
+          "row": 37,
+          "column": 2
+        },
+        {
+          "row": 38,
+          "column": 2
+        },
+        {
+          "row": 39,
+          "column": 2
+        },
+        {
+          "row": 40,
+          "column": 1
+        },
+        {
+          "row": 41,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Real Zaragoza",
+      "match_type": "lemma",
+      "candidate_key": "737b3af90eda5fe9",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-628",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the first year real zaragoza won?",
+    "translated_question": "в каком году реал зарагоза выиграла впервые?",
+    "back_translated_question": "in what year did Real Zaragoza win for the first time?",
+    "question_cosine_similarity": 0.9541911925909681,
+    "question_bert_precision": 0.298287034034729,
+    "question_bert_recall": 0.2771850526332855,
+    "question_bert_f1": 0.2887584865093231,
+    "back_table_groups_compared": 215,
+    "back_table_min_similarity": 0.43672300759975835,
+    "back_table_mean_similarity": 0.9821076723481954,
+    "back_table_bert_groups_compared": 215,
+    "back_table_bert_min_f1": -0.02937428466975689,
+    "back_table_bert_mean_f1": 0.9110098494260117,
+    "back_table_bert_min_precision": 0.03270009905099869,
+    "back_table_bert_mean_precision": 0.9123118724587351,
+    "back_table_bert_min_recall": -0.09008964151144028,
+    "back_table_bert_mean_recall": 0.9096021861184475,
+    "back_table_similarity_examples": [
+      {
+        "row": 16,
+        "column": 2,
+        "score": 0.43672300759975835,
+        "source": "Checoslovaquia",
+        "back_translated": "Czechoslovakia"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.5548905748215621,
+        "source": "FK Vojvodina",
+        "back_translated": "górnik zabrze"
+      },
+      {
+        "row": 26,
+        "column": 1,
+        "score": 0.6733039082194429,
+        "source": "Società Sportiva Lazio",
+        "back_translated": "sporting association livorno calcio"
+      },
+      {
+        "row": 38,
+        "column": 1,
+        "score": 0.6733039082194429,
+        "source": "Società Sportiva Lazio",
+        "back_translated": "sporting association livorno calcio"
+      },
+      {
+        "row": 10,
+        "column": 3,
+        "score": 0.7629698674736768,
+        "source": "Tisza Volán SC",
+        "back_translated": "tiszavölgyi sc"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-154",
+  "source_context": "csv/203-csv/811.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-154.tsv",
+  "source_question": "how many silver medals did macau earn?",
+  "translated_question": "сколько серебряных медалей завоевал Макао?",
+  "source_target_value": "16",
+  "translated_target_value": "16",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "silver",
+      "normalized_text": "silver",
+      "start": 9,
+      "end": 15,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Silver",
+      "match_type": "lemma",
+      "candidate_key": "37a28f2fa0b66241",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "macau",
+      "normalized_text": "macau",
+      "start": 27,
+      "end": 32,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Macau",
+      "match_type": "lemma",
+      "candidate_key": "9cf502f0ee1eaa2f",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-154",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many silver medals did macau earn?",
+    "translated_question": "сколько серебряных медалей завоевал Макао?",
+    "back_translated_question": "how many silver medals did macau win?",
+    "question_cosine_similarity": 0.9843827399646379,
+    "question_bert_precision": 0.94138503074646,
+    "question_bert_recall": 0.9413931369781494,
+    "question_bert_f1": 0.9414778351783752,
+    "back_table_groups_compared": 66,
+    "back_table_min_similarity": 0.8372091635120766,
+    "back_table_mean_similarity": 0.983638670489687,
+    "back_table_bert_groups_compared": 66,
+    "back_table_bert_min_f1": 0.28538742661476135,
+    "back_table_bert_mean_f1": 0.9485755558266784,
+    "back_table_bert_min_precision": 0.32268375158309937,
+    "back_table_bert_mean_precision": 0.9409806769002568,
+    "back_table_bert_min_recall": 0.24734823405742645,
+    "back_table_bert_mean_recall": 0.9566735424327127,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.8372091635120766,
+        "source": "Chinese Taipei (TPE)",
+        "back_translated": "Chinese Taipei (Taiwan)"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.8392182651127832,
+        "source": "China (CHN)",
+        "back_translated": "China (China)"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.8392877453212335,
+        "source": "North Korea (PRK)",
+        "back_translated": "North Korea (North Korea)"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.8613064419935809,
+        "source": "South Korea (KOR)",
+        "back_translated": "South Korea (South Korea)"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.8628077938064981,
+        "source": "Mongolia (MGL)",
+        "back_translated": "Mongolia (Mongolia)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Olympic Games medal standings"
+  },
+  "domain": "Olympic Games medal standings"
+}

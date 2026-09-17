@@ -1,0 +1,170 @@
+{
+  "question_id": "nu-694",
+  "source_context": "csv/203-csv/493.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-694.tsv",
+  "source_question": "when was the last year team penske finished first?",
+  "translated_question": "в каком году Team Penske финишировала первой?",
+  "source_target_value": "2009",
+  "translated_target_value": "2009",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 18,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "team penske",
+      "normalized_text": "team penske",
+      "start": 23,
+      "end": 34,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 5
+        },
+        {
+          "row": 1,
+          "column": 5
+        },
+        {
+          "row": 2,
+          "column": 5
+        },
+        {
+          "row": 3,
+          "column": 5
+        },
+        {
+          "row": 4,
+          "column": 5
+        },
+        {
+          "row": 5,
+          "column": 5
+        },
+        {
+          "row": 6,
+          "column": 5
+        },
+        {
+          "row": 7,
+          "column": 5
+        },
+        {
+          "row": 8,
+          "column": 5
+        },
+        {
+          "row": 9,
+          "column": 5
+        },
+        {
+          "row": 10,
+          "column": 5
+        },
+        {
+          "row": 11,
+          "column": 5
+        },
+        {
+          "row": 12,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Team Penske",
+      "match_type": "lemma",
+      "candidate_key": "68cb59a04647e7cf",
+      "coordinate": {
+        "row": 0,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "finished",
+      "normalized_text": "finish",
+      "start": 35,
+      "end": 43,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Finish",
+      "match_type": "lemma",
+      "candidate_key": "77648eb85e2eaa0a",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-694",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "when was the last year team penske finished first?",
+    "translated_question": "в каком году Team Penske финишировала первой?",
+    "back_translated_question": "In what year did Team Penske finish first?",
+    "question_cosine_similarity": 0.9641095663467261,
+    "question_bert_precision": 0.49230965971946716,
+    "question_bert_recall": 0.5310989022254944,
+    "question_bert_f1": 0.5122776031494141,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 1.0,
+    "back_table_mean_similarity": 1.0,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 1.0,
+    "back_table_bert_mean_f1": 1.0,
+    "back_table_bert_min_precision": 1.0,
+    "back_table_bert_mean_precision": 1.0,
+    "back_table_bert_min_recall": 1.0,
+    "back_table_bert_mean_recall": 1.0,
+    "back_table_similarity_examples": [],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

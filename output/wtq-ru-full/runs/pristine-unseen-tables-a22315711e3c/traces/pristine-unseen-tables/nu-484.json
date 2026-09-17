@@ -1,0 +1,234 @@
+{
+  "question_id": "nu-484",
+  "source_context": "csv/204-csv/348.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-484.tsv",
+  "source_question": "what year was the recipient not herself nor \"heaven\"?",
+  "translated_question": "в каком году получатель не был самой собой и не был \"Холмом райской лошади\"?",
+  "source_target_value": "2014",
+  "translated_target_value": "2014",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 5,
+      "end": 9,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": 12,
+          "column": 2
+        },
+        {
+          "row": 14,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "recipient",
+      "normalized_text": "recipient",
+      "start": 18,
+      "end": 27,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Recipient",
+      "match_type": "lemma",
+      "candidate_key": "d7b886e54d1b97d8",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "herself",
+      "normalized_text": "herself",
+      "start": 32,
+      "end": 39,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 9,
+          "column": 3
+        },
+        {
+          "row": 10,
+          "column": 3
+        },
+        {
+          "row": 11,
+          "column": 3
+        },
+        {
+          "row": 12,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Herself",
+      "match_type": "lemma",
+      "candidate_key": "5383747b0d5fe765",
+      "coordinate": {
+        "row": 1,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "heaven",
+      "normalized_text": "heaven",
+      "start": 45,
+      "end": 51,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Heaven",
+      "match_type": "lemma",
+      "candidate_key": "ef9172b2c700869e",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-484",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what year was the recipient not herself nor \"heaven\"?",
+    "translated_question": "в каком году получатель не был самой собой и не был \"Холмом райской лошади\"?",
+    "back_translated_question": "in what year was the recipient not herself and not \"heaven\"?",
+    "question_cosine_similarity": 0.9900908267693239,
+    "question_bert_precision": 0.8713124394416809,
+    "question_bert_recall": 0.8096609711647034,
+    "question_bert_f1": 0.8403553366661072,
+    "back_table_groups_compared": 90,
+    "back_table_min_similarity": 0.5912805776328554,
+    "back_table_mean_similarity": 0.9258370827078019,
+    "back_table_bert_groups_compared": 90,
+    "back_table_bert_min_f1": 0.10689843446016312,
+    "back_table_bert_mean_f1": 0.8051677407489882,
+    "back_table_bert_min_precision": 0.16158591210842133,
+    "back_table_bert_mean_precision": 0.8201279775963889,
+    "back_table_bert_min_recall": 0.052760422229766846,
+    "back_table_bert_mean_recall": 0.7905272222227521,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.5912805776328554,
+        "source": "Heaven",
+        "back_translated": "Hill of the Heavenly Horse"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.5912805776328554,
+        "source": "Heaven",
+        "back_translated": "Hill of the Heavenly Horse"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.6965336986049735,
+        "source": "Best New Artist",
+        "back_translated": "top 40 artist of the year"
+      },
+      {
+        "row": 6,
+        "column": 2,
+        "score": 0.6965336986049735,
+        "source": "Best New Artist",
+        "back_translated": "top 40 artist of the year"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.7174750337165161,
+        "source": "Rookie Award",
+        "back_translated": "Best New Artist Award"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music awards"
+  },
+  "domain": "music awards"
+}

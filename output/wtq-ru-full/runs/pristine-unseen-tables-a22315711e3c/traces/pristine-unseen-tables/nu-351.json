@@ -1,0 +1,160 @@
+{
+  "question_id": "nu-351",
+  "source_context": "csv/203-csv/181.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-351.tsv",
+  "source_question": "did galles-kraco racing have more/less than 10 wins in the season?",
+  "translated_question": "имел ли Galles-Kraco Racing больше/меньше 10 побед в гонке в сезоне?",
+  "source_target_value": "less",
+  "translated_target_value": "меньше",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "galles-kraco racing",
+      "normalized_text": "galleskraco racing",
+      "start": 4,
+      "end": 23,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 7
+        },
+        {
+          "row": 3,
+          "column": 7
+        },
+        {
+          "row": 8,
+          "column": 7
+        },
+        {
+          "row": 9,
+          "column": 7
+        },
+        {
+          "row": 10,
+          "column": 7
+        },
+        {
+          "row": 11,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Galles-Kraco Racing",
+      "match_type": "lemma",
+      "candidate_key": "dd9abdf79637a2fc",
+      "coordinate": {
+        "row": 1,
+        "column": 7
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "wins",
+      "normalized_text": "win",
+      "start": 47,
+      "end": 51,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 6
+        },
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Winning",
+      "match_type": "lemma",
+      "candidate_key": "1883fb303f8c3989",
+      "coordinate": {
+        "row": null,
+        "column": 6
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-351",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "did galles-kraco racing have more/less than 10 wins in the season?",
+    "translated_question": "имел ли Galles-Kraco Racing больше/меньше 10 побед в гонке в сезоне?",
+    "back_translated_question": "did Galles-Kraco Racing have more or fewer than 10 wins in the race in the season?",
+    "question_cosine_similarity": 0.991496315625525,
+    "question_bert_precision": 0.7008056640625,
+    "question_bert_recall": 0.7287142276763916,
+    "question_bert_f1": 0.7151134610176086,
+    "back_table_groups_compared": 162,
+    "back_table_min_similarity": 0.6426405485464411,
+    "back_table_mean_similarity": 0.976226688063964,
+    "back_table_bert_groups_compared": 162,
+    "back_table_bert_min_f1": 0.16585887968540192,
+    "back_table_bert_mean_f1": 0.9443291045817328,
+    "back_table_bert_min_precision": 0.15246768295764923,
+    "back_table_bert_mean_precision": 0.9452223189083147,
+    "back_table_bert_min_recall": 0.11267796903848648,
+    "back_table_bert_mean_recall": 0.9435070569592493,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.6426405485464411,
+        "source": "Meadowlands Sports Complex",
+        "back_translated": "mid-ohio sports car complex"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6509402192874287,
+        "source": "Pole position",
+        "back_translated": "Starting position"
+      },
+      {
+        "row": 12,
+        "column": 2,
+        "score": 0.6583778975060175,
+        "source": "Red Roof Inns 200",
+        "back_translated": "Red Roar Ins 200"
+      },
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.6629666196638009,
+        "source": "Budweiser/G.I.Joe's 200",
+        "back_translated": "Badger/grand prix gi-jo 200"
+      },
+      {
+        "row": 14,
+        "column": 0,
+        "score": 0.6648055693829742,
+        "source": "NC",
+        "back_translated": "NS"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

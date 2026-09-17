@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-943",
+  "source_context": "csv/203-csv/604.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-943.tsv",
+  "source_question": "what is the callsign of the only community station?",
+  "translated_question": "какой позывной у единственной общественной радиостанции?",
+  "source_target_value": "7CAE",
+  "translated_target_value": "7CAE",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "callsign",
+      "normalized_text": "callsign",
+      "start": 12,
+      "end": 20,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Callsign",
+      "match_type": "lemma",
+      "candidate_key": "f7a7bd51021de8d3",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "community",
+      "normalized_text": "community",
+      "start": 33,
+      "end": 42,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Community",
+      "match_type": "lemma",
+      "candidate_key": "5eedd2b3cffe5d6b",
+      "coordinate": {
+        "row": 0,
+        "column": 6
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-943",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the callsign of the only community station?",
+    "translated_question": "какой позывной у единственной общественной радиостанции?",
+    "back_translated_question": "what is the callsign of the only community radio station?",
+    "question_cosine_similarity": 0.9535887912757831,
+    "question_bert_precision": 0.9653496742248535,
+    "question_bert_recall": 0.9294449090957642,
+    "question_bert_f1": 0.9473550319671631,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 0.45993087049054465,
+    "back_table_mean_similarity": 0.9530104086187047,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 0.3483388423919678,
+    "back_table_bert_mean_f1": 0.9006987160870007,
+    "back_table_bert_min_precision": 0.3150551915168762,
+    "back_table_bert_mean_precision": 0.903028938741911,
+    "back_table_bert_min_recall": 0.3506196439266205,
+    "back_table_bert_mean_recall": 0.8982005239952178,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.45993087049054465,
+        "source": "Purpose",
+        "back_translated": "city goal"
+      },
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.5214503476754508,
+        "source": "silent",
+        "back_translated": "no signal"
+      },
+      {
+        "row": 5,
+        "column": 5,
+        "score": 0.5214503476754508,
+        "source": "silent",
+        "back_translated": "no signal"
+      },
+      {
+        "row": 6,
+        "column": 5,
+        "score": 0.5214503476754508,
+        "source": "silent",
+        "back_translated": "no signal"
+      },
+      {
+        "row": 0,
+        "column": 6,
+        "score": 0.5630983940266833,
+        "source": "Community",
+        "back_translated": "Public"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "radio stations"
+  },
+  "domain": "radio stations"
+}

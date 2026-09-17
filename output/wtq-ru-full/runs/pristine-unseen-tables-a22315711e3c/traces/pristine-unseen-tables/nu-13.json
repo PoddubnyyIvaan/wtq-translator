@@ -1,0 +1,186 @@
+{
+  "question_id": "nu-13",
+  "source_context": "csv/204-csv/797.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-13.tsv",
+  "source_question": "how many more ships were wrecked in lake huron than in erie?",
+  "translated_question": "на сколько больше судов потерпело крушение в Озере Гурон, чем в Эри?",
+  "source_target_value": "7",
+  "translated_target_value": "7",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "ships",
+      "normalized_text": "ship",
+      "start": 14,
+      "end": 19,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Ship",
+      "match_type": "lemma",
+      "candidate_key": "af06b33c2327d50f",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "lake huron",
+      "normalized_text": "lake huron",
+      "start": 36,
+      "end": 46,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        },
+        {
+          "row": 4,
+          "column": 2
+        },
+        {
+          "row": 6,
+          "column": 2
+        },
+        {
+          "row": 7,
+          "column": 2
+        },
+        {
+          "row": 8,
+          "column": 2
+        },
+        {
+          "row": 10,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Lake Huron",
+      "match_type": "lemma",
+      "candidate_key": "8c870af2bdd91dc4",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "erie",
+      "normalized_text": "erie",
+      "start": 55,
+      "end": 59,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 11,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Erie",
+      "match_type": "lemma",
+      "candidate_key": "946b08761ae51202",
+      "coordinate": {
+        "row": 11,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-13",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many more ships were wrecked in lake huron than in erie?",
+    "translated_question": "на сколько больше судов потерпело крушение в Озере Гурон, чем в Эри?",
+    "back_translated_question": "how many more ships were lost in lake huron than in erie?",
+    "question_cosine_similarity": 0.9696861793209877,
+    "question_bert_precision": 0.8974705338478088,
+    "question_bert_recall": 0.9462265968322754,
+    "question_bert_f1": 0.9217439889907837,
+    "back_table_groups_compared": 65,
+    "back_table_min_similarity": 0.5765880860043555,
+    "back_table_mean_similarity": 0.8793978465181521,
+    "back_table_bert_groups_compared": 65,
+    "back_table_bert_min_f1": 0.25557854771614075,
+    "back_table_bert_mean_f1": 0.8094475218882927,
+    "back_table_bert_min_precision": 0.2531057596206665,
+    "back_table_bert_mean_precision": 0.8065127556140607,
+    "back_table_bert_min_recall": 0.25579366087913513,
+    "back_table_bert_mean_recall": 0.8119501411914826,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 4,
+        "score": 0.5765880860043555,
+        "source": "all hands",
+        "back_translated": "entire crew"
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.5765880860043555,
+        "source": "all hands",
+        "back_translated": "entire crew"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.5765880860043555,
+        "source": "all hands",
+        "back_translated": "entire crew"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.5858886170228219,
+        "source": "Leafield",
+        "back_translated": "Lifield"
+      },
+      {
+        "row": 11,
+        "column": 4,
+        "score": 0.6455356119427861,
+        "source": "6 lost",
+        "back_translated": "6 deceased"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "maritime history"
+  },
+  "domain": "maritime history"
+}

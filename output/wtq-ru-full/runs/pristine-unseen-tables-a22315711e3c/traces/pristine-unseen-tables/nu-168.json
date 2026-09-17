@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-168",
+  "source_context": "csv/203-csv/772.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-168.tsv",
+  "source_question": "what year did a judge or official first start officiating the olympic oath?",
+  "translated_question": "в каком году судья или официальное название впервые начали участвовать в присяге Олимпийских игр?",
+  "source_target_value": "1972",
+  "translated_target_value": "1972",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "judge",
+      "normalized_text": "judge",
+      "start": 16,
+      "end": 21,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Judge",
+      "match_type": "lemma",
+      "candidate_key": "5fe0efd983b8fe93",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "official",
+      "normalized_text": "official",
+      "start": 25,
+      "end": 33,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Official",
+      "match_type": "lemma",
+      "candidate_key": "d5d3feff5d58b932",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-168",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what year did a judge or official first start officiating the olympic oath?",
+    "translated_question": "в каком году судья или официальное название впервые начали участвовать в присяге Олимпийских игр?",
+    "back_translated_question": "in what year did the judge or the official first begin participating in the Olympic Games oath?",
+    "question_cosine_similarity": 0.9479608636750875,
+    "question_bert_precision": 0.6688976883888245,
+    "question_bert_recall": 0.6837727427482605,
+    "question_bert_f1": 0.6768031120300293,
+    "back_table_groups_compared": 225,
+    "back_table_min_similarity": 0.3646388193929897,
+    "back_table_mean_similarity": 0.9511105907291005,
+    "back_table_bert_groups_compared": 225,
+    "back_table_bert_min_f1": -0.044477976858615875,
+    "back_table_bert_mean_f1": 0.8630434800187746,
+    "back_table_bert_min_precision": -0.05399010702967644,
+    "back_table_bert_mean_precision": 0.8638284617827998,
+    "back_table_bert_min_recall": -0.038061972707509995,
+    "back_table_bert_mean_recall": 0.862231770373053,
+    "back_table_similarity_examples": [
+      {
+        "row": 34,
+        "column": 2,
+        "score": 0.3646388193929897,
+        "source": "Hobie Billingsley",
+        "back_translated": "Hobby Billing"
+      },
+      {
+        "row": 38,
+        "column": 1,
+        "score": 0.3991513239486699,
+        "source": "Zoi Dimoschaki",
+        "back_translated": "Jiang Yinyin"
+      },
+      {
+        "row": 36,
+        "column": 1,
+        "score": 0.48684117501239327,
+        "source": "Rechelle Hawkes",
+        "back_translated": "Rechell Hocks"
+      },
+      {
+        "row": 41,
+        "column": 2,
+        "score": 0.5237200441981259,
+        "source": "Michel Verrault",
+        "back_translated": "Michelle Véro"
+      },
+      {
+        "row": 42,
+        "column": 2,
+        "score": 0.5633200694730681,
+        "source": "Mik Basi",
+        "back_translated": "Mike Basie"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Olympic Games"
+  },
+  "domain": "Olympic Games"
+}

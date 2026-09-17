@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-175",
+  "source_context": "csv/203-csv/852.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-175.tsv",
+  "source_question": "what is the difference in points scored between norway and sweden?",
+  "translated_question": "в чем разница в очках, набранных между Норвегией и Швецией?",
+  "source_target_value": "6",
+  "translated_target_value": "6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "norway",
+      "normalized_text": "norway",
+      "start": 48,
+      "end": 54,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Norway",
+      "match_type": "lemma",
+      "candidate_key": "bf88094e0ec5d904",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "sweden",
+      "normalized_text": "sweden",
+      "start": 59,
+      "end": 65,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Sweden",
+      "match_type": "lemma",
+      "candidate_key": "5e3c4cf67bde7e89",
+      "coordinate": {
+        "row": 5,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-175",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the difference in points scored between norway and sweden?",
+    "translated_question": "в чем разница в очках, набранных между Норвегией и Швецией?",
+    "back_translated_question": "what is the difference in points scored between norway and sweden?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0000003576278687,
+    "question_bert_recall": 1.0000003576278687,
+    "question_bert_f1": 1.0000003576278687,
+    "back_table_groups_compared": 330,
+    "back_table_min_similarity": 0.5823616800704163,
+    "back_table_mean_similarity": 0.9817981339533826,
+    "back_table_bert_groups_compared": 330,
+    "back_table_bert_min_f1": 0.25819915533065796,
+    "back_table_bert_mean_f1": 0.9627198306900082,
+    "back_table_bert_min_precision": 0.2795639634132385,
+    "back_table_bert_mean_precision": 0.9606096563014117,
+    "back_table_bert_min_recall": 0.23508936166763306,
+    "back_table_bert_mean_recall": 0.9648946324984232,
+    "back_table_similarity_examples": [
+      {
+        "row": 16,
+        "column": 1,
+        "score": 0.5823616800704163,
+        "source": "Cyril Mackworth-Praed",
+        "back_translated": "Cyrus McWorter-Pred"
+      },
+      {
+        "row": 26,
+        "column": 1,
+        "score": 0.597861410637227,
+        "source": "Gusztáv Szomjas",
+        "back_translated": "Gustav Somjász"
+      },
+      {
+        "row": 13,
+        "column": 1,
+        "score": 0.6196101526706553,
+        "source": "Raymond Coulter",
+        "back_translated": "Raymond Culler"
+      },
+      {
+        "row": 18,
+        "column": 1,
+        "score": 0.6500059459185472,
+        "source": "John Faunthorpe",
+        "back_translated": "John Footorpe"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.6536509175560636,
+        "source": "Walter Stokes",
+        "back_translated": "Walter Stocks"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

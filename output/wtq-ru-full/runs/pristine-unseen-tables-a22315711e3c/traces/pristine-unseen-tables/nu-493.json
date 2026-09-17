@@ -1,0 +1,166 @@
+{
+  "question_id": "nu-493",
+  "source_context": "csv/203-csv/779.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-493.tsv",
+  "source_question": "what race was run previous to the super combined in 2009?",
+  "translated_question": "какая гонка проводилась непосредственно перед Супер Комбинированной в 2009 году?",
+  "source_target_value": "Giant slalom",
+  "translated_target_value": "Гигантский слалом",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "race",
+      "normalized_text": "race",
+      "start": 5,
+      "end": 9,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Race",
+      "match_type": "lemma",
+      "candidate_key": "e4af25f9f4fb820f",
+      "coordinate": {
+        "row": 8,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "super",
+      "normalized_text": "super",
+      "start": 34,
+      "end": 39,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        },
+        {
+          "row": 10,
+          "column": 3
+        },
+        {
+          "row": 11,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Super",
+      "match_type": "lemma",
+      "candidate_key": "a91e4a29c235ec15",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "combined",
+      "normalized_text": "combine",
+      "start": 40,
+      "end": 48,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Combined",
+      "match_type": "lemma",
+      "candidate_key": "7881f241f4283ce7",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-493",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what race was run previous to the super combined in 2009?",
+    "translated_question": "какая гонка проводилась непосредственно перед Супер Комбинированной в 2009 году?",
+    "back_translated_question": "what race was held immediately before the Super Combined in 2009?",
+    "question_cosine_similarity": 0.9549987136255467,
+    "question_bert_precision": 0.7766256928443909,
+    "question_bert_recall": 0.7782347798347473,
+    "question_bert_f1": 0.7777671813964844,
+    "back_table_groups_compared": 152,
+    "back_table_min_similarity": 0.5370093131138749,
+    "back_table_mean_similarity": 0.9743532113612532,
+    "back_table_bert_groups_compared": 152,
+    "back_table_bert_min_f1": -0.0021093576215207577,
+    "back_table_bert_mean_f1": 0.9279996734510764,
+    "back_table_bert_min_precision": -0.16491582989692688,
+    "back_table_bert_mean_precision": 0.9298196997689573,
+    "back_table_bert_min_recall": 0.19498106837272644,
+    "back_table_bert_mean_recall": 0.9262852064873043,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 14,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 15,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6485644783784463,
+        "source": "Giant\\nSlalom",
+        "back_translated": "giant slalom"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-91",
+  "source_context": "csv/204-csv/458.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-91.tsv",
+  "source_question": "which country has the larger number of circuits?",
+  "translated_question": "какая страна имеет большее количество колец?",
+  "source_target_value": "USA",
+  "translated_target_value": "США",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "circuits",
+      "normalized_text": "circuit",
+      "start": 39,
+      "end": 47,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Circuit",
+      "match_type": "lemma",
+      "candidate_key": "bdd0fedc2ed0226a",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-91",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which country has the larger number of circuits?",
+    "translated_question": "какая страна имеет большее количество колец?",
+    "back_translated_question": "which country has more circuits?",
+    "question_cosine_similarity": 0.9697205059803604,
+    "question_bert_precision": 0.6258428692817688,
+    "question_bert_recall": 0.800307035446167,
+    "question_bert_f1": 0.7103912830352783,
+    "back_table_groups_compared": 77,
+    "back_table_min_similarity": 0.6152196583684665,
+    "back_table_mean_similarity": 0.9646507941642637,
+    "back_table_bert_groups_compared": 77,
+    "back_table_bert_min_f1": 0.17280299961566925,
+    "back_table_bert_mean_f1": 0.9302231532025647,
+    "back_table_bert_min_precision": 0.13644567131996155,
+    "back_table_bert_mean_precision": 0.9288733094543605,
+    "back_table_bert_min_recall": 0.20799502730369568,
+    "back_table_bert_mean_recall": 0.9315444680003376,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.6152196583684665,
+        "source": "Nick Engels",
+        "back_translated": "Nick Angels"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.6209189663855695,
+        "source": "Gene Bothello",
+        "back_translated": "Gene Botelho"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.7164645761438871,
+        "source": "Monte Sheldon",
+        "back_translated": "Monte Shelton"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.7194848005087966,
+        "source": "Ludwig Heimrath",
+        "back_translated": "Ludwig Haymrat"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.7194848005087966,
+        "source": "Ludwig Heimrath",
+        "back_translated": "Ludwig Haymrat"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

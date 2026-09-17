@@ -1,0 +1,158 @@
+{
+  "question_id": "nu-156",
+  "source_context": "csv/202-csv/66.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-156.tsv",
+  "source_question": "who was the last place driver to complete at least 50 laps?",
+  "translated_question": "кто был последним гонщиком, завершившим не менее 50 кругов?",
+  "source_target_value": "Jacques Villeneuve",
+  "translated_target_value": "Жак Вильнев",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "driver",
+      "normalized_text": "driver",
+      "start": 23,
+      "end": 29,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Driver",
+      "match_type": "lemma",
+      "candidate_key": "c23f14e130c93c60",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "laps",
+      "normalized_text": "lap",
+      "start": 54,
+      "end": 58,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 5
+        },
+        {
+          "row": 7,
+          "column": 5
+        },
+        {
+          "row": 8,
+          "column": 5
+        },
+        {
+          "row": 9,
+          "column": 5
+        },
+        {
+          "row": 11,
+          "column": 5
+        },
+        {
+          "row": 12,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Laps",
+      "match_type": "lemma",
+      "candidate_key": "fe5e187f063d5f6e",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-156",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who was the last place driver to complete at least 50 laps?",
+    "translated_question": "кто был последним гонщиком, завершившим не менее 50 кругов?",
+    "back_translated_question": "who was the last driver to complete at least 50 laps?",
+    "question_cosine_similarity": 0.9630309334514913,
+    "question_bert_precision": 0.9174352288246155,
+    "question_bert_recall": 0.9627180695533752,
+    "question_bert_f1": 0.9399764537811279,
+    "back_table_groups_compared": 152,
+    "back_table_min_similarity": 0.43247529135922563,
+    "back_table_mean_similarity": 0.9648758376417821,
+    "back_table_bert_groups_compared": 152,
+    "back_table_bert_min_f1": 0.1738104522228241,
+    "back_table_bert_mean_f1": 0.9484472690444243,
+    "back_table_bert_min_precision": 0.24930833280086517,
+    "back_table_bert_mean_precision": 0.9512636756622478,
+    "back_table_bert_min_recall": 0.01567545346915722,
+    "back_table_bert_mean_recall": 0.945771609469758,
+    "back_table_similarity_examples": [
+      {
+        "row": 13,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 14,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 15,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 16,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 17,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Formula 1 race results"
+  },
+  "domain": "Formula 1 race results"
+}

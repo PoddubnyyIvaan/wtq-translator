@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-564",
+  "source_context": "csv/203-csv/80.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-564.tsv",
+  "source_question": "which premier had the least number of points in their score?",
+  "translated_question": "какие чемпионы имели наименьшее количество очков в своем счёте?",
+  "source_target_value": "North Cairns Tigers",
+  "translated_target_value": "Норт Кейрнс Тайгеры",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "premier",
+      "normalized_text": "premier",
+      "start": 6,
+      "end": 13,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Premiers",
+      "match_type": "lemma",
+      "candidate_key": "0e4332f72af59bd1",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "score",
+      "normalized_text": "score",
+      "start": 54,
+      "end": 59,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Score",
+      "match_type": "lemma",
+      "candidate_key": "40f03a30f2159c58",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-564",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which premier had the least number of points in their score?",
+    "translated_question": "какие чемпионы имели наименьшее количество очков в своем счёте?",
+    "back_translated_question": "which premiers had the lowest number of points in their score?",
+    "question_cosine_similarity": 0.962429084553847,
+    "question_bert_precision": 0.8876524567604065,
+    "question_bert_recall": 0.8876680135726929,
+    "question_bert_f1": 0.8878304362297058,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.5313555056314918,
+    "back_table_mean_similarity": 0.9748682186443288,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.47461968660354614,
+    "back_table_bert_mean_f1": 0.9482931499679883,
+    "back_table_bert_min_precision": 0.4737861454486847,
+    "back_table_bert_mean_precision": 0.9499027291933696,
+    "back_table_bert_min_recall": 0.47385886311531067,
+    "back_table_bert_mean_recall": 0.9467338447769483,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5313555056314918,
+        "source": "Runners Up",
+        "back_translated": "Second places"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.6058765031952069,
+        "source": "Premiers",
+        "back_translated": "champions"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.716326347554601,
+        "source": "South Cairns Cutters",
+        "back_translated": "South Cairns Cats"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.9423769097582818,
+        "source": "Cairns Saints",
+        "back_translated": "South Cairns Saints"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.9423769097582818,
+        "source": "Cairns Saints",
+        "back_translated": "South Cairns Saints"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Australian Australian rules football competition results"
+  },
+  "domain": "Australian Australian rules football competition results"
+}

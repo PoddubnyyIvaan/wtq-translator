@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-491",
+  "source_context": "csv/204-csv/411.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-491.tsv",
+  "source_question": "how many attended the game on 10 december 1960?",
+  "translated_question": "сколько человек присутствовало на матче на 10 декабря 1960?",
+  "source_target_value": "21,840",
+  "translated_target_value": "21,840",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "10 december 1960",
+      "normalized_text": "10 december 1960",
+      "start": 30,
+      "end": 46,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 19,
+          "column": 0
+        }
+      ],
+      "table_source_text": "10 December 1960",
+      "match_type": "lemma",
+      "candidate_key": "6d9dc155530a0f8d",
+      "coordinate": {
+        "row": 19,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-491",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many attended the game on 10 december 1960?",
+    "translated_question": "сколько человек присутствовало на матче на 10 декабря 1960?",
+    "back_translated_question": "how many people attended the match on 10 december 1960?",
+    "question_cosine_similarity": 0.9359611061364965,
+    "question_bert_precision": 0.9219955205917358,
+    "question_bert_recall": 0.8892190456390381,
+    "question_bert_f1": 0.9056469202041626,
+    "back_table_groups_compared": 258,
+    "back_table_min_similarity": 0.5073844462047002,
+    "back_table_mean_similarity": 0.9266978804057662,
+    "back_table_bert_groups_compared": 258,
+    "back_table_bert_min_f1": 0.20518314838409424,
+    "back_table_bert_mean_f1": 0.8704053439604219,
+    "back_table_bert_min_precision": 0.13197079300880432,
+    "back_table_bert_mean_precision": 0.8726002865059431,
+    "back_table_bert_min_recall": 0.2817966341972351,
+    "back_table_bert_mean_recall": 0.8684894230014594,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 5,
+        "score": 0.5073844462047002,
+        "source": "Greaves",
+        "back_translated": "Griffiths"
+      },
+      {
+        "row": 10,
+        "column": 5,
+        "score": 0.5073844462047002,
+        "source": "Greaves",
+        "back_translated": "Griffiths"
+      },
+      {
+        "row": 19,
+        "column": 5,
+        "score": 0.5073844462047002,
+        "source": "Greaves",
+        "back_translated": "Griffiths"
+      },
+      {
+        "row": 28,
+        "column": 5,
+        "score": 0.5073844462047002,
+        "source": "Greaves",
+        "back_translated": "Griffiths"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.5465593376244198,
+        "source": "H",
+        "back_translated": "D"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-476",
+  "source_context": "csv/203-csv/669.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-476.tsv",
+  "source_question": "how long did ivan zourine last?",
+  "translated_question": "сколько времени продержался Иван Зурина?",
+  "source_target_value": "1 year",
+  "translated_target_value": "1 год",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "ivan zourine",
+      "normalized_text": "ivan zourine",
+      "start": 13,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Ivan Zourine",
+      "match_type": "lemma",
+      "candidate_key": "57137164ade0fc72",
+      "coordinate": {
+        "row": 1,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-476",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how long did ivan zourine last?",
+    "translated_question": "сколько времени продержался Иван Зурина?",
+    "back_translated_question": "how long did ivan zourine last?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 0.9999998211860657,
+    "question_bert_recall": 0.9999998211860657,
+    "question_bert_f1": 0.9999998211860657,
+    "back_table_groups_compared": 120,
+    "back_table_min_similarity": 0.3696521892225209,
+    "back_table_mean_similarity": 0.9116513450683468,
+    "back_table_bert_groups_compared": 120,
+    "back_table_bert_min_f1": 0.11839024722576141,
+    "back_table_bert_mean_f1": 0.8267722627768914,
+    "back_table_bert_min_precision": 0.17658494412899017,
+    "back_table_bert_mean_precision": 0.8233974575996399,
+    "back_table_bert_min_recall": 0.02218470349907875,
+    "back_table_bert_mean_recall": 0.830589946762969,
+    "back_table_similarity_examples": [
+      {
+        "row": 15,
+        "column": 4,
+        "score": 0.3696521892225209,
+        "source": "Hibou",
+        "back_translated": "Gough"
+      },
+      {
+        "row": 14,
+        "column": 0,
+        "score": 0.44634435837149633,
+        "source": "Terreur",
+        "back_translated": "Terror"
+      },
+      {
+        "row": 16,
+        "column": 3,
+        "score": 0.4662506725202025,
+        "source": "Jéromine Pasteur",
+        "back_translated": "Jérôme Pastor"
+      },
+      {
+        "row": 18,
+        "column": 0,
+        "score": 0.5088141117837771,
+        "source": "L'affaire Dominici",
+        "back_translated": "The Case of Dominique"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.5646989217047012,
+        "source": "Pierre Makyo",
+        "back_translated": "Pierre Macé"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "comics and graphic novels"
+  },
+  "domain": "comics and graphic novels"
+}

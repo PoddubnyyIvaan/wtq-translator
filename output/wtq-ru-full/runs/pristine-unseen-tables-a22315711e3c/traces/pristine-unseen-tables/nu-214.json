@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-214",
+  "source_context": "csv/203-csv/12.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-214.tsv",
+  "source_question": "all songs are over 3:00 but which song?",
+  "translated_question": "все песни дольше 3:00, но какая именно песня?",
+  "source_target_value": "Intro",
+  "translated_target_value": "Вступление",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-214",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "all songs are over 3:00 but which song?",
+    "translated_question": "все песни дольше 3:00, но какая именно песня?",
+    "back_translated_question": "all songs longer than 3:00, but which specific song?",
+    "question_cosine_similarity": 0.9465228109923184,
+    "question_bert_precision": 0.7498857378959656,
+    "question_bert_recall": 0.6915315985679626,
+    "question_bert_f1": 0.7207808494567871,
+    "back_table_groups_compared": 98,
+    "back_table_min_similarity": 0.4567775976693184,
+    "back_table_mean_similarity": 0.7928241881522269,
+    "back_table_bert_groups_compared": 98,
+    "back_table_bert_min_f1": 0.1609736531972885,
+    "back_table_bert_mean_f1": 0.7181628893832771,
+    "back_table_bert_min_precision": 0.22458457946777344,
+    "back_table_bert_mean_precision": 0.7149167571749006,
+    "back_table_bert_min_recall": 0.07370588928461075,
+    "back_table_bert_mean_recall": 0.7207045452479197,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.4567775976693184,
+        "source": "Boondox",
+        "back_translated": "Bundocks"
+      },
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.4567775976693184,
+        "source": "Boondox",
+        "back_translated": "Bundocks"
+      },
+      {
+        "row": 1,
+        "column": 6,
+        "score": 0.4567775976693184,
+        "source": "Boondox",
+        "back_translated": "Bundocks"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.4567775976693184,
+        "source": "Boondox",
+        "back_translated": "Bundocks"
+      },
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.4567775976693184,
+        "source": "Boondox",
+        "back_translated": "Bundocks"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "music"
+  },
+  "domain": "music"
+}

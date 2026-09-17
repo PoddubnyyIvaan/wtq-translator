@@ -1,0 +1,156 @@
+{
+  "question_id": "nu-298",
+  "source_context": "csv/203-csv/335.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-298.tsv",
+  "source_question": "where does the bus stop after kingston centre on route 11?",
+  "translated_question": "где автобус останавливается после Торгового центра Кингстон на маршруте 11?",
+  "source_target_value": "Cataraqui Town Centre",
+  "translated_target_value": "Таун-центр Катараки",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "kingston centre",
+      "normalized_text": "kingston centre",
+      "start": 30,
+      "end": 45,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 5
+        },
+        {
+          "row": 15,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Kingston Centre",
+      "match_type": "lemma",
+      "candidate_key": "4ebd949bcb2a6532",
+      "coordinate": {
+        "row": 7,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "route",
+      "normalized_text": "route",
+      "start": 49,
+      "end": 54,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": 8,
+          "column": 5
+        },
+        {
+          "row": 13,
+          "column": 5
+        },
+        {
+          "row": 14,
+          "column": 5
+        },
+        {
+          "row": 15,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Route",
+      "match_type": "lemma",
+      "candidate_key": "c771f9b5f050ea5f",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-298",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "where does the bus stop after kingston centre on route 11?",
+    "translated_question": "где автобус останавливается после Торгового центра Кингстон на маршруте 11?",
+    "back_translated_question": "where does the bus stop after kingston centre on route 11?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 102,
+    "back_table_min_similarity": 0.5109871162381208,
+    "back_table_mean_similarity": 0.9356047440621127,
+    "back_table_bert_groups_compared": 102,
+    "back_table_bert_min_f1": 0.14792966842651367,
+    "back_table_bert_mean_f1": 0.8482581853282218,
+    "back_table_bert_min_precision": 0.12525783479213715,
+    "back_table_bert_mean_precision": 0.8490454395319901,
+    "back_table_bert_min_recall": 0.14285849034786224,
+    "back_table_bert_mean_recall": 0.8472973610840592,
+    "back_table_similarity_examples": [
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.5109871162381208,
+        "source": "CFB Kingston\\nDowntown",
+        "back_translated": "downtown\\nqueen's university"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.5370662318390006,
+        "source": "Destinations",
+        "back_translated": "Directions"
+      },
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.6654479584755633,
+        "source": "Bath Road\\nGardiners Town Centre",
+        "back_translated": "Bate Street\\nGardiner's shopping center"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.6720537949891332,
+        "source": "Cataraqui Town Centre-Woods",
+        "back_translated": "Kataraki Shopping Center - Woods"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.6961215976944477,
+        "source": "Via",
+        "back_translated": "Through"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "public transportation"
+  },
+  "domain": "public transportation"
+}

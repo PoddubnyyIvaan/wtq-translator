@@ -1,0 +1,150 @@
+{
+  "question_id": "nu-227",
+  "source_context": "csv/204-csv/720.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-227.tsv",
+  "source_question": "who was the previous administrator of suparco before dr. abdul majid?",
+  "translated_question": "кем был предыдущий администратор suparco до доктора. абдул маджид?",
+  "source_target_value": "Engr.Sikandar Zaman",
+  "translated_target_value": "Инж..сикандар заман",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "dr",
+      "normalized_text": "dr",
+      "start": 53,
+      "end": 55,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 3,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 6,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Dr",
+      "match_type": "lemma",
+      "candidate_key": "23f05cd644099677",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "abdul majid",
+      "normalized_text": "abdul majid",
+      "start": 57,
+      "end": 68,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Abdul Majid",
+      "match_type": "lemma",
+      "candidate_key": "c64c44b7ec3a82ad",
+      "coordinate": {
+        "row": 6,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-227",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who was the previous administrator of suparco before dr. abdul majid?",
+    "translated_question": "кем был предыдущий администратор suparco до доктора. абдул маджид?",
+    "back_translated_question": "who was the previous administrator of suparco before dr. Abdul Majid?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 0.8383368253707886,
+    "question_bert_recall": 0.8746767044067383,
+    "question_bert_f1": 0.8565974831581116,
+    "back_table_groups_compared": 70,
+    "back_table_min_similarity": 0.6037964525710244,
+    "back_table_mean_similarity": 0.9640971350539539,
+    "back_table_bert_groups_compared": 70,
+    "back_table_bert_min_f1": 0.10002579540014267,
+    "back_table_bert_mean_f1": 0.8536515339144639,
+    "back_table_bert_min_precision": 0.05648835375905037,
+    "back_table_bert_mean_precision": 0.854265025098409,
+    "back_table_bert_min_recall": 0.1428733915090561,
+    "back_table_bert_mean_recall": 0.8529047063418798,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6037964525710244,
+        "source": "Field(s)",
+        "back_translated": "Direction(s))"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.6663842888168403,
+        "source": "Number",
+        "back_translated": "quantity"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7107957057394062,
+        "source": "Term Ended",
+        "back_translated": "End date"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7194646811448173,
+        "source": "Term Started",
+        "back_translated": "Start date"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.7843927572181422,
+        "source": "Dr Salim Mehmud",
+        "back_translated": "dr. salim mahmud"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "education and academic appointments"
+  },
+  "domain": "education and academic appointments"
+}

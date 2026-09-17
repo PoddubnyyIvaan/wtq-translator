@@ -1,0 +1,146 @@
+{
+  "question_id": "nu-888",
+  "source_context": "csv/203-csv/493.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-888.tsv",
+  "source_question": "how many first place finishes did team penske have between 2001 and 2013?",
+  "translated_question": "сколько первых мест финишей было у Team Penske между 2001 и 2013 годами?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "finishes",
+      "normalized_text": "finish",
+      "start": 21,
+      "end": 29,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Finish",
+      "match_type": "lemma",
+      "candidate_key": "77648eb85e2eaa0a",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "team penske",
+      "normalized_text": "team penske",
+      "start": 34,
+      "end": 45,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 5
+        },
+        {
+          "row": 1,
+          "column": 5
+        },
+        {
+          "row": 2,
+          "column": 5
+        },
+        {
+          "row": 3,
+          "column": 5
+        },
+        {
+          "row": 4,
+          "column": 5
+        },
+        {
+          "row": 5,
+          "column": 5
+        },
+        {
+          "row": 6,
+          "column": 5
+        },
+        {
+          "row": 7,
+          "column": 5
+        },
+        {
+          "row": 8,
+          "column": 5
+        },
+        {
+          "row": 9,
+          "column": 5
+        },
+        {
+          "row": 10,
+          "column": 5
+        },
+        {
+          "row": 11,
+          "column": 5
+        },
+        {
+          "row": 12,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Team Penske",
+      "match_type": "lemma",
+      "candidate_key": "68cb59a04647e7cf",
+      "coordinate": {
+        "row": 0,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-888",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many first place finishes did team penske have between 2001 and 2013?",
+    "translated_question": "сколько первых мест финишей было у Team Penske между 2001 и 2013 годами?",
+    "back_translated_question": "how many first places finishes did Team Penske have between 2001 and 2013?",
+    "question_cosine_similarity": 0.9928873311363157,
+    "question_bert_precision": 0.8632188439369202,
+    "question_bert_recall": 0.863237738609314,
+    "question_bert_f1": 0.8634355068206787,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 1.0,
+    "back_table_mean_similarity": 1.0,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 1.0,
+    "back_table_bert_mean_f1": 1.0,
+    "back_table_bert_min_precision": 1.0,
+    "back_table_bert_mean_precision": 1.0,
+    "back_table_bert_min_recall": 1.0,
+    "back_table_bert_mean_recall": 1.0,
+    "back_table_similarity_examples": [],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

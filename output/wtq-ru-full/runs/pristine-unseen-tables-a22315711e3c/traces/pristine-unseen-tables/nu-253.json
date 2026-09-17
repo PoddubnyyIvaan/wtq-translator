@@ -1,0 +1,202 @@
+{
+  "question_id": "nu-253",
+  "source_context": "csv/204-csv/285.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-253.tsv",
+  "source_question": "how many days apart is the number 1 runner-up to the number 1 winner?",
+  "translated_question": "через сколько дней разделяют первого победителя и первого победителя?",
+  "source_target_value": "105",
+  "translated_target_value": "105",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "runner-up",
+      "normalized_text": "runnerup",
+      "start": 36,
+      "end": 45,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 8,
+          "column": 0
+        },
+        {
+          "row": 10,
+          "column": 0
+        },
+        {
+          "row": 12,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Runner-up",
+      "match_type": "lemma",
+      "candidate_key": "ebbf46a62e90e93b",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "winner",
+      "normalized_text": "winner",
+      "start": 62,
+      "end": 68,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 0
+        },
+        {
+          "row": 9,
+          "column": 0
+        },
+        {
+          "row": 11,
+          "column": 0
+        },
+        {
+          "row": 13,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 0
+        },
+        {
+          "row": 15,
+          "column": 0
+        },
+        {
+          "row": 16,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 0
+        },
+        {
+          "row": 18,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Winner",
+      "match_type": "lemma",
+      "candidate_key": "9d04b89a73e3406f",
+      "coordinate": {
+        "row": 1,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-253",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many days apart is the number 1 runner-up to the number 1 winner?",
+    "translated_question": "через сколько дней разделяют первого победителя и первого победителя?",
+    "back_translated_question": "through how many days separate the first runner-up and the first winner?",
+    "question_cosine_similarity": 0.9058772127506114,
+    "question_bert_precision": 0.601094663143158,
+    "question_bert_recall": 0.6248027086257935,
+    "question_bert_f1": 0.6134757995605469,
+    "back_table_groups_compared": 140,
+    "back_table_min_similarity": 0.4467434325250675,
+    "back_table_mean_similarity": 0.9532094608406675,
+    "back_table_bert_groups_compared": 140,
+    "back_table_bert_min_f1": 0.11152682453393936,
+    "back_table_bert_mean_f1": 0.8253202692206417,
+    "back_table_bert_min_precision": 0.13496311008930206,
+    "back_table_bert_mean_precision": 0.8330080862556185,
+    "back_table_bert_min_recall": 0.08605512976646423,
+    "back_table_bert_mean_recall": 0.8174125056181635,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.4467434325250675,
+        "source": "Guillermo Coria",
+        "back_translated": "Gustavo Kuerten"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.4724464287932434,
+        "source": "Guillermo Cañas",
+        "back_translated": "Gustavo Kuerten"
+      },
+      {
+        "row": 14,
+        "column": 5,
+        "score": 0.5100661455903901,
+        "source": "Thomaz Bellucci",
+        "back_translated": "Tomáš Berdych"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

@@ -1,0 +1,218 @@
+{
+  "question_id": "nu-549",
+  "source_context": "csv/204-csv/995.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-549.tsv",
+  "source_question": "what was the last year the ligier ran for team automobiles ligier?",
+  "translated_question": "в каком году команда Ligier выступала под названием Команда automobiles ligier?",
+  "source_target_value": "1974",
+  "translated_target_value": "1974",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 18,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "ligier",
+      "normalized_text": "ligier",
+      "start": 27,
+      "end": 33,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 0,
+          "column": 5
+        },
+        {
+          "row": 1,
+          "column": 4
+        },
+        {
+          "row": 1,
+          "column": 5
+        },
+        {
+          "row": 1,
+          "column": 6
+        },
+        {
+          "row": 2,
+          "column": 4
+        },
+        {
+          "row": 2,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Ligier",
+      "match_type": "lemma",
+      "candidate_key": "8c021a88e9b3d966",
+      "coordinate": {
+        "row": 0,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "team",
+      "normalized_text": "team",
+      "start": 42,
+      "end": 46,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        },
+        {
+          "row": 8,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "automobiles ligier",
+      "normalized_text": "automobiles ligier",
+      "start": 47,
+      "end": 65,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 5
+        },
+        {
+          "row": 1,
+          "column": 5
+        },
+        {
+          "row": 2,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Automobiles Ligier",
+      "match_type": "lemma",
+      "candidate_key": "f541f8510a218895",
+      "coordinate": {
+        "row": 0,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-549",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the last year the ligier ran for team automobiles ligier?",
+    "translated_question": "в каком году команда Ligier выступала под названием Команда automobiles ligier?",
+    "back_translated_question": "in what year did the Ligier team compete under the name team automobiles ligier?",
+    "question_cosine_similarity": 0.9138605460941258,
+    "question_bert_precision": 0.5016922354698181,
+    "question_bert_recall": 0.4537232220172882,
+    "question_bert_f1": 0.478235125541687,
+    "back_table_groups_compared": 100,
+    "back_table_min_similarity": 0.5860290230262887,
+    "back_table_mean_similarity": 0.9808962826439366,
+    "back_table_bert_groups_compared": 100,
+    "back_table_bert_min_f1": 0.07165394723415375,
+    "back_table_bert_mean_f1": 0.8912105445563793,
+    "back_table_bert_min_precision": 0.10863660275936127,
+    "back_table_bert_mean_precision": 0.8951312908530236,
+    "back_table_bert_min_recall": 0.03344517946243286,
+    "back_table_bert_mean_recall": 0.8871464115381241,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.5860290230262887,
+        "source": "G",
+        "back_translated": "superg"
+      },
+      {
+        "row": 2,
+        "column": 6,
+        "score": 0.7613267486328185,
+        "source": "Alain Serpaggi",
+        "back_translated": "alen serpaghi"
+      },
+      {
+        "row": 1,
+        "column": 6,
+        "score": 0.7696879425821614,
+        "source": "Guy Ligier",
+        "back_translated": "guy lijeu"
+      },
+      {
+        "row": 0,
+        "column": 6,
+        "score": 0.7850725855187289,
+        "source": "Pierre Maublanc",
+        "back_translated": "pierre moublan"
+      },
+      {
+        "row": null,
+        "column": 9,
+        "score": 0.8214852413961654,
+        "source": "Class\\nPos.",
+        "back_translated": "Class\\nPosition."
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "automotive racing"
+  },
+  "domain": "automotive racing"
+}

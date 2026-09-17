@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-148",
+  "source_context": "csv/203-csv/556.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-148.tsv",
+  "source_question": "after the 2006 world junior championships what was the other competition held in beijing?",
+  "translated_question": "после 2006 чемпионата мира среди юниоров какое другое Соревнование прошло в Пекине?",
+  "source_target_value": "Olympic Games",
+  "translated_target_value": "Олимпийские игры",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "world junior",
+      "normalized_text": "world junior",
+      "start": 15,
+      "end": 27,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        }
+      ],
+      "table_source_text": "World Junior",
+      "match_type": "lemma",
+      "candidate_key": "8a6f18e92fed192e",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "competition",
+      "normalized_text": "competition",
+      "start": 61,
+      "end": 72,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Competition",
+      "match_type": "lemma",
+      "candidate_key": "0509839ddc683373",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "beijing",
+      "normalized_text": "beijing",
+      "start": 81,
+      "end": 88,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Beijing",
+      "match_type": "lemma",
+      "candidate_key": "0fa20484fb7eeeb1",
+      "coordinate": {
+        "row": 1,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-148",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "after the 2006 world junior championships what was the other competition held in beijing?",
+    "translated_question": "после 2006 чемпионата мира среди юниоров какое другое Соревнование прошло в Пекине?",
+    "back_translated_question": "after the world junior championship in 2006, what other competition took place in beijing?",
+    "question_cosine_similarity": 0.9828245154922359,
+    "question_bert_precision": 0.7582921981811523,
+    "question_bert_recall": 0.7577344179153442,
+    "question_bert_f1": 0.7583798766136169,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9492236608566806,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.37352320551872253,
+    "back_table_bert_mean_f1": 0.9443066870172818,
+    "back_table_bert_min_precision": 0.38896939158439636,
+    "back_table_bert_mean_precision": 0.9469534680247307,
+    "back_table_bert_min_recall": 0.35643258690834045,
+    "back_table_bert_mean_recall": 0.9415873274207115,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.7784058669933891,
+        "source": "5.80 m",
+        "back_translated": "5,80 м"
+      },
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.7800640732257185,
+        "source": "5.65 m",
+        "back_translated": "5,65 м"
+      },
+      {
+        "row": 8,
+        "column": 4,
+        "score": 0.7800640732257185,
+        "source": "5.65 m",
+        "back_translated": "5,65 м"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.7842397704381651,
+        "source": "5.60 m",
+        "back_translated": "5,60 м"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

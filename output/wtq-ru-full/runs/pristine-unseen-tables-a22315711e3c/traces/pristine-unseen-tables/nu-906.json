@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-906",
+  "source_context": "csv/203-csv/395.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-906.tsv",
+  "source_question": "how many times did plawgo come in first place?",
+  "translated_question": "сколько раз плавго приходил на первое место?",
+  "source_target_value": "5",
+  "translated_target_value": "5",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-906",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "how many times did plawgo come in first place?",
+    "translated_question": "сколько раз плавго приходил на первое место?",
+    "back_translated_question": "how many times did плавго finish in first place?",
+    "question_cosine_similarity": 0.8537783215438488,
+    "question_bert_precision": 0.7404522895812988,
+    "question_bert_recall": 0.7450582981109619,
+    "question_bert_f1": 0.7431429028511047,
+    "back_table_groups_compared": 126,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9899005059074281,
+    "back_table_bert_groups_compared": 126,
+    "back_table_bert_min_f1": 0.37352320551872253,
+    "back_table_bert_mean_f1": 0.9849037213457955,
+    "back_table_bert_min_precision": 0.38896939158439636,
+    "back_table_bert_mean_precision": 0.9873541960167507,
+    "back_table_bert_min_recall": 0.35643258690834045,
+    "back_table_bert_mean_recall": 0.9824972524056359,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 4,
+        "column": 4,
+        "score": 0.8330529264017466,
+        "source": "400 m",
+        "back_translated": "400 м"
+      },
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.8330529264017466,
+        "source": "400 m",
+        "back_translated": "400 м"
+      },
+      {
+        "row": 8,
+        "column": 4,
+        "score": 0.8330529264017466,
+        "source": "400 m",
+        "back_translated": "400 м"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.9457533591273505,
+        "source": "World Indoor Championships",
+        "back_translated": "World Athletics Indoor Championships"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

@@ -1,0 +1,154 @@
+{
+  "question_id": "nu-465",
+  "source_context": "csv/204-csv/116.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-465.tsv",
+  "source_question": "name a poll that was published the same day as prime consulting's last poll.",
+  "translated_question": "назовите опрос, который был опубликован в тот же день, что и последний опрос Prime Consulting.",
+  "source_target_value": "RAI Consultants Ltd",
+  "translated_target_value": "RAI Consultants Ltd",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "published",
+      "normalized_text": "publish",
+      "start": 21,
+      "end": 30,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Published",
+      "match_type": "lemma",
+      "candidate_key": "7a0fb4d059896c4e",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "prime consulting",
+      "normalized_text": "prime consulting",
+      "start": 47,
+      "end": 63,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 8,
+          "column": 0
+        },
+        {
+          "row": 11,
+          "column": 0
+        },
+        {
+          "row": 16,
+          "column": 0
+        },
+        {
+          "row": 18,
+          "column": 0
+        },
+        {
+          "row": 19,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Prime Consulting",
+      "match_type": "lemma",
+      "candidate_key": "c44eed1d5404ec80",
+      "coordinate": {
+        "row": 3,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-465",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "name a poll that was published the same day as prime consulting's last poll.",
+    "translated_question": "назовите опрос, который был опубликован в тот же день, что и последний опрос Prime Consulting.",
+    "back_translated_question": "name the poll that was published on the same day as the last poll by Prime Consulting.",
+    "question_cosine_similarity": 0.9910637307511588,
+    "question_bert_precision": 0.7519994378089905,
+    "question_bert_recall": 0.7203812003135681,
+    "question_bert_f1": 0.7364868521690369,
+    "back_table_groups_compared": 168,
+    "back_table_min_similarity": 0.5881086342464271,
+    "back_table_mean_similarity": 0.9732217453548625,
+    "back_table_bert_groups_compared": 168,
+    "back_table_bert_min_f1": 0.38171932101249695,
+    "back_table_bert_mean_f1": 0.9134113458650452,
+    "back_table_bert_min_precision": 0.35645994544029236,
+    "back_table_bert_mean_precision": 0.9206462935322807,
+    "back_table_bert_min_recall": 0.35404741764068604,
+    "back_table_bert_mean_recall": 0.9063607550093106,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      },
+      {
+        "row": 9,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      },
+      {
+        "row": 13,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      },
+      {
+        "row": 17,
+        "column": 0,
+        "score": 0.5881086342464271,
+        "source": "Evresis",
+        "back_translated": "Eversis"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "political polling"
+  },
+  "domain": "political polling"
+}

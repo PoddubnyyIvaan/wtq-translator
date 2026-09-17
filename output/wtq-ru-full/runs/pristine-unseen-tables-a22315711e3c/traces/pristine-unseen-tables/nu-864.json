@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-864",
+  "source_context": "csv/204-csv/368.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-864.tsv",
+  "source_question": "what is the only officer superseded by justiciar?",
+  "translated_question": "кто единственный офицер, заменённый на судью?",
+  "source_target_value": "Lord High Steward",
+  "translated_target_value": "Верховный камергер",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "officer",
+      "normalized_text": "officer",
+      "start": 17,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Officer",
+      "match_type": "lemma",
+      "candidate_key": "1535c2414d6492e9",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "superseded by",
+      "normalized_text": "supersede by",
+      "start": 25,
+      "end": 38,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "superseded by",
+      "match_type": "lemma",
+      "candidate_key": "014a8a4715f1f1d5",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "justiciar",
+      "normalized_text": "justiciar",
+      "start": 39,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Justiciar",
+      "match_type": "lemma",
+      "candidate_key": "f92767cfaddcf581",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-864",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the only officer superseded by justiciar?",
+    "translated_question": "кто единственный офицер, заменённый на судью?",
+    "back_translated_question": "who is the only officer superseded by a justiciar?",
+    "question_cosine_similarity": 0.9658891761348051,
+    "question_bert_precision": 0.8904759883880615,
+    "question_bert_recall": 0.8538973927497864,
+    "question_bert_f1": 0.872249960899353,
+    "back_table_groups_compared": 50,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9226565804843182,
+    "back_table_bert_groups_compared": 50,
+    "back_table_bert_min_f1": 0.17047610878944397,
+    "back_table_bert_mean_f1": 0.852477525472641,
+    "back_table_bert_min_precision": 0.15018846094608307,
+    "back_table_bert_mean_precision": 0.8438754698634148,
+    "back_table_bert_min_recall": 0.18863265216350555,
+    "back_table_bert_mean_recall": 0.8614002075791359,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.5485107809279467,
+        "source": "Lord Privy Seal",
+        "back_translated": "State Secretary of the Council"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.5977848611991555,
+        "source": "Justiciar",
+        "back_translated": "judge"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.6124251882881853,
+        "source": "Lord High Steward",
+        "back_translated": "Lord Chamberlain"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.6691416711432151,
+        "source": "Lord Steward",
+        "back_translated": "Lord Chamberlain"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "government and royal institutions"
+  },
+  "domain": "government and royal institutions"
+}

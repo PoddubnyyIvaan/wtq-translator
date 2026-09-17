@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-767",
+  "source_context": "csv/204-csv/485.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-767.tsv",
+  "source_question": "which governorate has the most clubs?",
+  "translated_question": "какой губернаторский округ имеет наибольшее количество клубов?",
+  "source_target_value": "Cairo",
+  "translated_target_value": "Каир",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "clubs",
+      "normalized_text": "club",
+      "start": 31,
+      "end": 36,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Club(s",
+      "match_type": "lemma",
+      "candidate_key": "855facba82244343",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-767",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which governorate has the most clubs?",
+    "translated_question": "какой губернаторский округ имеет наибольшее количество клубов?",
+    "back_translated_question": "which federal district has the greatest number of clubs?",
+    "question_cosine_similarity": 0.7782992677631925,
+    "question_bert_precision": 0.7730950713157654,
+    "question_bert_recall": 0.6955839395523071,
+    "question_bert_f1": 0.7341269850730896,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.5320982283808436,
+    "back_table_mean_similarity": 0.975308079814652,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.33292365074157715,
+    "back_table_bert_mean_f1": 0.9373907684176056,
+    "back_table_bert_min_precision": 0.315053254365921,
+    "back_table_bert_mean_precision": 0.9362054312670672,
+    "back_table_bert_min_recall": 0.33350685238838196,
+    "back_table_bert_mean_recall": 0.938457413955971,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.5320982283808436,
+        "source": "Nr.",
+        "back_translated": "no.."
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7244023160360467,
+        "source": "Ghazl El-Mehalla",
+        "back_translated": "Ghazal Al Mahalla"
+      },
+      {
+        "row": 6,
+        "column": 5,
+        "score": 0.8316596894420435,
+        "source": "Al Masry",
+        "back_translated": "al masri"
+      },
+      {
+        "row": 7,
+        "column": 5,
+        "score": 0.8862062598860204,
+        "source": "Petrojet",
+        "back_translated": "Petrodjet"
+      },
+      {
+        "row": 5,
+        "column": 5,
+        "score": 0.8864221079919501,
+        "source": "Ismaily",
+        "back_translated": "Ismaili"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "geography and demographics"
+  },
+  "domain": "geography and demographics"
+}

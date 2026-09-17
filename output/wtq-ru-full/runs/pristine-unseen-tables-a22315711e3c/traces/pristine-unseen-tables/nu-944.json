@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-944",
+  "source_context": "csv/204-csv/826.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-944.tsv",
+  "source_question": "which constructor shows up the most on this list?",
+  "translated_question": "какой конструктор чаще всего появляется в этом списке?",
+  "source_target_value": "Alfa Romeo",
+  "translated_target_value": "альфа romeо",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "constructor",
+      "normalized_text": "constructor",
+      "start": 6,
+      "end": 17,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Constructor",
+      "match_type": "lemma",
+      "candidate_key": "becf369d1ed9ac81",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-944",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which constructor shows up the most on this list?",
+    "translated_question": "какой конструктор чаще всего появляется в этом списке?",
+    "back_translated_question": "which constructor appears most frequently in this list?",
+    "question_cosine_similarity": 0.9657524572418252,
+    "question_bert_precision": 0.6903401017189026,
+    "question_bert_recall": 0.7406123876571655,
+    "question_bert_f1": 0.7156501412391663,
+    "back_table_groups_compared": 144,
+    "back_table_min_similarity": 0.4462065167109182,
+    "back_table_mean_similarity": 0.962092008865101,
+    "back_table_bert_groups_compared": 144,
+    "back_table_bert_min_f1": 0.3376236855983734,
+    "back_table_bert_mean_f1": 0.9007496552334892,
+    "back_table_bert_min_precision": 0.350359171628952,
+    "back_table_bert_mean_precision": 0.9025881112449698,
+    "back_table_bert_min_recall": 0.32115471363067627,
+    "back_table_bert_mean_recall": 0.8987245294782851,
+    "back_table_similarity_examples": [
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.4462065167109182,
+        "source": "Guy Bouriat",
+        "back_translated": "Gy Bure"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.5775708606964491,
+        "source": "Entrant",
+        "back_translated": "participant"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.7167693114658658,
+        "source": "Driver",
+        "back_translated": "Rider"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7282578459341464,
+        "source": "Fritz Caflisch",
+        "back_translated": "Fritz Zafalisch"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.7449675275767068,
+        "source": "Talbot",
+        "back_translated": "Connie Talbot"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motor racing"
+  },
+  "domain": "motor racing"
+}

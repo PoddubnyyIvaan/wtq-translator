@@ -1,0 +1,166 @@
+{
+  "question_id": "nu-179",
+  "source_context": "csv/203-csv/328.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-179.tsv",
+  "source_question": "previous to november 15, 2007 how often was the overall rank in the 30s?",
+  "translated_question": "до 15 ноября, 2007 года, как часто был всего Ранг в 30-х?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "november 15",
+      "normalized_text": "november 15",
+      "start": 12,
+      "end": 23,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 2
+        }
+      ],
+      "table_source_text": "November 15",
+      "match_type": "lemma",
+      "candidate_key": "7aae4263515f1d0a",
+      "coordinate": {
+        "row": 5,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "overall",
+      "normalized_text": "overall",
+      "start": 48,
+      "end": 55,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 9
+        }
+      ],
+      "table_source_text": "overall",
+      "match_type": "lemma",
+      "candidate_key": "9b6d95786e39a935",
+      "coordinate": {
+        "row": null,
+        "column": 9
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "rank",
+      "normalized_text": "rank",
+      "start": 56,
+      "end": 60,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        },
+        {
+          "row": null,
+          "column": 8
+        },
+        {
+          "row": null,
+          "column": 9
+        }
+      ],
+      "table_source_text": "Rank",
+      "match_type": "lemma",
+      "candidate_key": "69a8ef122d9a72b6",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-179",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "previous to november 15, 2007 how often was the overall rank in the 30s?",
+    "translated_question": "до 15 ноября, 2007 года, как часто был всего Ранг в 30-х?",
+    "back_translated_question": "up to 15 November, 2007, how often was the overall rank in the 30s?",
+    "question_cosine_similarity": 0.9862697762019739,
+    "question_bert_precision": 0.828811526298523,
+    "question_bert_recall": 0.8015875816345215,
+    "question_bert_f1": 0.8154053092002869,
+    "back_table_groups_compared": 140,
+    "back_table_min_similarity": 0.5968673123330723,
+    "back_table_mean_similarity": 0.9846405317766996,
+    "back_table_bert_groups_compared": 140,
+    "back_table_bert_min_f1": 0.09037001430988312,
+    "back_table_bert_mean_f1": 0.9589217819273472,
+    "back_table_bert_min_precision": 0.0033883939031511545,
+    "back_table_bert_mean_precision": 0.9575339923230266,
+    "back_table_bert_min_recall": 0.18352510035037994,
+    "back_table_bert_mean_recall": 0.9603300755577427,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.5968673123330723,
+        "source": "Train In Vain",
+        "back_translated": "The Train of Fear"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7033088878459083,
+        "source": "Air date",
+        "back_translated": "Release Date"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.778631437747005,
+        "source": "No Opportunity Necessary",
+        "back_translated": "No possibility is needed"
+      },
+      {
+        "row": null,
+        "column": 8,
+        "score": 0.7822699596511237,
+        "source": "Rank (timeslot)",
+        "back_translated": "Rank (Air Time)"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.7985136950272494,
+        "source": "Grannies, Guns, Love Mints",
+        "back_translated": "Grandmothers, Pistols, Love Candies"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "television ratings and broadcast statistics"
+  },
+  "domain": "television ratings and broadcast statistics"
+}

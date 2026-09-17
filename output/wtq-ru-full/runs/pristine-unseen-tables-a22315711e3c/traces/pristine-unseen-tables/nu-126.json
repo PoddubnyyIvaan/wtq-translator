@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-126",
+  "source_context": "csv/204-csv/150.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-126.tsv",
+  "source_question": "what nation comes first?",
+  "translated_question": "какая Нация идет первой?",
+  "source_target_value": "United States",
+  "translated_target_value": "Соединённые Штаты",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "nation",
+      "normalized_text": "nation",
+      "start": 5,
+      "end": 11,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Nation",
+      "match_type": "lemma",
+      "candidate_key": "3f26327f2264060f",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-126",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what nation comes first?",
+    "translated_question": "какая Нация идет первой?",
+    "back_translated_question": "which nation is in first place?",
+    "question_cosine_similarity": 0.8594052060108897,
+    "question_bert_precision": 0.6385440230369568,
+    "question_bert_recall": 0.5459489226341248,
+    "question_bert_f1": 0.5919334292411804,
+    "back_table_groups_compared": 63,
+    "back_table_min_similarity": 0.47394627463206,
+    "back_table_mean_similarity": 0.9806472961379836,
+    "back_table_bert_groups_compared": 63,
+    "back_table_bert_min_f1": 0.24619771540164948,
+    "back_table_bert_mean_f1": 0.9726872858073976,
+    "back_table_bert_min_precision": 0.24500176310539246,
+    "back_table_bert_mean_precision": 0.9730138504315936,
+    "back_table_bert_min_recall": 0.2451060712337494,
+    "back_table_bert_mean_recall": 0.9722809687493339,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.47394627463206,
+        "source": "Lane",
+        "back_translated": "distance"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.7397910078351653,
+        "source": "Great Britain",
+        "back_translated": "United Kingdom"
+      },
+      {
+        "row": 6,
+        "column": 3,
+        "score": 0.8602865608826625,
+        "source": "Amaury Leveaux (1:48.57)\\nFabien Horth (1:48.67)\\nNicolas Kintz (1:50.01)\\nNicolas Rostoucher (1:50.18)",
+        "back_translated": "Amuri Le Voe (1:48.57)\\nFabien Gorr (1:48.67)\\nNicolas Kintz (1:50.01)\\nNicolas Rostoucher (1:50.18)"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.9095336835346688,
+        "source": "Simon Burnett (1:47.90)\\nGavin Meadows (1:48.46)\\nDavid O'Brien (1:49.05)\\nRoss Davenport (1:47.19)",
+        "back_translated": "Simon Burnett (1:47.90)\\nGavin Mewes (1:48.46)\\nDavid O'Brien (1:49.05)\\n Ross Davenport (1:47.19)"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.9259332953934049,
+        "source": "Grant Hackett (1:47.50)\\nMichael Klim (1:47.62)\\nNicholas Sprenger (1:48.16)\\nIan Thorpe (1:44.18)",
+        "back_translated": "Grant Hackett (1:47.50)\\nMichael Klim (1:47.62)\\nNicholas Spranger (1:48.16)\\nIan Thorp (1:44.18)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

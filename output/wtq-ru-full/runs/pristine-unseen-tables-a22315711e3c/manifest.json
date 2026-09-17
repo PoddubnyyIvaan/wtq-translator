@@ -1,0 +1,184 @@
+{
+  "run_id": "pristine-unseen-tables-a22315711e3c",
+  "created_at": "2026-09-13T16:33:43.759160+00:00",
+  "seed": 42,
+  "provider": "openai_compatible",
+  "model": "Qwen/Qwen3-30B-A3B-Instruct-2507-FP8",
+  "base_url": "http://localhost:9124/v1",
+  "prompt_version": "2026-09-13-v13",
+  "prompts": {
+    "shell_translation": {
+      "sha256": "064e3ad02aab6ed29012323a8f4cf386f796184251b99ee51a88801e37e80caf",
+      "text": "You are a precise translation engine for WikiTableQuestions. Translate the supplied natural-language question text into the requested target language. Never answer the question and never infer an answer from its wording. The text may contain immutable placeholders such as <TABLE_REF_0000>, <TABLE_REF_0001>, <TABLE_REF_0002>, etc. Every token matching the form <TABLE_REF_XXXX> is an immutable placeholder. Preserve every placeholder exactly character-for-character, in the same position and multiplicity. Do not translate, rename, remove, duplicate, split, merge, or modify placeholders. Translate the surrounding natural-language text naturally and grammatically while preserving its meaning. Do not add information, remove information, summarize, explain, or answer the question. Return exactly ONE JSON DATA object with exactly this shape: {\"translated_text\":\"translated text here\"}. Do not return a JSON Schema. Do not return keys such as type, properties, required, title, or $defs. Do not use Markdown, code fences, explanations, comments, or extra keys."
+    },
+    "table_translation": {
+      "sha256": "281d6493778bbc068df57e1a7aa3029ff68818f8e3394fd85e1826768f89bdab",
+      "text": "You are a precise translation engine for textual values extracted from a WikiTableQuestions table. You are NOT responsible for the table structure, coordinates, rows, columns, duplicate detection, or reconstruction of the table. Python handles all of those tasks. The request contains only textual translation units intentionally selected for translation. Values that must remain immutable are not included. Each input item has an immutable id and a source text. Translate EVERY supplied source text into the requested target language. Do not skip an item merely because it looks like a proper name, competition, organization, league, label, title, abbreviation, or technical term. Translate all parts that are naturally translatable in the target language, while preserving official names, abbreviations, symbols, or fragments that conventionally should remain unchanged. Preserve the meaning of every source value exactly. Do not calculate, normalize, summarize, reinterpret, infer, answer questions, invent information, or use knowledge from other items to change the meaning. Return exactly ONE JSON DATA object with exactly this shape: {\"translations\":[{\"id\":\"u0000\",\"translation\":\"...\"},{\"id\":\"u0001\",\"translation\":\"...\"}]}. Return exactly one translation for every input id. Preserve every id exactly character-for-character. Return the ids in the same order as the input. Do not omit, duplicate, rename, modify, or invent ids. The translation field must contain only the translated value corresponding to that id. Do not return source texts, coordinates, rows, columns, Markdown, code fences, explanations, comments, or extra keys. Return DATA, not a JSON Schema."
+    },
+    "answer_translation": {
+      "sha256": "feb37e756126b85fafc207e6d28b4c883479e510e265bd3593bf0f30bd5cd0a1",
+      "text": "You are a precise translation engine for WikiTableQuestions answer text. Translate only the supplied answer text into the requested target language. Do not answer the original question, calculate a new answer, infer missing information, explain, summarize, or add information. Preserve the meaning and number of answer values exactly. Return exactly ONE JSON DATA object with exactly this shape: {\"translated_text\":\"...\"}. Do not return a JSON Schema, Markdown, code fences, explanations, comments, or additional keys."
+    },
+    "question_translation": {
+      "sha256": "8c21e80173faec38259525b4c28389a995edf5a198f5199b94f7a0adeb265fbd",
+      "text": "You are a professional translator and domain editor. Your task is to translate a question to a table from {source_language} into {target_language}.\nSource language: {source_language}\nTarget language: {target_language}\nDomain: {domain}\n\nThe tagged question contains spans of the form <TABLE_REF_0000>source phrase</TABLE_REF_0000>. Everything inside a tag pair is one table mention. The `mentions` list describes each mention; its `translation` field is the mention's base (dictionary/lemma) form in the target language. Treat it as the LEXICAL ROOT to inflect, NOT as a ready-made string to copy verbatim.\n\nTranslation requirements:\n1. Produce one natural, literary, grammatically correct question in the target language.\n2. Every mention must appear in the output, wrapped in its OWN tag pair (same id, same <TABLE_REF_XXXX> ... </TABLE_REF_XXXX>), glued around its content.\n3. For the content of each tagged span, take the `translation` field as the root and emit the form that the target-language sentence requires so that the mention GRAMMATICALLY AGREES with the words around it. Apply the target language's own morphology: case, number, gender, person, tense, definiteness, preposition-governed forms, or any other agreement its grammar uses. Never emit the raw base form when the surrounding sentence demands a different form.\n4. If the sentence requires a grammatical category that the base form does not provide, use the closest form of the SAME lexeme (same root), never an unrelated synonym or paraphrase.\n5. Mentions that represent numbers, abbreviations, codes, or well-known proper names are linguistically IMMUTABLE: keep them exactly as-is; do not translate, inflect, or reorder inside them. Only surrounding-function words may move around them.\n6. Determine the required form from the suffix, function word, verb, or head noun that governs the mention in the produced sentence; inflect accordingly. If the target language does not require a form change for that position, keep the base form.\n7. You may reorder the sentence, move mention pairs together with their content, and drop individual function words to sound literary, as long as the meaning and all mentions are preserved.\n8. `inflect_allowed`:\n   - true: free inflection (case/number/gender/person/tense/definiteness forms) is required to make the mention agree with the sentence;\n   - false: you MUST still inflect the mention to agree with the surrounding sentence (lower cased, if applicable) — the ONLY restriction is that you must not change its LEXICAL STRUCTURE, i.e. do not add, remove, reorder, or replace whole words inside the value and do not translate/paraphrase its root. For a header/table-value noun used as a propositional member, apply the word-level morphology the sentence requires (e.g. correct case/person agreement of that noun). If no inflected form can express the required function without changing the lexical structure, rephrase the sentence so the value fits an earlier position, or add the id to `missing_mentions`.\n   - In both cases the `translation` field is only the root: always emit the inflected form in the text, never the bare base form, unless the grammar genuinely requires the base form there.\n9. Do not add facts, mentions, or constraints absent from the source question; do not remove any mention.\n10. If a mention cannot be correctly inserted and inflected for its position, add its id to `missing_mentions` and keep the rest of the translation valid; otherwise `missing_mentions` is [].\n11. If the `mentions` list is EMPTY, the question contains no table mentions: produce the plain literary translation and return it WITHOUT any <TABLE_REF_XXXX> tags — never invent tags, ids, or mentions_used entries; `mentions_used` and `missing_mentions` must both be [].\n12. Return only valid JSON, no explanations, no Markdown, no schema.\n\nGuideline: the goal is a fluent sentence in which every inflectionable mention is in the grammatically required form, not the dictionary form; only frozen tokens (numbers, codes, abbreviations, proper names) stay unchanged.\n\nResponse format (return exactly this JSON object):\n{{\n  \"question_{target_language}_tagged\": \"literary translation with every mention wrapped in its tag and every inflectionable mention in the grammatically correct form\",\n  \"mentions_used\": [\n    {{\"id\": \"mention id\", \"surface_{target_language}\": \"form as actually used in the text\", \"lemma_{target_language}\": \"base/dictionary form of the mention\"}}\n  ],\n  \"missing_mentions\": []\n}}\n"
+    },
+    "shell_translation_tagged": {
+      "sha256": "274ba5156f6d9cdc5478f14a17a597ee55a55fbe580d0df8303498726b1131a3",
+      "text": "You are a precise translation engine for WikiTableQuestions. Translate the supplied natural-language question text into the requested target language. Never answer the question and never infer an answer from its wording. The text contains tagged spans of the form <TABLE_REF_0000>content</TABLE_REF_0000>. A tag pair is NOT markup and NOT an annotation: it labels one phrase of the question, and the tag_glossary maps each opening tag to the dictionary translation of that phrase in the target language. Translate the WHOLE question, including the content inside every tag pair. For the content of a tagged span use ONLY the corresponding tag_glossary value as the words to emit: take that dictionary word or phrase and adapt it grammatically — inflection for case, number, gender, person, tense, and internal word order of the phrase if needed — so that it agrees with the target-language sentence. If the sentence requires a different grammatical category than the dictionary form provides, use the closest form of the same lexeme (same root), never an unrelated synonym. Do not translate the tagged content on your own, do not replace the dictionary words with synonyms or a paraphrase, and do not take words from another glossary entry. Keep every opening tag glued to its matching closing tag, and keep both glued around the translated content of that same span in the output, e.g. <TABLE_REF_0000>translated content</TABLE_REF_0000>. Do not remove, duplicate, split, merge, rename, or add any tag. The position of a tag pair is NOT fixed to the source text: a pair travels together with its content, and different pairs may be reordered among themselves, exactly as the natural word order and typology of the target language require. Translate the surrounding natural-language text naturally and grammatically while preserving its meaning. Do not add information, remove information, summarize, explain, or answer the question. Return exactly ONE JSON DATA object with exactly this shape: {\"translated_text\":\"translated text here\"}. Do not return a JSON Schema. Do not return keys such as type, properties, required, title, or $defs. Do not use Markdown, code fences, explanations, comments, or extra keys."
+    },
+    "candidate_translation": {
+      "sha256": "0d356e72217b7589fc90fb08c30f3c9fdcb7166ca1b822b3ed68ece781427d2d",
+      "text": "You are a precise translation engine for textual subsequences extracted from a WikiTableQuestions table. You are NOT responsible for the table structure, coordinates, rows, columns, duplicate detection, or reconstruction of the table. Python handles all of those tasks. The request contains a list of items. Each item has an immutable id, a source text, and a column header for context only. Each item also has its own glossary of longer subsequences that were already translated and that contain its text as a nested subsequence. Each glossary item has a key and its translation; use the glossary translations so that the shorter subsequence stays consistent with the longer sequences it is part of. The `column` field is the full original column header. Use it only as context; do not translate it and do not return it. Translate EVERY supplied source text into the requested target language. Do not skip an item merely because it looks like a proper name, competition, organization, league, label, title, abbreviation, or technical term. Translate all parts that are naturally translatable in the target language, while preserving official names, abbreviations, symbols, or fragments that conventionally should remain unchanged. Preserve numbers, dates, and punctuation inside the source text exactly. Preserve the meaning of every source value exactly. Do not calculate, normalize, summarize, reinterpret, infer, answer questions, invent information, or use knowledge from other items to change the meaning. Return exactly ONE JSON DATA object with exactly this shape: {\"translations\":[{\"id\":\"u0000\",\"translation\":\"...\"},{\"id\":\"u0001\",\"translation\":\"...\"}]}. Return exactly one translation for every input id. Preserve every id exactly character-for-character. Do not omit, duplicate, rename, modify, or invent ids. The translation field must contain only the translated value corresponding to that id. Do not return source texts, coordinates, rows, columns, Markdown, code fences, explanations, comments, or extra keys. Return DATA, not a JSON Schema."
+    },
+    "domain_detection": {
+      "sha256": "61d371476051aeb2e279ddc493bf5eff69b24d23de794909ef49d5ca10c72d08",
+      "text": "Определи доменную область (предметную область) таблицы по её фрагменту в формате TAPEX. Верни ровно один JSON-объект вида {\"domain\":\"...\"} без пояснений и без код-фенсов. Домен должен быть на языке, указанном в запросе."
+    }
+  },
+  "generation": {
+    "temperature": 0.0,
+    "max_output_tokens": 2500,
+    "retries": 3
+  },
+  "config": {
+    "project": {
+      "input_root": "data/wtq",
+      "output_root": "output/wtq-ru-full",
+      "source_language": "en",
+      "target_language": "ru",
+      "seed": 42
+    },
+    "translation": {
+      "mode": "full",
+      "answer_language_mode": "table",
+      "candidates": {
+        "max_candidates_per_request": 64,
+        "request_concurrency": 32,
+        "transliteration_enabled": false
+      }
+    },
+    "mentions": {
+      "normalization": {
+        "unicode": "NFKC",
+        "casefold": true,
+        "collapse_whitespace": true,
+        "strip_outer_punctuation": true
+      },
+      "longest_match_first": true,
+      "include_headers": true,
+      "include_numeric_mentions": true,
+      "allow_lemma_match": false,
+      "allow_fuzzy_match": false,
+      "allow_semantic_match": false,
+      "on_ambiguity": "needs_review",
+      "spacy_model": "en_core_web_trf",
+      "stop_pos": [
+        "AUX",
+        "CCONJ",
+        "INTJ",
+        "PUNCT",
+        "SCONJ",
+        "DET",
+        "ADP",
+        "PART"
+      ],
+      "exclude_numbers": true,
+      "exclude_dates": false
+    },
+    "model": {
+      "provider": "openai_compatible",
+      "base_url": "http://localhost:9124/v1",
+      "api_key": "***REDACTED***",
+      "model_name": "Qwen/Qwen3-30B-A3B-Instruct-2507-FP8",
+      "temperature": 0.0,
+      "max_output_tokens": 2500,
+      "timeout_seconds": 180.0,
+      "retries": 3,
+      "max_concurrent_requests": 64,
+      "tokenize_path": "/tokenize",
+      "ollama": {
+        "think": false,
+        "stream": false,
+        "options": {}
+      }
+    },
+    "embeddings": {
+      "enabled": true,
+      "provider": "openai_compatible",
+      "base_url": "http://localhost:11434/v1",
+      "api_key": "***REDACTED***",
+      "model_name": "nomic-embed-text",
+      "timeout_seconds": 180.0
+    },
+    "table": {
+      "rows_per_chunk": 20
+    },
+    "back_translation": {
+      "enabled": true
+    },
+    "validation": {
+      "question_cosine_threshold": null,
+      "question_cosine_enabled": true,
+      "question_bert_enabled": true,
+      "back_table_bert_enabled": true,
+      "strict_masks": true,
+      "strict_table_shape": true,
+      "strict_immutable_values": true,
+      "back_table_similarity_enabled": true,
+      "back_table_similarity_mode": "cell",
+      "back_table_similarity_threshold": null,
+      "back_table_similarity_max_chunk_tokens": 512
+    },
+    "bert_score": {
+      "enabled": true,
+      "model_type": "bert-base-multilingual-cased",
+      "lang": "en",
+      "device": "cuda",
+      "batch_size": 10,
+      "rescale_with_baseline": true,
+      "question_threshold": null,
+      "table_threshold": null
+    },
+    "state": {
+      "sqlite_path": "output/wtq-ru-full/state.sqlite"
+    },
+    "cache": {
+      "enabled": true,
+      "cache_embeddings": true
+    },
+    "logging": {
+      "level": "INFO",
+      "llm_io_enabled": true,
+      "llm_io_path": "output/wtq-ru-full/logs/llm_io.jsonl"
+    },
+    "runner": {
+      "checkpoint_every": 25,
+      "continue_on_error": true,
+      "retry_failed_on_resume": false,
+      "rerun_needs_review": false,
+      "concurrency": 13
+    },
+    "domain_detection": {
+      "enabled": true,
+      "max_tokens": 1500,
+      "language": null
+    }
+  },
+  "git_commit": "12b057c48fd7164ad7acd23f42c84b6cc034f492",
+  "python": "3.12.3",
+  "libraries": {
+    "pydantic": "2.13.5",
+    "PyYAML": "6.0.3",
+    "httpx": "0.28.1"
+  },
+  "questions_tsv": "/home/ivan/work/wtq-translator/data/wtq/pristine-unseen-tables.tsv",
+  "output_questions_tsv": "/home/ivan/work/wtq-translator/output/wtq-ru-full/runs/pristine-unseen-tables-a22315711e3c/dataset/pristine-unseen-tables.tsv",
+  "config_hash": "e380deb8627d01ea0d365902a5ad61433055c6e29509a621d42e5164c99318b3",
+  "recovered_processing_records": 0,
+  "seeded_local_backends": {
+    "python": true,
+    "numpy": true,
+    "torch": true
+  }
+}

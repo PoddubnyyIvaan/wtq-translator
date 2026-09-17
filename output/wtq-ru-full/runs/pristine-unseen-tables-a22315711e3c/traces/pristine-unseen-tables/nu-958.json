@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-958",
+  "source_context": "csv/203-csv/265.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-958.tsv",
+  "source_question": "which region has the least number of health officers?",
+  "translated_question": "какой регион имеет наименьшее количество санитар-врачей?",
+  "source_target_value": "Somalia",
+  "translated_target_value": "Сомали",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "region",
+      "normalized_text": "region",
+      "start": 6,
+      "end": 12,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Region",
+      "match_type": "lemma",
+      "candidate_key": "3cdacff9a745ee89",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "health officers",
+      "normalized_text": "health officer",
+      "start": 37,
+      "end": 52,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Health Officer",
+      "match_type": "lemma",
+      "candidate_key": "a4cdc729a4376288",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-958",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which region has the least number of health officers?",
+    "translated_question": "какой регион имеет наименьшее количество санитар-врачей?",
+    "back_translated_question": "which region has the lowest number of health officers?",
+    "question_cosine_similarity": 0.9832764331880652,
+    "question_bert_precision": 0.9505283236503601,
+    "question_bert_recall": 0.9505351781845093,
+    "question_bert_f1": 0.9506067037582397,
+    "back_table_groups_compared": 132,
+    "back_table_min_similarity": 0.4203088476302825,
+    "back_table_mean_similarity": 0.9793856953707848,
+    "back_table_bert_groups_compared": 132,
+    "back_table_bert_min_f1": 0.13315008580684662,
+    "back_table_bert_mean_f1": 0.9439464455301111,
+    "back_table_bert_min_precision": 0.12699049711227417,
+    "back_table_bert_mean_precision": 0.9444005916064436,
+    "back_table_bert_min_recall": 0.12519727647304535,
+    "back_table_bert_mean_recall": 0.9434170893421678,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 9,
+        "score": 0.4203088476302825,
+        "source": "HEW*",
+        "back_translated": "general practitioner*"
+      },
+      {
+        "row": 9,
+        "column": 9,
+        "score": 0.4864099484258254,
+        "source": "NA",
+        "back_translated": "not available"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6499276817694551,
+        "source": "Health Officer",
+        "back_translated": "Health extension worker"
+      },
+      {
+        "row": null,
+        "column": 7,
+        "score": 0.7770800284182342,
+        "source": "Mid-wives",
+        "back_translated": "midwives"
+      },
+      {
+        "row": null,
+        "column": 10,
+        "score": 0.7789876579707924,
+        "source": "HEW : Population Ratio",
+        "back_translated": "general practitioner : Population ratio"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "healthcare workforce and population ratios in Ethiopian regions"
+  },
+  "domain": "healthcare workforce and population ratios in Ethiopian regions"
+}

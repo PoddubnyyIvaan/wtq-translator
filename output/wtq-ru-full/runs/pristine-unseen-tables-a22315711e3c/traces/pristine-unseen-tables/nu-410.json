@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-410",
+  "source_context": "csv/204-csv/856.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-410.tsv",
+  "source_question": "how many jockeys were 13 years old?",
+  "translated_question": "сколько жокеев было 13 лет?",
+  "source_target_value": "5",
+  "translated_target_value": "5",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "jockeys",
+      "normalized_text": "jockey",
+      "start": 9,
+      "end": 16,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Jockey",
+      "match_type": "lemma",
+      "candidate_key": "7483a38f4b58a9b4",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-410",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many jockeys were 13 years old?",
+    "translated_question": "сколько жокеев было 13 лет?",
+    "back_translated_question": "how many jockeys were 13 years old?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 238,
+    "back_table_min_similarity": 0.3684449760365609,
+    "back_table_mean_similarity": 0.9146216378113129,
+    "back_table_bert_groups_compared": 238,
+    "back_table_bert_min_f1": -0.1976957470178604,
+    "back_table_bert_mean_f1": 0.8563077212820033,
+    "back_table_bert_min_precision": -0.1626608967781067,
+    "back_table_bert_mean_precision": 0.8606691485693475,
+    "back_table_bert_min_recall": -0.23464654386043549,
+    "back_table_bert_mean_recall": 0.8519368876992655,
+    "back_table_similarity_examples": [
+      {
+        "row": 15,
+        "column": 2,
+        "score": 0.3684449760365609,
+        "source": "Mr George Hartigan",
+        "back_translated": "Disqualified from the race"
+      },
+      {
+        "row": 16,
+        "column": 6,
+        "score": 0.4107436337682963,
+        "source": "Pulled-Up",
+        "back_translated": "Disqualified from the race"
+      },
+      {
+        "row": 24,
+        "column": 1,
+        "score": 0.427310460369553,
+        "source": "Barleycroft",
+        "back_translated": "Barlikroft"
+      },
+      {
+        "row": 15,
+        "column": 6,
+        "score": 0.4535641538908948,
+        "source": "Pulled Up",
+        "back_translated": "Disqualified from the race"
+      },
+      {
+        "row": 17,
+        "column": 6,
+        "score": 0.4535641538908948,
+        "source": "Pulled Up",
+        "back_translated": "Disqualified from the race"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "horse racing"
+  },
+  "domain": "horse racing"
+}

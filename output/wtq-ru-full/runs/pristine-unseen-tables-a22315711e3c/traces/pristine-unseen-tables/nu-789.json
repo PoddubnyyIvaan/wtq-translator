@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-789",
+  "source_context": "csv/204-csv/844.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-789.tsv",
+  "source_question": "how many russian competitors qualified?",
+  "translated_question": "сколько российских участников прошли квалификацию?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-789",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "how many russian competitors qualified?",
+    "translated_question": "сколько российских участников прошли квалификацию?",
+    "back_translated_question": "how many Russian participants qualified?",
+    "question_cosine_similarity": 0.9527324360602291,
+    "question_bert_precision": 0.8082017302513123,
+    "question_bert_recall": 0.8584113717079163,
+    "question_bert_f1": 0.8333142995834351,
+    "back_table_groups_compared": 162,
+    "back_table_min_similarity": 0.4495521847463779,
+    "back_table_mean_similarity": 0.8416907329271848,
+    "back_table_bert_groups_compared": 162,
+    "back_table_bert_min_f1": 0.41833534836769104,
+    "back_table_bert_mean_f1": 0.848909205308667,
+    "back_table_bert_min_precision": 0.4264187812805176,
+    "back_table_bert_mean_precision": 0.848227149910397,
+    "back_table_bert_min_recall": 0.4085632562637329,
+    "back_table_bert_mean_recall": 0.8492115592515027,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.4495521847463779,
+        "source": "o",
+        "back_translated": "about"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.4495521847463779,
+        "source": "o",
+        "back_translated": "about"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.4495521847463779,
+        "source": "o",
+        "back_translated": "about"
+      },
+      {
+        "row": 0,
+        "column": 6,
+        "score": 0.4495521847463779,
+        "source": "o",
+        "back_translated": "about"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.4495521847463779,
+        "source": "o",
+        "back_translated": "about"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

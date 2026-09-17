@@ -1,0 +1,114 @@
+{
+  "question_id": "nu-408",
+  "source_context": "csv/204-csv/995.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-408.tsv",
+  "source_question": "what was the last team that this racer was a part of at this race?",
+  "translated_question": "какая последняя команда была у этого гонщика в этой гонке?",
+  "source_target_value": "Team Bigazzi SRL",
+  "translated_target_value": "team bigazzi srl",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "team",
+      "normalized_text": "team",
+      "start": 18,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        },
+        {
+          "row": 8,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-408",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the last team that this racer was a part of at this race?",
+    "translated_question": "какая последняя команда была у этого гонщика в этой гонке?",
+    "back_translated_question": "what was the last team this driver had in this race?",
+    "question_cosine_similarity": 0.9521488833962868,
+    "question_bert_precision": 0.5937755107879639,
+    "question_bert_recall": 0.738513708114624,
+    "question_bert_f1": 0.6644630432128906,
+    "back_table_groups_compared": 100,
+    "back_table_min_similarity": 0.5860290230262887,
+    "back_table_mean_similarity": 0.9808962826439366,
+    "back_table_bert_groups_compared": 100,
+    "back_table_bert_min_f1": 0.07165394723415375,
+    "back_table_bert_mean_f1": 0.8912105445563793,
+    "back_table_bert_min_precision": 0.10863660275936127,
+    "back_table_bert_mean_precision": 0.8951312908530236,
+    "back_table_bert_min_recall": 0.03344517946243286,
+    "back_table_bert_mean_recall": 0.8871464115381241,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.5860290230262887,
+        "source": "G",
+        "back_translated": "superg"
+      },
+      {
+        "row": 2,
+        "column": 6,
+        "score": 0.7613267486328185,
+        "source": "Alain Serpaggi",
+        "back_translated": "alen serpaghi"
+      },
+      {
+        "row": 1,
+        "column": 6,
+        "score": 0.7696879425821614,
+        "source": "Guy Ligier",
+        "back_translated": "guy lijeu"
+      },
+      {
+        "row": 0,
+        "column": 6,
+        "score": 0.7850725855187289,
+        "source": "Pierre Maublanc",
+        "back_translated": "pierre moublan"
+      },
+      {
+        "row": null,
+        "column": 9,
+        "score": 0.8214852413961654,
+        "source": "Class\\nPos.",
+        "back_translated": "Class\\nPosition."
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "automotive racing"
+  },
+  "domain": "automotive racing"
+}

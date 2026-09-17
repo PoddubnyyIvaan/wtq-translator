@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-678",
+  "source_context": "csv/203-csv/553.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-678.tsv",
+  "source_question": "what is the number of divisions for 2ab?",
+  "translated_question": "сколько дивизионов для 2ab?",
+  "source_target_value": "6",
+  "translated_target_value": "6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "divisions",
+      "normalized_text": "division",
+      "start": 22,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Division",
+      "match_type": "lemma",
+      "candidate_key": "a28de75e9ba4827c",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-678",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of divisions for 2ab?",
+    "translated_question": "сколько дивизионов для 2ab?",
+    "back_translated_question": "how many divisions for 2ab?",
+    "question_cosine_similarity": 0.9763406132762419,
+    "question_bert_precision": 0.5858415961265564,
+    "question_bert_recall": 0.7574396133422852,
+    "question_bert_f1": 0.6690691113471985,
+    "back_table_groups_compared": 48,
+    "back_table_min_similarity": 0.39253856187927244,
+    "back_table_mean_similarity": 0.898530510823556,
+    "back_table_bert_groups_compared": 48,
+    "back_table_bert_min_f1": 0.016752103343605995,
+    "back_table_bert_mean_f1": 0.7685170046752319,
+    "back_table_bert_min_precision": 0.013608977198600769,
+    "back_table_bert_mean_precision": 0.773705644843479,
+    "back_table_bert_min_recall": 0.016913875937461853,
+    "back_table_bert_mean_recall": 0.7628334912781914,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.39253856187927244,
+        "source": "Tier",
+        "back_translated": "Round"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.6336893506717323,
+        "source": "3ª",
+        "back_translated": "3-I"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.6336893506717323,
+        "source": "3ª",
+        "back_translated": "3-I"
+      },
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.6336893506717323,
+        "source": "3ª",
+        "back_translated": "3-I"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.6336893506717323,
+        "source": "3ª",
+        "back_translated": "3-I"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

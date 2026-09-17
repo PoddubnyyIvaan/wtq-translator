@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-787",
+  "source_context": "csv/203-csv/575.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-787.tsv",
+  "source_question": "how many gamestorms had at least 800 people?",
+  "translated_question": "сколько GameStorm прошло с участием не менее 800 человек?",
+  "source_target_value": "4",
+  "translated_target_value": "4",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "gamestorms",
+      "normalized_text": "gamestorm",
+      "start": 9,
+      "end": 19,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        }
+      ],
+      "table_source_text": "GameStorm",
+      "match_type": "lemma",
+      "candidate_key": "962b36d6b4ec5cef",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-787",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many gamestorms had at least 800 people?",
+    "translated_question": "сколько GameStorm прошло с участием не менее 800 человек?",
+    "back_translated_question": "how many GameStorm have taken place with at least 800 participants?",
+    "question_cosine_similarity": 0.9363341864139589,
+    "question_bert_precision": 0.6699903011322021,
+    "question_bert_recall": 0.5589321255683899,
+    "question_bert_f1": 0.6137200593948364,
+    "back_table_groups_compared": 40,
+    "back_table_min_similarity": 0.8759422989222257,
+    "back_table_mean_similarity": 0.9699528600749308,
+    "back_table_bert_groups_compared": 40,
+    "back_table_bert_min_f1": 0.4366989731788635,
+    "back_table_bert_mean_f1": 0.9045914627611638,
+    "back_table_bert_min_precision": 0.481837660074234,
+    "back_table_bert_mean_precision": 0.9074483416974545,
+    "back_table_bert_min_recall": 0.3584706485271454,
+    "back_table_bert_mean_recall": 0.9018796667456627,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.8759422989222257,
+        "source": "Guests: Mike Selinker, Shane Lacy Hensley, Lisa Steenson, Zev Shlasinger of Z-Man Games",
+        "back_translated": "guest judge(s)): Mike Selinker, Shane Laysey Henzley, Lisa Steenson, zwev shlasinjer from z-man games"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.8770628889994746,
+        "source": "Hilton - Vancouver, WA",
+        "back_translated": "Hilton Head - Vancouver, VA"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.8770628889994746,
+        "source": "Hilton - Vancouver, WA",
+        "back_translated": "Hilton Head - Vancouver, VA"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.8770628889994746,
+        "source": "Hilton - Vancouver, WA",
+        "back_translated": "Hilton Head - Vancouver, VA"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.8770628889994746,
+        "source": "Hilton - Vancouver, WA",
+        "back_translated": "Hilton Head - Vancouver, VA"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "gaming conventions"
+  },
+  "domain": "gaming conventions"
+}

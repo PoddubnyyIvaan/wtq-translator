@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-417",
+  "source_context": "csv/204-csv/112.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-417.tsv",
+  "source_question": "what is the location of the latest race?",
+  "translated_question": "где находится Местоположение последней гонки?",
+  "source_target_value": "Tignes, France",
+  "translated_target_value": "Тиньи, Франция",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "location",
+      "normalized_text": "location",
+      "start": 12,
+      "end": 20,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Location",
+      "match_type": "lemma",
+      "candidate_key": "1f7ca172f97c79ad",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-417",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the location of the latest race?",
+    "translated_question": "где находится Местоположение последней гонки?",
+    "back_translated_question": "where is location of the last race?",
+    "question_cosine_similarity": 0.9176142372698453,
+    "question_bert_precision": 0.7571209669113159,
+    "question_bert_recall": 0.7919567227363586,
+    "question_bert_f1": 0.7747603058815002,
+    "back_table_groups_compared": 40,
+    "back_table_min_similarity": 0.4923661339018641,
+    "back_table_mean_similarity": 0.9126753649706183,
+    "back_table_bert_groups_compared": 40,
+    "back_table_bert_min_f1": 0.2640688717365265,
+    "back_table_bert_mean_f1": 0.7686377555131912,
+    "back_table_bert_min_precision": 0.2625058591365814,
+    "back_table_bert_mean_precision": 0.7861423246562481,
+    "back_table_bert_min_recall": 0.24215401709079742,
+    "back_table_bert_mean_recall": 0.7512423686683178,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.4923661339018641,
+        "source": "Vail, CO, USA",
+        "back_translated": "Wengen, KO, USA"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

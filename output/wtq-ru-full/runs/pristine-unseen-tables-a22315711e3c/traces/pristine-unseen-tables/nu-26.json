@@ -1,0 +1,210 @@
+{
+  "question_id": "nu-26",
+  "source_context": "csv/203-csv/63.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-26.tsv",
+  "source_question": "how many awards has leona lewis won?",
+  "translated_question": "сколько премий выиграла Леона Льюис?",
+  "source_target_value": "20",
+  "translated_target_value": "20",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "awards",
+      "normalized_text": "award",
+      "start": 9,
+      "end": 15,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 1
+        },
+        {
+          "row": 10,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Award",
+      "match_type": "lemma",
+      "candidate_key": "fb79a37731129483",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "leona lewis",
+      "normalized_text": "leona lewis",
+      "start": 20,
+      "end": 31,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        },
+        {
+          "row": 3,
+          "column": 2
+        },
+        {
+          "row": 4,
+          "column": 2
+        },
+        {
+          "row": 5,
+          "column": 2
+        },
+        {
+          "row": 8,
+          "column": 2
+        },
+        {
+          "row": 9,
+          "column": 2
+        },
+        {
+          "row": 10,
+          "column": 2
+        },
+        {
+          "row": 13,
+          "column": 2
+        },
+        {
+          "row": 14,
+          "column": 2
+        },
+        {
+          "row": 15,
+          "column": 2
+        },
+        {
+          "row": 16,
+          "column": 2
+        },
+        {
+          "row": 18,
+          "column": 2
+        },
+        {
+          "row": 20,
+          "column": 2
+        },
+        {
+          "row": 21,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Leona Lewis",
+      "match_type": "lemma",
+      "candidate_key": "d57cac4b87ffb1db",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-26",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many awards has leona lewis won?",
+    "translated_question": "сколько премий выиграла Леона Льюис?",
+    "back_translated_question": "how many awards did Leona Lewis win?",
+    "question_cosine_similarity": 0.9893982289274912,
+    "question_bert_precision": 0.48731106519699097,
+    "question_bert_recall": 0.6181750893592834,
+    "question_bert_f1": 0.5515439510345459,
+    "back_table_groups_compared": 115,
+    "back_table_min_similarity": 0.6810276080980119,
+    "back_table_mean_similarity": 0.9718158332571305,
+    "back_table_bert_groups_compared": 115,
+    "back_table_bert_min_f1": 0.10689843446016312,
+    "back_table_bert_mean_f1": 0.8718153386660245,
+    "back_table_bert_min_precision": 0.1483602076768875,
+    "back_table_bert_mean_precision": 0.8753091464871946,
+    "back_table_bert_min_recall": 0.052760422229766846,
+    "back_table_bert_mean_recall": 0.8685579977605654,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.6810276080980119,
+        "source": "Britain's Best",
+        "back_translated": "best uk artist"
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.6863627038789664,
+        "source": "Shooting Star",
+        "back_translated": "Rising star"
+      },
+      {
+        "row": 10,
+        "column": 3,
+        "score": 0.6965336986049735,
+        "source": "Best New Artist",
+        "back_translated": "top 40 artist of the year"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.7924658351537381,
+        "source": "Newcomer of the Year",
+        "back_translated": "new artist of the year"
+      },
+      {
+        "row": 16,
+        "column": 3,
+        "score": 0.7971343788668909,
+        "source": "New Artist Of The Year",
+        "back_translated": "Top 40 Artist of the Year"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music awards"
+  },
+  "domain": "music awards"
+}

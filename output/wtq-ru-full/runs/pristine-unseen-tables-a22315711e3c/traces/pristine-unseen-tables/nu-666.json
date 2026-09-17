@@ -1,0 +1,150 @@
+{
+  "question_id": "nu-666",
+  "source_context": "csv/203-csv/369.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-666.tsv",
+  "source_question": "how many keels were laid n the month of may 1918?",
+  "translated_question": "сколько килей заложенных было в месяце май 1918 года?",
+  "source_target_value": "5",
+  "translated_target_value": "5",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "keels",
+      "normalized_text": "keel",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Keel",
+      "match_type": "lemma",
+      "candidate_key": "a506072a3a44d78b",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "may 1918",
+      "normalized_text": "may 1918",
+      "start": 40,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 3,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "May 1918",
+      "match_type": "lemma",
+      "candidate_key": "e84ee62276f429b7",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-666",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many keels were laid n the month of may 1918?",
+    "translated_question": "сколько килей заложенных было в месяце май 1918 года?",
+    "back_translated_question": "how many keels laid were there in may 1918?",
+    "question_cosine_similarity": 0.9775806016245817,
+    "question_bert_precision": 0.7229034900665283,
+    "question_bert_recall": 0.7978174090385437,
+    "question_bert_f1": 0.7601612210273743,
+    "back_table_groups_compared": 305,
+    "back_table_min_similarity": 0.4669871216392545,
+    "back_table_mean_similarity": 0.9637829676376853,
+    "back_table_bert_groups_compared": 305,
+    "back_table_bert_min_f1": -0.030771033838391304,
+    "back_table_bert_mean_f1": 0.5114292289817431,
+    "back_table_bert_min_precision": 0.05702049657702446,
+    "back_table_bert_mean_precision": 0.5448915694947125,
+    "back_table_bert_min_recall": -0.11309973895549774,
+    "back_table_bert_mean_recall": 0.4780643488540024,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.4669871216392545,
+        "source": "Commissioned",
+        "back_translated": "entered into the chilean navy on february 10, 2010, and renamed to"
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.7631049596842508,
+        "source": "Destroyed 19 August 1937",
+        "back_translated": "scrapped on august 19, 1937"
+      },
+      {
+        "row": 13,
+        "column": 4,
+        "score": 0.7787319214904284,
+        "source": "Expended as target 22 November 1934",
+        "back_translated": "scuttled as a target on november 22, 1934"
+      },
+      {
+        "row": 39,
+        "column": 4,
+        "score": 0.780127006286262,
+        "source": "Expended as target 19 November 1934",
+        "back_translated": "scuttled as a target on november 19, 1934"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.7877626426077843,
+        "source": "Expended as target 30 November 1934",
+        "back_translated": "scuttled as a target on november 30, 1934"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "naval history"
+  },
+  "domain": "naval history"
+}

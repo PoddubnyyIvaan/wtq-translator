@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-560",
+  "source_context": "csv/204-csv/412.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-560.tsv",
+  "source_question": "how many wins are listed?",
+  "translated_question": "сколько побед указано?",
+  "source_target_value": "9",
+  "translated_target_value": "9",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-560",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "how many wins are listed?",
+    "translated_question": "сколько побед указано?",
+    "back_translated_question": "how many wins are indicated?",
+    "question_cosine_similarity": 0.947113314771293,
+    "question_bert_precision": 0.9350174069404602,
+    "question_bert_recall": 0.9350264072418213,
+    "question_bert_f1": 0.9351203441619873,
+    "back_table_groups_compared": 44,
+    "back_table_min_similarity": 0.4214457687614226,
+    "back_table_mean_similarity": 0.9257189617658234,
+    "back_table_bert_groups_compared": 44,
+    "back_table_bert_min_f1": 0.30110523104667664,
+    "back_table_bert_mean_f1": 0.8939883607355031,
+    "back_table_bert_min_precision": 0.4107586443424225,
+    "back_table_bert_mean_precision": 0.897553332827308,
+    "back_table_bert_min_recall": 0.20030178129673004,
+    "back_table_bert_mean_recall": 0.8904118988324295,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.4214457687614226,
+        "source": "Sewanee",
+        "back_translated": "Swinney"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.6295686309337598,
+        "source": "Site",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.7045428953700054,
+        "source": "Rose Bowl • Pasadena, CA (Rose Bowl)",
+        "back_translated": "Pink Cup • Pasadena, KA (Pink Cup)"
+      },
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.7661959133480246,
+        "source": "vs. Stanford*",
+        "back_translated": "vs ottawa rough riders Stanford*"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.7792363828611393,
+        "source": "W 19–7",
+        "back_translated": "P 19–7"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "college football game schedule"
+  },
+  "domain": "college football game schedule"
+}

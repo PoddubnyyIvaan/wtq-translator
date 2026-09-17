@@ -1,0 +1,190 @@
+{
+  "question_id": "nu-291",
+  "source_context": "csv/204-csv/817.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-291.tsv",
+  "source_question": "which single/ep came next after die famous?",
+  "translated_question": "какой сингл или EP пришёл следующим после умер знаменитым?",
+  "source_target_value": "Redroid",
+  "translated_target_value": "Redroid",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "single",
+      "normalized_text": "single",
+      "start": 6,
+      "end": 12,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Single",
+      "match_type": "lemma",
+      "candidate_key": "b79a0ae765034a53",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "ep",
+      "normalized_text": "ep",
+      "start": 13,
+      "end": 15,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 0
+        }
+      ],
+      "table_source_text": "EP",
+      "match_type": "lemma",
+      "candidate_key": "db1c2c816799312e",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "came",
+      "normalized_text": "come",
+      "start": 16,
+      "end": 20,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 11,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Came",
+      "match_type": "lemma",
+      "candidate_key": "4b02cc10df56183d",
+      "coordinate": {
+        "row": 11,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "die famous",
+      "normalized_text": "die famous",
+      "start": 32,
+      "end": 42,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 14,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Die Famous",
+      "match_type": "lemma",
+      "candidate_key": "cd3056f659fd24ac",
+      "coordinate": {
+        "row": 14,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-291",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which single/ep came next after die famous?",
+    "translated_question": "какой сингл или EP пришёл следующим после умер знаменитым?",
+    "back_translated_question": "which single or ep came next after die famous?",
+    "question_cosine_similarity": 0.9909341428127761,
+    "question_bert_precision": 0.8805027604103088,
+    "question_bert_recall": 0.8805192708969116,
+    "question_bert_f1": 0.8806920647621155,
+    "back_table_groups_compared": 120,
+    "back_table_min_similarity": 0.4261530108372689,
+    "back_table_mean_similarity": 0.9281135878036537,
+    "back_table_bert_groups_compared": 120,
+    "back_table_bert_min_f1": 0.0038114646449685097,
+    "back_table_bert_mean_f1": 0.8280721062251056,
+    "back_table_bert_min_precision": 0.01530163548886776,
+    "back_table_bert_mean_precision": 0.826792469046389,
+    "back_table_bert_min_recall": -0.01050456240773201,
+    "back_table_bert_mean_recall": 0.829174876306206,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.4261530108372689,
+        "source": "Dutchie",
+        "back_translated": "Datchi"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.4261530108372689,
+        "source": "Dutchie",
+        "back_translated": "Datchi"
+      },
+      {
+        "row": 20,
+        "column": 0,
+        "score": 0.4875894863429277,
+        "source": "Onslaught",
+        "back_translated": "Pressure"
+      },
+      {
+        "row": 20,
+        "column": 1,
+        "score": 0.4875894863429277,
+        "source": "Onslaught",
+        "back_translated": "Pressure"
+      },
+      {
+        "row": 21,
+        "column": 0,
+        "score": 0.48790840813733566,
+        "source": "Drop Bears",
+        "back_translated": "Kangaroo Bombs"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music"
+  },
+  "domain": "music"
+}

@@ -1,0 +1,142 @@
+{
+  "question_id": "nu-699",
+  "source_context": "csv/204-csv/8.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-699.tsv",
+  "source_question": "who became head coach after ellis johnson?",
+  "translated_question": "кто стал главным тренером после Эллиса Джонсона?",
+  "source_target_value": "John Zernhelt",
+  "translated_target_value": "Джон Зернхельт",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "head coach",
+      "normalized_text": "head coach",
+      "start": 11,
+      "end": 21,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Head Coach",
+      "match_type": "lemma",
+      "candidate_key": "f2938f42fa3c2d43",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "ellis johnson",
+      "normalized_text": "ellis johnson",
+      "start": 28,
+      "end": 41,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 96,
+          "column": 2
+        },
+        {
+          "row": 97,
+          "column": 2
+        },
+        {
+          "row": 98,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Ellis Johnson",
+      "match_type": "lemma",
+      "candidate_key": "47b5eddb84ab9fd3",
+      "coordinate": {
+        "row": 96,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-699",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who became head coach after ellis johnson?",
+    "translated_question": "кто стал главным тренером после Эллиса Джонсона?",
+    "back_translated_question": "who became head coach after ellis johnson?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 1232,
+    "back_table_min_similarity": 0.6140296463201673,
+    "back_table_mean_similarity": 0.9775265916922685,
+    "back_table_bert_groups_compared": 1232,
+    "back_table_bert_min_f1": 0.3965592384338379,
+    "back_table_bert_mean_f1": 0.9740409959688202,
+    "back_table_bert_min_precision": 0.36572155356407166,
+    "back_table_bert_mean_precision": 0.9737198999175778,
+    "back_table_bert_min_recall": 0.3685532808303833,
+    "back_table_bert_mean_recall": 0.9743109116838737,
+    "back_table_similarity_examples": [
+      {
+        "row": 50,
+        "column": 2,
+        "score": 0.6140296463201673,
+        "source": "John Sauer",
+        "back_translated": "John Zawer"
+      },
+      {
+        "row": 51,
+        "column": 2,
+        "score": 0.6140296463201673,
+        "source": "John Sauer",
+        "back_translated": "John Zawer"
+      },
+      {
+        "row": 82,
+        "column": 2,
+        "score": 0.6418169286903952,
+        "source": "Charlie Taaffe",
+        "back_translated": "Charlie Taft"
+      },
+      {
+        "row": 83,
+        "column": 2,
+        "score": 0.6418169286903952,
+        "source": "Charlie Taaffe",
+        "back_translated": "Charlie Taft"
+      },
+      {
+        "row": 84,
+        "column": 2,
+        "score": 0.6418169286903952,
+        "source": "Charlie Taaffe",
+        "back_translated": "Charlie Taft"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "college football statistics"
+  },
+  "domain": "college football statistics"
+}

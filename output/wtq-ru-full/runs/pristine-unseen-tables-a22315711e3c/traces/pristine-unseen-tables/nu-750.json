@@ -1,0 +1,218 @@
+{
+  "question_id": "nu-750",
+  "source_context": "csv/202-csv/168.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-750.tsv",
+  "source_question": "which station has the most parking spaces?",
+  "translated_question": "какая Стейшн имеет наибольшее количество Парковки Мест?",
+  "source_target_value": "Norwalk",
+  "translated_target_value": "Норвок",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "station",
+      "normalized_text": "station",
+      "start": 6,
+      "end": 13,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Station",
+      "match_type": "lemma",
+      "candidate_key": "d46dac910a06a001",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "parking",
+      "normalized_text": "parking",
+      "start": 27,
+      "end": 34,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Parking",
+      "match_type": "lemma",
+      "candidate_key": "919b6a2afa989eaa",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "spaces",
+      "normalized_text": "space",
+      "start": 35,
+      "end": 41,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 9,
+          "column": 3
+        },
+        {
+          "row": 10,
+          "column": 3
+        },
+        {
+          "row": 11,
+          "column": 3
+        },
+        {
+          "row": 12,
+          "column": 3
+        },
+        {
+          "row": 13,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Spaces",
+      "match_type": "lemma",
+      "candidate_key": "4af5fe3465d08bb0",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-750",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which station has the most parking spaces?",
+    "translated_question": "какая Стейшн имеет наибольшее количество Парковки Мест?",
+    "back_translated_question": "which station has the greatest number of parking spaces?",
+    "question_cosine_similarity": 0.9737964725146405,
+    "question_bert_precision": 0.9043059349060059,
+    "question_bert_recall": 0.8071504831314087,
+    "question_bert_f1": 0.8550273776054382,
+    "back_table_groups_compared": 75,
+    "back_table_min_similarity": 0.4104303411667237,
+    "back_table_mean_similarity": 0.9786302639284887,
+    "back_table_bert_groups_compared": 75,
+    "back_table_bert_min_f1": 0.28604650497436523,
+    "back_table_bert_mean_f1": 0.9452062678337098,
+    "back_table_bert_min_precision": 0.28523921966552734,
+    "back_table_bert_mean_precision": 0.9444141308466594,
+    "back_table_bert_min_recall": 0.2846871614456177,
+    "back_table_bert_mean_recall": 0.9460461854934692,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.4104303411667237,
+        "source": "Douglas",
+        "back_translated": "Downtown"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.6693136618008498,
+        "source": "Hawthorne/Lennox",
+        "back_translated": "Hawthorne/Lenox"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.7375242916276524,
+        "source": "City/ Neighborhood",
+        "back_translated": "City/district"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.8492180424495466,
+        "source": "Metro Local: 232\\nTorrance Transit: 8 (Southbound)",
+        "back_translated": "Metro Local: 232\\n torrance transit: 8 (south)"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.9122835020253394,
+        "source": "Metro Local: 126, 207 (Weekdays selected Rush Hour AM/PM trips, & Weekends Only), 210\\nMetro Rapid: 710, 757\\nTorrance Transit: 5, 10",
+        "back_translated": "Metro Local: 126, 207 (weekdays, selected morning peak hours/pm trips, & Weekends only), 210\\nmetro rapid: 710, 757\\n torrance transit: 5, 10"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "public transportation"
+  },
+  "domain": "public transportation"
+}

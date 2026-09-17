@@ -1,0 +1,156 @@
+{
+  "question_id": "nu-914",
+  "source_context": "csv/203-csv/714.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-914.tsv",
+  "source_question": "did season 5 start in october or september?",
+  "translated_question": "начался ли Регулярный сезон в Октябре или Сентябре?",
+  "source_target_value": "October",
+  "translated_target_value": "Октябрь",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "season",
+      "normalized_text": "season",
+      "start": 4,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Season",
+      "match_type": "lemma",
+      "candidate_key": "9de63b1527596c01",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "october",
+      "normalized_text": "october",
+      "start": 22,
+      "end": 29,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        },
+        {
+          "row": 3,
+          "column": 2
+        },
+        {
+          "row": 4,
+          "column": 2
+        },
+        {
+          "row": 6,
+          "column": 2
+        }
+      ],
+      "table_source_text": "October",
+      "match_type": "lemma",
+      "candidate_key": "76e709efb4110336",
+      "coordinate": {
+        "row": 1,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "september",
+      "normalized_text": "september",
+      "start": 33,
+      "end": 42,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 2
+        }
+      ],
+      "table_source_text": "September",
+      "match_type": "lemma",
+      "candidate_key": "1ddda8c4dbf60abe",
+      "coordinate": {
+        "row": 5,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-914",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "did season 5 start in october or september?",
+    "translated_question": "начался ли Регулярный сезон в Октябре или Сентябре?",
+    "back_translated_question": "Did the season start in October or September?",
+    "question_cosine_similarity": 0.8672470686034444,
+    "question_bert_precision": 0.5388286709785461,
+    "question_bert_recall": 0.6435796022415161,
+    "question_bert_f1": 0.5906417965888977,
+    "back_table_groups_compared": 32,
+    "back_table_min_similarity": 0.7574208471870204,
+    "back_table_mean_similarity": 0.9924194014745944,
+    "back_table_bert_groups_compared": 32,
+    "back_table_bert_min_f1": 0.39655938744544983,
+    "back_table_bert_mean_f1": 0.9811424808576703,
+    "back_table_bert_min_precision": 0.42345285415649414,
+    "back_table_bert_mean_precision": 0.9819829016923904,
+    "back_table_bert_min_recall": 0.3685532808303833,
+    "back_table_bert_mean_recall": 0.9802672900259495,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "television series"
+  },
+  "domain": "television series"
+}

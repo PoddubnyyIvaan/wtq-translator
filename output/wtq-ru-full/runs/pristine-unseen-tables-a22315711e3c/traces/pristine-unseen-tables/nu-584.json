@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-584",
+  "source_context": "csv/203-csv/261.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-584.tsv",
+  "source_question": "how many entries in the 1800s have a water level above 250?",
+  "translated_question": "сколько записей в 1800-х имеет уровень воды выше 250?",
+  "source_target_value": "4",
+  "translated_target_value": "4",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "water",
+      "normalized_text": "water",
+      "start": 37,
+      "end": 42,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Water",
+      "match_type": "lemma",
+      "candidate_key": "f7ebd0a1ce229ac6",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-584",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many entries in the 1800s have a water level above 250?",
+    "translated_question": "сколько записей в 1800-х имеет уровень воды выше 250?",
+    "back_translated_question": "how many records in the 1800s have water level above 250?",
+    "question_cosine_similarity": 0.942283906458306,
+    "question_bert_precision": 0.8806482553482056,
+    "question_bert_recall": 0.9130610227584839,
+    "question_bert_f1": 0.8969117403030396,
+    "back_table_groups_compared": 250,
+    "back_table_min_similarity": 0.7288705766930393,
+    "back_table_mean_similarity": 0.9888349962071891,
+    "back_table_bert_groups_compared": 250,
+    "back_table_bert_min_f1": 0.5161414742469788,
+    "back_table_bert_mean_f1": 0.9196916694641113,
+    "back_table_bert_min_precision": 0.4945087134838104,
+    "back_table_bert_mean_precision": 0.9286388643980026,
+    "back_table_bert_min_recall": 0.536700427532196,
+    "back_table_bert_mean_recall": 0.9108689291477203,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.7288705766930393,
+        "source": "daytime",
+        "back_translated": "day"
+      },
+      {
+        "row": 11,
+        "column": 4,
+        "score": 0.7288705766930393,
+        "source": "daytime",
+        "back_translated": "day"
+      },
+      {
+        "row": 45,
+        "column": 4,
+        "score": 0.7288705766930393,
+        "source": "daytime",
+        "back_translated": "day"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.8598075378427554,
+        "source": "Chronological\\nNo.",
+        "back_translated": "Chronological\\nnumber."
+      },
+      {
+        "row": 43,
+        "column": 2,
+        "score": 0.943615006470172,
+        "source": "8 October 1863",
+        "back_translated": "October 8, 1863"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "hydrology"
+  },
+  "domain": "hydrology"
+}

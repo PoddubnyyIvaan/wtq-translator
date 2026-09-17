@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-637",
+  "source_context": "csv/203-csv/259.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-637.tsv",
+  "source_question": "what other competition did melissa morrison-howard place 6th besides world athletics final?",
+  "translated_question": "на каком ещё соревновании Мелисса Моррисон-Хауард заняла 6-е место, кроме Финала Всемирной атлетики?",
+  "source_target_value": "World Indoor Championships",
+  "translated_target_value": "Чемпионат мира по легкой атлетике на ковре",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "competition",
+      "normalized_text": "competition",
+      "start": 11,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Competition",
+      "match_type": "lemma",
+      "candidate_key": "0509839ddc683373",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "world athletics final",
+      "normalized_text": "world athletics final",
+      "start": 69,
+      "end": 90,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 10,
+          "column": 1
+        }
+      ],
+      "table_source_text": "World Athletics Final",
+      "match_type": "lemma",
+      "candidate_key": "46eca2c59e1431c0",
+      "coordinate": {
+        "row": 10,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-637",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what other competition did melissa morrison-howard place 6th besides world athletics final?",
+    "translated_question": "на каком ещё соревновании Мелисса Моррисон-Хауард заняла 6-е место, кроме Финала Всемирной атлетики?",
+    "back_translated_question": "in which other competition did Melissa Morrison-Howard finish in 6th place, besides the World Athletics Final?",
+    "question_cosine_similarity": 0.9774641612055702,
+    "question_bert_precision": 0.3232400119304657,
+    "question_bert_recall": 0.4180532395839691,
+    "question_bert_f1": 0.3705309331417084,
+    "back_table_groups_compared": 65,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9751807901988802,
+    "back_table_bert_groups_compared": 65,
+    "back_table_bert_min_f1": 0.36328017711639404,
+    "back_table_bert_mean_f1": 0.9342041327403142,
+    "back_table_bert_min_precision": 0.3889692425727844,
+    "back_table_bert_mean_precision": 0.9419197880304777,
+    "back_table_bert_min_recall": 0.2649391293525696,
+    "back_table_bert_mean_recall": 0.9268790538494404,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.7884606252612152,
+        "source": "Grand Prix Final",
+        "back_translated": "World Athletics Final"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7884606252612152,
+        "source": "Grand Prix Final",
+        "back_translated": "World Athletics Final"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.7884606252612152,
+        "source": "Grand Prix Final",
+        "back_translated": "World Athletics Final"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.878407178855476,
+        "source": "USA Indoor Championships",
+        "back_translated": "usa indoor track and field championships"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

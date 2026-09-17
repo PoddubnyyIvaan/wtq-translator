@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-875",
+  "source_context": "csv/204-csv/391.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-875.tsv",
+  "source_question": "how much more capacity does rasht have than kerman?",
+  "translated_question": "на сколько больше вместимости у Рашта, чем у Кермана?",
+  "source_target_value": "0",
+  "translated_target_value": "0",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "capacity",
+      "normalized_text": "capacity",
+      "start": 14,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Capacity",
+      "match_type": "lemma",
+      "candidate_key": "c688958150264979",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "rasht",
+      "normalized_text": "rasht",
+      "start": 28,
+      "end": 33,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Rasht",
+      "match_type": "lemma",
+      "candidate_key": "9584fde0453994fe",
+      "coordinate": {
+        "row": 2,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "kerman",
+      "normalized_text": "kerman",
+      "start": 44,
+      "end": 50,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Kerman",
+      "match_type": "lemma",
+      "candidate_key": "1442adda2c09a801",
+      "coordinate": {
+        "row": 7,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-875",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how much more capacity does rasht have than kerman?",
+    "translated_question": "на сколько больше вместимости у Рашта, чем у Кермана?",
+    "back_translated_question": "by how much greater is the capacity of rasht than that of kerman?",
+    "question_cosine_similarity": 0.9682057632197302,
+    "question_bert_precision": 0.6040414571762085,
+    "question_bert_recall": 0.4863980710506439,
+    "question_bert_f1": 0.5443764925003052,
+    "back_table_groups_compared": 133,
+    "back_table_min_similarity": 0.2952116443196799,
+    "back_table_mean_similarity": 0.9268370932527178,
+    "back_table_bert_groups_compared": 133,
+    "back_table_bert_min_f1": 0.2960668206214905,
+    "back_table_bert_mean_f1": 0.8955864216151991,
+    "back_table_bert_min_precision": 0.26560118794441223,
+    "back_table_bert_mean_precision": 0.8898358524293828,
+    "back_table_bert_min_recall": 0.3043869137763977,
+    "back_table_bert_mean_recall": 0.9012671258664668,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.2952116443196799,
+        "source": "Ahvaz",
+        "back_translated": "Tahiti"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.2952116443196799,
+        "source": "Ahvaz",
+        "back_translated": "Tahiti"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.40586751863918236,
+        "source": "Est. Ahvaz",
+        "back_translated": "East. Tahiti"
+      },
+      {
+        "row": 11,
+        "column": 0,
+        "score": 0.4287016219108419,
+        "source": "Payam",
+        "back_translated": "Pajam"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.4392500959026107,
+        "source": "Saeed Khani",
+        "back_translated": "Said Han"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

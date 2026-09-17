@@ -1,0 +1,136 @@
+{
+  "question_id": "nu-276",
+  "source_context": "csv/204-csv/97.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-276.tsv",
+  "source_question": "who of the top scorers listed scored the least?",
+  "translated_question": "кто из лучших барсунов, указанных в списке, счёта меньше всего?",
+  "source_target_value": "Davonn Harp",
+  "translated_target_value": "Давонн Харп",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "top scorers",
+      "normalized_text": "top scorer",
+      "start": 11,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "TOP SCORER",
+      "match_type": "lemma",
+      "candidate_key": "9cd51fc07c978a17",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "scored",
+      "normalized_text": "score",
+      "start": 30,
+      "end": 36,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "SCORE",
+      "match_type": "lemma",
+      "candidate_key": "b667409f5b745748",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-276",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who of the top scorers listed scored the least?",
+    "translated_question": "кто из лучших барсунов, указанных в списке, счёта меньше всего?",
+    "back_translated_question": "who among the top scorers listed has scored the least?",
+    "question_cosine_similarity": 0.975812493414078,
+    "question_bert_precision": 0.839481770992279,
+    "question_bert_recall": 0.788191556930542,
+    "question_bert_f1": 0.81385737657547,
+    "back_table_groups_compared": 100,
+    "back_table_min_similarity": 0.45501812422484456,
+    "back_table_mean_similarity": 0.964887851385517,
+    "back_table_bert_groups_compared": 100,
+    "back_table_bert_min_f1": 0.37445124983787537,
+    "back_table_bert_mean_f1": 0.942904542684555,
+    "back_table_bert_min_precision": 0.4613093435764313,
+    "back_table_bert_mean_precision": 0.9440501993894577,
+    "back_table_bert_min_recall": 0.2925146818161011,
+    "back_table_bert_mean_recall": 0.9417525497078896,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.45501812422484456,
+        "source": "VENUE",
+        "back_translated": "SUITS"
+      },
+      {
+        "row": 16,
+        "column": 4,
+        "score": 0.5735091565731579,
+        "source": "CUNETA ASTRODOME",
+        "back_translated": "ASTRODOM KUNETA"
+      },
+      {
+        "row": 15,
+        "column": 4,
+        "score": 0.6350391936718164,
+        "source": "YNARES CENTER",
+        "back_translated": "INARES CENTER"
+      },
+      {
+        "row": 14,
+        "column": 0,
+        "score": 0.6929312039404965,
+        "source": "September 29",
+        "back_translated": "September 29, 1975"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.6940685623501232,
+        "source": "BRGY.GINEBRA",
+        "back_translated": "BRG.IGINEBRA"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

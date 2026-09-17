@@ -1,0 +1,154 @@
+{
+  "question_id": "nu-150",
+  "source_context": "csv/203-csv/260.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-150.tsv",
+  "source_question": "who became the oldest living president before john adams?",
+  "translated_question": "кто стал самым пожилым действующим президентом до Джона Адамса?",
+  "source_target_value": "George Washington",
+  "translated_target_value": "Джордж Вашингтон",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "oldest living president",
+      "normalized_text": "old live president",
+      "start": 15,
+      "end": 38,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": 24,
+          "column": 2
+        },
+        {
+          "row": 24,
+          "column": 4
+        },
+        {
+          "row": 25,
+          "column": 1
+        },
+        {
+          "row": 25,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Oldest Living President",
+      "match_type": "lemma",
+      "candidate_key": "c6d1ccd494437eff",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "john adams",
+      "normalized_text": "john adams",
+      "start": 46,
+      "end": 56,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 0
+        }
+      ],
+      "table_source_text": "John Adams",
+      "match_type": "lemma",
+      "candidate_key": "8cddad683f853321",
+      "coordinate": {
+        "row": 1,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-150",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who became the oldest living president before john adams?",
+    "translated_question": "кто стал самым пожилым действующим президентом до Джона Адамса?",
+    "back_translated_question": "who became the oldest living president before John Adams?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 0.5505439639091492,
+    "question_bert_recall": 0.7336001992225647,
+    "question_bert_f1": 0.6390777826309204,
+    "back_table_groups_compared": 189,
+    "back_table_min_similarity": 0.6344759823802473,
+    "back_table_mean_similarity": 0.9360890182091371,
+    "back_table_bert_groups_compared": 189,
+    "back_table_bert_min_f1": 0.22844624519348145,
+    "back_table_bert_mean_f1": 0.7914223614193144,
+    "back_table_bert_min_precision": 0.21296648681163788,
+    "back_table_bert_mean_precision": 0.8190197145181989,
+    "back_table_bert_min_recall": 0.18881843984127045,
+    "back_table_bert_mean_recall": 0.7650066514021505,
+    "back_table_similarity_examples": [
+      {
+        "row": 17,
+        "column": 6,
+        "score": 0.6344759823802473,
+        "source": "1,034 days",
+        "back_translated": "1 034 дня"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.76042572279462,
+        "source": "Duration (Years, Days)",
+        "back_translated": "Duration (years of victories, 28 Days Later)"
+      },
+      {
+        "row": 25,
+        "column": 5,
+        "score": 0.76042572279462,
+        "source": "Duration (Years, Days)",
+        "back_translated": "Duration (years of victories, 28 Days Later)"
+      },
+      {
+        "row": 14,
+        "column": 5,
+        "score": 0.7992579558380415,
+        "source": "4 years, 0 days",
+        "back_translated": "4 years of victories, 0 28 Days Later"
+      },
+      {
+        "row": 13,
+        "column": 3,
+        "score": 0.8070502781272917,
+        "source": "49 years, 241 days",
+        "back_translated": "49 years of victories, 241 28 Days Later"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "U.S. Presidents and their lifespans"
+  },
+  "domain": "U.S. Presidents and their lifespans"
+}

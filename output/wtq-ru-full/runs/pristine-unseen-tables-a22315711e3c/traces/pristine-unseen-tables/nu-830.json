@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-830",
+  "source_context": "csv/203-csv/820.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-830.tsv",
+  "source_question": "who was ranked last among this group?",
+  "translated_question": "кто был последним в этом группе?",
+  "source_target_value": "Terry Furlow",
+  "translated_target_value": "Терри Фурлов",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-830",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "who was ranked last among this group?",
+    "translated_question": "кто был последним в этом группе?",
+    "back_translated_question": "who was the last in this group?",
+    "question_cosine_similarity": 0.847207614060408,
+    "question_bert_precision": 0.7233996987342834,
+    "question_bert_recall": 0.7234379053115845,
+    "question_bert_f1": 0.7238378524780273,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.4618934870475018,
+    "back_table_mean_similarity": 0.9452405090181853,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.34985366463661194,
+    "back_table_bert_mean_f1": 0.9218140448685046,
+    "back_table_bert_min_precision": 0.34882232546806335,
+    "back_table_bert_mean_precision": 0.9264128246793041,
+    "back_table_bert_min_recall": 0.3489122986793518,
+    "back_table_bert_mean_recall": 0.9172387067918424,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 5,
+        "score": 0.4618934870475018,
+        "source": "BYU",
+        "back_translated": "Bui"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.6432857528668197,
+        "source": "Guard",
+        "back_translated": "Defender"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.6432857528668197,
+        "source": "Guard",
+        "back_translated": "Defender"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.6432857528668197,
+        "source": "Guard",
+        "back_translated": "Defender"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "basketball"
+  },
+  "domain": "basketball"
+}

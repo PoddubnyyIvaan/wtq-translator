@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-368",
+  "source_context": "csv/203-csv/819.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-368.tsv",
+  "source_question": "what year did she receive her most recent highest rated position?",
+  "translated_question": "в каком году она получила своё самое последнее самое высокое место?",
+  "source_target_value": "2012",
+  "translated_target_value": "2012",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 5,
+      "end": 9,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "position",
+      "normalized_text": "position",
+      "start": 56,
+      "end": 64,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Position",
+      "match_type": "lemma",
+      "candidate_key": "2448e693407c0c7e",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-368",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what year did she receive her most recent highest rated position?",
+    "translated_question": "в каком году она получила своё самое последнее самое высокое место?",
+    "back_translated_question": "in what year did she achieve her most recent highest position?",
+    "question_cosine_similarity": 0.9372046864669641,
+    "question_bert_precision": 0.8022444248199463,
+    "question_bert_recall": 0.7888829708099365,
+    "question_bert_f1": 0.7958552241325378,
+    "back_table_groups_compared": 80,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9534238370561509,
+    "back_table_bert_groups_compared": 80,
+    "back_table_bert_min_f1": 0.37352225184440613,
+    "back_table_bert_mean_f1": 0.9530009839683771,
+    "back_table_bert_min_precision": 0.3889685869216919,
+    "back_table_bert_mean_precision": 0.952616186439991,
+    "back_table_bert_min_recall": 0.3564317524433136,
+    "back_table_bert_mean_recall": 0.9532643761485815,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.752418516166036,
+        "source": "60.28 m",
+        "back_translated": "60,28 м"
+      },
+      {
+        "row": 13,
+        "column": 4,
+        "score": 0.7645011500749697,
+        "source": "70.45 m",
+        "back_translated": "70,45 м"
+      },
+      {
+        "row": 8,
+        "column": 4,
+        "score": 0.767579650204853,
+        "source": "68.15 m",
+        "back_translated": "68,15 м"
+      },
+      {
+        "row": 7,
+        "column": 4,
+        "score": 0.7701297736702597,
+        "source": "64.95 m",
+        "back_translated": "64,95 м"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

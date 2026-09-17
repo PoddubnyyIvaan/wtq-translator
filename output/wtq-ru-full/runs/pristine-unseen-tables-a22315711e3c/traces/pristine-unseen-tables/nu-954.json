@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-954",
+  "source_context": "csv/204-csv/921.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-954.tsv",
+  "source_question": "in how many disciplines does tina weirather compete?",
+  "translated_question": "в скольких дисциплинах выступает тина вейратер?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "disciplines",
+      "normalized_text": "discipline",
+      "start": 12,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Discipline",
+      "match_type": "lemma",
+      "candidate_key": "8a38ae88b2482989",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-954",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "in how many disciplines does tina weirather compete?",
+    "translated_question": "в скольких дисциплинах выступает тина вейратер?",
+    "back_translated_question": "in how many disciplines does Tina Weirather compete?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 0.7251887321472168,
+    "question_bert_recall": 0.7252267003059387,
+    "question_bert_f1": 0.7256240248680115,
+    "back_table_groups_compared": 85,
+    "back_table_min_similarity": 0.5370093131138749,
+    "back_table_mean_similarity": 0.9298006335137748,
+    "back_table_bert_groups_compared": 85,
+    "back_table_bert_min_f1": 0.26990365982055664,
+    "back_table_bert_mean_f1": 0.8322370753568762,
+    "back_table_bert_min_precision": 0.2961788773536682,
+    "back_table_bert_mean_precision": 0.8441245236817528,
+    "back_table_bert_min_recall": 0.2421538531780243,
+    "back_table_bert_mean_recall": 0.8203931517460767,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "alpine skiing competitions"
+  },
+  "domain": "alpine skiing competitions"
+}

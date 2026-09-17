@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-661",
+  "source_context": "csv/204-csv/149.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-661.tsv",
+  "source_question": "what is the last description of losses on this chart?",
+  "translated_question": "каково последнее Описание потерь Потери на этой диаграмме?",
+  "source_target_value": "Deaths other countries",
+  "translated_target_value": "Смерти в других странах",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "description",
+      "normalized_text": "description",
+      "start": 17,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Description",
+      "match_type": "lemma",
+      "candidate_key": "7ed3f011d264339e",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "losses",
+      "normalized_text": "loss",
+      "start": 32,
+      "end": 38,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Losses",
+      "match_type": "lemma",
+      "candidate_key": "2200632f0e48f193",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-661",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the last description of losses on this chart?",
+    "translated_question": "каково последнее Описание потерь Потери на этой диаграмме?",
+    "back_translated_question": "what is the last description losses on this chart?",
+    "question_cosine_similarity": 0.977344373995363,
+    "question_bert_precision": 0.8301243185997009,
+    "question_bert_recall": 0.8751655220985413,
+    "question_bert_f1": 0.852672815322876,
+    "back_table_groups_compared": 64,
+    "back_table_min_similarity": 0.9180892482816199,
+    "back_table_mean_similarity": 0.9967806369001302,
+    "back_table_bert_groups_compared": 64,
+    "back_table_bert_min_f1": 0.39219042658805847,
+    "back_table_bert_mean_f1": 0.9735709489323199,
+    "back_table_bert_min_precision": 0.37105903029441833,
+    "back_table_bert_mean_precision": 0.97342997090891,
+    "back_table_bert_min_recall": 0.4118674397468567,
+    "back_table_bert_mean_recall": 0.973666095174849,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.9180892482816199,
+        "source": "Murdered",
+        "back_translated": "Killed"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.9507760586024755,
+        "source": "Description Losses",
+        "back_translated": "Description of losses"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.956919829657794,
+        "source": "Murdered in Eastern Regions",
+        "back_translated": "Killed in eastern regions"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.9755199981216959,
+        "source": "Deaths other countries",
+        "back_translated": "Deaths in other countries"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.9926556269447484,
+        "source": "Deaths Outside of Prisons & Camps",
+        "back_translated": "Deaths outside prisons & Camps"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "historical war casualties"
+  },
+  "domain": "historical war casualties"
+}

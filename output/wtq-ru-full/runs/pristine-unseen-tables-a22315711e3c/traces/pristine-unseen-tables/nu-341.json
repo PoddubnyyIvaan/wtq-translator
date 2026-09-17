@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-341",
+  "source_context": "csv/204-csv/931.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-341.tsv",
+  "source_question": "who is older, thaddeus bell or klaus jürgen schneider?",
+  "translated_question": "кто старше, Таддеус Белл или Клаус Юрген Шнайдер?",
+  "source_target_value": "Klaus Jürgen Schneider",
+  "translated_target_value": "Клаус Юрген Шнайдер",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "thaddeus bell",
+      "normalized_text": "thaddeus bell",
+      "start": 14,
+      "end": 27,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Thaddeus Bell",
+      "match_type": "lemma",
+      "candidate_key": "5c993166122f7638",
+      "coordinate": {
+        "row": 5,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "klaus jürgen schneider",
+      "normalized_text": "klaus jürgen schneider",
+      "start": 31,
+      "end": 53,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Klaus Jürgen Schneider",
+      "match_type": "lemma",
+      "candidate_key": "12212d51ddbc0873",
+      "coordinate": {
+        "row": 7,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-341",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is older, thaddeus bell or klaus jürgen schneider?",
+    "translated_question": "кто старше, Таддеус Белл или Клаус Юрген Шнайдер?",
+    "back_translated_question": "who is older, Thaddeus Bell or Klaus Jürgen Schneider?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 0.29419058561325073,
+    "question_bert_recall": 0.4947609305381775,
+    "question_bert_f1": 0.39064955711364746,
+    "back_table_groups_compared": 104,
+    "back_table_min_similarity": 0.5226582761287539,
+    "back_table_mean_similarity": 0.9836199088952178,
+    "back_table_bert_groups_compared": 104,
+    "back_table_bert_min_f1": 0.04348783195018768,
+    "back_table_bert_mean_f1": 0.9731916434203203,
+    "back_table_bert_min_precision": 0.061295151710510254,
+    "back_table_bert_mean_precision": 0.972862917643327,
+    "back_table_bert_min_recall": 0.023195719346404076,
+    "back_table_bert_mean_recall": 0.9734678409384707,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 6,
+        "score": 0.5226582761287539,
+        "source": "Eugene",
+        "back_translated": "evgeni"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.6274999806660464,
+        "source": "Thane Baker",
+        "back_translated": "Tain Baker"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.756440538957544,
+        "source": "Thaddeus Bell",
+        "back_translated": "Taddeus Bell"
+      },
+      {
+        "row": 10,
+        "column": 3,
+        "score": 0.8066842300100785,
+        "source": "George McNeill",
+        "back_translated": "George McNill"
+      },
+      {
+        "row": 11,
+        "column": 6,
+        "score": 0.8314699816834143,
+        "source": "Hannover",
+        "back_translated": "Hanover"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

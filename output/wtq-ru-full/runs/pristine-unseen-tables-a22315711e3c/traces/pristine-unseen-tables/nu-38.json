@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-38",
+  "source_context": "csv/204-csv/417.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-38.tsv",
+  "source_question": "in total, how many germans are listed?",
+  "translated_question": "всего, сколько немцев перечислено?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-38",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "in total, how many germans are listed?",
+    "translated_question": "всего, сколько немцев перечислено?",
+    "back_translated_question": "In total, how many Germans are listed?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 0.8516391515731812,
+    "question_bert_recall": 0.8516596555709839,
+    "question_bert_f1": 0.8518741726875305,
+    "back_table_groups_compared": 126,
+    "back_table_min_similarity": 0.6146473040958443,
+    "back_table_mean_similarity": 0.9662222598021387,
+    "back_table_bert_groups_compared": 126,
+    "back_table_bert_min_f1": 0.17381061613559723,
+    "back_table_bert_mean_f1": 0.950612185375085,
+    "back_table_bert_min_precision": 0.36071744561195374,
+    "back_table_bert_mean_precision": 0.9515781149504676,
+    "back_table_bert_min_recall": 0.015675777569413185,
+    "back_table_bert_mean_recall": 0.9498010927752133,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.6146473040958443,
+        "source": "Pierre Karsmakers",
+        "back_translated": "Pierre Carsmackers"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.6306575620175611,
+        "source": "Brad Lackey",
+        "back_translated": "Brad Lacey"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6799598120984767,
+        "source": "Points",
+        "back_translated": "uci protour points"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.7023424544479595,
+        "source": "Maico",
+        "back_translated": "Maike"
+      },
+      {
+        "row": 6,
+        "column": 3,
+        "score": 0.7023424544479595,
+        "source": "Maico",
+        "back_translated": "Maike"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "motorcycle racing"
+  },
+  "domain": "motorcycle racing"
+}

@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-731",
+  "source_context": "csv/204-csv/720.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-731.tsv",
+  "source_question": "what suparco administrator has the same field as major general raza hussain?",
+  "translated_question": "какой администратор suparco имеет то же направление, что и генерал-майор рза хуссейн?",
+  "source_target_value": "Dr Salim Mehmud",
+  "translated_target_value": "доктор салим махмуд",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "field",
+      "normalized_text": "field",
+      "start": 40,
+      "end": 45,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Field(s",
+      "match_type": "lemma",
+      "candidate_key": "8842dc9ae165e1ab",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "major general raza hussain",
+      "normalized_text": "major general raza hussain",
+      "start": 49,
+      "end": 75,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Major General Raza Hussain",
+      "match_type": "lemma",
+      "candidate_key": "8bcadcc34e1e05f7",
+      "coordinate": {
+        "row": 7,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-731",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what suparco administrator has the same field as major general raza hussain?",
+    "translated_question": "какой администратор suparco имеет то же направление, что и генерал-майор рза хуссейн?",
+    "back_translated_question": "which administrator suparco has the same field as major general raza hussain?",
+    "question_cosine_similarity": 0.9881348867019096,
+    "question_bert_precision": 0.9017302393913269,
+    "question_bert_recall": 0.9017438292503357,
+    "question_bert_f1": 0.9018859267234802,
+    "back_table_groups_compared": 70,
+    "back_table_min_similarity": 0.6037964525710244,
+    "back_table_mean_similarity": 0.9640971350539539,
+    "back_table_bert_groups_compared": 70,
+    "back_table_bert_min_f1": 0.10002579540014267,
+    "back_table_bert_mean_f1": 0.8536515339144639,
+    "back_table_bert_min_precision": 0.05648835375905037,
+    "back_table_bert_mean_precision": 0.854265025098409,
+    "back_table_bert_min_recall": 0.1428733915090561,
+    "back_table_bert_mean_recall": 0.8529047063418798,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6037964525710244,
+        "source": "Field(s)",
+        "back_translated": "Direction(s))"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.6663842888168403,
+        "source": "Number",
+        "back_translated": "quantity"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7107957057394062,
+        "source": "Term Ended",
+        "back_translated": "End date"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7194646811448173,
+        "source": "Term Started",
+        "back_translated": "Start date"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.7843927572181422,
+        "source": "Dr Salim Mehmud",
+        "back_translated": "dr. salim mahmud"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "education and academic appointments"
+  },
+  "domain": "education and academic appointments"
+}

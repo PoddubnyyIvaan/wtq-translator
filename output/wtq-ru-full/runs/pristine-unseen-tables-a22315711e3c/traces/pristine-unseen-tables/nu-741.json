@@ -1,0 +1,114 @@
+{
+  "question_id": "nu-741",
+  "source_context": "csv/204-csv/80.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-741.tsv",
+  "source_question": "how many times did they face the san diego chargers?",
+  "translated_question": "сколько раз они встречались с Сан-Диего чарджерс?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "san diego",
+      "normalized_text": "san diego",
+      "start": 33,
+      "end": 42,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 6,
+          "column": 2
+        }
+      ],
+      "table_source_text": "San Diego",
+      "match_type": "lemma",
+      "candidate_key": "7722d7109e89fcc1",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-741",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many times did they face the san diego chargers?",
+    "translated_question": "сколько раз они встречались с Сан-Диего чарджерс?",
+    "back_translated_question": "how many times have they met San Diego Chargers?",
+    "question_cosine_similarity": 0.9526404378375797,
+    "question_bert_precision": 0.4208221137523651,
+    "question_bert_recall": 0.4803498089313507,
+    "question_bert_f1": 0.45101356506347656,
+    "back_table_groups_compared": 85,
+    "back_table_min_similarity": 0.849188255349282,
+    "back_table_mean_similarity": 0.9879538378033792,
+    "back_table_bert_groups_compared": 85,
+    "back_table_bert_min_f1": 0.07394024729728699,
+    "back_table_bert_mean_f1": 0.9604129268842585,
+    "back_table_bert_min_precision": 0.09622394293546677,
+    "back_table_bert_mean_precision": 0.9610304505509488,
+    "back_table_bert_min_recall": 0.04946319758892059,
+    "back_table_bert_mean_recall": 0.9597328082603567,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.849188255349282,
+        "source": "W 20–13",
+        "back_translated": "L 20–13"
+      },
+      {
+        "row": 11,
+        "column": 3,
+        "score": 0.8534727381902786,
+        "source": "W 27–20",
+        "back_translated": "L 27–20"
+      },
+      {
+        "row": 15,
+        "column": 3,
+        "score": 0.8592467819061811,
+        "source": "W 41–20",
+        "back_translated": "L 41–20"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.8641803624518913,
+        "source": "L 30–27",
+        "back_translated": "П 30–27"
+      },
+      {
+        "row": 13,
+        "column": 3,
+        "score": 0.8780923261972684,
+        "source": "W 16–10",
+        "back_translated": "L 16–10"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

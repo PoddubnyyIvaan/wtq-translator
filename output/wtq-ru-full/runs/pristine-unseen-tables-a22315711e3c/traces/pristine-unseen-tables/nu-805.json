@@ -1,0 +1,176 @@
+{
+  "question_id": "nu-805",
+  "source_context": "csv/204-csv/458.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-805.tsv",
+  "source_question": "did greg pickett drve the same vehicle as gene bothello?",
+  "translated_question": "ехал ли Грег Пикетт на том же автомобиле, что и Джин Ботхелло?",
+  "source_target_value": "yes",
+  "translated_target_value": "да",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "greg pickett",
+      "normalized_text": "greg pickett",
+      "start": 4,
+      "end": 16,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Greg Pickett",
+      "match_type": "lemma",
+      "candidate_key": "09499a1f4dbd655d",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "vehicle",
+      "normalized_text": "vehicle",
+      "start": 31,
+      "end": 38,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "vehicle",
+      "match_type": "lemma",
+      "candidate_key": "b3aca99eca4db39b",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "gene bothello",
+      "normalized_text": "gene bothello",
+      "start": 42,
+      "end": 55,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Gene Bothello",
+      "match_type": "lemma",
+      "candidate_key": "2f63d4f07f00acb3",
+      "coordinate": {
+        "row": 0,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-805",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "did greg pickett drve the same vehicle as gene bothello?",
+    "translated_question": "ехал ли Грег Пикетт на том же автомобиле, что и Джин Ботхелло?",
+    "back_translated_question": "did Greg Pickett drive the same vehicle as Gene Botthello?",
+    "question_cosine_similarity": 0.8945271717736383,
+    "question_bert_precision": 0.447920024394989,
+    "question_bert_recall": 0.4682140350341797,
+    "question_bert_f1": 0.45884189009666443,
+    "back_table_groups_compared": 77,
+    "back_table_min_similarity": 0.6152196583684665,
+    "back_table_mean_similarity": 0.9646507941642637,
+    "back_table_bert_groups_compared": 77,
+    "back_table_bert_min_f1": 0.17280299961566925,
+    "back_table_bert_mean_f1": 0.9302231532025647,
+    "back_table_bert_min_precision": 0.13644567131996155,
+    "back_table_bert_mean_precision": 0.9288733094543605,
+    "back_table_bert_min_recall": 0.20799502730369568,
+    "back_table_bert_mean_recall": 0.9315444680003376,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.6152196583684665,
+        "source": "Nick Engels",
+        "back_translated": "Nick Angels"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.6209189663855695,
+        "source": "Gene Bothello",
+        "back_translated": "Gene Botelho"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.7164645761438871,
+        "source": "Monte Sheldon",
+        "back_translated": "Monte Shelton"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.7194848005087966,
+        "source": "Ludwig Heimrath",
+        "back_translated": "Ludwig Haymrat"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.7194848005087966,
+        "source": "Ludwig Heimrath",
+        "back_translated": "Ludwig Haymrat"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

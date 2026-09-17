@@ -1,0 +1,182 @@
+{
+  "question_id": "nu-483",
+  "source_context": "csv/203-csv/448.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-483.tsv",
+  "source_question": "how many countries' film industries made more by box office than russia?",
+  "translated_question": "сколько стран фильмов индустрий заработали больше по кассовым сборам, чем Россия?",
+  "source_target_value": "8",
+  "translated_target_value": "8",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "countries",
+      "normalized_text": "country",
+      "start": 9,
+      "end": 18,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Country",
+      "match_type": "lemma",
+      "candidate_key": "54dbd10f2924b4b9",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "film",
+      "normalized_text": "film",
+      "start": 20,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "films",
+      "match_type": "lemma",
+      "candidate_key": "98455d61693d4bb9",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "box office",
+      "normalized_text": "box office",
+      "start": 49,
+      "end": 59,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Box Office",
+      "match_type": "lemma",
+      "candidate_key": "8fb47e731b4d476c",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "russia",
+      "normalized_text": "russia",
+      "start": 65,
+      "end": 71,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Russia",
+      "match_type": "lemma",
+      "candidate_key": "bd9a2791d18e2fd0",
+      "coordinate": {
+        "row": 8,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-483",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many countries' film industries made more by box office than russia?",
+    "translated_question": "сколько стран фильмов индустрий заработали больше по кассовым сборам, чем Россия?",
+    "back_translated_question": "how many countries films of the industries earned more by box office than Russia?",
+    "question_cosine_similarity": 0.9791310394886739,
+    "question_bert_precision": 0.7135304808616638,
+    "question_bert_recall": 0.6895427703857422,
+    "question_bert_f1": 0.7019283175468445,
+    "back_table_groups_compared": 70,
+    "back_table_min_similarity": 0.7932653488955509,
+    "back_table_mean_similarity": 0.965073152351786,
+    "back_table_bert_groups_compared": 70,
+    "back_table_bert_min_f1": 0.5578353404998779,
+    "back_table_bert_mean_f1": 0.9274181008338929,
+    "back_table_bert_min_precision": 0.5751339197158813,
+    "back_table_bert_mean_precision": 0.9326303967407772,
+    "back_table_bert_min_recall": 0.539478063583374,
+    "back_table_bert_mean_recall": 0.9220969898360116,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.7932653488955509,
+        "source": "$1.2 billion",
+        "back_translated": "1.2 billion US dollars"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.7932653488955509,
+        "source": "$1.2 billion",
+        "back_translated": "1.2 billion US dollars"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.7985368537679951,
+        "source": "$1.3 billion",
+        "back_translated": "1.3 billion US dollars"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.8028516416944987,
+        "source": "World",
+        "back_translated": "Worldwide"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.8067108323746376,
+        "source": "$1.7 billion",
+        "back_translated": "1.7 billion US dollars"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "film industry and box office revenues"
+  },
+  "domain": "film industry and box office revenues"
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "nu-261",
+  "source_context": "csv/203-csv/684.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-261.tsv",
+  "source_question": "which number is before 061?",
+  "translated_question": "какое число стоит перед 061?",
+  "source_target_value": "060",
+  "translated_target_value": "060",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-261",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "which number is before 061?",
+    "translated_question": "какое число стоит перед 061?",
+    "back_translated_question": "what number comes before 061?",
+    "question_cosine_similarity": 0.981369802856257,
+    "question_bert_precision": 0.8027056455612183,
+    "question_bert_recall": 0.8027328848838806,
+    "question_bert_f1": 0.8030181527137756,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.5279148585460561,
+    "back_table_mean_similarity": 0.9914166337917465,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.4084172248840332,
+    "back_table_bert_mean_f1": 0.989243949543346,
+    "back_table_bert_min_precision": 0.3268151879310608,
+    "back_table_bert_mean_precision": 0.9877602761442011,
+    "back_table_bert_min_recall": 0.49483802914619446,
+    "back_table_bert_mean_recall": 0.9908152368935672,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.5279148585460561,
+        "source": "Glyph",
+        "back_translated": "Symbol"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "number systems and character encoding"
+  },
+  "domain": "number systems and character encoding"
+}

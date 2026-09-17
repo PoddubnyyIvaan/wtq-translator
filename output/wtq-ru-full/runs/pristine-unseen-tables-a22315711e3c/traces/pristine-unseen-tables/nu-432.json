@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-432",
+  "source_context": "csv/203-csv/822.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-432.tsv",
+  "source_question": "how many managers were there between 1961 and 1987?",
+  "translated_question": "сколько диспетчеров было между 1961 и 1987 годами?",
+  "source_target_value": "16",
+  "translated_target_value": "16",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "managers",
+      "normalized_text": "manager",
+      "start": 9,
+      "end": 17,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Manager",
+      "match_type": "lemma",
+      "candidate_key": "770f39b5161c494f",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-432",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many managers were there between 1961 and 1987?",
+    "translated_question": "сколько диспетчеров было между 1961 и 1987 годами?",
+    "back_translated_question": "how many managers were there between 1961 and 1987?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 140,
+    "back_table_min_similarity": 0.6915957614717244,
+    "back_table_mean_similarity": 0.9809103783037584,
+    "back_table_bert_groups_compared": 140,
+    "back_table_bert_min_f1": 0.43409034609794617,
+    "back_table_bert_mean_f1": 0.9465610878808158,
+    "back_table_bert_min_precision": 0.43319234251976013,
+    "back_table_bert_mean_precision": 0.947921228834561,
+    "back_table_bert_min_recall": 0.4332706332206726,
+    "back_table_bert_mean_recall": 0.945220437007291,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.6915957614717244,
+        "source": "Tommy Heath / Bill Werle",
+        "back_translated": "Tommy Hite / Bill Verl"
+      },
+      {
+        "row": 19,
+        "column": 3,
+        "score": 0.6949999949698793,
+        "source": "Doug Rader",
+        "back_translated": "Doug Rider"
+      },
+      {
+        "row": 20,
+        "column": 3,
+        "score": 0.6949999949698793,
+        "source": "Doug Rader",
+        "back_translated": "Doug Rider"
+      },
+      {
+        "row": 21,
+        "column": 3,
+        "score": 0.6949999949698793,
+        "source": "Doug Rader",
+        "back_translated": "Doug Rider"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7814761769049448,
+        "source": "none",
+        "back_translated": "no"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

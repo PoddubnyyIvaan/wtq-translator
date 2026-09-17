@@ -1,0 +1,154 @@
+{
+  "question_id": "nu-225",
+  "source_context": "csv/203-csv/766.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-225.tsv",
+  "source_question": "what is the total number of euro 2000 qualifying competitions?",
+  "translated_question": "сколько всего Квалификация чемпионата Европы 2000 соревнований?",
+  "source_target_value": "6",
+  "translated_target_value": "6.",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "euro 2000 qualifying",
+      "normalized_text": "euro 2000 qualifying",
+      "start": 28,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 6
+        },
+        {
+          "row": 1,
+          "column": 6
+        },
+        {
+          "row": 2,
+          "column": 6
+        },
+        {
+          "row": 3,
+          "column": 6
+        },
+        {
+          "row": 4,
+          "column": 6
+        },
+        {
+          "row": 5,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Euro 2000 qualifying",
+      "match_type": "lemma",
+      "candidate_key": "fda0f73c4d492b26",
+      "coordinate": {
+        "row": 0,
+        "column": 6
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "competitions",
+      "normalized_text": "competition",
+      "start": 49,
+      "end": 61,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Competition",
+      "match_type": "lemma",
+      "candidate_key": "0509839ddc683373",
+      "coordinate": {
+        "row": null,
+        "column": 6
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-225",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the total number of euro 2000 qualifying competitions?",
+    "translated_question": "сколько всего Квалификация чемпионата Европы 2000 соревнований?",
+    "back_translated_question": "how many total euro 2000 qualifying competitions?",
+    "question_cosine_similarity": 0.9764414783093877,
+    "question_bert_precision": 0.6497735381126404,
+    "question_bert_recall": 0.7826191186904907,
+    "question_bert_f1": 0.7148218750953674,
+    "back_table_groups_compared": 63,
+    "back_table_min_similarity": 0.8170720673438404,
+    "back_table_mean_similarity": 0.9781498138555403,
+    "back_table_bert_groups_compared": 63,
+    "back_table_bert_min_f1": 0.2554726004600525,
+    "back_table_bert_mean_f1": 0.8740321728918288,
+    "back_table_bert_min_precision": 0.2542913854122162,
+    "back_table_bert_mean_precision": 0.8846781826208509,
+    "back_table_bert_min_recall": 0.25439441204071045,
+    "back_table_bert_mean_recall": 0.8639603119993967,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 6,
+        "score": 0.8170720673438404,
+        "source": "Friendly",
+        "back_translated": "friendly match"
+      },
+      {
+        "row": 7,
+        "column": 6,
+        "score": 0.8170720673438404,
+        "source": "Friendly",
+        "back_translated": "friendly match"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.8997463169286223,
+        "source": "Olimpico, Serravalle, San Marino",
+        "back_translated": "Olympico, Serravalle, San Marino"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.9150143830773955,
+        "source": "Vivero, Badajoz, Spain",
+        "back_translated": "Viviero, Badajoz, Spain"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.9150143830773955,
+        "source": "Vivero, Badajoz, Spain",
+        "back_translated": "Viviero, Badajoz, Spain"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

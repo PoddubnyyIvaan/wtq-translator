@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-760",
+  "source_context": "csv/203-csv/140.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-760.tsv",
+  "source_question": "how many different venues are there in all?",
+  "translated_question": "сколько различных мест проведения существует всего?",
+  "source_target_value": "19",
+  "translated_target_value": "19",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "venues",
+      "normalized_text": "venue",
+      "start": 19,
+      "end": 25,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Venue",
+      "match_type": "lemma",
+      "candidate_key": "03d8c1b0e6363561",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-760",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many different venues are there in all?",
+    "translated_question": "сколько различных мест проведения существует всего?",
+    "back_translated_question": "how many different venues exist in total?",
+    "question_cosine_similarity": 0.9821922829649686,
+    "question_bert_precision": 0.7769381403923035,
+    "question_bert_recall": 0.810745358467102,
+    "question_bert_f1": 0.7940418124198914,
+    "back_table_groups_compared": 200,
+    "back_table_min_similarity": 0.32849230538624513,
+    "back_table_mean_similarity": 0.9574897714335019,
+    "back_table_bert_groups_compared": 200,
+    "back_table_bert_min_f1": 0.11416231095790863,
+    "back_table_bert_mean_f1": 0.9271180188655853,
+    "back_table_bert_min_precision": 0.12592880427837372,
+    "back_table_bert_mean_precision": 0.9272280977666378,
+    "back_table_bert_min_recall": 0.09989627450704575,
+    "back_table_bert_mean_recall": 0.9268631621822715,
+    "back_table_similarity_examples": [
+      {
+        "row": 14,
+        "column": 2,
+        "score": 0.32849230538624513,
+        "source": "IRL",
+        "back_translated": "Northern Ireland"
+      },
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.45397743471510116,
+        "source": "Civic Centre",
+        "back_translated": "Downtown"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.46146520548078246,
+        "source": "WAL",
+        "back_translated": "Wales"
+      },
+      {
+        "row": 17,
+        "column": 2,
+        "score": 0.46146520548078246,
+        "source": "WAL",
+        "back_translated": "Wales"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.6099806486112456,
+        "source": "ENG",
+        "back_translated": "England"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

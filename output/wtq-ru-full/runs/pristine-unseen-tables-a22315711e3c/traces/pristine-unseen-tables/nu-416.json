@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-416",
+  "source_context": "csv/204-csv/134.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-416.tsv",
+  "source_question": "which edition has a user limit below 20?",
+  "translated_question": "какая редакция имеет ограничение по пользователям ниже 20?",
+  "source_target_value": "Foundation",
+  "translated_target_value": "Основа",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "user limit",
+      "normalized_text": "user limit",
+      "start": 20,
+      "end": 30,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 0
+        }
+      ],
+      "table_source_text": "User limit",
+      "match_type": "lemma",
+      "candidate_key": "d99299dd9d8c1766",
+      "coordinate": {
+        "row": 4,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-416",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which edition has a user limit below 20?",
+    "translated_question": "какая редакция имеет ограничение по пользователям ниже 20?",
+    "back_translated_question": "which edition has a user limit below 20?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 140,
+    "back_table_min_similarity": 0.540925729611403,
+    "back_table_mean_similarity": 0.9777557935332695,
+    "back_table_bert_groups_compared": 140,
+    "back_table_bert_min_f1": 0.29348164796829224,
+    "back_table_bert_mean_f1": 0.9334131664463452,
+    "back_table_bert_min_precision": 0.2949908375740051,
+    "back_table_bert_mean_precision": 0.9339918441006115,
+    "back_table_bert_min_recall": 0.24823468923568726,
+    "back_table_bert_mean_recall": 0.9329137216721263,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.540925729611403,
+        "source": "Essentials",
+        "back_translated": "Main"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.602554589357681,
+        "source": "Foundation",
+        "back_translated": "Base"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.6306320542634557,
+        "source": "Specifications",
+        "back_translated": "Features"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.7123228848552436,
+        "source": "32 GB",
+        "back_translated": "32 ГБ"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.7471275978800491,
+        "source": "64 GB",
+        "back_translated": "64 ГБ"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "operating system licensing and features comparison"
+  },
+  "domain": "operating system licensing and features comparison"
+}

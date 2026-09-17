@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-669",
+  "source_context": "csv/204-csv/931.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-669.tsv",
+  "source_question": "according to the chart, who was the last one born?",
+  "translated_question": "согласно графику, кто родился последним?",
+  "source_target_value": "Troy Douglas",
+  "translated_target_value": "Трой Дуглас",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-669",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "according to the chart, who was the last one born?",
+    "translated_question": "согласно графику, кто родился последним?",
+    "back_translated_question": "according to the schedule, who was born last?",
+    "question_cosine_similarity": 0.8688358650481607,
+    "question_bert_precision": 0.7235785126686096,
+    "question_bert_recall": 0.7997965216636658,
+    "question_bert_f1": 0.761466920375824,
+    "back_table_groups_compared": 104,
+    "back_table_min_similarity": 0.5226582761287539,
+    "back_table_mean_similarity": 0.9836199088952178,
+    "back_table_bert_groups_compared": 104,
+    "back_table_bert_min_f1": 0.04348783195018768,
+    "back_table_bert_mean_f1": 0.9731916434203203,
+    "back_table_bert_min_precision": 0.061295151710510254,
+    "back_table_bert_mean_precision": 0.972862917643327,
+    "back_table_bert_min_recall": 0.023195719346404076,
+    "back_table_bert_mean_recall": 0.9734678409384707,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 6,
+        "score": 0.5226582761287539,
+        "source": "Eugene",
+        "back_translated": "evgeni"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.6274999806660464,
+        "source": "Thane Baker",
+        "back_translated": "Tain Baker"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.756440538957544,
+        "source": "Thaddeus Bell",
+        "back_translated": "Taddeus Bell"
+      },
+      {
+        "row": 10,
+        "column": 3,
+        "score": 0.8066842300100785,
+        "source": "George McNeill",
+        "back_translated": "George McNill"
+      },
+      {
+        "row": 11,
+        "column": 6,
+        "score": 0.8314699816834143,
+        "source": "Hannover",
+        "back_translated": "Hanover"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

@@ -1,0 +1,222 @@
+{
+  "question_id": "nu-295",
+  "source_context": "csv/203-csv/435.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-295.tsv",
+  "source_question": "in what other year other than 1935/36 were championships held without playoffs?",
+  "translated_question": "в каком другом году, кроме 1935/36, проводились чемпионаты без плей-оффов?",
+  "source_target_value": "1953/54",
+  "translated_target_value": "1953/54",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 14,
+      "end": 18,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "playoffs",
+      "normalized_text": "playoff",
+      "start": 70,
+      "end": 78,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 1,
+          "column": 4
+        },
+        {
+          "row": 2,
+          "column": 4
+        },
+        {
+          "row": 4,
+          "column": 4
+        },
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 4
+        },
+        {
+          "row": 10,
+          "column": 4
+        },
+        {
+          "row": 11,
+          "column": 4
+        },
+        {
+          "row": 12,
+          "column": 4
+        },
+        {
+          "row": 13,
+          "column": 4
+        },
+        {
+          "row": 14,
+          "column": 4
+        },
+        {
+          "row": 15,
+          "column": 4
+        },
+        {
+          "row": 16,
+          "column": 4
+        },
+        {
+          "row": 17,
+          "column": 4
+        },
+        {
+          "row": 18,
+          "column": 4
+        },
+        {
+          "row": 20,
+          "column": 4
+        },
+        {
+          "row": 21,
+          "column": 4
+        },
+        {
+          "row": 22,
+          "column": 4
+        },
+        {
+          "row": 23,
+          "column": 4
+        },
+        {
+          "row": 24,
+          "column": 4
+        },
+        {
+          "row": 25,
+          "column": 4
+        },
+        {
+          "row": 26,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Playoffs",
+      "match_type": "lemma",
+      "candidate_key": "4a2e009a25d7a892",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-295",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "in what other year other than 1935/36 were championships held without playoffs?",
+    "translated_question": "в каком другом году, кроме 1935/36, проводились чемпионаты без плей-оффов?",
+    "back_translated_question": "in what other year, besides 1935/36, were championships held without playoffs?",
+    "question_cosine_similarity": 0.9963294392345989,
+    "question_bert_precision": 0.8741938471794128,
+    "question_bert_recall": 0.7912347912788391,
+    "question_bert_f1": 0.8322910070419312,
+    "back_table_groups_compared": 168,
+    "back_table_min_similarity": 0.6979926926421275,
+    "back_table_mean_similarity": 0.9842438655173298,
+    "back_table_bert_groups_compared": 168,
+    "back_table_bert_min_f1": 0.3873014748096466,
+    "back_table_bert_mean_f1": 0.9579851983913353,
+    "back_table_bert_min_precision": 0.4193717837333679,
+    "back_table_bert_mean_precision": 0.9591789823912439,
+    "back_table_bert_min_recall": 0.3543825149536133,
+    "back_table_bert_mean_recall": 0.9567133019722643,
+    "back_table_similarity_examples": [
+      {
+        "row": 19,
+        "column": 3,
+        "score": 0.6979926926421275,
+        "source": "1st(t)",
+        "back_translated": "1-e (t)"
+      },
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.7991081973998279,
+        "source": "1st Round",
+        "back_translated": "1-round"
+      },
+      {
+        "row": 8,
+        "column": 4,
+        "score": 0.7991081973998279,
+        "source": "1st Round",
+        "back_translated": "1-round"
+      },
+      {
+        "row": 19,
+        "column": 4,
+        "score": 0.8192782320373926,
+        "source": "Finals",
+        "back_translated": "Final"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.8603248662869994,
+        "source": "Reg. Season",
+        "back_translated": "Reg.. Regular season"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

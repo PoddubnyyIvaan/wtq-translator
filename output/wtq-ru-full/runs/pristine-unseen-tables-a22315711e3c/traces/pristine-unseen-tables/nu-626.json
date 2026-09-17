@@ -1,0 +1,118 @@
+{
+  "question_id": "nu-626",
+  "source_context": "csv/203-csv/388.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-626.tsv",
+  "source_question": "how many championship games occurred in russia?",
+  "translated_question": "сколько чемпионатов прошло в России?",
+  "source_target_value": "3",
+  "translated_target_value": "3.",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "russia",
+      "normalized_text": "russia",
+      "start": 40,
+      "end": 46,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Russia",
+      "match_type": "lemma",
+      "candidate_key": "bd9a2791d18e2fd0",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-626",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many championship games occurred in russia?",
+    "translated_question": "сколько чемпионатов прошло в России?",
+    "back_translated_question": "how many championships have taken place in russia?",
+    "question_cosine_similarity": 0.9079496719812742,
+    "question_bert_precision": 0.8499986529350281,
+    "question_bert_recall": 0.7903956174850464,
+    "question_bert_f1": 0.8201176524162292,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 0.5100661455903901,
+    "back_table_mean_similarity": 0.9487507616660115,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 0.19657540321350098,
+    "back_table_bert_mean_f1": 0.8022758616578012,
+    "back_table_bert_min_precision": 0.17932358384132385,
+    "back_table_bert_mean_precision": 0.8113933375903538,
+    "back_table_bert_min_recall": 0.2116578221321106,
+    "back_table_bert_mean_recall": 0.7932090049698239,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 5,
+        "score": 0.5100661455903901,
+        "source": "Thomaz Bellucci",
+        "back_translated": "Tomáš Berdych"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

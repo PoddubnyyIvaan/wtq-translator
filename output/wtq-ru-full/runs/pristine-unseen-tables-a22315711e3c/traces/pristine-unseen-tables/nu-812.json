@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-812",
+  "source_context": "csv/204-csv/904.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-812.tsv",
+  "source_question": "did chile beat haiti by more or less than the margin by which haiti beat trinidad and tobago?",
+  "translated_question": "победил ли Чили гаити с большим или меньшим разрывом, чем гаити победил тринидад и тобаго?",
+  "source_target_value": "more",
+  "translated_target_value": "больше",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "chile",
+      "normalized_text": "chile",
+      "start": 4,
+      "end": 9,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 0,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Chile",
+      "match_type": "lemma",
+      "candidate_key": "6005284eb20fe67d",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "trinidad and tobago",
+      "normalized_text": "trinidad and tobago",
+      "start": 73,
+      "end": 92,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Trinidad and Tobago",
+      "match_type": "lemma",
+      "candidate_key": "7daaa4b3a0269f57",
+      "coordinate": {
+        "row": 7,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-812",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "did chile beat haiti by more or less than the margin by which haiti beat trinidad and tobago?",
+    "translated_question": "победил ли Чили гаити с большим или меньшим разрывом, чем гаити победил тринидад и тобаго?",
+    "back_translated_question": "did Chile defeat Haiti by a larger or smaller margin than Haiti defeated Trinidad and Tobago?",
+    "question_cosine_similarity": 0.9736560468957023,
+    "question_bert_precision": 0.2367054969072342,
+    "question_bert_recall": 0.37110382318496704,
+    "question_bert_f1": 0.30273663997650146,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.9465835534361317,
+    "back_table_mean_similarity": 0.9991097258906022,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.35930147767066956,
+    "back_table_bert_mean_f1": 0.9893216912945112,
+    "back_table_bert_min_precision": 0.3635288178920746,
+    "back_table_bert_mean_precision": 0.9893921469648679,
+    "back_table_bert_min_recall": 0.3531568944454193,
+    "back_table_bert_mean_recall": 0.9892192815740903,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.9465835534361317,
+        "source": "March 20, 2013",
+        "back_translated": "20 march, 2013"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

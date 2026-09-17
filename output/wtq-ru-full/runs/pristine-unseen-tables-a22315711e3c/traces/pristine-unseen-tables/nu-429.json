@@ -1,0 +1,154 @@
+{
+  "question_id": "nu-429",
+  "source_context": "csv/204-csv/285.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-429.tsv",
+  "source_question": "how many winners total are there?",
+  "translated_question": "сколько всего победителей?",
+  "source_target_value": "12",
+  "translated_target_value": "12.",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "winners",
+      "normalized_text": "winner",
+      "start": 9,
+      "end": 16,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 0
+        },
+        {
+          "row": 9,
+          "column": 0
+        },
+        {
+          "row": 11,
+          "column": 0
+        },
+        {
+          "row": 13,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 0
+        },
+        {
+          "row": 15,
+          "column": 0
+        },
+        {
+          "row": 16,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 0
+        },
+        {
+          "row": 18,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Winner",
+      "match_type": "lemma",
+      "candidate_key": "9d04b89a73e3406f",
+      "coordinate": {
+        "row": 1,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-429",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many winners total are there?",
+    "translated_question": "сколько всего победителей?",
+    "back_translated_question": "how many total winners are there?",
+    "question_cosine_similarity": 0.9924678848690897,
+    "question_bert_precision": 0.9034172296524048,
+    "question_bert_recall": 0.9034307599067688,
+    "question_bert_f1": 0.9035704135894775,
+    "back_table_groups_compared": 140,
+    "back_table_min_similarity": 0.4467434325250675,
+    "back_table_mean_similarity": 0.9532094608406675,
+    "back_table_bert_groups_compared": 140,
+    "back_table_bert_min_f1": 0.11152682453393936,
+    "back_table_bert_mean_f1": 0.8253202692206417,
+    "back_table_bert_min_precision": 0.13496311008930206,
+    "back_table_bert_mean_precision": 0.8330080862556185,
+    "back_table_bert_min_recall": 0.08605512976646423,
+    "back_table_bert_mean_recall": 0.8174125056181635,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.4467434325250675,
+        "source": "Guillermo Coria",
+        "back_translated": "Gustavo Kuerten"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.4724464287932434,
+        "source": "Guillermo Cañas",
+        "back_translated": "Gustavo Kuerten"
+      },
+      {
+        "row": 14,
+        "column": 5,
+        "score": 0.5100661455903901,
+        "source": "Thomaz Bellucci",
+        "back_translated": "Tomáš Berdych"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

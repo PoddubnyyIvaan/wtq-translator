@@ -1,0 +1,131 @@
+{
+  "question_id": "nu-72",
+  "source_context": "csv/203-csv/66.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-72.tsv",
+  "source_question": "which year had the least amount of toy sales?",
+  "translated_question": "в каком году было наименьшее количество игрушек продано?",
+  "source_target_value": "2003",
+  "translated_target_value": "2003",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 6,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "toy",
+      "normalized_text": "toy",
+      "start": 35,
+      "end": 38,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "toy",
+      "match_type": "lemma",
+      "candidate_key": "07b1f3b7523fe1da",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-72",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which year had the least amount of toy sales?",
+    "translated_question": "в каком году было наименьшее количество игрушек продано?",
+    "back_translated_question": "in which year was the smallest number of toys sold?",
+    "question_cosine_similarity": 0.9295333966713506,
+    "question_bert_precision": 0.7247720956802368,
+    "question_bert_recall": 0.6693556308746338,
+    "question_bert_f1": 0.6972031593322754,
+    "back_table_groups_compared": 85,
+    "back_table_min_similarity": 0.8403085143856975,
+    "back_table_mean_similarity": 0.9968293586229733,
+    "back_table_bert_groups_compared": 85,
+    "back_table_bert_min_f1": 0.3711338937282562,
+    "back_table_bert_mean_f1": 0.9809145250741174,
+    "back_table_bert_min_precision": 0.3553064167499542,
+    "back_table_bert_mean_precision": 0.9795616504024057,
+    "back_table_bert_min_recall": 0.38526418805122375,
+    "back_table_bert_mean_recall": 0.9822630703449249,
+    "back_table_similarity_examples": [
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.8403085143856975,
+        "source": "202 (estimate)",
+        "back_translated": "202 (assessment)"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.926424789909759,
+        "source": "no data†",
+        "back_translated": "no data"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.9763764502593661,
+        "source": "Toy sales\\n(US $ Billions)",
+        "back_translated": "toy sales (billions of us dollars)"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.9873857283979075,
+        "source": "CPSC toy safety funding\\n(US$ Millions)",
+        "back_translated": "CPSC toy safety funding (millions of US dollars))"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "toy safety and child injury statistics"
+  },
+  "domain": "toy safety and child injury statistics"
+}

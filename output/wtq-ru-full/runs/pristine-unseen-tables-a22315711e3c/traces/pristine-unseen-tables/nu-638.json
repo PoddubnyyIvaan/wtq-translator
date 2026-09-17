@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-638",
+  "source_context": "csv/204-csv/566.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-638.tsv",
+  "source_question": "what is the difference in net capacity between chernobyl - 1 and chernobyl - 2?",
+  "translated_question": "чем отличается номинальная мощность между чернобыль-1 и чернобыль-2?",
+  "source_target_value": "185",
+  "translated_target_value": "185",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-638",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "what is the difference in net capacity between chernobyl - 1 and chernobyl - 2?",
+    "translated_question": "чем отличается номинальная мощность между чернобыль-1 и чернобыль-2?",
+    "back_translated_question": "what is the difference in nominal power between Chernobyl-1 and Chernobyl-2?",
+    "question_cosine_similarity": 0.8859186996480213,
+    "question_bert_precision": 0.8765071034431458,
+    "question_bert_recall": 0.8765241503715515,
+    "question_bert_f1": 0.8767026662826538,
+    "back_table_groups_compared": 135,
+    "back_table_min_similarity": 0.4557286847582426,
+    "back_table_mean_similarity": 0.9798809175187734,
+    "back_table_bert_groups_compared": 135,
+    "back_table_bert_min_f1": 0.23597051203250885,
+    "back_table_bert_mean_f1": 0.9443541569842233,
+    "back_table_bert_min_precision": 0.14525562524795532,
+    "back_table_bert_mean_precision": 0.9459179757921784,
+    "back_table_bert_min_recall": 0.12034142017364502,
+    "back_table_bert_mean_recall": 0.9436862576890874,
+    "back_table_similarity_examples": [
+      {
+        "row": 18,
+        "column": 2,
+        "score": 0.4557286847582426,
+        "source": "operational",
+        "back_translated": "president"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7106355162699345,
+        "source": "Net\\nCapacity\\n(MWe)",
+        "back_translated": "Net power (MW)"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7189864936314608,
+        "source": "Status",
+        "back_translated": "status as of 2008"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.7750043267014621,
+        "source": "Gross\\nCapacity\\n(MWe)",
+        "back_translated": "Gross power (MW)"
+      },
+      {
+        "row": 16,
+        "column": 2,
+        "score": 0.898380919671043,
+        "source": "construction begin was 1985, since then shelved",
+        "back_translated": "construction began in 1985, postponed since then"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "nuclear power plants"
+  },
+  "domain": "nuclear power plants"
+}

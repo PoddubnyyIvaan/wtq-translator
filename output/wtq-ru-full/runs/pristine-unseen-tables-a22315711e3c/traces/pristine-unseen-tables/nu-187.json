@@ -1,0 +1,146 @@
+{
+  "question_id": "nu-187",
+  "source_context": "csv/203-csv/315.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-187.tsv",
+  "source_question": "how many episodes aired before december 1st, 1965?",
+  "translated_question": "сколько эпизодов вышло до Декабря 1-го, 1965 года?",
+  "source_target_value": "10",
+  "translated_target_value": "10",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "aired",
+      "normalized_text": "air",
+      "start": 18,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "air",
+      "match_type": "lemma",
+      "candidate_key": "38a01258be730072",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "december",
+      "normalized_text": "december",
+      "start": 31,
+      "end": 39,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 10,
+          "column": 5
+        },
+        {
+          "row": 11,
+          "column": 5
+        },
+        {
+          "row": 12,
+          "column": 5
+        },
+        {
+          "row": 13,
+          "column": 5
+        }
+      ],
+      "table_source_text": "December",
+      "match_type": "lemma",
+      "candidate_key": "1525ec64b4e2f203",
+      "coordinate": {
+        "row": 10,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-187",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many episodes aired before december 1st, 1965?",
+    "translated_question": "сколько эпизодов вышло до Декабря 1-го, 1965 года?",
+    "back_translated_question": "how many episodes aired before December 1, 1965?",
+    "question_cosine_similarity": 0.997608721180839,
+    "question_bert_precision": 0.8815469741821289,
+    "question_bert_recall": 0.8815633654594421,
+    "question_bert_f1": 0.8817346096038818,
+    "back_table_groups_compared": 203,
+    "back_table_min_similarity": 0.5711310582187346,
+    "back_table_mean_similarity": 0.9638648849367494,
+    "back_table_bert_groups_compared": 203,
+    "back_table_bert_min_f1": -0.08062397688627243,
+    "back_table_bert_mean_f1": 0.9148375043838188,
+    "back_table_bert_min_precision": -0.13578830659389496,
+    "back_table_bert_mean_precision": 0.9140530161265963,
+    "back_table_bert_min_recall": -0.032369375228881836,
+    "back_table_bert_mean_recall": 0.915529094260241,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.5711310582187346,
+        "source": "Robert Lewin",
+        "back_translated": "Robert Levin"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.5711310582187346,
+        "source": "Robert Lewin",
+        "back_translated": "Robert Levin"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      },
+      {
+        "row": 2,
+        "column": 4,
+        "score": 0.6312269944267633,
+        "source": "David Karp",
+        "back_translated": "David Carp"
+      },
+      {
+        "row": 27,
+        "column": 2,
+        "score": 0.6554383524584588,
+        "source": "One Thousand Fine",
+        "back_translated": "A Thousand Beautiful"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "television series"
+  },
+  "domain": "television series"
+}

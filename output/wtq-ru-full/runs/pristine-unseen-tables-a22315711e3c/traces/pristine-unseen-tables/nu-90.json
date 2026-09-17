@@ -1,0 +1,144 @@
+{
+  "question_id": "nu-90",
+  "source_context": "csv/204-csv/142.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-90.tsv",
+  "source_question": "what is the number of sizes that has an inner diameter above 50 mm?",
+  "translated_question": "сколько размеров имеет внутренний диаметр выше 50 мм?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "sizes",
+      "normalized_text": "size",
+      "start": 22,
+      "end": 27,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "size",
+      "match_type": "lemma",
+      "candidate_key": "04f74404dccdae36",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "inner",
+      "normalized_text": "inner",
+      "start": 40,
+      "end": 45,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Inner",
+      "match_type": "lemma",
+      "candidate_key": "d65436377df514d3",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "mm",
+      "normalized_text": "mm",
+      "start": 64,
+      "end": 66,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "mm",
+      "match_type": "lemma",
+      "candidate_key": "b3de6f1714957939",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-90",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of sizes that has an inner diameter above 50 mm?",
+    "translated_question": "сколько размеров имеет внутренний диаметр выше 50 мм?",
+    "back_translated_question": "how many sizes have an inner diameter greater than 50 mm?",
+    "question_cosine_similarity": 0.9680823605444486,
+    "question_bert_precision": 0.6286253929138184,
+    "question_bert_recall": 0.7380397915840149,
+    "question_bert_f1": 0.6825724244117737,
+    "back_table_groups_compared": 66,
+    "back_table_min_similarity": 0.8920498837715406,
+    "back_table_mean_similarity": 0.9968520529098004,
+    "back_table_bert_groups_compared": 66,
+    "back_table_bert_min_f1": 0.7869201302528381,
+    "back_table_bert_mean_f1": 0.9948998906395652,
+    "back_table_bert_min_precision": 0.767271101474762,
+    "back_table_bert_mean_precision": 0.994599208687291,
+    "back_table_bert_min_recall": 0.8062220215797424,
+    "back_table_bert_mean_recall": 0.9951896333333218,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.8920498837715406,
+        "source": "Pitch\\n[in (mm)]",
+        "back_translated": "pitch\\n[inch (mm)]"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.9345070738544182,
+        "source": "Outer diameter\\n[mm (in)]",
+        "back_translated": "Outside diameter\\n[mm (in)]"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.9656785344208623,
+        "source": "Inner diameter\\n[mm (in)]",
+        "back_translated": "Inside diameter\\n[mm (in)]"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "mechanical engineering"
+  },
+  "domain": "mechanical engineering"
+}

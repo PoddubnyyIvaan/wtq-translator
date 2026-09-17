@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-486",
+  "source_context": "csv/203-csv/641.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-486.tsv",
+  "source_question": "what was each film called that scored a 7.5 from imdb?",
+  "translated_question": "как назывался каждый Фильм, который получил оценку 7.5 от IMDb?",
+  "source_target_value": "The Five Obstructions|Nymphomaniac: Volume I",
+  "translated_target_value": "Пять препятствий|Нимфоманка: Том I",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "film",
+      "normalized_text": "film",
+      "start": 14,
+      "end": 18,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Film",
+      "match_type": "lemma",
+      "candidate_key": "faafc841817dd09e",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "imdb",
+      "normalized_text": "imdb",
+      "start": 49,
+      "end": 53,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "IMDb",
+      "match_type": "lemma",
+      "candidate_key": "90b0d78834a2a75e",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-486",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was each film called that scored a 7.5 from imdb?",
+    "translated_question": "как назывался каждый Фильм, который получил оценку 7.5 от IMDb?",
+    "back_translated_question": "What was the name of each film that received a rating of 7.5 from IMDb?",
+    "question_cosine_similarity": 0.9585584782406475,
+    "question_bert_precision": 0.6330128312110901,
+    "question_bert_recall": 0.5424821376800537,
+    "question_bert_f1": 0.587480366230011,
+    "back_table_groups_compared": 80,
+    "back_table_min_similarity": 0.5415921220311054,
+    "back_table_mean_similarity": 0.9774250574008636,
+    "back_table_bert_groups_compared": 80,
+    "back_table_bert_min_f1": 0.22288188338279724,
+    "back_table_bert_mean_f1": 0.9532723415642976,
+    "back_table_bert_min_precision": 0.19757753610610962,
+    "back_table_bert_mean_precision": 0.9517469748854637,
+    "back_table_bert_min_recall": 0.24643763899803162,
+    "back_table_bert_mean_recall": 0.9547175284475088,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.5415921220311054,
+        "source": "Dogville",
+        "back_translated": "Dogs of War"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.658707773570474,
+        "source": "Dancer in the Dark",
+        "back_translated": "Dancer in Madness"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.7337294086804711,
+        "source": "Breaking the Waves",
+        "back_translated": "Wave Destruction"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.8380863507238162,
+        "source": "Images of Liberation",
+        "back_translated": "Still of liberation"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.8433834225001771,
+        "source": "Europa",
+        "back_translated": "Europe"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "film reviews and ratings"
+  },
+  "domain": "film reviews and ratings"
+}

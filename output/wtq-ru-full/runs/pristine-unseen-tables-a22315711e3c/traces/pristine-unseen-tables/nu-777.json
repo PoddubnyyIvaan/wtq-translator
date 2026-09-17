@@ -1,0 +1,63 @@
+{
+  "question_id": "nu-777",
+  "source_context": "csv/203-csv/628.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-777.tsv",
+  "source_question": "what single was top ranked?",
+  "translated_question": "какой сингл был на первом месте?",
+  "source_target_value": "Bleeder",
+  "translated_target_value": "Bleeder",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-777",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "what single was top ranked?",
+    "translated_question": "какой сингл был на первом месте?",
+    "back_translated_question": "which single was at number one?",
+    "question_cosine_similarity": 0.8436984954548256,
+    "question_bert_precision": 0.5505046248435974,
+    "question_bert_recall": 0.5012245178222656,
+    "question_bert_f1": 0.5263102650642395,
+    "back_table_groups_compared": 48,
+    "back_table_min_similarity": 0.80429630672555,
+    "back_table_mean_similarity": 0.9918456794468979,
+    "back_table_bert_groups_compared": 48,
+    "back_table_bert_min_f1": 0.5237115025520325,
+    "back_table_bert_mean_f1": 0.9801546459396681,
+    "back_table_bert_min_precision": 0.48634785413742065,
+    "back_table_bert_mean_precision": 0.9785978272557259,
+    "back_table_bert_min_recall": 0.5608608722686768,
+    "back_table_bert_mean_recall": 0.9817025363445282,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.80429630672555,
+        "source": "An Audio Guide To Everyday Atrocity",
+        "back_translated": "Audio guide to everyday villainy"
+      },
+      {
+        "row": 4,
+        "column": 5,
+        "score": 0.80429630672555,
+        "source": "An Audio Guide To Everyday Atrocity",
+        "back_translated": "Audio guide to everyday villainy"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "music"
+  },
+  "domain": "music"
+}

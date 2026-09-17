@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-98",
+  "source_context": "csv/204-csv/955.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-98.tsv",
+  "source_question": "who finished immediately after danny osborne?",
+  "translated_question": "кто финишировал сразу после Дэнни Осборна?",
+  "source_target_value": "Mike Imrie",
+  "translated_target_value": "Майк Имри",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "danny osborne",
+      "normalized_text": "danny osborne",
+      "start": 31,
+      "end": 44,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Danny Osborne",
+      "match_type": "lemma",
+      "candidate_key": "335f0aed0f617df0",
+      "coordinate": {
+        "row": 5,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-98",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who finished immediately after danny osborne?",
+    "translated_question": "кто финишировал сразу после Дэнни Осборна?",
+    "back_translated_question": "who finished immediately after danny osborne?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 0.9999998211860657,
+    "question_bert_recall": 0.9999998211860657,
+    "question_bert_f1": 0.9999998211860657,
+    "back_table_groups_compared": 250,
+    "back_table_min_similarity": 0.527826358702409,
+    "back_table_mean_similarity": 0.982274534162725,
+    "back_table_bert_groups_compared": 250,
+    "back_table_bert_min_f1": 0.2528955042362213,
+    "back_table_bert_mean_f1": 0.9739642465114593,
+    "back_table_bert_min_precision": 0.2517102062702179,
+    "back_table_bert_mean_precision": 0.9743473460674286,
+    "back_table_bert_min_recall": 0.2518135905265808,
+    "back_table_bert_mean_recall": 0.9735566763877869,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 8,
+        "score": 0.527826358702409,
+        "source": "Phi.",
+        "back_translated": "Fi."
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.5430963016712197,
+        "source": "Lak.",
+        "back_translated": "Lac."
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.5775708606964491,
+        "source": "Entrant",
+        "back_translated": "participant"
+      },
+      {
+        "row": 17,
+        "column": 1,
+        "score": 0.6731562408454681,
+        "source": "Allan McCarthy",
+        "back_translated": "Ollan McCarthy"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motor racing competition results"
+  },
+  "domain": "motor racing competition results"
+}

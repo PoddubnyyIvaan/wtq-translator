@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-0",
+  "source_context": "csv/203-csv/733.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-0.tsv",
+  "source_question": "which country had the most cyclists finish within the top 10?",
+  "translated_question": "какая страна имела наибольшее количество велосипедистов, финишировавших в первой десятке?",
+  "source_target_value": "Italy",
+  "translated_target_value": "Италия",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "cyclists",
+      "normalized_text": "cyclist",
+      "start": 27,
+      "end": 35,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Cyclist",
+      "match_type": "lemma",
+      "candidate_key": "2dedb81285ee7220",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-0",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which country had the most cyclists finish within the top 10?",
+    "translated_question": "какая страна имела наибольшее количество велосипедистов, финишировавших в первой десятке?",
+    "back_translated_question": "which country had the greatest number of cyclists finishing in the top ten?",
+    "question_cosine_similarity": 0.9731563475729993,
+    "question_bert_precision": 0.8539541959762573,
+    "question_bert_recall": 0.785788893699646,
+    "question_bert_f1": 0.8196845054626465,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.707064510549656,
+    "back_table_mean_similarity": 0.9728186220461812,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.07670333981513977,
+    "back_table_bert_mean_f1": 0.8508837361227383,
+    "back_table_bert_min_precision": 0.17260916531085968,
+    "back_table_bert_mean_precision": 0.8518731967969374,
+    "back_table_bert_min_recall": -0.012452899478375912,
+    "back_table_bert_mean_recall": 0.8501056669957259,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.707064510549656,
+        "source": "Stéphane Goubert (FRA)",
+        "back_translated": "stefan guber (France)"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.8117907521780633,
+        "source": "Haimar Zubeldia (ESP)",
+        "back_translated": "aimar zubeldia (Spain)"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.8327866369063602,
+        "source": "Franco Pellizotti (ITA)",
+        "back_translated": "franco pellicotti (Italy)"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.8482277466995852,
+        "source": "Alejandro Valverde (ESP)",
+        "back_translated": "alexandro valverde (Spain)"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.8665633473467325,
+        "source": "UCI ProTour\\nPoints",
+        "back_translated": "UCI ProTour points"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "cycling race results"
+  },
+  "domain": "cycling race results"
+}

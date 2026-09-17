@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-644",
+  "source_context": "csv/204-csv/458.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-644.tsv",
+  "source_question": "what is the date listed for the last round?",
+  "translated_question": "какая дата указана для последнего раунда?",
+  "source_target_value": "November 5",
+  "translated_target_value": "5 ноября",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "date",
+      "normalized_text": "date",
+      "start": 12,
+      "end": 16,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Date",
+      "match_type": "lemma",
+      "candidate_key": "58930d017d1af3c4",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "round",
+      "normalized_text": "round",
+      "start": 37,
+      "end": 42,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Round",
+      "match_type": "lemma",
+      "candidate_key": "09a1fdcf42d0722e",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-644",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the date listed for the last round?",
+    "translated_question": "какая дата указана для последнего раунда?",
+    "back_translated_question": "what date is listed for the last round?",
+    "question_cosine_similarity": 0.9939381263384737,
+    "question_bert_precision": 0.8112462162971497,
+    "question_bert_recall": 0.8535218238830566,
+    "question_bert_f1": 0.8324647545814514,
+    "back_table_groups_compared": 77,
+    "back_table_min_similarity": 0.6152196583684665,
+    "back_table_mean_similarity": 0.9646507941642637,
+    "back_table_bert_groups_compared": 77,
+    "back_table_bert_min_f1": 0.17280299961566925,
+    "back_table_bert_mean_f1": 0.9302231532025647,
+    "back_table_bert_min_precision": 0.13644567131996155,
+    "back_table_bert_mean_precision": 0.9288733094543605,
+    "back_table_bert_min_recall": 0.20799502730369568,
+    "back_table_bert_mean_recall": 0.9315444680003376,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.6152196583684665,
+        "source": "Nick Engels",
+        "back_translated": "Nick Angels"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.6209189663855695,
+        "source": "Gene Bothello",
+        "back_translated": "Gene Botelho"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.7164645761438871,
+        "source": "Monte Sheldon",
+        "back_translated": "Monte Shelton"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.7194848005087966,
+        "source": "Ludwig Heimrath",
+        "back_translated": "Ludwig Haymrat"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.7194848005087966,
+        "source": "Ludwig Heimrath",
+        "back_translated": "Ludwig Haymrat"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

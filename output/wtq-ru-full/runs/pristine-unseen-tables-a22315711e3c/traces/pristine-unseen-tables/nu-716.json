@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-716",
+  "source_context": "csv/203-csv/492.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-716.tsv",
+  "source_question": "how high was przemyslaw's jump, at the 1999 world youth championships?",
+  "translated_question": "на какую высоту прыгнул прземислав на чемпионатах Мировых юношеских 1999 года?",
+  "source_target_value": "4.60 m",
+  "translated_target_value": "4,60 м",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "world youth",
+      "normalized_text": "world youth",
+      "start": 44,
+      "end": 55,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        }
+      ],
+      "table_source_text": "World Youth",
+      "match_type": "lemma",
+      "candidate_key": "265b32e62176d4a0",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-716",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how high was przemyslaw's jump, at the 1999 world youth championships?",
+    "translated_question": "на какую высоту прыгнул прземислав на чемпионатах Мировых юношеских 1999 года?",
+    "back_translated_question": "what height did Przemysław jump at the World Youth Championships in 1999?",
+    "question_cosine_similarity": 0.949827565727298,
+    "question_bert_precision": 0.5603299140930176,
+    "question_bert_recall": 0.6470259428024292,
+    "question_bert_f1": 0.6034740805625916,
+    "back_table_groups_compared": 65,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9451326528463273,
+    "back_table_bert_groups_compared": 65,
+    "back_table_bert_min_f1": 0.37352320551872253,
+    "back_table_bert_mean_f1": 0.9404464804209196,
+    "back_table_bert_min_precision": 0.38896939158439636,
+    "back_table_bert_mean_precision": 0.9436882509635045,
+    "back_table_bert_min_recall": 0.35643258690834045,
+    "back_table_bert_mean_recall": 0.9371452592886411,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 11,
+        "column": 4,
+        "score": 0.5629291543067791,
+        "source": "NM",
+        "back_translated": "CN"
+      },
+      {
+        "row": 4,
+        "column": 4,
+        "score": 0.7748104124438492,
+        "source": "5.50 m",
+        "back_translated": "5,50 м"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.7748104124438492,
+        "source": "5.50 m",
+        "back_translated": "5,50 м"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.7795708661589275,
+        "source": "5.75 m",
+        "back_translated": "5,75 м"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

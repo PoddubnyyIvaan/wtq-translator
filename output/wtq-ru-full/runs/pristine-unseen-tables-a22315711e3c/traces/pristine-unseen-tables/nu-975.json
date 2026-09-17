@@ -1,0 +1,118 @@
+{
+  "question_id": "nu-975",
+  "source_context": "csv/202-csv/216.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-975.tsv",
+  "source_question": "which date has the most lrt stations open?",
+  "translated_question": "какая дата имеет наибольшее количество открытых lrt станций?",
+  "source_target_value": "6 November 1999",
+  "translated_target_value": "6 ноября 1999 года",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "stations",
+      "normalized_text": "station",
+      "start": 28,
+      "end": 36,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        },
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Station",
+      "match_type": "lemma",
+      "candidate_key": "d46dac910a06a001",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-975",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which date has the most lrt stations open?",
+    "translated_question": "какая дата имеет наибольшее количество открытых lrt станций?",
+    "back_translated_question": "what date has the highest number of open stations?",
+    "question_cosine_similarity": 0.8922695437955956,
+    "question_bert_precision": 0.5714173316955566,
+    "question_bert_recall": 0.6274217963218689,
+    "question_bert_f1": 0.5996909141540527,
+    "back_table_groups_compared": 220,
+    "back_table_min_similarity": 0.34057213132566166,
+    "back_table_mean_similarity": 0.7795591955261292,
+    "back_table_bert_groups_compared": 220,
+    "back_table_bert_min_f1": 0.0675196573138237,
+    "back_table_bert_mean_f1": 0.6712057612836361,
+    "back_table_bert_min_precision": 0.053527455776929855,
+    "back_table_bert_mean_precision": 0.6697698578746482,
+    "back_table_bert_min_recall": 0.058896493166685104,
+    "back_table_bert_mean_recall": 0.67288134961643,
+    "back_table_similarity_examples": [
+      {
+        "row": 32,
+        "column": 2,
+        "score": 0.34057213132566166,
+        "source": "里维拉",
+        "back_translated": "Riviera"
+      },
+      {
+        "row": 39,
+        "column": 3,
+        "score": 0.3481326785315005,
+        "source": "ஸமுதெரா",
+        "back_translated": "Samudera"
+      },
+      {
+        "row": 38,
+        "column": 3,
+        "score": 0.35119070662097335,
+        "source": "பொங்கோல் பொஇன்",
+        "back_translated": "Pungol Point"
+      },
+      {
+        "row": 28,
+        "column": 3,
+        "score": 0.3594343373154827,
+        "source": "பொங்கோல்",
+        "back_translated": "pungol point"
+      },
+      {
+        "row": 40,
+        "column": 2,
+        "score": 0.36176298801425627,
+        "source": "尼蒙",
+        "back_translated": "Nimon"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "public transportation"
+  },
+  "domain": "public transportation"
+}

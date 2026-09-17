@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-129",
+  "source_context": "csv/203-csv/361.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-129.tsv",
+  "source_question": "how may away games did they win?",
+  "translated_question": "сколько выездных игр они выиграли?",
+  "source_target_value": "7",
+  "translated_target_value": "7",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-129",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "how may away games did they win?",
+    "translated_question": "сколько выездных игр они выиграли?",
+    "back_translated_question": "how many away games did they win?",
+    "question_cosine_similarity": 0.8875897306240215,
+    "question_bert_precision": 0.8034456372261047,
+    "question_bert_recall": 0.8034727573394775,
+    "question_bert_f1": 0.8037569522857666,
+    "back_table_groups_compared": 85,
+    "back_table_min_similarity": 0.8162861865171932,
+    "back_table_mean_similarity": 0.9762941610086463,
+    "back_table_bert_groups_compared": 85,
+    "back_table_bert_min_f1": 0.5001019835472107,
+    "back_table_bert_mean_f1": 0.9406173692030065,
+    "back_table_bert_min_precision": 0.5935671925544739,
+    "back_table_bert_mean_precision": 0.9496130487498116,
+    "back_table_bert_min_recall": 0.4125184118747711,
+    "back_table_bert_mean_recall": 0.9321520009461571,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.8162861865171932,
+        "source": "W 9–3",
+        "back_translated": "L 9–3"
+      },
+      {
+        "row": 15,
+        "column": 3,
+        "score": 0.8241283604663993,
+        "source": "W 21–20",
+        "back_translated": "L 21–20"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.8534727381902786,
+        "source": "W 27–20",
+        "back_translated": "L 27–20"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.8622163862074242,
+        "source": "at Pittsburgh Steelers",
+        "back_translated": "away at «Pittsburgh Steelers»"
+      },
+      {
+        "row": 14,
+        "column": 2,
+        "score": 0.8650242772861862,
+        "source": "at San Francisco 49ers",
+        "back_translated": "away at «San Francisco 49ers»"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

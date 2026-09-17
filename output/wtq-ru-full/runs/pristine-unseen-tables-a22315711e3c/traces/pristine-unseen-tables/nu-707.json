@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-707",
+  "source_context": "csv/204-csv/728.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-707.tsv",
+  "source_question": "which previous area of operation comes after west desert?",
+  "translated_question": "какая предыдущая Зона эксплуатации следует за Западной пустыней?",
+  "source_target_value": "El Mabrouk",
+  "translated_target_value": "Эль-Мабрук",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "area of operation",
+      "normalized_text": "area of operation",
+      "start": 15,
+      "end": 32,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Area of Operation",
+      "match_type": "lemma",
+      "candidate_key": "08e0310fc494b174",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "west desert",
+      "normalized_text": "west desert",
+      "start": 45,
+      "end": 56,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 2
+        },
+        {
+          "row": 9,
+          "column": 2
+        }
+      ],
+      "table_source_text": "West Desert",
+      "match_type": "lemma",
+      "candidate_key": "76b90811fa56f061",
+      "coordinate": {
+        "row": 7,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-707",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which previous area of operation comes after west desert?",
+    "translated_question": "какая предыдущая Зона эксплуатации следует за Западной пустыней?",
+    "back_translated_question": "which previous area of operation follows west desert?",
+    "question_cosine_similarity": 0.9884177733714274,
+    "question_bert_precision": 0.8660137057304382,
+    "question_bert_recall": 0.9033776521682739,
+    "question_bert_f1": 0.8847379088401794,
+    "back_table_groups_compared": 80,
+    "back_table_min_similarity": 0.4437726896737071,
+    "back_table_mean_similarity": 0.9270339003346303,
+    "back_table_bert_groups_compared": 80,
+    "back_table_bert_min_f1": 0.4306325912475586,
+    "back_table_bert_mean_f1": 0.8992158252745867,
+    "back_table_bert_min_precision": 0.42972925305366516,
+    "back_table_bert_mean_precision": 0.9016067393124103,
+    "back_table_bert_min_recall": 0.4298080503940582,
+    "back_table_bert_mean_recall": 0.8966664765030146,
+    "back_table_similarity_examples": [
+      {
+        "row": 12,
+        "column": 0,
+        "score": 0.4437726896737071,
+        "source": "Veba",
+        "back_translated": "Weba"
+      },
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.6438555987213578,
+        "source": "2000-current",
+        "back_translated": "2000-president"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.6683997394054643,
+        "source": "2001-current",
+        "back_translated": "2001-president"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.6873022141295159,
+        "source": "1999-current",
+        "back_translated": "1999-president"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.6873022141295159,
+        "source": "1999-current",
+        "back_translated": "1999-president"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "oil and gas industry"
+  },
+  "domain": "oil and gas industry"
+}

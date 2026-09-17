@@ -1,0 +1,96 @@
+{
+  "question_id": "nu-324",
+  "source_context": "csv/203-csv/155.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-324.tsv",
+  "source_question": "who is the last representative on the table?",
+  "translated_question": "кто последний Представитель в таблице?",
+  "source_target_value": "Justin Rodriguez",
+  "translated_target_value": "Хастин Родригес",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "representative",
+      "normalized_text": "representative",
+      "start": 16,
+      "end": 30,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Representative",
+      "match_type": "lemma",
+      "candidate_key": "bc3c33bd67bd19fb",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-324",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is the last representative on the table?",
+    "translated_question": "кто последний Представитель в таблице?",
+    "back_translated_question": "who is the last representative in the table?",
+    "question_cosine_similarity": 0.9943888671609232,
+    "question_bert_precision": 0.9653193950653076,
+    "question_bert_recall": 0.9653241634368896,
+    "question_bert_f1": 0.9653742909431458,
+    "back_table_groups_compared": 44,
+    "back_table_min_similarity": 0.6222543223476745,
+    "back_table_mean_similarity": 0.9782522019132055,
+    "back_table_bert_groups_compared": 44,
+    "back_table_bert_min_f1": 0.5812682509422302,
+    "back_table_bert_mean_f1": 0.9795166159218008,
+    "back_table_bert_min_precision": 0.5806038975715637,
+    "back_table_bert_mean_precision": 0.9804265011440624,
+    "back_table_bert_min_recall": 0.5806618332862854,
+    "back_table_bert_mean_recall": 0.9785758785226129,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 0,
+        "score": 0.6222543223476745,
+        "source": "Justin Rodriguez",
+        "back_translated": "Hastin Rodriguez"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.6553095678714487,
+        "source": "Trey Martinez Fischer",
+        "back_translated": "Tray Martinez Fisher"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7655329939619173,
+        "source": "Home Town/City",
+        "back_translated": "Native city/city"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "politics"
+  },
+  "domain": "politics"
+}

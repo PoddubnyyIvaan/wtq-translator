@@ -1,0 +1,182 @@
+{
+  "question_id": "nu-634",
+  "source_context": "csv/203-csv/326.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-634.tsv",
+  "source_question": "name the only (acting) chief listed in 1959",
+  "translated_question": "Название единственным (исполняющим обязанности) главой, указанным в 1959 году",
+  "source_target_value": "Maj Gen Winston P. Wilson",
+  "translated_target_value": "Генерал-майор Уинстон П. Уилсон",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "name",
+      "normalized_text": "name",
+      "start": 0,
+      "end": 4,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Name",
+      "match_type": "lemma",
+      "candidate_key": "e6c93b05bbd9808e",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "acting",
+      "normalized_text": "act",
+      "start": 15,
+      "end": 21,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 10,
+          "column": 0
+        },
+        {
+          "row": 13,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 0
+        },
+        {
+          "row": 20,
+          "column": 0
+        },
+        {
+          "row": 22,
+          "column": 0
+        },
+        {
+          "row": 24,
+          "column": 0
+        },
+        {
+          "row": 32,
+          "column": 0
+        },
+        {
+          "row": 33,
+          "column": 0
+        },
+        {
+          "row": 34,
+          "column": 0
+        },
+        {
+          "row": 37,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Acting",
+      "match_type": "lemma",
+      "candidate_key": "7c292bba01e2f76b",
+      "coordinate": {
+        "row": 3,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-634",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "name the only (acting) chief listed in 1959",
+    "translated_question": "Название единственным (исполняющим обязанности) главой, указанным в 1959 году",
+    "back_translated_question": "name of the sole (acting) head specified in 1959",
+    "question_cosine_similarity": 0.7914066075817323,
+    "question_bert_precision": 0.7512322068214417,
+    "question_bert_recall": 0.7330576181411743,
+    "question_bert_f1": 0.7425013184547424,
+    "back_table_groups_compared": 210,
+    "back_table_min_similarity": 0.5896774149420142,
+    "back_table_mean_similarity": 0.9599823058107602,
+    "back_table_bert_groups_compared": 210,
+    "back_table_bert_min_f1": -0.08889497816562653,
+    "back_table_bert_mean_f1": 0.8006163425100524,
+    "back_table_bert_min_precision": -0.09606648236513138,
+    "back_table_bert_mean_precision": 0.8103753151460773,
+    "back_table_bert_min_recall": -0.08499228209257126,
+    "back_table_bert_mean_recall": 0.7913801082188174,
+    "back_table_similarity_examples": [
+      {
+        "row": 38,
+        "column": 1,
+        "score": 0.5896774149420142,
+        "source": "LTG H Steven Blum",
+        "back_translated": "lieutenant general h. steven bloom"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.6052227942407047,
+        "source": "BG John W. Heavey",
+        "back_translated": "Brigadier General John W. Hively"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.6216570741749713,
+        "source": "MG George E. Leach",
+        "back_translated": "major general george e. leech"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.6663842888168403,
+        "source": "Number",
+        "back_translated": "quantity"
+      },
+      {
+        "row": 13,
+        "column": 1,
+        "score": 0.7060918281824662,
+        "source": "COL Herold J. Weiler",
+        "back_translated": "colonel herold j.. Wheeler"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "military history"
+  },
+  "domain": "military history"
+}

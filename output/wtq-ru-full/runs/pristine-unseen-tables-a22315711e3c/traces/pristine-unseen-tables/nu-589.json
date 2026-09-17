@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-589",
+  "source_context": "csv/204-csv/272.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-589.tsv",
+  "source_question": "when was the first date?",
+  "translated_question": "когда была первая Дата?",
+  "source_target_value": "31 October 2008",
+  "translated_target_value": "31 октября 2008 года",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "date",
+      "normalized_text": "date",
+      "start": 19,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Date",
+      "match_type": "lemma",
+      "candidate_key": "58930d017d1af3c4",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-589",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "when was the first date?",
+    "translated_question": "когда была первая Дата?",
+    "back_translated_question": "when was the first date?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 168,
+    "back_table_min_similarity": 0.500946700411858,
+    "back_table_mean_similarity": 0.9066847924346808,
+    "back_table_bert_groups_compared": 168,
+    "back_table_bert_min_f1": 0.23919649422168732,
+    "back_table_bert_mean_f1": 0.8355218723771118,
+    "back_table_bert_min_precision": 0.23668880760669708,
+    "back_table_bert_mean_precision": 0.84005475434519,
+    "back_table_bert_min_recall": 0.23939679563045502,
+    "back_table_bert_mean_recall": 0.8306557005714803,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 7,
+        "score": 0.500946700411858,
+        "source": "GBR",
+        "back_translated": "United Kingdom"
+      },
+      {
+        "row": 1,
+        "column": 7,
+        "score": 0.500946700411858,
+        "source": "GBR",
+        "back_translated": "United Kingdom"
+      },
+      {
+        "row": 2,
+        "column": 7,
+        "score": 0.500946700411858,
+        "source": "GBR",
+        "back_translated": "United Kingdom"
+      },
+      {
+        "row": 3,
+        "column": 7,
+        "score": 0.500946700411858,
+        "source": "GBR",
+        "back_translated": "United Kingdom"
+      },
+      {
+        "row": 4,
+        "column": 7,
+        "score": 0.500946700411858,
+        "source": "GBR",
+        "back_translated": "United Kingdom"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

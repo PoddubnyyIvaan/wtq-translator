@@ -1,0 +1,129 @@
+{
+  "question_id": "nu-900",
+  "source_context": "csv/203-csv/511.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-900.tsv",
+  "source_question": "is retief goosen above or below k.j. choi in ranking?",
+  "translated_question": "находится ли Ретиф Гуссен выше или ниже К.Д. Чоя в рейтинге?",
+  "source_target_value": "Above",
+  "translated_target_value": "Выше",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "retief goosen",
+      "normalized_text": "retief goosen",
+      "start": 3,
+      "end": 16,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Retief Goosen",
+      "match_type": "lemma",
+      "candidate_key": "72c46821388fb704",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "choi",
+      "normalized_text": "choi",
+      "start": 37,
+      "end": 41,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Choi",
+      "match_type": "lemma",
+      "candidate_key": "e5b21cacee7e06d3",
+      "coordinate": {
+        "row": 6,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-900",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "is retief goosen above or below k.j. choi in ranking?",
+    "translated_question": "находится ли Ретиф Гуссен выше или ниже К.Д. Чоя в рейтинге?",
+    "back_translated_question": "is Retief Goosen ranked higher or lower than K.D. Choi in the rankings?",
+    "question_cosine_similarity": 0.9678587149152771,
+    "question_bert_precision": 0.31169742345809937,
+    "question_bert_recall": 0.3219768702983856,
+    "question_bert_f1": 0.3178599178791046,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.7471585359265884,
+    "back_table_mean_similarity": 0.989751960269171,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.17239251732826233,
+    "back_table_bert_mean_f1": 0.9633191059936177,
+    "back_table_bert_min_precision": 0.17107947170734406,
+    "back_table_bert_mean_precision": 0.9643400471318851,
+    "back_table_bert_min_recall": 0.17119400203227997,
+    "back_table_bert_mean_recall": 0.9622203667055477,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7471585359265884,
+        "source": "Place",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.8233127982466395,
+        "source": "Olin Browne",
+        "back_translated": "Olin Brown"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.8878372947503481,
+        "source": "To par",
+        "back_translated": "on par"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.9780491858808268,
+        "source": "K. J. Choi",
+        "back_translated": "K. J.. choi"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "golf tournament results"
+  },
+  "domain": "golf tournament results"
+}

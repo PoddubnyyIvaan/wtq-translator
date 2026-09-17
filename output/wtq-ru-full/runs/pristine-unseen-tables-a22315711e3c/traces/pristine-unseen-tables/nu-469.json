@@ -1,0 +1,118 @@
+{
+  "question_id": "nu-469",
+  "source_context": "csv/204-csv/347.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-469.tsv",
+  "source_question": "how many countries have less than 10 total medals?",
+  "translated_question": "сколько стран имеют менее 10 всего медалей?",
+  "source_target_value": "11",
+  "translated_target_value": "11",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "total",
+      "normalized_text": "total",
+      "start": 37,
+      "end": 42,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        },
+        {
+          "row": 15,
+          "column": 0
+        },
+        {
+          "row": 15,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Total",
+      "match_type": "lemma",
+      "candidate_key": "6dd782d1ee29a548",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-469",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many countries have less than 10 total medals?",
+    "translated_question": "сколько стран имеют менее 10 всего медалей?",
+    "back_translated_question": "how many countries have fewer than 10 total medals?",
+    "question_cosine_similarity": 0.9960040880236635,
+    "question_bert_precision": 0.9724068641662598,
+    "question_bert_recall": 0.9724106788635254,
+    "question_bert_f1": 0.9724505543708801,
+    "back_table_groups_compared": 102,
+    "back_table_min_similarity": 0.8392182651127832,
+    "back_table_mean_similarity": 0.9917147322182902,
+    "back_table_bert_groups_compared": 102,
+    "back_table_bert_min_f1": 0.5738877654075623,
+    "back_table_bert_mean_f1": 0.9775050562970778,
+    "back_table_bert_min_precision": 0.43978574872016907,
+    "back_table_bert_mean_precision": 0.9727572895148221,
+    "back_table_bert_min_recall": 0.6402941942214966,
+    "back_table_bert_mean_recall": 0.9825979821822223,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.8392182651127832,
+        "source": "China (CHN)",
+        "back_translated": "China (China)"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.8392877453212335,
+        "source": "North Korea (PRK)",
+        "back_translated": "North Korea (North Korea)"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.8613064419935809,
+        "source": "South Korea (KOR)",
+        "back_translated": "South Korea (South Korea)"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.8647541876650119,
+        "source": "Qatar (QAT)",
+        "back_translated": "Qatar (Qatar)"
+      },
+      {
+        "row": 13,
+        "column": 1,
+        "score": 0.8740167509643563,
+        "source": "Uzbekistan (UZB)",
+        "back_translated": "Uzbekistan (Uzbekistan)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports competitions"
+  },
+  "domain": "sports competitions"
+}

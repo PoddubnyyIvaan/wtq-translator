@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-475",
+  "source_context": "csv/203-csv/143.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-475.tsv",
+  "source_question": "who scored on 23 october 2005?",
+  "translated_question": "кто забил на 23 октября 2005 года?",
+  "source_target_value": "Lawrence, Elliott",
+  "translated_target_value": "Лоуренс, Эллиотт",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "23 october 2005",
+      "normalized_text": "23 october 2005",
+      "start": 14,
+      "end": 29,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 0
+        }
+      ],
+      "table_source_text": "23 October 2005",
+      "match_type": "lemma",
+      "candidate_key": "279b655fd927e09c",
+      "coordinate": {
+        "row": 9,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-475",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who scored on 23 october 2005?",
+    "translated_question": "кто забил на 23 октября 2005 года?",
+    "back_translated_question": "who scored on 23 october 2005?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 234,
+    "back_table_min_similarity": 0.39743117944129763,
+    "back_table_mean_similarity": 0.9790754771786639,
+    "back_table_bert_groups_compared": 234,
+    "back_table_bert_min_f1": 0.388650506734848,
+    "back_table_bert_mean_f1": 0.9193271639255377,
+    "back_table_bert_min_precision": 0.36071500182151794,
+    "back_table_bert_mean_precision": 0.9291826110874486,
+    "back_table_bert_min_recall": 0.1960056871175766,
+    "back_table_bert_mean_recall": 0.90993110033182,
+    "back_table_similarity_examples": [
+      {
+        "row": 11,
+        "column": 5,
+        "score": 0.39743117944129763,
+        "source": "Stubbs",
+        "back_translated": "Stabs"
+      },
+      {
+        "row": 5,
+        "column": 5,
+        "score": 0.5612997571699723,
+        "source": "Breen",
+        "back_translated": "Brin"
+      },
+      {
+        "row": 6,
+        "column": 5,
+        "score": 0.6099574496355299,
+        "source": "Miller, Arca",
+        "back_translated": "/county Miller, Ark"
+      },
+      {
+        "row": 29,
+        "column": 2,
+        "score": 0.6148721787362843,
+        "source": "Reebok Stadium",
+        "back_translated": "Ribble Stadium"
+      },
+      {
+        "row": 23,
+        "column": 2,
+        "score": 0.675466839328998,
+        "source": "Boleyn Ground",
+        "back_translated": "Bolton Ground"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

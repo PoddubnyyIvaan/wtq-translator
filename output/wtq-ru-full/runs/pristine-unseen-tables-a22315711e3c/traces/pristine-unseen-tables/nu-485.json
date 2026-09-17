@@ -1,0 +1,318 @@
+{
+  "question_id": "nu-485",
+  "source_context": "csv/200-csv/11.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-485.tsv",
+  "source_question": "who won an academy award for best director in the film, \"the french connection.\"?",
+  "translated_question": "кто получил Академию Премию за лучшего Директора в Фильме, «The French Connection»?",
+  "source_target_value": "William Friedkin",
+  "translated_target_value": "Уильям Фридкин",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "academy",
+      "normalized_text": "academy",
+      "start": 11,
+      "end": 18,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Academy",
+      "match_type": "lemma",
+      "candidate_key": "03ba9804d9af2346",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "award",
+      "normalized_text": "award",
+      "start": 19,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": 14,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Award",
+      "match_type": "lemma",
+      "candidate_key": "fb79a37731129483",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "best",
+      "normalized_text": "good",
+      "start": 29,
+      "end": 33,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 1
+        },
+        {
+          "row": 7,
+          "column": 1
+        },
+        {
+          "row": 10,
+          "column": 1
+        },
+        {
+          "row": 13,
+          "column": 1
+        },
+        {
+          "row": 14,
+          "column": 1
+        },
+        {
+          "row": 16,
+          "column": 1
+        },
+        {
+          "row": 17,
+          "column": 1
+        },
+        {
+          "row": 20,
+          "column": 1
+        },
+        {
+          "row": 26,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Best",
+      "match_type": "lemma",
+      "candidate_key": "c8e41327f6c7ebaf",
+      "coordinate": {
+        "row": 6,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "director",
+      "normalized_text": "director",
+      "start": 34,
+      "end": 42,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 18,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Director",
+      "match_type": "lemma",
+      "candidate_key": "fed3f2a2a7583884",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0004>",
+      "question_text": "film",
+      "normalized_text": "film",
+      "start": 50,
+      "end": 54,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 8,
+          "column": 1
+        },
+        {
+          "row": 10,
+          "column": 1
+        },
+        {
+          "row": 12,
+          "column": 1
+        },
+        {
+          "row": 14,
+          "column": 1
+        },
+        {
+          "row": 21,
+          "column": 0
+        },
+        {
+          "row": 22,
+          "column": 0
+        },
+        {
+          "row": 22,
+          "column": 1
+        },
+        {
+          "row": 23,
+          "column": 0
+        },
+        {
+          "row": 24,
+          "column": 0
+        },
+        {
+          "row": 25,
+          "column": 0
+        },
+        {
+          "row": 25,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Film",
+      "match_type": "lemma",
+      "candidate_key": "faafc841817dd09e",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-485",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who won an academy award for best director in the film, \"the french connection.\"?",
+    "translated_question": "кто получил Академию Премию за лучшего Директора в Фильме, «The French Connection»?",
+    "back_translated_question": "who received the Academy Award for Best Director in a film, «The French Connection»?",
+    "question_cosine_similarity": 0.9826457706406555,
+    "question_bert_precision": 0.5366171598434448,
+    "question_bert_recall": 0.6204604506492615,
+    "question_bert_f1": 0.578417181968689,
+    "back_table_groups_compared": 112,
+    "back_table_min_similarity": 0.7445148179341904,
+    "back_table_mean_similarity": 0.9632167292866539,
+    "back_table_bert_groups_compared": 112,
+    "back_table_bert_min_f1": 0.29106950759887695,
+    "back_table_bert_mean_f1": 0.9286331827087062,
+    "back_table_bert_min_precision": 0.28994476795196533,
+    "back_table_bert_mean_precision": 0.9308098410921437,
+    "back_table_bert_min_recall": 0.2900428771972656,
+    "back_table_bert_mean_recall": 0.9263848933790412,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.7445148179341904,
+        "source": "Ernest Tidyman",
+        "back_translated": "Ernest Tideman"
+      },
+      {
+        "row": 16,
+        "column": 2,
+        "score": 0.7445148179341904,
+        "source": "Ernest Tidyman",
+        "back_translated": "Ernest Tideman"
+      },
+      {
+        "row": 20,
+        "column": 2,
+        "score": 0.7445148179341904,
+        "source": "Ernest Tidyman",
+        "back_translated": "Ernest Tideman"
+      },
+      {
+        "row": 22,
+        "column": 2,
+        "score": 0.7445148179341904,
+        "source": "Ernest Tidyman",
+        "back_translated": "Ernest Tideman"
+      },
+      {
+        "row": 25,
+        "column": 2,
+        "score": 0.7445148179341904,
+        "source": "Ernest Tidyman",
+        "back_translated": "Ernest Tideman"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "film awards"
+  },
+  "domain": "film awards"
+}

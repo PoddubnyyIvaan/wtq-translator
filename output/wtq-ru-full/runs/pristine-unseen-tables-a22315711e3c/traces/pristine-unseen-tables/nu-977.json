@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-977",
+  "source_context": "csv/204-csv/485.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-977.tsv",
+  "source_question": "which governorates have areas larger than 10,000 km?",
+  "translated_question": "какие губернии имеют площади больше 10 000 км?",
+  "source_target_value": "Asyut|Gharbia|Giza|Suez",
+  "translated_target_value": "Асьют|Гарбия|Гиза|Суэз",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "areas",
+      "normalized_text": "area",
+      "start": 24,
+      "end": 29,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Area",
+      "match_type": "lemma",
+      "candidate_key": "210114236b829370",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-977",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which governorates have areas larger than 10,000 km?",
+    "translated_question": "какие губернии имеют площади больше 10 000 км?",
+    "back_translated_question": "which governorates have areas greater than 10,000 km²?",
+    "question_cosine_similarity": 0.9701384311574566,
+    "question_bert_precision": 0.9390829205513,
+    "question_bert_recall": 0.9390913844108582,
+    "question_bert_f1": 0.9391794204711914,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.5320982283808436,
+    "back_table_mean_similarity": 0.975308079814652,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.33292365074157715,
+    "back_table_bert_mean_f1": 0.9373907684176056,
+    "back_table_bert_min_precision": 0.315053254365921,
+    "back_table_bert_mean_precision": 0.9362054312670672,
+    "back_table_bert_min_recall": 0.33350685238838196,
+    "back_table_bert_mean_recall": 0.938457413955971,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.5320982283808436,
+        "source": "Nr.",
+        "back_translated": "no.."
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7244023160360467,
+        "source": "Ghazl El-Mehalla",
+        "back_translated": "Ghazal Al Mahalla"
+      },
+      {
+        "row": 6,
+        "column": 5,
+        "score": 0.8316596894420435,
+        "source": "Al Masry",
+        "back_translated": "al masri"
+      },
+      {
+        "row": 7,
+        "column": 5,
+        "score": 0.8862062598860204,
+        "source": "Petrojet",
+        "back_translated": "Petrodjet"
+      },
+      {
+        "row": 5,
+        "column": 5,
+        "score": 0.8864221079919501,
+        "source": "Ismaily",
+        "back_translated": "Ismaili"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "geography and demographics"
+  },
+  "domain": "geography and demographics"
+}

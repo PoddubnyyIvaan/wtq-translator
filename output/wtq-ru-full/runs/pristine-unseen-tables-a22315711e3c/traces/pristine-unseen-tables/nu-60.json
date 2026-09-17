@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-60",
+  "source_context": "csv/203-csv/779.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-60.tsv",
+  "source_question": "what was the only race in 2011?",
+  "translated_question": "какая была единственная гонка в 2011 году?",
+  "source_target_value": "Giant Slalom",
+  "translated_target_value": "Гигантский слалом",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "race",
+      "normalized_text": "race",
+      "start": 18,
+      "end": 22,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Race",
+      "match_type": "lemma",
+      "candidate_key": "e4af25f9f4fb820f",
+      "coordinate": {
+        "row": 8,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-60",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the only race in 2011?",
+    "translated_question": "какая была единственная гонка в 2011 году?",
+    "back_translated_question": "what was the only race in 2011?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 152,
+    "back_table_min_similarity": 0.5370093131138749,
+    "back_table_mean_similarity": 0.9743532113612532,
+    "back_table_bert_groups_compared": 152,
+    "back_table_bert_min_f1": -0.0021093576215207577,
+    "back_table_bert_mean_f1": 0.9279996734510764,
+    "back_table_bert_min_precision": -0.16491582989692688,
+    "back_table_bert_mean_precision": 0.9298196997689573,
+    "back_table_bert_min_recall": 0.19498106837272644,
+    "back_table_bert_mean_recall": 0.9262852064873043,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 14,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": 15,
+        "column": 3,
+        "score": 0.5370093131138749,
+        "source": "Downhill",
+        "back_translated": "Slalom with braking"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6485644783784463,
+        "source": "Giant\\nSlalom",
+        "back_translated": "giant slalom"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

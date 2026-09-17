@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-23",
+  "source_context": "csv/203-csv/286.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-23.tsv",
+  "source_question": "what yacht had the next best time (smaller time is better) than ausmaid?",
+  "translated_question": "какая яхта показала следующее лучшее время (меньшее время лучше), чем Ausmaid?",
+  "source_target_value": "Brindabella",
+  "translated_target_value": "Brindabella",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "yacht",
+      "normalized_text": "yacht",
+      "start": 5,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Yacht",
+      "match_type": "lemma",
+      "candidate_key": "dbca9e877a36d916",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "ausmaid",
+      "normalized_text": "ausmaid",
+      "start": 64,
+      "end": 71,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Ausmaid",
+      "match_type": "lemma",
+      "candidate_key": "43fa92f7fbf8e857",
+      "coordinate": {
+        "row": 2,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-23",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what yacht had the next best time (smaller time is better) than ausmaid?",
+    "translated_question": "какая яхта показала следующее лучшее время (меньшее время лучше), чем Ausmaid?",
+    "back_translated_question": "which yacht recorded the next best time (lower time is better) compared to ausmaid?",
+    "question_cosine_similarity": 0.923448081819545,
+    "question_bert_precision": 0.8291031122207642,
+    "question_bert_recall": 0.7987985014915466,
+    "question_bert_f1": 0.8141408562660217,
+    "back_table_groups_compared": 88,
+    "back_table_min_similarity": 0.5245506692402225,
+    "back_table_mean_similarity": 0.9748802766921862,
+    "back_table_bert_groups_compared": 88,
+    "back_table_bert_min_f1": 0.2581706941127777,
+    "back_table_bert_mean_f1": 0.9603112421252511,
+    "back_table_bert_min_precision": 0.2554938495159149,
+    "back_table_bert_mean_precision": 0.9602265760979869,
+    "back_table_bert_min_recall": 0.258598655462265,
+    "back_table_bert_mean_recall": 0.9603248333389108,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 6,
+        "score": 0.5245506692402225,
+        "source": "Kevan Pearce",
+        "back_translated": "Kevin Pierce"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 3,
+        "column": 6,
+        "score": 0.5868893441758614,
+        "source": "Syd Fischer",
+        "back_translated": "Sid Fisher"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6902991562481895,
+        "source": "LOA\\n(Metres)",
+        "back_translated": "Length at waterline\\n(meters)"
+      },
+      {
+        "row": 8,
+        "column": 6,
+        "score": 0.7863361662416625,
+        "source": "David Pescud",
+        "back_translated": "David Pesquid"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sailing race results"
+  },
+  "domain": "sailing race results"
+}

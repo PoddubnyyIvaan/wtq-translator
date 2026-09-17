@@ -1,0 +1,202 @@
+{
+  "question_id": "nu-964",
+  "source_context": "csv/204-csv/367.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-964.tsv",
+  "source_question": "what was the total number of wins for the wolverines that season?",
+  "translated_question": "сколько всего побед у волвёринс в тот сезон?",
+  "source_target_value": "24",
+  "translated_target_value": "24",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "wins",
+      "normalized_text": "win",
+      "start": 29,
+      "end": 33,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 9,
+          "column": 3
+        },
+        {
+          "row": 10,
+          "column": 3
+        },
+        {
+          "row": 11,
+          "column": 3
+        },
+        {
+          "row": 12,
+          "column": 3
+        },
+        {
+          "row": 13,
+          "column": 3
+        },
+        {
+          "row": 14,
+          "column": 3
+        },
+        {
+          "row": 15,
+          "column": 3
+        },
+        {
+          "row": 16,
+          "column": 3
+        },
+        {
+          "row": 17,
+          "column": 3
+        },
+        {
+          "row": 18,
+          "column": 3
+        },
+        {
+          "row": 19,
+          "column": 3
+        },
+        {
+          "row": 21,
+          "column": 3
+        },
+        {
+          "row": 22,
+          "column": 3
+        },
+        {
+          "row": 23,
+          "column": 3
+        },
+        {
+          "row": 24,
+          "column": 3
+        },
+        {
+          "row": 27,
+          "column": 3
+        },
+        {
+          "row": 28,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Win",
+      "match_type": "lemma",
+      "candidate_key": "f9c8e1ded1e36c16",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-964",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the total number of wins for the wolverines that season?",
+    "translated_question": "сколько всего побед у волвёринс в тот сезон?",
+    "back_translated_question": "how many total wins did the wolves have that season?",
+    "question_cosine_similarity": 0.8223466330645207,
+    "question_bert_precision": 0.5362334251403809,
+    "question_bert_recall": 0.5736289620399475,
+    "question_bert_f1": 0.5554535984992981,
+    "back_table_groups_compared": 155,
+    "back_table_min_similarity": 0.47785378728078365,
+    "back_table_mean_similarity": 0.9571359215995998,
+    "back_table_bert_groups_compared": 155,
+    "back_table_bert_min_f1": -0.06707941740751266,
+    "back_table_bert_mean_f1": 0.8892210082181038,
+    "back_table_bert_min_precision": -0.03117072954773903,
+    "back_table_bert_mean_precision": 0.8954976379631027,
+    "back_table_bert_min_recall": -0.10458141565322876,
+    "back_table_bert_mean_recall": 0.8831118235664983,
+    "back_table_similarity_examples": [
+      {
+        "row": 15,
+        "column": 4,
+        "score": 0.47785378728078365,
+        "source": "Columbus, OH",
+        "back_translated": "Cumberland, OG"
+      },
+      {
+        "row": 25,
+        "column": 3,
+        "score": 0.5160258783569536,
+        "source": "Tie",
+        "back_translated": "link no."
+      },
+      {
+        "row": 20,
+        "column": 4,
+        "score": 0.6107090222659111,
+        "source": "Houghton, MI",
+        "back_translated": "Houton, MI"
+      },
+      {
+        "row": 21,
+        "column": 4,
+        "score": 0.6107090222659111,
+        "source": "Houghton, MI",
+        "back_translated": "Houton, MI"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7973282822056375,
+        "source": "Coliseum, Ann Arbor, MI",
+        "back_translated": "Colosseum, Ann Arbor, MI"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

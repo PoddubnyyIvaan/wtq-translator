@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-392",
+  "source_context": "csv/203-csv/617.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-392.tsv",
+  "source_question": "total number of countries represented in round 8",
+  "translated_question": "общее количество стран, представленных в 8-м раунде",
+  "source_target_value": "4",
+  "translated_target_value": "4",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-392",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "total number of countries represented in round 8",
+    "translated_question": "общее количество стран, представленных в 8-м раунде",
+    "back_translated_question": "total number of countries represented in the 8th round",
+    "question_cosine_similarity": 0.9700398817795878,
+    "question_bert_precision": 0.8350937366485596,
+    "question_bert_recall": 0.8119807243347168,
+    "question_bert_f1": 0.8237510323524475,
+    "back_table_groups_compared": 132,
+    "back_table_min_similarity": 0.42285441110560507,
+    "back_table_mean_similarity": 0.9404000365389908,
+    "back_table_bert_groups_compared": 132,
+    "back_table_bert_min_f1": 0.37352225184440613,
+    "back_table_bert_mean_f1": 0.8819813714786009,
+    "back_table_bert_min_precision": 0.3889685869216919,
+    "back_table_bert_mean_precision": 0.8847600309686228,
+    "back_table_bert_min_recall": 0.35381075739860535,
+    "back_table_bert_mean_recall": 0.878971946961952,
+    "back_table_similarity_examples": [
+      {
+        "row": 17,
+        "column": 1,
+        "score": 0.42285441110560507,
+        "source": "Sean Whyte",
+        "back_translated": "Shawn White"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 20,
+        "column": 1,
+        "score": 0.603177491673543,
+        "source": "Kevin Wortman",
+        "back_translated": "Kevin Worthington"
+      },
+      {
+        "row": 16,
+        "column": 1,
+        "score": 0.6060046318079687,
+        "source": "Rick Allain",
+        "back_translated": "Rick Allen"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.6175818763651774,
+        "source": "Paul Krake",
+        "back_translated": "Paul Crayk"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "ice hockey draft"
+  },
+  "domain": "ice hockey draft"
+}

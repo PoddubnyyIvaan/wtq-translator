@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-889",
+  "source_context": "csv/203-csv/647.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-889.tsv",
+  "source_question": "was the finish in 1930 above/below 12?",
+  "translated_question": "был ли финиш в 1930 году выше/ниже 12?",
+  "source_target_value": "above",
+  "translated_target_value": "выше",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "finish",
+      "normalized_text": "finish",
+      "start": 8,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Finish",
+      "match_type": "lemma",
+      "candidate_key": "77648eb85e2eaa0a",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-889",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "was the finish in 1930 above/below 12?",
+    "translated_question": "был ли финиш в 1930 году выше/ниже 12?",
+    "back_translated_question": "was the finish in 1930 higher/lower than 12?",
+    "question_cosine_similarity": 0.9803925499104093,
+    "question_bert_precision": 0.795331597328186,
+    "question_bert_recall": 0.7493875622749329,
+    "question_bert_f1": 0.7724910378456116,
+    "back_table_groups_compared": 135,
+    "back_table_min_similarity": 0.30273723379827877,
+    "back_table_mean_similarity": 0.9392063335388167,
+    "back_table_bert_groups_compared": 135,
+    "back_table_bert_min_f1": 0.0927353948354721,
+    "back_table_bert_mean_f1": 0.8997499521131869,
+    "back_table_bert_min_precision": 0.1289805769920349,
+    "back_table_bert_mean_precision": 0.903158007396592,
+    "back_table_bert_min_recall": 0.0552489273250103,
+    "back_table_bert_mean_recall": 0.8962193511978344,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 8,
+        "score": 0.30273723379827877,
+        "source": "Supercharger",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 9,
+        "column": 8,
+        "score": 0.34497498292795586,
+        "source": "Magneto",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 4,
+        "column": 8,
+        "score": 0.4300207732080731,
+        "source": "Valve",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 8,
+        "column": 8,
+        "score": 0.45088613939855315,
+        "source": "Rod",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 11,
+        "column": 8,
+        "score": 0.45088613939855315,
+        "source": "Rod",
+        "back_translated": "Withdrew"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

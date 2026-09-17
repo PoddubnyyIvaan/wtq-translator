@@ -1,0 +1,146 @@
+{
+  "question_id": "nu-282",
+  "source_context": "csv/203-csv/315.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-282.tsv",
+  "source_question": "how many episodes were directed by leo penn?",
+  "translated_question": "сколько эпизодов было режиссёрским Лео Пенн?",
+  "source_target_value": "4",
+  "translated_target_value": "4",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "directed by",
+      "normalized_text": "direct by",
+      "start": 23,
+      "end": 34,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Directed by",
+      "match_type": "lemma",
+      "candidate_key": "ec1266aa6694a15a",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "leo penn",
+      "normalized_text": "leo penn",
+      "start": 35,
+      "end": 43,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Leo Penn",
+      "match_type": "lemma",
+      "candidate_key": "22866c912c02b222",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-282",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many episodes were directed by leo penn?",
+    "translated_question": "сколько эпизодов было режиссёрским Лео Пенн?",
+    "back_translated_question": "how many episodes were directed by Leo Penn?",
+    "question_cosine_similarity": 0.9999999999999998,
+    "question_bert_precision": 0.8254371881484985,
+    "question_bert_recall": 0.8254613280296326,
+    "question_bert_f1": 0.8257136940956116,
+    "back_table_groups_compared": 203,
+    "back_table_min_similarity": 0.5711310582187346,
+    "back_table_mean_similarity": 0.9638648849367494,
+    "back_table_bert_groups_compared": 203,
+    "back_table_bert_min_f1": -0.08062397688627243,
+    "back_table_bert_mean_f1": 0.9148375043838188,
+    "back_table_bert_min_precision": -0.13578830659389496,
+    "back_table_bert_mean_precision": 0.9140530161265963,
+    "back_table_bert_min_recall": -0.032369375228881836,
+    "back_table_bert_mean_recall": 0.915529094260241,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.5711310582187346,
+        "source": "Robert Lewin",
+        "back_translated": "Robert Levin"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.5711310582187346,
+        "source": "Robert Lewin",
+        "back_translated": "Robert Levin"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.6245013415811751,
+        "source": "Title",
+        "back_translated": "name"
+      },
+      {
+        "row": 2,
+        "column": 4,
+        "score": 0.6312269944267633,
+        "source": "David Karp",
+        "back_translated": "David Carp"
+      },
+      {
+        "row": 27,
+        "column": 2,
+        "score": 0.6554383524584588,
+        "source": "One Thousand Fine",
+        "back_translated": "A Thousand Beautiful"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "television series"
+  },
+  "domain": "television series"
+}

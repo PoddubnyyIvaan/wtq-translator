@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-380",
+  "source_context": "csv/203-csv/514.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-380.tsv",
+  "source_question": "which race came first?",
+  "translated_question": "какая Гонка была первой?",
+  "source_target_value": "Donington Park",
+  "translated_target_value": "Донингтон Парк",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "race",
+      "normalized_text": "race",
+      "start": 6,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Race",
+      "match_type": "lemma",
+      "candidate_key": "e4af25f9f4fb820f",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-380",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which race came first?",
+    "translated_question": "какая Гонка была первой?",
+    "back_translated_question": "which race was the first?",
+    "question_cosine_similarity": 0.9260509119978853,
+    "question_bert_precision": 0.8071448802947998,
+    "question_bert_recall": 0.7419432997703552,
+    "question_bert_f1": 0.7744572162628174,
+    "back_table_groups_compared": 117,
+    "back_table_min_similarity": 0.5682985599140098,
+    "back_table_mean_similarity": 0.9847184247465175,
+    "back_table_bert_groups_compared": 117,
+    "back_table_bert_min_f1": 0.2565673887729645,
+    "back_table_bert_mean_f1": 0.953334918898395,
+    "back_table_bert_min_precision": 0.22588764131069183,
+    "back_table_bert_mean_precision": 0.9516385954159957,
+    "back_table_bert_min_recall": 0.28589627146720886,
+    "back_table_bert_mean_recall": 0.9551828253982414,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.5682985599140098,
+        "source": "Vallelunga",
+        "back_translated": "Valladolid"
+      },
+      {
+        "row": 9,
+        "column": 2,
+        "score": 0.5682985599140098,
+        "source": "Vallelunga",
+        "back_translated": "Valladolid"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6509402192874287,
+        "source": "Pole Position",
+        "back_translated": "Starting position"
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.9109473990202758,
+        "source": "SC Corinthians",
+        "back_translated": "S.C. Corinthians"
+      },
+      {
+        "row": 4,
+        "column": 5,
+        "score": 0.9260327786711003,
+        "source": "Liverpool F.C.",
+        "back_translated": "Liverpool FC"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports competitions"
+  },
+  "domain": "sports competitions"
+}

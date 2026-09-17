@@ -1,0 +1,113 @@
+{
+  "question_id": "nu-182",
+  "source_context": "csv/204-csv/393.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-182.tsv",
+  "source_question": "what year had the highest results?",
+  "translated_question": "в каком году были наивысшие результаты?",
+  "source_target_value": "2009",
+  "translated_target_value": "2009",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 5,
+      "end": 9,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "results",
+      "normalized_text": "result",
+      "start": 26,
+      "end": 33,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Result",
+      "match_type": "lemma",
+      "candidate_key": "1e20635ef606b3cb",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-182",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what year had the highest results?",
+    "translated_question": "в каком году были наивысшие результаты?",
+    "back_translated_question": "in what year were the highest results?",
+    "question_cosine_similarity": 0.9862041734412168,
+    "question_bert_precision": 0.8359360694885254,
+    "question_bert_recall": 0.7722336053848267,
+    "question_bert_f1": 0.8039774298667908,
+    "back_table_groups_compared": 144,
+    "back_table_min_similarity": 0.8617976137837421,
+    "back_table_mean_similarity": 0.9986983921315107,
+    "back_table_bert_groups_compared": 144,
+    "back_table_bert_min_f1": 0.4878459572792053,
+    "back_table_bert_mean_f1": 0.9928963401665291,
+    "back_table_bert_min_precision": 0.4870333969593048,
+    "back_table_bert_mean_precision": 0.9930592082026932,
+    "back_table_bert_min_recall": 0.4639723598957062,
+    "back_table_bert_mean_recall": 0.9927158099081781,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.8617976137837421,
+        "source": "Winner",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.9507708531537978,
+        "source": "November 28",
+        "back_translated": "28 november"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

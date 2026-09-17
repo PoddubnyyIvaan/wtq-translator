@@ -1,0 +1,85 @@
+{
+  "question_id": "nu-738",
+  "source_context": "csv/204-csv/407.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-738.tsv",
+  "source_question": "where there at least 10 wins?",
+  "translated_question": "было ли хотя бы 10 побед?",
+  "source_target_value": "yes",
+  "translated_target_value": "да",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-738",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "where there at least 10 wins?",
+    "translated_question": "было ли хотя бы 10 побед?",
+    "back_translated_question": "was there at least 10 wins?",
+    "question_cosine_similarity": 0.9076437608543624,
+    "question_bert_precision": 0.8157004714012146,
+    "question_bert_recall": 0.8157259821891785,
+    "question_bert_f1": 0.8159924149513245,
+    "back_table_groups_compared": 80,
+    "back_table_min_similarity": 0.5994941667283904,
+    "back_table_mean_similarity": 0.9428121555844926,
+    "back_table_bert_groups_compared": 80,
+    "back_table_bert_min_f1": 0.06323366612195969,
+    "back_table_bert_mean_f1": 0.7664907994680107,
+    "back_table_bert_min_precision": 0.006584503222256899,
+    "back_table_bert_mean_precision": 0.7674718020076398,
+    "back_table_bert_min_recall": 0.12067799270153046,
+    "back_table_bert_mean_recall": 0.7660185009241104,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.5994941667283904,
+        "source": "16th Hashida Awards",
+        "back_translated": "16-the nikkan sports award for cinematic works"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7042208944683525,
+        "source": "Nikkan Sports Grand Prix (Fall)",
+        "back_translated": "16-the nikkan sports award for cinematic works (autumn)"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.7630358906860069,
+        "source": "16th Nikkan Sport Grand Prix",
+        "back_translated": "16-the nikkan sports award for cinematic works"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.8029412927248596,
+        "source": "Newcomer Award",
+        "back_translated": "Rookie Award"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.8115968045421901,
+        "source": "10th Nikkan Sports Drama Grand Prix",
+        "back_translated": "10-the Nikkan Sports award for dramatic works"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question.",
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "entertainment"
+  },
+  "domain": "entertainment"
+}

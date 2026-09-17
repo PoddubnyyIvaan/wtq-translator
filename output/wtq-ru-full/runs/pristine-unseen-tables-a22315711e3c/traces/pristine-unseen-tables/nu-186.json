@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-186",
+  "source_context": "csv/203-csv/259.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-186.tsv",
+  "source_question": "where did the only 100 m hurdle take place in 1997?",
+  "translated_question": "где прошёл единственный 100 м барьеры в 1997 году?",
+  "source_target_value": "Indianapolis, United States",
+  "translated_target_value": "Индианаполис, Соединённые Штаты",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "100 m hurdle",
+      "normalized_text": "100 m hurdle",
+      "start": 19,
+      "end": 31,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 4
+        },
+        {
+          "row": 2,
+          "column": 4
+        },
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 4
+        },
+        {
+          "row": 7,
+          "column": 4
+        },
+        {
+          "row": 10,
+          "column": 4
+        },
+        {
+          "row": 11,
+          "column": 4
+        }
+      ],
+      "table_source_text": "100 m hurdles",
+      "match_type": "lemma",
+      "candidate_key": "34b2be7f7af12a65",
+      "coordinate": {
+        "row": 1,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-186",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "where did the only 100 m hurdle take place in 1997?",
+    "translated_question": "где прошёл единственный 100 м барьеры в 1997 году?",
+    "back_translated_question": "where did the only 100 m hurdle take place in 1997?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 65,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9751807901988802,
+    "back_table_bert_groups_compared": 65,
+    "back_table_bert_min_f1": 0.36328017711639404,
+    "back_table_bert_mean_f1": 0.9342041327403142,
+    "back_table_bert_min_precision": 0.3889692425727844,
+    "back_table_bert_mean_precision": 0.9419197880304777,
+    "back_table_bert_min_recall": 0.2649391293525696,
+    "back_table_bert_mean_recall": 0.9268790538494404,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.7884606252612152,
+        "source": "Grand Prix Final",
+        "back_translated": "World Athletics Final"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7884606252612152,
+        "source": "Grand Prix Final",
+        "back_translated": "World Athletics Final"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.7884606252612152,
+        "source": "Grand Prix Final",
+        "back_translated": "World Athletics Final"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.878407178855476,
+        "source": "USA Indoor Championships",
+        "back_translated": "usa indoor track and field championships"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-788",
+  "source_context": "csv/203-csv/369.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-788.tsv",
+  "source_question": "what is the difference in days between the first two \"keel laid\" dates?",
+  "translated_question": "в чем разница в днях между первыми двумя датами \"киль заложен\"?",
+  "source_target_value": "3 days",
+  "translated_target_value": "3 дня",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "keel",
+      "normalized_text": "keel",
+      "start": 54,
+      "end": 58,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Keel",
+      "match_type": "lemma",
+      "candidate_key": "a506072a3a44d78b",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-788",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the difference in days between the first two \"keel laid\" dates?",
+    "translated_question": "в чем разница в днях между первыми двумя датами \"киль заложен\"?",
+    "back_translated_question": "what is the difference in days between the first two dates \"keel laid\"?",
+    "question_cosine_similarity": 0.9927957973417688,
+    "question_bert_precision": 0.8555818796157837,
+    "question_bert_recall": 0.8556018471717834,
+    "question_bert_f1": 0.8558106422424316,
+    "back_table_groups_compared": 305,
+    "back_table_min_similarity": 0.4669871216392545,
+    "back_table_mean_similarity": 0.9637829676376853,
+    "back_table_bert_groups_compared": 305,
+    "back_table_bert_min_f1": -0.030771033838391304,
+    "back_table_bert_mean_f1": 0.5114292289817431,
+    "back_table_bert_min_precision": 0.05702049657702446,
+    "back_table_bert_mean_precision": 0.5448915694947125,
+    "back_table_bert_min_recall": -0.11309973895549774,
+    "back_table_bert_mean_recall": 0.4780643488540024,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.4669871216392545,
+        "source": "Commissioned",
+        "back_translated": "entered into the chilean navy on february 10, 2010, and renamed to"
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.7631049596842508,
+        "source": "Destroyed 19 August 1937",
+        "back_translated": "scrapped on august 19, 1937"
+      },
+      {
+        "row": 13,
+        "column": 4,
+        "score": 0.7787319214904284,
+        "source": "Expended as target 22 November 1934",
+        "back_translated": "scuttled as a target on november 22, 1934"
+      },
+      {
+        "row": 39,
+        "column": 4,
+        "score": 0.780127006286262,
+        "source": "Expended as target 19 November 1934",
+        "back_translated": "scuttled as a target on november 19, 1934"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.7877626426077843,
+        "source": "Expended as target 30 November 1934",
+        "back_translated": "scuttled as a target on november 30, 1934"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "naval history"
+  },
+  "domain": "naval history"
+}

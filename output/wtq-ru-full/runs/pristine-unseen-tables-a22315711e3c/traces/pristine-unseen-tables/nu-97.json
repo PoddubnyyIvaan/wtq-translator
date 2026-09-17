@@ -1,0 +1,175 @@
+{
+  "question_id": "nu-97",
+  "source_context": "csv/202-csv/93.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-97.tsv",
+  "source_question": "when did the restaurant \"verre\" at the hilton dubai creek close?",
+  "translated_question": "когда ресторан \"verre\" в отеле hilton dubai creek дата закрытия?",
+  "source_target_value": "October 2011",
+  "translated_target_value": "октябрь 2011 года",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "restaurant",
+      "normalized_text": "restaurant",
+      "start": 13,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Restaurant",
+      "match_type": "lemma",
+      "candidate_key": "fc61596ed776b1f0",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "verre",
+      "normalized_text": "verre",
+      "start": 25,
+      "end": 30,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Verre",
+      "match_type": "lemma",
+      "candidate_key": "cc9ded16acd57b29",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "at the hilton dubai creek",
+      "normalized_text": "at the hilton dubai creek",
+      "start": 32,
+      "end": 57,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        }
+      ],
+      "table_source_text": "at the Hilton Dubai Creek",
+      "match_type": "lemma",
+      "candidate_key": "e3287bebe2f477a6",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "close",
+      "normalized_text": "close",
+      "start": 58,
+      "end": 63,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Closed",
+      "match_type": "lemma",
+      "candidate_key": "0d281037f7afdcd4",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-97",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "when did the restaurant \"verre\" at the hilton dubai creek close?",
+    "translated_question": "когда ресторан \"verre\" в отеле hilton dubai creek дата закрытия?",
+    "back_translated_question": "when does the restaurant \"verre\" at the hilton dubai creek close?",
+    "question_cosine_similarity": 0.9607548565547375,
+    "question_bert_precision": 0.9748022556304932,
+    "question_bert_recall": 0.9748057126998901,
+    "question_bert_f1": 0.9748421907424927,
+    "back_table_groups_compared": 28,
+    "back_table_min_similarity": 0.8711130498447432,
+    "back_table_mean_similarity": 0.9911546559372036,
+    "back_table_bert_groups_compared": 28,
+    "back_table_bert_min_f1": 0.24452164769172668,
+    "back_table_bert_mean_f1": 0.9173092022538185,
+    "back_table_bert_min_precision": 0.2807183265686035,
+    "back_table_bert_mean_precision": 0.9189941127385411,
+    "back_table_bert_min_recall": 0.16972655057907104,
+    "back_table_bert_mean_recall": 0.9156131063188825,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.8711130498447432,
+        "source": "Date Closed",
+        "back_translated": "Closing date"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.9151201642535876,
+        "source": "Date Opened",
+        "back_translated": "Opening date"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.9725157499920928,
+        "source": "Maze / Maze Grill by Gordon Ramsay",
+        "back_translated": "maze grill by gordon ramsay / maze grill by gordon ramsay"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.9935814021512785,
+        "source": "Verre at the Hilton Dubai Creek",
+        "back_translated": "Verre at Hilton Dubai Creek"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "restaurants"
+  },
+  "domain": "restaurants"
+}

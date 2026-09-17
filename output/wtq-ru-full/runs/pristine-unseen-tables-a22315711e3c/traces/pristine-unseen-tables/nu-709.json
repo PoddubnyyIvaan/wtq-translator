@@ -1,0 +1,174 @@
+{
+  "question_id": "nu-709",
+  "source_context": "csv/203-csv/310.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-709.tsv",
+  "source_question": "what is the number of tablets?",
+  "translated_question": "сколько историй у Табличек?",
+  "source_target_value": "11",
+  "translated_target_value": "11",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "is the",
+      "normalized_text": "be the",
+      "start": 5,
+      "end": 11,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 9,
+          "column": 3
+        },
+        {
+          "row": 10,
+          "column": 3
+        }
+      ],
+      "table_source_text": "is the",
+      "match_type": "lemma",
+      "candidate_key": "8bcb60652a7253c3",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "tablets",
+      "normalized_text": "tablet",
+      "start": 22,
+      "end": 29,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Tablet",
+      "match_type": "lemma",
+      "candidate_key": "6d538fbc67505508",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-709",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of tablets?",
+    "translated_question": "сколько историй у Табличек?",
+    "back_translated_question": "how many stories does tablets have?",
+    "question_cosine_similarity": 0.8080792672959529,
+    "question_bert_precision": 0.4208698868751526,
+    "question_bert_recall": 0.42421668767929077,
+    "question_bert_f1": 0.4234170615673065,
+    "back_table_groups_compared": 52,
+    "back_table_min_similarity": 0.6294848532055209,
+    "back_table_mean_similarity": 0.9774758551040932,
+    "back_table_bert_groups_compared": 52,
+    "back_table_bert_min_f1": 0.5971309542655945,
+    "back_table_bert_mean_f1": 0.9379791835179696,
+    "back_table_bert_min_precision": 0.6315944194793701,
+    "back_table_bert_mean_precision": 0.9398687183856964,
+    "back_table_bert_min_recall": 0.5493830442428589,
+    "back_table_bert_mean_recall": 0.9359661329251069,
+    "back_table_similarity_examples": [
+      {
+        "row": 10,
+        "column": 3,
+        "score": 0.6294848532055209,
+        "source": "This is the account of Jacob. 37:2",
+        "back_translated": "this is the history of雅ков. 37:2"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.8899472327891407,
+        "source": "This is the written account of Adam. 5:1",
+        "back_translated": "this is the history of adam. 5:1"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.8921983562638397,
+        "source": "This is the account of Shem. 11:10",
+        "back_translated": "this is the history of shem. 11:10"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.9053547341981194,
+        "source": "This is the account of Terah. 11:27",
+        "back_translated": "this is the history of terah. 11:27"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.915915674532085,
+        "source": "This is the account of Noah. 6:9",
+        "back_translated": "this is the history of noah. 6:9"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "Biblical genealogy and narrative"
+  },
+  "domain": "Biblical genealogy and narrative"
+}

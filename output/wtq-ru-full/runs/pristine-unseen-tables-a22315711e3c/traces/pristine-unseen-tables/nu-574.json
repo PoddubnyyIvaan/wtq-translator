@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-574",
+  "source_context": "csv/204-csv/305.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-574.tsv",
+  "source_question": "what is the name of the first driver listed on this chart?",
+  "translated_question": "какое имя у первого гонщика, указанного на этой диаграмме?",
+  "source_target_value": "Robin Frijns",
+  "translated_target_value": "Робин Фрийнс",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "driver",
+      "normalized_text": "driver",
+      "start": 30,
+      "end": 36,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Driver",
+      "match_type": "lemma",
+      "candidate_key": "c23f14e130c93c60",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-574",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the name of the first driver listed on this chart?",
+    "translated_question": "какое имя у первого гонщика, указанного на этой диаграмме?",
+    "back_translated_question": "what is the name of the first driver shown on this diagram?",
+    "question_cosine_similarity": 0.9149693344844994,
+    "question_bert_precision": 0.9015703797340393,
+    "question_bert_recall": 0.9015839695930481,
+    "question_bert_f1": 0.9017263054847717,
+    "back_table_groups_compared": 100,
+    "back_table_min_similarity": 0.5556111664957207,
+    "back_table_mean_similarity": 0.9820562551475511,
+    "back_table_bert_groups_compared": 100,
+    "back_table_bert_min_f1": 0.5470148921012878,
+    "back_table_bert_mean_f1": 0.9742101746797561,
+    "back_table_bert_min_precision": 0.4900450110435486,
+    "back_table_bert_mean_precision": 0.9745347887277603,
+    "back_table_bert_min_recall": 0.6055430173873901,
+    "back_table_bert_mean_recall": 0.9738948571681977,
+    "back_table_similarity_examples": [
+      {
+        "row": 15,
+        "column": 2,
+        "score": 0.5556111664957207,
+        "source": "Marc Coleselli",
+        "back_translated": "Mark Couleselli"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.6742545136749287,
+        "source": "Petri Suvanto",
+        "back_translated": "Petri Suwanto"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7167693114658658,
+        "source": "Driver",
+        "back_translated": "Rider"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.7619117866031185,
+        "source": "Robin Frijns",
+        "back_translated": "Robin Freyens"
+      },
+      {
+        "row": 14,
+        "column": 2,
+        "score": 0.8584344791214248,
+        "source": "Côme Ledogar",
+        "back_translated": "Kome Ledogar"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motorsport racing"
+  },
+  "domain": "motorsport racing"
+}

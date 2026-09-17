@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-721",
+  "source_context": "csv/204-csv/86.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-721.tsv",
+  "source_question": "what is the next secret ingredient after sugar?",
+  "translated_question": "какой следующий секретный ингредиент после сахара?",
+  "source_target_value": "Carrots",
+  "translated_target_value": "Морковь",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "secret",
+      "normalized_text": "secret",
+      "start": 17,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Secret",
+      "match_type": "lemma",
+      "candidate_key": "024b9d969658377a",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "sugar",
+      "normalized_text": "sugar",
+      "start": 41,
+      "end": 46,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Sugar",
+      "match_type": "lemma",
+      "candidate_key": "f90024b96c446423",
+      "coordinate": {
+        "row": 9,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-721",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the next secret ingredient after sugar?",
+    "translated_question": "какой следующий секретный ингредиент после сахара?",
+    "back_translated_question": "what is the next secret ingredient after sugar?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 104,
+    "back_table_min_similarity": 0.39685149809462533,
+    "back_table_mean_similarity": 0.8997868786934846,
+    "back_table_bert_groups_compared": 104,
+    "back_table_bert_min_f1": 0.201344832777977,
+    "back_table_bert_mean_f1": 0.8871271113077035,
+    "back_table_bert_min_precision": 0.27663904428482056,
+    "back_table_bert_mean_precision": 0.8889810230869514,
+    "back_table_bert_min_recall": 0.1292973905801773,
+    "back_table_bert_mean_recall": 0.8851843523578002,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.39685149809462533,
+        "source": "Opah",
+        "back_translated": "market"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.41384502597710376,
+        "source": "Show #",
+        "back_translated": "Hal Shaw #"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.4177151135960935,
+        "source": "Cat Cora",
+        "back_translated": "Katie Corra"
+      },
+      {
+        "row": 2,
+        "column": 6,
+        "score": 0.4177151135960935,
+        "source": "Cat Cora",
+        "back_translated": "Katie Corra"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.4177151135960935,
+        "source": "Cat Cora",
+        "back_translated": "Katie Corra"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "cooking competition"
+  },
+  "domain": "cooking competition"
+}

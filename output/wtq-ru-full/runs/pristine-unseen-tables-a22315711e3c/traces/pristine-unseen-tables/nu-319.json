@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-319",
+  "source_context": "csv/204-csv/502.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-319.tsv",
+  "source_question": "what is their main age listed?",
+  "translated_question": "какой их основной Возраст указан?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "age",
+      "normalized_text": "age",
+      "start": 19,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Age",
+      "match_type": "lemma",
+      "candidate_key": "8d7614feae2b8ba6",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-319",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is their main age listed?",
+    "translated_question": "какой их основной Возраст указан?",
+    "back_translated_question": "what is their main age specified?",
+    "question_cosine_similarity": 0.9559854425786898,
+    "question_bert_precision": 0.6938749551773071,
+    "question_bert_recall": 0.6939172744750977,
+    "question_bert_f1": 0.6943598985671997,
+    "back_table_groups_compared": 650,
+    "back_table_min_similarity": 0.33035824168477024,
+    "back_table_mean_similarity": 0.9463344044598716,
+    "back_table_bert_groups_compared": 650,
+    "back_table_bert_min_f1": 0.09432655572891235,
+    "back_table_bert_mean_f1": 0.9180334899058709,
+    "back_table_bert_min_precision": 0.06674230843782425,
+    "back_table_bert_mean_precision": 0.9177530211554124,
+    "back_table_bert_min_recall": 0.11993616819381714,
+    "back_table_bert_mean_recall": 0.9182452946672073,
+    "back_table_similarity_examples": [
+      {
+        "row": 30,
+        "column": 4,
+        "score": 0.33035824168477024,
+        "source": "Woody Stephens",
+        "back_translated": "Udi Steppens"
+      },
+      {
+        "row": 41,
+        "column": 4,
+        "score": 0.33035824168477024,
+        "source": "Woody Stephens",
+        "back_translated": "Udi Steppens"
+      },
+      {
+        "row": 44,
+        "column": 1,
+        "score": 0.3994340050048588,
+        "source": "Eastern Fleet",
+        "back_translated": "istern flight"
+      },
+      {
+        "row": null,
+        "column": 8,
+        "score": 0.40850433519688034,
+        "source": "Purse",
+        "back_translated": "Prize money"
+      },
+      {
+        "row": 24,
+        "column": 1,
+        "score": 0.41394156740990073,
+        "source": "Unbridled",
+        "back_translated": "Youngbridson Son"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "horse racing"
+  },
+  "domain": "horse racing"
+}

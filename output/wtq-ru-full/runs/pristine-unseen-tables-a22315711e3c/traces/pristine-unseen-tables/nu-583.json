@@ -1,0 +1,158 @@
+{
+  "question_id": "nu-583",
+  "source_context": "csv/204-csv/892.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-583.tsv",
+  "source_question": "what is the difference between valentino rossi and ralf waldmann's time?",
+  "translated_question": "в чем разница между Валентино Росси и Ральфом Вальдманном временем?",
+  "source_target_value": "6.839",
+  "translated_target_value": "6.839",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "valentino rossi",
+      "normalized_text": "valentino rossi",
+      "start": 31,
+      "end": 46,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Valentino Rossi",
+      "match_type": "lemma",
+      "candidate_key": "94e739012b19188d",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "ralf waldmann",
+      "normalized_text": "ralf waldmann",
+      "start": 51,
+      "end": 64,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Ralf Waldmann",
+      "match_type": "lemma",
+      "candidate_key": "6794385e0926dfb7",
+      "coordinate": {
+        "row": 5,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "time",
+      "normalized_text": "time",
+      "start": 67,
+      "end": 71,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Time",
+      "match_type": "lemma",
+      "candidate_key": "cb9a5f6e298a60f7",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-583",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the difference between valentino rossi and ralf waldmann's time?",
+    "translated_question": "в чем разница между Валентино Росси и Ральфом Вальдманном временем?",
+    "back_translated_question": "what is the difference between Valentino Rossi and Ralf Waldmann time?",
+    "question_cosine_similarity": 0.9859377872173051,
+    "question_bert_precision": 0.43684136867523193,
+    "question_bert_recall": 0.6081862449645996,
+    "question_bert_f1": 0.5199739336967468,
+    "back_table_groups_compared": 145,
+    "back_table_min_similarity": 0.43247529135922563,
+    "back_table_mean_similarity": 0.9563296319413959,
+    "back_table_bert_groups_compared": 145,
+    "back_table_bert_min_f1": 0.17381028831005096,
+    "back_table_bert_mean_f1": 0.9273541885203329,
+    "back_table_bert_min_precision": 0.03239166736602783,
+    "back_table_bert_mean_precision": 0.9285099050094341,
+    "back_table_bert_min_recall": 0.01567545346915722,
+    "back_table_bert_mean_recall": 0.9267248390948978,
+    "back_table_similarity_examples": [
+      {
+        "row": 24,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 25,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 26,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 27,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.48853616597249133,
+        "source": "Jeremy McWilliams",
+        "back_translated": "Jeffrey Macmillan"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motor racing"
+  },
+  "domain": "motor racing"
+}

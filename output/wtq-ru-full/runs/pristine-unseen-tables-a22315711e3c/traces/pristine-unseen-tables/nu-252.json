@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-252",
+  "source_context": "csv/204-csv/2.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-252.tsv",
+  "source_question": "how many total massifs are there?",
+  "translated_question": "сколько всего массивов существует?",
+  "source_target_value": "15",
+  "translated_target_value": "15",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "massifs",
+      "normalized_text": "massif",
+      "start": 15,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Massif",
+      "match_type": "lemma",
+      "candidate_key": "9d11300f667a58d8",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-252",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many total massifs are there?",
+    "translated_question": "сколько всего массивов существует?",
+    "back_translated_question": "how many massifs exist in total?",
+    "question_cosine_similarity": 0.963399520058659,
+    "question_bert_precision": 0.7994424700737,
+    "question_bert_recall": 0.776458740234375,
+    "question_bert_f1": 0.7882183790206909,
+    "back_table_groups_compared": 96,
+    "back_table_min_similarity": 0.30635595905817087,
+    "back_table_mean_similarity": 0.9430191022524209,
+    "back_table_bert_groups_compared": 96,
+    "back_table_bert_min_f1": 0.26213014125823975,
+    "back_table_bert_mean_f1": 0.8992249139895042,
+    "back_table_bert_min_precision": 0.2452460527420044,
+    "back_table_bert_mean_precision": 0.9023146325101455,
+    "back_table_bert_min_recall": 0.26332396268844604,
+    "back_table_bert_mean_recall": 0.8961291409408053,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.30635595905817087,
+        "source": "Massif",
+        "back_translated": "array"
+      },
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.4762275436558442,
+        "source": "Havešová",
+        "back_translated": "Chavesova"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.5541791078698056,
+        "source": "Uholka / Wide Meadow",
+        "back_translated": "Ugolka / Shiroka Lugova"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.726353154630492,
+        "source": "Svydovets",
+        "back_translated": "Svidovec"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.7326228213222712,
+        "source": "Vihorlat",
+        "back_translated": "Vikhoryat"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "protected natural areas"
+  },
+  "domain": "protected natural areas"
+}

@@ -1,0 +1,142 @@
+{
+  "question_id": "nu-890",
+  "source_context": "csv/203-csv/87.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-890.tsv",
+  "source_question": "are there more robtos from the middle east or africa?",
+  "translated_question": "больше ли роботов из Ближнего Востока или Южной Африки?",
+  "source_target_value": "Middle East",
+  "translated_target_value": "Ближний Восток",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "middle east",
+      "normalized_text": "middle east",
+      "start": 31,
+      "end": 42,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 15,
+          "column": 4
+        },
+        {
+          "row": 16,
+          "column": 4
+        },
+        {
+          "row": 18,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Middle East",
+      "match_type": "lemma",
+      "candidate_key": "eeed473572771a3f",
+      "coordinate": {
+        "row": 15,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "africa",
+      "normalized_text": "africa",
+      "start": 46,
+      "end": 52,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 22,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Africa",
+      "match_type": "lemma",
+      "candidate_key": "90704fd1b77ed3ca",
+      "coordinate": {
+        "row": 22,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-890",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "are there more robtos from the middle east or africa?",
+    "translated_question": "больше ли роботов из Ближнего Востока или Южной Африки?",
+    "back_translated_question": "Are there more robots from the Middle East or South Africa?",
+    "question_cosine_similarity": 0.8571551297526723,
+    "question_bert_precision": 0.6097581386566162,
+    "question_bert_recall": 0.664787769317627,
+    "question_bert_f1": 0.6375039219856262,
+    "back_table_groups_compared": 156,
+    "back_table_min_similarity": 0.41711901509662747,
+    "back_table_mean_similarity": 0.9185247875729899,
+    "back_table_bert_groups_compared": 156,
+    "back_table_bert_min_f1": 0.0848805382847786,
+    "back_table_bert_mean_f1": 0.7973502640349742,
+    "back_table_bert_min_precision": 0.08090821653604507,
+    "back_table_bert_mean_precision": 0.7939176438137506,
+    "back_table_bert_min_recall": 0.05808939412236214,
+    "back_table_bert_mean_recall": 0.801093270118611,
+    "back_table_similarity_examples": [
+      {
+        "row": 24,
+        "column": 2,
+        "score": 0.41711901509662747,
+        "source": "Minoans",
+        "back_translated": "miners"
+      },
+      {
+        "row": 8,
+        "column": 2,
+        "score": 0.4727267051898317,
+        "source": "Mayans",
+        "back_translated": "Maiya"
+      },
+      {
+        "row": 8,
+        "column": 5,
+        "score": 0.49566320906707156,
+        "source": "Bubble Man",
+        "back_translated": "Mr. Bulb"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.5042370517107057,
+        "source": "Scuba Gear",
+        "back_translated": "Skimmers"
+      },
+      {
+        "row": 15,
+        "column": 1,
+        "score": 0.5211142009015747,
+        "source": "Eraser-Bot",
+        "back_translated": "Rubber robot"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "history of inventions and discoveries"
+  },
+  "domain": "history of inventions and discoveries"
+}

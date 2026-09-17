@@ -1,0 +1,226 @@
+{
+  "question_id": "nu-349",
+  "source_context": "csv/203-csv/500.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-349.tsv",
+  "source_question": "how many more radio stations are located in rome than in milan?",
+  "translated_question": "на сколько больше визуальных радиостанций расположено в Риме, чем в Милане?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "radio stations",
+      "normalized_text": "radio station",
+      "start": 14,
+      "end": 28,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 22,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Radio station",
+      "match_type": "lemma",
+      "candidate_key": "aa0000496bc4c57a",
+      "coordinate": {
+        "row": 22,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "rome",
+      "normalized_text": "rome",
+      "start": 44,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 6,
+          "column": 2
+        },
+        {
+          "row": 11,
+          "column": 2
+        },
+        {
+          "row": 12,
+          "column": 2
+        },
+        {
+          "row": 13,
+          "column": 2
+        },
+        {
+          "row": 15,
+          "column": 2
+        },
+        {
+          "row": 16,
+          "column": 2
+        },
+        {
+          "row": 17,
+          "column": 2
+        },
+        {
+          "row": 20,
+          "column": 2
+        },
+        {
+          "row": 21,
+          "column": 2
+        },
+        {
+          "row": 25,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Rome",
+      "match_type": "lemma",
+      "candidate_key": "a431f653812dccf4",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "milan",
+      "normalized_text": "milan",
+      "start": 57,
+      "end": 62,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        },
+        {
+          "row": 3,
+          "column": 2
+        },
+        {
+          "row": 5,
+          "column": 2
+        },
+        {
+          "row": 7,
+          "column": 2
+        },
+        {
+          "row": 10,
+          "column": 2
+        },
+        {
+          "row": 19,
+          "column": 2
+        },
+        {
+          "row": 26,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Milan",
+      "match_type": "lemma",
+      "candidate_key": "58678c3de8dec118",
+      "coordinate": {
+        "row": 1,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-349",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many more radio stations are located in rome than in milan?",
+    "translated_question": "на сколько больше визуальных радиостанций расположено в Риме, чем в Милане?",
+    "back_translated_question": "how many more radio stations are located in Rome than in Milan?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 0.7176551222801208,
+    "question_bert_recall": 0.7948475480079651,
+    "question_bert_f1": 0.7560224533081055,
+    "back_table_groups_compared": 186,
+    "back_table_min_similarity": 0.62218342536662,
+    "back_table_mean_similarity": 0.9838900778347235,
+    "back_table_bert_groups_compared": 186,
+    "back_table_bert_min_f1": 0.21341678500175476,
+    "back_table_bert_mean_f1": 0.9694006159420936,
+    "back_table_bert_min_precision": 0.22481654584407806,
+    "back_table_bert_mean_precision": 0.9704393088336913,
+    "back_table_bert_min_recall": 0.19979578256607056,
+    "back_table_bert_mean_recall": 0.9683352750475689,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.62218342536662,
+        "source": "Transmission",
+        "back_translated": "broadcast"
+      },
+      {
+        "row": 28,
+        "column": 3,
+        "score": 0.6295993279074361,
+        "source": "Local; Adult Contemporary",
+        "back_translated": "Local; Adolf - modern"
+      },
+      {
+        "row": 29,
+        "column": 3,
+        "score": 0.6764000806141351,
+        "source": "Local; Pop, Contemporary",
+        "back_translated": "Local; Pope, Modern American"
+      },
+      {
+        "row": 28,
+        "column": 2,
+        "score": 0.6831268237993607,
+        "source": "Massafra, (TA)",
+        "back_translated": "Molfetta, (TA)"
+      },
+      {
+        "row": 9,
+        "column": 3,
+        "score": 0.7996259682261959,
+        "source": "Community; Catholic",
+        "back_translated": "Public; Catholic"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "radio stations"
+  },
+  "domain": "radio stations"
+}

@@ -1,0 +1,128 @@
+{
+  "question_id": "nu-920",
+  "source_context": "csv/203-csv/75.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-920.tsv",
+  "source_question": "how many games did the team score more than 70 points?",
+  "translated_question": "сколько игр команда счёт набрала более 70 очков?",
+  "source_target_value": "10",
+  "translated_target_value": "10",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "games",
+      "normalized_text": "game",
+      "start": 9,
+      "end": 14,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 34,
+          "column": 0
+        },
+        {
+          "row": 35,
+          "column": 0
+        },
+        {
+          "row": 36,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Game",
+      "match_type": "lemma",
+      "candidate_key": "e26127c8f5c97f75",
+      "coordinate": {
+        "row": 34,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "score",
+      "normalized_text": "score",
+      "start": 28,
+      "end": 33,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Score",
+      "match_type": "lemma",
+      "candidate_key": "40f03a30f2159c58",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-920",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many games did the team score more than 70 points?",
+    "translated_question": "сколько игр команда счёт набрала более 70 очков?",
+    "back_translated_question": "how many games did the team score more than 70 points?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 190,
+    "back_table_min_similarity": 0.6853967322509011,
+    "back_table_mean_similarity": 0.9957458776230104,
+    "back_table_bert_groups_compared": 190,
+    "back_table_bert_min_f1": 0.15731647610664368,
+    "back_table_bert_mean_f1": 0.9901720428153088,
+    "back_table_bert_min_precision": 0.157243549823761,
+    "back_table_bert_mean_precision": 0.9912032655979458,
+    "back_table_bert_min_recall": 0.15483422577381134,
+    "back_table_bert_mean_recall": 0.9891984239220619,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.6853967322509011,
+        "source": "@ Charlotte",
+        "back_translated": "@ Jonathan and Charlotte"
+      },
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.7225880391009886,
+        "source": "Cleveland",
+        "back_translated": "Cleveland Regional Medical Center"
+      },
+      {
+        "row": 10,
+        "column": 0,
+        "score": 0.7837319770200825,
+        "source": "June 20",
+        "back_translated": "20 june 2013"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-981",
+  "source_context": "csv/204-csv/447.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-981.tsv",
+  "source_question": "what is the name of the last tournament on the chart?",
+  "translated_question": "какое название последнего турнира в таблице?",
+  "source_target_value": "Argentina F8",
+  "translated_target_value": "Аргентина F8",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "tournament",
+      "normalized_text": "tournament",
+      "start": 29,
+      "end": 39,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Tournament",
+      "match_type": "lemma",
+      "candidate_key": "7fbca8233a522ad6",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-981",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the name of the last tournament on the chart?",
+    "translated_question": "какое название последнего турнира в таблице?",
+    "back_translated_question": "what is the name of the last tournament in the table?",
+    "question_cosine_similarity": 0.9056951911447515,
+    "question_bert_precision": 0.8835835456848145,
+    "question_bert_recall": 0.8835996389389038,
+    "question_bert_f1": 0.8837679624557495,
+    "back_table_groups_compared": 77,
+    "back_table_min_similarity": 0.6221568860105394,
+    "back_table_mean_similarity": 0.9656485346734176,
+    "back_table_bert_groups_compared": 77,
+    "back_table_bert_min_f1": 0.08018486201763153,
+    "back_table_bert_mean_f1": 0.8755067483364761,
+    "back_table_bert_min_precision": 0.04614919051527977,
+    "back_table_bert_mean_precision": 0.8796019774268974,
+    "back_table_bert_min_recall": 0.036463651806116104,
+    "back_table_bert_mean_recall": 0.8713788010373518,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.6221568860105394,
+        "source": "Roberto Quiroz",
+        "back_translated": "Roberto Ciruso"
+      },
+      {
+        "row": 2,
+        "column": 4,
+        "score": 0.6221568860105394,
+        "source": "Roberto Quiroz",
+        "back_translated": "Roberto Ciruso"
+      },
+      {
+        "row": 5,
+        "column": 6,
+        "score": 0.6770686522717683,
+        "source": "2-1 Ret.",
+        "back_translated": "2-1 withdrew."
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7602025658965867,
+        "source": "Martín Cuevas\\n Guido Pella",
+        "back_translated": "martin kevas\\nguido pella"
+      },
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.7670079561467735,
+        "source": "Guillermo Hormazábal\\n Rodrigo Pérez",
+        "back_translated": "guillermo gormazabal\\nrodrigo peres"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

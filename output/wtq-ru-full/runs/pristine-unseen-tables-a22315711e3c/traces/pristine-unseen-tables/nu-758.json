@@ -1,0 +1,182 @@
+{
+  "question_id": "nu-758",
+  "source_context": "csv/203-csv/261.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-758.tsv",
+  "source_question": "what was the water level on november 19 1824?",
+  "translated_question": "каков был уровень воды в Ноябре 19 1824 года?",
+  "source_target_value": "421",
+  "translated_target_value": "421",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "water",
+      "normalized_text": "water",
+      "start": 13,
+      "end": 18,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Water",
+      "match_type": "lemma",
+      "candidate_key": "f7ebd0a1ce229ac6",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "november",
+      "normalized_text": "november",
+      "start": 28,
+      "end": 36,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 7,
+          "column": 2
+        },
+        {
+          "row": 8,
+          "column": 2
+        },
+        {
+          "row": 9,
+          "column": 2
+        },
+        {
+          "row": 12,
+          "column": 2
+        },
+        {
+          "row": 18,
+          "column": 2
+        },
+        {
+          "row": 19,
+          "column": 2
+        },
+        {
+          "row": 23,
+          "column": 2
+        },
+        {
+          "row": 24,
+          "column": 2
+        },
+        {
+          "row": 25,
+          "column": 2
+        },
+        {
+          "row": 31,
+          "column": 2
+        },
+        {
+          "row": 32,
+          "column": 2
+        },
+        {
+          "row": 41,
+          "column": 2
+        }
+      ],
+      "table_source_text": "November",
+      "match_type": "lemma",
+      "candidate_key": "3a94c13bc4724e9e",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-758",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the water level on november 19 1824?",
+    "translated_question": "каков был уровень воды в Ноябре 19 1824 года?",
+    "back_translated_question": "what was the water level in November 1824?",
+    "question_cosine_similarity": 0.9714235333970175,
+    "question_bert_precision": 0.810104489326477,
+    "question_bert_recall": 0.8659873604774475,
+    "question_bert_f1": 0.8379883170127869,
+    "back_table_groups_compared": 250,
+    "back_table_min_similarity": 0.7288705766930393,
+    "back_table_mean_similarity": 0.9888349962071891,
+    "back_table_bert_groups_compared": 250,
+    "back_table_bert_min_f1": 0.5161414742469788,
+    "back_table_bert_mean_f1": 0.9196916694641113,
+    "back_table_bert_min_precision": 0.4945087134838104,
+    "back_table_bert_mean_precision": 0.9286388643980026,
+    "back_table_bert_min_recall": 0.536700427532196,
+    "back_table_bert_mean_recall": 0.9108689291477203,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.7288705766930393,
+        "source": "daytime",
+        "back_translated": "day"
+      },
+      {
+        "row": 11,
+        "column": 4,
+        "score": 0.7288705766930393,
+        "source": "daytime",
+        "back_translated": "day"
+      },
+      {
+        "row": 45,
+        "column": 4,
+        "score": 0.7288705766930393,
+        "source": "daytime",
+        "back_translated": "day"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.8598075378427554,
+        "source": "Chronological\\nNo.",
+        "back_translated": "Chronological\\nnumber."
+      },
+      {
+        "row": 43,
+        "column": 2,
+        "score": 0.943615006470172,
+        "source": "8 October 1863",
+        "back_translated": "October 8, 1863"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "hydrology"
+  },
+  "domain": "hydrology"
+}

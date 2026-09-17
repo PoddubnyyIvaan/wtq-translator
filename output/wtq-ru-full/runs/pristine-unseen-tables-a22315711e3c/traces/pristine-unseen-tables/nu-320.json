@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-320",
+  "source_context": "csv/203-csv/278.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-320.tsv",
+  "source_question": "which is the only tournament with a british runner-up?",
+  "translated_question": "какой единственный турнир имеет британского призёра?",
+  "source_target_value": "Tsuruya Open",
+  "translated_target_value": "Tsuruya Open",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "tournament",
+      "normalized_text": "tournament",
+      "start": 18,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Tournament",
+      "match_type": "lemma",
+      "candidate_key": "7fbca8233a522ad6",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-320",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which is the only tournament with a british runner-up?",
+    "translated_question": "какой единственный турнир имеет британского призёра?",
+    "back_translated_question": "which single tournament has a British medalist?",
+    "question_cosine_similarity": 0.8546058149823973,
+    "question_bert_precision": 0.48441430926322937,
+    "question_bert_recall": 0.5538107752799988,
+    "question_bert_f1": 0.5193071365356445,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 0.45200738290421555,
+    "back_table_mean_similarity": 0.958923136526216,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 0.14354516565799713,
+    "back_table_bert_mean_f1": 0.8568248899564856,
+    "back_table_bert_min_precision": 0.051749102771282196,
+    "back_table_bert_mean_precision": 0.8588574483458485,
+    "back_table_bert_min_recall": 0.24163877964019775,
+    "back_table_bert_mean_recall": 0.8551016304464567,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.45200738290421555,
+        "source": "Margin of\\nvictory",
+        "back_translated": "difference in victory"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.48687002459535866,
+        "source": "Runner(s)-up",
+        "back_translated": "Second place"
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7814945912179008,
+        "source": "Hiroaki Iijima",
+        "back_translated": "Hirotaki Iidzima"
+      },
+      {
+        "row": 9,
+        "column": 5,
+        "score": 0.8206842006498161,
+        "source": "Jang Ik-jae",
+        "back_translated": "Jin Ik-je"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.8567573954472549,
+        "source": "Gateway to the Open Mizuno Open",
+        "back_translated": "Mizuno Open Championship Path to the Open Championship"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "golf"
+  },
+  "domain": "golf"
+}

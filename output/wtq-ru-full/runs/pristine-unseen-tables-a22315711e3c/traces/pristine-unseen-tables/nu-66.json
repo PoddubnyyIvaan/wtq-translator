@@ -1,0 +1,82 @@
+{
+  "question_id": "nu-66",
+  "source_context": "csv/203-csv/714.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-66.tsv",
+  "source_question": "what date is next listed after june 14, 2010.",
+  "translated_question": "какая дата следует сразу после 14 июня, 2010?",
+  "source_target_value": "December 6, 2010",
+  "translated_target_value": "6 декабря, 2010",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "june 14",
+      "normalized_text": "june 14",
+      "start": 31,
+      "end": 38,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 3
+        }
+      ],
+      "table_source_text": "June 14",
+      "match_type": "lemma",
+      "candidate_key": "2a0b509a3062c36e",
+      "coordinate": {
+        "row": 4,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-66",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what date is next listed after june 14, 2010.",
+    "translated_question": "какая дата следует сразу после 14 июня, 2010?",
+    "back_translated_question": "what date comes immediately after June 14, 2010?",
+    "question_cosine_similarity": 0.8929813836931244,
+    "question_bert_precision": 0.5267916917800903,
+    "question_bert_recall": 0.5663889050483704,
+    "question_bert_f1": 0.5471062660217285,
+    "back_table_groups_compared": 32,
+    "back_table_min_similarity": 0.7574208471870204,
+    "back_table_mean_similarity": 0.9924194014745944,
+    "back_table_bert_groups_compared": 32,
+    "back_table_bert_min_f1": 0.39655938744544983,
+    "back_table_bert_mean_f1": 0.9811424808576703,
+    "back_table_bert_min_precision": 0.42345285415649414,
+    "back_table_bert_mean_precision": 0.9819829016923904,
+    "back_table_bert_min_recall": 0.3685532808303833,
+    "back_table_bert_mean_recall": 0.9802672900259495,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "television series"
+  },
+  "domain": "television series"
+}

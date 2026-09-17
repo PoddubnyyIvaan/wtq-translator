@@ -1,0 +1,103 @@
+{
+  "question_id": "nu-223",
+  "source_context": "csv/203-csv/588.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-223.tsv",
+  "source_question": "number of deaths from 1950-1960",
+  "translated_question": "число Смертей с 1950 по 1960 год",
+  "source_target_value": "142,000",
+  "translated_target_value": "142,000",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "deaths",
+      "normalized_text": "death",
+      "start": 10,
+      "end": 16,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Deaths",
+      "match_type": "lemma",
+      "candidate_key": "42a0bde78ab718f8",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-223",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "number of deaths from 1950-1960",
+    "translated_question": "число Смертей с 1950 по 1960 год",
+    "back_translated_question": "number of deaths from 1950 to 1960",
+    "question_cosine_similarity": 0.9976724887563246,
+    "question_bert_precision": 0.9397660493850708,
+    "question_bert_recall": 0.9397743940353394,
+    "question_bert_f1": 0.9398614764213562,
+    "back_table_groups_compared": 117,
+    "back_table_min_similarity": 0.734859947903459,
+    "back_table_mean_similarity": 0.9951987985002994,
+    "back_table_bert_groups_compared": 117,
+    "back_table_bert_min_f1": 0.6374906897544861,
+    "back_table_bert_mean_f1": 0.9915479625392164,
+    "back_table_bert_min_precision": 0.602632462978363,
+    "back_table_bert_mean_precision": 0.9912415360793089,
+    "back_table_bert_min_recall": 0.6722722053527832,
+    "back_table_bert_mean_recall": 0.9918374887898437,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.734859947903459,
+        "source": "NC*",
+        "back_translated": "NS*"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.8810044603563987,
+        "source": "Live births per year",
+        "back_translated": "birth rate per year"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.8847172001943416,
+        "source": "Natural change per year",
+        "back_translated": "Natural increase per year"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.9376778160808159,
+        "source": "Deaths per year",
+        "back_translated": "death rate per year"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "demographics"
+  },
+  "domain": "demographics"
+}

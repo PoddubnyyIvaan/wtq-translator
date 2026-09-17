@@ -1,0 +1,314 @@
+{
+  "question_id": "nu-173",
+  "source_context": "csv/203-csv/662.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-173.tsv",
+  "source_question": "did hillary clinton or john mccain win 51% of the vote in the march 31, 2008 rasmussen reports poll?",
+  "translated_question": "выиграла ли Хиллари Клинтон или Джон Маккейн 51% голосов в отчетах Расмуссена опроса от 31 марта 2008 года?",
+  "source_target_value": "John McCain",
+  "translated_target_value": "Джон Маккейн",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "hillary clinton",
+      "normalized_text": "hillary clinton",
+      "start": 4,
+      "end": 19,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 2,
+          "column": 4
+        },
+        {
+          "row": 4,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 4
+        },
+        {
+          "row": 8,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 10,
+          "column": 4
+        },
+        {
+          "row": 11,
+          "column": 4
+        },
+        {
+          "row": 16,
+          "column": 4
+        },
+        {
+          "row": 17,
+          "column": 4
+        },
+        {
+          "row": 18,
+          "column": 4
+        },
+        {
+          "row": 19,
+          "column": 4
+        },
+        {
+          "row": 20,
+          "column": 4
+        },
+        {
+          "row": 25,
+          "column": 4
+        },
+        {
+          "row": 26,
+          "column": 4
+        },
+        {
+          "row": 27,
+          "column": 4
+        },
+        {
+          "row": 28,
+          "column": 4
+        },
+        {
+          "row": 29,
+          "column": 4
+        },
+        {
+          "row": 30,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Hillary Clinton",
+      "match_type": "lemma",
+      "candidate_key": "dd1b6099116bc9a4",
+      "coordinate": {
+        "row": 0,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "john mccain",
+      "normalized_text": "john mccain",
+      "start": 23,
+      "end": 34,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 6
+        },
+        {
+          "row": 1,
+          "column": 6
+        },
+        {
+          "row": 2,
+          "column": 6
+        },
+        {
+          "row": 3,
+          "column": 6
+        },
+        {
+          "row": 4,
+          "column": 6
+        },
+        {
+          "row": 5,
+          "column": 6
+        },
+        {
+          "row": 6,
+          "column": 6
+        },
+        {
+          "row": 7,
+          "column": 6
+        },
+        {
+          "row": 10,
+          "column": 6
+        },
+        {
+          "row": 14,
+          "column": 6
+        },
+        {
+          "row": 19,
+          "column": 6
+        },
+        {
+          "row": 23,
+          "column": 6
+        },
+        {
+          "row": 27,
+          "column": 6
+        }
+      ],
+      "table_source_text": "John McCain",
+      "match_type": "lemma",
+      "candidate_key": "ef4389540bfbf62b",
+      "coordinate": {
+        "row": 0,
+        "column": 6
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "rasmussen",
+      "normalized_text": "rasmussen",
+      "start": 77,
+      "end": 86,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Rasmussen",
+      "match_type": "lemma",
+      "candidate_key": "297377d470294788",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "poll",
+      "normalized_text": "poll",
+      "start": 95,
+      "end": 99,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Poll",
+      "match_type": "lemma",
+      "candidate_key": "07c55d40f23ea83f",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-173",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "did hillary clinton or john mccain win 51% of the vote in the march 31, 2008 rasmussen reports poll?",
+    "translated_question": "выиграла ли Хиллари Клинтон или Джон Маккейн 51% голосов в отчетах Расмуссена опроса от 31 марта 2008 года?",
+    "back_translated_question": "did hillary clinton or john mccain receive 51% of the votes in the rasmussen poll reports from March 31, 2008?",
+    "question_cosine_similarity": 0.9780071930894256,
+    "question_bert_precision": 0.8292440176010132,
+    "question_bert_recall": 0.8085243105888367,
+    "question_bert_f1": 0.8191156983375549,
+    "back_table_groups_compared": 256,
+    "back_table_min_similarity": 0.7573670863632967,
+    "back_table_mean_similarity": 0.992022309130549,
+    "back_table_bert_groups_compared": 256,
+    "back_table_bert_min_f1": 0.37826046347618103,
+    "back_table_bert_mean_f1": 0.9657151545397937,
+    "back_table_bert_min_precision": 0.41179347038269043,
+    "back_table_bert_mean_precision": 0.9667214151704684,
+    "back_table_bert_min_recall": 0.3439459800720215,
+    "back_table_bert_mean_recall": 0.9646961910184473,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 3,
+        "score": 0.7573670863632967,
+        "source": "Feb 15-17, 2008",
+        "back_translated": "15 фев-17, 2008"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.7573670863632967,
+        "source": "Feb 15-17, 2008",
+        "back_translated": "15 фев-17, 2008"
+      },
+      {
+        "row": 25,
+        "column": 3,
+        "score": 0.7831113150729797,
+        "source": "Oct 12-14, 2007",
+        "back_translated": "12 окт-14, 2007"
+      },
+      {
+        "row": 26,
+        "column": 3,
+        "score": 0.7831113150729797,
+        "source": "Oct 12-14, 2007",
+        "back_translated": "12 окт-14, 2007"
+      },
+      {
+        "row": 27,
+        "column": 3,
+        "score": 0.7831113150729797,
+        "source": "Oct 12-14, 2007",
+        "back_translated": "12 окт-14, 2007"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "political polling"
+  },
+  "domain": "political polling"
+}

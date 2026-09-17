@@ -1,0 +1,186 @@
+{
+  "question_id": "nu-42",
+  "source_context": "csv/203-csv/39.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-42.tsv",
+  "source_question": "what building had the least height in germany?",
+  "translated_question": "какое строительство имело наименьшую высоту в Германии?",
+  "source_target_value": "St. Mary's Church",
+  "translated_target_value": "Церковь Святой Марии",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "building",
+      "normalized_text": "building",
+      "start": 5,
+      "end": 13,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 0
+        },
+        {
+          "row": 10,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Building",
+      "match_type": "lemma",
+      "candidate_key": "b9c194599f209366",
+      "coordinate": {
+        "row": 9,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "height",
+      "normalized_text": "height",
+      "start": 28,
+      "end": 34,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 6
+        },
+        {
+          "row": 1,
+          "column": 6
+        },
+        {
+          "row": 2,
+          "column": 6
+        },
+        {
+          "row": 8,
+          "column": 6
+        }
+      ],
+      "table_source_text": "height",
+      "match_type": "lemma",
+      "candidate_key": "f7a40521d5018461",
+      "coordinate": {
+        "row": 0,
+        "column": 6
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "germany",
+      "normalized_text": "germany",
+      "start": 38,
+      "end": 45,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 3,
+          "column": 1
+        },
+        {
+          "row": 4,
+          "column": 1
+        },
+        {
+          "row": 6,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Germany",
+      "match_type": "lemma",
+      "candidate_key": "9ce3e793fc395d61",
+      "coordinate": {
+        "row": 2,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-42",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what building had the least height in germany?",
+    "translated_question": "какое строительство имело наименьшую высоту в Германии?",
+    "back_translated_question": "which building had the smallest height in Germany?",
+    "question_cosine_similarity": 0.9447527920046975,
+    "question_bert_precision": 0.6756600737571716,
+    "question_bert_recall": 0.7283682823181152,
+    "question_bert_f1": 0.7021813988685608,
+    "back_table_groups_compared": 105,
+    "back_table_min_similarity": 0.6518300960154221,
+    "back_table_mean_similarity": 0.9789363709129455,
+    "back_table_bert_groups_compared": 105,
+    "back_table_bert_min_f1": 0.041006967425346375,
+    "back_table_bert_mean_f1": 0.9395376660994121,
+    "back_table_bert_min_precision": 0.008357023820281029,
+    "back_table_bert_mean_precision": 0.9402060436883143,
+    "back_table_bert_min_recall": 0.07188551127910614,
+    "back_table_bert_mean_recall": 0.9391984430097399,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.6518300960154221,
+        "source": "Town",
+        "back_translated": "City"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.7494207239044225,
+        "source": "Washington, D.C.",
+        "back_translated": "Washington, Washington, Columbia County"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.7705347327375317,
+        "source": "Held record",
+        "back_translated": "Record in ownership"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.7788659416379371,
+        "source": "St Nikolai",
+        "back_translated": "St. Nicholas"
+      },
+      {
+        "row": 13,
+        "column": 6,
+        "score": 0.8040795726482349,
+        "source": "Topped-out on 17 January 2009",
+        "back_translated": "completed on January 17, 2009"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "architecture and construction"
+  },
+  "domain": "architecture and construction"
+}

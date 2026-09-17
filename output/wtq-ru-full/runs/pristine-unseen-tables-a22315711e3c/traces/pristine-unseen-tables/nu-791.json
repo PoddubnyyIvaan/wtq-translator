@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-791",
+  "source_context": "csv/204-csv/368.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-791.tsv",
+  "source_question": "besides lord high steward, what other position is vacant?",
+  "translated_question": "помимо Верховного камергера, какая ещё должность вакантна?",
+  "source_target_value": "Lord High Constable",
+  "translated_target_value": "Верховный маршал",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "lord high steward",
+      "normalized_text": "lord high steward",
+      "start": 8,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Lord High Steward",
+      "match_type": "lemma",
+      "candidate_key": "ac803c1d7b841868",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "position",
+      "normalized_text": "position",
+      "start": 38,
+      "end": 46,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Position",
+      "match_type": "lemma",
+      "candidate_key": "2448e693407c0c7e",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "vacant",
+      "normalized_text": "vacant",
+      "start": 50,
+      "end": 56,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 6,
+          "column": 2
+        }
+      ],
+      "table_source_text": "vacant",
+      "match_type": "lemma",
+      "candidate_key": "e7708660e2889ebe",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-791",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "besides lord high steward, what other position is vacant?",
+    "translated_question": "помимо Верховного камергера, какая ещё должность вакантна?",
+    "back_translated_question": "Besides lord high steward, what other position is vacant?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 0.8915911316871643,
+    "question_bert_recall": 0.9349096417427063,
+    "question_bert_f1": 0.9132053256034851,
+    "back_table_groups_compared": 50,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9226565804843182,
+    "back_table_bert_groups_compared": 50,
+    "back_table_bert_min_f1": 0.17047610878944397,
+    "back_table_bert_mean_f1": 0.852477525472641,
+    "back_table_bert_min_precision": 0.15018846094608307,
+    "back_table_bert_mean_precision": 0.8438754698634148,
+    "back_table_bert_min_recall": 0.18863265216350555,
+    "back_table_bert_mean_recall": 0.8614002075791359,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.5485107809279467,
+        "source": "Lord Privy Seal",
+        "back_translated": "State Secretary of the Council"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.5977848611991555,
+        "source": "Justiciar",
+        "back_translated": "judge"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.6124251882881853,
+        "source": "Lord High Steward",
+        "back_translated": "Lord Chamberlain"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.6691416711432151,
+        "source": "Lord Steward",
+        "back_translated": "Lord Chamberlain"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "government and royal institutions"
+  },
+  "domain": "government and royal institutions"
+}

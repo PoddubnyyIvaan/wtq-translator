@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-463",
+  "source_context": "csv/203-csv/122.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-463.tsv",
+  "source_question": "list the number of times the rating was above a 4.0.",
+  "translated_question": "перечислите количество раз, когда рейтинги были выше 4,0.",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "rating",
+      "normalized_text": "rating",
+      "start": 29,
+      "end": 35,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Ratings",
+      "match_type": "lemma",
+      "candidate_key": "29a7e975e2f57c79",
+      "coordinate": {
+        "row": null,
+        "column": 6
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-463",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "list the number of times the rating was above a 4.0.",
+    "translated_question": "перечислите количество раз, когда рейтинги были выше 4,0.",
+    "back_translated_question": "list the number of times when ratings were above 4.0.",
+    "question_cosine_similarity": 0.9727568509095011,
+    "question_bert_precision": 0.6997964382171631,
+    "question_bert_recall": 0.7395743131637573,
+    "question_bert_f1": 0.7199497222900391,
+    "back_table_groups_compared": 72,
+    "back_table_min_similarity": 0.44049567327318434,
+    "back_table_mean_similarity": 0.9319850938033135,
+    "back_table_bert_groups_compared": 72,
+    "back_table_bert_min_f1": -0.1401626318693161,
+    "back_table_bert_mean_f1": 0.6862407684222691,
+    "back_table_bert_min_precision": -0.20052531361579895,
+    "back_table_bert_mean_precision": 0.6480246478846917,
+    "back_table_bert_min_recall": -0.08675176650285721,
+    "back_table_bert_mean_recall": 0.7334195901122358,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.44049567327318434,
+        "source": "Marty Reid",
+        "back_translated": "marti rid"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6066746381860701,
+        "source": "Lap-by-lap",
+        "back_translated": "paw by paw"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7594823876305267,
+        "source": "NASCAR\\nCountdown",
+        "back_translated": "NASCAR\nCounter"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7680239670904495,
+        "source": "Rusty Wallace\\nAndy Petree",
+        "back_translated": "rusty wallace\nandy petti"
+      },
+      {
+        "row": 1,
+        "column": 4,
+        "score": 0.8046495748058677,
+        "source": "Dale Jarrett\\nAndy Petree",
+        "back_translated": "dale jarrett\nandy petti"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports broadcasting"
+  },
+  "domain": "sports broadcasting"
+}

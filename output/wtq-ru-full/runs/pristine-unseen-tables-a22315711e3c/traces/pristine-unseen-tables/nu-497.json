@@ -1,0 +1,114 @@
+{
+  "question_id": "nu-497",
+  "source_context": "csv/200-csv/45.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-497.tsv",
+  "source_question": "who is the governor of new mexico?",
+  "translated_question": "кто является губернатором штата Нью-Мексико?",
+  "source_target_value": "Susana Martinez",
+  "translated_target_value": "Сусана Мартинес",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "governor of new mexico",
+      "normalized_text": "governor of new mexico",
+      "start": 11,
+      "end": 33,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 2,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Governor of New Mexico",
+      "match_type": "lemma",
+      "candidate_key": "af06c2e74532e5a5",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-497",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is the governor of new mexico?",
+    "translated_question": "кто является губернатором штата Нью-Мексико?",
+    "back_translated_question": "who is the governor of new mexico?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 51,
+    "back_table_min_similarity": 0.5007082787183541,
+    "back_table_mean_similarity": 0.9358918560367797,
+    "back_table_bert_groups_compared": 51,
+    "back_table_bert_min_f1": 0.243061825633049,
+    "back_table_bert_mean_f1": 0.8475220925083348,
+    "back_table_bert_min_precision": 0.21235820651054382,
+    "back_table_bert_mean_precision": 0.8496369672756569,
+    "back_table_bert_min_recall": 0.17776447534561157,
+    "back_table_bert_mean_recall": 0.8452692370788724,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.5007082787183541,
+        "source": "Office",
+        "back_translated": "box office receipts"
+      },
+      {
+        "row": 10,
+        "column": 2,
+        "score": 0.6357934075550454,
+        "source": "Ray Powell",
+        "back_translated": "Ray Poll"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.720432304828316,
+        "source": "Current Officer",
+        "back_translated": "Current officeholder"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.7421322224243919,
+        "source": "Dianna Duran",
+        "back_translated": "Diana Duran"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.7462893200622972,
+        "source": "President Pro Tempore of the Senate",
+        "back_translated": "Chairman of the Senate on Temporary Matters"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "government and politics"
+  },
+  "domain": "government and politics"
+}

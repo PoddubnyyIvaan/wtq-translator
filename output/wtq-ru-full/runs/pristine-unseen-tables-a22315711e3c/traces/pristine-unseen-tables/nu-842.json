@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-842",
+  "source_context": "csv/204-csv/372.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-842.tsv",
+  "source_question": "how many names are there on the chart?",
+  "translated_question": "сколько названий находится на диаграмме?",
+  "source_target_value": "17",
+  "translated_target_value": "17",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "names",
+      "normalized_text": "name",
+      "start": 9,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Name",
+      "match_type": "lemma",
+      "candidate_key": "e6c93b05bbd9808e",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-842",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many names are there on the chart?",
+    "translated_question": "сколько названий находится на диаграмме?",
+    "back_translated_question": "how many names are on the diagram?",
+    "question_cosine_similarity": 0.8622691118036397,
+    "question_bert_precision": 0.8479949831962585,
+    "question_bert_recall": 0.8846511244773865,
+    "question_bert_f1": 0.8663970828056335,
+    "back_table_groups_compared": 90,
+    "back_table_min_similarity": 0.7814761769049448,
+    "back_table_mean_similarity": 0.9713113974811678,
+    "back_table_bert_groups_compared": 90,
+    "back_table_bert_min_f1": 0.4257740378379822,
+    "back_table_bert_mean_f1": 0.9099634614255693,
+    "back_table_bert_min_precision": 0.4248628318309784,
+    "back_table_bert_mean_precision": 0.908866333299213,
+    "back_table_bert_min_recall": 0.4249423146247864,
+    "back_table_bert_mean_recall": 0.9109664214981927,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7814761769049448,
+        "source": "None",
+        "back_translated": "No"
+      },
+      {
+        "row": 3,
+        "column": 4,
+        "score": 0.7814761769049448,
+        "source": "None",
+        "back_translated": "No"
+      },
+      {
+        "row": 4,
+        "column": 4,
+        "score": 0.7814761769049448,
+        "source": "None",
+        "back_translated": "No"
+      },
+      {
+        "row": 8,
+        "column": 4,
+        "score": 0.7814761769049448,
+        "source": "None",
+        "back_translated": "No"
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.7814761769049448,
+        "source": "None",
+        "back_translated": "No"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "education"
+  },
+  "domain": "education"
+}

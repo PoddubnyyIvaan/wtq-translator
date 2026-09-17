@@ -1,0 +1,140 @@
+{
+  "question_id": "nu-502",
+  "source_context": "csv/204-csv/368.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-502.tsv",
+  "source_question": "is earl marshal listed above or below lord privy seal?",
+  "translated_question": "находится ли Граф-маршал выше или ниже Государственного сенатора-секретаря?",
+  "source_target_value": "below",
+  "translated_target_value": "ниже",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "earl marshal",
+      "normalized_text": "earl marshal",
+      "start": 3,
+      "end": 15,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Earl Marshal",
+      "match_type": "lemma",
+      "candidate_key": "d25d01ccf9ac6b62",
+      "coordinate": {
+        "row": 6,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "lord privy seal",
+      "normalized_text": "lord privy seal",
+      "start": 38,
+      "end": 53,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Lord Privy Seal",
+      "match_type": "lemma",
+      "candidate_key": "76237f6363dc1527",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-502",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "is earl marshal listed above or below lord privy seal?",
+    "translated_question": "находится ли Граф-маршал выше или ниже Государственного сенатора-секретаря?",
+    "back_translated_question": "is the earl marshal above or below the lord privy seal?",
+    "question_cosine_similarity": 0.975988969539207,
+    "question_bert_precision": 0.7930497527122498,
+    "question_bert_recall": 0.7774804830551147,
+    "question_bert_f1": 0.7855657339096069,
+    "back_table_groups_compared": 50,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9226565804843182,
+    "back_table_bert_groups_compared": 50,
+    "back_table_bert_min_f1": 0.17047610878944397,
+    "back_table_bert_mean_f1": 0.852477525472641,
+    "back_table_bert_min_precision": 0.15018846094608307,
+    "back_table_bert_mean_precision": 0.8438754698634148,
+    "back_table_bert_min_recall": 0.18863265216350555,
+    "back_table_bert_mean_recall": 0.8614002075791359,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.5485107809279467,
+        "source": "Lord Privy Seal",
+        "back_translated": "State Secretary of the Council"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.5977848611991555,
+        "source": "Justiciar",
+        "back_translated": "judge"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.6124251882881853,
+        "source": "Lord High Steward",
+        "back_translated": "Lord Chamberlain"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.6691416711432151,
+        "source": "Lord Steward",
+        "back_translated": "Lord Chamberlain"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "government and royal institutions"
+  },
+  "domain": "government and royal institutions"
+}

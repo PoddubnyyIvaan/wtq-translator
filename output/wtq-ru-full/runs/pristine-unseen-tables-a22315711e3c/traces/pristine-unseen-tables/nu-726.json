@@ -1,0 +1,130 @@
+{
+  "question_id": "nu-726",
+  "source_context": "csv/203-csv/199.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-726.tsv",
+  "source_question": "excluding the women's national basketball league, what competition had the lowest average match attendance?",
+  "translated_question": "исключая женскую национальную баскетбольную лигу, какое соревнование имело наименьшую среднюю посещаемость матча?",
+  "source_target_value": "National Basketball League",
+  "translated_target_value": "Национальная баскетбольная лига",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "'s national basketball league",
+      "normalized_text": "s national basketball league",
+      "start": 19,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 0
+        }
+      ],
+      "table_source_text": "'s National Basketball League",
+      "match_type": "lemma",
+      "candidate_key": "8ce9301f0f09c9a0",
+      "coordinate": {
+        "row": 8,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "competition",
+      "normalized_text": "competition",
+      "start": 55,
+      "end": 66,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Competition",
+      "match_type": "lemma",
+      "candidate_key": "0509839ddc683373",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "average match attendance",
+      "normalized_text": "average match attendance",
+      "start": 82,
+      "end": 106,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Average match attendance",
+      "match_type": "lemma",
+      "candidate_key": "b97d9fca6a0d5c4c",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-726",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "excluding the women's national basketball league, what competition had the lowest average match attendance?",
+    "translated_question": "исключая женскую национальную баскетбольную лигу, какое соревнование имело наименьшую среднюю посещаемость матча?",
+    "back_translated_question": "excluding 's national basketball league, which competition had the lowest average match attendance?",
+    "question_cosine_similarity": 0.9694049498603617,
+    "question_bert_precision": 0.6781811118125916,
+    "question_bert_recall": 0.724930465221405,
+    "question_bert_f1": 0.7017843723297119,
+    "back_table_groups_compared": 40,
+    "back_table_min_similarity": 0.8047231388477111,
+    "back_table_mean_similarity": 0.9951180784711928,
+    "back_table_bert_groups_compared": 40,
+    "back_table_bert_min_f1": 0.41297397017478943,
+    "back_table_bert_mean_f1": 0.9853243492543697,
+    "back_table_bert_min_precision": 0.32097503542900085,
+    "back_table_bert_mean_precision": 0.983024375885725,
+    "back_table_bert_min_recall": 0.5116938948631287,
+    "back_table_bert_mean_recall": 0.9877923473715782,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.8047231388477111,
+        "source": "Total spectatorship",
+        "back_translated": "Total attendance"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports attendance statistics"
+  },
+  "domain": "sports attendance statistics"
+}

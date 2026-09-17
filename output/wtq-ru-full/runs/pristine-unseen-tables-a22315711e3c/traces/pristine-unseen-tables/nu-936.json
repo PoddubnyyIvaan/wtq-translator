@@ -1,0 +1,158 @@
+{
+  "question_id": "nu-936",
+  "source_context": "csv/204-csv/677.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-936.tsv",
+  "source_question": "name someone from the same state and party as karst.",
+  "translated_question": "назовите кого-нибудь из того же штата и партии, что и реймонд у. карст.",
+  "source_target_value": "Frank M. Karsten",
+  "translated_target_value": "Фрэнк М. Карстен",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "state",
+      "normalized_text": "state",
+      "start": 27,
+      "end": 32,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "State",
+      "match_type": "lemma",
+      "candidate_key": "e7257900114b9801",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "party",
+      "normalized_text": "party",
+      "start": 37,
+      "end": 42,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Party",
+      "match_type": "lemma",
+      "candidate_key": "17b2b3c71f1d2afb",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "karst",
+      "normalized_text": "karst",
+      "start": 46,
+      "end": 51,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Karst",
+      "match_type": "lemma",
+      "candidate_key": "483b2f13e1dd7a45",
+      "coordinate": {
+        "row": 8,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-936",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "name someone from the same state and party as karst.",
+    "translated_question": "назовите кого-нибудь из того же штата и партии, что и реймонд у. карст.",
+    "back_translated_question": "name someone from the same state and party as Karst.",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 0.8889344930648804,
+    "question_bert_recall": 0.8889498114585876,
+    "question_bert_f1": 0.8891103863716125,
+    "back_table_groups_compared": 1665,
+    "back_table_min_similarity": 0.3846378173243638,
+    "back_table_mean_similarity": 0.9777533947865096,
+    "back_table_bert_groups_compared": 1665,
+    "back_table_bert_min_f1": 0.024444902315735817,
+    "back_table_bert_mean_f1": 0.9529036035285787,
+    "back_table_bert_min_precision": 0.04299066215753555,
+    "back_table_bert_mean_precision": 0.9546384952000312,
+    "back_table_bert_min_recall": -0.027396896854043007,
+    "back_table_bert_mean_recall": 0.951250541690379,
+    "back_table_similarity_examples": [
+      {
+        "row": 189,
+        "column": 3,
+        "score": 0.3846378173243638,
+        "source": "Free Soiler",
+        "back_translated": "Liberty Party"
+      },
+      {
+        "row": 68,
+        "column": 3,
+        "score": 0.42808376345394333,
+        "source": "Progressive",
+        "back_translated": "cumulative total"
+      },
+      {
+        "row": 166,
+        "column": 0,
+        "score": 0.5393064430600563,
+        "source": "John Kincaid",
+        "back_translated": "john kinkaid"
+      },
+      {
+        "row": 278,
+        "column": 0,
+        "score": 0.5777820249936203,
+        "source": "Jim Kolbe",
+        "back_translated": "jim colbey"
+      },
+      {
+        "row": 283,
+        "column": 0,
+        "score": 0.5868359602027341,
+        "source": "William Henry Koontz",
+        "back_translated": "William Henry Kuntz"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "U.S. Congress members"
+  },
+  "domain": "U.S. Congress members"
+}

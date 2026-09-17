@@ -1,0 +1,142 @@
+{
+  "question_id": "nu-951",
+  "source_context": "csv/203-csv/0.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-951.tsv",
+  "source_question": "how many players participated in the weightlifting sport?",
+  "translated_question": "сколько игроков участвовало в Тяжёлой атлетике Sport?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "weightlifting",
+      "normalized_text": "weightlifting",
+      "start": 37,
+      "end": 50,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 12,
+          "column": 1
+        },
+        {
+          "row": 13,
+          "column": 1
+        },
+        {
+          "row": 14,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Weightlifting",
+      "match_type": "lemma",
+      "candidate_key": "25226c392f059dfb",
+      "coordinate": {
+        "row": 12,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "sport",
+      "normalized_text": "sport",
+      "start": 51,
+      "end": 56,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Sport",
+      "match_type": "lemma",
+      "candidate_key": "ce7e9e669d470f8b",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-951",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many players participated in the weightlifting sport?",
+    "translated_question": "сколько игроков участвовало в Тяжёлой атлетике Sport?",
+    "back_translated_question": "how many players participated in weightlifting sport?",
+    "question_cosine_similarity": 0.9963868719900022,
+    "question_bert_precision": 0.9425500631332397,
+    "question_bert_recall": 0.968925416469574,
+    "question_bert_f1": 0.9557408690452576,
+    "back_table_groups_compared": 95,
+    "back_table_min_similarity": 0.4611254391252813,
+    "back_table_mean_similarity": 0.9286497948302269,
+    "back_table_bert_groups_compared": 95,
+    "back_table_bert_min_f1": 0.24382521212100983,
+    "back_table_bert_mean_f1": 0.8635297372152931,
+    "back_table_bert_min_precision": 0.26790666580200195,
+    "back_table_bert_mean_precision": 0.8676576134405638,
+    "back_table_bert_min_recall": 0.21808786690235138,
+    "back_table_bert_mean_recall": 0.8593062399249328,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.4611254391252813,
+        "source": "Shooting",
+        "back_translated": "Rising star"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.4611254391252813,
+        "source": "Shooting",
+        "back_translated": "Rising star"
+      },
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.4611254391252813,
+        "source": "Shooting",
+        "back_translated": "Rising star"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.5848914563418446,
+        "source": "Sailing",
+        "back_translated": "Swimming"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.5848914563418446,
+        "source": "Sailing",
+        "back_translated": "Swimming"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports competitions"
+  },
+  "domain": "sports competitions"
+}

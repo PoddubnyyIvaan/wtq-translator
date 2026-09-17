@@ -1,0 +1,190 @@
+{
+  "question_id": "nu-605",
+  "source_context": "csv/203-csv/380.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-605.tsv",
+  "source_question": "what total number of matches did team usa win after match no. 27?",
+  "translated_question": "сколько всего матчей выиграла Команда США после номера матча. 27?",
+  "source_target_value": "5",
+  "translated_target_value": "5",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "total",
+      "normalized_text": "total",
+      "start": 5,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Total",
+      "match_type": "lemma",
+      "candidate_key": "6dd782d1ee29a548",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "matches",
+      "normalized_text": "match",
+      "start": 21,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Match",
+      "match_type": "lemma",
+      "candidate_key": "880d876ec932c082",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "team usa",
+      "normalized_text": "team usa",
+      "start": 33,
+      "end": 41,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": 5,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Team USA",
+      "match_type": "lemma",
+      "candidate_key": "fa83bfc367824069",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "match no",
+      "normalized_text": "match no",
+      "start": 52,
+      "end": 60,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Match no",
+      "match_type": "lemma",
+      "candidate_key": "1cdfb23702e724ec",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-605",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what total number of matches did team usa win after match no. 27?",
+    "translated_question": "сколько всего матчей выиграла Команда США после номера матча. 27?",
+    "back_translated_question": "how many total matches did team usa win after match no. 27?",
+    "question_cosine_similarity": 0.993700098443284,
+    "question_bert_precision": 0.8633264303207397,
+    "question_bert_recall": 0.9000684022903442,
+    "question_bert_f1": 0.881748378276825,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.6714879610740635,
+    "back_table_mean_similarity": 0.9388771222609887,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.19197192788124084,
+    "back_table_bert_mean_f1": 0.8851463198661804,
+    "back_table_bert_min_precision": 0.24882397055625916,
+    "back_table_bert_mean_precision": 0.895997060669793,
+    "back_table_bert_min_recall": 0.13601362705230713,
+    "back_table_bert_mean_recall": 0.8746252633907177,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.6714879610740635,
+        "source": "Tomas Leandersson",
+        "back_translated": "Thomas Löanderson"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.686001307962694,
+        "source": "Chris Barnes",
+        "back_translated": "Chris Burns"
+      },
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.686001307962694,
+        "source": "Chris Barnes",
+        "back_translated": "Chris Burns"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.7078191466144699,
+        "source": "Progressive Total",
+        "back_translated": "Cumulative total"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7417659651410313,
+        "source": "Match no.",
+        "back_translated": "Match number."
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "bowling competition"
+  },
+  "domain": "bowling competition"
+}

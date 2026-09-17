@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-883",
+  "source_context": "csv/202-csv/128.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-883.tsv",
+  "source_question": "which material does not have a wavelength above 500nm?",
+  "translated_question": "какой материал не имеет длины волны выше 500нм?",
+  "source_target_value": "Zinc Oxide",
+  "translated_target_value": "оксид цинка",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "material",
+      "normalized_text": "material",
+      "start": 6,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Material",
+      "match_type": "lemma",
+      "candidate_key": "947bf627e915da66",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "nm",
+      "normalized_text": "nm",
+      "start": 51,
+      "end": 53,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "nm",
+      "match_type": "lemma",
+      "candidate_key": "780ddc8092ee2e63",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-883",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which material does not have a wavelength above 500nm?",
+    "translated_question": "какой материал не имеет длины волны выше 500нм?",
+    "back_translated_question": "which material has no wavelength above 500nm?",
+    "question_cosine_similarity": 0.9922076921256399,
+    "question_bert_precision": 0.857289731502533,
+    "question_bert_recall": 0.9143744111061096,
+    "question_bert_f1": 0.8856947422027588,
+    "back_table_groups_compared": 183,
+    "back_table_min_similarity": 0.5060681159088714,
+    "back_table_mean_similarity": 0.9883184539057843,
+    "back_table_bert_groups_compared": 183,
+    "back_table_bert_min_f1": 0.3251902759075165,
+    "back_table_bert_mean_f1": 0.9736343589636798,
+    "back_table_bert_min_precision": 0.3108631670475006,
+    "back_table_bert_mean_precision": 0.972718882756155,
+    "back_table_bert_min_recall": 0.31687188148498535,
+    "back_table_bert_mean_recall": 0.9745305654455404,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.5255704569703671,
+        "source": "Air at STP",
+        "back_translated": "air under normal conditions"
+      },
+      {
+        "row": 12,
+        "column": 0,
+        "score": 0.7215328523870861,
+        "source": "Water",
+        "back_translated": "water level"
+      },
+      {
+        "row": 51,
+        "column": 0,
+        "score": 0.8108324510270734,
+        "source": "Cubic zirconia",
+        "back_translated": "zirconium zirconium"
+      },
+      {
+        "row": 32,
+        "column": 0,
+        "score": 0.8244340248913921,
+        "source": "Cytop",
+        "back_translated": "Citop"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "optics"
+  },
+  "domain": "optics"
+}

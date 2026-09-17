@@ -1,0 +1,258 @@
+{
+  "question_id": "nu-158",
+  "source_context": "csv/202-csv/81.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-158.tsv",
+  "source_question": "how many different flyby's have been done for the halley comet?",
+  "translated_question": "сколько различных пролетных наблюденийГаллеи было проведено для кометы Галлеи??",
+  "source_target_value": "6",
+  "translated_target_value": "6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "flyby",
+      "normalized_text": "flyby",
+      "start": 19,
+      "end": 24,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 18,
+          "column": 3
+        },
+        {
+          "row": 20,
+          "column": 3
+        },
+        {
+          "row": 25,
+          "column": 3
+        },
+        {
+          "row": 45,
+          "column": 3
+        },
+        {
+          "row": 80,
+          "column": 3
+        },
+        {
+          "row": 102,
+          "column": 3
+        }
+      ],
+      "table_source_text": "flyby",
+      "match_type": "lemma",
+      "candidate_key": "ae53f72ef1584eb1",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "'s",
+      "normalized_text": "",
+      "start": 24,
+      "end": 26,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 94,
+          "column": 0
+        },
+        {
+          "row": 106,
+          "column": 0
+        },
+        {
+          "row": 132,
+          "column": 0
+        },
+        {
+          "row": 173,
+          "column": 0
+        },
+        {
+          "row": 175,
+          "column": 0
+        },
+        {
+          "row": 287,
+          "column": 0
+        }
+      ],
+      "table_source_text": "=",
+      "match_type": "lemma",
+      "candidate_key": "4c7ee0ab5c865917",
+      "coordinate": {
+        "row": 94,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "halley",
+      "normalized_text": "halley",
+      "start": 50,
+      "end": 56,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 0,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Halley",
+      "match_type": "lemma",
+      "candidate_key": "d7da1493a3eb8a10",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "comet",
+      "normalized_text": "comet",
+      "start": 57,
+      "end": 62,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Comet",
+      "match_type": "lemma",
+      "candidate_key": "fd357ca628a6c5a7",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-158",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many different flyby's have been done for the halley comet?",
+    "translated_question": "сколько различных пролетных наблюденийГаллеи было проведено для кометы Галлеи??",
+    "back_translated_question": "how many different flyby observations of Halley's Halley comet were conducted?",
+    "question_cosine_similarity": 0.930951148820328,
+    "question_bert_precision": 0.5396741032600403,
+    "question_bert_recall": 0.508250892162323,
+    "question_bert_f1": 0.5245722532272339,
+    "back_table_groups_compared": 1192,
+    "back_table_min_similarity": 0.3962988435969002,
+    "back_table_mean_similarity": 0.968704486625545,
+    "back_table_bert_groups_compared": 1192,
+    "back_table_bert_min_f1": 0.3587091863155365,
+    "back_table_bert_mean_f1": 0.9600345357102436,
+    "back_table_bert_min_precision": 0.3124523162841797,
+    "back_table_bert_mean_precision": 0.9623041205708213,
+    "back_table_bert_min_recall": 0.2775287330150604,
+    "back_table_bert_mean_recall": 0.9579522410195146,
+    "back_table_similarity_examples": [
+      {
+        "row": 87,
+        "column": 1,
+        "score": 0.3962988435969002,
+        "source": "Howell",
+        "back_translated": "Hawley"
+      },
+      {
+        "row": 178,
+        "column": 1,
+        "score": 0.4255502849390444,
+        "source": "Jedicke",
+        "back_translated": "Dedikke"
+      },
+      {
+        "row": 114,
+        "column": 1,
+        "score": 0.42773079972156747,
+        "source": "Maury",
+        "back_translated": "Mori"
+      },
+      {
+        "row": 58,
+        "column": 1,
+        "score": 0.4337150829188964,
+        "source": "Kearns & Kwee",
+        "back_translated": "Cairns & Quaife"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.44251968541339703,
+        "source": "Tuttle",
+        "back_translated": "Tempel"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "astronomy"
+  },
+  "domain": "astronomy"
+}

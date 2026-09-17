@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-321",
+  "source_context": "csv/203-csv/647.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-321.tsv",
+  "source_question": "what was the most laps run before being retired?",
+  "translated_question": "сколько кругов было пройдено до снятия?",
+  "source_target_value": "200",
+  "translated_target_value": "200",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "laps",
+      "normalized_text": "lap",
+      "start": 18,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Laps",
+      "match_type": "lemma",
+      "candidate_key": "fe5e187f063d5f6e",
+      "coordinate": {
+        "row": null,
+        "column": 6
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "retired",
+      "normalized_text": "retire",
+      "start": 40,
+      "end": 47,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 8
+        }
+      ],
+      "table_source_text": "Retired",
+      "match_type": "lemma",
+      "candidate_key": "e76fc4e8319dbca2",
+      "coordinate": {
+        "row": null,
+        "column": 8
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-321",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the most laps run before being retired?",
+    "translated_question": "сколько кругов было пройдено до снятия?",
+    "back_translated_question": "how many laps were completed before retirement?",
+    "question_cosine_similarity": 0.8487679709165478,
+    "question_bert_precision": 0.5069532990455627,
+    "question_bert_recall": 0.567284107208252,
+    "question_bert_f1": 0.5374199151992798,
+    "back_table_groups_compared": 135,
+    "back_table_min_similarity": 0.30273723379827877,
+    "back_table_mean_similarity": 0.9392063335388167,
+    "back_table_bert_groups_compared": 135,
+    "back_table_bert_min_f1": 0.0927353948354721,
+    "back_table_bert_mean_f1": 0.8997499521131869,
+    "back_table_bert_min_precision": 0.1289805769920349,
+    "back_table_bert_mean_precision": 0.903158007396592,
+    "back_table_bert_min_recall": 0.0552489273250103,
+    "back_table_bert_mean_recall": 0.8962193511978344,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 8,
+        "score": 0.30273723379827877,
+        "source": "Supercharger",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 9,
+        "column": 8,
+        "score": 0.34497498292795586,
+        "source": "Magneto",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 4,
+        "column": 8,
+        "score": 0.4300207732080731,
+        "source": "Valve",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 8,
+        "column": 8,
+        "score": 0.45088613939855315,
+        "source": "Rod",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 11,
+        "column": 8,
+        "score": 0.45088613939855315,
+        "source": "Rod",
+        "back_translated": "Withdrew"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

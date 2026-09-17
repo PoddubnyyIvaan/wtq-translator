@@ -1,0 +1,163 @@
+{
+  "question_id": "nu-474",
+  "source_context": "csv/203-csv/511.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-474.tsv",
+  "source_question": "in total, what did the players from united states score?",
+  "translated_question": "всего, какой Игроки из Соединённых Штатов Счёт?",
+  "source_target_value": "845",
+  "translated_target_value": "845",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "players",
+      "normalized_text": "player",
+      "start": 23,
+      "end": 30,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Player",
+      "match_type": "lemma",
+      "candidate_key": "3787324f2d113d99",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "united states",
+      "normalized_text": "united states",
+      "start": 36,
+      "end": 49,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        },
+        {
+          "row": 5,
+          "column": 2
+        },
+        {
+          "row": 9,
+          "column": 2
+        }
+      ],
+      "table_source_text": "United States",
+      "match_type": "lemma",
+      "candidate_key": "f34072dfe9b85b2f",
+      "coordinate": {
+        "row": 1,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "score",
+      "normalized_text": "score",
+      "start": 50,
+      "end": 55,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Score",
+      "match_type": "lemma",
+      "candidate_key": "40f03a30f2159c58",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-474",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "in total, what did the players from united states score?",
+    "translated_question": "всего, какой Игроки из Соединённых Штатов Счёт?",
+    "back_translated_question": "in total, how many players from United States have a score?",
+    "question_cosine_similarity": 0.899712043593039,
+    "question_bert_precision": 0.6110780835151672,
+    "question_bert_recall": 0.6110307574272156,
+    "question_bert_f1": 0.6116436719894409,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.7471585359265884,
+    "back_table_mean_similarity": 0.989751960269171,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.17239251732826233,
+    "back_table_bert_mean_f1": 0.9633191059936177,
+    "back_table_bert_min_precision": 0.17107947170734406,
+    "back_table_bert_mean_precision": 0.9643400471318851,
+    "back_table_bert_min_recall": 0.17119400203227997,
+    "back_table_bert_mean_recall": 0.9622203667055477,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7471585359265884,
+        "source": "Place",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.8233127982466395,
+        "source": "Olin Browne",
+        "back_translated": "Olin Brown"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.8878372947503481,
+        "source": "To par",
+        "back_translated": "on par"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.9780491858808268,
+        "source": "K. J. Choi",
+        "back_translated": "K. J.. choi"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "golf tournament results"
+  },
+  "domain": "golf tournament results"
+}

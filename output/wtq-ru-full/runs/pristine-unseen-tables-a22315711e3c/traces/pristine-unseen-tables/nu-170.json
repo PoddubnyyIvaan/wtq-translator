@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-170",
+  "source_context": "csv/203-csv/65.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-170.tsv",
+  "source_question": "where did she achieve first place for the first time",
+  "translated_question": "где она впервые добилась первого места",
+  "source_target_value": "Doha, Qatar",
+  "translated_target_value": "Доха, Катар",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-170",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "where did she achieve first place for the first time",
+    "translated_question": "где она впервые добилась первого места",
+    "back_translated_question": "where did she first achieve first place",
+    "question_cosine_similarity": 0.9798332240921811,
+    "question_bert_precision": 0.6426261067390442,
+    "question_bert_recall": 0.8390635848045349,
+    "question_bert_f1": 0.7373276948928833,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9692474874825837,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.37352320551872253,
+    "back_table_bert_mean_f1": 0.9718246882160505,
+    "back_table_bert_min_precision": 0.38896939158439636,
+    "back_table_bert_mean_precision": 0.9720539872845014,
+    "back_table_bert_min_recall": 0.35643258690834045,
+    "back_table_bert_mean_recall": 0.9715141619245211,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.6407749346573522,
+        "source": "World Cup",
+        "back_translated": "World Series"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.8330529264017466,
+        "source": "400 m",
+        "back_translated": "400 м"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.8330529264017466,
+        "source": "400 m",
+        "back_translated": "400 м"
+      },
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.8330529264017466,
+        "source": "400 m",
+        "back_translated": "400 м"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

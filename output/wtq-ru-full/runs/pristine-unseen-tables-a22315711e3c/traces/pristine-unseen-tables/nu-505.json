@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-505",
+  "source_context": "csv/203-csv/566.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-505.tsv",
+  "source_question": "which team had the first pick this round?",
+  "translated_question": "какая команда получила первый Выбор в этом раунде?",
+  "source_target_value": "Winnipeg Jets",
+  "translated_target_value": "Виннипег Джетс",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "team",
+      "normalized_text": "team",
+      "start": 6,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        },
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "team",
+      "match_type": "lemma",
+      "candidate_key": "a173e82884e1ec15",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "pick",
+      "normalized_text": "pick",
+      "start": 25,
+      "end": 29,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Pick",
+      "match_type": "lemma",
+      "candidate_key": "05951198958e3b23",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-505",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which team had the first pick this round?",
+    "translated_question": "какая команда получила первый Выбор в этом раунде?",
+    "back_translated_question": "Which team received the first pick in this round?",
+    "question_cosine_similarity": 0.9550283475270998,
+    "question_bert_precision": 0.7606692910194397,
+    "question_bert_recall": 0.6836410760879517,
+    "question_bert_f1": 0.7219657301902771,
+    "back_table_groups_compared": 132,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9506126688388364,
+    "back_table_bert_groups_compared": 132,
+    "back_table_bert_min_f1": -0.05394518002867699,
+    "back_table_bert_mean_f1": 0.824091286511358,
+    "back_table_bert_min_precision": -0.12307741492986679,
+    "back_table_bert_mean_precision": 0.828111028185848,
+    "back_table_bert_min_recall": 0.017937850207090378,
+    "back_table_bert_mean_recall": 0.8197643161948883,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.6834257470523109,
+        "source": "Richard Turmel",
+        "back_translated": "richard tourmel"
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7511936703722781,
+        "source": "Chicoutimi Saguenéens (QMJHL)",
+        "back_translated": "squamish sageneen (CMJHL)"
+      },
+      {
+        "row": 13,
+        "column": 5,
+        "score": 0.7511936703722781,
+        "source": "Chicoutimi Saguenéens (QMJHL)",
+        "back_translated": "squamish sageneen (CMJHL)"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.7871156287335057,
+        "source": "Defence",
+        "back_translated": "Defender"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "ice hockey draft"
+  },
+  "domain": "ice hockey draft"
+}

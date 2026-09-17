@@ -1,0 +1,170 @@
+{
+  "question_id": "nu-801",
+  "source_context": "csv/203-csv/188.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-801.tsv",
+  "source_question": "who was the us ambassador to grenada prior to jeanette w. hyde?",
+  "translated_question": "кем был американский посол чрезвычайный и полномочный в Гренаде до Джинетт В. Хайди?",
+  "source_target_value": "Dennis F. Carter",
+  "translated_target_value": "Деннис Ф. Кертис",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "ambassador",
+      "normalized_text": "ambassador",
+      "start": 15,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 1,
+          "column": 1
+        },
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 12,
+          "column": 1
+        },
+        {
+          "row": 13,
+          "column": 1
+        },
+        {
+          "row": 14,
+          "column": 1
+        },
+        {
+          "row": 15,
+          "column": 1
+        },
+        {
+          "row": 16,
+          "column": 1
+        },
+        {
+          "row": 17,
+          "column": 1
+        },
+        {
+          "row": 20,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Ambassador",
+      "match_type": "lemma",
+      "candidate_key": "163955319065c289",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "jeanette w. hyde",
+      "normalized_text": "jeanette w hyde",
+      "start": 46,
+      "end": 62,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 12,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Jeanette W. Hyde",
+      "match_type": "lemma",
+      "candidate_key": "013728c9db1a8da3",
+      "coordinate": {
+        "row": 12,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-801",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who was the us ambassador to grenada prior to jeanette w. hyde?",
+    "translated_question": "кем был американский посол чрезвычайный и полномочный в Гренаде до Джинетт В. Хайди?",
+    "back_translated_question": "who was the American ambassador extraordinary and plenipotentiary to Grenada before jeanette w. hyde?",
+    "question_cosine_similarity": 0.949040060239541,
+    "question_bert_precision": 0.5644655823707581,
+    "question_bert_recall": 0.42632293701171875,
+    "question_bert_f1": 0.4939992129802704,
+    "back_table_groups_compared": 110,
+    "back_table_min_similarity": 0.5412923382749079,
+    "back_table_mean_similarity": 0.9141423001910606,
+    "back_table_bert_groups_compared": 110,
+    "back_table_bert_min_f1": 0.09642458707094193,
+    "back_table_bert_mean_f1": 0.8178877615793185,
+    "back_table_bert_min_precision": 0.14618529379367828,
+    "back_table_bert_mean_precision": 0.8222618023102933,
+    "back_table_bert_min_recall": 0.0466654933989048,
+    "back_table_bert_mean_recall": 0.8134520681405609,
+    "back_table_similarity_examples": [
+      {
+        "row": 12,
+        "column": 0,
+        "score": 0.5412923382749079,
+        "source": "Jeanette W. Hyde",
+        "back_translated": "Jeannette V. Heidi"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.5517459403152711,
+        "source": "Chargé d'Affaires",
+        "back_translated": "Extraordinary and Plenipotentiary Envoy"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.5517459403152711,
+        "source": "Chargé d'Affaires",
+        "back_translated": "Extraordinary and Plenipotentiary Envoy"
+      },
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.5517459403152711,
+        "source": "Chargé d'Affaires",
+        "back_translated": "Extraordinary and Plenipotentiary Envoy"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.5517459403152711,
+        "source": "Chargé d'Affaires",
+        "back_translated": "Extraordinary and Plenipotentiary Envoy"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "diplomatic missions and ambassadorial appointments"
+  },
+  "domain": "diplomatic missions and ambassadorial appointments"
+}

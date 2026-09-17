@@ -1,0 +1,166 @@
+{
+  "question_id": "nu-881",
+  "source_context": "csv/203-csv/167.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-881.tsv",
+  "source_question": "what is the number of oriya speakers as of the 1991 census?",
+  "translated_question": "сколько Ория говорящих было на 1991 Перепись?",
+  "source_target_value": "28,061,313",
+  "translated_target_value": "28,061,313",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "oriya",
+      "normalized_text": "oriya",
+      "start": 22,
+      "end": 27,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 11,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Oriya",
+      "match_type": "lemma",
+      "candidate_key": "f2a0128f48fa7609",
+      "coordinate": {
+        "row": 11,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "speakers",
+      "normalized_text": "speaker",
+      "start": 28,
+      "end": 36,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        },
+        {
+          "row": 0,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Speakers",
+      "match_type": "lemma",
+      "candidate_key": "5d32193ce768a514",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "census",
+      "normalized_text": "census",
+      "start": 52,
+      "end": 58,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Census",
+      "match_type": "lemma",
+      "candidate_key": "98d289fd8efd0f8d",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-881",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of oriya speakers as of the 1991 census?",
+    "translated_question": "сколько Ория говорящих было на 1991 Перепись?",
+    "back_translated_question": "how many oriya speakers were there in the 1991 Perепись?",
+    "question_cosine_similarity": 0.8956593365542721,
+    "question_bert_precision": 0.530823826789856,
+    "question_bert_recall": 0.49640849232673645,
+    "question_bert_f1": 0.5142189264297485,
+    "back_table_groups_compared": 160,
+    "back_table_min_similarity": 0.4845479470390146,
+    "back_table_mean_similarity": 0.9602452504236629,
+    "back_table_bert_groups_compared": 160,
+    "back_table_bert_min_f1": 0.3099997043609619,
+    "back_table_bert_mean_f1": 0.9407874515280128,
+    "back_table_bert_min_precision": 0.2838016748428345,
+    "back_table_bert_mean_precision": 0.9397744078189134,
+    "back_table_bert_min_recall": 0.33473798632621765,
+    "back_table_bert_mean_recall": 0.9416407857090234,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.4845479470390146,
+        "source": "Percentage",
+        "back_translated": "Share"
+      },
+      {
+        "row": 23,
+        "column": 0,
+        "score": 0.509584071668399,
+        "source": "Khandeshi",
+        "back_translated": "Hindustani"
+      },
+      {
+        "row": 28,
+        "column": 0,
+        "score": 0.5794219594659754,
+        "source": "Khasi",
+        "back_translated": "Hasi"
+      },
+      {
+        "row": 11,
+        "column": 4,
+        "score": 0.7066391044134425,
+        "source": "32.3 M",
+        "back_translated": "32.3 million"
+      },
+      {
+        "row": 12,
+        "column": 4,
+        "score": 0.7066391044134425,
+        "source": "32.3 M",
+        "back_translated": "32.3 million"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "demographics and linguistics"
+  },
+  "domain": "demographics and linguistics"
+}

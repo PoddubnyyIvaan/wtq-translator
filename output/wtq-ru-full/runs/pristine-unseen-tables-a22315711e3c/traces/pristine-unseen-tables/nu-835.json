@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-835",
+  "source_context": "csv/204-csv/285.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-835.tsv",
+  "source_question": "how many tournaments are held in spain?",
+  "translated_question": "сколько турниров проводится в Испании?",
+  "source_target_value": "2",
+  "translated_target_value": "2.",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "tournaments",
+      "normalized_text": "tournament",
+      "start": 9,
+      "end": 20,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Tournament",
+      "match_type": "lemma",
+      "candidate_key": "7fbca8233a522ad6",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "spain",
+      "normalized_text": "spain",
+      "start": 33,
+      "end": 38,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Spain",
+      "match_type": "lemma",
+      "candidate_key": "8ba852386c3fd074",
+      "coordinate": {
+        "row": 3,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-835",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many tournaments are held in spain?",
+    "translated_question": "сколько турниров проводится в Испании?",
+    "back_translated_question": "how many tournaments are held in Spain?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 0.7224928736686707,
+    "question_bert_recall": 0.7891324162483215,
+    "question_bert_f1": 0.7557371258735657,
+    "back_table_groups_compared": 140,
+    "back_table_min_similarity": 0.4467434325250675,
+    "back_table_mean_similarity": 0.9532094608406675,
+    "back_table_bert_groups_compared": 140,
+    "back_table_bert_min_f1": 0.11152682453393936,
+    "back_table_bert_mean_f1": 0.8253202692206417,
+    "back_table_bert_min_precision": 0.13496311008930206,
+    "back_table_bert_mean_precision": 0.8330080862556185,
+    "back_table_bert_min_recall": 0.08605512976646423,
+    "back_table_bert_mean_recall": 0.8174125056181635,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.4467434325250675,
+        "source": "Guillermo Coria",
+        "back_translated": "Gustavo Kuerten"
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "score": 0.4724464287932434,
+        "source": "Guillermo Cañas",
+        "back_translated": "Gustavo Kuerten"
+      },
+      {
+        "row": 14,
+        "column": 5,
+        "score": 0.5100661455903901,
+        "source": "Thomaz Bellucci",
+        "back_translated": "Tomáš Berdych"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

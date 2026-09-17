@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-521",
+  "source_context": "csv/204-csv/827.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-521.tsv",
+  "source_question": "tell me the number of total votes for the physicist?",
+  "translated_question": "скажи мне количество голосов всего для физика?",
+  "source_target_value": "6",
+  "translated_target_value": "6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "total votes",
+      "normalized_text": "total vote",
+      "start": 22,
+      "end": 33,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Total Votes",
+      "match_type": "lemma",
+      "candidate_key": "c8a86f6ef9b235e5",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "physicist",
+      "normalized_text": "physicist",
+      "start": 42,
+      "end": 51,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 0
+        }
+      ],
+      "table_source_text": "physicist",
+      "match_type": "lemma",
+      "candidate_key": "955355e2c623d450",
+      "coordinate": {
+        "row": 5,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-521",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "tell me the number of total votes for the physicist?",
+    "translated_question": "скажи мне количество голосов всего для физика?",
+    "back_translated_question": "tell me the number of total votes for physicist?",
+    "question_cosine_similarity": 0.9887667235019529,
+    "question_bert_precision": 0.9260997176170349,
+    "question_bert_recall": 0.9539914727210999,
+    "question_bert_f1": 0.9400644302368164,
+    "back_table_groups_compared": 120,
+    "back_table_min_similarity": 0.5763357248142146,
+    "back_table_mean_similarity": 0.9595846377888854,
+    "back_table_bert_groups_compared": 120,
+    "back_table_bert_min_f1": 0.05258886516094208,
+    "back_table_bert_mean_f1": 0.8648691135148208,
+    "back_table_bert_min_precision": 0.12013790011405945,
+    "back_table_bert_mean_precision": 0.8604228165000677,
+    "back_table_bert_min_recall": -0.012825915589928627,
+    "back_table_bert_mean_recall": 0.8691098781147351,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.5763357248142146,
+        "source": "Switched Tribe",
+        "back_translated": "Switch team"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6205055395045277,
+        "source": "Merged Tribe",
+        "back_translated": "Unified Team"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.6953310270473828,
+        "source": "Original Tribe",
+        "back_translated": "Original team"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7610327393149129,
+        "source": "1st Voted Out\\nDay 3",
+        "back_translated": "1-the eliminated contestant\\nday 3"
+      },
+      {
+        "row": 17,
+        "column": 4,
+        "score": 0.773876786422072,
+        "source": "Runner-Up",
+        "back_translated": "Second place"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "reality television competition"
+  },
+  "domain": "reality television competition"
+}

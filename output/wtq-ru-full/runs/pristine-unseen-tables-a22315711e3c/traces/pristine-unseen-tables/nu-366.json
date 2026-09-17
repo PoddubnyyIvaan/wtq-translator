@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-366",
+  "source_context": "csv/204-csv/406.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-366.tsv",
+  "source_question": "how long is the caen-dinan route? (in miles)",
+  "translated_question": "какова длина маршрута Маршрута? (в милях)",
+  "source_target_value": "132 mi",
+  "translated_target_value": "132 миль",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "route",
+      "normalized_text": "route",
+      "start": 27,
+      "end": 32,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Route",
+      "match_type": "lemma",
+      "candidate_key": "c771f9b5f050ea5f",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-366",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how long is the caen-dinan route? (in miles)",
+    "translated_question": "какова длина маршрута Маршрута? (в милях)",
+    "back_translated_question": "what is the length of the route? (in miles)",
+    "question_cosine_similarity": 0.7992933751945634,
+    "question_bert_precision": 0.4722820520401001,
+    "question_bert_recall": 0.6963074207305908,
+    "question_bert_f1": 0.5794925689697266,
+    "back_table_groups_compared": 175,
+    "back_table_min_similarity": 0.5691790805197239,
+    "back_table_mean_similarity": 0.9114286257419817,
+    "back_table_bert_groups_compared": 175,
+    "back_table_bert_min_f1": 0.21544350683689117,
+    "back_table_bert_mean_f1": 0.7800167556319918,
+    "back_table_bert_min_precision": 0.21385663747787476,
+    "back_table_bert_mean_precision": 0.7673553720542363,
+    "back_table_bert_min_recall": 0.21464940905570984,
+    "back_table_bert_mean_recall": 0.7925962536675589,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.5691790805197239,
+        "source": "Paris – Caen",
+        "back_translated": "Paris – Kane"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5851399905205275,
+        "source": "Terrain",
+        "back_translated": "Territory"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.6092648028580523,
+        "source": "Caen – Dinan",
+        "back_translated": "Kane – Dinain"
+      },
+      {
+        "row": 8,
+        "column": 5,
+        "score": 0.6979591626443141,
+        "source": "Antonin Magne (FRA)",
+        "back_translated": "Antoine Mangin (France)"
+      },
+      {
+        "row": 8,
+        "column": 6,
+        "score": 0.6979591626443141,
+        "source": "Antonin Magne (FRA)",
+        "back_translated": "Antoine Mangin (France)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "cycling race"
+  },
+  "domain": "cycling race"
+}

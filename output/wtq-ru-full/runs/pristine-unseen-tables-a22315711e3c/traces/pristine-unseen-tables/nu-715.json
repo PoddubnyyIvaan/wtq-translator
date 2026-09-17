@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-715",
+  "source_context": "csv/204-csv/447.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-715.tsv",
+  "source_question": "who is the next partnering listed after renzo olivo?",
+  "translated_question": "кто следующий партнёр, указанный после Ренсо Оливо?",
+  "source_target_value": "Ariel Behar",
+  "translated_target_value": "Ариэль Бехар",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "renzo olivo",
+      "normalized_text": "renzo olivo",
+      "start": 40,
+      "end": 51,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Renzo Olivo",
+      "match_type": "lemma",
+      "candidate_key": "418981080efac132",
+      "coordinate": {
+        "row": 4,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-715",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is the next partnering listed after renzo olivo?",
+    "translated_question": "кто следующий партнёр, указанный после Ренсо Оливо?",
+    "back_translated_question": "who is the next partner listed after renzo olivo?",
+    "question_cosine_similarity": 0.960506923878294,
+    "question_bert_precision": 0.9224587678909302,
+    "question_bert_recall": 0.9545968770980835,
+    "question_bert_f1": 0.9385250210762024,
+    "back_table_groups_compared": 77,
+    "back_table_min_similarity": 0.6221568860105394,
+    "back_table_mean_similarity": 0.9656485346734176,
+    "back_table_bert_groups_compared": 77,
+    "back_table_bert_min_f1": 0.08018486201763153,
+    "back_table_bert_mean_f1": 0.8755067483364761,
+    "back_table_bert_min_precision": 0.04614919051527977,
+    "back_table_bert_mean_precision": 0.8796019774268974,
+    "back_table_bert_min_recall": 0.036463651806116104,
+    "back_table_bert_mean_recall": 0.8713788010373518,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.6221568860105394,
+        "source": "Roberto Quiroz",
+        "back_translated": "Roberto Ciruso"
+      },
+      {
+        "row": 2,
+        "column": 4,
+        "score": 0.6221568860105394,
+        "source": "Roberto Quiroz",
+        "back_translated": "Roberto Ciruso"
+      },
+      {
+        "row": 5,
+        "column": 6,
+        "score": 0.6770686522717683,
+        "source": "2-1 Ret.",
+        "back_translated": "2-1 withdrew."
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7602025658965867,
+        "source": "Martín Cuevas\\n Guido Pella",
+        "back_translated": "martin kevas\\nguido pella"
+      },
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.7670079561467735,
+        "source": "Guillermo Hormazábal\\n Rodrigo Pérez",
+        "back_translated": "guillermo gormazabal\\nrodrigo peres"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

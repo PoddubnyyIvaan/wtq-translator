@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-840",
+  "source_context": "csv/204-csv/410.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-840.tsv",
+  "source_question": "who scored the most goals?",
+  "translated_question": "кто забил больше всего голов?",
+  "source_target_value": "Landon Donovan",
+  "translated_target_value": "Ландон Донован",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "goals",
+      "normalized_text": "goal",
+      "start": 20,
+      "end": 25,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Goals",
+      "match_type": "lemma",
+      "candidate_key": "676680f2cc5ff1a0",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-840",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who scored the most goals?",
+    "translated_question": "кто забил больше всего голов?",
+    "back_translated_question": "who scored more goals?",
+    "question_cosine_similarity": 0.9060718963532892,
+    "question_bert_precision": 0.7936713099479675,
+    "question_bert_recall": 0.8561670780181885,
+    "question_bert_f1": 0.8248034715652466,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.3281071947045327,
+    "back_table_mean_similarity": 0.9529646781337463,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": -0.2755655348300934,
+    "back_table_bert_mean_f1": 0.9064419138160619,
+    "back_table_bert_min_precision": -0.26209455728530884,
+    "back_table_bert_mean_precision": 0.9096916808323426,
+    "back_table_bert_min_recall": -0.2925789952278137,
+    "back_table_bert_mean_recall": 0.903381464638832,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.3281071947045327,
+        "source": "Jozy Altidore",
+        "back_translated": "DaMarcus Beasley"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.4444421702709053,
+        "source": "Caps",
+        "back_translated": "Appearances"
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.5083632927413855,
+        "source": "Eric Wynalda",
+        "back_translated": "Eric Lichaj"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.6888194638505507,
+        "source": "Earnie Stewart",
+        "back_translated": "Ernie Stewart"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.8906272641118749,
+        "source": "2007–present",
+        "back_translated": "2007–present time"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

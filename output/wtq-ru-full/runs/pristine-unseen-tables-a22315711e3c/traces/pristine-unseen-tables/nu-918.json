@@ -1,0 +1,154 @@
+{
+  "question_id": "nu-918",
+  "source_context": "csv/204-csv/407.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-918.tsv",
+  "source_question": "what is the total number of times inoue was nominated, but did not win, an award?",
+  "translated_question": "сколько раз инуэ была номинирована, но не выиграла премию?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "nominated",
+      "normalized_text": "nominate",
+      "start": 44,
+      "end": 53,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 4
+        },
+        {
+          "row": 14,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Nominated",
+      "match_type": "lemma",
+      "candidate_key": "a1a03d3033b31e1e",
+      "coordinate": {
+        "row": 4,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "award",
+      "normalized_text": "award",
+      "start": 75,
+      "end": 80,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        },
+        {
+          "row": 7,
+          "column": 1
+        },
+        {
+          "row": 8,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Award",
+      "match_type": "lemma",
+      "candidate_key": "fb79a37731129483",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-918",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the total number of times inoue was nominated, but did not win, an award?",
+    "translated_question": "сколько раз инуэ была номинирована, но не выиграла премию?",
+    "back_translated_question": "how many times was Inuue nominated but did not win the award?",
+    "question_cosine_similarity": 0.8600266640185577,
+    "question_bert_precision": 0.4292798936367035,
+    "question_bert_recall": 0.5523305535316467,
+    "question_bert_f1": 0.48987138271331787,
+    "back_table_groups_compared": 80,
+    "back_table_min_similarity": 0.5994941667283904,
+    "back_table_mean_similarity": 0.9428121555844926,
+    "back_table_bert_groups_compared": 80,
+    "back_table_bert_min_f1": 0.06323366612195969,
+    "back_table_bert_mean_f1": 0.7664907994680107,
+    "back_table_bert_min_precision": 0.006584503222256899,
+    "back_table_bert_mean_precision": 0.7674718020076398,
+    "back_table_bert_min_recall": 0.12067799270153046,
+    "back_table_bert_mean_recall": 0.7660185009241104,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 1,
+        "score": 0.5994941667283904,
+        "source": "16th Hashida Awards",
+        "back_translated": "16-the nikkan sports award for cinematic works"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7042208944683525,
+        "source": "Nikkan Sports Grand Prix (Fall)",
+        "back_translated": "16-the nikkan sports award for cinematic works (autumn)"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.7630358906860069,
+        "source": "16th Nikkan Sport Grand Prix",
+        "back_translated": "16-the nikkan sports award for cinematic works"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.8029412927248596,
+        "source": "Newcomer Award",
+        "back_translated": "Rookie Award"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.8115968045421901,
+        "source": "10th Nikkan Sports Drama Grand Prix",
+        "back_translated": "10-the Nikkan Sports award for dramatic works"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "entertainment"
+  },
+  "domain": "entertainment"
+}

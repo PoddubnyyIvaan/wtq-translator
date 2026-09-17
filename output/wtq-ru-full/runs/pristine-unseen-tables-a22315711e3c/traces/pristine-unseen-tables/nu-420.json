@@ -1,0 +1,126 @@
+{
+  "question_id": "nu-420",
+  "source_context": "csv/203-csv/68.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-420.tsv",
+  "source_question": "how many games did canada win?",
+  "translated_question": "сколько игр выиграла Канада?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "canada",
+      "normalized_text": "canada",
+      "start": 19,
+      "end": 25,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 8,
+          "column": 2
+        },
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 13,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Canada",
+      "match_type": "lemma",
+      "candidate_key": "0a0c4ddad94585b8",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-420",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many games did canada win?",
+    "translated_question": "сколько игр выиграла Канада?",
+    "back_translated_question": "how many games did canada win?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 192,
+    "back_table_min_similarity": 0.939994826686748,
+    "back_table_mean_similarity": 0.9956980756821198,
+    "back_table_bert_groups_compared": 192,
+    "back_table_bert_min_f1": 0.677047848701477,
+    "back_table_bert_mean_f1": 0.9751854101195931,
+    "back_table_bert_min_precision": 0.676535427570343,
+    "back_table_bert_mean_precision": 0.975146034732461,
+    "back_table_bert_min_recall": 0.6765801310539246,
+    "back_table_bert_mean_recall": 0.9751494685187936,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.939994826686748,
+        "source": "18 Nov",
+        "back_translated": "Nov 18"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.939994826686748,
+        "source": "18 Nov",
+        "back_translated": "Nov 18"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.939994826686748,
+        "source": "18 Nov",
+        "back_translated": "Nov 18"
+      },
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.9424443704750031,
+        "source": "19 Nov",
+        "back_translated": "Nov 19"
+      },
+      {
+        "row": 7,
+        "column": 0,
+        "score": 0.9424443704750031,
+        "source": "19 Nov",
+        "back_translated": "Nov 19"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

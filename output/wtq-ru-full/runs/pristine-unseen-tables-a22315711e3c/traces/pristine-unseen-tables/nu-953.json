@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-953",
+  "source_context": "csv/203-csv/21.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-953.tsv",
+  "source_question": "the game on which date had the least attendance?",
+  "translated_question": "игра, на которую Дата имела наименьшую Посещаемость?",
+  "source_target_value": "September 20, 1998",
+  "translated_target_value": "20 сентября, 1998",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "date",
+      "normalized_text": "date",
+      "start": 18,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Date",
+      "match_type": "lemma",
+      "candidate_key": "58930d017d1af3c4",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "attendance",
+      "normalized_text": "attendance",
+      "start": 37,
+      "end": 47,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Attendance",
+      "match_type": "lemma",
+      "candidate_key": "a65b71c2ed2ec9bc",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-953",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "the game on which date had the least attendance?",
+    "translated_question": "игра, на которую Дата имела наименьшую Посещаемость?",
+    "back_translated_question": "the game for which date had the lowest attendance?",
+    "question_cosine_similarity": 0.9735525835523047,
+    "question_bert_precision": 0.9101859331130981,
+    "question_bert_recall": 0.9101983308792114,
+    "question_bert_f1": 0.910328209400177,
+    "back_table_groups_compared": 108,
+    "back_table_min_similarity": 0.5700890072389357,
+    "back_table_mean_similarity": 0.9721939777284887,
+    "back_table_bert_groups_compared": 108,
+    "back_table_bert_min_f1": 0.3947136700153351,
+    "back_table_bert_mean_f1": 0.9555935694111718,
+    "back_table_bert_min_precision": 0.39375320076942444,
+    "back_table_bert_mean_precision": 0.956461685123267,
+    "back_table_bert_min_recall": 0.39383694529533386,
+    "back_table_bert_mean_recall": 0.9546670259700881,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 7,
+        "column": 4,
+        "score": 0.5700890072389357,
+        "source": "Bye",
+        "back_translated": "Out"
+      },
+      {
+        "row": 16,
+        "column": 4,
+        "score": 0.7933688554637772,
+        "source": "W 16–13",
+        "back_translated": "В 16–13"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

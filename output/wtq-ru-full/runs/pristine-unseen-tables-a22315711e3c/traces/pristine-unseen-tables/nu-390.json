@@ -1,0 +1,170 @@
+{
+  "question_id": "nu-390",
+  "source_context": "csv/204-csv/773.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-390.tsv",
+  "source_question": "what is the total of seasons played between baltimore bullets and chicago stags?",
+  "translated_question": "сколько всего сезонов проведённых между Балтимором буллетс и Чикаго Стэгсом?",
+  "source_target_value": "12",
+  "translated_target_value": "12",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "played",
+      "normalized_text": "play",
+      "start": 29,
+      "end": 35,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        },
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        }
+      ],
+      "table_source_text": "played",
+      "match_type": "lemma",
+      "candidate_key": "15dca4c7df36b76d",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "baltimore",
+      "normalized_text": "baltimore",
+      "start": 44,
+      "end": 53,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Baltimore",
+      "match_type": "lemma",
+      "candidate_key": "6f477771419e5735",
+      "coordinate": {
+        "row": 3,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "chicago stags",
+      "normalized_text": "chicago stag",
+      "start": 66,
+      "end": 79,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Chicago Stags",
+      "match_type": "lemma",
+      "candidate_key": "4443f582dd586247",
+      "coordinate": {
+        "row": 4,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-390",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the total of seasons played between baltimore bullets and chicago stags?",
+    "translated_question": "сколько всего сезонов проведённых между Балтимором буллетс и Чикаго Стэгсом?",
+    "back_translated_question": "how many total seasons played between baltimore bullets and chicago stags?",
+    "question_cosine_similarity": 0.9770177903264186,
+    "question_bert_precision": 0.8195351958274841,
+    "question_bert_recall": 0.8825448751449585,
+    "question_bert_f1": 0.8508824110031128,
+    "back_table_groups_compared": 126,
+    "back_table_min_similarity": 0.6134716486537978,
+    "back_table_mean_similarity": 0.9841665611801526,
+    "back_table_bert_groups_compared": 126,
+    "back_table_bert_min_f1": 0.0170619897544384,
+    "back_table_bert_mean_f1": 0.9573393612804394,
+    "back_table_bert_min_precision": 0.008357184939086437,
+    "back_table_bert_mean_precision": 0.9583838581669307,
+    "back_table_bert_min_recall": 0.004888739436864853,
+    "back_table_bert_mean_recall": 0.9562987773605283,
+    "back_table_similarity_examples": [
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.6134716486537978,
+        "source": "Sheboygan, Wisconsin",
+        "back_translated": "Red Skins, wisconsin"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.7436084153691005,
+        "source": "Win%",
+        "back_translated": "win"
+      },
+      {
+        "row": 15,
+        "column": 1,
+        "score": 0.7494207239044225,
+        "source": "Washington, D.C.",
+        "back_translated": "Washington, Washington, Columbia County"
+      },
+      {
+        "row": 16,
+        "column": 1,
+        "score": 0.7712999825039821,
+        "source": "Waterloo, Iowa",
+        "back_translated": "Hawks, Iowa"
+      },
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.7765489554915218,
+        "source": "Playoffs appearances",
+        "back_translated": "Play-off appearances"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

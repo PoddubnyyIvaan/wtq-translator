@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-828",
+  "source_context": "csv/204-csv/732.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-828.tsv",
+  "source_question": "which team had the most winners in the 1970s?",
+  "translated_question": "какая команда имела наибольшее количество победителей в 1970-х годах?",
+  "source_target_value": "Real Zaragoza",
+  "translated_target_value": "реал зарагоза",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "winners",
+      "normalized_text": "winner",
+      "start": 24,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Winners",
+      "match_type": "lemma",
+      "candidate_key": "3c4b332cc9a29485",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-828",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which team had the most winners in the 1970s?",
+    "translated_question": "какая команда имела наибольшее количество победителей в 1970-х годах?",
+    "back_translated_question": "which team had the highest number of winners in the 1970s?",
+    "question_cosine_similarity": 0.983130536047213,
+    "question_bert_precision": 0.925326406955719,
+    "question_bert_recall": 0.8267270922660828,
+    "question_bert_f1": 0.8752750754356384,
+    "back_table_groups_compared": 215,
+    "back_table_min_similarity": 0.43672300759975835,
+    "back_table_mean_similarity": 0.9821076723481954,
+    "back_table_bert_groups_compared": 215,
+    "back_table_bert_min_f1": -0.02937428466975689,
+    "back_table_bert_mean_f1": 0.9110098494260117,
+    "back_table_bert_min_precision": 0.03270009905099869,
+    "back_table_bert_mean_precision": 0.9123118724587351,
+    "back_table_bert_min_recall": -0.09008964151144028,
+    "back_table_bert_mean_recall": 0.9096021861184475,
+    "back_table_similarity_examples": [
+      {
+        "row": 16,
+        "column": 2,
+        "score": 0.43672300759975835,
+        "source": "Checoslovaquia",
+        "back_translated": "Czechoslovakia"
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.5548905748215621,
+        "source": "FK Vojvodina",
+        "back_translated": "górnik zabrze"
+      },
+      {
+        "row": 26,
+        "column": 1,
+        "score": 0.6733039082194429,
+        "source": "Società Sportiva Lazio",
+        "back_translated": "sporting association livorno calcio"
+      },
+      {
+        "row": 38,
+        "column": 1,
+        "score": 0.6733039082194429,
+        "source": "Società Sportiva Lazio",
+        "back_translated": "sporting association livorno calcio"
+      },
+      {
+        "row": 10,
+        "column": 3,
+        "score": 0.7629698674736768,
+        "source": "Tisza Volán SC",
+        "back_translated": "tiszavölgyi sc"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

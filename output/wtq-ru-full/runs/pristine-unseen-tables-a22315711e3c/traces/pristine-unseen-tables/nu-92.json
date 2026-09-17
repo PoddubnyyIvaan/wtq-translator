@@ -1,0 +1,124 @@
+{
+  "question_id": "nu-92",
+  "source_context": "csv/204-csv/509.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-92.tsv",
+  "source_question": "did brazil and the united states have the highest gold count?",
+  "translated_question": "имели ли Бразилия и Соединённые Штаты самый высокий Золото?",
+  "source_target_value": "Yes",
+  "translated_target_value": "Да",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "brazil",
+      "normalized_text": "brazil",
+      "start": 4,
+      "end": 10,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Brazil",
+      "match_type": "lemma",
+      "candidate_key": "e258852b78ff3d59",
+      "coordinate": {
+        "row": 0,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "united states",
+      "normalized_text": "united states",
+      "start": 19,
+      "end": 32,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        }
+      ],
+      "table_source_text": "United States",
+      "match_type": "lemma",
+      "candidate_key": "f34072dfe9b85b2f",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "gold",
+      "normalized_text": "gold",
+      "start": 50,
+      "end": 54,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Gold",
+      "match_type": "lemma",
+      "candidate_key": "a0cd6acd826af7e6",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-92",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "did brazil and the united states have the highest gold count?",
+    "translated_question": "имели ли Бразилия и Соединённые Штаты самый высокий Золото?",
+    "back_translated_question": "did brazil and united states have the highest gold?",
+    "question_cosine_similarity": 0.9787241437712021,
+    "question_bert_precision": 0.8313011527061462,
+    "question_bert_recall": 0.8950525522232056,
+    "question_bert_f1": 0.8629934787750244,
+    "back_table_groups_compared": 78,
+    "back_table_min_similarity": 1.0,
+    "back_table_mean_similarity": 1.0,
+    "back_table_bert_groups_compared": 78,
+    "back_table_bert_min_f1": 1.0,
+    "back_table_bert_mean_f1": 1.0,
+    "back_table_bert_min_precision": 1.0,
+    "back_table_bert_mean_precision": 1.0,
+    "back_table_bert_min_recall": 1.0,
+    "back_table_bert_mean_recall": 1.0,
+    "back_table_similarity_examples": [],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "Olympic Games medal standings"
+  },
+  "domain": "Olympic Games medal standings"
+}

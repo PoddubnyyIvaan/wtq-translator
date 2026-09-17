@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-117",
+  "source_context": "csv/204-csv/83.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-117.tsv",
+  "source_question": "what is the first name on the chart?",
+  "translated_question": "какое первое Название в чарте?",
+  "source_target_value": "Joel Smith",
+  "translated_target_value": "Джоэл Смит",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "name",
+      "normalized_text": "name",
+      "start": 18,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Name",
+      "match_type": "lemma",
+      "candidate_key": "e6c93b05bbd9808e",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-117",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the first name on the chart?",
+    "translated_question": "какое первое Название в чарте?",
+    "back_translated_question": "what is the first name in the chart?",
+    "question_cosine_similarity": 0.9930988856828706,
+    "question_bert_precision": 0.9697886109352112,
+    "question_bert_recall": 0.9697927832603455,
+    "question_bert_f1": 0.9698364734649658,
+    "back_table_groups_compared": 104,
+    "back_table_min_similarity": 0.5167503641664143,
+    "back_table_mean_similarity": 0.9258426960957716,
+    "back_table_bert_groups_compared": 104,
+    "back_table_bert_min_f1": 0.25232845544815063,
+    "back_table_bert_mean_f1": 0.823140795987386,
+    "back_table_bert_min_precision": 0.21025894582271576,
+    "back_table_bert_mean_precision": 0.8168891055079607,
+    "back_table_bert_min_recall": 0.293894499540329,
+    "back_table_bert_mean_recall": 0.8298770289581555,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.5167503641664143,
+        "source": "C",
+        "back_translated": "S."
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "score": 0.5167503641664143,
+        "source": "C",
+        "back_translated": "S."
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.5860290230262887,
+        "source": "G",
+        "back_translated": "superg"
+      },
+      {
+        "row": 1,
+        "column": 4,
+        "score": 0.5860290230262887,
+        "source": "G",
+        "back_translated": "superg"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

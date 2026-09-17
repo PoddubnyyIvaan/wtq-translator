@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-157",
+  "source_context": "csv/203-csv/659.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-157.tsv",
+  "source_question": "how many drivers earned more than 2 points at the 2003 grand prix of monterey?",
+  "translated_question": "сколько гонщиков заработали более 2 очков на гран-при 2003 года в монтерее?",
+  "source_target_value": "10",
+  "translated_target_value": "10",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "drivers",
+      "normalized_text": "driver",
+      "start": 9,
+      "end": 16,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Driver",
+      "match_type": "lemma",
+      "candidate_key": "c23f14e130c93c60",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "points",
+      "normalized_text": "point",
+      "start": 36,
+      "end": 42,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "Points",
+      "match_type": "lemma",
+      "candidate_key": "f5693817bfd73418",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-157",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many drivers earned more than 2 points at the 2003 grand prix of monterey?",
+    "translated_question": "сколько гонщиков заработали более 2 очков на гран-при 2003 года в монтерее?",
+    "back_translated_question": "how many drivers earned more than 2 points at the 2003 Montreal Grand Prix?",
+    "question_cosine_similarity": 0.9544795998364588,
+    "question_bert_precision": 0.7274945378303528,
+    "question_bert_recall": 0.8331041932106018,
+    "question_bert_f1": 0.7795220017433167,
+    "back_table_groups_compared": 160,
+    "back_table_min_similarity": 0.446014709941833,
+    "back_table_mean_similarity": 0.9728707966198445,
+    "back_table_bert_groups_compared": 160,
+    "back_table_bert_min_f1": 0.17381061613559723,
+    "back_table_bert_mean_f1": 0.9488019459880889,
+    "back_table_bert_min_precision": 0.2493084967136383,
+    "back_table_bert_mean_precision": 0.9510033503174782,
+    "back_table_bert_min_recall": 0.015675777569413185,
+    "back_table_bert_mean_recall": 0.9467375129112042,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.446014709941833,
+        "source": "Grid",
+        "back_translated": "starting position"
+      },
+      {
+        "row": 10,
+        "column": 2,
+        "score": 0.5282411235755793,
+        "source": "Bryan Herta",
+        "back_translated": "Brian Herda"
+      },
+      {
+        "row": 15,
+        "column": 2,
+        "score": 0.5763144934138226,
+        "source": "Geoff Boss",
+        "back_translated": "Jiff Boss"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6516287106830229,
+        "source": "Time/Retired",
+        "back_translated": "time/Withdrew"
+      },
+      {
+        "row": null,
+        "column": 7,
+        "score": 0.6799598120984767,
+        "source": "Points",
+        "back_translated": "uci protour points"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "auto racing"
+  },
+  "domain": "auto racing"
+}

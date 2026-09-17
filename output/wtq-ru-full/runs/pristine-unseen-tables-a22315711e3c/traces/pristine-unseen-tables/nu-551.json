@@ -1,0 +1,190 @@
+{
+  "question_id": "nu-551",
+  "source_context": "csv/203-csv/556.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-551.tsv",
+  "source_question": "besides world junior championships 2006, what other competition was held in beijing, china?",
+  "translated_question": "помимо чемпионата мира среди юниоров 2006, какое ещё соревнование прошло в Пекине, Китае?",
+  "source_target_value": "Olympic Games",
+  "translated_target_value": "Олимпийские игры",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "world junior championships",
+      "normalized_text": "world junior championships",
+      "start": 8,
+      "end": 34,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        }
+      ],
+      "table_source_text": "World Junior Championships",
+      "match_type": "lemma",
+      "candidate_key": "98faf66b996433da",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "competition",
+      "normalized_text": "competition",
+      "start": 52,
+      "end": 63,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Competition",
+      "match_type": "lemma",
+      "candidate_key": "0509839ddc683373",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "beijing",
+      "normalized_text": "beijing",
+      "start": 76,
+      "end": 83,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Beijing",
+      "match_type": "lemma",
+      "candidate_key": "0fa20484fb7eeeb1",
+      "coordinate": {
+        "row": 1,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "china",
+      "normalized_text": "china",
+      "start": 85,
+      "end": 90,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        }
+      ],
+      "table_source_text": "China",
+      "match_type": "lemma",
+      "candidate_key": "f0d8aed6d33f50b8",
+      "coordinate": {
+        "row": 1,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-551",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "besides world junior championships 2006, what other competition was held in beijing, china?",
+    "translated_question": "помимо чемпионата мира среди юниоров 2006, какое ещё соревнование прошло в Пекине, Китае?",
+    "back_translated_question": "Besides the world junior championships 2006, what other competition took place in beijing, china?",
+    "question_cosine_similarity": 0.9957190836232932,
+    "question_bert_precision": 0.8693184852600098,
+    "question_bert_recall": 0.8722270727157593,
+    "question_bert_f1": 0.8709678649902344,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9492236608566806,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.37352320551872253,
+    "back_table_bert_mean_f1": 0.9443066870172818,
+    "back_table_bert_min_precision": 0.38896939158439636,
+    "back_table_bert_mean_precision": 0.9469534680247307,
+    "back_table_bert_min_recall": 0.35643258690834045,
+    "back_table_bert_mean_recall": 0.9415873274207115,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.7784058669933891,
+        "source": "5.80 m",
+        "back_translated": "5,80 м"
+      },
+      {
+        "row": 6,
+        "column": 4,
+        "score": 0.7800640732257185,
+        "source": "5.65 m",
+        "back_translated": "5,65 м"
+      },
+      {
+        "row": 8,
+        "column": 4,
+        "score": 0.7800640732257185,
+        "source": "5.65 m",
+        "back_translated": "5,65 м"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.7842397704381651,
+        "source": "5.60 m",
+        "back_translated": "5,60 м"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

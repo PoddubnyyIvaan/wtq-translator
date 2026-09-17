@@ -1,0 +1,182 @@
+{
+  "question_id": "nu-288",
+  "source_context": "csv/202-csv/175.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-288.tsv",
+  "source_question": "which church name does not have the name of the parish in its name?",
+  "translated_question": "какое название церкви не имеет названия прихода в своем названии?",
+  "source_target_value": "Bamberg Church",
+  "translated_target_value": "Церковь Бамберг",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "church name",
+      "normalized_text": "church name",
+      "start": 6,
+      "end": 17,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Church name",
+      "match_type": "lemma",
+      "candidate_key": "76cce81e96f21ee9",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "name",
+      "normalized_text": "name",
+      "start": 36,
+      "end": 40,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "name",
+      "match_type": "lemma",
+      "candidate_key": "830441dc9536c546",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "parish",
+      "normalized_text": "parish",
+      "start": 48,
+      "end": 54,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Parish",
+      "match_type": "lemma",
+      "candidate_key": "599d443e096dd727",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "name",
+      "normalized_text": "name",
+      "start": 62,
+      "end": 66,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "name",
+      "match_type": "lemma",
+      "candidate_key": "830441dc9536c546",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-288",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which church name does not have the name of the parish in its name?",
+    "translated_question": "какое название церкви не имеет названия прихода в своем названии?",
+    "back_translated_question": "which church name does not have a name parish in its name?",
+    "question_cosine_similarity": 0.9744628973601934,
+    "question_bert_precision": 0.8086719512939453,
+    "question_bert_recall": 0.8716491460800171,
+    "question_bert_f1": 0.8400179743766785,
+    "back_table_groups_compared": 36,
+    "back_table_min_similarity": 0.5447883079981254,
+    "back_table_mean_similarity": 0.9429756200304187,
+    "back_table_bert_groups_compared": 36,
+    "back_table_bert_min_f1": 0.5309640765190125,
+    "back_table_bert_mean_f1": 0.9046115395095613,
+    "back_table_bert_min_precision": 0.5302199125289917,
+    "back_table_bert_mean_precision": 0.9060839729176627,
+    "back_table_bert_min_recall": 0.5302848219871521,
+    "back_table_bert_mean_recall": 0.9028863145245446,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.5447883079981254,
+        "source": "Ekne",
+        "back_translated": "Egne"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.5447883079981254,
+        "source": "Ekne",
+        "back_translated": "Egne"
+      },
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.7005943509957349,
+        "source": "Ytterøy",
+        "back_translated": "Jotterø"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.7095910332084964,
+        "source": "Ekne Church",
+        "back_translated": "Egne Church"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7924718854474643,
+        "source": "Ytterøy Church",
+        "back_translated": "Jotterø Church"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "churches and religious buildings"
+  },
+  "domain": "churches and religious buildings"
+}

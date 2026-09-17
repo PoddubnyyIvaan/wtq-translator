@@ -1,0 +1,178 @@
+{
+  "question_id": "nu-861",
+  "source_context": "csv/203-csv/342.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-861.tsv",
+  "source_question": "how many times did the tournament occur in italy before 2008?",
+  "translated_question": "сколько раз турнир проходил в Италии до 2008 года?",
+  "source_target_value": "6",
+  "translated_target_value": "6.",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "tournament",
+      "normalized_text": "tournament",
+      "start": 23,
+      "end": 33,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Tournament",
+      "match_type": "lemma",
+      "candidate_key": "7fbca8233a522ad6",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "italy",
+      "normalized_text": "italy",
+      "start": 43,
+      "end": 48,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 3,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        },
+        {
+          "row": 9,
+          "column": 3
+        },
+        {
+          "row": 12,
+          "column": 3
+        },
+        {
+          "row": 13,
+          "column": 3
+        },
+        {
+          "row": 14,
+          "column": 3
+        },
+        {
+          "row": 15,
+          "column": 3
+        },
+        {
+          "row": 16,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Italy",
+      "match_type": "lemma",
+      "candidate_key": "cf2637f2cb798e67",
+      "coordinate": {
+        "row": 0,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-861",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many times did the tournament occur in italy before 2008?",
+    "translated_question": "сколько раз турнир проходил в Италии до 2008 года?",
+    "back_translated_question": "how many times did the tournament take place in Italy before 2008?",
+    "question_cosine_similarity": 0.9888219772062555,
+    "question_bert_precision": 0.7522349953651428,
+    "question_bert_recall": 0.7916885018348694,
+    "question_bert_f1": 0.772152841091156,
+    "back_table_groups_compared": 133,
+    "back_table_min_similarity": 0.4309847933066142,
+    "back_table_mean_similarity": 0.9426769426883334,
+    "back_table_bert_groups_compared": 133,
+    "back_table_bert_min_f1": 0.19657540321350098,
+    "back_table_bert_mean_f1": 0.8065004254642286,
+    "back_table_bert_min_precision": 0.17932358384132385,
+    "back_table_bert_mean_precision": 0.8117581570058837,
+    "back_table_bert_min_recall": 0.2116578221321106,
+    "back_table_bert_mean_recall": 0.8009354297379802,
+    "back_table_similarity_examples": [
+      {
+        "row": 14,
+        "column": 5,
+        "score": 0.4309847933066142,
+        "source": "Laura Thorpe",
+        "back_translated": "Lora Torp"
+      },
+      {
+        "row": 5,
+        "column": 5,
+        "score": 0.49705021895489804,
+        "source": "Naomi Cavaday",
+        "back_translated": "Noami Kavadei"
+      },
+      {
+        "row": 9,
+        "column": 5,
+        "score": 0.6825987631489789,
+        "source": "Anastasia Grymalska",
+        "back_translated": "Anastasija Grimalská"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

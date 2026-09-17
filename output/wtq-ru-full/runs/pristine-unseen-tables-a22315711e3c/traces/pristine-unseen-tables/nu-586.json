@@ -1,0 +1,112 @@
+{
+  "question_id": "nu-586",
+  "source_context": "csv/204-csv/264.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-586.tsv",
+  "source_question": "are the dates in a consecutive order?",
+  "translated_question": "находятся ли даты в последовательном порядке?",
+  "source_target_value": "yes",
+  "translated_target_value": "да",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "dates",
+      "normalized_text": "date",
+      "start": 8,
+      "end": 13,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Date",
+      "match_type": "lemma",
+      "candidate_key": "58930d017d1af3c4",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-586",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "are the dates in a consecutive order?",
+    "translated_question": "находятся ли даты в последовательном порядке?",
+    "back_translated_question": "are dates in sequential order?",
+    "question_cosine_similarity": 0.9089058655868018,
+    "question_bert_precision": 0.6689501404762268,
+    "question_bert_recall": 0.6141172647476196,
+    "question_bert_f1": 0.6417562961578369,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.9012403029802833,
+    "back_table_mean_similarity": 0.9860643135282435,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.1999589204788208,
+    "back_table_bert_mean_f1": 0.9244945029417674,
+    "back_table_bert_min_precision": 0.25794121623039246,
+    "back_table_bert_mean_precision": 0.9279265746474266,
+    "back_table_bert_min_recall": 0.1430068463087082,
+    "back_table_bert_mean_recall": 0.9209418085714182,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 0,
+        "score": 0.9012403029802833,
+        "source": "12 October",
+        "back_translated": "October 12"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.9094666913628959,
+        "source": "4 October",
+        "back_translated": "October 4"
+      },
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.9146198805512685,
+        "source": "6 October",
+        "back_translated": "october 6"
+      },
+      {
+        "row": 7,
+        "column": 0,
+        "score": 0.9216375228700152,
+        "source": "8 October",
+        "back_translated": "October 8"
+      },
+      {
+        "row": 10,
+        "column": 0,
+        "score": 0.921760935134077,
+        "source": "18 October",
+        "back_translated": "October 18"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

@@ -1,0 +1,866 @@
+{
+  "question_id": "nu-514",
+  "source_context": "csv/204-csv/444.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-514.tsv",
+  "source_question": "how many table dancers were evicted?",
+  "translated_question": "сколько танцоров на столе было исключено?",
+  "source_target_value": "1",
+  "translated_target_value": "1",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "table dancers",
+      "normalized_text": "table dancer",
+      "start": 9,
+      "end": 22,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 17,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Table Dancer",
+      "match_type": "lemma",
+      "candidate_key": "2c049ad3c1b1eb12",
+      "coordinate": {
+        "row": 17,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "evicted",
+      "normalized_text": "evict",
+      "start": 28,
+      "end": 35,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 3,
+          "column": 5
+        },
+        {
+          "row": 4,
+          "column": 5
+        },
+        {
+          "row": 5,
+          "column": 5
+        },
+        {
+          "row": 6,
+          "column": 5
+        },
+        {
+          "row": 8,
+          "column": 5
+        },
+        {
+          "row": 9,
+          "column": 5
+        },
+        {
+          "row": 10,
+          "column": 5
+        },
+        {
+          "row": 14,
+          "column": 5
+        },
+        {
+          "row": 15,
+          "column": 5
+        },
+        {
+          "row": 16,
+          "column": 5
+        },
+        {
+          "row": 17,
+          "column": 5
+        },
+        {
+          "row": 18,
+          "column": 5
+        },
+        {
+          "row": 19,
+          "column": 5
+        },
+        {
+          "row": 20,
+          "column": 5
+        },
+        {
+          "row": 21,
+          "column": 5
+        },
+        {
+          "row": 25,
+          "column": 5
+        },
+        {
+          "row": 26,
+          "column": 5
+        },
+        {
+          "row": 27,
+          "column": 5
+        },
+        {
+          "row": 28,
+          "column": 5
+        },
+        {
+          "row": 29,
+          "column": 5
+        },
+        {
+          "row": 30,
+          "column": 5
+        },
+        {
+          "row": 31,
+          "column": 5
+        },
+        {
+          "row": 33,
+          "column": 5
+        },
+        {
+          "row": 34,
+          "column": 5
+        },
+        {
+          "row": 39,
+          "column": 5
+        },
+        {
+          "row": 40,
+          "column": 5
+        },
+        {
+          "row": 41,
+          "column": 5
+        },
+        {
+          "row": 42,
+          "column": 5
+        },
+        {
+          "row": 43,
+          "column": 5
+        },
+        {
+          "row": 44,
+          "column": 5
+        },
+        {
+          "row": 45,
+          "column": 5
+        },
+        {
+          "row": 46,
+          "column": 5
+        },
+        {
+          "row": 47,
+          "column": 5
+        },
+        {
+          "row": 48,
+          "column": 5
+        },
+        {
+          "row": 52,
+          "column": 5
+        },
+        {
+          "row": 53,
+          "column": 5
+        },
+        {
+          "row": 54,
+          "column": 5
+        },
+        {
+          "row": 55,
+          "column": 5
+        },
+        {
+          "row": 56,
+          "column": 5
+        },
+        {
+          "row": 57,
+          "column": 5
+        },
+        {
+          "row": 58,
+          "column": 5
+        },
+        {
+          "row": 59,
+          "column": 5
+        },
+        {
+          "row": 65,
+          "column": 5
+        },
+        {
+          "row": 66,
+          "column": 5
+        },
+        {
+          "row": 67,
+          "column": 5
+        },
+        {
+          "row": 69,
+          "column": 5
+        },
+        {
+          "row": 70,
+          "column": 5
+        },
+        {
+          "row": 71,
+          "column": 5
+        },
+        {
+          "row": 72,
+          "column": 5
+        },
+        {
+          "row": 73,
+          "column": 5
+        },
+        {
+          "row": 74,
+          "column": 5
+        },
+        {
+          "row": 75,
+          "column": 5
+        },
+        {
+          "row": 76,
+          "column": 5
+        },
+        {
+          "row": 77,
+          "column": 5
+        },
+        {
+          "row": 81,
+          "column": 5
+        },
+        {
+          "row": 82,
+          "column": 5
+        },
+        {
+          "row": 83,
+          "column": 5
+        },
+        {
+          "row": 84,
+          "column": 5
+        },
+        {
+          "row": 85,
+          "column": 5
+        },
+        {
+          "row": 86,
+          "column": 5
+        },
+        {
+          "row": 87,
+          "column": 5
+        },
+        {
+          "row": 88,
+          "column": 5
+        },
+        {
+          "row": 89,
+          "column": 5
+        },
+        {
+          "row": 90,
+          "column": 5
+        },
+        {
+          "row": 91,
+          "column": 5
+        },
+        {
+          "row": 92,
+          "column": 5
+        },
+        {
+          "row": 93,
+          "column": 5
+        },
+        {
+          "row": 94,
+          "column": 5
+        },
+        {
+          "row": 95,
+          "column": 5
+        },
+        {
+          "row": 97,
+          "column": 5
+        },
+        {
+          "row": 104,
+          "column": 5
+        },
+        {
+          "row": 105,
+          "column": 5
+        },
+        {
+          "row": 106,
+          "column": 5
+        },
+        {
+          "row": 107,
+          "column": 5
+        },
+        {
+          "row": 108,
+          "column": 5
+        },
+        {
+          "row": 109,
+          "column": 5
+        },
+        {
+          "row": 110,
+          "column": 5
+        },
+        {
+          "row": 111,
+          "column": 5
+        },
+        {
+          "row": 112,
+          "column": 5
+        },
+        {
+          "row": 114,
+          "column": 5
+        },
+        {
+          "row": 115,
+          "column": 5
+        },
+        {
+          "row": 116,
+          "column": 5
+        },
+        {
+          "row": 118,
+          "column": 5
+        },
+        {
+          "row": 119,
+          "column": 5
+        },
+        {
+          "row": 120,
+          "column": 5
+        },
+        {
+          "row": 126,
+          "column": 5
+        },
+        {
+          "row": 127,
+          "column": 5
+        },
+        {
+          "row": 128,
+          "column": 5
+        },
+        {
+          "row": 129,
+          "column": 5
+        },
+        {
+          "row": 130,
+          "column": 5
+        },
+        {
+          "row": 131,
+          "column": 5
+        },
+        {
+          "row": 132,
+          "column": 5
+        },
+        {
+          "row": 133,
+          "column": 5
+        },
+        {
+          "row": 134,
+          "column": 5
+        },
+        {
+          "row": 136,
+          "column": 5
+        },
+        {
+          "row": 137,
+          "column": 5
+        },
+        {
+          "row": 138,
+          "column": 5
+        },
+        {
+          "row": 139,
+          "column": 5
+        },
+        {
+          "row": 140,
+          "column": 5
+        },
+        {
+          "row": 143,
+          "column": 5
+        },
+        {
+          "row": 147,
+          "column": 5
+        },
+        {
+          "row": 148,
+          "column": 5
+        },
+        {
+          "row": 149,
+          "column": 5
+        },
+        {
+          "row": 150,
+          "column": 5
+        },
+        {
+          "row": 151,
+          "column": 5
+        },
+        {
+          "row": 152,
+          "column": 5
+        },
+        {
+          "row": 153,
+          "column": 5
+        },
+        {
+          "row": 155,
+          "column": 5
+        },
+        {
+          "row": 158,
+          "column": 5
+        },
+        {
+          "row": 159,
+          "column": 5
+        },
+        {
+          "row": 160,
+          "column": 5
+        },
+        {
+          "row": 161,
+          "column": 5
+        },
+        {
+          "row": 162,
+          "column": 5
+        },
+        {
+          "row": 163,
+          "column": 5
+        },
+        {
+          "row": 165,
+          "column": 5
+        },
+        {
+          "row": 169,
+          "column": 5
+        },
+        {
+          "row": 170,
+          "column": 5
+        },
+        {
+          "row": 171,
+          "column": 5
+        },
+        {
+          "row": 172,
+          "column": 5
+        },
+        {
+          "row": 173,
+          "column": 5
+        },
+        {
+          "row": 174,
+          "column": 5
+        },
+        {
+          "row": 175,
+          "column": 5
+        },
+        {
+          "row": 176,
+          "column": 5
+        },
+        {
+          "row": 177,
+          "column": 5
+        },
+        {
+          "row": 181,
+          "column": 5
+        },
+        {
+          "row": 182,
+          "column": 5
+        },
+        {
+          "row": 184,
+          "column": 5
+        },
+        {
+          "row": 185,
+          "column": 5
+        },
+        {
+          "row": 186,
+          "column": 5
+        },
+        {
+          "row": 190,
+          "column": 5
+        },
+        {
+          "row": 191,
+          "column": 5
+        },
+        {
+          "row": 192,
+          "column": 5
+        },
+        {
+          "row": 193,
+          "column": 5
+        },
+        {
+          "row": 195,
+          "column": 5
+        },
+        {
+          "row": 196,
+          "column": 5
+        },
+        {
+          "row": 197,
+          "column": 5
+        },
+        {
+          "row": 199,
+          "column": 5
+        },
+        {
+          "row": 200,
+          "column": 5
+        },
+        {
+          "row": 201,
+          "column": 5
+        },
+        {
+          "row": 205,
+          "column": 5
+        },
+        {
+          "row": 206,
+          "column": 5
+        },
+        {
+          "row": 207,
+          "column": 5
+        },
+        {
+          "row": 208,
+          "column": 5
+        },
+        {
+          "row": 210,
+          "column": 5
+        },
+        {
+          "row": 211,
+          "column": 5
+        },
+        {
+          "row": 212,
+          "column": 5
+        },
+        {
+          "row": 213,
+          "column": 5
+        },
+        {
+          "row": 214,
+          "column": 5
+        },
+        {
+          "row": 215,
+          "column": 5
+        },
+        {
+          "row": 216,
+          "column": 5
+        },
+        {
+          "row": 217,
+          "column": 5
+        },
+        {
+          "row": 218,
+          "column": 5
+        },
+        {
+          "row": 222,
+          "column": 5
+        },
+        {
+          "row": 223,
+          "column": 5
+        },
+        {
+          "row": 224,
+          "column": 5
+        },
+        {
+          "row": 225,
+          "column": 5
+        },
+        {
+          "row": 226,
+          "column": 5
+        },
+        {
+          "row": 227,
+          "column": 5
+        },
+        {
+          "row": 228,
+          "column": 5
+        },
+        {
+          "row": 230,
+          "column": 5
+        },
+        {
+          "row": 231,
+          "column": 5
+        },
+        {
+          "row": 232,
+          "column": 5
+        },
+        {
+          "row": 236,
+          "column": 5
+        },
+        {
+          "row": 237,
+          "column": 5
+        },
+        {
+          "row": 239,
+          "column": 5
+        },
+        {
+          "row": 240,
+          "column": 5
+        },
+        {
+          "row": 244,
+          "column": 5
+        },
+        {
+          "row": 245,
+          "column": 5
+        },
+        {
+          "row": 246,
+          "column": 5
+        },
+        {
+          "row": 247,
+          "column": 5
+        },
+        {
+          "row": 248,
+          "column": 5
+        },
+        {
+          "row": 249,
+          "column": 5
+        },
+        {
+          "row": 250,
+          "column": 5
+        },
+        {
+          "row": 251,
+          "column": 5
+        },
+        {
+          "row": 252,
+          "column": 5
+        },
+        {
+          "row": 266,
+          "column": 5
+        },
+        {
+          "row": 267,
+          "column": 5
+        },
+        {
+          "row": 268,
+          "column": 5
+        },
+        {
+          "row": 269,
+          "column": 5
+        },
+        {
+          "row": 270,
+          "column": 5
+        },
+        {
+          "row": 271,
+          "column": 5
+        },
+        {
+          "row": 272,
+          "column": 5
+        },
+        {
+          "row": 273,
+          "column": 5
+        },
+        {
+          "row": 275,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Evicted",
+      "match_type": "lemma",
+      "candidate_key": "221c468d914f06ed",
+      "coordinate": {
+        "row": 3,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-514",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many table dancers were evicted?",
+    "translated_question": "сколько танцоров на столе было исключено?",
+    "back_translated_question": "how many table dancers were evicted?",
+    "question_cosine_similarity": 1.0000000000000002,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 1668,
+    "back_table_min_similarity": 0.3766451280223605,
+    "back_table_mean_similarity": 0.9152638490857649,
+    "back_table_bert_groups_compared": 1668,
+    "back_table_bert_min_f1": 0.040446553379297256,
+    "back_table_bert_mean_f1": 0.8774096955806553,
+    "back_table_bert_min_precision": 0.09381462633609772,
+    "back_table_bert_mean_precision": 0.8735385305098564,
+    "back_table_bert_min_recall": -0.012597862631082535,
+    "back_table_bert_mean_recall": 0.8814177967013894,
+    "back_table_similarity_examples": [
+      {
+        "row": 92,
+        "column": 4,
+        "score": 0.3766451280223605,
+        "source": "Upholsterer",
+        "back_translated": "nail technician"
+      },
+      {
+        "row": 232,
+        "column": 1,
+        "score": 0.4514494439886028,
+        "source": "Sallie Axl",
+        "back_translated": "Sally Axel"
+      },
+      {
+        "row": 94,
+        "column": 3,
+        "score": 0.4557772239447145,
+        "source": "Ayr",
+        "back_translated": "Airdrie"
+      },
+      {
+        "row": 111,
+        "column": 3,
+        "score": 0.4557772239447145,
+        "source": "Ayr",
+        "back_translated": "Airdrie"
+      },
+      {
+        "row": 63,
+        "column": 3,
+        "score": 0.45997227721572953,
+        "source": "Crawley",
+        "back_translated": "Crowley"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "reality television competition participants"
+  },
+  "domain": "reality television competition participants"
+}

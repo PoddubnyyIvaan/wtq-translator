@@ -1,0 +1,120 @@
+{
+  "question_id": "nu-720",
+  "source_context": "csv/203-csv/169.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-720.tsv",
+  "source_question": "what were the total number of routes that used interjet?",
+  "translated_question": "сколько всего маршрутов использовали Интерхет?",
+  "source_target_value": "7",
+  "translated_target_value": "7",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "interjet",
+      "normalized_text": "interjet",
+      "start": 47,
+      "end": 55,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 1,
+          "column": 4
+        },
+        {
+          "row": 2,
+          "column": 4
+        },
+        {
+          "row": 4,
+          "column": 4
+        },
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 6,
+          "column": 4
+        },
+        {
+          "row": 7,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Interjet",
+      "match_type": "lemma",
+      "candidate_key": "0f7b536d68763d87",
+      "coordinate": {
+        "row": 0,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-720",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what were the total number of routes that used interjet?",
+    "translated_question": "сколько всего маршрутов использовали Интерхет?",
+    "back_translated_question": "how many total routes did Interjet use?",
+    "question_cosine_similarity": 0.97489712089878,
+    "question_bert_precision": 0.49277830123901367,
+    "question_bert_recall": 0.6014803647994995,
+    "question_bert_f1": 0.5465183258056641,
+    "back_table_groups_compared": 55,
+    "back_table_min_similarity": 0.7058069357421436,
+    "back_table_mean_similarity": 0.987059172729318,
+    "back_table_bert_groups_compared": 55,
+    "back_table_bert_min_f1": 0.4694124460220337,
+    "back_table_bert_mean_f1": 0.9738059748302806,
+    "back_table_bert_min_precision": 0.3954390287399292,
+    "back_table_bert_mean_precision": 0.9720100749622692,
+    "back_table_bert_min_recall": 0.4914000332355499,
+    "back_table_bert_mean_recall": 0.9756605197082866,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.7058069357421436,
+        "source": "Ranking",
+        "back_translated": "Rating"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.7905742250275596,
+        "source": "Quintana Roo, Cancún",
+        "back_translated": "Cancún, Cancún"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7918733393427835,
+        "source": "Guerrero, Ixtapa/Zihuatanejo",
+        "back_translated": "Guerrero, Istapala/Ciudad Victoria"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "air travel and airport passenger statistics in Mexico"
+  },
+  "domain": "air travel and airport passenger statistics in Mexico"
+}

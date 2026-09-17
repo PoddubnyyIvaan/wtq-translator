@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-925",
+  "source_context": "csv/204-csv/424.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-925.tsv",
+  "source_question": "what is the total number of teams listed?",
+  "translated_question": "сколько всего команд перечислено?",
+  "source_target_value": "7",
+  "translated_target_value": "7",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "teams",
+      "normalized_text": "team",
+      "start": 28,
+      "end": 33,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        },
+        {
+          "row": 6,
+          "column": 2
+        },
+        {
+          "row": 7,
+          "column": 2
+        },
+        {
+          "row": 8,
+          "column": 2
+        },
+        {
+          "row": 9,
+          "column": 2
+        },
+        {
+          "row": 10,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-925",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the total number of teams listed?",
+    "translated_question": "сколько всего команд перечислено?",
+    "back_translated_question": "how many total teams are listed?",
+    "question_cosine_similarity": 0.9727712960948041,
+    "question_bert_precision": 0.5582695603370667,
+    "question_bert_recall": 0.6322969198226929,
+    "question_bert_f1": 0.5953081846237183,
+    "back_table_groups_compared": 130,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9771599851089585,
+    "back_table_bert_groups_compared": 130,
+    "back_table_bert_min_f1": 0.1738104522228241,
+    "back_table_bert_mean_f1": 0.9330911812873987,
+    "back_table_bert_min_precision": 0.2594989538192749,
+    "back_table_bert_mean_precision": 0.9380906795079892,
+    "back_table_bert_min_recall": 0.01567545346915722,
+    "back_table_bert_mean_recall": 0.9283818185186157,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 9,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.6014481639171946,
+        "source": "Champ Motorsports",
+        "back_translated": "krenek racing championship"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.6014481639171946,
+        "source": "Champ Motorsports",
+        "back_translated": "krenek racing championship"
+      },
+      {
+        "row": null,
+        "column": 8,
+        "score": 0.6799598120984767,
+        "source": "Points",
+        "back_translated": "uci protour points"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motorsport"
+  },
+  "domain": "motorsport"
+}

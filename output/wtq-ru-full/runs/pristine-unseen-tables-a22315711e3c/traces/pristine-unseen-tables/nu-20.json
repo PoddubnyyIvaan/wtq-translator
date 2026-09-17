@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-20",
+  "source_context": "csv/204-csv/758.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-20.tsv",
+  "source_question": "what was the number of times won on grass?",
+  "translated_question": "сколько раз было выиграно на траве?",
+  "source_target_value": "1",
+  "translated_target_value": "1.",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "grass",
+      "normalized_text": "grass",
+      "start": 36,
+      "end": 41,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Grass",
+      "match_type": "lemma",
+      "candidate_key": "b0475b0af5fd4b9f",
+      "coordinate": {
+        "row": 9,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-20",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the number of times won on grass?",
+    "translated_question": "сколько раз было выиграно на траве?",
+    "back_translated_question": "how many times was won on grass?",
+    "question_cosine_similarity": 0.969641401614776,
+    "question_bert_precision": 0.561779260635376,
+    "question_bert_recall": 0.6584863066673279,
+    "question_bert_f1": 0.6097249984741211,
+    "back_table_groups_compared": 147,
+    "back_table_min_similarity": 0.7184074951152332,
+    "back_table_mean_similarity": 0.9686534041631216,
+    "back_table_bert_groups_compared": 147,
+    "back_table_bert_min_f1": 0.19657540321350098,
+    "back_table_bert_mean_f1": 0.8898081452059908,
+    "back_table_bert_min_precision": 0.17932374775409698,
+    "back_table_bert_mean_precision": 0.8893880205495017,
+    "back_table_bert_min_recall": 0.1552579402923584,
+    "back_table_bert_mean_recall": 0.8900125754528305,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.7184074951152332,
+        "source": "Washington D.C., USA",
+        "back_translated": "Washington, Columbia County, USA"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 2,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      },
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.7448955309000596,
+        "source": "Runner-up",
+        "back_translated": "Race winner"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "tennis"
+  },
+  "domain": "tennis"
+}

@@ -1,0 +1,142 @@
+{
+  "question_id": "nu-728",
+  "source_context": "csv/203-csv/619.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-728.tsv",
+  "source_question": "how many us country chart positions were less than 40?",
+  "translated_question": "сколько стран стран чартов было меньше 40?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "country",
+      "normalized_text": "country",
+      "start": 12,
+      "end": 19,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": 11,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Country",
+      "match_type": "lemma",
+      "candidate_key": "54dbd10f2924b4b9",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "chart",
+      "normalized_text": "chart",
+      "start": 20,
+      "end": 25,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Chart",
+      "match_type": "lemma",
+      "candidate_key": "874be8844c935388",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-728",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many us country chart positions were less than 40?",
+    "translated_question": "сколько стран стран чартов было меньше 40?",
+    "back_translated_question": "how many countries country charts were less than 40?",
+    "question_cosine_similarity": 0.9237775888205295,
+    "question_bert_precision": 0.7824283838272095,
+    "question_bert_recall": 0.799436628818512,
+    "question_bert_f1": 0.7912211418151855,
+    "back_table_groups_compared": 85,
+    "back_table_min_similarity": 0.5587285518669272,
+    "back_table_mean_similarity": 0.9551197071589488,
+    "back_table_bert_groups_compared": 85,
+    "back_table_bert_min_f1": -0.04907483235001564,
+    "back_table_bert_mean_f1": 0.8448903587372864,
+    "back_table_bert_min_precision": -0.038507524877786636,
+    "back_table_bert_mean_precision": 0.8450993533081869,
+    "back_table_bert_min_recall": -0.06264723092317581,
+    "back_table_bert_mean_recall": 0.8445696606355555,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.5587285518669272,
+        "source": "That Ain't All",
+        "back_translated": "It's not over yet"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.6607077483107847,
+        "source": "You're the Guilty One",
+        "back_translated": "you're to blame"
+      },
+      {
+        "row": 11,
+        "column": 4,
+        "score": 0.6607788971114513,
+        "source": "Suburban Attitudes in Country Verse",
+        "back_translated": "Subjective views in country music"
+      },
+      {
+        "row": 13,
+        "column": 1,
+        "score": 0.6632638328091215,
+        "source": "Brown Girl",
+        "back_translated": "dark girl"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.7238532299338728,
+        "source": "Road Hog",
+        "back_translated": "dear hog"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music"
+  },
+  "domain": "music"
+}

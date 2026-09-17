@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-970",
+  "source_context": "csv/204-csv/367.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-970.tsv",
+  "source_question": "how many games were decided by only one goal?",
+  "translated_question": "сколько игр было решено всего одним голом?",
+  "source_target_value": "4",
+  "translated_target_value": "4",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-970",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "how many games were decided by only one goal?",
+    "translated_question": "сколько игр было решено всего одним голом?",
+    "back_translated_question": "how many games were decided by a single goal in total?",
+    "question_cosine_similarity": 0.9722766724438302,
+    "question_bert_precision": 0.8643655776977539,
+    "question_bert_recall": 0.74168461561203,
+    "question_bert_f1": 0.8018280863761902,
+    "back_table_groups_compared": 155,
+    "back_table_min_similarity": 0.47785378728078365,
+    "back_table_mean_similarity": 0.9571359215995998,
+    "back_table_bert_groups_compared": 155,
+    "back_table_bert_min_f1": -0.06707941740751266,
+    "back_table_bert_mean_f1": 0.8892210082181038,
+    "back_table_bert_min_precision": -0.03117072954773903,
+    "back_table_bert_mean_precision": 0.8954976379631027,
+    "back_table_bert_min_recall": -0.10458141565322876,
+    "back_table_bert_mean_recall": 0.8831118235664983,
+    "back_table_similarity_examples": [
+      {
+        "row": 15,
+        "column": 4,
+        "score": 0.47785378728078365,
+        "source": "Columbus, OH",
+        "back_translated": "Cumberland, OG"
+      },
+      {
+        "row": 25,
+        "column": 3,
+        "score": 0.5160258783569536,
+        "source": "Tie",
+        "back_translated": "link no."
+      },
+      {
+        "row": 20,
+        "column": 4,
+        "score": 0.6107090222659111,
+        "source": "Houghton, MI",
+        "back_translated": "Houton, MI"
+      },
+      {
+        "row": 21,
+        "column": 4,
+        "score": 0.6107090222659111,
+        "source": "Houghton, MI",
+        "back_translated": "Houton, MI"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7973282822056375,
+        "source": "Coliseum, Ann Arbor, MI",
+        "back_translated": "Colosseum, Ann Arbor, MI"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

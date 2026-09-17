@@ -1,0 +1,218 @@
+{
+  "question_id": "nu-164",
+  "source_context": "csv/204-csv/271.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-164.tsv",
+  "source_question": "how many titles were listed as having 3 acts and a prologue?",
+  "translated_question": "сколько названий были перечислены как имеющие 3 акта и пролог?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "titles",
+      "normalized_text": "title",
+      "start": 9,
+      "end": 15,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Title",
+      "match_type": "lemma",
+      "candidate_key": "ec15eaba72f5eb5f",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "3 acts",
+      "normalized_text": "3 act",
+      "start": 38,
+      "end": 44,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 1,
+          "column": 2
+        },
+        {
+          "row": 2,
+          "column": 2
+        },
+        {
+          "row": 3,
+          "column": 2
+        },
+        {
+          "row": 5,
+          "column": 2
+        },
+        {
+          "row": 6,
+          "column": 2
+        },
+        {
+          "row": 7,
+          "column": 2
+        },
+        {
+          "row": 9,
+          "column": 2
+        },
+        {
+          "row": 10,
+          "column": 2
+        },
+        {
+          "row": 12,
+          "column": 2
+        },
+        {
+          "row": 13,
+          "column": 2
+        },
+        {
+          "row": 14,
+          "column": 2
+        },
+        {
+          "row": 15,
+          "column": 2
+        },
+        {
+          "row": 16,
+          "column": 2
+        },
+        {
+          "row": 17,
+          "column": 2
+        }
+      ],
+      "table_source_text": "3 acts",
+      "match_type": "lemma",
+      "candidate_key": "a2dd187060e5c0d0",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "prologue",
+      "normalized_text": "prologue",
+      "start": 51,
+      "end": 59,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 2
+        },
+        {
+          "row": 8,
+          "column": 2
+        }
+      ],
+      "table_source_text": "prologue",
+      "match_type": "lemma",
+      "candidate_key": "5e5be13002f49f3d",
+      "coordinate": {
+        "row": 4,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-164",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many titles were listed as having 3 acts and a prologue?",
+    "translated_question": "сколько названий были перечислены как имеющие 3 акта и пролог?",
+    "back_translated_question": "how many titles were listed as having 3 acts and prologue?",
+    "question_cosine_similarity": 0.9977919830990924,
+    "question_bert_precision": 0.9265192747116089,
+    "question_bert_recall": 0.964503824710846,
+    "question_bert_f1": 0.9454602599143982,
+    "back_table_groups_compared": 114,
+    "back_table_min_similarity": 0.3745723295652565,
+    "back_table_mean_similarity": 0.8844642240464905,
+    "back_table_bert_groups_compared": 114,
+    "back_table_bert_min_f1": -0.06376431882381439,
+    "back_table_bert_mean_f1": 0.8036732604040911,
+    "back_table_bert_min_precision": -0.16958428919315338,
+    "back_table_bert_mean_precision": 0.8033737405284977,
+    "back_table_bert_min_recall": 0.05382909998297691,
+    "back_table_bert_mean_recall": 0.8040679470031408,
+    "back_table_similarity_examples": [
+      {
+        "row": 17,
+        "column": 1,
+        "score": 0.3745723295652565,
+        "source": "Das Flüchlein, das Jeder mitbekam",
+        "back_translated": "Little, everyone heard it"
+      },
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.3789660505975316,
+        "source": "Der Friedensengel",
+        "back_translated": "Angel of Peace"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.3847783929368929,
+        "source": "Der Heidenkönig",
+        "back_translated": "King of the Pagans"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.39038828192774705,
+        "source": "Der Bärenhäuter",
+        "back_translated": "Velvet Bear"
+      },
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.39699611987506683,
+        "source": "Die heilige Linde",
+        "back_translated": "Sacred Lime"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "opera"
+  },
+  "domain": "opera"
+}

@@ -1,0 +1,194 @@
+{
+  "question_id": "nu-892",
+  "source_context": "csv/203-csv/264.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-892.tsv",
+  "source_question": "list each of the models with diesel fuel produced from 1998-2001.",
+  "translated_question": "перечислите каждую из моделей, дизельное топливо, производившихся с 1998 по 2001 год.",
+  "source_target_value": "M57D30 turbocharged I6|M67D40 turbocharged V8",
+  "translated_target_value": "M57D30 турбодвигатель I6|M67D40 турбодвигатель V8",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "models",
+      "normalized_text": "model",
+      "start": 17,
+      "end": 23,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Model",
+      "match_type": "lemma",
+      "candidate_key": "662ce245db787fc7",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "diesel",
+      "normalized_text": "diesel",
+      "start": 29,
+      "end": 35,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 16,
+          "column": 3
+        },
+        {
+          "row": 17,
+          "column": 3
+        },
+        {
+          "row": 18,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Diesel",
+      "match_type": "lemma",
+      "candidate_key": "dffac5835e91cc0b",
+      "coordinate": {
+        "row": 16,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "fuel",
+      "normalized_text": "fuel",
+      "start": 36,
+      "end": 40,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Fuel",
+      "match_type": "lemma",
+      "candidate_key": "632cbac102a0bb90",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "produced",
+      "normalized_text": "produce",
+      "start": 41,
+      "end": 49,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        },
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "produced",
+      "match_type": "lemma",
+      "candidate_key": "a0606518b9685ae0",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-892",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "list each of the models with diesel fuel produced from 1998-2001.",
+    "translated_question": "перечислите каждую из моделей, дизельное топливо, производившихся с 1998 по 2001 год.",
+    "back_translated_question": "List each of the models that used diesel fuel and were produced between 1998 and 2001.",
+    "question_cosine_similarity": 0.9859587710062578,
+    "question_bert_precision": 0.7769899964332581,
+    "question_bert_recall": 0.6931475400924683,
+    "question_bert_f1": 0.734751284122467,
+    "back_table_groups_compared": 140,
+    "back_table_min_similarity": 0.45038279945530096,
+    "back_table_mean_similarity": 0.9699905377513023,
+    "back_table_bert_groups_compared": 140,
+    "back_table_bert_min_f1": 0.08891034871339798,
+    "back_table_bert_mean_f1": 0.8989791034055608,
+    "back_table_bert_min_precision": 0.12254980206489563,
+    "back_table_bert_mean_precision": 0.9021952675921576,
+    "back_table_bert_min_recall": 0.05382326990365982,
+    "back_table_bert_mean_recall": 0.8955632467887231,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.45038279945530096,
+        "source": "Volume",
+        "back_translated": "Tom"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.8191372758461305,
+        "source": "Petrol",
+        "back_translated": "Gasoline"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.8191372758461305,
+        "source": "Petrol",
+        "back_translated": "Gasoline"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.8191372758461305,
+        "source": "Petrol",
+        "back_translated": "Gasoline"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.8191372758461305,
+        "source": "Petrol",
+        "back_translated": "Gasoline"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "automotive"
+  },
+  "domain": "automotive"
+}

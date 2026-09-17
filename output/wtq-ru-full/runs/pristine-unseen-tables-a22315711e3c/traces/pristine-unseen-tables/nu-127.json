@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-127",
+  "source_context": "csv/203-csv/427.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-127.tsv",
+  "source_question": "last year a mf won?",
+  "translated_question": "в прошлом году ПЗ выиграл?",
+  "source_target_value": "2010-11",
+  "translated_target_value": "2010-11",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "mf",
+      "normalized_text": "mf",
+      "start": 12,
+      "end": 14,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 6,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 9,
+          "column": 3
+        },
+        {
+          "row": 11,
+          "column": 3
+        },
+        {
+          "row": 14,
+          "column": 3
+        }
+      ],
+      "table_source_text": "MF",
+      "match_type": "lemma",
+      "candidate_key": "47bc093fd2ab50fd",
+      "coordinate": {
+        "row": 2,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-127",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "last year a mf won?",
+    "translated_question": "в прошлом году ПЗ выиграл?",
+    "back_translated_question": "last year mf won?",
+    "question_cosine_similarity": 0.9808436220790568,
+    "question_bert_precision": 0.7968441247940063,
+    "question_bert_recall": 0.8633336424827576,
+    "question_bert_f1": 0.8299157619476318,
+    "back_table_groups_compared": 90,
+    "back_table_min_similarity": 0.37518454334814977,
+    "back_table_mean_similarity": 0.9199117763868558,
+    "back_table_bert_groups_compared": 90,
+    "back_table_bert_min_f1": 0.26527833938598633,
+    "back_table_bert_mean_f1": 0.9133155475060145,
+    "back_table_bert_min_precision": 0.253734290599823,
+    "back_table_bert_mean_precision": 0.9139102035098605,
+    "back_table_bert_min_recall": 0.27470123767852783,
+    "back_table_bert_mean_recall": 0.9125065988964505,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      },
+      {
+        "row": 13,
+        "column": 3,
+        "score": 0.37518454334814977,
+        "source": "FW",
+        "back_translated": "DF"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

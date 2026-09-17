@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-792",
+  "source_context": "csv/203-csv/297.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-792.tsv",
+  "source_question": "what was the first game to score more than 10 apps?",
+  "translated_question": "какая первая игра забила больше 10 игр?",
+  "source_target_value": "2008",
+  "translated_target_value": "2008",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "apps",
+      "normalized_text": "app",
+      "start": 46,
+      "end": 50,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Apps",
+      "match_type": "lemma",
+      "candidate_key": "7b1d1e901431a01e",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-792",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what was the first game to score more than 10 apps?",
+    "translated_question": "какая первая игра забила больше 10 игр?",
+    "back_translated_question": "which first game scored more than 10 apps?",
+    "question_cosine_similarity": 0.9678502962510864,
+    "question_bert_precision": 0.6315788626670837,
+    "question_bert_recall": 0.7633630037307739,
+    "question_bert_f1": 0.696139931678772,
+    "back_table_groups_compared": 72,
+    "back_table_min_similarity": 0.509869170335626,
+    "back_table_mean_similarity": 0.9681349303303496,
+    "back_table_bert_groups_compared": 72,
+    "back_table_bert_min_f1": 0.39655938744544983,
+    "back_table_bert_mean_f1": 0.9623800412648253,
+    "back_table_bert_min_precision": 0.42345285415649414,
+    "back_table_bert_mean_precision": 0.962190224064721,
+    "back_table_bert_min_recall": 0.3685532808303833,
+    "back_table_bert_mean_recall": 0.9624752427140871,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.509869170335626,
+        "source": "Apps",
+        "back_translated": "Games"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.7397374943770867,
+        "source": "Jiangsu Sainty",
+        "back_translated": "Jiangsu Suning"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7397374943770867,
+        "source": "Jiangsu Sainty",
+        "back_translated": "Jiangsu Suning"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.7397374943770867,
+        "source": "Jiangsu Sainty",
+        "back_translated": "Jiangsu Suning"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.7397374943770867,
+        "source": "Jiangsu Sainty",
+        "back_translated": "Jiangsu Suning"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-447",
+  "source_context": "csv/204-csv/305.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-447.tsv",
+  "source_question": "which team only had two drivers?",
+  "translated_question": "какая команда имела только двух гонщиков?",
+  "source_target_value": "Mücke Motorsport",
+  "translated_target_value": "Mücke Motorsport",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "team",
+      "normalized_text": "team",
+      "start": 6,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "drivers",
+      "normalized_text": "driver",
+      "start": 24,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Driver",
+      "match_type": "lemma",
+      "candidate_key": "c23f14e130c93c60",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-447",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which team only had two drivers?",
+    "translated_question": "какая команда имела только двух гонщиков?",
+    "back_translated_question": "which team had only two drivers?",
+    "question_cosine_similarity": 0.996770876989483,
+    "question_bert_precision": 0.923477053642273,
+    "question_bert_recall": 0.923487663269043,
+    "question_bert_f1": 0.9235982894897461,
+    "back_table_groups_compared": 100,
+    "back_table_min_similarity": 0.5556111664957207,
+    "back_table_mean_similarity": 0.9820562551475511,
+    "back_table_bert_groups_compared": 100,
+    "back_table_bert_min_f1": 0.5470148921012878,
+    "back_table_bert_mean_f1": 0.9742101746797561,
+    "back_table_bert_min_precision": 0.4900450110435486,
+    "back_table_bert_mean_precision": 0.9745347887277603,
+    "back_table_bert_min_recall": 0.6055430173873901,
+    "back_table_bert_mean_recall": 0.9738948571681977,
+    "back_table_similarity_examples": [
+      {
+        "row": 15,
+        "column": 2,
+        "score": 0.5556111664957207,
+        "source": "Marc Coleselli",
+        "back_translated": "Mark Couleselli"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.6742545136749287,
+        "source": "Petri Suvanto",
+        "back_translated": "Petri Suwanto"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7167693114658658,
+        "source": "Driver",
+        "back_translated": "Rider"
+      },
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.7619117866031185,
+        "source": "Robin Frijns",
+        "back_translated": "Robin Freyens"
+      },
+      {
+        "row": 14,
+        "column": 2,
+        "score": 0.8584344791214248,
+        "source": "Côme Ledogar",
+        "back_translated": "Kome Ledogar"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motorsport racing"
+  },
+  "domain": "motorsport racing"
+}

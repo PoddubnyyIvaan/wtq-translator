@@ -1,0 +1,162 @@
+{
+  "question_id": "nu-971",
+  "source_context": "csv/204-csv/86.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-971.tsv",
+  "source_question": "mark tarbell beat the iron chef. what was his score?",
+  "translated_question": "Марк Тарбелл победил Шефа-повара-человека-чугун. Какой был его финальный счёт?",
+  "source_target_value": "50",
+  "translated_target_value": "50",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "mark tarbell",
+      "normalized_text": "mark tarbell",
+      "start": 0,
+      "end": 12,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Mark Tarbell",
+      "match_type": "lemma",
+      "candidate_key": "9581cc3a849b5967",
+      "coordinate": {
+        "row": 4,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "iron chef",
+      "normalized_text": "iron chef",
+      "start": 22,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Iron Chef",
+      "match_type": "lemma",
+      "candidate_key": "0a34924aa794aebb",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "score",
+      "normalized_text": "score",
+      "start": 46,
+      "end": 51,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 7
+        }
+      ],
+      "table_source_text": "score",
+      "match_type": "lemma",
+      "candidate_key": "61e7486812fe55ff",
+      "coordinate": {
+        "row": null,
+        "column": 7
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-971",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "mark tarbell beat the iron chef. what was his score?",
+    "translated_question": "Марк Тарбелл победил Шефа-повара-человека-чугун. Какой был его финальный счёт?",
+    "back_translated_question": "Mark Tarbell defeated Iron Chef. What was his final score?",
+    "question_cosine_similarity": 0.9635579142314304,
+    "question_bert_precision": 0.4430988132953644,
+    "question_bert_recall": 0.43286019563674927,
+    "question_bert_f1": 0.4388183653354645,
+    "back_table_groups_compared": 104,
+    "back_table_min_similarity": 0.39685149809462533,
+    "back_table_mean_similarity": 0.8997868786934846,
+    "back_table_bert_groups_compared": 104,
+    "back_table_bert_min_f1": 0.201344832777977,
+    "back_table_bert_mean_f1": 0.8871271113077035,
+    "back_table_bert_min_precision": 0.27663904428482056,
+    "back_table_bert_mean_precision": 0.8889810230869514,
+    "back_table_bert_min_recall": 0.1292973905801773,
+    "back_table_bert_mean_recall": 0.8851843523578002,
+    "back_table_similarity_examples": [
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.39685149809462533,
+        "source": "Opah",
+        "back_translated": "market"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.41384502597710376,
+        "source": "Show #",
+        "back_translated": "Hal Shaw #"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.4177151135960935,
+        "source": "Cat Cora",
+        "back_translated": "Katie Corra"
+      },
+      {
+        "row": 2,
+        "column": 6,
+        "score": 0.4177151135960935,
+        "source": "Cat Cora",
+        "back_translated": "Katie Corra"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.4177151135960935,
+        "source": "Cat Cora",
+        "back_translated": "Katie Corra"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "cooking competition"
+  },
+  "domain": "cooking competition"
+}

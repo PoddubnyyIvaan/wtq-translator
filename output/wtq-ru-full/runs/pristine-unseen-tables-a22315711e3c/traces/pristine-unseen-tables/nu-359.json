@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-359",
+  "source_context": "csv/204-csv/934.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-359.tsv",
+  "source_question": "norway finished 5th. who was the previous team that finished?",
+  "translated_question": "Норвегия заняла 5-е место. Какая команда была предыдущей, которая заняла место?",
+  "source_target_value": "Canada",
+  "translated_target_value": "Канада",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "norway",
+      "normalized_text": "norway",
+      "start": 0,
+      "end": 6,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Norway",
+      "match_type": "lemma",
+      "candidate_key": "bf88094e0ec5d904",
+      "coordinate": {
+        "row": 4,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-359",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "norway finished 5th. who was the previous team that finished?",
+    "translated_question": "Норвегия заняла 5-е место. Какая команда была предыдущей, которая заняла место?",
+    "back_translated_question": "norway finished in 5th place. Which team was the previous one to finish in that position?",
+    "question_cosine_similarity": 0.966987029696251,
+    "question_bert_precision": 0.6391962170600891,
+    "question_bert_recall": 0.49506834149360657,
+    "question_bert_f1": 0.5655114650726318,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.8037783044952982,
+    "back_table_mean_similarity": 0.9815536775708341,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.15525580942630768,
+    "back_table_bert_mean_f1": 0.9021875248463066,
+    "back_table_bert_min_precision": -0.05136842280626297,
+    "back_table_bert_mean_precision": 0.878813361373937,
+    "back_table_bert_min_recall": 0.3583744168281555,
+    "back_table_bert_mean_recall": 0.9300653415697592,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 3,
+        "score": 0.8037783044952982,
+        "source": "Lee Seung-hoon\\nJoo Hyong-jun\\nKo Byung-wook",
+        "back_translated": "li sun-hun\nju hyeon-jun\nko byung-wuk"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.8077619038762767,
+        "source": "Patrick Beckert\\nMarco Weber\\nRobert Lehmann",
+        "back_translated": "Patrick Beckert\nMarco Weber\nRobert Lemann"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.8273296656948032,
+        "source": "Shani Davis\\nBrian Hansen\\nJonathan Kuck",
+        "back_translated": "Shani Davis\nBrian Hansen\nJonathan Cooke"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.8893256114325854,
+        "source": "Sven Kramer\\nKoen Verweij\\nJan Blokhuijsen",
+        "back_translated": "Sven Kramer\nCoen Verweij\nJan Blokhuis"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.8968081463996985,
+        "source": "Denny Morrison\\nMathieu Giroux\\nLucas Makowsky",
+        "back_translated": "Denny Morrison\nMathieu Giroux\nLukas Makowski"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

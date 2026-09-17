@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-218",
+  "source_context": "csv/203-csv/617.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-218.tsv",
+  "source_question": "which position was drafted the most?",
+  "translated_question": "какое Место было выбрано чаще всего?",
+  "source_target_value": "Defense",
+  "translated_target_value": "Защитник",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "position",
+      "normalized_text": "position",
+      "start": 6,
+      "end": 14,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Position",
+      "match_type": "lemma",
+      "candidate_key": "2448e693407c0c7e",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-218",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which position was drafted the most?",
+    "translated_question": "какое Место было выбрано чаще всего?",
+    "back_translated_question": "what position was selected most often?",
+    "question_cosine_similarity": 0.8600391381922889,
+    "question_bert_precision": 0.6697066426277161,
+    "question_bert_recall": 0.6456966996192932,
+    "question_bert_f1": 0.6581587195396423,
+    "back_table_groups_compared": 132,
+    "back_table_min_similarity": 0.42285441110560507,
+    "back_table_mean_similarity": 0.9404000365389908,
+    "back_table_bert_groups_compared": 132,
+    "back_table_bert_min_f1": 0.37352225184440613,
+    "back_table_bert_mean_f1": 0.8819813714786009,
+    "back_table_bert_min_precision": 0.3889685869216919,
+    "back_table_bert_mean_precision": 0.8847600309686228,
+    "back_table_bert_min_recall": 0.35381075739860535,
+    "back_table_bert_mean_recall": 0.878971946961952,
+    "back_table_similarity_examples": [
+      {
+        "row": 17,
+        "column": 1,
+        "score": 0.42285441110560507,
+        "source": "Sean Whyte",
+        "back_translated": "Shawn White"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 20,
+        "column": 1,
+        "score": 0.603177491673543,
+        "source": "Kevin Wortman",
+        "back_translated": "Kevin Worthington"
+      },
+      {
+        "row": 16,
+        "column": 1,
+        "score": 0.6060046318079687,
+        "source": "Rick Allain",
+        "back_translated": "Rick Allen"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.6175818763651774,
+        "source": "Paul Krake",
+        "back_translated": "Paul Crayk"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "ice hockey draft"
+  },
+  "domain": "ice hockey draft"
+}

@@ -1,0 +1,77 @@
+{
+  "question_id": "nu-363",
+  "source_context": "csv/204-csv/460.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-363.tsv",
+  "source_question": "what location is listed before darien?",
+  "translated_question": "какое место указано перед дариеном?",
+  "source_target_value": "Colón",
+  "translated_target_value": "Колон",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-363",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "what location is listed before darien?",
+    "translated_question": "какое место указано перед дариеном?",
+    "back_translated_question": "what place is indicated before darian?",
+    "question_cosine_similarity": 0.8775382789804818,
+    "question_bert_precision": 0.7571770548820496,
+    "question_bert_recall": 0.7572105526924133,
+    "question_bert_f1": 0.7575616836547852,
+    "back_table_groups_compared": 70,
+    "back_table_min_similarity": 0.6380477197749216,
+    "back_table_mean_similarity": 0.9915553392786851,
+    "back_table_bert_groups_compared": 70,
+    "back_table_bert_min_f1": 0.16073168814182281,
+    "back_table_bert_mean_f1": 0.9448556580713817,
+    "back_table_bert_min_precision": 0.1747106909751892,
+    "back_table_bert_mean_precision": 0.9459968600954328,
+    "back_table_bert_min_recall": 0.1444532424211502,
+    "back_table_bert_mean_recall": 0.943605326116085,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6380477197749216,
+        "source": "Hometown",
+        "back_translated": "Native city"
+      },
+      {
+        "row": 1,
+        "column": 0,
+        "score": 0.8208020689445624,
+        "source": "Chiriquí",
+        "back_translated": "chiriquí occidente"
+      },
+      {
+        "row": 6,
+        "column": 0,
+        "score": 0.9500239607884822,
+        "source": "Comarcas",
+        "back_translated": "Comarca"
+      },
+      {
+        "row": 5,
+        "column": 0,
+        "score": 0.9999999999999998,
+        "source": "Darién",
+        "back_translated": "Darien"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "Miss Panama pageant contestants"
+  },
+  "domain": "Miss Panama pageant contestants"
+}

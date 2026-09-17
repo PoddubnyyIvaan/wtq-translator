@@ -1,0 +1,158 @@
+{
+  "question_id": "nu-370",
+  "source_context": "csv/204-csv/900.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-370.tsv",
+  "source_question": "what is the difference between the number of players from the us and the number of players from every other country?",
+  "translated_question": "в чем разница между количеством игроков из США и количеством игроков из каждой другой страны?",
+  "source_target_value": "8",
+  "translated_target_value": "8",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "players",
+      "normalized_text": "player",
+      "start": 45,
+      "end": 52,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Player",
+      "match_type": "lemma",
+      "candidate_key": "3787324f2d113d99",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "players",
+      "normalized_text": "player",
+      "start": 83,
+      "end": 90,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Player",
+      "match_type": "lemma",
+      "candidate_key": "3787324f2d113d99",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "country",
+      "normalized_text": "country",
+      "start": 108,
+      "end": 115,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Country",
+      "match_type": "lemma",
+      "candidate_key": "54dbd10f2924b4b9",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-370",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the difference between the number of players from the us and the number of players from every other country?",
+    "translated_question": "в чем разница между количеством игроков из США и количеством игроков из каждой другой страны?",
+    "back_translated_question": "what is the difference between the number of players from the USA and the number of players from each other country?",
+    "question_cosine_similarity": 0.9778698046567703,
+    "question_bert_precision": 0.8629970550537109,
+    "question_bert_recall": 0.8630160093307495,
+    "question_bert_f1": 0.8632139563560486,
+    "back_table_groups_compared": 78,
+    "back_table_min_similarity": 0.6400379599073153,
+    "back_table_mean_similarity": 0.9748083608418023,
+    "back_table_bert_groups_compared": 78,
+    "back_table_bert_min_f1": 0.17239251732826233,
+    "back_table_bert_mean_f1": 0.9369091741167582,
+    "back_table_bert_min_precision": 0.17107947170734406,
+    "back_table_bert_mean_precision": 0.9378598147095778,
+    "back_table_bert_min_recall": 0.1581021249294281,
+    "back_table_bert_mean_recall": 0.9358266486953466,
+    "back_table_similarity_examples": [
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.6400379599073153,
+        "source": "Bob Tway",
+        "back_translated": "bob tu"
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.6524667266315153,
+        "source": "Corey Pavin",
+        "back_translated": "corey payne"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.6985441373957734,
+        "source": "Vijay Singh",
+        "back_translated": "vidjay singh"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.7353272274640242,
+        "source": "Jeff Maggert",
+        "back_translated": "jiff maggert"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7471585359265884,
+        "source": "Place",
+        "back_translated": "Venue"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "golf tournament results"
+  },
+  "domain": "golf tournament results"
+}

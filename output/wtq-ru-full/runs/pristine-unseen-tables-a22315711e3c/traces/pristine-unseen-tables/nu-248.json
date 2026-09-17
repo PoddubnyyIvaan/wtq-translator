@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-248",
+  "source_context": "csv/203-csv/373.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-248.tsv",
+  "source_question": "which athlete had the least final points?",
+  "translated_question": "какой спортсмен имел наименьшее количество очков в финале?",
+  "source_target_value": "Verónica Ribot (ARG)",
+  "translated_target_value": "Вероника Рибот (АРГ)",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-248",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "which athlete had the least final points?",
+    "translated_question": "какой спортсмен имел наименьшее количество очков в финале?",
+    "back_translated_question": "which athlete had the least number of points in the final?",
+    "question_cosine_similarity": 0.961814183248439,
+    "question_bert_precision": 0.8788604736328125,
+    "question_bert_recall": 0.7110151052474976,
+    "question_bert_f1": 0.7924429178237915,
+    "back_table_groups_compared": 125,
+    "back_table_min_similarity": 0.7684915133958882,
+    "back_table_mean_similarity": 0.9815910395677738,
+    "back_table_bert_groups_compared": 125,
+    "back_table_bert_min_f1": 0.7017449140548706,
+    "back_table_bert_mean_f1": 0.9686098799705506,
+    "back_table_bert_min_precision": 0.6853102445602417,
+    "back_table_bert_mean_precision": 0.9667356925010682,
+    "back_table_bert_min_recall": 0.6942600011825562,
+    "back_table_bert_mean_recall": 0.9704778881072998,
+    "back_table_similarity_examples": [
+      {
+        "row": 20,
+        "column": 1,
+        "score": 0.7684915133958882,
+        "source": "Nicole Kreil (AUT)",
+        "back_translated": "Nicole Kraeile (Austria)"
+      },
+      {
+        "row": 15,
+        "column": 1,
+        "score": 0.7904919583531858,
+        "source": "Guadalupe Canseco (MEX)",
+        "back_translated": "Guadalupe Caniesco (MEH)"
+      },
+      {
+        "row": 9,
+        "column": 1,
+        "score": 0.8237117778695042,
+        "source": "Daphne Jongejans (NED)",
+        "back_translated": "Daphne Jongejan (Netherlands)"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.8281423712254093,
+        "source": "Elsa Tenorio (MEX)",
+        "back_translated": "Elsa Tenorio (MEH)"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.8378045921202115,
+        "source": "Lesley Smith (ZIM)",
+        "back_translated": "Leslie Smith (ZIM)"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "diving competitions"
+  },
+  "domain": "diving competitions"
+}

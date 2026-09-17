@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-273",
+  "source_context": "csv/201-csv/0.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-273.tsv",
+  "source_question": "which album produced the best ranking songs?",
+  "translated_question": "какой альбом произвёл лучшие песни по рейтингу?",
+  "source_target_value": "Planet Pop",
+  "translated_target_value": "Планета поп",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "album",
+      "normalized_text": "album",
+      "start": 6,
+      "end": 11,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 13
+        }
+      ],
+      "table_source_text": "Album",
+      "match_type": "lemma",
+      "candidate_key": "8ed22b709f11d3c3",
+      "coordinate": {
+        "row": null,
+        "column": 13
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-273",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which album produced the best ranking songs?",
+    "translated_question": "какой альбом произвёл лучшие песни по рейтингу?",
+    "back_translated_question": "which album produced the best songs by rating?",
+    "question_cosine_similarity": 0.9210388158851532,
+    "question_bert_precision": 0.8535524606704712,
+    "question_bert_recall": 0.7552207708358765,
+    "question_bert_f1": 0.8037220239639282,
+    "back_table_groups_compared": 126,
+    "back_table_min_similarity": 0.83993876712125,
+    "back_table_mean_similarity": 0.9944652148386713,
+    "back_table_bert_groups_compared": 126,
+    "back_table_bert_min_f1": 0.3864601254463196,
+    "back_table_bert_mean_f1": 0.9789205884176587,
+    "back_table_bert_min_precision": 0.4386294484138489,
+    "back_table_bert_mean_precision": 0.9794061377881065,
+    "back_table_bert_min_recall": 0.33499228954315186,
+    "back_table_bert_mean_recall": 0.9784472551610734,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.83993876712125,
+        "source": "Peak chart positions\\nBEL\\n(Wa)",
+        "back_translated": "Peak chart positions\\nBEL\\n(Va)"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.8896615761891639,
+        "source": "Set Me Free",
+        "back_translated": "Free Me"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.9007113332398181,
+        "source": "My Heart Beats Like a Drum (Dam Dam Dam)",
+        "back_translated": "My Heart Beats, like a drum (Dame Dame Dame)"
+      },
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.9228465639768024,
+        "source": "Call on Me",
+        "back_translated": "Call Me"
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "score": 0.923130080180309,
+        "source": "Thinking of You",
+        "back_translated": "I Think of You"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music charts and album sales"
+  },
+  "domain": "music charts and album sales"
+}

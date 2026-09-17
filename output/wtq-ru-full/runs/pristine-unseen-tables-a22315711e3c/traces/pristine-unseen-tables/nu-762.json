@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-762",
+  "source_context": "csv/203-csv/53.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-762.tsv",
+  "source_question": "only 2 teams had 7 draws, who were they?",
+  "translated_question": "только 2 команды имели 7 ничьих, кем они были?",
+  "source_target_value": "Keflavík|Leiftur",
+  "translated_target_value": "Кефлавик|Лейфтур",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "teams",
+      "normalized_text": "team",
+      "start": 7,
+      "end": 12,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Team",
+      "match_type": "lemma",
+      "candidate_key": "cb49168934f12239",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "draws",
+      "normalized_text": "draw",
+      "start": 19,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Draw",
+      "match_type": "lemma",
+      "candidate_key": "18fcb0c5ad745001",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-762",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "only 2 teams had 7 draws, who were they?",
+    "translated_question": "только 2 команды имели 7 ничьих, кем они были?",
+    "back_translated_question": "only 2 teams had 7 draws, who were they?",
+    "question_cosine_similarity": 0.9999999999999999,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 121,
+    "back_table_min_similarity": 0.5836236563703445,
+    "back_table_mean_similarity": 0.9816666261762004,
+    "back_table_bert_groups_compared": 121,
+    "back_table_bert_min_f1": 0.1738104522228241,
+    "back_table_bert_mean_f1": 0.9539426338574117,
+    "back_table_bert_min_precision": 0.22610341012477875,
+    "back_table_bert_mean_precision": 0.9548846525101622,
+    "back_table_bert_min_recall": 0.01567545346915722,
+    "back_table_bert_mean_recall": 0.9531579500233586,
+    "back_table_similarity_examples": [
+      {
+        "row": 8,
+        "column": 10,
+        "score": 0.5836236563703445,
+        "source": "Relegated",
+        "back_translated": "Eliminated"
+      },
+      {
+        "row": 9,
+        "column": 10,
+        "score": 0.5836236563703445,
+        "source": "Relegated",
+        "back_translated": "Eliminated"
+      },
+      {
+        "row": null,
+        "column": 9,
+        "score": 0.6799598120984767,
+        "source": "Points",
+        "back_translated": "uci protour points"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": null,
+        "column": 7,
+        "score": 0.7279745970571418,
+        "source": "Goals Against",
+        "back_translated": "Goals conceded"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

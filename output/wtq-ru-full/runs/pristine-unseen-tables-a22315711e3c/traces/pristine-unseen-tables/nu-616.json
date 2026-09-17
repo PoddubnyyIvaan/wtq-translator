@@ -1,0 +1,136 @@
+{
+  "question_id": "nu-616",
+  "source_context": "csv/203-csv/243.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-616.tsv",
+  "source_question": "how long was rené heitmann the head coach of boldklubben frem?",
+  "translated_question": "сколько времени Рене Хейтманн был главным никогда не тренировал в «Болдклуббен Фрем»?",
+  "source_target_value": "10 days",
+  "translated_target_value": "10 дней",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "rené heitmann",
+      "normalized_text": "rené heitmann",
+      "start": 13,
+      "end": 26,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 0
+        }
+      ],
+      "table_source_text": "René Heitmann",
+      "match_type": "lemma",
+      "candidate_key": "a7ed9f2119b731ee",
+      "coordinate": {
+        "row": 4,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "coach",
+      "normalized_text": "coach",
+      "start": 36,
+      "end": 41,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 5
+        }
+      ],
+      "table_source_text": "coached",
+      "match_type": "lemma",
+      "candidate_key": "11de002088826a05",
+      "coordinate": {
+        "row": 4,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-616",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how long was rené heitmann the head coach of boldklubben frem?",
+    "translated_question": "сколько времени Рене Хейтманн был главным никогда не тренировал в «Болдклуббен Фрем»?",
+    "back_translated_question": "how long was rené heitmann the head coach at 'boldklubben frem'?",
+    "question_cosine_similarity": 0.9950108601007245,
+    "question_bert_precision": 0.8783367872238159,
+    "question_bert_recall": 0.7715455889701843,
+    "question_bert_f1": 0.8240824341773987,
+    "back_table_groups_compared": 72,
+    "back_table_min_similarity": 0.6734581041892601,
+    "back_table_mean_similarity": 0.9480520710343965,
+    "back_table_bert_groups_compared": 72,
+    "back_table_bert_min_f1": 0.4661259949207306,
+    "back_table_bert_mean_f1": 0.8373578236334853,
+    "back_table_bert_min_precision": 0.4572831988334656,
+    "back_table_bert_mean_precision": 0.8541127145290375,
+    "back_table_bert_min_recall": 0.403845876455307,
+    "back_table_bert_mean_recall": 0.8207102086808946,
+    "back_table_similarity_examples": [
+      {
+        "row": 9,
+        "column": 0,
+        "score": 0.6734581041892601,
+        "source": "Johnny Petersen",
+        "back_translated": "Jønne Petersen"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.7444706079687845,
+        "source": "Honours",
+        "back_translated": "Awards"
+      },
+      {
+        "row": 7,
+        "column": 4,
+        "score": 0.7863554649978428,
+        "source": "Team was relegated to second tier",
+        "back_translated": "The team was forced to leave the second division"
+      },
+      {
+        "row": 1,
+        "column": 5,
+        "score": 0.7975461964355057,
+        "source": "Caretaker for one league match",
+        "back_translated": "temporarily served as caretaker for one match of the championship"
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.802206465605894,
+        "source": "Won promotion to second tier",
+        "back_translated": "won promotion to the second division"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "football management"
+  },
+  "domain": "football management"
+}

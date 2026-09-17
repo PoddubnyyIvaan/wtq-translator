@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-756",
+  "source_context": "csv/203-csv/286.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-756.tsv",
+  "source_question": "which country placed the most yachts in the line honours results?",
+  "translated_question": "какая страна заняла наибольшее количество яхт в результатах линии почестей?",
+  "source_target_value": "NSW",
+  "translated_target_value": "NSW",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "country",
+      "normalized_text": "country",
+      "start": 6,
+      "end": 13,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Country",
+      "match_type": "lemma",
+      "candidate_key": "54dbd10f2924b4b9",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "yachts",
+      "normalized_text": "yacht",
+      "start": 30,
+      "end": 36,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Yacht",
+      "match_type": "lemma",
+      "candidate_key": "dbca9e877a36d916",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-756",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which country placed the most yachts in the line honours results?",
+    "translated_question": "какая страна заняла наибольшее количество яхт в результатах линии почестей?",
+    "back_translated_question": "which country secured the highest number of yachts in the standings?",
+    "question_cosine_similarity": 0.8739681925272107,
+    "question_bert_precision": 0.6527899503707886,
+    "question_bert_recall": 0.6409443020820618,
+    "question_bert_f1": 0.6473867893218994,
+    "back_table_groups_compared": 88,
+    "back_table_min_similarity": 0.5245506692402225,
+    "back_table_mean_similarity": 0.9748802766921862,
+    "back_table_bert_groups_compared": 88,
+    "back_table_bert_min_f1": 0.2581706941127777,
+    "back_table_bert_mean_f1": 0.9603112421252511,
+    "back_table_bert_min_precision": 0.2554938495159149,
+    "back_table_bert_mean_precision": 0.9602265760979869,
+    "back_table_bert_min_recall": 0.258598655462265,
+    "back_table_bert_mean_recall": 0.9603248333389108,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 6,
+        "score": 0.5245506692402225,
+        "source": "Kevan Pearce",
+        "back_translated": "Kevin Pierce"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 3,
+        "column": 6,
+        "score": 0.5868893441758614,
+        "source": "Syd Fischer",
+        "back_translated": "Sid Fisher"
+      },
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.6902991562481895,
+        "source": "LOA\\n(Metres)",
+        "back_translated": "Length at waterline\\n(meters)"
+      },
+      {
+        "row": 8,
+        "column": 6,
+        "score": 0.7863361662416625,
+        "source": "David Pescud",
+        "back_translated": "David Pesquid"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sailing race results"
+  },
+  "domain": "sailing race results"
+}

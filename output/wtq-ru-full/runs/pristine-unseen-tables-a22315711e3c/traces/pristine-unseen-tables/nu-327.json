@@ -1,0 +1,185 @@
+{
+  "question_id": "nu-327",
+  "source_context": "csv/203-csv/628.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-327.tsv",
+  "source_question": "which song was on the us mainstream rock charts the most?--\"one thing\" or \"the sick\"?",
+  "translated_question": "Какая Песня была на U.S. Mainstream Rock чартах самой часто? — «Одна Вещь» или «The Sick»?",
+  "source_target_value": "Bleeder",
+  "translated_target_value": "Bleeder",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "song",
+      "normalized_text": "song",
+      "start": 6,
+      "end": 10,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Song",
+      "match_type": "lemma",
+      "candidate_key": "2a3942dba4d7e0c0",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "us mainstream rock",
+      "normalized_text": "us mainstream rock",
+      "start": 22,
+      "end": 40,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "U.S. Mainstream Rock",
+      "match_type": "lemma",
+      "candidate_key": "a021634ae9dfdeba",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "the",
+      "normalized_text": "the",
+      "start": 48,
+      "end": 51,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "The",
+      "match_type": "lemma",
+      "candidate_key": "180994da92e8e940",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "thing",
+      "normalized_text": "thing",
+      "start": 64,
+      "end": 69,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Thing",
+      "match_type": "lemma",
+      "candidate_key": "414bd4d1fc861e89",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0004>",
+      "question_text": "the sick",
+      "normalized_text": "the sick",
+      "start": 75,
+      "end": 83,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 4,
+          "column": 1
+        }
+      ],
+      "table_source_text": "The Sick",
+      "match_type": "lemma",
+      "candidate_key": "69fbfa6140c9db74",
+      "coordinate": {
+        "row": 4,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-327",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which song was on the us mainstream rock charts the most?--\"one thing\" or \"the sick\"?",
+    "translated_question": "Какая Песня была на U.S. Mainstream Rock чартах самой часто? — «Одна Вещь» или «The Sick»?",
+    "back_translated_question": "Which song was on the U.S. Mainstream Rock charts the most frequently — \"One thing\" or \"The Sick\"?",
+    "question_cosine_similarity": 0.9933460787092321,
+    "question_bert_precision": 0.5372998118400574,
+    "question_bert_recall": 0.44190818071365356,
+    "question_bert_f1": 0.4893433153629303,
+    "back_table_groups_compared": 48,
+    "back_table_min_similarity": 0.80429630672555,
+    "back_table_mean_similarity": 0.9918456794468979,
+    "back_table_bert_groups_compared": 48,
+    "back_table_bert_min_f1": 0.5237115025520325,
+    "back_table_bert_mean_f1": 0.9801546459396681,
+    "back_table_bert_min_precision": 0.48634785413742065,
+    "back_table_bert_mean_precision": 0.9785978272557259,
+    "back_table_bert_min_recall": 0.5608608722686768,
+    "back_table_bert_mean_recall": 0.9817025363445282,
+    "back_table_similarity_examples": [
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.80429630672555,
+        "source": "An Audio Guide To Everyday Atrocity",
+        "back_translated": "Audio guide to everyday villainy"
+      },
+      {
+        "row": 4,
+        "column": 5,
+        "score": 0.80429630672555,
+        "source": "An Audio Guide To Everyday Atrocity",
+        "back_translated": "Audio guide to everyday villainy"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>",
+      "<TABLE_REF_0004>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "music"
+  },
+  "domain": "music"
+}

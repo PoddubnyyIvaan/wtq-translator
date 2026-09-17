@@ -1,0 +1,190 @@
+{
+  "question_id": "nu-185",
+  "source_context": "csv/203-csv/820.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-185.tsv",
+  "source_question": "which nationality has the most forward position players?",
+  "translated_question": "какая национальность имеет наибольшее количество форвардов на позиции Место игроков?",
+  "source_target_value": "United States",
+  "translated_target_value": "Соединённые Штаты",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "nationality",
+      "normalized_text": "nationality",
+      "start": 6,
+      "end": 17,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Nationality",
+      "match_type": "lemma",
+      "candidate_key": "7ade4b84567a47cd",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "forward",
+      "normalized_text": "forward",
+      "start": 31,
+      "end": 38,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 7,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Forward",
+      "match_type": "lemma",
+      "candidate_key": "2a200723e78d189b",
+      "coordinate": {
+        "row": 1,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "position",
+      "normalized_text": "position",
+      "start": 39,
+      "end": 47,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Position",
+      "match_type": "lemma",
+      "candidate_key": "2448e693407c0c7e",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0003>",
+      "question_text": "players",
+      "normalized_text": "player",
+      "start": 48,
+      "end": 55,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Player",
+      "match_type": "lemma",
+      "candidate_key": "3787324f2d113d99",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-185",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which nationality has the most forward position players?",
+    "translated_question": "какая национальность имеет наибольшее количество форвардов на позиции Место игроков?",
+    "back_translated_question": "Which nationality has the highest number of forwards at the position of players?",
+    "question_cosine_similarity": 0.9112657357458586,
+    "question_bert_precision": 0.6548223495483398,
+    "question_bert_recall": 0.4935058057308197,
+    "question_bert_f1": 0.5719671249389648,
+    "back_table_groups_compared": 54,
+    "back_table_min_similarity": 0.4618934870475018,
+    "back_table_mean_similarity": 0.9452405090181853,
+    "back_table_bert_groups_compared": 54,
+    "back_table_bert_min_f1": 0.34985366463661194,
+    "back_table_bert_mean_f1": 0.9218140448685046,
+    "back_table_bert_min_precision": 0.34882232546806335,
+    "back_table_bert_mean_precision": 0.9264128246793041,
+    "back_table_bert_min_recall": 0.3489122986793518,
+    "back_table_bert_mean_recall": 0.9172387067918424,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 5,
+        "score": 0.4618934870475018,
+        "source": "BYU",
+        "back_translated": "Bui"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.6432857528668197,
+        "source": "Guard",
+        "back_translated": "Defender"
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "score": 0.6432857528668197,
+        "source": "Guard",
+        "back_translated": "Defender"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.6432857528668197,
+        "source": "Guard",
+        "back_translated": "Defender"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>",
+      "<TABLE_REF_0003>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "basketball"
+  },
+  "domain": "basketball"
+}

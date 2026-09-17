@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-959",
+  "source_context": "csv/203-csv/768.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-959.tsv",
+  "source_question": "what episode came next after \"front page\"?",
+  "translated_question": "какой эпизод шёл следующим после «Первой страницы»?",
+  "source_target_value": "Special FX-Ation",
+  "translated_target_value": "Специальные эффекты-Ация",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "episode",
+      "normalized_text": "episode",
+      "start": 5,
+      "end": 12,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Episode",
+      "match_type": "lemma",
+      "candidate_key": "a970485d8674d685",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "front page",
+      "normalized_text": "front page",
+      "start": 30,
+      "end": 40,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 6,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Front Page",
+      "match_type": "lemma",
+      "candidate_key": "d9844e72eba02a75",
+      "coordinate": {
+        "row": 6,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-959",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what episode came next after \"front page\"?",
+    "translated_question": "какой эпизод шёл следующим после «Первой страницы»?",
+    "back_translated_question": "which episode aired next after \"front page\"?",
+    "question_cosine_similarity": 0.9789086086994148,
+    "question_bert_precision": 0.8180204033851624,
+    "question_bert_recall": 0.8180455565452576,
+    "question_bert_f1": 0.8183086514472961,
+    "back_table_groups_compared": 70,
+    "back_table_min_similarity": 0.4446653369947298,
+    "back_table_mean_similarity": 0.9552442714778953,
+    "back_table_bert_groups_compared": 70,
+    "back_table_bert_min_f1": 0.24552036821842194,
+    "back_table_bert_mean_f1": 0.9237236846770559,
+    "back_table_bert_min_precision": 0.24409347772598267,
+    "back_table_bert_mean_precision": 0.9221607157162257,
+    "back_table_bert_min_recall": 0.2446572631597519,
+    "back_table_bert_mean_recall": 0.9251949555107526,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 2,
+        "score": 0.4446653369947298,
+        "source": "Switcheroo",
+        "back_translated": "rearrangement"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.5059484068699577,
+        "source": "Close Encounters",
+        "back_translated": "Convergence"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.5356137779112692,
+        "source": "Vootle-Muck-A-Heev",
+        "back_translated": "Wotl-Mac-Hiv"
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "score": 0.6787159150136696,
+        "source": "Special FX-Ation",
+        "back_translated": "Special Effects - Action"
+      },
+      {
+        "row": 11,
+        "column": 2,
+        "score": 0.7132991764840916,
+        "source": "Bottom's Up",
+        "back_translated": "Down and Up"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "television series"
+  },
+  "domain": "television series"
+}

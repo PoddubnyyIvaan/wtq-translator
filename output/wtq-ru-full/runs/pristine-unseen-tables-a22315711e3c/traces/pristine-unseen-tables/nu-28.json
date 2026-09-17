@@ -1,0 +1,142 @@
+{
+  "question_id": "nu-28",
+  "source_context": "csv/204-csv/827.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-28.tsv",
+  "source_question": "how many jury members were there?",
+  "translated_question": "сколько членов жюри было?",
+  "source_target_value": "9",
+  "translated_target_value": "9",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "jury",
+      "normalized_text": "jury",
+      "start": 9,
+      "end": 13,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 8,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 10,
+          "column": 4
+        },
+        {
+          "row": 11,
+          "column": 4
+        },
+        {
+          "row": 12,
+          "column": 4
+        },
+        {
+          "row": 13,
+          "column": 4
+        },
+        {
+          "row": 14,
+          "column": 4
+        },
+        {
+          "row": 15,
+          "column": 4
+        },
+        {
+          "row": 16,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Jury",
+      "match_type": "lemma",
+      "candidate_key": "d1b1db500b18f3df",
+      "coordinate": {
+        "row": 8,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-28",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many jury members were there?",
+    "translated_question": "сколько членов жюри было?",
+    "back_translated_question": "how many members of the jury were there?",
+    "question_cosine_similarity": 0.9821912618761762,
+    "question_bert_precision": 0.9038633704185486,
+    "question_bert_recall": 0.787388801574707,
+    "question_bert_f1": 0.8445342779159546,
+    "back_table_groups_compared": 120,
+    "back_table_min_similarity": 0.5763357248142146,
+    "back_table_mean_similarity": 0.9574059429655223,
+    "back_table_bert_groups_compared": 120,
+    "back_table_bert_min_f1": 0.05258902534842491,
+    "back_table_bert_mean_f1": 0.8610161881583432,
+    "back_table_bert_min_precision": 0.12013790011405945,
+    "back_table_bert_mean_precision": 0.8564927574247122,
+    "back_table_bert_min_recall": -0.012825430370867252,
+    "back_table_bert_mean_recall": 0.8653229243975754,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.5763357248142146,
+        "source": "Switched Tribe",
+        "back_translated": "Switch team"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6205055395045277,
+        "source": "Merged Tribe",
+        "back_translated": "Unified Team"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.6953310270473828,
+        "source": "Original Tribe",
+        "back_translated": "Original team"
+      },
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.7385566211964367,
+        "source": "Contestant",
+        "back_translated": "participant"
+      },
+      {
+        "row": 0,
+        "column": 4,
+        "score": 0.7610327393149129,
+        "source": "1st Voted Out\\nDay 3",
+        "back_translated": "1-the eliminated contestant\\nday 3"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "reality television competition"
+  },
+  "domain": "reality television competition"
+}

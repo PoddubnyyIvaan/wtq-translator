@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-456",
+  "source_context": "csv/204-csv/483.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-456.tsv",
+  "source_question": "which competition in 2003 appears in the same year as 2007?",
+  "translated_question": "какое соревнование в 2003 году фигурирует в том же году, что и 2007?",
+  "source_target_value": "All-Africa Games",
+  "translated_target_value": "Игры всех Африки",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "competition",
+      "normalized_text": "competition",
+      "start": 6,
+      "end": 17,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Competition",
+      "match_type": "lemma",
+      "candidate_key": "0509839ddc683373",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 46,
+      "end": 50,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-456",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which competition in 2003 appears in the same year as 2007?",
+    "translated_question": "какое соревнование в 2003 году фигурирует в том же году, что и 2007?",
+    "back_translated_question": "which competition in 2003 is listed in the same year as 2007?",
+    "question_cosine_similarity": 0.9873173326577371,
+    "question_bert_precision": 0.8964201211929321,
+    "question_bert_recall": 0.8588679432868958,
+    "question_bert_f1": 0.8776925206184387,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.5318276644429462,
+    "back_table_mean_similarity": 0.9594415879981723,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.36046725511550903,
+    "back_table_bert_mean_f1": 0.950922325750192,
+    "back_table_bert_min_precision": 0.34331396222114563,
+    "back_table_bert_mean_precision": 0.950849486887455,
+    "back_table_bert_min_recall": 0.3564317524433136,
+    "back_table_bert_mean_recall": 0.9508547122279803,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.5318276644429462,
+        "source": "Position",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 7,
+        "column": 5,
+        "score": 0.767321473867183,
+        "source": "57.79 m",
+        "back_translated": "57,79 м"
+      },
+      {
+        "row": 8,
+        "column": 5,
+        "score": 0.768327812325628,
+        "source": "56.98 m",
+        "back_translated": "56,98 м"
+      },
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.7709736312157949,
+        "source": "62.86 m",
+        "back_translated": "62,86 м"
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7750557560233339,
+        "source": "63.50 m",
+        "back_translated": "63,50 м"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}

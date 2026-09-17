@@ -1,0 +1,170 @@
+{
+  "question_id": "nu-388",
+  "source_context": "csv/203-csv/62.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-388.tsv",
+  "source_question": "how many games where there at least 70,000 people in attendance for the 1994 alabama crimson tide football team?",
+  "translated_question": "сколько игр было, в которых в посещаемости было не менее 70 000 человек для футбольной команды 1994 года «Алабама Кримсон Тайд»?",
+  "source_target_value": "11",
+  "translated_target_value": "11",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "games",
+      "normalized_text": "game",
+      "start": 9,
+      "end": 14,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 11,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Game",
+      "match_type": "lemma",
+      "candidate_key": "e26127c8f5c97f75",
+      "coordinate": {
+        "row": 11,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "at",
+      "normalized_text": "at",
+      "start": 27,
+      "end": 29,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 2,
+          "column": 1
+        },
+        {
+          "row": 6,
+          "column": 1
+        },
+        {
+          "row": 8,
+          "column": 1
+        },
+        {
+          "row": 9,
+          "column": 1
+        }
+      ],
+      "table_source_text": "at",
+      "match_type": "lemma",
+      "candidate_key": "f5170a4849b61f9a",
+      "coordinate": {
+        "row": 2,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "attendance",
+      "normalized_text": "attendance",
+      "start": 53,
+      "end": 63,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Attendance",
+      "match_type": "lemma",
+      "candidate_key": "a65b71c2ed2ec9bc",
+      "coordinate": {
+        "row": null,
+        "column": 6
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-388",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many games where there at least 70,000 people in attendance for the 1994 alabama crimson tide football team?",
+    "translated_question": "сколько игр было, в которых в посещаемости было не менее 70 000 человек для футбольной команды 1994 года «Алабама Кримсон Тайд»?",
+    "back_translated_question": "how many games were there in which at attendance was at least 70,000 for the 1994 Alabama Crimson Tide football team?",
+    "question_cosine_similarity": 0.9816731959832321,
+    "question_bert_precision": 0.5173344016075134,
+    "question_bert_recall": 0.5642892718315125,
+    "question_bert_f1": 0.5412659645080566,
+    "back_table_groups_compared": 98,
+    "back_table_min_similarity": 0.6295686309337598,
+    "back_table_mean_similarity": 0.9567140722425868,
+    "back_table_bert_groups_compared": 98,
+    "back_table_bert_min_f1": 0.35675379633903503,
+    "back_table_bert_mean_f1": 0.9411094994569311,
+    "back_table_bert_min_precision": 0.4509528577327728,
+    "back_table_bert_mean_precision": 0.9431321392862164,
+    "back_table_bert_min_recall": 0.2612844407558441,
+    "back_table_bert_mean_recall": 0.9391452247390941,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.6295686309337598,
+        "source": "Site",
+        "back_translated": "Venue"
+      },
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.6944253932697203,
+        "source": "vs. #6 Florida",
+        "back_translated": "vs ottawa rough riders #6 Florida"
+      },
+      {
+        "row": 3,
+        "column": 5,
+        "score": 0.7621795858319083,
+        "source": "W 20–10",
+        "back_translated": "P 20–10"
+      },
+      {
+        "row": 2,
+        "column": 5,
+        "score": 0.7656065573816213,
+        "source": "W 13–6",
+        "back_translated": "P 13–6"
+      },
+      {
+        "row": 10,
+        "column": 5,
+        "score": 0.770018826639246,
+        "source": "W 21–14",
+        "back_translated": "P 21–14"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "college football"
+  },
+  "domain": "college football"
+}

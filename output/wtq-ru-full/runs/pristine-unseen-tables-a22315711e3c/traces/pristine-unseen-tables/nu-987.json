@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-987",
+  "source_context": "csv/204-csv/303.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-987.tsv",
+  "source_question": "who is the first rider?",
+  "translated_question": "кто первый гонщик?",
+  "source_target_value": "Doriano Romboni",
+  "translated_target_value": "Дориано Ромбони",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "rider",
+      "normalized_text": "rider",
+      "start": 17,
+      "end": 22,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Rider",
+      "match_type": "lemma",
+      "candidate_key": "cfd36378859046d1",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-987",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "who is the first rider?",
+    "translated_question": "кто первый гонщик?",
+    "back_translated_question": "who is the first rider?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 170,
+    "back_table_min_similarity": 0.43247529135922563,
+    "back_table_mean_similarity": 0.9370558955617778,
+    "back_table_bert_groups_compared": 170,
+    "back_table_bert_min_f1": 0.17381028831005096,
+    "back_table_bert_mean_f1": 0.9061760761282023,
+    "back_table_bert_min_precision": 0.16069139540195465,
+    "back_table_bert_mean_precision": 0.9102763113730094,
+    "back_table_bert_min_recall": 0.01567545346915722,
+    "back_table_bert_mean_recall": 0.9021628543624983,
+    "back_table_similarity_examples": [
+      {
+        "row": 24,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 25,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 26,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 27,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      },
+      {
+        "row": 28,
+        "column": 0,
+        "score": 0.43247529135922563,
+        "source": "Ret",
+        "back_translated": "Withdrew"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motor racing"
+  },
+  "domain": "motor racing"
+}

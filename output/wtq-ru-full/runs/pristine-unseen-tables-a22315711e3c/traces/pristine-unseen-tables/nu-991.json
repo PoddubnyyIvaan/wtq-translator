@@ -1,0 +1,127 @@
+{
+  "question_id": "nu-991",
+  "source_context": "csv/204-csv/744.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-991.tsv",
+  "source_question": "how many points does marquinhos and tonev have together?",
+  "translated_question": "сколько очков у маркиньоса и тонева вместе?",
+  "source_target_value": "15",
+  "translated_target_value": "15",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "marquinhos",
+      "normalized_text": "marquinhos",
+      "start": 21,
+      "end": 31,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Marquinhos",
+      "match_type": "lemma",
+      "candidate_key": "9762568a5f6abd22",
+      "coordinate": {
+        "row": 1,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "tonev",
+      "normalized_text": "tonev",
+      "start": 36,
+      "end": 41,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 7,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Tonev",
+      "match_type": "lemma",
+      "candidate_key": "d5061fd30a56c06a",
+      "coordinate": {
+        "row": 7,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-991",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many points does marquinhos and tonev have together?",
+    "translated_question": "сколько очков у маркиньоса и тонева вместе?",
+    "back_translated_question": "how many points do marquinhos and tonev have together?",
+    "question_cosine_similarity": 0.998964752685227,
+    "question_bert_precision": 0.969871997833252,
+    "question_bert_recall": 0.9698761701583862,
+    "question_bert_f1": 0.969919741153717,
+    "back_table_groups_compared": 95,
+    "back_table_min_similarity": 0.6911055330492873,
+    "back_table_mean_similarity": 0.9911746691380434,
+    "back_table_bert_groups_compared": 95,
+    "back_table_bert_min_f1": 0.3380149304866791,
+    "back_table_bert_mean_f1": 0.9830778884260278,
+    "back_table_bert_min_precision": 0.20742067694664001,
+    "back_table_bert_mean_precision": 0.9823924510102523,
+    "back_table_bert_min_recall": 0.4852710962295532,
+    "back_table_bert_mean_recall": 0.9840120999436629,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 0,
+        "score": 0.6911055330492873,
+        "source": "Giuseppe Aquaro",
+        "back_translated": "Giuseppe Acquaro"
+      },
+      {
+        "row": 3,
+        "column": 0,
+        "score": 0.7768273543454528,
+        "source": "Cillian Sheridan",
+        "back_translated": "Kilian Sheridan"
+      },
+      {
+        "row": null,
+        "column": 3,
+        "score": 0.796500719199131,
+        "source": "Europa\\nLeague",
+        "back_translated": "Europa League"
+      },
+      {
+        "row": 0,
+        "column": 0,
+        "score": 0.8971599615202589,
+        "source": "Spas Delev",
+        "back_translated": "Spas Delov"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports statistics"
+  },
+  "domain": "sports statistics"
+}

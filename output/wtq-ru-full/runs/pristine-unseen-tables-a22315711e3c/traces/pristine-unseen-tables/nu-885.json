@@ -1,0 +1,178 @@
+{
+  "question_id": "nu-885",
+  "source_context": "csv/203-csv/304.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-885.tsv",
+  "source_question": "in what year did gabriel gervais win his first defensive player of the year award?",
+  "translated_question": "в каком году did Габриэль Жервэ win his first игрок года по защите award?",
+  "source_target_value": "2002",
+  "translated_target_value": "2002",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "year",
+      "normalized_text": "year",
+      "start": 8,
+      "end": 12,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        },
+        {
+          "row": null,
+          "column": 2
+        },
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Year",
+      "match_type": "lemma",
+      "candidate_key": "305774d698639614",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "gabriel gervais",
+      "normalized_text": "gabriel gervais",
+      "start": 17,
+      "end": 32,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 9,
+          "column": 2
+        },
+        {
+          "row": 10,
+          "column": 2
+        },
+        {
+          "row": 11,
+          "column": 1
+        },
+        {
+          "row": 13,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Gabriel Gervais",
+      "match_type": "lemma",
+      "candidate_key": "59d58244c53d5d2e",
+      "coordinate": {
+        "row": 9,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "defensive player of the year",
+      "normalized_text": "defensive player of the year",
+      "start": 47,
+      "end": 75,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Defensive Player of the Year",
+      "match_type": "lemma",
+      "candidate_key": "652f3c719f42ab8a",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-885",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "in what year did gabriel gervais win his first defensive player of the year award?",
+    "translated_question": "в каком году did Габриэль Жервэ win his first игрок года по защите award?",
+    "back_translated_question": "in what year did Gabriel Gervais win his first Defensive Player of the Year award?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 0.6664820313453674,
+    "question_bert_recall": 0.758463442325592,
+    "question_bert_f1": 0.7120431065559387,
+    "back_table_groups_compared": 100,
+    "back_table_min_similarity": 0.5174606982014032,
+    "back_table_mean_similarity": 0.9347736545055746,
+    "back_table_bert_groups_compared": 100,
+    "back_table_bert_min_f1": 0.3927883505821228,
+    "back_table_bert_mean_f1": 0.8989831238985062,
+    "back_table_bert_min_precision": 0.3592188358306885,
+    "back_table_bert_mean_precision": 0.9096031853556633,
+    "back_table_bert_min_recall": 0.3781232535839081,
+    "back_table_bert_mean_recall": 0.8890172562003136,
+    "back_table_similarity_examples": [
+      {
+        "row": 18,
+        "column": 1,
+        "score": 0.5174606982014032,
+        "source": "Hassoun Camara",
+        "back_translated": "Hassan Kamara"
+      },
+      {
+        "row": 16,
+        "column": 4,
+        "score": 0.5977308826559151,
+        "source": "Stephen deRoux",
+        "back_translated": "Steven de Ru"
+      },
+      {
+        "row": 10,
+        "column": 1,
+        "score": 0.6833552060822626,
+        "source": "Greg Sutton",
+        "back_translated": "Greg Saggaton"
+      },
+      {
+        "row": 11,
+        "column": 2,
+        "score": 0.6833552060822626,
+        "source": "Greg Sutton",
+        "back_translated": "Greg Saggaton"
+      },
+      {
+        "row": 15,
+        "column": 3,
+        "score": 0.6844147396422694,
+        "source": "Joey Gjertsen",
+        "back_translated": "Joey Jerzsen"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports awards"
+  },
+  "domain": "sports awards"
+}

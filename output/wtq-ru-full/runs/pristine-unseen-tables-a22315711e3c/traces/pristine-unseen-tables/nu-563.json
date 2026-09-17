@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-563",
+  "source_context": "csv/204-csv/80.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-563.tsv",
+  "source_question": "who did they face that last game of the year?",
+  "translated_question": "с кем они встретились в последней игре года?",
+  "source_target_value": "Seattle Seahawks",
+  "translated_target_value": "Сиэтл Сихокс",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-563",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "who did they face that last game of the year?",
+    "translated_question": "с кем они встретились в последней игре года?",
+    "back_translated_question": "who did they play against in the last game of the year?",
+    "question_cosine_similarity": 0.9594624434209852,
+    "question_bert_precision": 0.7862932085990906,
+    "question_bert_recall": 0.7134159803390503,
+    "question_bert_f1": 0.7496932148933411,
+    "back_table_groups_compared": 85,
+    "back_table_min_similarity": 0.849188255349282,
+    "back_table_mean_similarity": 0.9879538378033792,
+    "back_table_bert_groups_compared": 85,
+    "back_table_bert_min_f1": 0.07394024729728699,
+    "back_table_bert_mean_f1": 0.9604129268842585,
+    "back_table_bert_min_precision": 0.09622394293546677,
+    "back_table_bert_mean_precision": 0.9610304505509488,
+    "back_table_bert_min_recall": 0.04946319758892059,
+    "back_table_bert_mean_recall": 0.9597328082603567,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.849188255349282,
+        "source": "W 20–13",
+        "back_translated": "L 20–13"
+      },
+      {
+        "row": 11,
+        "column": 3,
+        "score": 0.8534727381902786,
+        "source": "W 27–20",
+        "back_translated": "L 27–20"
+      },
+      {
+        "row": 15,
+        "column": 3,
+        "score": 0.8592467819061811,
+        "source": "W 41–20",
+        "back_translated": "L 41–20"
+      },
+      {
+        "row": 12,
+        "column": 3,
+        "score": 0.8641803624518913,
+        "source": "L 30–27",
+        "back_translated": "П 30–27"
+      },
+      {
+        "row": 13,
+        "column": 3,
+        "score": 0.8780923261972684,
+        "source": "W 16–10",
+        "back_translated": "L 16–10"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

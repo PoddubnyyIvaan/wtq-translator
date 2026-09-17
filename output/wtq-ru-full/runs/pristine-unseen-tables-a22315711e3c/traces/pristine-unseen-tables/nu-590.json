@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-590",
+  "source_context": "csv/204-csv/347.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-590.tsv",
+  "source_question": "what is the number of bronze medals won by uzbekistan?",
+  "translated_question": "сколько бронзовых медалей завоевала Узбекистан?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "bronze",
+      "normalized_text": "bronze",
+      "start": 22,
+      "end": 28,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Bronze",
+      "match_type": "lemma",
+      "candidate_key": "9d2f89fe9536354c",
+      "coordinate": {
+        "row": null,
+        "column": 4
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "uzbekistan",
+      "normalized_text": "uzbekistan",
+      "start": 43,
+      "end": 53,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 13,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Uzbekistan",
+      "match_type": "lemma",
+      "candidate_key": "677464af6fe9b8ba",
+      "coordinate": {
+        "row": 13,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-590",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of bronze medals won by uzbekistan?",
+    "translated_question": "сколько бронзовых медалей завоевала Узбекистан?",
+    "back_translated_question": "how many bronze medals did Uzbekistan win?",
+    "question_cosine_similarity": 0.9696953830355959,
+    "question_bert_precision": 0.4529160261154175,
+    "question_bert_recall": 0.5883186459541321,
+    "question_bert_f1": 0.5193056464195251,
+    "back_table_groups_compared": 102,
+    "back_table_min_similarity": 0.8392182651127832,
+    "back_table_mean_similarity": 0.9917147322182902,
+    "back_table_bert_groups_compared": 102,
+    "back_table_bert_min_f1": 0.5738877654075623,
+    "back_table_bert_mean_f1": 0.9775050562970778,
+    "back_table_bert_min_precision": 0.43978574872016907,
+    "back_table_bert_mean_precision": 0.9727572895148221,
+    "back_table_bert_min_recall": 0.6402941942214966,
+    "back_table_bert_mean_recall": 0.9825979821822223,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 1,
+        "score": 0.8392182651127832,
+        "source": "China (CHN)",
+        "back_translated": "China (China)"
+      },
+      {
+        "row": 12,
+        "column": 1,
+        "score": 0.8392877453212335,
+        "source": "North Korea (PRK)",
+        "back_translated": "North Korea (North Korea)"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.8613064419935809,
+        "source": "South Korea (KOR)",
+        "back_translated": "South Korea (South Korea)"
+      },
+      {
+        "row": 8,
+        "column": 1,
+        "score": 0.8647541876650119,
+        "source": "Qatar (QAT)",
+        "back_translated": "Qatar (Qatar)"
+      },
+      {
+        "row": 13,
+        "column": 1,
+        "score": 0.8740167509643563,
+        "source": "Uzbekistan (UZB)",
+        "back_translated": "Uzbekistan (Uzbekistan)"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports competitions"
+  },
+  "domain": "sports competitions"
+}

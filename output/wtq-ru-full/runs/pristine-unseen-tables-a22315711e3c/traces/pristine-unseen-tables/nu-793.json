@@ -1,0 +1,150 @@
+{
+  "question_id": "nu-793",
+  "source_context": "csv/204-csv/166.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-793.tsv",
+  "source_question": "what are the total number of tied games listed?",
+  "translated_question": "сколько Итого Ничьих игр указано?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "total",
+      "normalized_text": "total",
+      "start": 13,
+      "end": 18,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 63,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Totals",
+      "match_type": "lemma",
+      "candidate_key": "f515d01b9dc294a7",
+      "coordinate": {
+        "row": 63,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "tied",
+      "normalized_text": "tie",
+      "start": 29,
+      "end": 33,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 5,
+          "column": 6
+        },
+        {
+          "row": 7,
+          "column": 3
+        },
+        {
+          "row": 16,
+          "column": 6
+        },
+        {
+          "row": 20,
+          "column": 6
+        },
+        {
+          "row": 37,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Tied",
+      "match_type": "lemma",
+      "candidate_key": "a959dcb75772d078",
+      "coordinate": {
+        "row": 5,
+        "column": 6
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-793",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what are the total number of tied games listed?",
+    "translated_question": "сколько Итого Ничьих игр указано?",
+    "back_translated_question": "how many total tied games are listed?",
+    "question_cosine_similarity": 0.9808146506185653,
+    "question_bert_precision": 0.6049003601074219,
+    "question_bert_recall": 0.6880086064338684,
+    "question_bert_f1": 0.6462644934654236,
+    "back_table_groups_compared": 455,
+    "back_table_min_similarity": 0.5363988028343909,
+    "back_table_mean_similarity": 0.9963697551147483,
+    "back_table_bert_groups_compared": 455,
+    "back_table_bert_min_f1": 0.3190145492553711,
+    "back_table_bert_mean_f1": 0.9933346866906344,
+    "back_table_bert_min_precision": 0.32933807373046875,
+    "back_table_bert_mean_precision": 0.9931829537664141,
+    "back_table_bert_min_recall": 0.3067523241043091,
+    "back_table_bert_mean_recall": 0.9934745740759504,
+    "back_table_similarity_examples": [
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.5363988028343909,
+        "source": "Tied",
+        "back_translated": "Draw"
+      },
+      {
+        "row": 37,
+        "column": 3,
+        "score": 0.5363988028343909,
+        "source": "Tied",
+        "back_translated": "Draw"
+      },
+      {
+        "row": 5,
+        "column": 6,
+        "score": 0.8383885923481553,
+        "source": "Tied 3–3",
+        "back_translated": "Score 3–3"
+      },
+      {
+        "row": 16,
+        "column": 6,
+        "score": 0.8542231767067461,
+        "source": "Tied 8–8–1",
+        "back_translated": "Score 8–8–1"
+      },
+      {
+        "row": 20,
+        "column": 6,
+        "score": 0.8555934775265817,
+        "source": "Tied 10–10–1",
+        "back_translated": "Score 10–10–1"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "college football rivalry games"
+  },
+  "domain": "college football rivalry games"
+}

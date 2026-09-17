@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-433",
+  "source_context": "csv/203-csv/662.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-433.tsv",
+  "source_question": "what poll source was used the most?",
+  "translated_question": "какой источник опроса использовался чаще всего?",
+  "source_target_value": "Survey USA",
+  "translated_target_value": "Survey USA",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "poll source",
+      "normalized_text": "poll source",
+      "start": 5,
+      "end": 16,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Poll Source",
+      "match_type": "lemma",
+      "candidate_key": "e61538ad1875cd3f",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-433",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what poll source was used the most?",
+    "translated_question": "какой источник опроса использовался чаще всего?",
+    "back_translated_question": "which poll source was used most frequently?",
+    "question_cosine_similarity": 0.980715480162075,
+    "question_bert_precision": 0.7318263649940491,
+    "question_bert_recall": 0.7118149399757385,
+    "question_bert_f1": 0.7222000956535339,
+    "back_table_groups_compared": 256,
+    "back_table_min_similarity": 0.7573670863632967,
+    "back_table_mean_similarity": 0.992022309130549,
+    "back_table_bert_groups_compared": 256,
+    "back_table_bert_min_f1": 0.37826046347618103,
+    "back_table_bert_mean_f1": 0.9657151545397937,
+    "back_table_bert_min_precision": 0.41179347038269043,
+    "back_table_bert_mean_precision": 0.9667214151704684,
+    "back_table_bert_min_recall": 0.3439459800720215,
+    "back_table_bert_mean_recall": 0.9646961910184473,
+    "back_table_similarity_examples": [
+      {
+        "row": 6,
+        "column": 3,
+        "score": 0.7573670863632967,
+        "source": "Feb 15-17, 2008",
+        "back_translated": "15 фев-17, 2008"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.7573670863632967,
+        "source": "Feb 15-17, 2008",
+        "back_translated": "15 фев-17, 2008"
+      },
+      {
+        "row": 25,
+        "column": 3,
+        "score": 0.7831113150729797,
+        "source": "Oct 12-14, 2007",
+        "back_translated": "12 окт-14, 2007"
+      },
+      {
+        "row": 26,
+        "column": 3,
+        "score": 0.7831113150729797,
+        "source": "Oct 12-14, 2007",
+        "back_translated": "12 окт-14, 2007"
+      },
+      {
+        "row": 27,
+        "column": 3,
+        "score": 0.7831113150729797,
+        "source": "Oct 12-14, 2007",
+        "back_translated": "12 окт-14, 2007"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "political polling"
+  },
+  "domain": "political polling"
+}

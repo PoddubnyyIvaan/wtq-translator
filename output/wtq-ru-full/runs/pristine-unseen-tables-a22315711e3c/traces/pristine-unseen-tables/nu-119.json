@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-119",
+  "source_context": "csv/203-csv/567.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-119.tsv",
+  "source_question": "fulham and stoke city both won with how many points?",
+  "translated_question": "Фулхэм и Сток Сити оба выиграли с каким количеством очков?",
+  "source_target_value": "3",
+  "translated_target_value": "3",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "fulham",
+      "normalized_text": "fulham",
+      "start": 0,
+      "end": 6,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 12,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Fulham",
+      "match_type": "lemma",
+      "candidate_key": "32d3690c834ac003",
+      "coordinate": {
+        "row": 12,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "stoke city",
+      "normalized_text": "stoke city",
+      "start": 11,
+      "end": 21,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 19,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Stoke City",
+      "match_type": "lemma",
+      "candidate_key": "faa861ee69cc37c3",
+      "coordinate": {
+        "row": 19,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-119",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "fulham and stoke city both won with how many points?",
+    "translated_question": "Фулхэм и Сток Сити оба выиграли с каким количеством очков?",
+    "back_translated_question": "fulham and stoke city both won with how many points?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 126,
+    "back_table_min_similarity": 0.666112670958739,
+    "back_table_mean_similarity": 0.9903159789352789,
+    "back_table_bert_groups_compared": 126,
+    "back_table_bert_min_f1": -0.0007029035477899015,
+    "back_table_bert_mean_f1": 0.9366091618629446,
+    "back_table_bert_min_precision": -0.02294832281768322,
+    "back_table_bert_mean_precision": 0.9436571167722817,
+    "back_table_bert_min_recall": 0.019012844190001488,
+    "back_table_bert_mean_recall": 0.9296477487133372,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 0,
+        "score": 0.666112670958739,
+        "source": "Tie no",
+        "back_translated": "Link No."
+      },
+      {
+        "row": 10,
+        "column": 4,
+        "score": 0.9529428080791872,
+        "source": "26 January 2003",
+        "back_translated": "January 26, 2003"
+      },
+      {
+        "row": 12,
+        "column": 4,
+        "score": 0.9529428080791872,
+        "source": "26 January 2003",
+        "back_translated": "January 26, 2003"
+      },
+      {
+        "row": 14,
+        "column": 4,
+        "score": 0.9529428080791872,
+        "source": "26 January 2003",
+        "back_translated": "January 26, 2003"
+      },
+      {
+        "row": 16,
+        "column": 4,
+        "score": 0.9529428080791872,
+        "source": "26 January 2003",
+        "back_translated": "January 26, 2003"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "football matches"
+  },
+  "domain": "football matches"
+}

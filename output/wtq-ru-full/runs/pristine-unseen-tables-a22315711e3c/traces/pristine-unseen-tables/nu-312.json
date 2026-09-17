@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-312",
+  "source_context": "csv/204-csv/224.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-312.tsv",
+  "source_question": "what is the last date?",
+  "translated_question": "какая последняя Дата?",
+  "source_target_value": "Dec 21",
+  "translated_target_value": "21 декабря",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "date",
+      "normalized_text": "date",
+      "start": 17,
+      "end": 21,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Date",
+      "match_type": "lemma",
+      "candidate_key": "58930d017d1af3c4",
+      "coordinate": {
+        "row": null,
+        "column": 0
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-312",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the last date?",
+    "translated_question": "какая последняя Дата?",
+    "back_translated_question": "what is the last date?",
+    "question_cosine_similarity": 1.0,
+    "question_bert_precision": 1.0,
+    "question_bert_recall": 1.0,
+    "question_bert_f1": 1.0,
+    "back_table_groups_compared": 66,
+    "back_table_min_similarity": 0.7165648031438839,
+    "back_table_mean_similarity": 0.956039714443599,
+    "back_table_bert_groups_compared": 66,
+    "back_table_bert_min_f1": 0.0848815068602562,
+    "back_table_bert_mean_f1": 0.8612329863914938,
+    "back_table_bert_min_precision": 0.10964047163724899,
+    "back_table_bert_mean_precision": 0.8643991679630496,
+    "back_table_bert_min_recall": 0.05809004232287407,
+    "back_table_bert_mean_recall": 0.857776757160371,
+    "back_table_similarity_examples": [
+      {
+        "row": 4,
+        "column": 3,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 7,
+        "column": 3,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "score": 0.7165648031438839,
+        "source": "Lost",
+        "back_translated": "Loss"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.775663162655141,
+        "source": "Mexico",
+        "back_translated": "New Mexico"
+      },
+      {
+        "row": 7,
+        "column": 5,
+        "score": 0.8318425068333462,
+        "source": "Qu Bo 58'",
+        "back_translated": "zhu bo 58'"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

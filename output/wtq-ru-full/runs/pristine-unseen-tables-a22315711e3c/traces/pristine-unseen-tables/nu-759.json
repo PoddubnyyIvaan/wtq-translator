@@ -1,0 +1,270 @@
+{
+  "question_id": "nu-759",
+  "source_context": "csv/202-csv/260.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-759.tsv",
+  "source_question": "most district names are the same as their ...?",
+  "translated_question": "наиболее округов названия совпадают с их ...?",
+  "source_target_value": "Headquarters",
+  "translated_target_value": "штаб-квартира",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "district",
+      "normalized_text": "district",
+      "start": 5,
+      "end": 13,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 14
+        },
+        {
+          "row": 1,
+          "column": 14
+        },
+        {
+          "row": 2,
+          "column": 14
+        },
+        {
+          "row": 3,
+          "column": 14
+        },
+        {
+          "row": 4,
+          "column": 14
+        },
+        {
+          "row": 5,
+          "column": 14
+        },
+        {
+          "row": 6,
+          "column": 14
+        },
+        {
+          "row": 7,
+          "column": 14
+        },
+        {
+          "row": 8,
+          "column": 14
+        },
+        {
+          "row": 9,
+          "column": 14
+        },
+        {
+          "row": 10,
+          "column": 14
+        },
+        {
+          "row": 11,
+          "column": 14
+        },
+        {
+          "row": 12,
+          "column": 14
+        },
+        {
+          "row": 13,
+          "column": 14
+        },
+        {
+          "row": 14,
+          "column": 14
+        },
+        {
+          "row": 15,
+          "column": 14
+        },
+        {
+          "row": 16,
+          "column": 14
+        },
+        {
+          "row": 17,
+          "column": 14
+        },
+        {
+          "row": 18,
+          "column": 14
+        },
+        {
+          "row": 19,
+          "column": 14
+        },
+        {
+          "row": 20,
+          "column": 14
+        },
+        {
+          "row": 21,
+          "column": 14
+        },
+        {
+          "row": 22,
+          "column": 14
+        },
+        {
+          "row": 23,
+          "column": 14
+        },
+        {
+          "row": 24,
+          "column": 14
+        },
+        {
+          "row": 25,
+          "column": 14
+        },
+        {
+          "row": 26,
+          "column": 14
+        },
+        {
+          "row": 27,
+          "column": 14
+        },
+        {
+          "row": 28,
+          "column": 14
+        },
+        {
+          "row": 29,
+          "column": 14
+        },
+        {
+          "row": 30,
+          "column": 14
+        },
+        {
+          "row": 31,
+          "column": 14
+        },
+        {
+          "row": 32,
+          "column": 14
+        },
+        {
+          "row": 33,
+          "column": 14
+        },
+        {
+          "row": 34,
+          "column": 14
+        }
+      ],
+      "table_source_text": "District",
+      "match_type": "lemma",
+      "candidate_key": "edf0e3322fcf348b",
+      "coordinate": {
+        "row": 0,
+        "column": 14
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "names",
+      "normalized_text": "name",
+      "start": 14,
+      "end": 19,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Name",
+      "match_type": "lemma",
+      "candidate_key": "e6c93b05bbd9808e",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-759",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "most district names are the same as their ...?",
+    "translated_question": "наиболее округов названия совпадают с их ...?",
+    "back_translated_question": "the most districts names match their ...?",
+    "question_cosine_similarity": 0.9268951174352289,
+    "question_bert_precision": 0.5796566009521484,
+    "question_bert_recall": 0.6948793530464172,
+    "question_bert_f1": 0.6364153027534485,
+    "back_table_groups_compared": 555,
+    "back_table_min_similarity": 0.31188999079544855,
+    "back_table_mean_similarity": 0.9760132372327509,
+    "back_table_bert_groups_compared": 555,
+    "back_table_bert_min_f1": -0.01024612132459879,
+    "back_table_bert_mean_f1": 0.9448043568294731,
+    "back_table_bert_min_precision": -0.17501135170459747,
+    "back_table_bert_mean_precision": 0.9490615282241288,
+    "back_table_bert_min_recall": 0.19001895189285278,
+    "back_table_bert_mean_recall": 0.9406306455801199,
+    "back_table_similarity_examples": [
+      {
+        "row": 31,
+        "column": 1,
+        "score": 0.31188999079544855,
+        "source": "Thane",
+        "back_translated": "Tain Baker"
+      },
+      {
+        "row": 31,
+        "column": 4,
+        "score": 0.31188999079544855,
+        "source": "Thane",
+        "back_translated": "Tain Baker"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.35512188526870164,
+        "source": "Akola",
+        "back_translated": "Aurangabad"
+      },
+      {
+        "row": 1,
+        "column": 4,
+        "score": 0.35512188526870164,
+        "source": "Akola",
+        "back_translated": "Aurangabad"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "score": 0.4058692631023049,
+        "source": "Beed",
+        "back_translated": "Bhandara"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "geography and demographics of districts in Maharashtra, India"
+  },
+  "domain": "geography and demographics of districts in Maharashtra, India"
+}

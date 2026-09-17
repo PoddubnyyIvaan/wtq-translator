@@ -1,0 +1,186 @@
+{
+  "question_id": "nu-547",
+  "source_context": "csv/204-csv/826.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-547.tsv",
+  "source_question": "how many entrants in the 1930 rome grand prix had cars constructed by maserati?",
+  "translated_question": "сколько участников в римском гран-при 1930 года имели автомобили, построенные компанией Мазерати?",
+  "source_target_value": "6",
+  "translated_target_value": "6",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "entrants",
+      "normalized_text": "entrant",
+      "start": 9,
+      "end": 17,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Entrant",
+      "match_type": "lemma",
+      "candidate_key": "6ee4ff64e2cecb2d",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "maserati",
+      "normalized_text": "maserati",
+      "start": 70,
+      "end": 78,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 2
+        },
+        {
+          "row": 0,
+          "column": 3
+        },
+        {
+          "row": 0,
+          "column": 4
+        },
+        {
+          "row": 4,
+          "column": 3
+        },
+        {
+          "row": 4,
+          "column": 4
+        },
+        {
+          "row": 5,
+          "column": 2
+        },
+        {
+          "row": 5,
+          "column": 3
+        },
+        {
+          "row": 5,
+          "column": 4
+        },
+        {
+          "row": 9,
+          "column": 3
+        },
+        {
+          "row": 9,
+          "column": 4
+        },
+        {
+          "row": 16,
+          "column": 3
+        },
+        {
+          "row": 16,
+          "column": 4
+        },
+        {
+          "row": 19,
+          "column": 3
+        },
+        {
+          "row": 19,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Maserati",
+      "match_type": "lemma",
+      "candidate_key": "2c36a900d3946bf7",
+      "coordinate": {
+        "row": 0,
+        "column": 2
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-547",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many entrants in the 1930 rome grand prix had cars constructed by maserati?",
+    "translated_question": "сколько участников в римском гран-при 1930 года имели автомобили, построенные компанией Мазерати?",
+    "back_translated_question": "how many entrants in the 1930 Roman Grand Prix had cars built by the company maserati?",
+    "question_cosine_similarity": 0.9709544470970456,
+    "question_bert_precision": 0.8225062489509583,
+    "question_bert_recall": 0.7981604933738708,
+    "question_bert_f1": 0.8105611801147461,
+    "back_table_groups_compared": 144,
+    "back_table_min_similarity": 0.4462065167109182,
+    "back_table_mean_similarity": 0.962092008865101,
+    "back_table_bert_groups_compared": 144,
+    "back_table_bert_min_f1": 0.3376236855983734,
+    "back_table_bert_mean_f1": 0.9007496552334892,
+    "back_table_bert_min_precision": 0.350359171628952,
+    "back_table_bert_mean_precision": 0.9025881112449698,
+    "back_table_bert_min_recall": 0.32115471363067627,
+    "back_table_bert_mean_recall": 0.8987245294782851,
+    "back_table_similarity_examples": [
+      {
+        "row": 14,
+        "column": 1,
+        "score": 0.4462065167109182,
+        "source": "Guy Bouriat",
+        "back_translated": "Gy Bure"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.5775708606964491,
+        "source": "Entrant",
+        "back_translated": "participant"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.7167693114658658,
+        "source": "Driver",
+        "back_translated": "Rider"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7282578459341464,
+        "source": "Fritz Caflisch",
+        "back_translated": "Fritz Zafalisch"
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "score": 0.7449675275767068,
+        "source": "Talbot",
+        "back_translated": "Connie Talbot"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "motor racing"
+  },
+  "domain": "motor racing"
+}

@@ -1,0 +1,138 @@
+{
+  "question_id": "nu-907",
+  "source_context": "csv/203-csv/458.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-907.tsv",
+  "source_question": "how many years before his 1998 guardian of zion award did herman wouk win the pulitzer prize?",
+  "translated_question": "сколько лет до его премии 1998 года «хранитель зион» Герман Вук выиграл Премию?",
+  "source_target_value": "46",
+  "translated_target_value": "46",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "herman wouk",
+      "normalized_text": "herman wouk",
+      "start": 58,
+      "end": 69,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Herman Wouk",
+      "match_type": "lemma",
+      "candidate_key": "8ce47e347cdb9665",
+      "coordinate": {
+        "row": 1,
+        "column": 1
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "pulitzer prize",
+      "normalized_text": "pulitzer prize",
+      "start": 78,
+      "end": 92,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 1,
+          "column": 3
+        },
+        {
+          "row": 8,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Pulitzer Prize",
+      "match_type": "lemma",
+      "candidate_key": "2e3cf9ef46617f6f",
+      "coordinate": {
+        "row": 1,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-907",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many years before his 1998 guardian of zion award did herman wouk win the pulitzer prize?",
+    "translated_question": "сколько лет до его премии 1998 года «хранитель зион» Герман Вук выиграл Премию?",
+    "back_translated_question": "how many years before his 1998 award of 'Guardian of Zion' did herman wouk win the pulitzer prize?",
+    "question_cosine_similarity": 0.9948842493668512,
+    "question_bert_precision": 0.8044339418411255,
+    "question_bert_recall": 0.7458354234695435,
+    "question_bert_f1": 0.7751292586326599,
+    "back_table_groups_compared": 75,
+    "back_table_min_similarity": 0.5181372760197562,
+    "back_table_mean_similarity": 0.9775893421905089,
+    "back_table_bert_groups_compared": 75,
+    "back_table_bert_min_f1": 0.21735748648643494,
+    "back_table_bert_mean_f1": 0.9288611153761546,
+    "back_table_bert_min_precision": 0.20622889697551727,
+    "back_table_bert_mean_precision": 0.9316483626763026,
+    "back_table_bert_min_recall": 0.22621163725852966,
+    "back_table_bert_mean_recall": 0.9261609959602356,
+    "back_table_similarity_examples": [
+      {
+        "row": 5,
+        "column": 1,
+        "score": 0.5181372760197562,
+        "source": "Charles Krauthammer",
+        "back_translated": "Charles Crowther"
+      },
+      {
+        "row": 7,
+        "column": 1,
+        "score": 0.7325293528093542,
+        "source": "Arthur Cohn",
+        "back_translated": "Arthur Kohan"
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "score": 0.7430117657290406,
+        "source": "Ruth Roskies Wisse",
+        "back_translated": "rut roskie visse"
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "score": 0.7595111071767094,
+        "source": "Herman Wouk",
+        "back_translated": "Herman Wuk"
+      },
+      {
+        "row": 11,
+        "column": 1,
+        "score": 0.8848945563806772,
+        "source": "David Be'eri, Mordechai Eliav, Rabbi Yehuda Maly",
+        "back_translated": "David Baeer, Mordchai Eliav, rabbi yehuda mali"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "awards and honours"
+  },
+  "domain": "awards and honours"
+}

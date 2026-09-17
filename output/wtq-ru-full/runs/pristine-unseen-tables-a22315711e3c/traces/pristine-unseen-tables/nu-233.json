@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-233",
+  "source_context": "csv/203-csv/690.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-233.tsv",
+  "source_question": "what is the name of the last manufacturer on this chart?",
+  "translated_question": "какое название у последнего Производителя на этой диаграмме?",
+  "source_target_value": "Gillig",
+  "translated_target_value": "Gillig",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "manufacturer",
+      "normalized_text": "manufacturer",
+      "start": 29,
+      "end": 41,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 1
+        }
+      ],
+      "table_source_text": "Manufacturer",
+      "match_type": "lemma",
+      "candidate_key": "2df84e0360df59b1",
+      "coordinate": {
+        "row": null,
+        "column": 1
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-233",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the name of the last manufacturer on this chart?",
+    "translated_question": "какое название у последнего Производителя на этой диаграмме?",
+    "back_translated_question": "what is the name of the last manufacturer on this diagram?",
+    "question_cosine_similarity": 0.9305259820897256,
+    "question_bert_precision": 0.9401043057441711,
+    "question_bert_recall": 0.9401125907897949,
+    "question_bert_f1": 0.9401991963386536,
+    "back_table_groups_compared": 184,
+    "back_table_min_similarity": 0.5591599322311287,
+    "back_table_mean_similarity": 0.9914412853892877,
+    "back_table_bert_groups_compared": 184,
+    "back_table_bert_min_f1": 0.31747838854789734,
+    "back_table_bert_mean_f1": 0.9821835803272931,
+    "back_table_bert_min_precision": 0.2666432857513428,
+    "back_table_bert_mean_precision": 0.9815824137109778,
+    "back_table_bert_min_recall": 0.36879396438598633,
+    "back_table_bert_mean_recall": 0.9827487407171208,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 5,
+        "score": 0.5591599322311287,
+        "source": "Fleet Series",
+        "back_translated": "Park series"
+      },
+      {
+        "row": null,
+        "column": 7,
+        "score": 0.6439582845685442,
+        "source": "Powertrain",
+        "back_translated": "Transmission"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.6865135789506055,
+        "source": "Quantity",
+        "back_translated": "Count"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.770547891677642,
+        "source": "Manufacturer",
+        "back_translated": "Jersey manufacturer"
+      },
+      {
+        "row": null,
+        "column": 6,
+        "score": 0.8079364746601359,
+        "source": "Fuel Propulsion",
+        "back_translated": "Fuel traction"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "public transportation vehicles"
+  },
+  "domain": "public transportation vehicles"
+}

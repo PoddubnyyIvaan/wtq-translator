@@ -1,0 +1,84 @@
+{
+  "question_id": "nu-856",
+  "source_context": "csv/204-csv/118.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-856.tsv",
+  "source_question": "name a season that had more than 7 wins but less than 10.",
+  "translated_question": "назовите сезон, в котором было больше 7 побед, но меньше 10.",
+  "source_target_value": "2002",
+  "translated_target_value": "2002",
+  "mentions": [],
+  "quality": {
+    "question_id": "nu-856",
+    "mode": "full",
+    "table_mentions_found": false,
+    "source_question": "name a season that had more than 7 wins but less than 10.",
+    "translated_question": "назовите сезон, в котором было больше 7 побед, но меньше 10.",
+    "back_translated_question": "name the season in which there were more than 7 wins but fewer than 10.",
+    "question_cosine_similarity": 0.9836655817636825,
+    "question_bert_precision": 0.7760089635848999,
+    "question_bert_recall": 0.7119924426078796,
+    "question_bert_f1": 0.7439703941345215,
+    "back_table_groups_compared": 44,
+    "back_table_min_similarity": 0.7322618868352048,
+    "back_table_mean_similarity": 0.9611285108835431,
+    "back_table_bert_groups_compared": 44,
+    "back_table_bert_min_f1": 0.32903778553009033,
+    "back_table_bert_mean_f1": 0.8720995716073296,
+    "back_table_bert_min_precision": 0.37939223647117615,
+    "back_table_bert_mean_precision": 0.8898548314517195,
+    "back_table_bert_min_recall": 0.27911508083343506,
+    "back_table_bert_mean_recall": 0.855185255408287,
+    "back_table_similarity_examples": [
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.7322618868352048,
+        "source": "Team Record\\nW",
+        "back_translated": "Team result\\nP"
+      },
+      {
+        "row": null,
+        "column": 2,
+        "score": 0.7374590907650618,
+        "source": "Team Record\\nL",
+        "back_translated": "Team result\\nP"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "score": 0.8586259117747596,
+        "source": "4th Qualifier, Region 2",
+        "back_translated": "4-the 1st qualification match, Region 2"
+      },
+      {
+        "row": 0,
+        "column": 3,
+        "score": 0.860167471185169,
+        "source": "3rd Qualifier, Region 2",
+        "back_translated": "3-the 1st qualification match, Region 2"
+      },
+      {
+        "row": 1,
+        "column": 3,
+        "score": 0.8655991303925729,
+        "source": "2nd Qualifier, Region 2",
+        "back_translated": "2-the 1st qualification match, Region 2"
+      }
+    ],
+    "original_masks": [],
+    "forward_masks": [],
+    "backward_masks": [],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "No table mentions found in question."
+    ],
+    "errors": [],
+    "status": "accepted_with_warnings",
+    "domain": "sports"
+  },
+  "domain": "sports"
+}

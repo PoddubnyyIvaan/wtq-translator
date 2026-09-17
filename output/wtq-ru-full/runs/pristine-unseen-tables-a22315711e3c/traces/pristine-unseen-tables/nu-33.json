@@ -1,0 +1,168 @@
+{
+  "question_id": "nu-33",
+  "source_context": "csv/204-csv/640.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-33.tsv",
+  "source_question": "which year did illinois not have any losses during the conference?",
+  "translated_question": "в каком году Иллинойс не имел никаких поражений в конференц-рекорде?",
+  "source_target_value": "1914-15",
+  "translated_target_value": "1914-15",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "illinois",
+      "normalized_text": "illinois",
+      "start": 15,
+      "end": 23,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 0
+        },
+        {
+          "row": 1,
+          "column": 0
+        },
+        {
+          "row": 2,
+          "column": 0
+        },
+        {
+          "row": 3,
+          "column": 0
+        },
+        {
+          "row": 4,
+          "column": 0
+        },
+        {
+          "row": 5,
+          "column": 0
+        },
+        {
+          "row": 6,
+          "column": 0
+        },
+        {
+          "row": 7,
+          "column": 0
+        },
+        {
+          "row": 8,
+          "column": 0
+        }
+      ],
+      "table_source_text": "Illinois",
+      "match_type": "lemma",
+      "candidate_key": "a8181eb8b9593f97",
+      "coordinate": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "conference",
+      "normalized_text": "conference",
+      "start": 55,
+      "end": 65,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Conference",
+      "match_type": "lemma",
+      "candidate_key": "4b7ce3636f9a8376",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-33",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "which year did illinois not have any losses during the conference?",
+    "translated_question": "в каком году Иллинойс не имел никаких поражений в конференц-рекорде?",
+    "back_translated_question": "in what year did Illinois have no losses in the conference record?",
+    "question_cosine_similarity": 0.9759898776288871,
+    "question_bert_precision": 0.5145186185836792,
+    "question_bert_recall": 0.5644164085388184,
+    "question_bert_f1": 0.5398921966552734,
+    "back_table_groups_compared": 60,
+    "back_table_min_similarity": 0.6649313666442864,
+    "back_table_mean_similarity": 0.9690953437732622,
+    "back_table_bert_groups_compared": 60,
+    "back_table_bert_min_f1": 0.24598535895347595,
+    "back_table_bert_mean_f1": 0.9397453144192696,
+    "back_table_bert_min_precision": 0.2257152795791626,
+    "back_table_bert_mean_precision": 0.9426569163799285,
+    "back_table_bert_min_recall": 0.26434242725372314,
+    "back_table_bert_mean_recall": 0.9367587392528852,
+    "back_table_similarity_examples": [
+      {
+        "row": 2,
+        "column": 4,
+        "score": 0.6649313666442864,
+        "source": "T1st",
+        "back_translated": "T1-e"
+      },
+      {
+        "row": 4,
+        "column": 4,
+        "score": 0.6649313666442864,
+        "source": "T1st",
+        "back_translated": "T1-e"
+      },
+      {
+        "row": 3,
+        "column": 4,
+        "score": 0.7034209717534067,
+        "source": "T2nd",
+        "back_translated": "T2-e"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.7471585359265884,
+        "source": "Place",
+        "back_translated": "Venue"
+      },
+      {
+        "row": null,
+        "column": 1,
+        "score": 0.7574208471870204,
+        "source": "Season",
+        "back_translated": "Regular season"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "college basketball statistics"
+  },
+  "domain": "college basketball statistics"
+}

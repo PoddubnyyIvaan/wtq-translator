@@ -1,0 +1,134 @@
+{
+  "question_id": "nu-606",
+  "source_context": "csv/204-csv/856.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-606.tsv",
+  "source_question": "what is the number of jockeys whose fate was falling?",
+  "translated_question": "сколько жокеев, чья судьба была падением?",
+  "source_target_value": "15",
+  "translated_target_value": "15",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "jockeys",
+      "normalized_text": "jockey",
+      "start": 22,
+      "end": 29,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Jockey",
+      "match_type": "lemma",
+      "candidate_key": "7483a38f4b58a9b4",
+      "coordinate": {
+        "row": null,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "fate",
+      "normalized_text": "fate",
+      "start": 36,
+      "end": 40,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 6
+        }
+      ],
+      "table_source_text": "Fate",
+      "match_type": "lemma",
+      "candidate_key": "b5b63b9858c34264",
+      "coordinate": {
+        "row": null,
+        "column": 6
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-606",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the number of jockeys whose fate was falling?",
+    "translated_question": "сколько жокеев, чья судьба была падением?",
+    "back_translated_question": "how many jockeys, whose fate was a fall?",
+    "question_cosine_similarity": 0.9533524240086345,
+    "question_bert_precision": 0.5176740884780884,
+    "question_bert_recall": 0.5836310982704163,
+    "question_bert_f1": 0.5508577227592468,
+    "back_table_groups_compared": 238,
+    "back_table_min_similarity": 0.3684449760365609,
+    "back_table_mean_similarity": 0.9144577601513968,
+    "back_table_bert_groups_compared": 238,
+    "back_table_bert_min_f1": -0.1976957470178604,
+    "back_table_bert_mean_f1": 0.8549902170833921,
+    "back_table_bert_min_precision": -0.1626608967781067,
+    "back_table_bert_mean_precision": 0.8596158906692216,
+    "back_table_bert_min_recall": -0.23464654386043549,
+    "back_table_bert_mean_recall": 0.8503669862549345,
+    "back_table_similarity_examples": [
+      {
+        "row": 15,
+        "column": 2,
+        "score": 0.3684449760365609,
+        "source": "Mr George Hartigan",
+        "back_translated": "Disqualified from the race"
+      },
+      {
+        "row": 24,
+        "column": 1,
+        "score": 0.3883075773095363,
+        "source": "Barleycroft",
+        "back_translated": "Barlikrof"
+      },
+      {
+        "row": 16,
+        "column": 6,
+        "score": 0.4107436337682963,
+        "source": "Pulled-Up",
+        "back_translated": "Disqualified from the race"
+      },
+      {
+        "row": 15,
+        "column": 6,
+        "score": 0.4535641538908948,
+        "source": "Pulled Up",
+        "back_translated": "Disqualified from the race"
+      },
+      {
+        "row": 17,
+        "column": 6,
+        "score": 0.4535641538908948,
+        "source": "Pulled Up",
+        "back_translated": "Disqualified from the race"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "horse racing"
+  },
+  "domain": "horse racing"
+}

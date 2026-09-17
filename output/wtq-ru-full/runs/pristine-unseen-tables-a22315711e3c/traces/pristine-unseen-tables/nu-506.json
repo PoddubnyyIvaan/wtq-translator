@@ -1,0 +1,170 @@
+{
+  "question_id": "nu-506",
+  "source_context": "csv/204-csv/434.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-506.tsv",
+  "source_question": "what is the total number of fw-190's he damaged or destroyed?",
+  "translated_question": "каково общее количество fw-190, которые он повредил или уничтожено?",
+  "source_target_value": "2",
+  "translated_target_value": "2",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "number",
+      "normalized_text": "number",
+      "start": 18,
+      "end": 24,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 3
+        }
+      ],
+      "table_source_text": "Number",
+      "match_type": "lemma",
+      "candidate_key": "a6743657a9d4af2c",
+      "coordinate": {
+        "row": null,
+        "column": 3
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "destroyed",
+      "normalized_text": "destroy",
+      "start": 51,
+      "end": 60,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 0,
+          "column": 5
+        },
+        {
+          "row": 1,
+          "column": 5
+        },
+        {
+          "row": 2,
+          "column": 5
+        },
+        {
+          "row": 3,
+          "column": 5
+        },
+        {
+          "row": 4,
+          "column": 5
+        },
+        {
+          "row": 6,
+          "column": 5
+        },
+        {
+          "row": 7,
+          "column": 5
+        },
+        {
+          "row": 9,
+          "column": 5
+        },
+        {
+          "row": 10,
+          "column": 5
+        },
+        {
+          "row": 11,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Destroyed",
+      "match_type": "lemma",
+      "candidate_key": "0999c33880a4ae2a",
+      "coordinate": {
+        "row": 0,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-506",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "what is the total number of fw-190's he damaged or destroyed?",
+    "translated_question": "каково общее количество fw-190, которые он повредил или уничтожено?",
+    "back_translated_question": "what is the total number of fw-190s that he damaged or destroyed?",
+    "question_cosine_similarity": 0.9918018689310398,
+    "question_bert_precision": 0.8423033356666565,
+    "question_bert_recall": 0.8487384915351868,
+    "question_bert_f1": 0.845751166343689,
+    "back_table_groups_compared": 84,
+    "back_table_min_similarity": 0.5060681159088714,
+    "back_table_mean_similarity": 0.9015496605483835,
+    "back_table_bert_groups_compared": 84,
+    "back_table_bert_min_f1": 0.23597067594528198,
+    "back_table_bert_mean_f1": 0.8477313053749856,
+    "back_table_bert_min_precision": 0.36452117562294006,
+    "back_table_bert_mean_precision": 0.8594794635261808,
+    "back_table_bert_min_recall": 0.12034142017364502,
+    "back_table_bert_mean_recall": 0.8360862338117191,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.5060681159088714,
+        "source": "Air",
+        "back_translated": "Avia"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "military aviation history"
+  },
+  "domain": "military aviation history"
+}

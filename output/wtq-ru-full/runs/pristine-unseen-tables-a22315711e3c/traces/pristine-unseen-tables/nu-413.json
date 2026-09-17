@@ -1,0 +1,110 @@
+{
+  "question_id": "nu-413",
+  "source_context": "csv/202-csv/270.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-413.tsv",
+  "source_question": "how many divisions have an area of more than 1000 km^2?",
+  "translated_question": "сколько районов имеют площадь более 1000 км^2?",
+  "source_target_value": "5",
+  "translated_target_value": "5",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "area",
+      "normalized_text": "area",
+      "start": 27,
+      "end": 31,
+      "source_type": "header",
+      "coordinates": [
+        {
+          "row": null,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Area",
+      "match_type": "lemma",
+      "candidate_key": "210114236b829370",
+      "coordinate": {
+        "row": null,
+        "column": 5
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-413",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how many divisions have an area of more than 1000 km^2?",
+    "translated_question": "сколько районов имеют площадь более 1000 км^2?",
+    "back_translated_question": "how many districts have area more than 1000 km^2?",
+    "question_cosine_similarity": 0.876738228960973,
+    "question_bert_precision": 0.8323602676391602,
+    "question_bert_recall": 0.9001740217208862,
+    "question_bert_f1": 0.8660279512405396,
+    "back_table_groups_compared": 77,
+    "back_table_min_similarity": 0.3929103974412264,
+    "back_table_mean_similarity": 0.8924362501232022,
+    "back_table_bert_groups_compared": 77,
+    "back_table_bert_min_f1": 0.059935063123703,
+    "back_table_bert_mean_f1": 0.7777158122558099,
+    "back_table_bert_min_precision": 0.07198534905910492,
+    "back_table_bert_mean_precision": 0.7734678811454153,
+    "back_table_bert_min_recall": 0.04523723945021629,
+    "back_table_bert_mean_recall": 0.7820456528721692,
+    "back_table_similarity_examples": [
+      {
+        "row": 0,
+        "column": 2,
+        "score": 0.3929103974412264,
+        "source": "爱民区",
+        "back_translated": "Aimin"
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "score": 0.41826620888949084,
+        "source": "东安区",
+        "back_translated": "Dunan"
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "score": 0.42426250255309117,
+        "source": "阳明区",
+        "back_translated": "Yanmin"
+      },
+      {
+        "row": 6,
+        "column": 2,
+        "score": 0.4291913842036862,
+        "source": "海林市",
+        "back_translated": "Hailin"
+      },
+      {
+        "row": 4,
+        "column": 2,
+        "score": 0.48082679238478027,
+        "source": "穆棱市",
+        "back_translated": "Mulin"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [],
+    "errors": [],
+    "status": "accepted",
+    "domain": "geography"
+  },
+  "domain": "geography"
+}

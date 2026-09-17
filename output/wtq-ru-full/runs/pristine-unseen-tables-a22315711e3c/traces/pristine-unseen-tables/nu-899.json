@@ -1,0 +1,196 @@
+{
+  "question_id": "nu-899",
+  "source_context": "csv/204-csv/819.csv",
+  "output_context": "tables/pristine-unseen-tables/nu-899.tsv",
+  "source_question": "how long did it take for silva to finish the half marathon?",
+  "translated_question": "сколько лонг заняло у Да Силвы на прохождение полумарафона?",
+  "source_target_value": "1:00:28",
+  "translated_target_value": "1:00:28",
+  "mentions": [
+    {
+      "mask": "<TABLE_REF_0000>",
+      "question_text": "long",
+      "normalized_text": "long",
+      "start": 4,
+      "end": 8,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 30,
+          "column": 0
+        },
+        {
+          "row": 37,
+          "column": 1
+        },
+        {
+          "row": 37,
+          "column": 2
+        },
+        {
+          "row": 37,
+          "column": 3
+        },
+        {
+          "row": 37,
+          "column": 4
+        },
+        {
+          "row": 37,
+          "column": 5
+        }
+      ],
+      "table_source_text": "Long",
+      "match_type": "lemma",
+      "candidate_key": "2f4174fd2c3e9bdf",
+      "coordinate": {
+        "row": 30,
+        "column": 0
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0001>",
+      "question_text": "silva",
+      "normalized_text": "silva",
+      "start": 25,
+      "end": 30,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 18,
+          "column": 2
+        }
+      ],
+      "table_source_text": "Silva",
+      "match_type": "lemma",
+      "candidate_key": "efe0f84c4bc3b2d0",
+      "coordinate": {
+        "row": 18,
+        "column": 2
+      }
+    },
+    {
+      "mask": "<TABLE_REF_0002>",
+      "question_text": "half marathon",
+      "normalized_text": "half marathon",
+      "start": 45,
+      "end": 58,
+      "source_type": "cell",
+      "coordinates": [
+        {
+          "row": 15,
+          "column": 4
+        },
+        {
+          "row": 17,
+          "column": 0
+        },
+        {
+          "row": 17,
+          "column": 4
+        },
+        {
+          "row": 18,
+          "column": 0
+        },
+        {
+          "row": 18,
+          "column": 4
+        }
+      ],
+      "table_source_text": "Half Marathon",
+      "match_type": "lemma",
+      "candidate_key": "b53f99f0f777ea61",
+      "coordinate": {
+        "row": 15,
+        "column": 4
+      }
+    }
+  ],
+  "quality": {
+    "question_id": "nu-899",
+    "mode": "full",
+    "table_mentions_found": true,
+    "source_question": "how long did it take for silva to finish the half marathon?",
+    "translated_question": "сколько лонг заняло у Да Силвы на прохождение полумарафона?",
+    "back_translated_question": "how long did long take silva to complete the half marathon?",
+    "question_cosine_similarity": 0.9839158578677195,
+    "question_bert_precision": 0.7412629127502441,
+    "question_bert_recall": 0.7963408827781677,
+    "question_bert_f1": 0.7688498497009277,
+    "back_table_groups_compared": 300,
+    "back_table_min_similarity": 0.40355614801997597,
+    "back_table_mean_similarity": 0.9463989120975606,
+    "back_table_bert_groups_compared": 300,
+    "back_table_bert_min_f1": 0.01088869757950306,
+    "back_table_bert_mean_f1": 0.8217574439756572,
+    "back_table_bert_min_precision": 0.060152456164360046,
+    "back_table_bert_mean_precision": 0.8316399569312731,
+    "back_table_bert_min_recall": -0.03854399546980858,
+    "back_table_bert_mean_recall": 0.8118734499253333,
+    "back_table_similarity_examples": [
+      {
+        "row": 27,
+        "column": 4,
+        "score": 0.40355614801997597,
+        "source": "Encuentro Nacional de Fondo",
+        "back_translated": "National Marathon Tournament"
+      },
+      {
+        "row": 33,
+        "column": 2,
+        "score": 0.5417616101102467,
+        "source": "Mario Cota",
+        "back_translated": "mario kota"
+      },
+      {
+        "row": null,
+        "column": 4,
+        "score": 0.5576315898531953,
+        "source": "Meet",
+        "back_translated": "Competition"
+      },
+      {
+        "row": 5,
+        "column": 4,
+        "score": 0.5832508806075936,
+        "source": "Reebok Grand Prix",
+        "back_translated": "Ribok Grand Pici"
+      },
+      {
+        "row": 6,
+        "column": 5,
+        "score": 0.5834306207610662,
+        "source": "Walnut, United States",
+        "back_translated": "Vollnet, United States"
+      }
+    ],
+    "original_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "forward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "backward_masks": [
+      "<TABLE_REF_0000>",
+      "<TABLE_REF_0001>",
+      "<TABLE_REF_0002>"
+    ],
+    "missing_forward_masks": [],
+    "added_forward_masks": [],
+    "missing_backward_masks": [],
+    "added_backward_masks": [],
+    "ambiguous_mentions": [],
+    "warnings": [
+      "Answer 0 translated directly because coordinate recovery was not usable"
+    ],
+    "errors": [],
+    "status": "needs_review",
+    "domain": "sports athletics"
+  },
+  "domain": "sports athletics"
+}
