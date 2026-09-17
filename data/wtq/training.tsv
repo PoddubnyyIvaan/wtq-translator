@@ -1,2 +1,22 @@
 id	utterance	context	targetValue
 nt-0	what was the last year where this team was a part of the usl a-league?	csv/204-csv/590.csv	2004
+nt-1	in what city did piotr's last 1st place finish occur?	csv/204-csv/622.csv	Bangkok, Thailand
+nt-2	which team won previous to crettyard?	csv/204-csv/772.csv	Wolfe Tones
+nt-3	how many more passengers flew to los angeles than to saskatoon from manzanillo airport in 2013?	csv/203-csv/515.csv	12,467
+nt-4	who was the opponent in the first game of the season?	csv/204-csv/495.csv	Derby County
+nt-5	how many people stayed at least 3 years in office?	csv/203-csv/705.csv	4
+nt-6	who is the first away team on the chart	csv/204-csv/361.csv	Varbergs GIF
+nt-7	which is deeper, lake tuz or lake palas tuzla?	csv/204-csv/341.csv	Lake Palas Tuzla
+nt-8	after winning on four credits with a full house, what is your payout?	csv/203-csv/564.csv	32
+nt-9	which players played the same position as ardo kreek?	csv/203-csv/116.csv	Siim Ennemuist|Andri Aganits
+nt-10	how many times did an italian cyclist win a round?	csv/204-csv/253.csv	6
+nt-11	what was the first venue for the asian games?	csv/203-csv/646.csv	Bangkok, Thailand
+nt-12	what is the difference in the number of temples between imabari and matsuyama?	csv/204-csv/841.csv	2
+nt-13	what was the only year keene won class aa?	csv/204-csv/133.csv	1999-2000
+nt-14	which athlete was from south korea after the year 2010?	csv/203-csv/104.csv	Kim Yu-na
+nt-15	what was the venue when he placed first?	csv/204-csv/706.csv	New Delhi, India
+nt-16	how many total points did the bombers score against the bc lions?	csv/204-csv/227.csv	58
+nt-17	which is the first city listed alphabetically?	csv/204-csv/299.csv	Abbott
+nt-18	how many movies have links to other wikipedia pages about them?	csv/201-csv/21.csv	20
+nt-19	in how many games did the winning team score more than 4 points?	csv/204-csv/475.csv	3
+nt-20	which album released by the band schnell fenster produced the most singles appearing on the australian peak chart?	csv/202-csv/184.csv	The Sound Of Trees

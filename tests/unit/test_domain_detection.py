@@ -14,17 +14,19 @@ from wtq_translator.config import (
     ModelConfig,
     ProjectConfig,
 )
-from wtq_translator.domain import detect_domain
+from wtq_translator.domain import count_text, detect_domain
 from wtq_translator.models import TableData
 
 
 class FakeProvider:
     """Минимальный фейковый LLM-провайдер: реализует async generate/count_tokens."""
 
-    def __init__(self, responses=None, token_count=0):
+    def __init__(self, responses=None, token_count=0, token_failures=0):
         # ``responses`` — очередь ответов generate (pop по мере вызова).
         self._responses = list(responses or [])
         self._token_count = token_count
+        # Сколько первых вызовов count_tokens должны падать (транзиентные сбои).
+        self._token_failures_left = token_failures
         self.calls = []  # аргументы каждого вызова generate
         self.count_token_calls = 0
 
@@ -36,6 +38,9 @@ class FakeProvider:
 
     async def count_tokens(self, text: str) -> int:
         self.count_token_calls += 1
+        if self._token_failures_left > 0:
+            self._token_failures_left -= 1
+            raise ConnectionError("Server disconnected")
         return self._token_count
 
 
@@ -122,3 +127,26 @@ async def test_snippet_is_sent_as_user_payload(tmp_path):
     assert payload["task"] == "detect_domain"
     assert "snippet" in payload
     assert "col : [Year] | [Revenue]" in payload["snippet"]
+
+
+@pytest.mark.asyncio
+async def test_count_text_recovers_on_transient_failures():
+    """Транзиентные сбои count_tokens ретраятся; счётчик возвращается на успехе."""
+    provider = FakeProvider(token_count=17, token_failures=2)
+
+    result = await count_text(provider, "some text", retries=3)
+
+    assert result == 17
+    # 2 неудачные попытки + 1 успешная.
+    assert provider.count_token_calls == 3
+
+
+@pytest.mark.asyncio
+async def test_count_text_raises_after_all_retries():
+    """При постоянных сбоях count_text бросает исключение после retries + 1 попыток."""
+    provider = FakeProvider(token_failures=999)
+
+    with pytest.raises(ConnectionError):
+        await count_text(provider, "some text", retries=2)
+
+    assert provider.count_token_calls == 3

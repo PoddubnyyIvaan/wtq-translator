@@ -1,0 +1,7 @@
+{"question_id":"q1","mode":"full","question_cosine_similarity":0.50,"question_bert_f1":0.90,"back_table_bert_mean_f1":0.95,"back_table_mean_similarity":0.70,"status":"accepted"}
+{"question_id":"q2","mode":"full","question_cosine_similarity":0.60,"question_bert_f1":0.88,"back_table_bert_mean_f1":0.92,"back_table_mean_similarity":0.75,"status":"accepted"}
+{"question_id":"q3","mode":"full","question_cosine_similarity":0.55,"question_bert_f1":0.60,"back_table_bert_mean_f1":0.95,"back_table_mean_similarity":0.80,"status":"accepted"}
+{"question_id":"q4","mode":"full","question_cosine_similarity":0.65,"question_bert_f1":0.90,"back_table_bert_mean_f1":0.88,"back_table_mean_similarity":0.60,"status":"accepted"}
+{"question_id":"q5","mode":"full","question_cosine_similarity":0.70,"question_bert_f1":0.95,"back_table_bert_mean_f1":0.90,"back_table_mean_similarity":0.90,"status":"needs_review"}
+{"question_id":"q6","mode":"full","question_cosine_similarity":0.75,"question_bert_f1":0.80,"back_table_bert_mean_f1":0.80,"back_table_mean_similarity":0.85,"status":"accepted"}
+{"question_id":"q8","mode":"full","question_cosine_similarity":0.68,"question_bert_f1":0.93,"back_table_bert_mean_f1":0.96,"back_table_mean_similarity":0.88,"status":"accepted"}

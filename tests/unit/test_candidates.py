@@ -18,13 +18,13 @@ class _Morph:
 
 
 class _Tok:
-    def __init__(self, text, idx, *, lemma=None, pos="", num=False, date=False, punct=False, poss=None):
+    def __init__(self, text, idx, *, lemma=None, pos="", num=False, date=False, punct=False, poss=None, ent=""):
         self.text = text
         self.idx = idx
         self.lemma_ = text.lower() if lemma is None else lemma
         self.pos_ = pos
         self.like_num = num
-        self.ent_type_ = "DATE" if date else ""
+        self.ent_type_ = "DATE" if date else ent
         self.is_punct = punct
         self.is_space = False
         self.morph = _Morph(poss)
@@ -177,3 +177,33 @@ def test_lemma_key_keeps_cyrillic():
     })
     cands = extract_question_candidates("Нью-Йорк", nlp, MentionsConfig())
     assert "ньюйорк" in {c.lemma_key for c in cands}
+
+
+def test_table_candidates_carry_tokens_pos_ner_annotations():
+    table = TableData(["New York"], [])
+    nlp = make_nlp({
+        "New York": [
+            _Tok("New", 0, pos="PROPN", ent="GPE"),
+            _Tok("York", 4, pos="PROPN", ent="GPE"),
+        ],
+    })
+    result = extract_table_candidates(table, nlp, MentionsConfig(), "ru")
+    ny = next(c for c in result.candidates if c.lemma_key == "new york")
+    assert ny.tokens == ["New", "York"]
+    assert ny.pos == ["PROPN", "PROPN"]
+    assert ny.ner == ["GPE", "GPE"]
+    assert len(ny.tokens) == len(ny.pos) == len(ny.ner) == 2
+
+
+def test_question_candidates_have_no_token_annotations():
+    nlp = make_nlp({
+        "New York": [
+            _Tok("New", 0, pos="PROPN", ent="GPE"),
+            _Tok("York", 4, pos="PROPN", ent="GPE"),
+        ],
+    })
+    cands = extract_question_candidates("New York", nlp, MentionsConfig())
+    ny = next(c for c in cands if c.lemma_key == "new york")
+    assert not hasattr(ny, "tokens")
+    assert not hasattr(ny, "pos")
+    assert not hasattr(ny, "ner")

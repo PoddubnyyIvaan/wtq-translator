@@ -16,9 +16,20 @@ from .translation.table import _parse_json
 _Count = Callable[[str], Awaitable[int]]
 
 
-async def count_text(provider: LLMProvider, text: str) -> int:
-    """Тонкая обёртка над провайдером: считает токены одного фрагмента текста."""
-    return await provider.count_tokens(text)
+async def count_text(provider: LLMProvider, text: str, retries: int = 0) -> int:
+    """Тонкая обёртка над провайдером: считает токены одного фрагмента текста.
+
+    Механические ретраи при сетевых/HTTP-ошибках (например, обрыв соединения
+    с токенизатором при перегрузке сервера) по аналогии с retry-циклами generate.
+    """
+    last_error: Exception | None = None
+    for _ in range(retries + 1):
+        try:
+            return await provider.count_tokens(text)
+        except Exception as exc:
+            last_error = exc
+    assert last_error is not None
+    raise last_error
 
 
 def _render_header(headers: list[str], k: int) -> str:
@@ -96,7 +107,7 @@ async def detect_domain(
         return ("", "")
 
     lang = config.domain_detection.language or config.project.source_language
-    count = functools.partial(count_text, provider)
+    count = functools.partial(count_text, provider, retries=config.model.retries)
     snippet = await linearize_table(table, config.domain_detection.max_tokens, count)
 
     payload = {

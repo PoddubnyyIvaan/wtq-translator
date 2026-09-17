@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import hashlib
 
-PROMPT_SET_VERSION = "2026-09-10-v12"
+PROMPT_SET_VERSION = "2026-09-13-v13"
 
 
 SHELL_TRANSLATION_SYSTEM = (
@@ -82,6 +82,112 @@ ANSWER_TRANSLATION_SYSTEM = (
     "Do not return a JSON Schema, Markdown, code fences, explanations, comments, or additional keys."
 )
 
+
+
+
+QUESTION_TRANSLATION_SYSTEM = (
+    "You are a professional translator and domain editor. Your task is to translate a "
+    "question to a table from {source_language} into {target_language}.\n"
+    "Source language: {source_language}\n"
+    "Target language: {target_language}\n"
+    "Domain: {domain}\n"
+    "\n"
+    "The tagged question contains spans of the form <TABLE_REF_0000>source phrase</TABLE_REF_0000>. "
+    "Everything inside a tag pair is one table mention. The `mentions` list describes each mention; "
+    "its `translation` field is the mention's base (dictionary/lemma) form in the target language. "
+    "Treat it as the LEXICAL ROOT to inflect, NOT as a ready-made string to copy verbatim.\n"
+    "\n"
+    "Translation requirements:\n"
+    "1. Produce one natural, literary, grammatically correct question in the target language.\n"
+    "2. Every mention must appear in the output, wrapped in its OWN tag pair (same id, same "
+    "<TABLE_REF_XXXX> ... </TABLE_REF_XXXX>), glued around its content.\n"
+    "3. For the content of each tagged span, take the `translation` field as the root and emit the "
+    "form that the target-language sentence requires so that the mention GRAMMATICALLY AGREES with "
+    "the words around it. Apply the target language's own morphology: case, number, gender, person, "
+    "tense, definiteness, preposition-governed forms, or any other agreement its grammar uses. Never "
+    "emit the raw base form when the surrounding sentence demands a different form.\n"
+    "4. If the sentence requires a grammatical category that the base form does not provide, use the "
+    "closest form of the SAME lexeme (same root), never an unrelated synonym or paraphrase.\n"
+    "5. Mentions that represent numbers, abbreviations, codes, or well-known proper names are "
+    "linguistically IMMUTABLE: keep them exactly as-is; do not translate, inflect, or reorder inside "
+    "them. Only surrounding-function words may move around them.\n"
+    "6. Determine the required form from the suffix, function word, verb, or head noun that governs "
+    "the mention in the produced sentence; inflect accordingly. If the target language does not "
+    "require a form change for that position, keep the base form.\n"
+    "7. You may reorder the sentence, move mention pairs together with their content, and drop "
+    "individual function words to sound literary, as long as the meaning and all mentions are preserved.\n"
+    "8. `inflect_allowed`:\n"
+    "   - true: free inflection (case/number/gender/person/tense/definiteness forms) is required to "
+    "make the mention agree with the sentence;\n"
+    "   - false: you MUST still inflect the mention to agree with the surrounding sentence "
+    "(lower cased, if applicable) — the ONLY restriction is that you must not change its LEXICAL "
+    "STRUCTURE, i.e. do not add, remove, reorder, or replace whole words inside the value and do not "
+    "translate/paraphrase its root. For a header/table-value noun used as a propositional member, "
+    "apply the word-level morphology the sentence requires (e.g. correct case/person agreement of "
+    "that noun). If no inflected form can express the required function without changing the lexical "
+    "structure, rephrase the sentence so the value fits an earlier position, or add the id to "
+    "`missing_mentions`.\n"
+    "   - In both cases the `translation` field is only the root: always emit the inflected form in "
+    "the text, never the bare base form, unless the grammar genuinely requires the base form there.\n"
+    "9. Do not add facts, mentions, or constraints absent from the source question; do not remove any "
+    "mention.\n"
+    "10. If a mention cannot be correctly inserted and inflected for its position, add its id to "
+    "`missing_mentions` and keep the rest of the translation valid; otherwise `missing_mentions` is [].\n"
+    "11. If the `mentions` list is EMPTY, the question contains no table mentions: produce the plain "
+    "literary translation and return it WITHOUT any <TABLE_REF_XXXX> tags — never invent tags, ids, or "
+    "mentions_used entries; `mentions_used` and `missing_mentions` must both be [].\n"
+    "12. Return only valid JSON, no explanations, no Markdown, no schema.\n"
+    "\n"
+    "Guideline: the goal is a fluent sentence in which every inflectionable mention is in the "
+    "grammatically required form, not the dictionary form; only frozen tokens (numbers, codes, "
+    "abbreviations, proper names) stay unchanged.\n"
+    "\n"
+    "Response format (return exactly this JSON object):\n"
+    "{{\n"
+    '  "question_{target_language}_tagged": "literary translation with every mention wrapped in its '
+    'tag and every inflectionable mention in the grammatically correct form",\n'
+    '  "mentions_used": [\n'
+    '    {{"id": "mention id", "surface_{target_language}": "form as actually used in the text", '
+    '"lemma_{target_language}": "base/dictionary form of the mention"}}\n'
+    '  ],\n'
+    '  "missing_mentions": []\n'
+    "}}\n"
+)
+
+
+STRUCTURED_WORKED_EXAMPLE_RU = (
+    "Worked example (en -> ru):\n"
+    "Input:\n"
+    'tagged_question: "who was <TABLE_REF_0000>the opponent</TABLE_REF_0000> in the first game of the season?"\n'
+    'mentions: [{"id": "m0", "tag": "<TABLE_REF_0000>", "current_text": "the opponent", '
+    '"translation": "соперник", "inflect_allowed": false}]\n'
+    "Output (correct):\n"
+    "{\n"
+    '  "question_ru_tagged": "кем был <TABLE_REF_0000>соперником</TABLE_REF_0000> в первой игре сезона?",\n'
+    '  "mentions_used": [{"id": "m0", "surface_ru": "соперником", "lemma_ru": "соперник"}],\n'
+    '  "missing_mentions": []\n'
+    "}\n"
+    "Why: `translation` supplies only the dictionary root (\"соперник\", nominative); the sentence "
+    "\"кем был ...\" requires the INSTRUMENTAL case, so the tag content is the inflected, lowercased "
+    "form \"соперником\". Even with inflect_allowed=false the form must agree with the sentence "
+    "(lower case, required case); never copy the dictionary form verbatim and never keep the mention "
+    "capitalized mid-sentence.\n"
+)
+
+
+def question_translation_system_prompt(
+    source_language: str, target_language: str, domain: str = ""
+) -> str:
+    """Возвращает системный промпт перевода вопроса по шаблону с подстановкой
+    языков и домена (пустой домен заменяется на 'not specified')."""
+    base = QUESTION_TRANSLATION_SYSTEM.format(
+        source_language=source_language,
+        target_language=target_language,
+        domain=domain if domain else "not specified",
+    )
+    if target_language == "ru":
+        base += STRUCTURED_WORKED_EXAMPLE_RU
+    return base
 
 
 
@@ -189,6 +295,7 @@ def prompt_snapshot() -> dict[str, dict[str, str]]:
         "shell_translation": SHELL_TRANSLATION_SYSTEM,
         "table_translation": TABLE_TRANSLATION_SYSTEM,
         "answer_translation": ANSWER_TRANSLATION_SYSTEM,
+        "question_translation": QUESTION_TRANSLATION_SYSTEM,
         "shell_translation_tagged": SHELL_TRANSLATION_TAGGED_SYSTEM,
         "candidate_translation": CANDIDATE_TRANSLATION_SYSTEM,
         "domain_detection": DOMAIN_DETECTION_SYSTEM,

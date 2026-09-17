@@ -12,6 +12,10 @@ translation:
   candidates:
     max_candidates_per_request: 64
     request_concurrency: 32
+    # Принудительная транслитерация NER-токенов в переводе табличных кандидатов.
+    # По умолчанию выключена: форсинг подменяет транскрипцию модели «побуквенной»
+    # схемой и ухудшает качество (см. разбор рана training-eb8e36efb1ce).
+    transliteration_enabled: false
 
 mentions:
   normalization:
@@ -48,7 +52,7 @@ model:
   api_key: ollama
   model_name: Qwen/Qwen3-30B-A3B-Instruct-2507-FP8
   #model_name: qwen3.8:latest
-  temperature: 0.5
+  temperature: 0.0
   max_output_tokens: 2500
   timeout_seconds: 180
   retries: 3
@@ -77,14 +81,27 @@ table:
   rows_per_chunk: 20
 
 validation:
+  question_cosine_enabled: true
+  question_bert_enabled: true
+  back_table_bert_enabled: true
   question_cosine_threshold: null
   strict_masks: true
   strict_table_shape: true
   strict_immutable_values: true
   back_table_similarity_enabled: true
-  back_table_similarity_mode: context
+  back_table_similarity_mode: cell
   back_table_similarity_threshold: null
   back_table_similarity_max_chunk_tokens: 512
+
+bert_score:
+  enabled: true
+  model_type: bert-base-multilingual-cased
+  lang: en
+  device: cuda
+  batch_size: 10
+  rescale_with_baseline: true
+  question_threshold: null
+  table_threshold: null
 
 cache:
   enabled: true
@@ -92,7 +109,7 @@ cache:
 
 runner:
   # Число одновременно обрабатываемых вопросов; цифры зависят от num_parallel на Ollama-сервере.
-  concurrency: 32
+  concurrency: 13
   checkpoint_every: 25
   continue_on_error: true
   retry_failed_on_resume: false

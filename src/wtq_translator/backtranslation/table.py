@@ -52,6 +52,7 @@ async def back_translate_table_candidates(
         domain=domain,
         cache=cache,
         headers=table.headers,
+        runs=candidate_set.runs,
         trace_stage_prefix="back_translate_table_candidates",
     )
     return reconstruct_table(

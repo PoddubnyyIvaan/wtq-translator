@@ -7,7 +7,8 @@ from .invariants import (
     validate_nonempty_preservation,
 )
 from .similarity import cosine_similarity
-from .table_quality import score_back_translated_table
+from .table_quality import build_comparison_units, score_back_translated_table
+from .bert_score import score_bertscore_pair, score_bertscore_table
 
 __all__ = [
     "extract_masks",
@@ -18,5 +19,8 @@ __all__ = [
     "validate_untranslated_columns",
     "validate_nonempty_preservation",
     "cosine_similarity",
+    "build_comparison_units",
     "score_back_translated_table",
+    "score_bertscore_pair",
+    "score_bertscore_table",
 ]

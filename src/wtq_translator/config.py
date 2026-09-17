@@ -22,6 +22,10 @@ class CandidateTranslationConfig(BaseModel):
 
     max_candidates_per_request: int | None = None
     request_concurrency: int = 1
+    # Принудительная транслитерация NER-токенов (PERSON/ORG/GPE/LOC/PRODUCT) в переводе
+    # кандидатов. Опция полезна для экспериментов; по умолчанию выключена, т.к. форсинг
+    # подменяет правильную практическую транскрипцию модели «побуквенной» схемой.
+    transliteration_enabled: bool = False
 
     @model_validator(mode="after")
     def validate_values(self) -> "CandidateTranslationConfig":
@@ -123,6 +127,9 @@ class BackTranslationConfig(BaseModel):
 
 class ValidationConfig(BaseModel):
     question_cosine_threshold: float | None = None
+    question_cosine_enabled: bool = True
+    question_bert_enabled: bool = True
+    back_table_bert_enabled: bool = True
     strict_masks: bool = True
     strict_table_shape: bool = True
     strict_immutable_values: bool = True
@@ -170,6 +177,31 @@ class DomainDetectionConfig(BaseModel):
         return self
 
 
+class BERTScoreConfig(BaseModel):
+    """Настройки BERTScore-оценки качества вопроса и обратно-переведённой таблицы."""
+
+    enabled: bool = False
+    model_type: str = "bert-base-multilingual-cased"
+    lang: str = "multilingual"
+    device: str = "cpu"
+    batch_size: int = 64
+    rescale_with_baseline: bool = False
+    question_threshold: float | None = None
+    table_threshold: float | None = None
+
+    @model_validator(mode="after")
+    def _validate(self) -> "BERTScoreConfig":
+        if self.batch_size <= 0:
+            raise ValueError("bert_score.batch_size must be > 0")
+        for name, t in (
+            ("question_threshold", self.question_threshold),
+            ("table_threshold", self.table_threshold),
+        ):
+            if t is not None and not (0.0 <= t <= 1.0):
+                raise ValueError(f"bert_score.{name} must be in [0, 1]")
+        return self
+
+
 class RunnerConfig(BaseModel):
     checkpoint_every: int = 25
     continue_on_error: bool = True
@@ -193,6 +225,7 @@ class AppConfig(BaseModel):
     table: TableConfig = Field(default_factory=TableConfig)
     back_translation: BackTranslationConfig = Field(default_factory=BackTranslationConfig)
     validation: ValidationConfig = Field(default_factory=ValidationConfig)
+    bert_score: BERTScoreConfig = Field(default_factory=BERTScoreConfig)
     state: StateConfig = Field(default_factory=StateConfig)
     cache: CacheConfig = Field(default_factory=CacheConfig)
     logging: LoggingConfig = Field(default_factory=LoggingConfig)

@@ -18,6 +18,8 @@ from .translation import build_target_value, translate_shell, translate_table
 from .translation.table_candidates import reconstruct_table, translate_table_candidates, validate_untranslated
 from .validation import (
     score_back_translated_table,
+    score_bertscore_pair,
+    score_bertscore_table,
     cosine_similarity,
     extract_masks,
     validate_immutable_values,
@@ -107,7 +109,7 @@ class TranslationPipeline:
             self.llm, candidate_set.candidates,
             config=cfg, source_language=cfg.project.source_language,
             target_language=cfg.project.target_language, cache=self.cache,
-            domain=domain, headers=table.headers,
+            domain=domain, headers=table.headers, runs=candidate_set.runs,
         )
         lemma_translations = {c.lemma_key: c.translation for c in candidate_set.candidates}
         untranslated = validate_untranslated(candidate_set, lemma_translations)
@@ -120,15 +122,19 @@ class TranslationPipeline:
         # 3) Теговая маска
         masked_source = mask_question_tagged(question.utterance, mention_map.mentions)
 
-        # 4) Shell с глоссарием
+        # 4) Shell по шаблону перевода вопроса (структурированный протокол)
         id_to_translation = {c.id: c.translation for c in candidate_set.candidates}
-        tag_glossary = {m.mask: id_to_translation[m.candidate_key] for m in mention_map.mentions}
         masked_ru = await translate_shell(
             self.llm, masked_source,
             source_language=cfg.project.source_language,
             target_language=cfg.project.target_language,
             model=cfg.model, seed=cfg.project.seed,
-            tag_glossary=tag_glossary,
+            mentions=mention_map.mentions,
+            id_to_canonical=id_to_translation,
+            domain=domain,
+            on_missing=lambda ids: report.warnings.append(
+                f"Question translation: mentions not inserted: {ids[:5]}"
+            ),
         )
         self._apply_tag_report(masked_source, masked_ru, report, forward=True)
         final_question = strip_tags(masked_ru)
@@ -145,13 +151,17 @@ class TranslationPipeline:
         if any("translated directly" in w or "multiple translated values" in w for w in warnings):
             report.status = ProcessingStatus.NEEDS_REVIEW
 
-        # 6) Back-shell (RU→EN) с обратным глоссарием
-        back_glossary = {m.mask: m.question_text for m in mention_map.mentions}
+        # 6) Back-shell (RU→EN): упоминания с обратным каноническим переводом
         back_masked = await back_translate_shell(
             self.llm, masked_ru, config=cfg,
             source_language=cfg.project.source_language,
             translated_language=cfg.project.target_language,
-            tag_glossary=back_glossary,
+            mentions=mention_map.mentions,
+            id_to_canonical={m.candidate_key: m.question_text for m in mention_map.mentions},
+            domain=domain,
+            on_missing=lambda ids: report.warnings.append(
+                f"Back-translation: mentions not inserted: {ids[:5]}"
+            ),
         )
         self._apply_tag_report(masked_source, back_masked, report, forward=False)
         back_question = strip_tags(back_masked)
@@ -179,16 +189,38 @@ class TranslationPipeline:
         return TranslationResult(question, table, translated_table, final_question, answer, report, mention_map)
 
     async def _score_question(self, source: str, back: str, report: QualityReport) -> None:
-        if self.embeddings is None:
-            report.warnings.append("Embedding provider disabled; cosine similarity was not computed.")
-            return
-        vectors = await self.embeddings.embed([source, back])
-        score = cosine_similarity(vectors[0], vectors[1])
-        report.question_cosine_similarity = score
-        threshold = self.config.validation.question_cosine_threshold
-        if threshold is not None and score < threshold:
-            report.warnings.append(f"Question cosine similarity {score:.4f} is below threshold {threshold:.4f}.")
-            report.status = ProcessingStatus.NEEDS_REVIEW
+        vc = self.config.validation
+        # Косинусное сходство (embedding-провайдер).
+        if vc.question_cosine_enabled:
+            if self.embeddings is None:
+                report.warnings.append("Embedding provider disabled; cosine similarity was not computed.")
+            else:
+                vectors = await self.embeddings.embed([source, back])
+                score = cosine_similarity(vectors[0], vectors[1])
+                report.question_cosine_similarity = score
+                threshold = vc.question_cosine_threshold
+                if threshold is not None and score < threshold:
+                    report.warnings.append(
+                        f"Question cosine similarity {score:.4f} is below threshold {threshold:.4f}."
+                    )
+                    report.status = ProcessingStatus.NEEDS_REVIEW
+
+        # BERTScore.
+        if self.config.bert_score.enabled and vc.question_bert_enabled:
+            try:
+                metrics = await score_bertscore_pair(source, back, self.config.bert_score)
+            except Exception as exc:  # noqa: BLE001 - деградация, статус не меняем.
+                report.warnings.append(f"BERTScore question scoring failed: {exc}")
+            else:
+                report.question_bert_f1 = metrics["f1"]
+                report.question_bert_precision = metrics["precision"]
+                report.question_bert_recall = metrics["recall"]
+                threshold = self.config.bert_score.question_threshold
+                if threshold is not None and metrics["f1"] < threshold:
+                    report.warnings.append(
+                        f"Question BERTScore f1 {metrics['f1']:.4f} is below threshold {threshold:.4f}."
+                    )
+                    report.status = ProcessingStatus.NEEDS_REVIEW
 
     async def _apply_back_table_quality(
         self,
@@ -199,29 +231,61 @@ class TranslationPipeline:
         columns: set[int] | None = None,
     ) -> None:
         vc = self.config.validation
-        if not vc.back_table_similarity_enabled:
-            return
-        if self.embeddings is None:
-            report.warnings.append("Embedding provider disabled; back-table similarity was not computed.")
-            return
-        metrics = await score_back_translated_table(
-            source,
-            back_translated,
-            embeddings=self.embeddings,
-            normalization=self.config.mentions.normalization,
-            mode=vc.back_table_similarity_mode,
-            max_chunk_tokens=vc.back_table_similarity_max_chunk_tokens,
-            columns=columns,
-        )
-        report.back_table_groups_compared = metrics["groups_compared"]
-        report.back_table_min_similarity = metrics["min_similarity"]
-        report.back_table_mean_similarity = metrics["mean_similarity"]
-        report.back_table_similarity_examples = metrics["similarity_examples"]
-        threshold = vc.back_table_similarity_threshold
-        score = metrics["min_similarity"]
-        if threshold is not None and score is not None and score < threshold:
-            report.warnings.append(f"Back-table similarity {score:.4f} is below threshold {threshold:.4f}.")
-            report.status = ProcessingStatus.NEEDS_REVIEW
+        # Косинусное сходство (embedding-провайдер).
+        if vc.back_table_similarity_enabled:
+            if self.embeddings is None:
+                report.warnings.append("Embedding provider disabled; back-table similarity was not computed.")
+            else:
+                metrics = await score_back_translated_table(
+                    source,
+                    back_translated,
+                    embeddings=self.embeddings,
+                    normalization=self.config.mentions.normalization,
+                    mode=vc.back_table_similarity_mode,
+                    max_chunk_tokens=vc.back_table_similarity_max_chunk_tokens,
+                    columns=columns,
+                )
+                report.back_table_groups_compared = metrics["groups_compared"]
+                report.back_table_min_similarity = metrics["min_similarity"]
+                report.back_table_mean_similarity = metrics["mean_similarity"]
+                report.back_table_similarity_examples = metrics["similarity_examples"]
+                threshold = vc.back_table_similarity_threshold
+                score = metrics["min_similarity"]
+                if threshold is not None and score is not None and score < threshold:
+                    report.warnings.append(
+                        f"Back-table similarity {score:.4f} is below threshold {threshold:.4f}."
+                    )
+                    report.status = ProcessingStatus.NEEDS_REVIEW
+
+        # BERTScore.
+        if self.config.bert_score.enabled and vc.back_table_bert_enabled:
+            try:
+                metrics = await score_bertscore_table(
+                    source,
+                    back_translated,
+                    cfg=self.config.bert_score,
+                    normalization=self.config.mentions.normalization,
+                    mode=vc.back_table_similarity_mode,
+                    max_chunk_tokens=vc.back_table_similarity_max_chunk_tokens,
+                    columns=columns,
+                )
+            except Exception as exc:  # noqa: BLE001 - деградация, статус не меняем.
+                report.warnings.append(f"BERTScore table scoring failed: {exc}")
+            else:
+                report.back_table_bert_groups_compared = metrics["groups_compared"]
+                report.back_table_bert_min_f1 = metrics["min_f1"]
+                report.back_table_bert_mean_f1 = metrics["mean_f1"]
+                report.back_table_bert_min_precision = metrics["min_precision"]
+                report.back_table_bert_mean_precision = metrics["mean_precision"]
+                report.back_table_bert_min_recall = metrics["min_recall"]
+                report.back_table_bert_mean_recall = metrics["mean_recall"]
+                threshold = self.config.bert_score.table_threshold
+                score = metrics["min_f1"]
+                if threshold is not None and score is not None and score < threshold:
+                    report.warnings.append(
+                        f"Back-table BERTScore min_f1 {score:.4f} is below threshold {threshold:.4f}."
+                    )
+                    report.status = ProcessingStatus.NEEDS_REVIEW
 
     def _apply_mask_report(self, expected: str, actual: str, report: QualityReport, forward: bool) -> None:
         mv = validate_masks(expected, actual)

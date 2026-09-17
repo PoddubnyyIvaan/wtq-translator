@@ -1,4 +1,27 @@
-# Changelog
+## Unreleased — config toggle for transliteration forcing
+
+- новый флаг `translation.candidates.transliteration_enabled` (дефолт `false`) в `CandidateTranslationConfig`;
+- при выключенном флаге `transliterations` не попадают в payload перевода кандидатов, а требование о форсинге исключается из `requirements` (поведение возвращается к качеству baseline-спектра);
+- при включённом — прежнее поведение форсинга NER-токенов (для A/B-сравнения);
+- пример в `configs/qwen_full.yaml` (`transliteration_enabled: false`);
+- тесты: новые `test_transliteration_disabled_by_default`, остальные транслит-тесты явно включают флаг.
+
+## Unreleased — structured question translation (MENTION-CONSTRAINED SHELL)
+
+- **Промпт** (`prompts.py`): новый шаблон `QUESTION_TRANSLATION_SYSTEM` (англ. версия контракта «перевод вопроса с упоминаниями») с наполняемыми полями `{source_language}`/`{target_language}`/`{domain}` — функция `question_translation_system_prompt()`; в ответе модель отдаёт plain-перевод, tagged-перевод, `mentions_used` (id, surface, lemma) и `missing_mentions`. Имена полей параметризованы суффиксом целевого языка (`question_ru`/`question_en`), что делает шаблон пригодным и для обратного перевода. `PROMPT_SET_VERSION` → `2026-09-13-v13`, шаблон добавлен в `prompt_snapshot`.
+- **Протокол** (`translation/shell.py`): новый режим `translate_shell(mentions=..., id_to_canonical=..., domain=..., on_missing=...)`. В user-JSON кладутся `tagged_question` и `mentions` (id, tag, current_text, canonical translation, lemma, `inflect_allowed`); `inflect_allowed=false` для имён колонок и их частей (любая координата упоминания — заголовок), `true` для остальных. Legacy-режимы (`tag_glossary`, маски) не изменены.
+- **Парсер**: `_parse_question_translation` валидирует покрытие id (каждое упоминание использовано или помечено `missing_mentions`), сохранение пар тегов, совпадение `surface` с содержимым пары тегов и согласованность plain- и tagged-вариантов (после `strip_tags`); при непустом `missing_mentions` вызывается `on_missing(ids)`, а не выбрасывается ошибка.
+- **Пацплайн** (`pipeline.py`): `_process_full` переводит оболочку вопроса новым протоколом в обе стороны (forward: канонический перевод — перевод кандидата; back: канонический перевод — исходный фрагмент вопроса), домен передаётся в системный промпт; пропавшие упоминания пишутся в `report.warnings`.
+- **Тесты**: `tests/unit/test_question_translation.py` (наполнение промпта, inflect_allowed, success/missing/dropped/surface-mismatch/plain-tagged-mismatch); интеграционный мок `test_pipeline_full_new.py` переведён на новый формат ответа.
+
+## Unreleased — BERT-score для вопроса и таблицы
+
+- параллельная оценка BERTScore (F1 / precision / recall) рядом с косинусным сходством для **вопроса** и **таблицы**;
+- мастер-включатель `bert_score.enabled` (дефолт `false`) + per-site тогглы `validation.question_cosine_enabled`, `validation.question_bert_enabled`, `validation.back_table_bert_enabled`;
+- новые поля отчёта `question_bert_f1/precision/recall` и `back_table_bert_groups_compared`, `back_table_bert_min_f1`, `back_table_bert_mean_f1`, `back_table_bert_min/mean_precision`, `back_table_bert_min/mean_recall`;
+- опциональные пороги `bert_score.question_threshold` / `bert_score.table_threshold` — warning + `NEEDS_REVIEW` при `f1` (вопрос) / `min_f1` (таблица) ниже порога, null = только диагностика;
+- новая зависимость `bert-score>=0.3.13` (тянет torch); ленивый импорт, тяжёлый вызов через `asyncio.to_thread`, скорер кэшируется (модель грузится один раз);
+- деградация: при ошибке загрузки/инференса BERT поля остаются `None`, пишется warning, статус не меняется.
 
 ## Unreleased — back-table semantic similarity
 

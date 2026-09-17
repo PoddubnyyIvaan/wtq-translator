@@ -152,6 +152,25 @@ def _cell_units(
     return units
 
 
+def build_comparison_units(
+    source: TableData,
+    back_translated: TableData,
+    selected: set[int],
+    mode: Literal["context", "row", "cell"],
+    max_chunk_tokens: int = 512,
+) -> list[dict[str, Any]]:
+    """Построить единицы сравнения source/back по выбранному режиму.
+
+    Осваивает построение единиц для косинусного и BERT-скоринга. Возвращает список
+    dict с ключами {kind, row, column, start_row, end_row, src, back}.
+    """
+    if mode == "context":
+        return _context_units(source, back_translated, selected, max_chunk_tokens)
+    if mode == "row":
+        return _row_units(source, back_translated, selected)
+    return _cell_units(source, back_translated, selected)
+
+
 def _build_examples(
     units: list[dict[str, Any]],
     scores: list[float],
@@ -210,12 +229,7 @@ async def score_back_translated_table(
     if not selected:
         return _empty_result()
 
-    if mode == "context":
-        units = _context_units(source, back_translated, selected, max_chunk_tokens)
-    elif mode == "row":
-        units = _row_units(source, back_translated, selected)
-    else:
-        units = _cell_units(source, back_translated, selected)
+    units = build_comparison_units(source, back_translated, selected, mode, max_chunk_tokens)
 
     total = len(units)
     if total == 0:

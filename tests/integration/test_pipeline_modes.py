@@ -182,3 +182,121 @@ async def test_back_table_threshold_needs_review(tmp_path):
 
     assert report2.back_table_min_similarity == 0.0
     assert report2.status == ProcessingStatus.PROCESSING
+
+
+def _config_with_bert(tmp_path, *, bert_enabled=True, question_bert=True, table_bert=True, q_cosine=True):
+    return AppConfig.model_validate({
+        "project": {"input_root": str(tmp_path), "output_root": str(tmp_path / "out"),
+                    "source_language": "en", "target_language": "ru", "seed": 42},
+        "translation": {"mode": "mentions_only", "answer_language_mode": "table"},
+        "model": {"retries": 0},
+        "embeddings": {"enabled": False},
+        "back_translation": {"enabled": True},
+        "table": {"rows_per_chunk": 20},
+        "cache": {"enabled": False},
+        "validation": {
+            "question_cosine_enabled": q_cosine,
+            "back_table_similarity_enabled": True,
+            "question_bert_enabled": question_bert,
+            "back_table_bert_enabled": table_bert,
+        },
+        "bert_score": {"enabled": bert_enabled, "question_threshold": None, "table_threshold": None},
+    })
+
+
+@pytest.mark.asyncio
+async def test_question_cosine_disabled_no_warning(tmp_path):
+    cfg = _config(tmp_path, "mentions_only")
+    cfg.validation.question_cosine_enabled = False
+    cfg.validation.back_table_similarity_enabled = False
+    pipeline = TranslationPipeline(cfg, RuleBasedProvider(), IdenticalEmbeddingProvider())
+    report = QualityReport(
+        question_id="q1", mode=TranslationMode.MENTIONS_ONLY,
+        table_mentions_found=True, source_question="",
+        status=ProcessingStatus.PROCESSING,
+    )
+    await pipeline._score_question("Where is Alice?", "Где находится Алиса?", report)
+    assert report.question_cosine_similarity is None
+    assert not any("cosine" in w.lower() for w in report.warnings)
+
+
+@pytest.mark.asyncio
+async def test_bert_disabled_keys_present_none(tmp_path, monkeypatch):
+    import wtq_translator.pipeline as pip
+
+    async def boom(src, back, cfg):  # pragma: no cover
+        raise AssertionError("should not be called when bert disabled")
+
+    monkeypatch.setattr(pip, "score_bertscore_pair", boom)
+    monkeypatch.setattr(pip, "score_bertscore_table", boom)
+
+    cfg = _config_with_bert(tmp_path, bert_enabled=False)
+    pipeline = TranslationPipeline(cfg, RuleBasedProvider(), IdenticalEmbeddingProvider())
+    report = QualityReport(
+        question_id="q1", mode=TranslationMode.MENTIONS_ONLY,
+        table_mentions_found=True, source_question="",
+        status=ProcessingStatus.PROCESSING,
+    )
+    await pipeline._score_question("Where is Alice?", "Где находится Алиса?", report)
+    src = TableData(["Name"], [["Alice"]])
+    await pipeline._apply_back_table_quality(src, src, report)
+
+    d = report.to_dict()
+    assert d["question_bert_f1"] is None
+    assert d["question_bert_precision"] is None
+    assert d["question_bert_recall"] is None
+    assert d["back_table_bert_min_f1"] is None
+    assert d["back_table_bert_mean_f1"] is None
+    assert d["back_table_bert_groups_compared"] == 0
+    assert report.status == ProcessingStatus.PROCESSING
+
+
+@pytest.mark.asyncio
+async def test_bert_enabled_fills_fields_and_threshold(tmp_path, monkeypatch):
+    import wtq_translator.pipeline as pip
+
+    async def fake_pair(src, back, cfg):
+        return {"f1": 0.3, "precision": 0.4, "recall": 0.2}
+
+    async def fake_table(source, back, *, cfg, **kw):
+        return {"groups_compared": 1, "min_f1": 0.2, "mean_f1": 0.2,
+                "min_precision": 0.3, "mean_precision": 0.3,
+                "min_recall": 0.1, "mean_recall": 0.1}
+
+    monkeypatch.setattr(pip, "score_bertscore_pair", fake_pair)
+    monkeypatch.setattr(pip, "score_bertscore_table", fake_table)
+
+    cfg = AppConfig.model_validate({
+        "project": {"input_root": str(tmp_path), "output_root": str(tmp_path / "out"),
+                    "source_language": "en", "target_language": "ru", "seed": 42},
+        "translation": {"mode": "mentions_only", "answer_language_mode": "table"},
+        "model": {"retries": 0},
+        "embeddings": {"enabled": False},
+        "back_translation": {"enabled": True},
+        "table": {"rows_per_chunk": 20},
+        "cache": {"enabled": False},
+        "validation": {"question_cosine_enabled": False, "back_table_similarity_enabled": False},
+        "bert_score": {"enabled": True, "question_threshold": 0.5, "table_threshold": 0.5},
+    })
+    pipeline = TranslationPipeline(cfg, RuleBasedProvider(), IdenticalEmbeddingProvider())
+    report = QualityReport(
+        question_id="q1", mode=TranslationMode.MENTIONS_ONLY,
+        table_mentions_found=True, source_question="",
+        status=ProcessingStatus.PROCESSING,
+    )
+    await pipeline._score_question("Where is Alice?", "Где находится Алиса?", report)
+    assert report.question_bert_f1 == 0.3
+    assert report.question_bert_precision == 0.4
+    assert report.question_bert_recall == 0.2
+    assert report.status == ProcessingStatus.NEEDS_REVIEW
+
+    src = TableData(["Name"], [["Alice"]])
+    report2 = QualityReport(
+        question_id="q2", mode=TranslationMode.MENTIONS_ONLY,
+        table_mentions_found=True, source_question="",
+        status=ProcessingStatus.PROCESSING,
+    )
+    await pipeline._apply_back_table_quality(src, src, report2)
+    assert report2.back_table_bert_min_f1 == 0.2
+    assert report2.back_table_bert_groups_compared == 1
+    assert report2.status == ProcessingStatus.NEEDS_REVIEW

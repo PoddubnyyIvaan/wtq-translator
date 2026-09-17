@@ -52,7 +52,8 @@ def _clear_memory_cache():
     tc._MEMORY_CACHE.clear()
 
 
-def _cfg(tmp_path):
+def _cfg(tmp_path, transliteration_enabled: bool = False):
+    candidates = {"transliteration_enabled": transliteration_enabled}
     return AppConfig.model_validate({
         "project": {
             "input_root": str(tmp_path),
@@ -60,6 +61,7 @@ def _cfg(tmp_path):
             "source_language": "en",
             "target_language": "ru",
         },
+        "translation": {"candidates": candidates},
         "model": {"retries": 0},
         "cache": {"enabled": False},
     })
@@ -102,7 +104,7 @@ async def test_tiers_by_length_and_glossary(tmp_path):
     # глоссарий из самого длинного вмещающего (New York).
     assert provider.tasks[0]["items"][0]["glossary"] == []
     for item in provider.tasks[1]["items"]:
-        assert item["glossary"] == [{"key": "New York", "translation": "Нью-Йорк"}]
+        assert item["glossary"] == [{"key": "new york", "translation": "нью-йорк"}]
 
 
 @pytest.mark.asyncio
@@ -476,14 +478,14 @@ async def test_glossary_only_longest_containing(tmp_path):
     tier2 = _items_by_id([provider.tasks[1]])
     for cid in ("nyc-new-york", "nyc-york-city"):
         assert tier2[cid]["glossary"] == [
-            {"key": "New York City", "translation": "Нью-Йорк-Сити"}
+            {"key": "new york city", "translation": "нью-йорк-сити"}
         ]
 
     # Ярус 1: new/york/city → New York City; несвязанные name/born — пусто.
     tier1 = _items_by_id(provider.tasks[2:])
     for cid in ("nyc-new", "nyc-york", "nyc-city"):
         assert tier1[cid]["glossary"] == [
-            {"key": "New York City", "translation": "Нью-Йорк-Сити"}
+            {"key": "new york city", "translation": "нью-йорк-сити"}
         ]
     for cid in ("nyc-name", "nyc-born"):
         assert tier1[cid]["glossary"] == []
@@ -519,8 +521,8 @@ async def test_glossary_dedups_equal_longest_containing(tmp_path):
     # `a` вложено в `a b c` (дважды) и `x a y` — все длины 3 максимальны.
     va = _items_by_id(provider.tasks)["va"]
     assert va["glossary"] == [
-        {"key": "A B C", "translation": "А-Б-В"},
-        {"key": "X A Y", "translation": "Х-А-Ы"},
+        {"key": "a b c", "translation": "а-б-в"},
+        {"key": "x a y", "translation": "х-а-ы"},
     ]
 
 
@@ -557,10 +559,10 @@ async def test_glossary_per_item_across_values_in_same_request(tmp_path):
     tier1 = _items_by_id(provider.tasks[2:])
     # city → New York City; state → New York State; каждый item со своим глоссарием.
     assert tier1["g-city"]["glossary"] == [
-        {"key": "New York City", "translation": "Нью-Йорк-Сити"}
+        {"key": "new york city", "translation": "нью-йорк-сити"}
     ]
     assert tier1["g-state"]["glossary"] == [
-        {"key": "New York State", "translation": "Нью-Йорк-Штат"}
+        {"key": "new york state", "translation": "нью-йорк-штат"}
     ]
 
 
@@ -599,10 +601,10 @@ async def test_chunk_glossary_isolated_per_value(tmp_path):
         if len(task["items"]) == 1
     }
     assert single_value_glossaries["New"] == [
-        {"key": "New York City", "translation": "Нью-Йорк-Сити"}
+        {"key": "new york city", "translation": "нью-йорк-сити"}
     ]
     assert single_value_glossaries["Los"] == [
-        {"key": "Los Angeles", "translation": "Лос-Анджелес"}
+        {"key": "los angeles", "translation": "лос-анджелес"}
     ]
 
 
@@ -634,8 +636,10 @@ async def test_item_column_uses_first_coordinate_header(tmp_path):
     )
 
     by_id = _items_by_id(provider.tasks)
-    assert by_id["h1"]["column"] == "City"     # кандидат-заголовок → сам заголовок
-    assert by_id["cell"]["column"] == "City"   # первая координата col=1
+    assert by_id["h1"]["column"] == "city"     # кандидат-заголовок → сам заголовок (payload в нижнем регистре)
+    assert by_id["cell"]["column"] == "city"   # первая координата col=1
+    assert by_id["h1"]["is_column"] is True    # заголовок
+    assert by_id["cell"]["is_column"] is False # ячейка
 
 
 @pytest.mark.asyncio
@@ -657,6 +661,7 @@ async def test_item_column_empty_when_no_coordinates(tmp_path):
     )
 
     assert provider.tasks[0]["items"][0]["column"] == ""
+    assert provider.tasks[0]["items"][0]["is_column"] is False  # нет координат → не заголовок
 
 
 @pytest.mark.asyncio
@@ -683,3 +688,181 @@ async def test_glossary_empty_when_value_not_nested(tmp_path):
     by_id = _items_by_id(provider.tasks)
     # Alice не вложена ни в одну более длинную последовательность.
     assert by_id["alice"]["glossary"] == []
+
+
+# --- Транслитерация NER и column-семантика (Задача 7) ---
+
+
+@pytest.mark.asyncio
+async def test_item_transliterations_for_ner_tokens(tmp_path):
+    """NER-токен (GPE) транслитерируется при включённом форсинге: в payload
+    `transliterations` в нижнем регистре, а `text` кандидата остаётся в исходном регистре."""
+    provider = CandidateProvider({"Berlin": "Берлин"})
+    candidates = [
+        TableCandidate(
+            id="t1", lemma_key="berlin", source_text="Berlin",
+            coordinates=[TableCoordinate(0, 0)], length=1,
+            tokens=["Berlin"], pos=["PROPN"], ner=["GPE"],
+        ),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path, transliteration_enabled=True),
+        source_language="en", target_language="ru", headers=["City"],
+    )
+    item = provider.tasks[0]["items"][0]
+    assert item["transliterations"] == [{"source": "berlin", "translation": "берлин"}]
+    assert item["text"] == "Berlin"
+
+
+@pytest.mark.asyncio
+async def test_item_transliterations_empty_without_ner_matches(tmp_path):
+    """Нет совпадающих NER-меток → поле `transliterations` опущено."""
+    provider = CandidateProvider({"Berlin": "Берлин"})
+    candidates = [
+        TableCandidate(
+            id="t2", lemma_key="berlin", source_text="Berlin",
+            coordinates=[TableCoordinate(0, 0)], length=1,
+            tokens=["Berlin"], pos=["PROPN"], ner=[""],  # не является сущностью
+        ),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path, transliteration_enabled=True),
+        source_language="en", target_language="ru",
+    )
+    item = provider.tasks[0]["items"][0]
+    assert "transliterations" not in item
+
+
+@pytest.mark.asyncio
+async def test_transliterations_per_token_for_multiword_ner(tmp_path):
+    """Многословное NER-имя даёт форсинг по каждому токену."""
+    provider = CandidateProvider({"Zhukov Ivan": "Жуков Иван"})
+    candidates = [
+        TableCandidate(
+            id="t3", lemma_key="zhukov ivan", source_text="Zhukov Ivan",
+            coordinates=[TableCoordinate(0, 0)], length=2,
+            tokens=["Zhukov", "Ivan"], pos=["PROPN", "PROPN"], ner=["PERSON", "PERSON"],
+        ),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path, transliteration_enabled=True),
+        source_language="en", target_language="ru",
+    )
+    transliterations = provider.tasks[0]["items"][0]["transliterations"]
+    assert transliterations == [
+        {"source": "zhukov", "translation": "жуков"},
+        {"source": "ivan", "translation": "иван"},
+    ]
+
+
+@pytest.mark.asyncio
+async def test_transliteration_disabled_by_default(tmp_path):
+    """При выключенном форсинге `transliterations` не попадает в payload, а требование
+    о форсинге отсутствует в requirements."""
+    provider = CandidateProvider({"Berlin": "Берлин"})
+    candidates = [
+        TableCandidate(
+            id="t5", lemma_key="berlin", source_text="Berlin",
+            coordinates=[TableCoordinate(0, 0)], length=1,
+            tokens=["Berlin"], pos=["PROPN"], ner=["GPE"],
+        ),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path),
+        source_language="en", target_language="ru", headers=["City"],
+    )
+    task = provider.tasks[0]
+    assert "transliterations" not in task["items"][0]
+    assert all("transliterations" not in req for req in task["requirements"])
+
+
+@pytest.mark.asyncio
+async def test_transliterations_noop_for_latin_target(tmp_path):
+    """Для латинского целевого языка транслитерация — no-op (поле опущено)."""
+    cfg_en = AppConfig.model_validate({
+        "project": {
+            "input_root": str(tmp_path),
+            "output_root": str(tmp_path / "out"),
+            "source_language": "ru",
+            "target_language": "en",
+        },
+        "translation": {"candidates": {"transliteration_enabled": True}},
+        "model": {"retries": 0},
+        "cache": {"enabled": False},
+    })
+    provider = CandidateProvider({"Berlin": "Berlin"})
+    candidates = [
+        TableCandidate(
+            id="t4", lemma_key="berlin", source_text="Berlin",
+            coordinates=[TableCoordinate(0, 0)], length=1,
+            tokens=["Berlin"], pos=["PROPN"], ner=["GPE"],
+        ),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=cfg_en,
+        source_language="ru", target_language="en", headers=["City"],
+    )
+    assert "transliterations" not in provider.tasks[0]["items"][0]
+
+
+@pytest.mark.asyncio
+async def test_column_translation_present_when_header_translated(tmp_path):
+    """Нестолбцовый кандидат получает `column_translation` (перевод заголовка своей
+    колонки), если заголовок уже переведён к моменту запроса (более длинный ярус)."""
+    headers = ["City Name"]
+    runs = {TableCoordinate(None, 0): [ContentRun(lemma_key="city name", start=0, end=9)]}
+    provider = CandidateProvider({"City Name": "Название Города", "Berlin": "Берлин"})
+    candidates = [
+        TableCandidate(id="hdr", lemma_key="city name", source_text="City Name",
+                       coordinates=[TableCoordinate(None, 0)], length=2),
+        TableCandidate(id="cell", lemma_key="berlin", source_text="Berlin",
+                       coordinates=[TableCoordinate(0, 0)], length=1),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path),
+        source_language="en", target_language="ru", headers=headers, runs=runs,
+    )
+    by_id = _items_by_id(provider.tasks)
+    assert by_id["hdr"]["is_column"] is True
+    assert by_id["cell"]["is_column"] is False
+    # заголовок — только контекст, без column_translation
+    assert "column_translation" not in by_id["hdr"]
+    # у ячейки — перевод заголовка колонки в нижнем регистре
+    assert by_id["cell"]["column_translation"] == "название города"
+
+
+@pytest.mark.asyncio
+async def test_column_translation_absent_without_runs(tmp_path):
+    """Без `runs` поле `column_translation` опускается (нет lemma_key заголовка)."""
+    provider = CandidateProvider({"Berlin": "Берлин"})
+    candidates = [
+        TableCandidate(id="cell", lemma_key="berlin", source_text="Berlin",
+                       coordinates=[TableCoordinate(0, 0)], length=1),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path),
+        source_language="en", target_language="ru", headers=["City"],
+    )
+    item = provider.tasks[0]["items"][0]
+    assert "column_translation" not in item
+
+
+@pytest.mark.asyncio
+async def test_column_translation_absent_when_header_not_yet_translated(tmp_path):
+    """Заголовок той же длины (переводится тем же запросом) ещё не переведён
+    к моменту сборки яруса → `column_translation` отсутствует."""
+    headers = ["City"]
+    runs = {TableCoordinate(None, 0): [ContentRun(lemma_key="city", start=0, end=4)]}
+    provider = CandidateProvider({"City": "Город", "Berlin": "Берлин"})
+    candidates = [
+        TableCandidate(id="hdr", lemma_key="city", source_text="City",
+                       coordinates=[TableCoordinate(None, 0)], length=1),
+        TableCandidate(id="cell", lemma_key="berlin", source_text="Berlin",
+                       coordinates=[TableCoordinate(0, 0)], length=1),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path),
+        source_language="en", target_language="ru", headers=headers, runs=runs,
+    )
+    by_id = _items_by_id(provider.tasks)
+    assert "column_translation" not in by_id["cell"]

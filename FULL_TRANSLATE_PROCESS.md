@@ -33,6 +33,9 @@ validation:
 strict_masks — жёсткая проверка плейсхолдеров.
 strict_table_shape — проверка неизменности формы таблицы.
 strict_immutable_values — запрет изменения immutable-значений.
+question_cosine_enabled — включает/выключает косинусную проверку вопроса (дефолт true).
+question_bert_enabled — включает BERT-проверку вопроса (работает только при bert_score.enabled; дефолт true).
+back_table_bert_enabled — включает BERT-проверку обратно переведённой таблицы (работает только при bert_score.enabled; дефолт true).
 question_cosine_threshold — порог косинусной близости обратного перевода (в qwen_full.yaml — null, т.е. не задан, только диагностика).
 back_table_similarity_enabled — включает/выключает семантическую проверку обратного перевода таблицы.
 back_table_similarity_mode — гранулярность сравнения: context (заголовок + жадные чанки строк, дефолт), row (заголовок и каждая строка отдельно), cell (каждая ячейка отдельно).
@@ -42,6 +45,28 @@ embeddings — enabled, model_name и т.д. для косинусной бли�
 cache — SQLite-кэш chat/embedding запросов.
 runner — checkpoint_every, continue_on_error, retry_failed_on_resume, rerun_needs_review (управление прогоном датасета).
 Immutable-значения определяются в validation/invariants.py: пустые строки, числа (123, 1,234, 12.5%), URL (http(s)://…, www.), и идентификаторы вида AB-12 / Foo_123. Они никогда не отправляются в LLM и не должны меняться.
+
+
+### BERT-score (вопрос и таблица)
+
+Опциональная параллельная оценка качества обратного перевода через `bert-score`. Мастер-включатель `bert_score.enabled` (в `qwen_full.yaml` — `true`, по умолчанию `false` — torch не импортируется). Каждый сайт дополнительно включается своими флагами в `validation:` (`question_bert_enabled`, `back_table_bert_enabled`).
+
+- **Вопрос**: `score_bertscore_pair` сравнивает переведённый вопрос с обратным переводом; поля отчёта `question_bert_f1/precision/recall`. Порог `bert_score.question_threshold` — если задан и `f1` ниже → warning + `NEEDS_REVIEW`; null = только диагностика.
+- **Таблица** (`score_bertscore_table`): те же единицы сравнения, что и у косинусного скоринга (`context`/`row`/`cell`, `back_table_similarity_mode`); нормализованно совпавшие единицы дают полный балл без вызова модели; per-unit агрегация min/mean по F1/precision/recall → поля `back_table_bert_groups_compared`, `back_table_bert_min/mean_f1`, `back_table_bert_min/mean_precision`, `back_table_bert_min/mean_recall`. Порог `bert_score.table_threshold` — по `min_f1` → warning + `NEEDS_REVIEW`.
+
+```yaml
+bert_score:
+  enabled: true
+  model_type: bert-base-multilingual-cased
+  lang: multilingual
+  device: cpu        # cpu | cuda | cuda:N | mps
+  batch_size: 64
+  rescale_with_baseline: false
+  question_threshold: null
+  table_threshold: null
+```
+
+Деградация: при ошибке загрузки модели / инференса (нет torch, нет сети для скачивания весов HF) поля остаются `None`, пишется warning, статус не меняется. Модель загружается лениво и кэшируется (один раз на процесс); синхронный инференс выполняется через `asyncio.to_thread`, поэтому при включённом BERT рекомендуется держать `runner.concurrency` умеренным (конкуренция за GPU/потоки). Путь HF-кэша — стандартный; `rescale_with_baseline: true` требует файл baseline-idf. Берт-score тянет torch (~сотни МБ); в CI-окружении без GPU BERT отключаем.
 
 3. Как ищутся в тексте сущности из таблицы
 Поиск выполняет find_table_mentions() (mentions/finder.py), строго детерминированно и без LLM (настройки allow_lemma_match, allow_fuzzy_match, allow_semantic_match принудительно false — валидатор deterministic_mvp это требует, MVP поддерживает только точное совпадение после нормализации).

@@ -1,5 +1,6 @@
 """Интеграционный тест нового full-режима (candidate-based пайплайн с теговой маской)."""
 import json
+import re
 
 import pytest
 
@@ -97,6 +98,31 @@ class RuleBasedProvider:
                         {"id": item["id"], "translation": mapping.get(item["text"], item["text"])}
                         for item in payload["items"]
                     ]
+                },
+                ensure_ascii=False,
+            )
+
+        if task == "translate_question":
+            # Структурированный протокол: scripted-маппинг предложения + поверхности
+            # из канонических переводов упоминаний; plain = tagged без тегов.
+            tagged_text = payload["tagged_question"]
+            tagged = {
+                ("en", "ru", "Where is <TABLE_REF_0000>Alice</TABLE_REF_0000>?"):
+                    "Где находится <TABLE_REF_0000>Алиса</TABLE_REF_0000>?",
+                ("ru", "en", "Где находится <TABLE_REF_0000>Алиса</TABLE_REF_0000>?"):
+                    "Where is <TABLE_REF_0000>Alice</TABLE_REF_0000>?",
+            }.get((src, dst, tagged_text), tagged_text)
+            plain = re.sub(r"</?TABLE_REF_\d{4}>", "", tagged)
+            used = [
+                {"id": item["id"], f"surface_{dst}": item["translation"], f"lemma_{dst}": item["translation"]}
+                for item in payload["mentions"]
+            ]
+            return json.dumps(
+                {
+                    f"question_{dst}": plain,
+                    f"question_{dst}_tagged": tagged,
+                    "mentions_used": used,
+                    "missing_mentions": [],
                 },
                 ensure_ascii=False,
             )

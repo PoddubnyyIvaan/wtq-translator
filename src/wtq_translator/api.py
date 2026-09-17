@@ -8,6 +8,7 @@ from .llm.logged import LoggedLLMProvider
 from .models import QuestionRecord, TableData, TranslationResult
 from .persistence.cache import CachedEmbeddingProvider, CachedLLMProvider, SQLiteCache
 from .pipeline import TranslationPipeline
+from .validation.bert_score import prewarm_bertscore
 
 
 class Translator:
@@ -60,6 +61,13 @@ class Translator:
 
         self.llm = llm
         self.embeddings = embeddings
+        # Единая загрузка BERTScore-модели на GPU до запуска worker-пула:
+        # убирает гонку первого использования и дублирование аллокаций CUDA.
+        if config.bert_score.enabled and (
+            config.validation.question_bert_enabled
+            or config.validation.back_table_bert_enabled
+        ):
+            prewarm_bertscore(config.bert_score)
         self.pipeline = TranslationPipeline(config, self.llm, self.embeddings, cache=cache)
 
     async def process(self, question: QuestionRecord, table: TableData) -> TranslationResult:

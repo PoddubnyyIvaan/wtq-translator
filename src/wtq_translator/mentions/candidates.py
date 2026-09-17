@@ -133,15 +133,19 @@ def _is_question_stop(tok: Any, cfg: MentionsConfig) -> bool:
     return tok.pos_ in cfg.stop_pos or tok.morph.get("Poss") == ["Yes"]
 
 
-def _subsequences(
+def _subsequence_records(
     run: list[Any],
     text: str,
     cfg: MentionsConfig,
     *,
     drop_stop: bool,
-) -> list[QuestionCandidate]:
-    """Все непрерывные подпоследовательности одного content-run'а с фильтрацией одиночных."""
-    result: list[QuestionCandidate] = []
+) -> list[tuple[QuestionCandidate, list[Any]]]:
+    """Все непрерывные подпоследовательности одного content-run'а с фильтрацией одиночных.
+
+    Для каждой подпоследовательности дополнительно возвращается её спановый список токенов
+    (в порядке подпоследовательности) — из него строятся tokens/pos/ner для TableCandidate.
+    """
+    result: list[tuple[QuestionCandidate, list[Any]]] = []
     n = len(run)
     for i in range(n):
         for j in range(i, n):
@@ -157,13 +161,44 @@ def _subsequences(
                     continue
             start = run[i].idx
             end = run[j].idx + len(run[j].text)
-            result.append(QuestionCandidate(
+            qc = QuestionCandidate(
                 lemma_key=_lemma_key(run[i:j + 1]),
                 source_text=text[start:end],
                 start=start,
                 end=end,
                 length=length,
-            ))
+            )
+            result.append((qc, run[i:j + 1]))
+    return result
+
+
+def _subsequences(
+    run: list[Any],
+    text: str,
+    cfg: MentionsConfig,
+    *,
+    drop_stop: bool,
+) -> list[QuestionCandidate]:
+    """Обёртка без аннотаций: только QuestionCandidate (для вопроса)."""
+    return [qc for qc, _ in _subsequence_records(run, text, cfg, drop_stop=drop_stop)]
+
+
+def _subsequence_with_annotations(
+    run: list[Any],
+    text: str,
+    cfg: MentionsConfig,
+    *,
+    drop_stop: bool,
+) -> list[tuple[QuestionCandidate, list[str], list[str], list[str]]]:
+    """Подпоследовательности со списками tokens/pos/ner, выровненными по токенам спана."""
+    result: list[tuple[QuestionCandidate, list[str], list[str], list[str]]] = []
+    for qc, span in _subsequence_records(run, text, cfg, drop_stop=drop_stop):
+        result.append((
+            qc,
+            [t.text for t in span],
+            [t.pos_ for t in span],
+            [t.ent_type_ for t in span],
+        ))
     return result
 
 
@@ -231,7 +266,7 @@ def extract_table_candidates(
             for run in runs
         ]
         for run in runs:
-            for qc in _subsequences(run, text, cfg, drop_stop=False):
+            for qc, tokens, pos, ner in _subsequence_with_annotations(run, text, cfg, drop_stop=False):
                 if qc.lemma_key not in by_lemma:
                     by_lemma[qc.lemma_key] = TableCandidate(
                         id=_candidate_id(qc.lemma_key, qc.source_text, target_lang),
@@ -239,6 +274,9 @@ def extract_table_candidates(
                         source_text=qc.source_text,
                         coordinates=[coord],
                         length=qc.length,
+                        tokens=tokens,
+                        pos=pos,
+                        ner=ner,
                     )
                     order.append(qc.lemma_key)
                 else:

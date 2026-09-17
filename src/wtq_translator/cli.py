@@ -11,6 +11,8 @@ from .audit import audit_dataset_mentions
 from .config import load_config
 from .dataset import read_question_tsv, read_table_tsv, resolve_context_path
 from .mentions import find_table_mentions
+from .quality import load_filter_config
+from .quality_stats import run_filter
 from .runner import get_run_report, make_run_id, run_dataset_from_tsv, run_one_from_tsv
 
 
@@ -67,11 +69,23 @@ def _parser() -> argparse.ArgumentParser:
     audit.add_argument("--output", default=None, help="Optional JSON path for the audit report")
     audit.add_argument("--max-examples", type=int, default=20)
 
+    flt = sub.add_parser("filter", help="Filter a run's translated dataset by status + metric thresholds")
+    flt.add_argument("config")
+    flt.add_argument("run_dir")
+
     return p
 
 
 def main() -> None:
     args = _parser().parse_args()
+
+    # The `filter` subcommand uses its own standalone config schema, not AppConfig.
+    if args.command == "filter":
+        filter_config = load_filter_config(args.config)
+        report = run_filter(args.run_dir, filter_config)
+        print(json.dumps(report, ensure_ascii=False, indent=2))
+        return
+
     config = load_config(args.config)
 
     if args.command == "validate-config":

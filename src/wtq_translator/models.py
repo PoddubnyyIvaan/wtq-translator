@@ -112,6 +112,9 @@ class TableCandidate:
     coordinates: list["TableCoordinate"]
     length: int
     translation: str = ""
+    tokens: list[str] = field(default_factory=list)
+    pos: list[str] = field(default_factory=list)
+    ner: list[str] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -209,9 +212,19 @@ class QualityReport:
     translated_question: str = ""
     back_translated_question: str | None = None
     question_cosine_similarity: float | None = None
+    question_bert_precision: float | None = None
+    question_bert_recall: float | None = None
+    question_bert_f1: float | None = None
     back_table_groups_compared: int = 0
     back_table_min_similarity: float | None = None
     back_table_mean_similarity: float | None = None
+    back_table_bert_groups_compared: int = 0
+    back_table_bert_min_f1: float | None = None
+    back_table_bert_mean_f1: float | None = None
+    back_table_bert_min_precision: float | None = None
+    back_table_bert_mean_precision: float | None = None
+    back_table_bert_min_recall: float | None = None
+    back_table_bert_mean_recall: float | None = None
     back_table_similarity_examples: list[dict[str, Any]] = field(default_factory=list)
     original_masks: list[str] = field(default_factory=list)
     forward_masks: list[str] = field(default_factory=list)

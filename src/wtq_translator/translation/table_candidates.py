@@ -26,7 +26,18 @@ _CANDIDATE_REQUIREMENTS = [
     "Preserve numbers, dates, and punctuation inside the source text exactly.",
     "Translate the text only; do not answer questions, calculate, summarize, or add facts.",
     "Do not return any table coordinates, source text, explanations, or extra keys.",
+    "For items where `is_column` is false, translate consistent with the meaning of the `column` field; when `column_translation` is provided, prefer its terms.",
 ]
+
+# Требование форсинга транслитерации; добавляется к _CANDIDATE_REQUIREMENTS только когда
+# включен translation.candidates.transliteration_enabled.
+_TRANSLITERATION_REQUIREMENT = (
+    "When an item provides a `transliterations` list, use exactly the supplied `translation` "
+    "for the exact `source` word inside that item; do not translate, paraphrase, or omit that word."
+)
+
+
+_FORCED_NER_LABELS = {"PERSON", "ORG", "GPE", "LOC", "PRODUCT"}
 
 
 def _validate_candidate_response(
@@ -72,22 +83,24 @@ async def _translate_chunk(
     source_language: str,
     target_language: str,
     trace_stage_prefix: str,
-    domain: str = "",
+    domain: str,
+    requirements: list[str],
 ) -> dict[str, str]:
     """Переводит один chunk кандидатов яруса со своим retry-циклом.
 
     Возвращает {candidate.id: translation} для кандидатов chunk. items — готовые
     payload-записи `{"id","text","column","glossary"}` для этого chunk'а (glossary
     каждого item'а — его собственные самые длинные вмещающие последовательности).
-    При исчерпании ретраев бросает RuntimeError — изоляция ошибок теперь пер-chunk,
-    неудача одного chunk не отменяет запросы остальных.
+    requirements — требования уровня промпта (общие + при включенном форсинге
+    транслитерации). При исчерпании ретраев бросает RuntimeError — изоляция ошибок
+    теперь пер-chunk, неудача одного chunk не отменяет запросы остальных.
     """
     payload = {
         "task": "translate_candidates",
         "source_language": source_language,
         "target_language": target_language,
         "items": items,
-        "requirements": _CANDIDATE_REQUIREMENTS,
+        "requirements": requirements,
     }
 
     last_error: Exception | None = None
@@ -138,6 +151,53 @@ def _is_contiguous_window(window: list[str], full: list[str]) -> bool:
     return any(full[i : i + n] == window for i in range(m - n + 1))
 
 
+# Кириллические целевые языки: только для них осмысленна транслитерация латиницы→кириллицы.
+_CYRILLIC_TARGETS = {"ru", "uk", "bg", "mk", "be"}
+
+
+def _translit_token(token: str, target_lang: str) -> str | None:
+    """Транслитерирует одиночный латинский токен в кириллицу для целевого языка.
+
+    Возвращает None, если: токен без латинских букв, целевой язык не кириллический,
+    библиотека не установлена или произошла ошибка транслитерации (fallback None —
+    токен не попадает в forcing).
+    """
+    if not any(ch.isascii() and ch.isalpha() for ch in token):
+        return None
+    if target_lang.lower() not in _CYRILLIC_TARGETS:
+        return None
+    try:
+        from transliterate import translit
+    except ImportError:
+        return None
+    try:
+        # RU-пакет: reversed=False даёт латиница→кириллица ("Berlin" -> "Берлин").
+        return translit(token, "ru", reversed=False).casefold()
+    except Exception:
+        return None
+
+
+def _forced_transliterations(c: TableCandidate, target_lang: str) -> list[dict[str, str]]:
+    """Forcing-записи для NER-токенов кандидата: источник и транслит, оба в нижнем регистре.
+
+    Дедуп по (source, translation) в порядке токенов кандидата.
+    """
+    result: list[dict[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    for token, ner in zip(c.tokens, c.ner):
+        if ner not in _FORCED_NER_LABELS:
+            continue
+        translit = _translit_token(token, target_lang)
+        if translit is None:
+            continue
+        key = (token.casefold(), translit)
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append({"source": token.casefold(), "translation": translit})
+    return result
+
+
 def _nested_longest_glossary(
     value: TableCandidate, longer: list[TableCandidate]
 ) -> list[dict[str, str]]:
@@ -166,11 +226,11 @@ def _nested_longest_glossary(
     seen: set[tuple[str, str]] = set()
     result: list[dict[str, str]] = []
     for c in longest:
-        key = (c.source_text, c.translation)
+        key = (c.source_text.casefold(), c.translation.casefold())
         if key in seen:
             continue
         seen.add(key)
-        result.append({"key": c.source_text, "translation": c.translation})
+        result.append({"key": c.source_text.casefold(), "translation": c.translation.casefold()})
     return result
 
 
@@ -185,6 +245,7 @@ async def translate_table_candidates(
     trace_stage_prefix: str = "translate_table_candidates",
     domain: str = "",
     headers: list[str] | None = None,
+    runs: dict[TableCoordinate, list[ContentRun]] | None = None,
 ) -> dict[str, str]:
     """Переводит кандидатов по ярусам убывающей длины, заполняя candidate.translation.
 
@@ -192,7 +253,12 @@ async def translate_table_candidates(
     для согласованности каждый следующий (меньший) ярус получает per-item глоссарий —
     переводы самых длинных уже переведённых более длинных последовательностей, в которые
     переводимая подпоследовательность вложена. `column` каждого item — полный заголовок
-    колонки первой координаты кандидата (из `headers`), только как контекст.
+    колонки первой координаты кандидата (из `headers`), только как контекст. Заголовочные
+    кандидаты (`is_column: true`) получают только контекст; нестолбцовые — `is_column:
+    false`, `column_translation` (перевод заголовка своей колонки, если уже переведён) и
+    требование согласованности. NER-токены (PERSON/ORG/GPE/LOC/PRODUCT) через `tokens`/`ner`
+    кандидата транслитерируются в `transliterations`. `runs` (per-координата content-run'ы)
+    нужен для получения lemma_key заголовков колонок.
 
     Внутри яруса pending может быть разбит на chunk'и
     (translation.candidates.max_candidates_per_request), которые запрашиваются параллельно
@@ -201,6 +267,13 @@ async def translate_table_candidates(
     """
     if not candidates:
         return {}
+
+    transliteration_enabled = config.translation.candidates.transliteration_enabled
+    requirements = (
+        [*_CANDIDATE_REQUIREMENTS, _TRANSLITERATION_REQUIREMENT]
+        if transliteration_enabled
+        else _CANDIDATE_REQUIREMENTS
+    )
 
     by_length: dict[int, list[TableCandidate]] = {}
     for c in candidates:
@@ -229,20 +302,48 @@ async def translate_table_candidates(
         # Контекст для глоссария: все уже переведённые более длинные кандидаты.
         longer = [c for c in candidates if c.length > length and c.translation]
 
+        # lemma_key -> translation уже переведённых кандидатов на момент сборки яруса
+        # (для column_translation нестолбцовых кандидатов).
+        translated_lemmas = {c.lemma_key: c.translation for c in candidates if c.translation}
+
+        # Заголовок каждой колонки по её lemma_key (из content-runs заголовков).
+        col_to_header_lemma: dict[int, str] = {}
+        if runs is not None and headers:
+            for col in range(len(headers)):
+                cell_runs = runs.get(TableCoordinate(None, col))
+                if cell_runs:
+                    col_to_header_lemma[col] = cell_runs[0].lemma_key
+
         # Готовые payload-записи, выровненные по порядку `pending`.
         items: list[dict[str, object]] = []
         for c in pending:
             column = ""
             if headers and c.coordinates and 0 <= c.coordinates[0].column < len(headers):
                 column = headers[c.coordinates[0].column]
-            items.append(
-                {
-                    "id": c.id,
-                    "text": c.source_text,
-                    "column": column,
-                    "glossary": _nested_longest_glossary(c, longer),
-                }
+            is_column = bool(c.coordinates) and c.coordinates[0].row is None
+
+            item: dict[str, object] = {
+                "id": c.id,
+                "text": c.source_text,
+                "column": column.casefold() if column else "",
+                "is_column": is_column,
+                "glossary": _nested_longest_glossary(c, longer),
+            }
+
+            transliterations = (
+                _forced_transliterations(c, target_language) if transliteration_enabled else []
             )
+            if transliterations:
+                item["transliterations"] = transliterations
+
+            if not is_column and c.coordinates:
+                header_lemma = col_to_header_lemma.get(c.coordinates[0].column)
+                if header_lemma is not None:
+                    header_translation = translated_lemmas.get(header_lemma)
+                    if header_translation:
+                        item["column_translation"] = header_translation.casefold()
+
+            items.append(item)
 
         limit = config.translation.candidates.max_candidates_per_request
         if limit is None or len(pending) <= limit:
@@ -274,6 +375,7 @@ async def translate_table_candidates(
                     target_language=target_language,
                     trace_stage_prefix=trace_stage_prefix,
                     domain=domain,
+                    requirements=requirements,
                 )
 
         # return_exceptions=True: результат успешного chunk — dict[id, перевод],
