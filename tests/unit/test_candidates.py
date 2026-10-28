@@ -170,6 +170,24 @@ def test_id_stable_and_depends_on_target_lang():
     assert len(by1["london"].id) == 16
 
 
+def test_id_depends_on_table_content():
+    # Один и тот же исходный текст кандидата в разных таблицах — разные id
+    # (кэш переводов per-table, нет ложных кросс-табличных hits).
+    nlp = make_nlp({
+        "City": [_Tok("City", 0, pos="PROPN", lemma="city")],
+        "Sport": [_Tok("Sport", 0, pos="NOUN", lemma="sport")],
+        "London": [_Tok("London", 0, pos="PROPN")],
+    })
+    table_a = TableData(["City"], [["London"]])
+    table_b = TableData(["Sport"], [["London"]])
+    by_a = {c.lemma_key: c for c in extract_table_candidates(table_a, nlp, MentionsConfig(), "ru").candidates}
+    by_b = {c.lemma_key: c for c in extract_table_candidates(table_b, nlp, MentionsConfig(), "ru").candidates}
+    assert by_a["london"].id != by_b["london"].id
+    # в одной таблице + языке id стабилен между повторными извлечениями
+    by_b2 = {c.lemma_key: c for c in extract_table_candidates(table_b, nlp, MentionsConfig(), "ru").candidates}
+    assert by_b2["london"].id == by_b["london"].id
+
+
 def test_lemma_key_keeps_cyrillic():
     # Кириллические леммы не должны схлопываться в пустую строку (важно для back-перевода на русский).
     nlp = make_nlp({

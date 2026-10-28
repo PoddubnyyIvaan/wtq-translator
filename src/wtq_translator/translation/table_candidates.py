@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 
 from ..config import AppConfig
@@ -13,8 +14,22 @@ from ..persistence.cache import SQLiteCache
 from ..prompts import candidate_system_prompt
 from .table import TableTranslationResponse, _parse_json
 
-# In-memory кэш переводов кандидатов на процесс (ключ — candidate.id).
+# In-memory кэш переводов кандидатов на процесс (ключ — candidate.id + контекст перевода).
 _MEMORY_CACHE: dict[str, str] = {}
+
+
+def _translation_context(config: AppConfig, domain: str) -> str:
+    """Контекст перевода (модель, сид, системный промпт) — дискриминатор ключа кэша.
+
+    Перевод кандидата зависит от модели, сида генерации и системного промпта, поэтому
+    записи `_MEMORY_CACHE`/`candidate_translations` не должны перетекать между
+    конфигурациями. Берётся конфигурационный `project.seed` (не seed конкретной
+    попытки/чанка), чтобы ключ был детерминирован между ранами и resume работал.
+    """
+    system = candidate_system_prompt(domain)
+    return hashlib.sha256(
+        f"{config.model.model_name}\x00{config.project.seed}\x00{system}".encode()
+    ).hexdigest()
 
 # Требования, общие для всех запросов перевода кандидатов внутри яруса.
 _CANDIDATE_REQUIREMENTS = [
@@ -30,7 +45,8 @@ _CANDIDATE_REQUIREMENTS = [
 ]
 
 # Требование форсинга транслитерации; добавляется к _CANDIDATE_REQUIREMENTS только когда
-# включен translation.candidates.transliteration_enabled.
+# включен translation.candidates.transliteration == "letterwise" (для "quoted" — своё
+# требование _QUOTED_TRANSLITERATION_REQUIREMENT).
 _TRANSLITERATION_REQUIREMENT = (
     "When an item provides a `transliterations` list, use exactly the supplied `translation` "
     "for the exact `source` word inside that item; do not translate, paraphrase, or omit that word."
@@ -38,6 +54,62 @@ _TRANSLITERATION_REQUIREMENT = (
 
 
 _FORCED_NER_LABELS = {"PERSON", "ORG", "GPE", "LOC", "PRODUCT"}
+
+# Требование quoted-режима транслитерации; добавляется к _CANDIDATE_REQUIREMENTS когда
+# включен translation.candidates.transliteration == "quoted".
+_QUOTED_TRANSLITERATION_REQUIREMENT = (
+    "Fragments wrapped in «...» are proper names that must be transliterated into the "
+    "target language following its standard transcription conventions; do not translate "
+    "their meaning. Keep the «...» markers exactly in the output; they are removed automatically."
+)
+
+# Кавычки-маркеры quoted-режима: обёртка NER-упоминаний до перевода и снятие после.
+_QUOTE_OPEN, _QUOTE_CLOSE = "«", "»"
+
+
+def _quoted_ner_spans(c: TableCandidate) -> list[tuple[int, int]] | None:
+    """Char-диапазоны NER-токенов кандидата для оборачивания в «…» в quoted-режиме.
+
+    Идущие подряд токены с ner in _FORCED_NER_LABELS группируются в один span
+    («Zhukov Ivan», а не «Zhukov» «Ivan»). Офсеты ищутся кумулятивным str.find
+    по c.source_text (tokens/ner/source_text приходят из одного спана первой
+    координаты, между токенами только пробелы). Если какой-то токен не найден —
+    возвращается None (ничего не оборачивать). """
+    offsets: list[tuple[int, int]] = []
+    pos = 0
+    for tok in c.tokens:
+        idx = c.source_text.find(tok, pos)
+        if idx < 0:
+            return None
+        offsets.append((idx, idx + len(tok)))
+        pos = idx + len(tok)
+
+    spans: list[tuple[int, int]] = []
+    start = end = -1
+    for (tok_start, tok_end), ner in zip(offsets, c.ner):
+        if ner in _FORCED_NER_LABELS:
+            if start < 0:
+                start = tok_start
+            end = tok_end
+        elif start >= 0:
+            spans.append((start, end))
+            start = end = -1
+    if start >= 0:
+        spans.append((start, end))
+    return spans
+
+
+def _wrap_quoted_spans(text: str, spans: list[tuple[int, int]]) -> str:
+    """Вставляет «/» вокруг spam'ов справа налево, чтобы не сдвигать char-офсеты."""
+    out = text
+    for start, end in sorted(spans, reverse=True):
+        out = out[:start] + _QUOTE_OPEN + out[start:end] + _QUOTE_CLOSE + out[end:]
+    return out
+
+
+def _strip_transliteration_quotes(text: str) -> str:
+    """Вырезает маркеры «» из перевода (quoted-режим, стрип только после перевода)."""
+    return text.replace(_QUOTE_OPEN, "").replace(_QUOTE_CLOSE, "")
 
 
 def _validate_candidate_response(
@@ -85,15 +157,18 @@ async def _translate_chunk(
     trace_stage_prefix: str,
     domain: str,
     requirements: list[str],
+    quoted_active: bool = False,
 ) -> dict[str, str]:
     """Переводит один chunk кандидатов яруса со своим retry-циклом.
 
     Возвращает {candidate.id: translation} для кандидатов chunk. items — готовые
     payload-записи `{"id","text","column","glossary"}` для этого chunk'а (glossary
     каждого item'а — его собственные самые длинные вмещающие последовательности).
-    requirements — требования уровня промпта (общие + при включенном форсинге
-    транслитерации). При исчерпании ретраев бросает RuntimeError — изоляция ошибок
-    теперь пер-chunk, неудача одного chunk не отменяет запросы остальных.
+    requirements — требования уровня промпта (общие + при включённой транслитерации
+    letterwise/quoted). quoted_active — в quoted-режиме из переводов вырезаются
+    маркеры «» (до break, т.е. до кэширования и использования глоссарием). При
+    исчерпании ретраев бросает RuntimeError — изоляция ошибок теперь пер-chunk,
+    неудача одного chunk не отменяет запросы остальных.
     """
     payload = {
         "task": "translate_candidates",
@@ -134,6 +209,12 @@ async def _translate_chunk(
 
             parsed = TableTranslationResponse.model_validate(_parse_json(raw))
             translations = _validate_candidate_response(chunk, parsed)
+            if quoted_active:
+                # Маркеры «» вырезаются сразу после валидации: чистые переводы
+                # попадают в candidate.translation, кэш и глоссарий нижних ярусов.
+                translations = {
+                    c_id: _strip_transliteration_quotes(t) for c_id, t in translations.items()
+                }
             break
         except Exception as exc:
             last_error = exc
@@ -257,7 +338,10 @@ async def translate_table_candidates(
     кандидаты (`is_column: true`) получают только контекст; нестолбцовые — `is_column:
     false`, `column_translation` (перевод заголовка своей колонки, если уже переведён) и
     требование согласованности. NER-токены (PERSON/ORG/GPE/LOC/PRODUCT) через `tokens`/`ner`
-    кандидата транслитерируются в `transliterations`. `runs` (per-координата content-run'ы)
+    кандидата транслитерируются согласно `config.translation.candidates.transliteration`:
+    "letterwise" — побуквенно через `transliterations`, "quoted" — обёрткой «…» вокруг
+    NER-упоминаний (модель транслитерирует сама, маркеры снимаются после перевода);
+    только для кириллических целевых языков. `runs` (per-координата content-run'ы)
     нужен для получения lemma_key заголовков колонок.
 
     Внутри яруса pending может быть разбит на chunk'и
@@ -268,12 +352,18 @@ async def translate_table_candidates(
     if not candidates:
         return {}
 
-    transliteration_enabled = config.translation.candidates.transliteration_enabled
-    requirements = (
-        [*_CANDIDATE_REQUIREMENTS, _TRANSLITERATION_REQUIREMENT]
-        if transliteration_enabled
-        else _CANDIDATE_REQUIREMENTS
-    )
+    # Ключ кэша перевода зависит от контекста (модель/сид/промпт): записи не
+    # переносятся между конфигурациями. Подсчёт здесь, в ярусах используется `key`.
+    ctx = _translation_context(config, domain)
+
+    method = config.translation.candidates.transliteration
+    quoted_active = method == "quoted" and target_language.lower() in _CYRILLIC_TARGETS
+    if method == "letterwise":
+        requirements = [*_CANDIDATE_REQUIREMENTS, _TRANSLITERATION_REQUIREMENT]
+    elif method == "quoted":
+        requirements = [*_CANDIDATE_REQUIREMENTS, _QUOTED_TRANSLITERATION_REQUIREMENT]
+    else:
+        requirements = _CANDIDATE_REQUIREMENTS
 
     by_length: dict[int, list[TableCandidate]] = {}
     for c in candidates:
@@ -284,15 +374,16 @@ async def translate_table_candidates(
 
         pending: list[TableCandidate] = []
         for c in tier:
-            memo = _MEMORY_CACHE.get(c.id)
+            key = f"{c.id}\x00{ctx}"
+            memo = _MEMORY_CACHE.get(key)
             if memo is not None:
                 c.translation = memo
                 continue
             if cache is not None:
-                cached = cache.get_candidate_translation(c.id)
+                cached = cache.get_candidate_translation(key)
                 if cached is not None:
                     c.translation = cached
-                    _MEMORY_CACHE[c.id] = cached
+                    _MEMORY_CACHE[key] = cached
                     continue
             pending.append(c)
 
@@ -330,11 +421,16 @@ async def translate_table_candidates(
                 "glossary": _nested_longest_glossary(c, longer),
             }
 
-            transliterations = (
-                _forced_transliterations(c, target_language) if transliteration_enabled else []
-            )
-            if transliterations:
-                item["transliterations"] = transliterations
+            if method == "letterwise":
+                transliterations = _forced_transliterations(c, target_language)
+                if transliterations:
+                    item["transliterations"] = transliterations
+            elif quoted_active:
+                # quoted-режим: NER-упоминания оборачиваются в «…», модель сама
+                # транслитерирует их; `transliterations` не заполняется.
+                spans = _quoted_ner_spans(c)
+                if spans:
+                    item["text"] = _wrap_quoted_spans(c.source_text, spans)
 
             if not is_column and c.coordinates:
                 header_lemma = col_to_header_lemma.get(c.coordinates[0].column)
@@ -376,6 +472,7 @@ async def translate_table_candidates(
                     trace_stage_prefix=trace_stage_prefix,
                     domain=domain,
                     requirements=requirements,
+                    quoted_active=quoted_active,
                 )
 
         # return_exceptions=True: результат успешного chunk — dict[id, перевод],
@@ -397,9 +494,11 @@ async def translate_table_candidates(
             for c in chunk:
                 translation = result[c.id]
                 c.translation = translation
-                _MEMORY_CACHE[c.id] = translation
+                _MEMORY_CACHE[f"{c.id}\x00{ctx}"] = translation
                 if cache is not None:
-                    cache.put_candidate_translation(c.id, c.source_text, target_language, translation)
+                    cache.put_candidate_translation(
+                        f"{c.id}\x00{ctx}", c.source_text, target_language, translation
+                    )
 
         if first_error is not None:
             # Пробрасываем ошибку chunk'а как раньше (после исчерпания ретраев).

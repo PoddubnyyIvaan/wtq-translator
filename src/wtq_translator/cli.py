@@ -5,27 +5,39 @@ import asyncio
 import json
 import sys
 import uuid
+from pathlib import Path
 from typing import Any
 
+from .alphabet import AlphabetIntentError
+from .alphabet_screen import run_alphabet_screen
 from .audit import audit_dataset_mentions
 from .config import load_config
 from .dataset import read_question_tsv, read_table_tsv, resolve_context_path
+from .entities import remaining_tables, run_entities
 from .mentions import find_table_mentions
+from .persistence import StateStore
 from .quality import load_filter_config
 from .quality_stats import run_filter
+from .reporting.stats import run_stats
 from .runner import get_run_report, make_run_id, run_dataset_from_tsv, run_one_from_tsv
 
 
-def _make_progress_bar(total: int, *, disabled: bool) -> Any:
-    """Создаёт прогресс-бар tqdm для run/resume.
+def _make_progress_bar(
+    total: int,
+    *,
+    disabled: bool,
+    desc: str = "questions",
+    unit: str = "q",
+) -> Any:
+    """Создаёт прогресс-бар tqdm для run/resume/entities.
 
     Ленивый импорт: окружение без установленного tqdm (например, тесты) не падает,
-    пока ветка run/resume реально не исполняется. Вывод бара идёт в stderr — stdout
+    пока прогресс-бар реально не нужен. Вывод бара идёт в stderr — stdout
     остаётся чистым для финального JSON.
     """
     from tqdm import tqdm
 
-    return tqdm(desc="questions", unit="q", total=total, disable=disabled)
+    return tqdm(desc=desc, unit=unit, total=total, disable=disabled)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -63,6 +75,11 @@ def _parser() -> argparse.ArgumentParser:
     rep.add_argument("questions_tsv")
     rep.add_argument("--run-id", default=None)
 
+    st = sub.add_parser("stats", help="Aggregate run statistics from quality.jsonl and state")
+    st.add_argument("config")
+    st.add_argument("questions_tsv")
+    st.add_argument("--run-id", default=None)
+
     audit = sub.add_parser("audit", help="Audit exact table-mention coverage without LLM calls")
     audit.add_argument("config")
     audit.add_argument("questions_tsv")
@@ -72,6 +89,19 @@ def _parser() -> argparse.ArgumentParser:
     flt = sub.add_parser("filter", help="Filter a run's translated dataset by status + metric thresholds")
     flt.add_argument("config")
     flt.add_argument("run_dir")
+
+    scr = sub.add_parser(
+        "alphabet-screen",
+        help="Screen (pre-filter) a question TSV by alphabet-dependent intent, without translating",
+    )
+    scr.add_argument("config")
+    scr.add_argument("questions_tsv")
+    scr.add_argument("--no-progress", action="store_true", help="Do not show the tqdm progress bar")
+
+    e = sub.add_parser("entities", help="Collect named entities from table cells via spaCy NER")
+    e.add_argument("config")
+    e.add_argument("--input-tsv", default=None, help="Overrides entities.input_tsv from the config")
+    e.add_argument("--no-progress", action="store_true", help="Do not show the tqdm progress bar")
 
     return p
 
@@ -132,7 +162,16 @@ def main() -> None:
         return
 
     if args.command == "run-one":
-        result = asyncio.run(run_one_from_tsv(config, args.questions_tsv, args.question_id))
+        try:
+            result = asyncio.run(run_one_from_tsv(config, args.questions_tsv, args.question_id))
+        except AlphabetIntentError as exc:
+            print(json.dumps({
+                "question_id": exc.question_id,
+                "status": "excluded",
+                "class": exc.intent_label,
+                "why": exc.why,
+            }, ensure_ascii=False, indent=2))
+            return
         print(json.dumps({
             "question_id": result.question.id,
             "status": result.quality.status.value,
@@ -170,6 +209,8 @@ def main() -> None:
             "processed": summary.processed,
             "skipped": summary.skipped,
             "failed": summary.failed,
+            "excluded": summary.excluded,
+            "excluded_share": summary.excluded_share,
             "statuses": summary.statuses,
             "output_questions_tsv": str(summary.output_questions_tsv),
             "run_dir": str(summary.run_dir),
@@ -178,6 +219,27 @@ def main() -> None:
 
     if args.command == "report":
         print(json.dumps(get_run_report(config, args.questions_tsv, run_id=args.run_id), ensure_ascii=False, indent=2))
+        return
+
+    if args.command == "stats":
+        run_id = args.run_id or make_run_id(config, args.questions_tsv)
+        state = StateStore(config.state.sqlite_path)
+        status_counts = state.status_counts(run_id)
+        total = sum(status_counts.values())
+        if total == 0:
+            raise SystemExit(f"no state for run: {run_id}")
+        run_dir = config.project.output_root / "runs" / run_id
+        extra = {}
+        output_questions = run_dir / "dataset" / Path(args.questions_tsv).name
+        alphabet_excluded = run_dir / "dataset" / f"{Path(args.questions_tsv).stem}-alphabet-excluded.tsv"
+        if output_questions.exists():
+            extra["output_questions_tsv"] = str(output_questions.resolve())
+        if alphabet_excluded.exists():
+            extra["alphabet_excluded_tsv"] = str(alphabet_excluded.resolve())
+        print(json.dumps(
+            run_stats(run_dir, status_counts=status_counts, total=total, extra=extra),
+            ensure_ascii=False, indent=2,
+        ))
         return
 
     if args.command == "audit":
@@ -190,6 +252,41 @@ def main() -> None:
             output_path=args.output,
         )
         print(json.dumps(report, ensure_ascii=False, indent=2))
+        return
+
+    if args.command == "alphabet-screen":
+        bar = _make_progress_bar(
+            total=len(read_question_tsv(args.questions_tsv)),
+            disabled=args.no_progress or not sys.stderr.isatty(),
+        )
+        try:
+            stats = asyncio.run(run_alphabet_screen(config, args.questions_tsv, progress=bar))
+        finally:
+            bar.close()
+        print(json.dumps(stats, ensure_ascii=False, indent=2))
+        return
+
+    if args.command == "entities":
+        # Прогресс-бар: total = число оставшихся (необработанных) таблиц.
+        bar = _make_progress_bar(
+            total=len(remaining_tables(config, args.input_tsv)),
+            disabled=args.no_progress or not sys.stderr.isatty(),
+            desc="tables",
+            unit="tables",
+        )
+        try:
+            summary = run_entities(config, args.input_tsv, progress=bar)
+        finally:
+            bar.close()
+        print(json.dumps({
+            "total_tables": summary.total_tables,
+            "skipped_processed": summary.skipped_processed,
+            "missing_tables": summary.missing_tables,
+            "new_entities": summary.new_entities,
+            "updated_entities": summary.updated_entities,
+            "output_tsv": str(summary.output_tsv),
+            "processed_path": str(summary.processed_path),
+        }, ensure_ascii=False, indent=2))
         return
 
 

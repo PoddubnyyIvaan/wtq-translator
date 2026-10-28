@@ -93,7 +93,7 @@ def test_all_statuses_config_keeps_every_passing_row(tmp_path: Path) -> None:
     assert report["kept"] == 5
     assert report["status_include"] == [
         "pending", "processing", "accepted", "accepted_with_warnings",
-        "needs_review", "failed",
+        "needs_review", "failed", "excluded",
     ]
 
 

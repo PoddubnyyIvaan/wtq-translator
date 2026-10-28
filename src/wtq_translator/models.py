@@ -32,6 +32,20 @@ class QuestionTSVDocument:
     records: tuple[QuestionRecord, ...]
 
 
+@dataclass(frozen=True)
+class AlphabetDetection:
+    """Результат детекции алфавитно-зависимого намерения вопроса.
+
+    ``intent_id`` — определённое намерение (1..4) либо None, если намерения нет или
+    детекция отключена. ``why`` — обоснование модели. ``error`` — непусто, если
+    детекция не удалась после всех ретраев (fail-closed).
+    """
+
+    intent_id: int | None
+    why: str | None
+    error: str | None = None
+
+
 @dataclass
 class TableData:
     headers: list[str]
@@ -264,6 +278,8 @@ class RunSummary:
     processed: int
     skipped: int
     failed: int
-    statuses: dict[str, int]
-    output_questions_tsv: Path
-    run_dir: Path
+    excluded: int = 0
+    excluded_share: float = 0.0
+    statuses: dict[str, int] = field(default_factory=dict)
+    output_questions_tsv: Path = field(default_factory=Path)
+    run_dir: Path = field(default_factory=Path)

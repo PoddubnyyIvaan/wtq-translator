@@ -55,6 +55,22 @@ class SQLiteCache:
             # busy_timeout — страховка для init-соединения; остальные соединения получают 30 с через timeout.
             db.execute("PRAGMA journal_mode=WAL").fetchone()
             db.execute("PRAGMA busy_timeout=30000")
+            # Миграция v2: ключ записи candidate_translations теперь включает candidate.id
+            # (с хешем содержимого таблицы) + контекст перевода (модель/сид/промпт).
+            # Старые записи недостижимы, очищаются одноразово. Гвард PRAGMA user_version:
+            # на свежих БД и при повторной инициализации — no-op.
+            if db.execute("PRAGMA user_version").fetchone()[0] < 2:
+                db.execute("DROP TABLE IF EXISTS candidate_translations")
+                db.execute("""
+                    CREATE TABLE IF NOT EXISTS candidate_translations (
+                        candidate_id TEXT PRIMARY KEY,
+                        source_text TEXT NOT NULL,
+                        target_lang TEXT NOT NULL,
+                        translation TEXT NOT NULL,
+                        created_at TEXT NOT NULL
+                    )
+                """)
+                db.execute("PRAGMA user_version = 2")
 
     def get_text(self, key: str) -> str | None:
         with self.connect() as db:

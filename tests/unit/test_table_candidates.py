@@ -1,5 +1,6 @@
 import asyncio
 import json
+import sqlite3
 
 import pytest
 
@@ -52,15 +53,18 @@ def _clear_memory_cache():
     tc._MEMORY_CACHE.clear()
 
 
-def _cfg(tmp_path, transliteration_enabled: bool = False):
-    candidates = {"transliteration_enabled": transliteration_enabled}
+def _cfg(tmp_path, transliteration: str = "off", seed: int | None = None):
+    project = {
+        "input_root": str(tmp_path),
+        "output_root": str(tmp_path / "out"),
+        "source_language": "en",
+        "target_language": "ru",
+    }
+    if seed is not None:
+        project["seed"] = seed
+    candidates = {"transliteration": transliteration}
     return AppConfig.model_validate({
-        "project": {
-            "input_root": str(tmp_path),
-            "output_root": str(tmp_path / "out"),
-            "source_language": "en",
-            "target_language": "ru",
-        },
+        "project": project,
         "translation": {"candidates": candidates},
         "model": {"retries": 0},
         "cache": {"enabled": False},
@@ -242,6 +246,50 @@ async def test_sqlite_cache_avoids_repeat_llm_calls(tmp_path):
     )
     assert out == {"sql1": "Нью"}
     assert provider2.tasks == []
+
+
+@pytest.mark.asyncio
+async def test_translation_cache_separated_by_model_seed_domain(tmp_path):
+    """Записи candidate_translations не перетекают между конфигурациями: смена модели,
+    сида или домена (системный промпт) даёт свой ключ кэша; повтор с той же конфигурацией —
+    cache-hit без вызовов LLM. Старые записи не затираются."""
+    cache = SQLiteCache(tmp_path / "cache.sqlite")
+    mapping = {"New": "Нью"}
+    candidates = [
+        TableCandidate(id="ctx1", lemma_key="new", source_text="New", coordinates=[], length=1),
+    ]
+
+    async def translate(cfg, domain=""):
+        provider = CandidateProvider(mapping)
+        out = await translate_table_candidates(
+            provider, candidates, config=cfg, domain=domain,
+            source_language="en", target_language="ru", cache=cache,
+        )
+        return provider, out
+
+    # База + повтор с той же конфигурацией — hit по SQLite, LLM не вызывается.
+    provider1, out1 = await translate(_cfg(tmp_path))
+    assert out1 == {"ctx1": "Нью"}
+    assert len(provider1.tasks) == 1
+    tc._MEMORY_CACHE.clear()
+    provider2, _ = await translate(_cfg(tmp_path))
+    assert provider2.tasks == []
+
+    # Смена модели перевода — свой ключ кэша, повторный перевод.
+    cfg_model = _cfg(tmp_path)
+    cfg_model.model.model_name = "other-model"
+    for cfg, domain in [
+        (cfg_model, ""),                      # модель
+        (_cfg(tmp_path, seed=123), ""),       # сид
+        (_cfg(tmp_path), "sport"),            # домен -> системный промпт
+    ]:
+        tc._MEMORY_CACHE.clear()
+        provider, _ = await translate(cfg, domain=domain)
+        assert len(provider.tasks) == 1
+
+    # В БД по одной записи на каждую комбинацию контекста (база + 3 смены).
+    with sqlite3.connect(tmp_path / "cache.sqlite") as db:
+        assert db.execute("SELECT COUNT(*) FROM candidate_translations").fetchone()[0] == 4
 
 
 # --- Тесты батчинга кандидатов внутри яруса (Задача 6, Шаг 2) ---
@@ -706,7 +754,7 @@ async def test_item_transliterations_for_ner_tokens(tmp_path):
         ),
     ]
     await translate_table_candidates(
-        provider, candidates, config=_cfg(tmp_path, transliteration_enabled=True),
+        provider, candidates, config=_cfg(tmp_path, transliteration="letterwise"),
         source_language="en", target_language="ru", headers=["City"],
     )
     item = provider.tasks[0]["items"][0]
@@ -726,7 +774,7 @@ async def test_item_transliterations_empty_without_ner_matches(tmp_path):
         ),
     ]
     await translate_table_candidates(
-        provider, candidates, config=_cfg(tmp_path, transliteration_enabled=True),
+        provider, candidates, config=_cfg(tmp_path, transliteration="letterwise"),
         source_language="en", target_language="ru",
     )
     item = provider.tasks[0]["items"][0]
@@ -745,7 +793,7 @@ async def test_transliterations_per_token_for_multiword_ner(tmp_path):
         ),
     ]
     await translate_table_candidates(
-        provider, candidates, config=_cfg(tmp_path, transliteration_enabled=True),
+        provider, candidates, config=_cfg(tmp_path, transliteration="letterwise"),
         source_language="en", target_language="ru",
     )
     transliterations = provider.tasks[0]["items"][0]["transliterations"]
@@ -786,7 +834,7 @@ async def test_transliterations_noop_for_latin_target(tmp_path):
             "source_language": "ru",
             "target_language": "en",
         },
-        "translation": {"candidates": {"transliteration_enabled": True}},
+        "translation": {"candidates": {"transliteration": "letterwise"}},
         "model": {"retries": 0},
         "cache": {"enabled": False},
     })
@@ -866,3 +914,157 @@ async def test_column_translation_absent_when_header_not_yet_translated(tmp_path
     )
     by_id = _items_by_id(provider.tasks)
     assert "column_translation" not in by_id["cell"]
+
+
+# --- Транслитерация quoted: обёртка «…» и снятие кавычек после перевода ---
+
+
+@pytest.mark.asyncio
+async def test_quoted_wraps_single_ner_token(tmp_path):
+    """Один NER-токен оборачивается в «…», payload без `transliterations`;
+    кавычки из перевода модели снимаются (clean-перевод в candidate и out)."""
+    provider = CandidateProvider({"«Berlin»": "«Берлин»"})
+    candidates = [
+        TableCandidate(
+            id="q1", lemma_key="berlin", source_text="Berlin",
+            coordinates=[TableCoordinate(0, 0)], length=1,
+            tokens=["Berlin"], pos=["PROPN"], ner=["GPE"],
+        ),
+    ]
+    out = await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path, transliteration="quoted"),
+        source_language="en", target_language="ru", headers=["City"],
+    )
+    item = provider.tasks[0]["items"][0]
+    assert item["text"] == "«Berlin»"
+    assert "transliterations" not in item
+    assert out == {"q1": "Берлин"}
+    assert candidates[0].translation == "Берлин"
+
+
+@pytest.mark.asyncio
+async def test_quoted_groups_multiword_ner_into_single_span(tmp_path):
+    """Идущие подряд NER-токены — один span «Zhukov Ivan», а не «Zhukov» «Ivan»."""
+    provider = CandidateProvider({"«Zhukov Ivan»": "«Жуков Иван»"})
+    candidates = [
+        TableCandidate(
+            id="q2", lemma_key="zhukov ivan", source_text="Zhukov Ivan",
+            coordinates=[TableCoordinate(0, 0)], length=2,
+            tokens=["Zhukov", "Ivan"], pos=["PROPN", "PROPN"], ner=["PERSON", "PERSON"],
+        ),
+    ]
+    out = await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path, transliteration="quoted"),
+        source_language="en", target_language="ru",
+    )
+    assert provider.tasks[0]["items"][0]["text"] == "«Zhukov Ivan»"
+    assert out == {"q2": "Жуков Иван"}
+
+
+@pytest.mark.asyncio
+async def test_quoted_wraps_only_ner_span_inside_text(tmp_path):
+    """Не-NER слова остаются вне кавычек; итоговый перевод с вырезанными маркерами."""
+    provider = CandidateProvider({"list of «Berlin» players": "список «берлинских» игроков"})
+    candidates = [
+        TableCandidate(
+            id="q3", lemma_key="list of berlin players", source_text="list of Berlin players",
+            coordinates=[TableCoordinate(0, 0)], length=4,
+            tokens=["list", "of", "Berlin", "players"],
+            pos=["", "", "PROPN", ""], ner=["", "", "GPE", ""],
+        ),
+    ]
+    out = await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path, transliteration="quoted"),
+        source_language="en", target_language="ru",
+    )
+    assert provider.tasks[0]["items"][0]["text"] == "list of «Berlin» players"
+    assert out == {"q3": "список берлинских игроков"}
+
+
+@pytest.mark.asyncio
+async def test_quoted_noop_for_latin_target(tmp_path):
+    """Для латинского целевого языка quoted — no-op: обёртка не добавляется,
+    кавычки из перевода не вырезаются."""
+    cfg_en = AppConfig.model_validate({
+        "project": {
+            "input_root": str(tmp_path),
+            "output_root": str(tmp_path / "out"),
+            "source_language": "ru",
+            "target_language": "en",
+        },
+        "translation": {"candidates": {"transliteration": "quoted"}},
+        "model": {"retries": 0},
+        "cache": {"enabled": False},
+    })
+    provider = CandidateProvider({"Berlin": "«Berlin»"})
+    candidates = [
+        TableCandidate(
+            id="q4", lemma_key="berlin", source_text="Berlin",
+            coordinates=[TableCoordinate(0, 0)], length=1,
+            tokens=["Berlin"], pos=["PROPN"], ner=["GPE"],
+        ),
+    ]
+    out = await translate_table_candidates(
+        provider, candidates, config=cfg_en,
+        source_language="ru", target_language="en", headers=["City"],
+    )
+    assert provider.tasks[0]["items"][0]["text"] == "Berlin"  # без обёртки
+    assert out == {"q4": "«Berlin»"}  # стрип не применяется
+
+
+@pytest.mark.asyncio
+async def test_quoted_requirements_contain_quoted_requirement(tmp_path):
+    """В quoted-режиме в requirements добавлено quoted-требование и нет letterwise-го."""
+    provider = CandidateProvider({"«Berlin»": "«Берлин»"})
+    candidates = [
+        TableCandidate(
+            id="q5", lemma_key="berlin", source_text="Berlin",
+            coordinates=[TableCoordinate(0, 0)], length=1,
+            tokens=["Berlin"], pos=["PROPN"], ner=["GPE"],
+        ),
+    ]
+    await translate_table_candidates(
+        provider, candidates, config=_cfg(tmp_path, transliteration="quoted"),
+        source_language="en", target_language="ru",
+    )
+    reqs = provider.tasks[0]["requirements"]
+    assert tc._QUOTED_TRANSLITERATION_REQUIREMENT in reqs
+    assert tc._TRANSLITERATION_REQUIREMENT not in reqs
+
+
+def test_transliteration_legacy_bool_migrates_to_enum(tmp_path):
+    """Старый bool `transliteration_enabled` мигрируется: true → letterwise,
+    false → off (терять настройку конфиг не должен)."""
+    base = {
+        "project": {
+            "input_root": str(tmp_path),
+            "output_root": str(tmp_path / "out"),
+        },
+        "model": {"retries": 0},
+        "cache": {"enabled": False},
+    }
+    cfg_on = AppConfig.model_validate({
+        **base, "translation": {"candidates": {"transliteration_enabled": True}}
+    })
+    assert cfg_on.translation.candidates.transliteration == "letterwise"
+
+    cfg_off = AppConfig.model_validate({
+        **base, "translation": {"candidates": {"transliteration_enabled": False}}
+    })
+    assert cfg_off.translation.candidates.transliteration == "off"
+
+
+def test_transliteration_conflicting_legacy_and_enum_raises(tmp_path):
+    """Конфликт явных обоих ключей (enum + устаревший bool) → ValueError."""
+    with pytest.raises(ValueError, match="conflict"):
+        AppConfig.model_validate({
+            "project": {
+                "input_root": str(tmp_path),
+                "output_root": str(tmp_path / "out"),
+            },
+            "translation": {
+                "candidates": {"transliteration": "quoted", "transliteration_enabled": False}
+            },
+            "model": {"retries": 0},
+            "cache": {"enabled": False},
+        })

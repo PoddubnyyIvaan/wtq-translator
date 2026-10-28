@@ -11,6 +11,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Callable
 
+from .alphabet import AlphabetIntentError
 from .api import Translator
 from .config import AppConfig
 from .dataset import (
@@ -18,6 +19,7 @@ from .dataset import (
     read_question_tsv_document,
     read_table_tsv,
     resolve_context_path,
+    write_alphabet_excluded_tsv,
     write_question_tsv,
     write_table_tsv,
 )
@@ -25,6 +27,7 @@ from .enums import ProcessingStatus
 from .models import QuestionRecord, RunSummary, TranslationResult
 from .persistence import StateStore, write_manifest
 from .reporting.events import append_event
+from .reporting.stats import run_stats
 from .utils import seed_everything
 
 
@@ -86,6 +89,23 @@ def _record_from_state(data: dict) -> QuestionRecord:
     )
 
 
+def _excluded_dict(rec: QuestionRecord) -> dict:
+    """Строка TSV исключений ({id, utterance, context, targetValue, class, why}).
+
+    Класс намерения и обоснование лежат в extra_fields записи; для вопросов,
+    исключённых из-за ошибки детекции, класс пуст.
+    """
+    extra = rec.extra_fields
+    return {
+        "id": rec.id,
+        "utterance": rec.utterance,
+        "context": rec.context,
+        "targetValue": rec.target_value,
+        "class": extra.get("class", ""),
+        "why": extra.get("why", ""),
+    }
+
+
 def _write_trace(run_dir: Path, split: str, result: TranslationResult, source_context: str, output_context: str) -> Path:
     trace_dir = run_dir / "traces" / split
     trace_dir.mkdir(parents=True, exist_ok=True)
@@ -136,7 +156,13 @@ def _state_artifact_is_valid(state) -> bool:
 
 
 def _should_skip(state, config: AppConfig, resume: bool) -> bool:
-    if not resume or not _state_artifact_is_valid(state):
+    if not resume or state is None or state.output_record is None:
+        return False
+    # Исключённый вопрос не имеет артефакта таблицы (output_table_path пуст):
+    # достаточно наличия сохранённой записи output_record.
+    if state.status == ProcessingStatus.EXCLUDED:
+        return True
+    if not _state_artifact_is_valid(state):
         return False
     if state.status in {ProcessingStatus.ACCEPTED, ProcessingStatus.ACCEPTED_WITH_WARNINGS}:
         return True
@@ -181,7 +207,24 @@ async def run_one_from_tsv(
     run_id = make_run_id(config, qtsv)
     run_dir = _run_dir(config, run_id)
     translator = Translator(config, llm_log_path=run_dir / "reports" / "llm_io.jsonl")
-    result = await translator.process(question, table)
+    try:
+        result = await translator.process(question, table)
+    except AlphabetIntentError as exc:
+        # run-one: алфавитно-зависимый вопрос не переводится, записываем однорядный
+        # TSV исключений и пробрасываем исключение (CLI напечатает информацию).
+        excluded_path = run_dir / "dataset" / f"{qtsv.stem}-alphabet-excluded.tsv"
+        write_alphabet_excluded_tsv(
+            [{
+                "id": question.id,
+                "utterance": question.utterance,
+                "context": question.context,
+                "targetValue": question.target_value,
+                "class": exc.intent_label,
+                "why": exc.why,
+            }],
+            excluded_path,
+        )
+        raise
 
     table_rel, table_out = _table_paths(config, qtsv, question.id, run_id)
     write_table_tsv(result.output_table, table_out)
@@ -210,11 +253,11 @@ async def run_dataset_from_tsv(
     run_id = run_id or make_run_id(config, questions_path)
     run_dir = _run_dir(config, run_id)
     output_questions = _output_questions_path(config, questions_path, run_id)
+    excluded_path = run_dir / "dataset" / f"{questions_path.stem}-alphabet-excluded.tsv"
     reports_dir = run_dir / "reports"
     events_path = reports_dir / "events.jsonl"
     failures_path = reports_dir / "failures.jsonl"
     quality_path = reports_dir / "quality.jsonl"
-    stats_path = reports_dir / "stats.json"
     manifest_path = run_dir / "manifest.json"
 
     state = StateStore(config.state.sqlite_path)
@@ -244,21 +287,30 @@ async def run_dataset_from_tsv(
     else:
         translator = translator_factory(config)
     output_by_id: dict[str, QuestionRecord] = {}
+    excluded_by_id: dict[str, dict] = {}
     processed = 0
     skipped = 0
     failed = 0
+    excluded = 0
 
     # Rehydrate already-finished records first. This makes checkpoint output complete
     # even when the current invocation is a resume after interruption.
     if resume:
         for s in state.list_questions(run_id):
-            if s.output_record is not None:
+            if s.output_record is None:
+                continue
+            if s.status == ProcessingStatus.EXCLUDED:
+                excluded_by_id[s.question_id] = _excluded_dict(_record_from_state(s.output_record))
+            else:
                 output_by_id[s.question_id] = _record_from_state(s.output_record)
 
     def checkpoint() -> None:
         ordered = [output_by_id[r.id] for r in document.records if r.id in output_by_id]
         if ordered:
             write_question_tsv(ordered, output_questions, fieldnames=document.fieldnames)
+        excluded_ordered = [excluded_by_id[r.id] for r in document.records if r.id in excluded_by_id]
+        if excluded_ordered:
+            write_alphabet_excluded_tsv(excluded_ordered, excluded_path)
 
     # Pre-scan: восстановленные из state записи уже в output_by_id (см. выше).
     # Здесь применяем _should_skip и собираем todo = [(ordinal_index, question)] —
@@ -268,7 +320,10 @@ async def run_dataset_from_tsv(
     for index, question in enumerate(document.records):
         existing = state.get_question(run_id, question.id)
         if _should_skip(existing, config, resume):
-            output_by_id[question.id] = _record_from_state(existing.output_record)
+            if existing.status == ProcessingStatus.EXCLUDED:
+                excluded_by_id[question.id] = _excluded_dict(_record_from_state(existing.output_record))
+            else:
+                output_by_id[question.id] = _record_from_state(existing.output_record)
             skipped += 1
             # Инвариант: каждая запись document.records даёт ровно один update —
             # либо здесь (пропущена pre-scan'ом), либо в обработчике завершённой задачи.
@@ -348,6 +403,37 @@ async def run_dataset_from_tsv(
                 code="DONE",
                 message=f"Finished with status {result.quality.status.value}",
             )
+        except AlphabetIntentError as exc:
+            # Исключённый вопрос (алфавитно-зависимое намерение или провал детекции):
+            # не переводится, не создаёт fallback-таблицу и не пишется в failures.jsonl.
+            # Запись сохраняется в state со статусом excluded и в TSV исключений.
+            excluded += 1
+            excluded_rec = QuestionRecord(
+                id=question.id,
+                utterance=question.utterance,
+                context=question.context,
+                target_value=question.target_value,
+                extra_fields={"class": exc.intent_label, "why": exc.why},
+            )
+            excluded_by_id[question.id] = _excluded_dict(excluded_rec)
+            state.set_question(
+                run_id,
+                question.id,
+                ProcessingStatus.EXCLUDED,
+                config.translation.mode.value,
+                output_record=_record_to_state(excluded_rec),
+            )
+            append_event(
+                events_path,
+                run_id=run_id,
+                question_id=question.id,
+                stage="question",
+                level="info",
+                code="EXCLUDED",
+                message=str(exc),
+            )
+            if progress is not None:
+                progress.set_postfix({"failed": failed, "excluded": excluded})
         except Exception as exc:
             failed += 1
             # Fallback policy: never leave a partially translated table under the final
@@ -413,20 +499,21 @@ async def run_dataset_from_tsv(
     checkpoint()
     counts = state.status_counts(run_id)
     total = len(document.records)
+    excluded_share = counts.get(ProcessingStatus.EXCLUDED.value, 0) / total if total else 0.0
     run_status = "completed_with_failures" if counts.get(ProcessingStatus.FAILED.value, 0) else "completed"
     state.finish_run(run_id, run_status)
 
-    stats = {
-        "run_id": run_id,
-        "total": total,
-        "processed_this_invocation": processed,
-        "skipped_this_invocation": skipped,
-        "failed_this_invocation": failed,
-        "statuses": counts,
-        "output_questions_tsv": str(output_questions.resolve()),
-    }
-    stats_path.parent.mkdir(parents=True, exist_ok=True)
-    stats_path.write_text(json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8")
+    stats = run_stats(
+        run_dir, status_counts=counts, total=total,
+        extra={
+            "processed_this_invocation": processed,
+            "skipped_this_invocation": skipped,
+            "failed_this_invocation": failed,
+            "excluded_this_invocation": excluded,
+            "output_questions_tsv": str(output_questions.resolve()),
+            "alphabet_excluded_tsv": str(excluded_path.resolve()),
+        },
+    )
 
     return RunSummary(
         run_id=run_id,
@@ -434,6 +521,8 @@ async def run_dataset_from_tsv(
         processed=processed,
         skipped=skipped,
         failed=failed,
+        excluded=excluded,
+        excluded_share=excluded_share,
         statuses=counts,
         output_questions_tsv=output_questions,
         run_dir=run_dir,

@@ -90,6 +90,10 @@ class RuleBasedProvider:
         if task == "detect_domain":
             return json.dumps({"domain": "geography"}, ensure_ascii=False)
 
+        if task == "detect_alphabet_intent":
+            # Новый обязательный этап full-режима: намерения нет — вопрос переводится.
+            return json.dumps({"intent_id": None, "why": None}, ensure_ascii=False)
+
         if task == "translate_candidates":
             mapping = en_ru if (src, dst) == ("en", "ru") else ru_en
             return json.dumps(

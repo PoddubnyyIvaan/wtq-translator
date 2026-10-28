@@ -11,7 +11,7 @@ _REQUIRED = ("id", "utterance", "context", "targetValue")
 def read_question_tsv_document(path: str | Path) -> QuestionTSVDocument:
     p = Path(path)
     with p.open("r", encoding="utf-8-sig", newline="") as f:
-        reader = csv.DictReader(f, delimiter="\t")
+        reader = csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE)
         fieldnames = tuple(reader.fieldnames or ())
         missing = set(_REQUIRED) - set(fieldnames)
         if missing:
@@ -36,7 +36,7 @@ def read_question_tsv(path: str | Path) -> list[QuestionRecord]:
 def read_table_tsv(path: str | Path) -> TableData:
     p = Path(path)
     with p.open("r", encoding="utf-8-sig", newline="") as f:
-        rows = list(csv.reader(f, delimiter="\t"))
+        rows = list(csv.reader(f, delimiter="\t", quoting=csv.QUOTE_NONE))
     if not rows:
         raise ValueError(f"Empty table: {p}")
     return TableData(headers=rows[0], rows=rows[1:], source_path=p)

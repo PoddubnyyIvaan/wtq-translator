@@ -1,3 +1,98 @@
+## Unreleased — candidate_id зависит от содержимого таблицы
+
+- `candidates.py`: `candidate_id` теперь включает хеш содержимого таблицы (`_table_content_hash`
+  от `[table.headers, table.rows]`, то же содержимое, что в `_table_cache_key`, но без языка).
+  Перевод кандидата кэшируется per-table: одинаковая таблица → тот же id (переиспользование
+  сохранено), разные таблицы → разные id (нет ложных кросс-табличных hits из `candidate_translations`
+  и `llm_cache`). Хеш вычисляется один раз в `extract_table_candidates` после проверки `_TABLE_CACHE`
+  (на hit не считается); форма id (16 hex) и стабильность в рамках таблицы не изменились —
+  shell-протокол «вернуть id 1-в-1» и валидации множеств не затронуты.
+- `cache.py`: одноразовая миграция в `SQLiteCache._init` под гвардом `PRAGMA user_version`
+  (0 → 1): `candidate_translations` со старыми записями (без table-hash) удаляется и
+  пересоздаётся; идемпотентно на свежих БД и при повторной инициализации. `llm_cache`,
+  `embedding_cache` и state-таблицы (`StateStore`) не трогаются.
+- **Кэш перевода зависит от контекста перевода** (`table_candidates.py`): ключ записи
+  `candidate_translations` и `_MEMORY_CACHE` = `candidate.id + \x00 + контекст(модель,
+  сид, системный промпт)`. Контекст — `sha256(model.model_name + project.seed +
+  candidate_system_prompt(domain))`; берётся конфигурационный сид (не seed попытки/чанка),
+  чтобы ключ был детерминирован между ранами и resume работал. Переводы не перетекают
+  между моделями/сидами/доменами; `id`-якорь в LLM-промптах и shell-протокол не меняются
+  (`llm_cache` кандидатских запросов и раньше изолировал модель/сид/промпт через
+  identity+system+seed в `request_hash`). Миграция поднята до `user_version = 2`
+  (старые записи по candidate.id очищаются одноразово).
+- **Тесты**: `test_candidates.py` — один и тот же источник кандидата в двух разных таблицах
+  даёт разные id, в одной таблице + языке id стабилен; `test_cache.py` — миграция очищает
+  старые записи и ставит `user_version = 2`, повторная инициализация новые записи не удаляет,
+  свежая БД сразу получает `user_version = 2`; `test_table_candidates.py` —
+  `test_translation_cache_separated_by_model_seed_domain`: смена модели/сида/домена даёт
+  свой ключ кэша (повторный перевод, старые строки целы), повтор с той же конфигурацией —
+  cache-hit без вызовов LLM.
+- Валидация: 63 unit-теста (5 целевых файлов плана) + `test_pipeline_full_new.py` проходят.
+  Примечание: 5 предшествующих failure в `tests/unit/` (транслитерация NER — 2 теста
+  `KeyError: 'transliterations'`; `test_question_translation.py` — 3 structured-shell теста;
+  `test_alphabet_detection.py` — 1 regex-кейс) воспроизводятся и на HEAD — к данной задаче
+  не относятся.
+
+## Unreleased — RUNBOOK (руководство по запуску скриптов)
+
+- Новый `RUNBOOK.md`: руководство по запуску всех исполняемых команд (`wtq-translate` — 11 подкоманд, оба скрипта `scripts/`, `pytest`) с оглавлением-навигацией, подготовкой окружения, аргументами, выводом и типовым рабочим процессом. Документация, код не менялся.
+
+## Unreleased — актуализация TRANSLATION_FULL_REVIEW.md
+
+- Документ приведён в соответствие с текущим кодом: добавлены разделы про алфавитную детекцию (шаг 0.5, `alphabet.py`, статус `excluded`, TSV исключений), стратегии транслитерации (`off/letterwise/quoted`), пер-кандидатную транслитерацию и глоссарий, изоляцию ошибок chunk'ов, режимы `back_table_similarity_mode`, `reporting/stats.py` (`stats.json`), а также новые CLI-инструменты и скрипты (`alphabet-screen`, `entities`, `stats`, `filter` + `scripts/extract_original_examples.py`, `scripts/tsv_to_eval_jsonl.py`).
+- Раздел «Результаты и метрики» обновлён по последнему прогону `pristine-unseen-tables-cd2268448ba3` (статусы с `excluded`, метрики по уникальным вопросам, причины отказов по свежему `failures.jsonl`).
+
+## Unreleased — сбор сущностей из таблиц WTQ через spaCy NER (wtq-translate entities)
+
+- **Конфиг** (`config.py`): новая секция `entities` (`EntitiesConfig`): `input_tsv` (опционально, переопределяется `--input-tsv`; относительно `project.input_root`), `output_tsv` / `processed_path` (резолвятся в `resolve_and_validate` под `project.output_root`), `template` (по умолчанию `{cell} is {col}`), `allowed_types` (порядок значим — первое совпадение), `all_types_sep`, `normalize_name` (strip + collapse whitespace), `max_words` (в отсев идут только ячейки с числом слов ≤ max_words, дефолт 5), `table_suffix`, `missing_table: skip|error`, `device: gpu|cpu|auto`, `batch_size`, `checkpoint_every_tables`; валидация положительных batch_size/checkpoint/max_words и непустых allowed_types. Пример — `configs/entities_example.yaml`.
+- **Модуль** (`entities/ner.py`, новый): `EntityExtractor` — батч-классификация ячеек запросом `<cell> is <col>` на `en_core_web_trf`; `device=gpu` → `spacy.require_gpu()` до `spacy.load` (без CuPy — `ValueError` с подсказкой `pip install cupy-cudaXXx`); `device=auto` → пробует GPU и при недоступности CuPy/устройства молча падает на CPU (как `wtq-translate run`); отключаются `tagger/parser/attribute_ruler/lemmatizer` (остаются transformer+ner); `nlp.pipe` без `n_process` (spaCy запрещает для trf) с length bucketing; выравнивание спанов **по char-offset**: спаны с `end_char <= len(cell)` — ячейки, спаны колонки отбрасываются (устойчиво к `1,000`/`1950s`/дефисам); `classify` — одиночный запрос (для тестов), `classify_many` — боевой батч; ошибки `OSError/RuntimeError` → понятное сообщение с `python -m spacy download en_core_web_trf`. spaCy импортируется лениво.
+- **Реестр** (`entities/registry.py`, новый): `EntitiesRegistry` — TSV `name\ttype\tcount\tall_types` (`|`-сепаратор настраивается), `add` накапливает count и объединяет `all_types` (type первичной встречи), `load` совместим со старым 3-колоночным форматом (`all_types = {type}`) и пропускает заголовок; `ProcessedTables` — список обработанных контекстов по строке на файл; запись файлов атомарная (`tempfile` + `os.replace`).
+- **Оркестратор** (`entities/runner.py`, новый): `run_entities(config, input_tsv, progress=...)` — уникальные context-пути входного WTQ-файла, пропуск уже отмеченных таблиц (`skipped_processed`), отсев ячеек (пустые + с числом слов > `max_words` в NER не уходят и в реестр не попадают), dedup-кэш `(cell, col)` уровня запуска, `missing_table=skip` помечает отсутствующую таблицу обработанной, чекпоинты каждые `checkpoint_every_tables` таблиц и в конце (реестр + список обработанных); `remaining_tables` — тотал для прогресс-бара; `EntitiesSummary` (total_tables/skipped_processed/missing_tables/new_entities/updated_entities/output_tsv/processed_path).
+- **CLI** (`cli.py`): подкоманда `wtq-translate entities <config> [--input-tsv PATH] [--no-progress]`; tqdm-бар (единица — таблица, stderr) через расширенный `_make_progress_bar(total, ..., desc=, unit=)`; stdout — финальный JSON-отчёт.
+- **Тесты**: `tests/unit/test_ner_entities.py` (без GPU/модели): char-offset выравнивание (спан колонки отброшен), `type` = первый по `allowed_types` + полнота `all_types`, неизвестный тип → `None`, порядок `classify_many` при length bucketing, режимы `device` (auto фолбэк на CPU, gpu без CuPy → понятная ошибка); реестр (add/merge, roundtrip, legacy 3 колонки, заголовок, кастомный сепаратор); `ProcessedTables` (load/add/flush, дубликаты); runner (skip обработанных, `missing_table=skip/error`, чекпоинты пишут и реестр, и processed, отсев ячеек по `max_words`) — NER мокается фейковым `nlp.pipe`.
+
+## Unreleased — transliteration method (letterwise / quoted)
+
+- **Конфиг** (`config.py`): `translation.candidates.transliteration_enabled: bool` заменён на enum `transliteration: Literal["off", "letterwise", "quoted"]` (дефолт `"off"`). Миграция старого флага в `model_validator(mode="before")`: `true → "letterwise"`, `false → "off"`; конфликт обоих ключей с противоречивыми значениями → `ValueError`. В `configs/qwen_full.yaml` — `transliteration: "off"` (в кавычках: YAML-1.1 парсер читает голое `off` как bool) с комментарием по трём значениям.
+- **Новый метод `quoted`** (`translation/table_candidates.py`): NER-упоминания (PERSON/ORG/GPE/LOC/PRODUCT, идущие подряд — один span) оборачиваются в маркеры «…» в `text` кандидата, в `requirements` добавляется `_QUOTED_TRANSLITERATION_REQUIREMENT`; модель транслитерирует их сама, после валидации ответа Python вырезает «» из переводов (до кэширования/глоссария). Guard по языку — только кириллические цели (`_CYRILLIC_TARGETS`), back-перевод (target=`en`) — no-op.
+- **Letterwise/off не меняются**: `transliteration == "letterwise"` — прежний форсинг через `transliterations` + `_TRANSLITERATION_REQUIREMENT`; `"off"` — baseline. Стрип «» применяется только в `quoted`.
+- **Тесты**: `_cfg(..., transliteration=...)` вместо `transliteration_enabled`; форсинг-тесты переведены на `"letterwise"`; новые quoted-тесты (один NER-токен, многословный span, не-NER вне кавычек, no-op для `en`, требования промпта) и миграция/конфликт конфига.
+
+## Unreleased — статистика по рану (avg/min метрик, статусы, warnings)
+
+- **Модуль** (`reporting/stats.py`, переписан): `run_stats(run_dir, *, status_counts, total, extra, save=True)` — единый источник правды для `reports/stats.json`; `aggregate_metrics` (avg/min/metric_counts по `KNOWN_METRICS` из `quality.py`, + warnings records/total + quality_rows) и `load_quality_rows` (построчное чтение с пропуском пустых строк).
+- **Схема** `reports/stats.json`: к существующим ключам (`run_id`, `total`, `statuses`, `excluded_share`, `*_this_invocation`, tsv-пути) добавлены `status_shares` (count/total по статусам), `quality_rows`, `warnings.{records,total,records_share}` и `avg`/`min`/`metric_counts` по всем 12 метрикам (метрика без значений — `null`/0). Статусы — только из `StateStore`, метрики — только из `quality.jsonl`.
+- **Runner** (`runner.py`): inline-словарь в конце `run_dataset_from_tsv` заменён на `run_stats` — новые раны получают полную статистику.
+- **CLI** (`cli.py`): подкоманда `wtq-translate stats <config> <questions_tsv> [--run-id]` (как `report`) — для любого готового рана читает статусы из state, вызывает `run_stats` (сохраняет и печатает); при пустом state — ошибка `no state for run`.
+- **Экспорт** (`reporting/__init__.py`): `summarize` → `run_stats` (мёртвый код заменён), `append_event`/`append_quality` сохранены.
+- **Тесты**: `tests/unit/test_run_stats.py` (avg/min/counts c игнором None, warnings, backward-compat ключи, пустой quality.jsonl, `total=0` без деления на ноль).
+
+## Unreleased — regex-метод алфавитной детекции
+
+- **Конфиг** (`config.py`): новая опция `alphabet_detection.method: Literal["llm", "regex"]` (дефолт `llm` — полная обратная совместимость); `regex` — детерминированная классификация без вызова LLM. В `configs/qwen_full.yaml` включён `method: regex`.
+- **Детекция** (`alphabet.py`): `detect_alphabet_intent_rules(question_text)` — компилированные regex с `\b`-границами и `re.IGNORECASE`: `alphabet*|lexicograph*` → intent 1, `letter(s)|character(s)` → intent 4 (приоритет у intent 1); `why = "regex: keyword(s) '…'"` с полными найденными словоформами; ошибок не бывает (`error=None`). В `detect_alphabet_intent` после проверки `enabled` добавлена ветка `method == "regex"` — провайдер в этом режиме не вызывается.
+- **Screen** (`alphabet_screen.py`): LLM-провайдер строится только для `method == "llm"`; в regex-режиме `provider=None`, никаких LLM/кэш/лог-вызовов.
+- **Тесты**: `test_alphabet_detection.py` (словоформы → intent, ложные друзья → `(None, None)`, приоритет + `why` с обоими словами, диспетчер без вызова провайдера, disabled) и `test_alphabet_screen.py` (regex-отсев без вызова LLM).
+
+## Unreleased — алфавитный отсев датасета без перевода (alphabet-screen)
+
+- **Модуль** (`alphabet_screen.py`, новый): `run_alphabet_screen(config, questions_tsv, ...)` прогоняет `detect_alphabet_intent` по каждому вопросу датасета БЕЗ полного перевода (concurrency — `runner.concurrency`), разделяет на переводимые (kept) и исключаемые (excluded; намерение 1..4 или fail-closed-ошибка детекции с `class=""`).
+- **Вывод**: `<output_root>/alphabet-screen/<run_id>/dataset/{stem}.tsv` (kept, исходный формат с extra-полями), `dataset/{stem}-alphabet-excluded.tsv` (class + why), `reports/alphabet-screen-stats.json` (total/kept/excluded/excluded_share/intent_classes/detection_errors).
+- **LLM-цепочка**: тот же провайдер+SQLite-кэш+llm_io-лог, что у `api.Translator`, но без embeddings/BERTScore (детекту они не нужны).
+- **CLI** (`cli.py`): новая подкоманда `wtq-translate alphabet-screen <config> <questions_tsv> [--no-progress]`, stdout — JSON-статистика; config — конфиг run_full (configs/qwen_full.yaml).
+- **Тесты**: `tests/unit/test_alphabet_screen.py` (split kept/excluded, fail-closed, persisted stats).
+
+## Unreleased — alphabet-dependent question detection (FULL mode)
+
+- **Цель**: в режиме `full` после определения домена стадия детектирует вопросы, чья семантика зависит от алфавита языка; такие вопросы **не переводятся** и сохраняются в отдельный TSV `{stem}-alphabet-excluded.tsv` с колонками `(id, utterance, context, targetValue, class, why)` (`class` — намерение из таблицы намерений, `why` — обоснование).
+- **Промпт** (`prompts.py`): таблица намерений `ALPHABET_INTENT_TABLE` (алфавитная сортировка / положение и группирование по алфавиту / сравнение по алфавиту / конкретная буква) и системный промпт `ALPHABET_DETECTION_SYSTEM` (русский; `intent_id: null` при отсутствии намерения; при нескольких — наиболее специфичное; `why` на русском); добавлен в `prompt_snapshot`.
+- **Детекция** (`alphabet.py`, новый): `detect_alphabet_intent` — один LLM-вызов per question, retry-цикл `model.retries + 1` (паттерн `domain.detect_domain`), валидация `intent_id` (int, не bool, 1..4) и непустого `why`; провал детекции — fail-closed `AlphabetDetection(error=...)`. `AlphabetIntentError` — исключение с `question_id`, `intent_label`, `why`.
+- **Пацплайн** (`pipeline.py`): `_process_full` вызывает детекцию сразу после `detect_domain` (LLM #2); при намерении или ошибке детекции бросает `AlphabetIntentError` — вопрос исключается.
+- **Конфиг** (`config.py`): новая секция `alphabet_detection.enabled` (дефолт `true`); пример в `configs/qwen_full.yaml`.
+- **Раннер** (`runner.py`): новый статус `ProcessingStatus.EXCLUDED`; обработчик `AlphabetIntentError` в главном цикле (без fallback-таблицы и failures.jsonl), событие `EXCLUDED`, `excluded_by_id` + перезапись TSV в `checkpoint()`, resume/rehydrate исключённых из state, `excluded_this_invocation`, `alphabet_excluded_tsv` и `excluded_share = excluded/total` в `stats.json`; `RunSummary.excluded`/`excluded_share`; `run_one_from_tsv` пишет однорядный TSV исключений.
+- **CLI** (`cli.py`): вывод `excluded`/`excluded_share` в run-summary; `run-one` при `AlphabetIntentError` печатает `{"question_id", "status": "excluded", "class", "why"}`.
+- **Тесты**: `tests/unit/test_alphabet_detection.py` (детекция: успех, null, невалидные ответы/ретраи, не-JSON, disabled, pipeline-level до переводов таблицы) и `tests/unit/test_alphabet_runner.py` (TSV исключений, state, share/stats.json, resume, fail-closed). Интеграционный `test_pipeline_full_new.py` и `test_filter_run.py` обновлены под новые статусы.
+
 ## Unreleased — config toggle for transliteration forcing
 
 - новый флаг `translation.candidates.transliteration_enabled` (дефолт `false`) в `CandidateTranslationConfig`;

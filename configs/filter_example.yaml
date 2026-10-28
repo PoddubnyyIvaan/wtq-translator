@@ -12,6 +12,7 @@ status_include:
 
 metrics:
   question_cosine_similarity: null   # has objective upper bound -> use explicit min
-  question_bert_f1: 0.60
-  back_table_bert_mean_f1: 0.75
+  question_bert_f1: null #0.70
+  back_table_bert_min_f1: null #0.70
+  back_table_bert_mean_f1: null #0.70
   back_table_mean_similarity: null

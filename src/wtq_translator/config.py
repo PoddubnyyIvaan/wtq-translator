@@ -22,10 +22,34 @@ class CandidateTranslationConfig(BaseModel):
 
     max_candidates_per_request: int | None = None
     request_concurrency: int = 1
-    # Принудительная транслитерация NER-токенов (PERSON/ORG/GPE/LOC/PRODUCT) в переводе
-    # кандидатов. Опция полезна для экспериментов; по умолчанию выключена, т.к. форсинг
-    # подменяет правильную практическую транскрипцию модели «побуквенной» схемой.
-    transliteration_enabled: bool = False
+    # Метод транслитерации NER-токенов (PERSON/ORG/GPE/LOC/PRODUCT) в переводе кандидатов:
+    #   "off" — без транслитерации (baseline);
+    #   "letterwise" — побуквенная транслитерация NER-токенов через `transliterations`;
+    #   "quoted" — NER-упоминания оборачиваются в «…», модель транслитерирует их сама,
+    #     кавычки снимаются с перевода после генерации.
+    transliteration: Literal["off", "letterwise", "quoted"] = "off"
+
+    @model_validator(mode="before")
+    @classmethod
+    def _migrate_transliteration_enabled(cls, data: Any) -> Any:
+        """Миграция старого bool-флага `transliteration_enabled` в enum `transliteration`.
+
+        true → "letterwise", false → "off". Если заданы оба ключа с противоречивыми
+        значениями — ValueError (конфиг не «молча» теряет настройку).
+        """
+        if not isinstance(data, dict) or "transliteration_enabled" not in data:
+            return data
+        migrated = "letterwise" if data["transliteration_enabled"] else "off"
+        explicit = data.get("transliteration")
+        if explicit is not None and explicit != migrated:
+            raise ValueError(
+                "translation.candidates: `transliteration` and legacy `transliteration_enabled` "
+                f"conflict ({explicit!r} vs {data['transliteration_enabled']!r})"
+            )
+        data = dict(data)
+        data.pop("transliteration_enabled")
+        data.setdefault("transliteration", migrated)
+        return data
 
     @model_validator(mode="after")
     def validate_values(self) -> "CandidateTranslationConfig":
@@ -177,6 +201,13 @@ class DomainDetectionConfig(BaseModel):
         return self
 
 
+class AlphabetDetectionConfig(BaseModel):
+    """Настройки детекции алфавитно-зависимых вопросов (режим full)."""
+
+    enabled: bool = True
+    method: Literal["llm", "regex"] = "llm"  # llm — промпт-классификация; regex — детерминированные регулярки
+
+
 class BERTScoreConfig(BaseModel):
     """Настройки BERTScore-оценки качества вопроса и обратно-переведённой таблицы."""
 
@@ -199,6 +230,40 @@ class BERTScoreConfig(BaseModel):
         ):
             if t is not None and not (0.0 <= t <= 1.0):
                 raise ValueError(f"bert_score.{name} must be in [0, 1]")
+        return self
+
+
+class EntitiesConfig(BaseModel):
+    """Настройки сбора сущностей из ячеек таблиц через spaCy NER (команда `entities`).
+
+    `template` — запрос, подаваемый в NER; `allowed_types` — порядок значим:
+    тип ячейки = первый тип из списка, найденный среди NER-типов её спанов.
+    """
+
+    input_tsv: Path | None = None  # переопределяется CLI-аргументом --input-tsv
+    output_tsv: Path = Path("entities.tsv")  # относительно project.output_root
+    processed_path: Path = Path("entities-processed.txt")
+    template: str = "{cell} is {col}"
+    allowed_types: list[str] = ["PERSON", "ORG", "GPE", "LOC", "PRODUCT"]
+    all_types_sep: str = "|"
+    normalize_name: bool = True  # strip + collapse whitespace в имени сущности
+    max_words: int = 5  # в отсев попадают только ячейки с числом слов <= max_words
+    table_suffix: str = "tsv"
+    missing_table: Literal["skip", "error"] = "skip"
+    device: Literal["gpu", "cpu", "auto"] = "auto"
+    batch_size: int = 64
+    checkpoint_every_tables: int = 25
+
+    @model_validator(mode="after")
+    def _validate(self) -> "EntitiesConfig":
+        if self.batch_size < 1:
+            raise ValueError("entities.batch_size must be >= 1")
+        if self.checkpoint_every_tables < 1:
+            raise ValueError("entities.checkpoint_every_tables must be >= 1")
+        if self.max_words < 1:
+            raise ValueError("entities.max_words must be >= 1")
+        if not self.allowed_types:
+            raise ValueError("entities.allowed_types must be non-empty")
         return self
 
 
@@ -231,6 +296,8 @@ class AppConfig(BaseModel):
     logging: LoggingConfig = Field(default_factory=LoggingConfig)
     runner: RunnerConfig = Field(default_factory=RunnerConfig)
     domain_detection: DomainDetectionConfig = Field(default_factory=DomainDetectionConfig)
+    alphabet_detection: AlphabetDetectionConfig = Field(default_factory=AlphabetDetectionConfig)
+    entities: EntitiesConfig = Field(default_factory=EntitiesConfig)
 
     @model_validator(mode="after")
     def resolve_and_validate(self) -> "AppConfig":
@@ -238,6 +305,11 @@ class AppConfig(BaseModel):
             self.state.sqlite_path = self.project.output_root / "state.sqlite"
         if self.logging.llm_io_path is None:
             self.logging.llm_io_path = self.project.output_root / "logs" / "llm_io.jsonl"
+        e = self.entities
+        e.output_tsv = self.project.output_root / e.output_tsv
+        e.processed_path = self.project.output_root / e.processed_path
+        if e.input_tsv is not None and not e.input_tsv.is_absolute():
+            e.input_tsv = self.project.input_root / e.input_tsv
         if not self.back_translation.enabled:
             raise ValueError("Back translation is mandatory in the current project version")
         if self.table.rows_per_chunk <= 0:

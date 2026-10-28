@@ -1,3 +1,5 @@
+import sqlite3
+
 import pytest
 
 from wtq_translator.llm.capabilities import ProviderCapabilities
@@ -184,3 +186,51 @@ async def test_openai_compatible_identity_has_no_ollama_key(tmp_path):
             assert set(identity) == {"provider", "base_url", "model"}
     finally:
         await _aclose_llm(translator)
+
+
+def test_candidate_translations_migration_drops_old_rows(tmp_path):
+    """БД со старой (user_version=0) таблицей candidate_translations: после инициализации
+    SQLiteCache таблица пуста, user_version=2; повторная инициализация новые записи не удаляет."""
+    path = tmp_path / "state.sqlite"
+    db = sqlite3.connect(path)
+    db.execute("""
+        CREATE TABLE candidate_translations (
+            candidate_id TEXT PRIMARY KEY,
+            source_text TEXT NOT NULL,
+            target_lang TEXT NOT NULL,
+            translation TEXT NOT NULL,
+            created_at TEXT NOT NULL
+        )
+    """)
+    db.execute(
+        "INSERT INTO candidate_translations(candidate_id,source_text,target_lang,translation,created_at)"
+        " VALUES(?,?,?,?,?)",
+        ("old-id", "City", "ru", "Город", "2026-01-01T00:00:00+00:00"),
+    )
+    db.commit()
+    assert db.execute("PRAGMA user_version").fetchone()[0] == 0
+    db.close()
+
+    cache = SQLiteCache(path)
+    db = sqlite3.connect(path)
+    assert db.execute("PRAGMA user_version").fetchone()[0] == 2
+    assert db.execute("SELECT COUNT(*) FROM candidate_translations").fetchone()[0] == 0
+    db.close()
+
+    # новая запись (id+контекст перевода) переживает повторную инициализацию
+    cache.put_candidate_translation("new-id", "City", "ru", "Город")
+    SQLiteCache(path)
+    db = sqlite3.connect(path)
+    assert db.execute("PRAGMA user_version").fetchone()[0] == 2
+    assert db.execute("SELECT COUNT(*) FROM candidate_translations").fetchone()[0] == 1
+    db.close()
+
+
+def test_candidate_translations_migration_idempotent_on_fresh_db(tmp_path):
+    """Свежая БД: создание SQLiteCache сразу даёт user_version=2, записи не теряются."""
+    path = tmp_path / "state2.sqlite"
+    cache = SQLiteCache(path)
+    assert cache.get_candidate_translation("x") is None
+    cache.put_candidate_translation("x", "City", "ru", "Город")
+    SQLiteCache(path)
+    assert cache.get_candidate_translation("x") == "Город"

@@ -211,8 +211,15 @@ def extract_question_candidates(question: str, nlp: Any, cfg: MentionsConfig) ->
     return result
 
 
-def _candidate_id(lemma_key: str, source_text: str, target_lang: str) -> str:
-    return hashlib.sha256(f"{lemma_key}\x00{source_text}\x00{target_lang}".encode()).hexdigest()[:16]
+def _table_content_hash(table: TableData) -> str:
+    payload = json.dumps([table.headers, table.rows], ensure_ascii=False)
+    return hashlib.sha256(payload.encode()).hexdigest()
+
+
+def _candidate_id(table_hash: str, lemma_key: str, source_text: str, target_lang: str) -> str:
+    return hashlib.sha256(
+        f"{table_hash}\x00{lemma_key}\x00{source_text}\x00{target_lang}".encode()
+    ).hexdigest()[:16]
 
 
 def _table_cache_key(table: TableData, target_lang: str) -> str:
@@ -231,6 +238,10 @@ def extract_table_candidates(
     cached = _TABLE_CACHE.get(key)
     if cached is not None:
         return cached
+
+    # Хеш содержимого таблицы входит в candidate_id: перевод кэшируется per-table
+    # (нет ложных кросс-табличных hits). На hit сверху не вычисляется.
+    content_hash = _table_content_hash(table)
 
     result = CandidateSet()
     by_lemma: dict[str, TableCandidate] = {}
@@ -269,7 +280,7 @@ def extract_table_candidates(
             for qc, tokens, pos, ner in _subsequence_with_annotations(run, text, cfg, drop_stop=False):
                 if qc.lemma_key not in by_lemma:
                     by_lemma[qc.lemma_key] = TableCandidate(
-                        id=_candidate_id(qc.lemma_key, qc.source_text, target_lang),
+                        id=_candidate_id(content_hash, qc.lemma_key, qc.source_text, target_lang),
                         lemma_key=qc.lemma_key,
                         source_text=qc.source_text,
                         coordinates=[coord],

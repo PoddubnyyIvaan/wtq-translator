@@ -19,6 +19,7 @@ class ProcessingStatus(str, Enum):
     ACCEPTED_WITH_WARNINGS = "accepted_with_warnings"
     NEEDS_REVIEW = "needs_review"
     FAILED = "failed"
+    EXCLUDED = "excluded"
 
 
 class MentionSourceType(str, Enum):

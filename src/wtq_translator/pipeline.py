@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import asdict
 
+from .alphabet import ALPHABET_INTENT_LABELS, AlphabetIntentError, detect_alphabet_intent
 from .backtranslation import back_translate_shell, back_translate_table, back_translate_table_candidates
 from .config import AppConfig
 from .domain import detect_domain
@@ -103,6 +104,19 @@ class TranslationPipeline:
         report.domain = domain
         if warn:
             report.warnings.append(warn)
+
+        # 1.5) Детекция алфавитно-зависимого намерения: такой вопрос не переводится.
+        detection = await detect_alphabet_intent(
+            self.llm, cfg, question_id=question.id, question_text=question.utterance
+        )
+        if detection.error is not None:
+            raise AlphabetIntentError(question.id, intent_label="", why=detection.error)
+        if detection.intent_id is not None:
+            raise AlphabetIntentError(
+                question.id,
+                intent_label=ALPHABET_INTENT_LABELS[detection.intent_id],
+                why=detection.why or "",
+            )
 
         # 2) Перевод таблицы (кандидаты) — ДО shell
         await translate_table_candidates(
