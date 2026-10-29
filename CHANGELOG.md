@@ -1,3 +1,24 @@
+## Unreleased — перевод и обратный перевод упоминаний в трейсе
+
+- `models.py`: в `TableMention` добавлены поля `translated_text` (surface упоминания
+  в переведённом вопросе) и `back_translated_text` (surface в обратном переводе вопроса).
+  Frozen + default — существующие конструкторы и тесты не ломаются; `runner.py:_write_trace`
+  сериализует поля в `mentions` трейса автоматически через `asdict`.
+- `mentions/masking.py`: новый helper `extract_tagged_spans(text)` — извлекает пары
+  `<TABLE_REF_XXXX>...</TABLE_REF_XXXX>` в `{mask: content}` (regex с `re.DOTALL`).
+- `pipeline.py`: в `_process_full` поля заполняются surface-формами из тегированного
+  перевода (`masked_ru`) и тегированного обратного перевода (`back_masked`); в
+  `_mentions_only` — значениями переведённой и обратно переведённой таблицы через
+  `mention_map.table_value` (только при непустых `translated_columns`). SHELL_ONLY не
+  трогается: упоминания не переводятся, поля остаются `None`.
+- **Тесты**: новый `tests/unit/test_masking.py` (извлечение пар: обычный текст, пустой
+  ввод, порядок пар, содержимое с пробелами/пунктуацией/внутренними тегами, многострочное);
+  в `test_pipeline_full_new` и `test_pipeline_modes` добавлены проверки
+  `translated_text`/`back_translated_text` в mentions результата. Валидация: 21 целевой
+  тест зелёные; полный прогон — 254 passed, 5 известных pre-existing failures
+  (`test_alphabet_detection` — 2, `test_question_translation` — 3, воспроизводятся без
+  этих изменений).
+
 ## Unreleased — дедупликация reports jsonl перед статистиками
 
 - Новый модуль `reporting/jsonl_dedupe.py`: `load_jsonl_rows(path)` — устойчивое чтение

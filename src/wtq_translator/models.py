@@ -93,6 +93,8 @@ class TableMention:
     table_source_text: str
     match_type: str = "exact_normalized"
     candidate_key: str = ""
+    translated_text: str | None = None       # surface упоминания в переведённом вопросе (целевой язык)
+    back_translated_text: str | None = None  # surface упоминания в обратном переводе вопроса (исходный язык)
 
     def __post_init__(self) -> None:
         if not self.coordinates:

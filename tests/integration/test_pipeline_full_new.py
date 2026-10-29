@@ -197,6 +197,8 @@ async def test_full_pipeline_end_to_end(tmp_path, monkeypatch):
     assert result.quality.back_table_groups_compared >= 1
     assert result.quality.status == ProcessingStatus.ACCEPTED
     assert result.quality.original_masks == ["<TABLE_REF_0000>"]
+    assert result.mention_map.mentions[0].translated_text == "Алиса"
+    assert result.mention_map.mentions[0].back_translated_text == "Alice"
 
     paired = [
         (system, p)

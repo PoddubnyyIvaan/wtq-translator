@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import asdict
+from dataclasses import asdict, replace
 
 from .alphabet import ALPHABET_INTENT_LABELS, AlphabetIntentError, detect_alphabet_intent
 from .backtranslation import back_translate_shell, back_translate_table, back_translate_table_candidates
@@ -12,7 +12,7 @@ from .llm.tracing import llm_trace_context
 from .mentions import build_mention_map, find_table_mentions, mask_question, restore_from_table, restore_original
 from .mentions.candidates import load_spacy_model
 from .mentions.finder_full import find_table_mentions_full
-from .mentions.masking import mask_question_tagged, strip_tags
+from .mentions.masking import extract_tagged_spans, mask_question_tagged, strip_tags
 from .models import MentionMap, QualityReport, QuestionRecord, TableData, TranslationResult
 from .persistence.cache import SQLiteCache
 from .translation import build_target_value, translate_shell, translate_table
@@ -179,6 +179,17 @@ class TranslationPipeline:
         )
         self._apply_tag_report(masked_source, back_masked, report, forward=False)
         back_question = strip_tags(back_masked)
+
+        forward_spans = extract_tagged_spans(masked_ru)
+        backward_spans = extract_tagged_spans(back_masked)
+        mention_map.mentions = [
+            replace(
+                m,
+                translated_text=forward_spans.get(m.mask),
+                back_translated_text=backward_spans.get(m.mask),
+            )
+            for m in mention_map.mentions
+        ]
 
         # 7) Back-таблица (кандидаты, RU→EN)
         back_table = await back_translate_table_candidates(
@@ -421,6 +432,16 @@ class TranslationPipeline:
             back_question_semantic = restore_from_table(masked_source, mentions, back_table)
         else:
             back_question_semantic = restore_original(masked_source, mentions)
+
+        if translated_columns:
+            mentions.mentions = [
+                replace(
+                    m,
+                    translated_text=mentions.table_value(m.mask, output_table),
+                    back_translated_text=mentions.table_value(m.mask, back_table),
+                )
+                for m in mentions.mentions
+            ]
 
         # Deterministic reconstruction uses original mention values.
         deterministic_back = restore_original(masked_source, mentions)

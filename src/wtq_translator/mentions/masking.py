@@ -59,6 +59,14 @@ def strip_tags(text: str) -> str:
     return re.sub(r"</?TABLE_REF_\d{4}>", "", text)
 
 
+_TAGGED_SPAN_RE = re.compile(r"<(TABLE_REF_\d{4})>(.*?)</\1>", re.DOTALL)
+
+
+def extract_tagged_spans(text: str) -> dict[str, str]:
+    """Возвращает {mask: content} для каждой пары тегов <TABLE_REF_XXXX>...</TABLE_REF_XXXX>."""
+    return {f"<{m.group(1)}>": m.group(2) for m in _TAGGED_SPAN_RE.finditer(text)}
+
+
 def closing_mask(mask: str) -> str:
     """Convert '<TABLE_REF_0000>' into '</TABLE_REF_0000>'."""
     return mask[:1] + "/" + mask[1:]

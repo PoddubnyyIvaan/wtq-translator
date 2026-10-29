@@ -121,6 +121,9 @@ async def test_mentions_only_pipeline_end_to_end(tmp_path):
     assert result.output_table.headers == ["Имя", "City"]
     assert result.output_table.rows == [["Алиса", "London"]]
     assert result.quality.back_translated_question == q.utterance
+    m = result.mention_map.mentions[0]
+    assert m.translated_text == "Алиса"
+    assert m.back_translated_text == "Alice"
     assert result.quality.back_table_min_similarity == 1.0
     assert result.quality.status == ProcessingStatus.ACCEPTED
     table_payloads = [p for p in provider.payloads if p.get("task") == "translate_table_values"]
