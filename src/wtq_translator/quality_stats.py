@@ -8,6 +8,7 @@ from typing import Any
 from .dataset import read_question_tsv_document, write_question_tsv
 from .enums import ProcessingStatus
 from .quality import FilterConfig
+from .reporting.jsonl_dedupe import dedupe_last_wins, load_jsonl_rows
 
 _STANDARD_FIELDNAMES = ("id", "utterance", "context", "targetValue")
 
@@ -51,21 +52,15 @@ def _locate_dataset(run_dir: Path) -> Path:
 
 
 def _load_quality(run_dir: Path) -> dict[str, dict[str, Any]]:
-    """Load reports/quality.jsonl into {question_id: raw_row}."""
+    """Load reports/quality.jsonl into {question_id: raw_row}.
+
+    Last-wins дедупликация по question_id (общая логика с reporting.stats).
+    """
     path = run_dir / "reports" / "quality.jsonl"
     if not path.is_file():
         return {}
-    rows: dict[str, dict[str, Any]] = {}
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            data = json.loads(line)
-            qid = data.get("question_id")
-            if qid is not None:
-                rows[qid] = data
-    return rows
+    rows = dedupe_last_wins(load_jsonl_rows(path), key_fn=lambda r: r.get("question_id"))
+    return {r["question_id"]: r for r in rows if r.get("question_id") is not None}
 
 
 def _desc_rank(values: list[float]) -> list[int]:

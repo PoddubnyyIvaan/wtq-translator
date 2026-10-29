@@ -1,3 +1,28 @@
+## Unreleased — дедупликация reports jsonl перед статистиками
+
+- Новый модуль `reporting/jsonl_dedupe.py`: `load_jsonl_rows(path)` — устойчивое чтение
+  JSONL (пустые строки и битый JSON пропускаются), `dedupe_last_wins(rows, key_fn)` —
+  last-wins по ключу с сохранением порядка первого вхождения (записи без ключа
+  сохраняются все), `dedupe_events(rows)` — по сессии вопроса: для `question_id`
+  остаются последний `START` и события после него; без `START` — last-wins по
+  `(question_id, code)`; события без `question_id` не трогаются. Функции экспортируются
+  из `reporting/__init__.py`.
+- `reporting/stats.py`: `load_quality_rows` переведён на общие хелперы — дедуп по
+  `question_id` (last wins) теперь выполняется до агрегации `run_stats`, поэтому
+  `reports/stats.json` (runner.py) и CLI `wtq-translate stats` считают `quality_rows`,
+  `avg`/`min`/`metric_counts` и warnings по уникальным вопросам при resume
+  (`retry_failed_on_resume`) и `rerun_needs_review`. Сигнатуры и формат отчёта не менялись.
+- `quality_stats.py`: ручной dict-дедуп в `_load_quality` заменён на общий
+  `dedupe_last_wins` (то же last-wins поведение, убрана дублирующаяся реализация).
+- Файлы не переписываются: дедупликация на стороне чтения, раннер и SQLite не менялись.
+- **Тесты**: новый `test_jsonl_dedupe.py` (пустые/битые строки, записи без ключа,
+  last-wins и порядок, две попытки в events, события без `START`/без `question_id`);
+  `test_run_stats.py` — кейс с двумя строками одного `question_id` (метрики и warnings
+  из последней строки). Валидация: 13 unit-тестов (run_stats + jsonl_dedupe),
+  `test_filter_run`, `test_table_quality`, `test_pipeline_modes` зелёные; на реальном
+  ране `test-a02b5003577e` дедуп — no-op (events 8688→8688, quality 4129 уникальных,
+  failures 206→206, `stats.json` побайтово идентичен).
+
 ## Unreleased — candidate_id зависит от содержимого таблицы
 
 - `candidates.py`: `candidate_id` теперь включает хеш содержимого таблицы (`_table_content_hash`

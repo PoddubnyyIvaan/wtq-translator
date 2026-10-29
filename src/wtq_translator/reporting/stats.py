@@ -5,6 +5,7 @@ from pathlib import Path
 
 from ..enums import ProcessingStatus
 from ..quality import KNOWN_METRICS
+from .jsonl_dedupe import dedupe_last_wins, load_jsonl_rows
 
 
 def aggregate_metrics(rows: list[dict]) -> dict:
@@ -37,17 +38,15 @@ def aggregate_metrics(rows: list[dict]) -> dict:
 
 
 def load_quality_rows(run_dir: Path) -> list[dict]:
-    """Построчное чтение ``reports/quality.jsonl`` (устойчиво к пустым строкам)."""
+    """Построчное чтение ``reports/quality.jsonl`` с дедупликацией.
+
+    Возвращает по одной строке на ``question_id`` (last wins по порядку файла);
+    устойчив к пустым строкам, битому JSON и отсутствию файла.
+    """
     path = Path(run_dir) / "reports" / "quality.jsonl"
     if not path.exists():
         return []
-    rows: list[dict] = []
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                rows.append(json.loads(line))
-    return rows
+    return dedupe_last_wins(load_jsonl_rows(path), key_fn=lambda r: r.get("question_id"))
 
 
 def run_stats(
