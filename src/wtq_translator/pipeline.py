@@ -20,6 +20,7 @@ from .translation.table_candidates import reconstruct_table, translate_table_can
 from .validation import (
     score_back_translated_table,
     score_bertscore_pair,
+    score_bertscore_pairs,
     score_bertscore_table,
     cosine_similarity,
     extract_masks,
@@ -208,13 +209,22 @@ class TranslationPipeline:
 
         report.translated_question = final_question
         report.back_translated_question = back_question
-        await self._score_question(question.utterance, back_question, report)
+        await self._score_question(question.utterance, back_question, report, mention_map)
         if report.status == ProcessingStatus.PROCESSING:
             report.status = ProcessingStatus.ACCEPTED_WITH_WARNINGS if report.warnings else ProcessingStatus.ACCEPTED
         return TranslationResult(question, table, translated_table, final_question, answer, report, mention_map)
 
-    async def _score_question(self, source: str, back: str, report: QualityReport) -> None:
+    async def _score_question(self, source: str, back: str, report: QualityReport, mentions: MentionMap | None = None) -> None:
         vc = self.config.validation
+        # Пары (оригинал, обратный перевод) для round-trip оценки упоминаний.
+        # Пустые тексты пропускаем: пустая строка дала бы zero-vector у embeddings.
+        pairs = []
+        if mentions is not None:
+            pairs = [
+                (m.question_text, m.back_translated_text)
+                for m in mentions.mentions
+                if m.question_text and m.back_translated_text
+            ]
         # Косинусное сходство (embedding-провайдер).
         if vc.question_cosine_enabled:
             if self.embeddings is None:
@@ -246,6 +256,51 @@ class TranslationPipeline:
                         f"Question BERTScore f1 {metrics['f1']:.4f} is below threshold {threshold:.4f}."
                     )
                     report.status = ProcessingStatus.NEEDS_REVIEW
+
+        # Косинусное сходство round-trip упоминаний (embedding-провайдер).
+        if pairs:
+            if vc.mention_cosine_enabled:
+                if self.embeddings is None:
+                    report.warnings.append("Embedding provider disabled; mention cosine similarity was not computed.")
+                else:
+                    texts = [t for p in pairs for t in p]
+                    vectors = await self.embeddings.embed(texts)
+                    scores = [cosine_similarity(vectors[2 * k], vectors[2 * k + 1]) for k in range(len(pairs))]
+                    report.mentions_compared = len(pairs)
+                    report.mention_cosine_min_similarity = min(scores)
+                    report.mention_cosine_mean_similarity = sum(scores) / len(scores)
+                    threshold = vc.mention_cosine_threshold
+                    if threshold is not None and min(scores) < threshold:
+                        report.warnings.append(
+                            f"Mention cosine similarity min {min(scores):.4f} is below threshold {threshold:.4f}."
+                        )
+                        report.status = ProcessingStatus.NEEDS_REVIEW
+
+            # BERTScore упоминаний.
+            if self.config.bert_score.enabled and vc.mention_bert_enabled:
+                try:
+                    metrics = await score_bertscore_pairs(
+                        [p[0] for p in pairs], [p[1] for p in pairs], self.config.bert_score
+                    )
+                except Exception as exc:  # noqa: BLE001 - деградация, статус не меняем.
+                    report.warnings.append(f"BERTScore mention scoring failed: {exc}")
+                else:
+                    f1s = metrics["f1"]
+                    ps = metrics["precision"]
+                    rs = metrics["recall"]
+                    report.mentions_compared = len(pairs)
+                    report.mention_bert_min_f1 = min(f1s) if f1s else None
+                    report.mention_bert_mean_f1 = sum(f1s) / len(f1s) if f1s else None
+                    report.mention_bert_min_precision = min(ps) if ps else None
+                    report.mention_bert_mean_precision = sum(ps) / len(ps) if ps else None
+                    report.mention_bert_min_recall = min(rs) if rs else None
+                    report.mention_bert_mean_recall = sum(rs) / len(rs) if rs else None
+                    threshold = self.config.bert_score.mention_threshold
+                    if threshold is not None and min(f1s) < threshold:
+                        report.warnings.append(
+                            f"Mention BERTScore f1 min {min(f1s):.4f} is below threshold {threshold:.4f}."
+                        )
+                        report.status = ProcessingStatus.NEEDS_REVIEW
 
     async def _apply_back_table_quality(
         self,
@@ -448,7 +503,7 @@ class TranslationPipeline:
         report.backward_masks = extract_masks(masked_source)
         report.translated_question = final_question
         report.back_translated_question = back_question_semantic
-        await self._score_question(question.utterance, back_question_semantic, report)
+        await self._score_question(question.utterance, back_question_semantic, report, mentions)
         if deterministic_back != question.utterance:
             report.errors.append("Deterministic mask reconstruction does not reproduce the original question")
             report.status = ProcessingStatus.FAILED

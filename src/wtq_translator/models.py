@@ -231,6 +231,15 @@ class QualityReport:
     question_bert_precision: float | None = None
     question_bert_recall: float | None = None
     question_bert_f1: float | None = None
+    mentions_compared: int = 0
+    mention_cosine_min_similarity: float | None = None
+    mention_cosine_mean_similarity: float | None = None
+    mention_bert_min_f1: float | None = None
+    mention_bert_mean_f1: float | None = None
+    mention_bert_min_precision: float | None = None
+    mention_bert_mean_precision: float | None = None
+    mention_bert_min_recall: float | None = None
+    mention_bert_mean_recall: float | None = None
     back_table_groups_compared: int = 0
     back_table_min_similarity: float | None = None
     back_table_mean_similarity: float | None = None

@@ -101,6 +101,18 @@ async def score_bertscore_pair(
     }
 
 
+async def score_bertscore_pairs(
+    cands: list[str],
+    refs: list[str],
+    cfg: BERTScoreConfig,
+) -> dict[str, list[float]]:
+    """Батч BERTScore для списков пар (cands, refs); возвращает списки f1/precision/recall."""
+    if not cands:
+        return {"f1": [], "precision": [], "recall": []}
+    precision, recall, f1 = await asyncio.to_thread(_score_batch, cands, refs, cfg)
+    return {"f1": f1, "precision": precision, "recall": recall}
+
+
 def _aggr(values: list[float]) -> dict[str, float | None]:
     if not values:
         return {"min": None, "mean": None}

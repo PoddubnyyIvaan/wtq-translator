@@ -195,6 +195,9 @@ async def test_full_pipeline_end_to_end(tmp_path, monkeypatch):
     assert result.quality.back_table_min_similarity == 1.0
     assert result.quality.back_table_mean_similarity == 1.0
     assert result.quality.back_table_groups_compared >= 1
+    assert result.quality.mentions_compared == 1
+    assert result.quality.mention_cosine_min_similarity == 1.0
+    assert result.quality.mention_cosine_mean_similarity == 1.0
     assert result.quality.status == ProcessingStatus.ACCEPTED
     assert result.quality.original_masks == ["<TABLE_REF_0000>"]
     assert result.mention_map.mentions[0].translated_text == "Алиса"

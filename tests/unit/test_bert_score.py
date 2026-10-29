@@ -2,7 +2,11 @@ import pytest
 
 from wtq_translator.config import BERTScoreConfig, MentionNormalizationConfig
 from wtq_translator.models import TableData
-from wtq_translator.validation.bert_score import score_bertscore_pair, score_bertscore_table
+from wtq_translator.validation.bert_score import (
+    score_bertscore_pair,
+    score_bertscore_pairs,
+    score_bertscore_table,
+)
 
 NORM = MentionNormalizationConfig()
 
@@ -57,6 +61,20 @@ async def test_score_pair_returns_three_floats(_patch_batch):
     res = await score_bertscore_pair("what is x", "o chyom x", _cfg())
     assert set(res) == {"f1", "precision", "recall"}
     assert res == {"f1": 0.85, "precision": 0.9, "recall": 0.8}
+
+
+@pytest.mark.asyncio
+async def test_score_pairs_returns_lists(_patch_batch):
+    res = await score_bertscore_pairs(["a", "b"], ["x", "y"], _cfg())
+    assert res == {"f1": [0.85, 0.85], "precision": [0.9, 0.9], "recall": [0.8, 0.8]}
+    assert _patch_batch.calls == [(["a", "b"], ["x", "y"])]
+
+
+@pytest.mark.asyncio
+async def test_score_pairs_empty_no_call(_patch_batch):
+    res = await score_bertscore_pairs([], [], _cfg())
+    assert res == {"f1": [], "precision": [], "recall": []}
+    assert _patch_batch.calls == []
 
 
 @pytest.mark.asyncio

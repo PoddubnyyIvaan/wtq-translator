@@ -161,6 +161,9 @@ class ValidationConfig(BaseModel):
     back_table_similarity_mode: Literal["context", "row", "cell"] = "context"
     back_table_similarity_threshold: float | None = None
     back_table_similarity_max_chunk_tokens: int = 512  # используется только в mode="context"
+    mention_cosine_enabled: bool = True
+    mention_cosine_threshold: float | None = None
+    mention_bert_enabled: bool = True
 
     @model_validator(mode="after")
     def _back_table_similarity(self) -> "ValidationConfig":
@@ -169,6 +172,9 @@ class ValidationConfig(BaseModel):
         threshold = self.back_table_similarity_threshold
         if threshold is not None and not (0.0 <= threshold <= 1.0):
             raise ValueError("validation.back_table_similarity_threshold must be in [0, 1]")
+        mention_threshold = self.mention_cosine_threshold
+        if mention_threshold is not None and not (0.0 <= mention_threshold <= 1.0):
+            raise ValueError("validation.mention_cosine_threshold must be in [0, 1]")
         return self
 
 
@@ -219,6 +225,7 @@ class BERTScoreConfig(BaseModel):
     rescale_with_baseline: bool = False
     question_threshold: float | None = None
     table_threshold: float | None = None
+    mention_threshold: float | None = None
 
     @model_validator(mode="after")
     def _validate(self) -> "BERTScoreConfig":
@@ -227,6 +234,7 @@ class BERTScoreConfig(BaseModel):
         for name, t in (
             ("question_threshold", self.question_threshold),
             ("table_threshold", self.table_threshold),
+            ("mention_threshold", self.mention_threshold),
         ):
             if t is not None and not (0.0 <= t <= 1.0):
                 raise ValueError(f"bert_score.{name} must be in [0, 1]")

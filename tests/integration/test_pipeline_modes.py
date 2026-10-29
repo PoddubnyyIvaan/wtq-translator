@@ -3,8 +3,8 @@ import json
 import pytest
 
 from wtq_translator.config import AppConfig
-from wtq_translator.enums import ProcessingStatus, TranslationMode
-from wtq_translator.models import QualityReport, QuestionRecord, TableData
+from wtq_translator.enums import MentionSourceType, ProcessingStatus, TranslationMode
+from wtq_translator.models import MentionMap, QualityReport, QuestionRecord, TableCoordinate, TableData, TableMention
 from wtq_translator.pipeline import TranslationPipeline
 
 
@@ -90,6 +90,24 @@ def _input():
     q = QuestionRecord("q1", "Where is Alice?", "table.tsv", "London")
     table = TableData(["Name", "City"], [["Alice", "London"]])
     return q, table
+
+
+def _mention_map(*pairs):
+    mentions = [
+        TableMention(
+            mask=f"<TABLE_REF_{i:04d}>",
+            question_text=q,
+            normalized_text=q.lower(),
+            start=0,
+            end=len(q),
+            source_type=MentionSourceType.CELL,
+            coordinates=(TableCoordinate(row=0, column=0),),
+            table_source_text=q,
+            back_translated_text=b,
+        )
+        for i, (q, b) in enumerate(pairs)
+    ]
+    return MentionMap(mentions)
 
 
 @pytest.mark.asyncio
@@ -303,3 +321,104 @@ async def test_bert_enabled_fills_fields_and_threshold(tmp_path, monkeypatch):
     assert report2.back_table_bert_min_f1 == 0.2
     assert report2.back_table_bert_groups_compared == 1
     assert report2.status == ProcessingStatus.NEEDS_REVIEW
+
+
+@pytest.mark.asyncio
+async def test_mention_score_fills_fields(tmp_path, monkeypatch):
+    import wtq_translator.pipeline as pip
+
+    async def fake_pairs(cands, refs, cfg):
+        return {"f1": [0.9, 0.8], "precision": [0.95, 0.85], "recall": [0.85, 0.75]}
+
+    monkeypatch.setattr(pip, "score_bertscore_pairs", fake_pairs)
+
+    cfg = _config(tmp_path, "mentions_only")
+    cfg.bert_score.enabled = True
+    cfg.validation.question_bert_enabled = False
+    pipeline = TranslationPipeline(cfg, RuleBasedProvider(), IdenticalEmbeddingProvider())
+    report = QualityReport(
+        question_id="q1", mode=TranslationMode.MENTIONS_ONLY,
+        table_mentions_found=True, source_question="",
+        status=ProcessingStatus.PROCESSING,
+    )
+    mentions = _mention_map(("Alice", "Alice"), ("London", "Londyn"))
+    await pipeline._score_question("Where is Alice?", "Где находится Алиса?", report, mentions)
+
+    assert report.mentions_compared == 2
+    assert report.mention_cosine_min_similarity == 1.0
+    assert report.mention_cosine_mean_similarity == 1.0
+    assert report.mention_bert_min_f1 == 0.8
+    assert report.mention_bert_mean_f1 == pytest.approx(0.85)
+    assert report.mention_bert_min_precision == 0.85
+    assert report.mention_bert_mean_precision == pytest.approx(0.9)
+    assert report.mention_bert_min_recall == 0.75
+    assert report.mention_bert_mean_recall == pytest.approx(0.8)
+    assert report.status == ProcessingStatus.PROCESSING
+
+
+@pytest.mark.asyncio
+async def test_mention_cosine_threshold_needs_review(tmp_path):
+    class LangEmbeddingProvider:
+        async def embed(self, texts):
+            # Латинские тексты — вектор (1,0), кириллические — (0,1): пары дают косинус 0.0.
+            return [[1.0, 0.0] if t.isascii() else [0.0, 1.0] for t in texts]
+
+    cfg = AppConfig.model_validate({
+        "project": {"input_root": str(tmp_path), "output_root": str(tmp_path / "out"),
+                    "source_language": "en", "target_language": "ru", "seed": 42},
+        "translation": {"mode": "mentions_only", "answer_language_mode": "table"},
+        "model": {"retries": 0},
+        "embeddings": {"enabled": False},
+        "back_translation": {"enabled": True},
+        "table": {"rows_per_chunk": 20},
+        "cache": {"enabled": False},
+        "validation": {"question_cosine_enabled": False, "mention_cosine_threshold": 0.5},
+    })
+    pipeline = TranslationPipeline(cfg, RuleBasedProvider(), LangEmbeddingProvider())
+    report = QualityReport(
+        question_id="q1", mode=TranslationMode.MENTIONS_ONLY,
+        table_mentions_found=True, source_question="",
+        status=ProcessingStatus.PROCESSING,
+    )
+    mentions = _mention_map(("Alice", "Алиса"), ("London", "Лондон"))
+    await pipeline._score_question("Where is Alice?", "Где находится Алиса?", report, mentions)
+
+    assert report.mentions_compared == 2
+    assert report.mention_cosine_min_similarity == 0.0
+    assert report.mention_cosine_mean_similarity == 0.0
+    assert report.status == ProcessingStatus.NEEDS_REVIEW
+    assert any("below threshold" in w for w in report.warnings)
+
+
+@pytest.mark.asyncio
+async def test_mention_score_disabled_no_warning(tmp_path, monkeypatch):
+    import wtq_translator.pipeline as pip
+
+    async def boom(cands, refs, cfg):  # pragma: no cover
+        raise AssertionError("should not be called when mention scoring disabled")
+
+    monkeypatch.setattr(pip, "score_bertscore_pairs", boom)
+
+    cfg = _config(tmp_path, "mentions_only")
+    cfg.validation.mention_cosine_enabled = False
+    cfg.validation.mention_bert_enabled = False
+    pipeline = TranslationPipeline(cfg, RuleBasedProvider(), IdenticalEmbeddingProvider())
+    report = QualityReport(
+        question_id="q1", mode=TranslationMode.MENTIONS_ONLY,
+        table_mentions_found=True, source_question="",
+        status=ProcessingStatus.PROCESSING,
+    )
+    mentions = _mention_map(("Alice", "Alice"))
+    await pipeline._score_question("Where is Alice?", "Где находится Алиса?", report, mentions)
+
+    assert report.mentions_compared == 0
+    assert report.mention_cosine_min_similarity is None
+    assert report.mention_cosine_mean_similarity is None
+    assert report.mention_bert_min_f1 is None
+    assert report.mention_bert_mean_f1 is None
+    assert report.mention_bert_min_precision is None
+    assert report.mention_bert_mean_precision is None
+    assert report.mention_bert_min_recall is None
+    assert report.mention_bert_mean_recall is None
+    assert report.status == ProcessingStatus.PROCESSING
+    assert not any("mention" in w.lower() for w in report.warnings)

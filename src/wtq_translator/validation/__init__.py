@@ -8,7 +8,7 @@ from .invariants import (
 )
 from .similarity import cosine_similarity
 from .table_quality import build_comparison_units, score_back_translated_table
-from .bert_score import score_bertscore_pair, score_bertscore_table
+from .bert_score import score_bertscore_pair, score_bertscore_pairs, score_bertscore_table
 
 __all__ = [
     "extract_masks",
@@ -22,5 +22,6 @@ __all__ = [
     "build_comparison_units",
     "score_back_translated_table",
     "score_bertscore_pair",
+    "score_bertscore_pairs",
     "score_bertscore_table",
 ]

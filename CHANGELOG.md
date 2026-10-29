@@ -1,3 +1,37 @@
+## Unreleased — оценка сохранения упоминаний при обратном переводе
+
+- `config.py`: в `ValidationConfig` добавлены `mention_cosine_enabled` (default True),
+  `mention_cosine_threshold` (default None) и `mention_bert_enabled` (default True) с
+  валидацией диапазона `mention_cosine_threshold` в [0, 1]; в `BERTScoreConfig` добавлен
+  `mention_threshold` (default None) с валидацией в том же цикле диапазона.
+- `validation/bert_score.py`: новая батч-функция `score_bertscore_pairs(cands, refs, cfg)`
+  — один вызов модели на все пары, возвращает списки f1/precision/recall; пустой ввод —
+  пустые списки без вызова `_score_batch`. Экспортируется из `validation/__init__.py`.
+- `models.py`: в `QualityReport` добавлены `mentions_compared` (int-счётчик) и
+  nullable-поля `mention_cosine_min/mean_similarity`, `mention_bert_min/mean_f1`,
+  `mention_bert_min/mean_precision`, `mention_bert_min/mean_recall` — попадают в
+  `quality.jsonl` автоматически через `to_dict`/`asdict`.
+- `pipeline.py`: `_score_question` принимает необязательный `mentions` (MentionMap);
+  для пар (оригинал `question_text` vs обратный перевод `back_translated_text`, пустые
+  тексты пропускаются) считается косинус по embeddings (при `mention_cosine_enabled`,
+  тексты чередуются src/back) и BERTScore (при `bert_score.enabled and
+  mention_bert_enabled`, cands=оригинал, refs=обратный перевод) с агрегацией min/mean;
+  нарушение порога → warning + `NEEDS_REVIEW`; сбой BERTScore → warning без смены
+  статуса. Вызовы в `_process_full` и `_mentions_only` передают mention map; `_shell_only`
+  не меняется (упоминания не переводятся — скора нет).
+- `quality.py`: 8 новых метрик `mention_*` добавлены в `KNOWN_METRICS` (доступны в
+  `filter` и агрегированной статистике); `mentions_compared` в KNOWN_METRICS не входит
+  (как `back_table_groups_compared`).
+- `configs/qwen_full.yaml`: новые ключи под `validation:` и `bert_score:` с дефолтными
+  значениями.
+- **Тесты**: `test_bert_score` — батч возвращает списки через `_score_batch`, пустой
+  ввод без вызова; `test_pipeline_modes` — заполнение min/mean косинуса и BERT,
+  `mention_cosine_threshold` → `NEEDS_REVIEW` + warning, выключенные флаги → поля None
+  без warning; `test_pipeline_full_new` — `mentions_compared == 1` и косинус 1.0 в
+  end-to-end full-прогоне. Целевые тесты зелёные; полный прогон — 257 passed,
+  7 предсуществующих failures (`test_alphabet_detection` — 2, `test_question_translation` — 3,
+  `test_table_candidates` — 2), все воспроизводятся на чистом HEAD без этих изменений.
+
 ## Unreleased — перевод и обратный перевод упоминаний в трейсе
 
 - `models.py`: в `TableMention` добавлены поля `translated_text` (surface упоминания
