@@ -91,6 +91,21 @@ def test_question_stop_words_discarded():
     assert "his team" in poss_keys
 
 
+def test_stop_word_combination_discarded():
+    nlp = make_nlp({
+        "of the winner": [
+            _Tok("of", 0, pos="ADP"),
+            _Tok("the", 3, pos="DET"),
+            _Tok("winner", 7, pos="NOUN"),
+        ],
+    })
+    keys = {c.lemma_key for c in extract_question_candidates("of the winner", nlp, MentionsConfig())}
+    assert "of the" not in keys        # комбинация целиком из стоп-слов
+    assert "of the winner" in keys     # значащий спам со стоп-словом сохраняется
+    assert "the winner" in keys
+    assert "winner" in keys
+
+
 def test_table_stop_words_not_discarded():
     table = TableData(["the"], [["a"]])
     nlp = make_nlp({

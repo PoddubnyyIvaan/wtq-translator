@@ -140,35 +140,40 @@ def _subsequence_records(
     *,
     drop_stop: bool,
 ) -> list[tuple[QuestionCandidate, list[Any]]]:
-    """Все непрерывные подпоследовательности одного content-run'а с фильтрацией одиночных.
+    """Все непрерывные подпоследовательности одного content-run'а с фильтрацией одиночных
+    и комбинаций стоп-слов.
 
     Для каждой подпоследовательности дополнительно возвращается её спановый список токенов
     (в порядке подпоследовательности) — из него строятся tokens/pos/ner для TableCandidate.
     """
     result: list[tuple[QuestionCandidate, list[Any]]] = []
     n = len(run)
+    # Флаги стоповости токенов run'а (только для вопроса: drop_stop), чтобы не
+    # пересчитывать _is_question_stop для каждого спана (list-членство stop_pos + morph).
+    is_stop = [_is_question_stop(t, cfg) for t in run] if drop_stop else [False] * n
     for i in range(n):
         for j in range(i, n):
             length = j - i + 1
+            span = run[i : j + 1]
             if length == 1:
-                tok = run[i]
-                kind = _classify(tok)
-                if drop_stop and _is_question_stop(tok, cfg):
-                    continue
+                kind = _classify(run[i])
                 if cfg.exclude_numbers and kind == "number":
                     continue
                 if cfg.exclude_dates and kind == "date":
                     continue
+            # Отсекаем спам целиком из стоп-слов (в т.ч. одиночный) — только для вопроса.
+            if drop_stop and all(is_stop[k] for k in range(i, j + 1)):
+                continue
             start = run[i].idx
             end = run[j].idx + len(run[j].text)
             qc = QuestionCandidate(
-                lemma_key=_lemma_key(run[i:j + 1]),
+                lemma_key=_lemma_key(span),
                 source_text=text[start:end],
                 start=start,
                 end=end,
                 length=length,
             )
-            result.append((qc, run[i:j + 1]))
+            result.append((qc, span))
     return result
 
 
@@ -203,7 +208,8 @@ def _subsequence_with_annotations(
 
 
 def extract_question_candidates(question: str, nlp: Any, cfg: MentionsConfig) -> list[QuestionCandidate]:
-    """Все подпоследовательности вопроса; стоп-слова/числа/даты отбрасываются только из одиночных."""
+    """Все подпоследовательности вопроса; стоп-слова отбрасываются как одиночные, так и
+    целые комбинации из стоп-слов; числа/даты отбрасываются только из одиночных."""
     doc = nlp(question)
     result: list[QuestionCandidate] = []
     for run in _content_runs(doc):

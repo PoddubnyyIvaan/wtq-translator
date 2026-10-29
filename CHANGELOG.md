@@ -1,5 +1,11 @@
 ## Unreleased — оценка сохранения упоминаний при обратном переводе
 
+- `mentions/candidates.py`: в `_subsequence_records` стоп-слова отсекаются не только у
+  одиночных подпоследовательностей вопроса, но и у целых комбинаций стоп-слов
+  (например `of the`, `in on`); спаны со хотя бы одним не-стоповым токеном сохраняются
+  (`of the winner`, `the team`). Табличная сторона (`drop_stop=False`) не затрагивается.
+  Для вопроса флаги стоповости предвычисляются один раз на run (micro-оптимизация).
+
 - `config.py`: в `ValidationConfig` добавлены `mention_cosine_enabled` (default True),
   `mention_cosine_threshold` (default None) и `mention_bert_enabled` (default True) с
   валидацией диапазона `mention_cosine_threshold` в [0, 1]; в `BERTScoreConfig` добавлен
