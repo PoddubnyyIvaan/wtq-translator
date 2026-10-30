@@ -112,6 +112,19 @@ def _strip_transliteration_quotes(text: str) -> str:
     return text.replace(_QUOTE_OPEN, "").replace(_QUOTE_CLOSE, "")
 
 
+class TranslationSetMismatch(ValueError):
+    """Набор id в ответе модели не совпал с запрошенным.
+
+    `missing` — запрошенные id, которые модель не вернула (недодала);
+    `unexpected` — id в ответе, которых не было в запросе (изобретённые/подменённые).
+    """
+
+    def __init__(self, message: str, *, missing: list[str], unexpected: list[str]):
+        super().__init__(message)
+        self.missing = list(missing)
+        self.unexpected = list(unexpected)
+
+
 def _validate_candidate_response(
     pending: list[TableCandidate], response: TableTranslationResponse
 ) -> dict[str, str]:
@@ -131,10 +144,12 @@ def _validate_candidate_response(
     missing = [i for i in expected_ids if i not in returned_ids]
     unexpected = [i for i in returned_ids if i not in expected_ids]
     if missing or unexpected or len(returned_ids) != len(expected_ids):
-        raise ValueError(
+        raise TranslationSetMismatch(
             "Translation ID set mismatch: "
             f"missing={missing[:10]}, unexpected={unexpected[:10]}, "
-            f"expected_count={len(expected_ids)}, returned_count={len(returned_ids)}"
+            f"expected_count={len(expected_ids)}, returned_count={len(returned_ids)}",
+            missing=missing,
+            unexpected=unexpected,
         )
 
     mapping = {item.id: item.translation for item in response.translations}
@@ -166,25 +181,40 @@ async def _translate_chunk(
     каждого item'а — его собственные самые длинные вмещающие последовательности).
     requirements — требования уровня промпта (общие + при включённой транслитерации
     letterwise/quoted). quoted_active — в quoted-режиме из переводов вырезаются
-    маркеры «» (до break, т.е. до кэширования и использования глоссарием). При
-    исчерпании ретраев бросает RuntimeError — изоляция ошибок теперь пер-chunk,
+    маркеры «» (до break, т.е. до кэширования и использования глоссарием).
+
+    Ретрай-поведение:
+    * Чистая нехватка (ответ валиден, но модель недодала часть id: missing без
+      unexpected) — успешная часть ответа сохраняется, следующая попытка шлёт
+      только недостающие кандидаты (точечный repair-ретрай);
+    * Любая другая ошибка (unexpected/чужие id, дубликаты, пустые переводы,
+      невалидный JSON и пр.) — доверять ответу нельзя, повторяется полный чанк,
+      как раньше.
+
+    При исчерпании ретраев бросает RuntimeError — изоляция ошибок пер-chunk,
     неудача одного chunk не отменяет запросы остальных.
     """
-    payload = {
-        "task": "translate_candidates",
-        "source_language": source_language,
-        "target_language": target_language,
-        "items": items,
-        "requirements": requirements,
-    }
+    # id -> готовая payload-запись item'а чанка (для точечных repair-запросов).
+    item_by_id = {it["id"]: it for it in items}
 
     last_error: Exception | None = None
-    translations: dict[str, str] | None = None
+    # Накопленные переводы: на repair-ретраях пополняются недостающими id.
+    translations: dict[str, str] = {}
+    # Кандидаты очередной попытки: полный чанк либо (после чистой нехватки)
+    # только недостающие.
+    remaining_candidates: list[TableCandidate] = list(chunk)
+
     # Смещение seed зависит от chunk_idx и попытки: у chunk'ов непересекающиеся
     # диапазоны seed'ов, при chunk_idx=0 формула совпадает с прежним поведением.
     seed_base = config.project.seed + 900_000 + chunk_idx * (config.model.retries + 1)
     for attempt in range(config.model.retries + 1):
-        request_payload = dict(payload)
+        request_payload = {
+            "task": "translate_candidates",
+            "source_language": source_language,
+            "target_language": target_language,
+            "items": [item_by_id[c.id] for c in remaining_candidates],
+            "requirements": requirements,
+        }
         if last_error is not None:
             request_payload["retry_instruction"] = (
                 "The previous response was invalid. Translate the same values again. Return exactly one JSON "
@@ -197,7 +227,7 @@ async def _translate_chunk(
                 stage=f"{trace_stage_prefix}.tier{length}",
                 attempt=attempt,
                 chunk=chunk_idx,
-                unique_values=len(chunk),
+                unique_values=len(remaining_candidates),
             ):
                 raw = await provider.generate(
                     system=candidate_system_prompt(domain),
@@ -208,19 +238,57 @@ async def _translate_chunk(
                 )
 
             parsed = TableTranslationResponse.model_validate(_parse_json(raw))
-            translations = _validate_candidate_response(chunk, parsed)
+            attempt_translations = _validate_candidate_response(remaining_candidates, parsed)
             if quoted_active:
                 # Маркеры «» вырезаются сразу после валидации: чистые переводы
                 # попадают в candidate.translation, кэш и глоссарий нижних ярусов.
-                translations = {
-                    c_id: _strip_transliteration_quotes(t) for c_id, t in translations.items()
+                attempt_translations = {
+                    c_id: _strip_transliteration_quotes(t)
+                    for c_id, t in attempt_translations.items()
                 }
-            break
-        except Exception as exc:
+            translations.update(attempt_translations)
+            # Попытка (полная или repair) покрыла весь чанк — успех.
+            if all(c.id in translations for c in chunk):
+                break
+            # Защита от рассинхрона: валидация не пропустила бы неполное покрытие,
+            # но на всякий случай продолжаем с недостающими кандидатами.
+            remaining_candidates = [c for c in chunk if c.id not in translations]
+            continue
+        except TranslationSetMismatch as exc:
+            if exc.unexpected:
+                # Модель вернула чужие/изобретённые id — ответу доверять нельзя,
+                # полный ретрай (как раньше).
+                last_error = exc
+                remaining_candidates = list(chunk)
+                continue
+            # Чистая нехватка (missing без unexpected): успешную часть ответа
+            # сохраняем, следующую попытку шлём только недостающие кандидаты.
+            partial = {
+                it.id: (
+                    _strip_transliteration_quotes(it.translation)
+                    if quoted_active
+                    else it.translation
+                )
+                for it in parsed.translations
+            }
+            # Пустые переводы в неполном ответе не сохраняем: они не прошли бы
+            # валидацию и остаются в недостающих для следующей попытки.
+            partial = {c_id: tr for c_id, tr in partial.items() if tr.strip()}
+            translations.update(partial)
+            remaining_candidates = [c for c in remaining_candidates if c.id not in translations]
             last_error = exc
+        except Exception as exc:
+            # Прочие ошибки (невалидный JSON, дубликаты, пустые переводы и т.д.) —
+            # полный ретрай.
+            last_error = exc
+            remaining_candidates = list(chunk)
 
-    if translations is None:
-        raise RuntimeError(f"Candidate translation failed after retries: {last_error}")
+    missing_ids = [c.id for c in chunk if c.id not in translations]
+    if missing_ids:
+        raise RuntimeError(
+            f"Candidate translation failed after retries: {last_error} "
+            f"(missing={missing_ids[:10]})"
+        )
     return translations
 
 

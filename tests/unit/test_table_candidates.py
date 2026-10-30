@@ -477,6 +477,119 @@ async def test_invalid_chunk_fails_only_itself_valid_chunk_applied(tmp_path):
     assert [v["id"] for v in good[0]["items"]] == ["cc"]
 
 
+@pytest.mark.asyncio
+async def test_pure_missing_ids_retry_only_missing_candidates(tmp_path):
+    """(д) Чистая нехватка (missing без unexpected): успешная часть ответа
+    сохраняется, следующая попытка шлёт только недостающие кандидаты."""
+    mapping = {"A": "ТA", "B": "ТB", "C": "ТC"}
+    candidates = [
+        TableCandidate(id="ca", lemma_key="a", source_text="A", coordinates=[], length=1),
+        TableCandidate(id="cb", lemma_key="b", source_text="B", coordinates=[], length=1),
+        TableCandidate(id="cc", lemma_key="c", source_text="C", coordinates=[], length=1),
+    ]
+
+    class RepairProvider:
+        def __init__(self):
+            self.requests = []
+
+        @property
+        def capabilities(self):
+            class Caps:
+                seed = True
+            return Caps()
+
+        async def generate(self, **kwargs):
+            payload = json.loads(kwargs["user"])
+            self.requests.append(payload)
+            items = payload["items"]
+            # Первая попытка недодаёт кандидата "cb"; repair-попытки — все запрошенные.
+            returned = [v for v in items if v["id"] != "cb"] if len(self.requests) == 1 else items
+            return json.dumps(
+                {
+                    "translations": [
+                        {"id": v["id"], "translation": mapping[v["text"]]} for v in returned
+                    ]
+                },
+                ensure_ascii=False,
+            )
+
+        async def count_tokens(self, text: str) -> int:
+            return len(text.split())
+
+    provider = RepairProvider()
+    out = await translate_table_candidates(
+        provider,
+        candidates,
+        config=_chunk_cfg(tmp_path, max_per_request=64, request_concurrency=1, retries=2),
+        source_language="en",
+        target_language="ru",
+    )
+
+    assert out == {"ca": "ТA", "cb": "ТB", "cc": "ТC"}
+    assert [c.translation for c in candidates] == ["ТA", "ТB", "ТC"]
+    assert len(provider.requests) == 2
+    # Первая попытка — полный чанк, вторая — точечный repair только по недостающим.
+    assert {v["id"] for v in provider.requests[0]["items"]} == {"ca", "cb", "cc"}
+    assert [v["id"] for v in provider.requests[1]["items"]] == ["cb"]
+
+
+@pytest.mark.asyncio
+async def test_unexpected_ids_keep_full_retry(tmp_path):
+    """(е) Чужие/изобретённые id (unexpected): ответу доверять нельзя — ретрай
+    идёт полным чанком (точечный repair не применяется)."""
+    mapping = {"A": "ТA", "B": "ТB", "C": "ТC"}
+    candidates = _three_candidates()
+
+    class BadIdProvider:
+        def __init__(self):
+            self.requests = []
+
+        @property
+        def capabilities(self):
+            class Caps:
+                seed = True
+            return Caps()
+
+        async def generate(self, **kwargs):
+            payload = json.loads(kwargs["user"])
+            self.requests.append(payload)
+            items = payload["items"]
+            if len(self.requests) == 1:
+                # Возвращает перевод под чужим id вместо последнего кандидата.
+                good = [
+                    {"id": v["id"], "translation": mapping[v["text"]]} for v in items[:-1]
+                ]
+                return json.dumps(
+                    {"translations": good + [{"id": "bogus-id", "translation": "Чужой"}]},
+                    ensure_ascii=False,
+                )
+            return json.dumps(
+                {
+                    "translations": [
+                        {"id": v["id"], "translation": mapping[v["text"]]} for v in items
+                    ]
+                },
+                ensure_ascii=False,
+            )
+
+        async def count_tokens(self, text: str) -> int:
+            return len(text.split())
+
+    provider = BadIdProvider()
+    out = await translate_table_candidates(
+        provider,
+        candidates,
+        config=_chunk_cfg(tmp_path, max_per_request=64, request_concurrency=1, retries=1),
+        source_language="en",
+        target_language="ru",
+    )
+
+    assert out == {"ca": "ТA", "cb": "ТB", "cc": "ТC"}
+    assert len(provider.requests) == 2
+    # Ретрай после unexpected — снова полный чанк, а не подмножество по missing.
+    assert {v["id"] for v in provider.requests[1]["items"]} == {"ca", "cb", "cc"}
+
+
 # --- Глоссарий item'а: самые длинные вмещающие последовательности (per-item) ---
 
 
